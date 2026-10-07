@@ -1,0 +1,91 @@
+"""Short, attributed Korean community summaries. No live-client verification implied.
+
+English boss/skill renderings are editorial aids; Korean names remain searchable.
+Diagrams in encounters.py are our schematics, not copied source images.
+"""
+REVIEW_DATE = '2026-10-07'
+
+KR_SOURCES = {
+ 'conquest-one': dict(title='정복 크라오 동굴, 드라웁니르 공략', author='Nirr', publisher='Inven', date='2025-11-25', url='https://www.inven.co.kr/board/aion2/6444/458', kind='guide', scope='KR · Conquest / 정복', note='Early KR encounter guide; current Global mechanics not checked.'),
+ 'conquest-two': dict(title='정복 우루구구, 바크론 공략', author='Nirr', publisher='Inven', date='2025-11-28', url='https://www.inven.co.kr/board/aion2/6444/521', kind='guide', scope='KR · Conquest / 정복', note='Early KR encounter guide; current Global mechanics not checked.'),
+ 'fire-temple': dict(title='정복 불의 신전 공략', author='Nirr', publisher='Inven', date='2025-12-05', url='https://www.inven.co.kr/board/aion2/6444/655', kind='guide', scope='KR · Conquest / 정복', note='Original Conquest guide, not the later Trial mode.'),
+ 'fierce-horn': dict(title='정복 사나운 뿔 암굴 공략', author='Nirr', publisher='Inven', date='2025-12-15', url='https://www.inven.co.kr/board/aion2/6444/803', kind='guide', scope='KR · Conquest / 정복', note='Early KR encounter guide; current Global mechanics not checked.'),
+ 'expedition-tips': dict(title='알아두면 쓸 데 있을 것 같은 팁 모음 (원정 편)', author='이시영', publisher='GameChosun', date='2026-01-15', url='https://gamechosun.co.kr/webzine/article/view.php?no=219539', kind='guide', scope='KR · Normal Conquest / 정복 일반', note='Reported encounter observations. Difficulty matters.'),
+ 'gladiator-build': dict(title='검성 PVE 추천 NEW스킬트리', author='주이스틱', publisher='Inven', date='2025-11-21', updated='2026-01-02', url='https://www.inven.co.kr/board/aion2/6448/58', kind='player', scope='KR · PvE', note='Author build, with an explicit January 2 revision in its title.'),
+ 'templar-ehp': dict(title='유효체력(EHP)과 피해 감소율에 대한 공식', author='Kongjik', publisher='Inven', date='2026-05-20', url='https://www.inven.co.kr/board/aion2/6438/16260', kind='player', scope='KR · Defense theory / 방어 이론', note='Player model, not an official damage formula.'),
+ 'templar-team': dict(title='성역4 2 수호로 성불했슴다.', author='Guardian', publisher='Inven', date='2026-09-14', url='https://www.inven.co.kr/board/aion2/6438/26233', kind='report', scope='KR · Sanctuary 4 / 성역4', note='One player’s two-Templar clear report, not a universal party rule.'),
+ 'assassin-build': dict(title='9/30일 기준 살성 PVE 최적화 가이드', author='빵호빵', publisher='Inven', date='2026-09-30', url='https://www.inven.co.kr/board/aion2/6449/24247', kind='player', scope='KR · PvE', note='Author testing and layout suggestions for the September KR client.'),
+ 'ranger-budget': dict(title='궁성 뉴비 가이드', author='오이싫어', publisher='Inven', date='2026-03-30', url='https://www.inven.co.kr/board/aion2/6450/8917', kind='player', scope='KR · Progression / 성장', note='Budget advice for the author’s progression stage; not a current best-in-slot list.'),
+ 'chanter-build': dict(title='[수정중] 호법성 PVE 종합 가이드', author='무무야자자 / 하구', publisher='Inven', date='2025-11-24', url='https://www.inven.co.kr/board/aion2/6451/116', kind='player', scope='KR · PvE', note='Living post marked as being revised; latest edit timestamp not supplied.'),
+ 'cleric-build': dict(title='9/24 PVE 최적화 가이드', author='빵호빵', publisher='Inven', date='2026-09-24', url='https://www.inven.co.kr/board/aion2/6452/29213', kind='player', scope='KR · PvE', note='Author’s control-layout advice; not independently benchmarked here.'),
+ 'sorcerer-build': dict(title='더 이상 피아노 치지 마세요, 9/22 최적화 가이드', author='빵호빵', publisher='Inven', date='2026-09-22', url='https://www.inven.co.kr/board/aion2/6453/17462', kind='player', scope='KR · PvE', note='Author’s setup and practice suggestions for the September KR client.'),
+ 'spiritmaster-build': dict(title='새로 시작하는 뉴비 기본 정보 / PVP 공략 링크', author='렉사이서폿', publisher='Inven', date='2026-07-02', url='https://www.inven.co.kr/board/aion2/6454/8152', kind='player', scope='KR · PvE', note='Living player guide; original post date, not a verified last-edit date.'),
+ 'spiritmaster-pvp': dict(title='[공략/PVP] 정령성 가이드 및 직업별 상대법', author='공습경보', publisher='DC Inside', date='2026-03-23', url='https://gall.dcinside.com/mgallery/board/view/?id=aion2&no=1936425', kind='player', scope='KR · PvP / Abyss', note='Explicitly subjective player guide; dispel observations are not a current probability table.'),
+}
+
+def mechanic(id, title, cue, action, mistake, diagram, source):
+    return dict(id=id, title=title, cue=cue, action=action, mistake=mistake, diagram=diagram, source=source)
+
+BOSSES = [
+ dict(id='berk', slug='krao-cave', name=('Berk', '완성체 베르크'), dungeon=('Krao Cave', '크라오 동굴'), color='#e5b96d', icon='shield',
+      hook=('Cover · retreat · stagger', '바위 보호 · 이탈 · 그로기'), mechanics=[
+  mechanic('cover', ('Rage wave', '격노의 파동'), ('Yellow rocks appear.', '노란 바위가 솟음'), ('Reach a rock early; confirm the protection buff.', '바위에 미리 접근하고 보호 버프 확인'), ('Arriving at the last instant.', '마지막 순간에 도착'), 'cover', 'expedition-tips'),
+  mechanic('spin', ('Whirlwind', '휠윈드'), ('Red particles surround Berk.', '몸 주변에 붉은 가루'), ('Leave melee range.', '보스 주변에서 이탈'), ('Continuing your combo.', '연계 공격 고집'), 'out', 'conquest-one'),
+  mechanic('stagger', ('Stagger check', '그로기 전멸기'), ('The stagger bar unlocks.', '잠긴 그로기 게이지 해제'), ('Use reserved stagger skills together.', '아껴둔 그로기 스킬 집중'), ('Spending them beforehand.', '직전에 모두 소모'), 'stagger', 'conquest-one'),
+ ]),
+ dict(id='bakarma', slug='draupnir', name=('Bakarma', '초월한 바카르마'), dungeon=('Draupnir', '드라웁니르'), color='#86bbf0', icon='spark',
+      hook=('Jump the wave · watch the water', '파동 점프 · 잠수 방향'), mechanics=[
+  mechanic('wave', ('Rippling wave', '출렁이는 파동'), ('Rings spread from the boss.', '보스에서 고리 확산'), ('Jump before contact, then close for stagger.', '닿기 전 점프 후 접근해 그로기'), ('Rushing through the ring.', '고리를 뚫고 돌진'), 'jump', 'conquest-one'),
+  mechanic('dive', ('Track the dive', '잠수 방향 추적'), ('Bakarma dives head-first.', '머리부터 물속 진입'), ('Watch the heading and underwater silhouette.', '머리 방향과 수면 아래 윤곽 추적'), ('Searching the wrong side.', '반대쪽에서 찾기'), 'track', 'expedition-tips'),
+ ]),
+ dict(id='auldor', slug='urugugu-canyon', name=('Auldor', '신성한 아울도르'), dungeon=('Urugugu Canyon', '우루구구 협곡'), color='#93cca6', icon='target',
+      hook=('Share the marked hit · avoid feathers', '징표 함께 맞기 · 깃털 회피'), mechanics=[
+  mechanic('stack', ('Storm strike', '폭풍의 일격'), ('Airborne boss; red target marker.', '보스 비상 후 붉은 조준 표시'), ('Gather on the marked player to share damage.', '징표 대상에게 모여 피해 분담'), ('The marked player runs away.', '징표 혼자 도주'), 'stack', 'conquest-two'),
+  mechanic('feathers', ('Feathers into grab', '깃털과 낚아채기'), ('Feathers fly forward.', '정면으로 깃털 발사'), ('Dodge; if caught, use shock removal immediately.', '회피하고 피격 시 즉시 충격 해제'), ('Remaining suspended.', '공중 속박 방치'), 'fan', 'conquest-two'),
+ ]),
+ dict(id='vakron', slug='vakron-island', name=('Vakron', '바크론'), dungeon=('Vakron’s Floating Island', '바크론의 공중섬'), color='#b8a0ef', icon='spirits',
+      hook=('Rescue · break the red rock · jump', '구출 · 붉은 바위 · 점프'), mechanics=[
+  mechanic('bind', ('Binding vines', '바인드'), ('A teammate is marked, then bound.', '대상 지정 후 덩굴 속박'), ('Others avoid the marked area, then destroy the vines.', '주변을 비우고 속박 덩굴 공격'), ('Ignoring the trapped player.', '속박된 동료 방치'), 'rescue', 'conquest-two'),
+  mechanic('prison', ('Stone prison', '기암 감옥'), ('The party is pulled into rocks.', '끌어당긴 뒤 바위 감옥'), ('Break the red rock and exit.', '붉은 바위를 깨고 탈출'), ('Hitting an ordinary rock.', '다른 바위 공격'), 'prison', 'conquest-two'),
+  mechanic('rings', ('Rising thorns', '솟구치는 가시'), ('Three rings, then a follow-up.', '고리 세 번 후 후속 공격'), ('Jump the rings; jump again after the third.', '고리마다 점프, 세 번째 뒤 한 번 더'), ('Stopping after three.', '세 번 후 멈춤'), 'jump', 'conquest-two'),
+ ]),
+ dict(id='kromede', slug='fire-temple', name=('Kromede', '크로메데'), dungeon=('Fire Temple', '불의 신전'), color='#ed887c', icon='flame',
+      hook=('Read the bow · spread · find gaps', '활 방향 · 산개 · 틈 찾기'), mechanics=[
+  mechanic('bow', ('Downward bow', '아래로 활 쏘기'), ('The bow points at the floor.', '활을 바닥으로 향함'), ('Leave melee range; watch for a repeat at low HP.', '근접 범위 이탈, 저체력 연속 공격 주의'), ('Returning after one burst.', '첫 폭발 뒤 즉시 복귀'), 'out', 'fire-temple'),
+  mechanic('clones', ('Clone attacks', '분신 공격'), ('Kromede moves to the centre.', '보스가 중앙으로 이동'), ('Spread so each player’s clone hits separately.', '개인 분신 공격이 겹치지 않게 산개'), ('Stacking the party.', '한곳에 뭉치기'), 'spread', 'fire-temple'),
+  mechanic('walls', ('Fire walls', '불의 장벽'), ('Walls move across the arena.', '불벽이 다가옴'), ('Move through gaps; watch extra projectiles at low HP.', '빈틈 통과, 저체력 추가 투사체 관찰'), ('Watching only the boss.', '보스만 응시'), 'walls', 'fire-temple'),
+ ]),
+ dict(id='nuakum', slug='fierce-horn', name=('Nuakum', '사나운 뿔 누아쿰'), dungeon=('Fierce Horn Cave', '사나운 뿔 암굴'), color='#7fcbd6', icon='dagger',
+      hook=('Rotate blockers · read circles · align', '분담 교대 · 원 크기 · 일직선'), mechanics=[
+  mechanic('intercept', ('Clone interception', '분신 돌진'), ('A clone targets an immobilised player.', '움직일 수 없는 대상에게 분신 돌진'), ('An unmarked teammate intercepts; rotate blockers.', '상처 없는 동료가 가로막고 담당 교대'), ('The same blocker repeats.', '같은 사람이 연속 분담'), 'intercept', 'fierce-horn'),
+  mechanic('circle', ('Landing circles', '본체 낙하 원'), ('A circle appears after the clone.', '분신 뒤 본체 낙하 원 표시'), ('Large circle: solo. Small circle: share.', '큰 원은 혼자, 작은 원은 함께'), ('Treating both sizes alike.', '원 크기를 무시'), 'circles', 'fierce-horn'),
+  mechanic('orb', ('Blue-light mechanic', '파괴의 푸른 빛'), ('Central energy appears; a player is marked.', '중앙 에너지 생성, 대상 지정'), ('Align boss → energy → target for three projectiles.', '보스→에너지→대상 일직선으로 세 발 유도'), ('Standing beside the energy.', '에너지 옆에 서기'), 'orb', 'fierce-horn'),
+ ]),
+]
+
+def note(id, classes, topic, mode, title, body, source):
+    return dict(id=id, classes=classes, topic=topic, mode=mode, title=title, body=body, source=source)
+
+NOTES = [
+ note('glad-buffs',['gladiator'],'combat','pve',('Separate your buff windows','버프 시간을 겹쳐 쓰지 않기'),('The author separates 도약찍기 and 파멸의 맹타 to avoid cutting an existing combat-preparation window short. Check the current tooltips before copying that sequence.','작성자는 도약찍기와 파멸의 맹타를 나눠 써 전투 준비 시간이 짧아지는 상황을 피합니다. 현재 툴팁의 갱신 방식을 먼저 확인하세요.'),'gladiator-build'),
+ note('glad-stagger',['gladiator'],'combat','pve',('Save party utility for the check','그로기 순간에 파티 지원'),('The guide lines up 지켈의 축복 with timed stagger checks. Make the mechanic call before spending the cooldown.','시간제 그로기에 지켈의 축복을 맞추는 활용법입니다. 기믹 진입 전에 파티와 사용 시점을 맞추세요.'),'gladiator-build'),
+ note('templar-ehp',['templar'],'gear','pve',('HP alone misses part of durability','생명력만으로 방어력 비교하지 않기'),('Kongjik compares HP and mitigation through effective health, with enemy amplification as a condition. Treat the formula as a player model, not a verified game calculator.','Kongjik은 생명력·피해 감소를 유효체력으로 비교하되 상대 피해 증폭을 조건으로 둡니다. 유저의 계산 모델로 참고하세요.'),'templar-ehp'),
+ note('templar-threat',['templar'],'party','pve',('Agree who holds the boss','수호 둘이면 어그로 역할 합의'),('A two-Templar Sanctuary clear report describes coordinating attacks to stabilise threat. It is one group’s solution, so agree roles before the pull.','2수호 성역 클리어 후기에서는 공격을 조절해 어그로를 안정시켰습니다. 한 파티의 경험이므로 입장 전 역할부터 합의하세요.'),'templar-team'),
+ note('assassin-movement',['assassin'],'combat','pve',('Group movement controls','이동기를 가까운 키에 배치'),('The September guide groups similar movement skills to make rear-position recovery quicker. Practise the return route as part of the attack sequence.','9월 가이드는 비슷한 이동기를 가까이 배치해 후방 복귀를 빠르게 합니다. 공격 뒤 다시 자리를 잡는 동선까지 연습하세요.'),'assassin-build'),
+ note('assassin-dummy',['assassin'],'gear','pve',('Read dummy results in context','허수 타수만으로 스킬 빼지 않기'),('The author keeps 기습 after considering boss defence and healing, even when 심장찌르기 hit count falls. Compare the whole encounter, not one counter.','작성자는 심장찌르기 타수가 줄어도 보스 방어와 회복을 고려해 기습을 채용합니다. 단일 타수보다 전투 전체를 비교하세요.'),'assassin-build'),
+ note('ranger-budget',['ranger'],'gear','pve',('Set a stopping point for rerolls','성장 장비에 투자 중단선 정하기'),('This budget guide stops repeated rerolls once useful options appear on transitional gear. Set a replacement plan before spending more.','성장용 장비는 유효 옵션이 나오면 반복 재설정을 멈추는 비용 관리가 핵심입니다. 다음 교체 장비부터 정하세요.'),'ranger-budget'),
+ note('ranger-arcana',['ranger'],'gear','pve',('Fit pieces around the bottleneck','어려운 아르카나부터 기준 잡기'),('The author builds around a good 천칭 because it is harder to obtain, then adjusts other Arcana. This is a budgeting approach, not a permanent best-in-slot order.','좋은 천칭을 얻기 어렵다는 전제로 나머지 아르카나를 맞추는 접근입니다. 영구적인 종결 순위보다 투자 순서의 참고로 보세요.'),'ranger-budget'),
+ note('chanter-party',['chanter'],'party','pve',('Open with party tempo','파티 속도에 맞춰 지원 시작'),('Hagoo opens with 질풍의 권능 for party cooldown support, then maintains buffs while fighting. Coordinate with the group’s damage window.','하구의 가이드는 질풍의 권능으로 파티 쿨타임을 지원하며 시작합니다. 파티의 공격 시점에 맞춰 버프를 이어가세요.'),'chanter-build'),
+ note('chanter-range',['chanter'],'combat','pve',('Keep acting while separated','보스와 떨어졌을 때 할 일'),('The guide uses ranged options such as 타격쇄 or 암격쇄 while away, then returns with a gap closer. Re-enter after the mechanic allows it.','떨어진 동안 타격쇄·암격쇄 같은 원거리 수단을 쓰고 진입기로 복귀하는 흐름입니다. 패턴이 끝난 뒤 다시 붙으세요.'),'chanter-build'),
+ note('cleric-manual',['cleric'],'party','pve',('Keep healing under direct control','회복기는 직접 선택'),('The author separates healing skills and keeps charged 벽력 manual so an urgent heal is not delayed. Choose single-target or group recovery for the actual damage.','회복기를 분리하고 차징하는 벽력을 수동으로 둬 긴급 회복이 늦어지는 상황을 줄입니다. 피해 범위에 맞춰 단일·광역 회복을 고르세요.'),'cleric-build'),
+ note('cleric-layout',['cleric'],'combat','pve',('Build a progression-friendly layout','트라이에 맞는 조작 배치'),('The September guide allows a second in-game skill row for easier control during progression. Judge the layout by response time as well as damage.','9월 가이드는 트라이 중 조작 편의를 위해 인게임 스킬 두 줄도 고려합니다. 피해량과 함께 긴급 대응 속도를 확인하세요.'),'cleric-build'),
+ note('sorc-ground',['sorcerer'],'combat','pve',('Place ground skills when the boss settles','보스가 멈췄을 때 장판 배치'),('The author groups manual skills and places ground damage when the boss stops moving. Read movement before committing the cast.','수동 스킬을 모아 두고 보스가 멈춘 시점에 장판을 배치하는 방식입니다. 이동 패턴을 보고 시전을 시작하세요.'),'sorcerer-build'),
+ note('sorc-prog',['sorcerer'],'combat','pve',('Trade a ceiling for movement during practice','트라이에서는 이동 특화 고려'),('For progression, the guide suggests the movement-enabled 지옥의 화염 choice. Learn the safe casting window before copying the stationary damage setup.','트라이에서는 지옥의 화염의 이동 가능 특화를 제안합니다. 고정 시전 세팅을 복사하기 전에 안전한 시전 시간을 익히세요.'),'sorcerer-build'),
+ note('spirit-summon',['spiritmaster'],'combat','pve',('Buff before summoning','버프를 먼저, 소환은 다음'),('This guide reports that 고대의 정령 takes stats at summon time. Its proposed order puts buffs before the summon; verify that behaviour in your client.','고대의 정령이 소환 시점 능력치를 가져간다는 관찰에 따라 버프 후 소환을 권합니다. 내 클라이언트에서도 같은지 확인하세요.'),'spiritmaster-build'),
+ note('spirit-window',['spiritmaster'],'combat','pve',('Check both summons before the burst','소환 상태를 보고 파멸의 공세'),('The author uses 파멸의 공세 while both the ancient and regular spirit are present, and prioritises 원소융합 when it activates.','작성자는 고대·일반 정령이 함께 있을 때 파멸의 공세를 쓰고, 원소융합이 활성화되면 우선 사용합니다.'),'spiritmaster-build'),
+ note('spirit-dispel',['spiritmaster'],'combat','pvp',('Verify what the dispel removed','마법 강탈 뒤 실제 버프 확인'),('A DC Inside PvP guide warns that dispel may remove other buffs and leave the intended defensive effect. Check the remaining effects before committing.','디시 PvP 가이드는 다른 강화 효과가 지워지고 목표 방어 버프는 남을 수 있다고 지적합니다. 남은 효과를 확인한 뒤 공격하세요.'),'spiritmaster-pvp'),
+ note('party-route',[],'party','pve',('Full clear or final boss only?','전부 처치인지 막보런인지'),('The early guide describes groups with different reward goals. Ask which route the party plans before skipping optional bosses.','초기 공략은 보상 목적에 따라 전부 처치와 막보런을 구분합니다. 중간 보스를 건너뛰기 전에 파티 목표를 확인하세요.'),'conquest-one'),
+ note('fire-prep',[],'dungeon','pve',('Assign the coolant controls','불의 신전 냉각수 담당 정하기'),('The Conquest guide splits coolant and checkpoint tasks. It also recommends bringing a cleansing potion for burns.','정복 공략에서는 냉각수와 키벨리스크 담당을 나눕니다. 화상에 대비한 치유 물약도 준비 항목입니다.'),'fire-temple'),
+ note('rock-buff',[],'dungeon','pve',('Cover is a buff check too','바위 엄폐는 버프 확인까지'),('GameChosun observed delayed protection near Berk’s rocks. Arrive with time to see the protective effect instead of trusting position alone.','게임조선은 베르크 바위 근처의 보호 효과에 적용 지연이 있다고 관찰했습니다. 위치만 믿지 말고 미리 도착해 효과를 확인하세요.'),'expedition-tips'),
+ note('nuakum-fear',[],'dungeon','pve',('Re-align after fear','공포 뒤 일직선 다시 잡기'),('The Nuakum report describes fear during the central-energy sequence. Recheck boss, energy and target alignment after the forced movement.','누아쿰 중앙 에너지 기믹 도중 공포로 위치가 달라진다는 관찰입니다. 강제 이동 뒤 보스·에너지·대상의 일직선을 다시 확인하세요.'),'expedition-tips'),
+]
