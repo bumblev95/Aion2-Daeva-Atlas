@@ -121,5 +121,5 @@
     render();document.querySelector('[data-budget="30"]').click();
     if(canSave)status.textContent=t('Saved only in this browser. No account needed.','이 브라우저에만 저장됩니다. 계정은 필요하지 않습니다.');
   }
-  document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('daeva-atlas-planner-v1');localStorage.removeItem('raidnote-aion2-class-v1');document.querySelector('[data-clear-status]').textContent=t('Your saved planner and class have been deleted from this browser.','이 브라우저의 저장된 플래너와 직업을 삭제했습니다.');}catch{document.querySelector('[data-clear-status]').textContent=t('Use your browser settings to clear site data.','브라우저 설정에서 사이트 데이터를 삭제하세요.');}});
+  document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('daeva-atlas-planner-v1');localStorage.removeItem('raidnote-aion2-class-v1');localStorage.removeItem('players-codex-start-v1');document.querySelector('[data-clear-status]').textContent=t('Your saved planner, beginner checks and class have been deleted from this browser.','이 브라우저의 저장된 플래너·초보 체크리스트·직업을 삭제했습니다.');}catch{document.querySelector('[data-clear-status]').textContent=t('Use your browser settings to clear site data.','브라우저 설정에서 사이트 데이터를 삭제하세요.');}});
 })();

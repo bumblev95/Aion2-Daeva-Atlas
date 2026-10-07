@@ -70,6 +70,7 @@
     const checksData=[['swords',t('Weapon','무기'),t('Class requirement & equipped item','직업 제한·현재 착용 장비')],['shield',t('Protection','방어'),mode==='pvp'?t('PvP wording & restrictions','PvP 적용·제한 조건'):t('Encounter requirements','콘텐츠 입장·생존 조건')],['spark',t('Investment','투자'),t('Cost, binding & replacement','비용·귀속·교체 계획')]];
     checksData.forEach(([ic,title,desc],i)=>{const row=document.createElement('label');row.className='gear-check';const input=document.createElement('input');input.type='checkbox';input.name=selected+'-'+mode+'-'+i;input.checked=gearChecks.has(input.name);input.addEventListener('change',()=>{if(input.checked)gearChecks.add(input.name);else gearChecks.delete(input.name);});const txt=line('span','');txt.append(line('strong',title),line('small',desc));row.append(svgIcon(ic),txt,input);checks.append(row);});
     $('[data-profile-link]').href=route+'classes/'+c.id+'/';
+    $('[data-profile-skills]').href=route+'skills/?class='+c.id;
     $('[data-profile-compare]').href=route+'tools/compare/?a='+c.id+'&b='+(c.id==='templar'?'gladiator':'templar');
     $('[data-save-class]').setAttribute('aria-pressed',String(saved===c.id));
     const position=mode==='pvp'? (c.range==='ranged'?[295,199]:[260,164]) : c.role==='tank'?[200,48]:c.range==='ranged'?[290,201]:[232,175];
