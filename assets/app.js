@@ -81,6 +81,8 @@
         const a=document.createElement('a');a.className='text-link';a.href=base+(ko?'ko/':'')+'classes/'+c.id+'/';a.textContent=t('Read the class guide →','직업 가이드 읽기 →');panel.append(a);comparison.append(panel);
       });
       const u=new URL(location.href);u.searchParams.set('a',selects[0].value);u.searchParams.set('b',selects[1].value);history.replaceState(null,'',u);
+      const languageLink=document.querySelector('.lang');
+      if(languageLink){const translated=new URL(languageLink.href);translated.search=u.search;languageLink.href=translated.href;}
       document.querySelector('[data-compare-status]').textContent=selects[0].value===selects[1].value?t('Both selections are the same. Choose another class to compare.','같은 직업을 선택했습니다. 다른 직업과 비교해보세요.'):t('Comparison updated.','비교를 업데이트했습니다.');
     };
     selects.forEach(s=>s.addEventListener('change',render));render();

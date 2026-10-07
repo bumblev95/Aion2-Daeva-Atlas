@@ -30,7 +30,7 @@ def path(sub='',lang=None):
 def href(sub='',lang=None):return BASE+path(sub,lang)
 def link(sub,label,css='',lang=None):return f'<a href="{href(sub,lang)}" class="{css}">{label}</a>'
 def icon(name,css='icon'):
-    return f'<svg class="{css}" aria-hidden="true" viewBox="0 0 48 48"><use href="{BASE}assets/icons.svg#{name}"/></svg>'
+    return f'<svg class="{css}" aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="{BASE}assets/icons.svg#{name}"/></svg>'
 def button(sub,label,primary=False):return link(sub,f'{label}<span class="arrow" aria-hidden="true">↗</span>','btn'+(' primary' if primary else ''))
 def brand():return f'<a class="brand" href="{href()}" aria-label="Daeva Atlas home">{icon("atlas","brandmark")}<span><strong>DAEVA ATLAS</strong><small>THE AION 2 FIELD GUIDE</small></span></a>'
 def role(r):return {'damage':t('Damage','공격'),'tank':t('Tank','탱커'),'healer':t('Healer','회복'),'support':t('Support','지원')}[r]
