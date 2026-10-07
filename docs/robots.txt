@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bumblev95.github.io/Aion2-Daeva-Atlas/sitemap.xml

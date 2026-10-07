@@ -1,0 +1,26 @@
+name: Guide correction / 공략 수정
+description: Report a factual error, translation issue or broken page.
+title: '[Correction] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Reports are public. Do not share credentials, payment information or private screenshots.'
+  - type: input
+    id: page
+    attributes:
+      label: Guide URL / 공략 주소
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change? / 수정할 내용
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Region, date and source / 지역·날짜·출처
+      description: Link an official source or describe a reproducible observation.
+    validations:
+      required: true
