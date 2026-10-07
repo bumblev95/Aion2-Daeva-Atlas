@@ -1,4 +1,4 @@
-name: Validate RAIDNOTE
+name: Validate PLAYER’S CODEX
 on:
   push:
     branches: [main]
@@ -20,4 +20,5 @@ jobs:
       - run: python validate.py
       - run: node --check assets/app.js
       - run: node --check assets/explorer.js
+      - run: node --check assets/encounters.js
       - run: git diff --exit-code -- docs

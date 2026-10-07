@@ -15,7 +15,7 @@
   const isProfile = /\/classes\/[^/]+\/$/.test(location.pathname);
   let selected = isProfile ? root.dataset.initialClass : valid(query.get('class')) ? query.get('class') : valid(saved) ? saved : root.dataset.initialClass;
   let mode = query.get('mode') === 'pvp' ? 'pvp' : 'pve';
-  let view = ['overview','practice','gear'].includes(query.get('view')) ? query.get('view') : 'overview';
+  let view = ['overview','practice','gear','community'].includes(query.get('view')) ? query.get('view') : 'overview';
   const $ = s => root.querySelector(s);
   const label = key => ({damage:t('Damage','공격'),tank:t('Tank','탱커'),healer:t('Healer','회복'),support:t('Support','지원'),melee:t('Melee','근접'),ranged:t('Ranged','원거리')}[key]);
   const goals = {
@@ -80,6 +80,12 @@
     $('[data-enemy-label]').textContent=mode==='pvp'?t('OPPONENT','상대'):t('ENEMY','적');
     $('[data-map-tip]').textContent=tips[c.role][m];
     $('[data-explorer-status]').textContent=saved===c.id?t('Your saved class','내 직업으로 저장됨'):'';
+    let noteCount = 0;
+    root.querySelectorAll('[data-class-notes] [data-note]').forEach(n=>{n.hidden=!n.dataset.classes.split(' ').includes(selected)||n.dataset.activity!==mode;if(!n.hidden)noteCount++;});
+    $('[data-class-note-empty]').hidden=noteCount>0;
+    $('[data-all-class-notes]').href=route+'insights/?class='+selected+(mode==='pvp'?'&topic=pvp':'');
+    $('.combat-visual').hidden=view==='community';
+    $('.explorer-content').classList.toggle('reading-notes',view==='community');
     updateUrl();
   }
   const gearChecks=new Set();

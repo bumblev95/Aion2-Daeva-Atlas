@@ -1,5 +1,5 @@
 {
-  "name": "RAIDNOTE",
+  "name": "PLAYER’S CODEX",
   "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas",
   "repository": "https://github.com/bumblev95/Aion2-Daeva-Atlas",
   "reviewed": "2026-10-07",
@@ -8,5 +8,6 @@
     "enabled": false,
     "consent_reviewed": false,
     "slot": ""
-  }
+  },
+  "brand_status": "proposed"
 }

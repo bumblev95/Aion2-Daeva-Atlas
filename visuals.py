@@ -2,6 +2,8 @@
 import html
 import json
 from content import CLASSES
+from fieldnotes import NOTES
+from encounters import note_card, boss_teaser
 
 
 def esc(value):
@@ -30,13 +32,14 @@ def explorer(lang, base, selected='gladiator'):
           <button role="tab" id="view-overview" aria-controls="panel-overview" aria-selected="true" data-view="overview">{glyph(base,'book')}{t('Overview','한눈에 보기')}</button>
           <button role="tab" id="view-practice" aria-controls="panel-practice" aria-selected="false" tabindex="-1" data-view="practice">{glyph(base,'swords')}{t('Combat','전투 흐름')}</button>
           <button role="tab" id="view-gear" aria-controls="panel-gear" aria-selected="false" tabindex="-1" data-view="gear">{glyph(base,'shield')}{t('Gear check','장비 점검')}</button>
-        </div><div class="mode-switch" aria-label="{t('Activity','콘텐츠')}"><button data-mode="pve" aria-pressed="true">PvE</button><button data-mode="pvp" aria-pressed="false">PvP</button></div></div>
+        <button role="tab" id="view-community" aria-controls="panel-community" aria-selected="false" tabindex="-1" data-view="community">{glyph(base,'book')}{t('KR tips','KR 실전 팁')}</button></div><div class="mode-switch" aria-label="{t('Activity','콘텐츠')}"><button data-mode="pve" aria-pressed="true">PvE</button><button data-mode="pvp" aria-pressed="false">PvP</button></div></div>
         <div class="explorer-content">
           <div class="class-summary">
             <div class="profile-heading"><span class="profile-glyph" data-profile-glyph>{glyph(base,current['icon'],'class-glyph')}</span><div><span class="section-kicker" data-profile-role>{roles[current['role']]} / {t('MELEE','근접') if current['range']=='melee' else t('RANGED','원거리')}</span><h3 data-profile-name>{name}</h3><p data-profile-identity>{esc(current['identity'][int(k)])}</p></div></div>
             <div role="tabpanel" id="panel-overview" aria-labelledby="view-overview" data-panel="overview"><div class="quick-facts" data-quick-facts></div><p class="class-advice" data-class-advice>{esc(current['fit'][int(k)])}</p></div>
             <div role="tabpanel" id="panel-practice" aria-labelledby="view-practice" data-panel="practice" hidden><span class="micro-label">{t('PRACTICE LOOP','연습 순서')}</span><div class="combat-loop" data-combat-loop></div><p class="class-advice" data-practice-note></p></div>
             <div role="tabpanel" id="panel-gear" aria-labelledby="view-gear" data-panel="gear" hidden><span class="micro-label">{t('BEFORE YOUR NEXT RUN','다음 전투 전에')}</span><div class="gear-checks" data-gear-checks></div><p class="tiny muted">{t('Personal checks for your current client.','현재 클라이언트에서 확인할 개인 점검표.')}</p></div>
+            <div role="tabpanel" id="panel-community" aria-labelledby="view-community" data-panel="community" hidden><p class="tiny muted">{t('Korean player suggestions · source-era builds · Global not checked','한국 유저 제안 · 원문 시점 세팅 · 글로벌 미확인')}</p><div data-class-notes>{''.join(note_card(n,lang) for n in NOTES if n['classes'])}</div><p class="class-note-empty" data-class-note-empty hidden>{t('No sourced PvP note for this class yet. Explore its PvE notes or the full collection.','이 직업의 PvP 팁은 아직 정리되지 않았어요. PvE 팁이나 전체 목록을 확인하세요.')}</p><a class="text-link" data-all-class-notes href="{root}insights/?class={selected}">{t('All community notes','커뮤니티 팁 전체 보기')} ↗</a></div>
             <div class="profile-actions"><a class="btn primary" data-profile-link href="{root}classes/{selected}/">{t('Class guide','직업 공략')} →</a><a class="btn" data-profile-compare href="{root}tools/compare/?a={selected}&amp;b=templar">{t('Compare','비교')} {glyph(base,'compare')}</a><button class="bookmark-btn" data-save-class aria-label="{t('Save this class','내 직업으로 저장')}" aria-pressed="false">{glyph(base,'bookmark')}</button></div>
             <p class="tiny status" data-explorer-status role="status"></p>
           </div>
@@ -66,18 +69,19 @@ def dashboard(lang, base):
     root = base + ('ko/' if k else '')
     tiles = [
       ('swords','classes/',t('Classes','직업 공략'),t('Find your main','내 직업 찾기'),'purple'),
-      ('boss','guides/first-group-dungeon/',t('Dungeons','던전 준비'),t('Ready for the party','파티 전투 준비'),'red'),
+      ('boss','dungeons/',t('Boss mechanics','보스 기믹'),t('Cues, positions, actions','전조·위치·대응'),'red'),
       ('spark','guides/upgrade-decisions/',t('Progression','장비·성장'),t('Before you upgrade','강화 전 확인'),'gold'),
-      ('compare','tools/compare/',t('Class compare','직업 비교'),t('Two classes, side by side','두 직업 한눈에'),'blue'),
+      ('book','insights/',t('KR insights','한국 유저 팁'),t('Community field notes','직업별 실전 팁'),'blue'),
       ('check','tools/planner/',t('My checklist','나의 체크리스트'),t('Keep your next goal','오늘의 목표 저장'),'green'),
       ('book','glossary/',t('KR ↔ EN','한영 용어'),t('Search game terminology','게임 용어 검색'),'teal')]
     tile_html = ''.join(f'<a class="destination {color}" href="{root}{url}"><span class="destination-icon">{glyph(base,ic)}</span><span><strong>{title}</strong><small>{desc}</small></span><span class="destination-arrow">↗</span></a>' for ic,url,title,desc,color in tiles)
-    return f'''<div class="wrap hub-home"><section class="game-banner"><div class="game-banner-content"><span class="game-eyebrow">RAIDNOTE / MMORPG</span><h1>AION <span>2</span></h1><p>{t('Choose your class. Plan your next run.','직업을 고르고, 다음 전투를 준비하세요.')}</p><div class="banner-actions"><a class="btn primary" href="#class-explorer">{t('Explore classes','직업 살펴보기')} ↓</a><a class="btn glass" href="{root}guides/first-session/">{t('New player? Start here','처음이라면 여기부터')} →</a></div></div><span class="art-credit">{t('AION 2 artwork © NC','AION 2 아트워크 © NC')}</span></section>
+    return f'''<div class="wrap hub-home"><section class="game-banner"><div class="game-banner-content"><span class="game-eyebrow">PLAYER’S CODEX / MMORPG</span><h1>AION <span>2</span></h1><p>{t('Choose your class. Plan your next run.','직업을 고르고, 다음 전투를 준비하세요.')}</p><div class="banner-actions"><a class="btn primary" href="#class-explorer">{t('Explore classes','직업 살펴보기')} ↓</a><a class="btn glass" href="{root}guides/first-session/">{t('New player? Start here','처음이라면 여기부터')} →</a></div></div><span class="art-credit">{t('AION 2 artwork © NC','AION 2 아트워크 © NC')}</span></section>
     <nav class="destination-grid" aria-label="{t('Quick navigation','공략 바로가기')}">{tile_html}</nav>
     {explorer(lang,base)}
-    <section class="quick-resources"><div class="section-heading compact"><div><span class="section-kicker">02 / {t('NEXT UP','다음 단계')}</span><h2>{t('A shortcut to your next goal.','다음 목표로 바로 가기.')}</h2></div><a class="text-link" href="{root}guides/">{t('All guides','전체 공략')} ↗</a></div><div class="resource-grid">
+    {boss_teaser(lang,base)}
+    <section class="quick-resources"><div class="section-heading compact"><div><span class="section-kicker">03 / {t('NEXT UP','다음 단계')}</span><h2>{t('A shortcut to your next goal.','다음 목표로 바로 가기.')}</h2></div><a class="text-link" href="{root}guides/">{t('All guides','전체 공략')} ↗</a></div><div class="resource-grid">
     <a class="resource-card" href="{root}guides/first-session/"><div class="mini-route"><span>01</span><i></i><span>02</span><i></i><span>03</span></div><span class="section-kicker">{t('GET STARTED','초보 시작')}</span><h3>{t('Your first session','첫 접속 순서')}</h3><p>{t('Set up → Choose → Play','설정 → 직업 선택 → 플레이')}</p><span class="resource-arrow">↗</span></a>
-    <a class="resource-card" href="{root}guides/read-korean-guides/"><div class="translation-art"><b>한</b><span>⇄</span><b>EN</b></div><span class="section-kicker">{t('KOREA TO GLOBAL','한국에서 글로벌로')}</span><h3>{t('Read Korean builds','한국 공략 활용하기')}</h3><p>{t('Match region, skills and patch','지역·스킬·패치 맞춰보기')}</p><span class="resource-arrow">↗</span></a>
+    <a class="resource-card" href="{root}insights/"><div class="translation-art"><b>한</b><span>⇄</span><b>EN</b></div><span class="section-kicker">{t('KOREA TO GLOBAL','한국에서 글로벌로')}</span><h3>{t('Korean community insights','한국 커뮤니티 인사이트')}</h3><p>{t('Filter by class and activity','직업·콘텐츠별 팁 골라보기')}</p><span class="resource-arrow">↗</span></a>
     <a class="resource-card community-card" href="https://questlog.gg/aion-2/en-nc/skill-builder" target="_blank" rel="noopener"><div class="mini-slots">{''.join(glyph(base,i) for i in ['swords','flame','shield','spark'])}</div><span class="section-kicker">{t('EXTERNAL TOOL · QUESTLOG','외부 도구 · QUESTLOG')}</span><h3>{t('Community skill builds','커뮤니티 스킬 빌드')}</h3><p>{t('Browse builds on Questlog','Questlog에서 빌드 찾아보기')}</p><span class="resource-arrow">↗</span></a>
     </div></section></div>'''
 
