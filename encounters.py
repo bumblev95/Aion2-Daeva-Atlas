@@ -4,6 +4,7 @@ from fieldnotes import BOSSES, NOTES, KR_SOURCES, REVIEW_DATE
 from content import CLASSES
 from skillbook import link_skills
 from bossmedia import media, POSTERS
+from battlelab import animation
 
 def e(value): return html.escape(str(value), quote=True)
 def tr(value, lang): return value[lang == 'ko']
@@ -77,10 +78,7 @@ def mechanic_panel(boss, m, lang, first, base):
     t=lambda a,b: b if lang=='ko' else a
     uid=boss['id']+'-'+m['id']
     return f'''<article class="mechanic-panel" id="mechanic-{uid}" data-mechanic-panel="{m['id']}" role="tabpanel" aria-labelledby="pick-{uid}" {'hidden' if not first else ''}>
-      <div class="mechanic-split">{media(boss,m,lang)}<div class="mechanic-brief"><span class="section-kicker">{t("LOOK → MOVE", "전조 → 대응")}</span><h3>{e(tr(m["title"],lang))}</h3><div class="mechanic-line"><span>{t("CUE","전조")}</span><p>{link_skills(tr(m["cue"],lang),lang,base)}</p></div><div class="mechanic-line action"><span>{t("DO","대응")}</span><p>{link_skills(tr(m["action"],lang),lang,base)}</p></div><div class="mechanic-mistake"><b>×</b><div><small>{t("COMMON TRAP","놓치기 쉬운 점")}</small><p>{link_skills(tr(m["mistake"],lang),lang,base)}</p></div></div>{source_details(m["source"],lang)}<details class="diagram-optional"><summary>{t("Open the position sketch","위치 설명 그림 펼치기")}</summary><div class="mechanic-figure" data-stage="2"><div class="figure-top"><span class="micro-label">{t('POSITION MAP','기믹 위치도')}</span><span class="tiny">{t('SCHEMATIC','개념도')}</span></div>{diagram(m['diagram'],lang,uid)}
-      <div class="stage-controls" aria-label="{t('Diagram stage','그림 단계')}">{''.join(f'<button data-stage-choice="{i}" aria-pressed="{str(i==2).lower()}"><small>0{i+1}</small>{label}</button>' for i,label in enumerate([t('Cue','전조'),t('Move','이동'),t('Respond','대응')]))}</div>
-      <p class="diagram-caption">{t('Numbered circles = players · schematic positions, not measured geometry or timings.','숫자 원 = 플레이어 · 실제 거리·타이밍이 아닌 위치 설명입니다.')}</p></div>
-      </details></div></div></article>'''
+      <div class="mechanic-split">{animation(boss,m,lang)}<div class="mechanic-brief"><span class="section-kicker">{t("LOOK → MOVE", "전조 → 대응")}</span><h3>{e(tr(m["title"],lang))}</h3><div class="mechanic-line"><span>{t("CUE","전조")}</span><p>{link_skills(tr(m["cue"],lang),lang,base)}</p></div><div class="mechanic-line action"><span>{t("DO","대응")}</span><p>{link_skills(tr(m["action"],lang),lang,base)}</p></div><div class="mechanic-mistake"><b>×</b><div><small>{t("COMMON TRAP","놓치기 쉬운 점")}</small><p>{link_skills(tr(m["mistake"],lang),lang,base)}</p></div></div>{source_details(m["source"],lang)}{media(boss,m,lang)}</div></div></article>'''
 
 def boss_lab(lang, base, selected=None):
     t=lambda a,b:b if lang=='ko' else a
@@ -109,7 +107,7 @@ def insights(lang, base):
 def boss_teaser(lang,base):
     t=lambda a,b:b if lang=='ko' else a
     root=root_url(base,lang)
-    cards=''.join(f'<a class="boss-teaser-card" style="--boss-color:{b["color"]}" href="{root}dungeons/{b["slug"]}/"><span class="boss-mini media-thumb"><img src="{POSTERS[b["id"]]}" alt="{e(tr(b["name"],lang))}" loading="lazy"><b>▶ {t("GAMEPLAY", "패턴 영상")}</b></span><small>{e(tr(b["dungeon"],lang))}</small><h3>{e(tr(b["name"],lang))} <span>↗</span></h3><p>{e(tr(b["hook"],lang))}</p></a>' for b in BOSSES)
+    cards=''.join(f'<a class="boss-teaser-card" style="--boss-color:{b["color"]}" href="{root}dungeons/{b["slug"]}/"><span class="boss-mini" data-stage="2">{diagram(b['mechanics'][0]['diagram'],lang,'teaser-'+b['id'],True)}</span><small>{e(tr(b["dungeon"],lang))}</small><h3>{e(tr(b["name"],lang))} <span>↗</span></h3><p>{e(tr(b["hook"],lang))}</p></a>' for b in BOSSES)
     return f'<section class="boss-teasers"><div class="section-heading compact"><div><span class="section-kicker">02 / BOSS MECHANICS</span><h2>{t("See the mechanic. Know the move.","기믹을 보고, 움직임을 익히세요.")}</h2></div><a class="text-link" href="{root}dungeons/">{t("All bosses","모든 보스")} ↗</a></div><div class="boss-teaser-grid">{cards}</div></section>'
 
 def source_registry(lang):
