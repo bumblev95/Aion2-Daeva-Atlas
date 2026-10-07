@@ -1,4 +1,4 @@
-name: Validate field guide
+name: Validate RAIDNOTE
 on:
   push:
     branches: [main]
@@ -19,4 +19,5 @@ jobs:
       - run: python build.py
       - run: python validate.py
       - run: node --check assets/app.js
+      - run: node --check assets/explorer.js
       - run: git diff --exit-code -- docs

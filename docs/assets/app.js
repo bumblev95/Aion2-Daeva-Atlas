@@ -1,6 +1,8 @@
 (() => {
   'use strict';
   const ko = document.documentElement.lang === 'ko';
+  document.addEventListener('keydown', e => { if(e.key === '/' && !e.ctrlKey && !e.metaKey && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { const target=document.querySelector('.header-search');if(target){e.preventDefault();location.href=target.href;} } });
+  document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href'));if(d?.tagName==='DETAILS')d.open=true;}));
   const t = (en, kr) => ko ? kr : en;
   const base = document.body.dataset.base;
   const menu = document.querySelector('[data-menu]');
@@ -76,7 +78,7 @@
       selects.forEach(s=>{
         const c=data.find(v=>v.id===s.value); const panel=document.createElement('section');panel.className='compare-panel';
         const title=document.createElement('h2');title.textContent=ko?c.ko:c.en;
-        const tag=document.createElement('span');tag.className='tag';tag.textContent=`${label(c.role)} · ${label(c.range)}`;panel.append(tag,title);
+        const tag=document.createElement('span');tag.className='tag';tag.textContent=`${label(c.role)} · ${label(c.range)}`;panel.append(tag,title);const art=document.createElement('div');art.className='compare-visual';const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 48 48');svg.setAttribute('class','icon');svg.setAttribute('aria-hidden','true');const use=document.createElementNS(svg.namespaceURI,'use');use.setAttribute('href',base+'assets/icons.svg#'+c.icon);svg.append(use);art.append(svg);panel.append(art);
         [[t('Playstyle','플레이스타일'),c.identity],[t('A good fit if…','이런 분에게'),c.fit],[t('Consider the trade-off','고려할 점'),c.trade],[t('Try this first','첫 연습'),c.practice]].forEach(([name,text])=>{const h=document.createElement('h3');h.textContent=name;const p=document.createElement('p');p.textContent=text[ko?1:0];panel.append(h,p);});
         const a=document.createElement('a');a.className='text-link';a.href=base+(ko?'ko/':'')+'classes/'+c.id+'/';a.textContent=t('Read the class guide →','직업 가이드 읽기 →');panel.append(a);comparison.append(panel);
       });
@@ -114,10 +116,10 @@
     function updateProgress(){const done=tasks.filter(t=>t.done).length;document.querySelector('[data-progress-text]').textContent=t(`${done} of ${tasks.length} complete`,`${tasks.length}개 중 ${done}개 완료`);document.querySelector('[data-progress-fill]').style.width=(tasks.length?done/tasks.length*100:0)+'%';}
     document.querySelector('[data-task-form]').addEventListener('submit',e=>{e.preventDefault();const input=document.querySelector('#new-task');const value=input.value.trim();if(!value)return;if(tasks.length>=50){status.textContent=t('Limit: 50 tasks. Remove a task before adding another.','최대 50개입니다. 기존 항목을 지운 뒤 추가하세요.');return;}tasks.push({id:'custom-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),text:value.slice(0,160),done:false});input.value='';save();render();input.focus();});
     document.querySelector('[data-reset-checks]').addEventListener('click',()=>{tasks.forEach(x=>x.done=false);save();render();});
-    document.querySelector('[data-export]').addEventListener('click',()=>{const text=tasks.map(x=>`${x.done?'[x]':'[ ]'} ${Array.isArray(x.text)?x.text[ko?1:0]:x.text}`).join('\n');const url=URL.createObjectURL(new Blob(['Daeva Atlas — personal session plan\n\n'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='daeva-atlas-plan.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+    document.querySelector('[data-export]').addEventListener('click',()=>{const text=tasks.map(x=>`${x.done?'[x]':'[ ]'} ${Array.isArray(x.text)?x.text[ko?1:0]:x.text}`).join('\n');const url=URL.createObjectURL(new Blob(['RAIDNOTE — personal session plan\n\n'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='raidnote-plan.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
     document.querySelectorAll('[data-budget]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-budget]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const total=Number(b.dataset.budget);const plan=[[5,t('Review your goal and settings','목표와 설정 확인')],[total-10,t('Practise or progress toward one chosen goal','정한 목표 하나를 연습하거나 진행')],[5,t('Record what worked and your next step','도움이 된 점과 다음 목표 기록')]];const target=document.querySelector('[data-session-plan]');target.replaceChildren();plan.forEach(([minutes,label])=>{const row=document.createElement('div');row.className='session-block';const time=document.createElement('strong');time.textContent=minutes+'′';const p=document.createElement('p');p.textContent=label;row.append(time,p);target.append(row);});}));
     render();document.querySelector('[data-budget="30"]').click();
     if(canSave)status.textContent=t('Saved only in this browser. No account needed.','이 브라우저에만 저장됩니다. 계정은 필요하지 않습니다.');
   }
-  document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('daeva-atlas-planner-v1');document.querySelector('[data-clear-status]').textContent=t('Your saved planner has been deleted from this browser.','이 브라우저의 저장된 플래너를 삭제했습니다.');}catch{document.querySelector('[data-clear-status]').textContent=t('Use your browser settings to clear site data.','브라우저 설정에서 사이트 데이터를 삭제하세요.');}});
+  document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('daeva-atlas-planner-v1');localStorage.removeItem('raidnote-aion2-class-v1');document.querySelector('[data-clear-status]').textContent=t('Your saved planner and class have been deleted from this browser.','이 브라우저의 저장된 플래너와 직업을 삭제했습니다.');}catch{document.querySelector('[data-clear-status]').textContent=t('Use your browser settings to clear site data.','브라우저 설정에서 사이트 데이터를 삭제하세요.');}});
 })();
