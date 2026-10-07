@@ -56,6 +56,11 @@
     const zone=maps.querySelector('[data-map-zone]');
     const options=[...zone.options];
     const frame=maps.querySelector('[data-map-frame]');
+    const preview=maps.querySelector('[data-map-preview]');
+    const overview=maps.querySelector('[data-map-overview]');
+    const interactive=maps.querySelector('[data-map-interactive]');
+    const status=maps.querySelector('[data-map-status]');
+    let mapView='overview';let zoom=1;
     const query=new URLSearchParams(location.search);
     const requested=options.find(o=>o.value===query.get('zone'));
     let faction=requested?.dataset.faction || (query.get('faction')==='asmodian'?'asmodian':'elyos');
@@ -64,13 +69,34 @@
       options.forEach(o=>{o.hidden=o.dataset.faction!==faction;o.disabled=o.hidden;});
       maps.querySelectorAll('button[data-faction]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.faction===faction)));
       const src=`https://aion2.th.gl/embed/maps/${encodeURIComponent(zone.value)}`;
-      if (frame.getAttribute('src')!==src) frame.src=src;
+      frame.dataset.mapSrc=src;
+      if (mapView==='interactive' && frame.getAttribute('src')!==src) frame.src=src;
+      preview.src=zone.selectedOptions[0].dataset.preview;
+      preview.alt=zone.selectedOptions[0].textContent.split(' · ')[0]+t(' terrain preview — The Hidden Gaming Lair',' 지형 미리보기 — The Hidden Gaming Lair');
+      zoom=1;preview.style.width='100%';maps.querySelector('[data-map-zoom-label]').textContent='100%';
       frame.title=t('Interactive AION 2 map — ','아이온 2 인터랙티브 지도 — ')+zone.selectedOptions[0].textContent.split(' · ')[0];
       maps.querySelector('[data-map-external]').href=`https://aion2.th.gl/maps/${encodeURIComponent(zone.value)}`;
       maps.querySelector('[data-map-route]').textContent=faction==='elyos'?t('Elyos  /  Poeta → Verteron','천족  /  포에타 → 베르테론'):t('Asmodian  /  Ishalgen → Altgard','마족  /  이스할겐 → 알트가르드');
       updateQuery([['faction',faction],['zone',zone.value]]);
     }
     maps.querySelectorAll('button[data-faction]').forEach(b=>b.addEventListener('click',()=>{faction=b.dataset.faction;zone.value=faction==='elyos'?'Poeta':'Ishalgen';render();}));
+    maps.querySelectorAll('[data-map-view]').forEach(button=>button.addEventListener('click',()=>{
+      const next=button.dataset.mapView;
+      if (next==='interactive') {
+        const canvas=document.createElement('canvas');let supported=false;
+        try {const gl=canvas.getContext('webgl2');supported=!!gl;gl?.getExtension('WEBGL_lose_context')?.loseContext();}catch{/* Use terrain view. */}
+        if(!supported){status.textContent=t('This browser cannot display the marker map. The terrain preview is available; open the full map in a supported browser.','이 브라우저에서는 마커 지도를 표시할 수 없어요. 지형 미리보기를 이용하거나 지원되는 브라우저에서 큰 지도를 열어주세요.');return;}
+      }
+      mapView=next;overview.hidden=next!=='overview';interactive.hidden=next!=='interactive';
+      maps.querySelectorAll('[data-map-view]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+      maps.querySelector('.map-zoom-controls').hidden=next!=='overview';
+      status.textContent=next==='overview'?t('Terrain preview. Open the marker map for exact locations.','지형 미리보기입니다. 정확한 위치는 마커 지도에서 찾으세요.'):t('Use the map’s own filters to choose markers.','지도 안의 필터에서 원하는 마커를 고르세요.');
+      if(next==='interactive')frame.src=frame.dataset.mapSrc;else frame.removeAttribute('src');
+    }));
+    maps.querySelectorAll('[data-map-zoom]').forEach(b=>b.addEventListener('click',()=>{
+      zoom=b.dataset.mapZoom==='reset'?1:Math.min(3,Math.max(1,zoom+(b.dataset.mapZoom==='in'?.5:-.5)));
+      preview.style.width=`${zoom*100}%`;maps.querySelector('[data-map-zoom-label]').textContent=`${zoom*100}%`;
+    }));
     zone.addEventListener('change',render);
     render();
   }
@@ -131,11 +157,7 @@
     box.querySelector('[data-video-start]').addEventListener('click',()=>play(box));
     box.querySelector('[data-replay-video]').addEventListener('click',()=>play(box));
     box.querySelector('[data-stop-media]').addEventListener('click',()=>{stop(box);box.querySelector('[data-video-start]').focus();});
-    box.querySelector('[data-kr-clip]')?.addEventListener('click',event=>{
-      const mount=prepare(box);const img=document.createElement('img');img.src=event.currentTarget.dataset.krClip;
-      img.alt=t('Original KR gameplay loop — Nirr / Inven','한국판 실제 플레이 반복 장면 — Nirr / 인벤');
-      img.addEventListener('error',()=>{mount.textContent=t('Clip could not load. Use the linked source or YouTube chapter.','장면을 불러오지 못했어요. 원문 또는 YouTube 챕터를 이용하세요.');});mount.append(img);
-    });
+
   });
   document.addEventListener('codex:mechanic-change',()=>media.filter(box=>box.closest('[hidden]')).forEach(stop));
   document.addEventListener('visibilitychange',()=>{if(document.hidden)media.forEach(stop);});
