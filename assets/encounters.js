@@ -43,6 +43,7 @@
       u.searchParams.set('stage', stage);
       history.replaceState(null, '', u);
       syncLanguage(u);
+      document.dispatchEvent(new CustomEvent('codex:mechanic-change'));
     }
     lab.querySelectorAll('[data-boss-choice]').forEach(b => b.addEventListener('click', () => {
       boss = b.dataset.bossChoice; mechanic = ''; stage = '2'; render();
@@ -92,7 +93,7 @@
         const classes = card.dataset.classes.split(' ').filter(Boolean);
         const matchClass = classInput.value === 'all' || (classInput.value === 'general' ? classes.length === 0 : classes.includes(classInput.value));
         const matchTopic = topic === 'all' || (topic === 'pvp' ? card.dataset.activity === 'pvp' : card.dataset.topic === topic);
-        card.hidden = !(matchClass && matchTopic && (!term || card.textContent.toLocaleLowerCase().includes(term)));
+        card.hidden = !(matchClass && matchTopic && (!term || (card.textContent+' '+[...card.querySelectorAll('[data-skill]')].map(a=>a.title).join(' ')).toLocaleLowerCase().includes(term)));
         if (!card.hidden) count++;
       });
       topics.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.insightTopic === topic)));

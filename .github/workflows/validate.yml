@@ -21,4 +21,5 @@ jobs:
       - run: node --check assets/app.js
       - run: node --check assets/explorer.js
       - run: node --check assets/encounters.js
+      - run: node --check assets/learn.js
       - run: git diff --exit-code -- docs
