@@ -8,7 +8,7 @@ An independent English/Korean game guide platform. AION 2 is the first game hub.
 
 ## Visual interface
 
-The hub opens with six navigation tiles, a four-stage beginner checklist and an eight-class selector. New `/start/`, `/maps/`, `/gear/` and `/skills/` routes explain progression, four zoomable starting maps, item anatomy, six base stats and 17 bilingual skills. Clicking a skill in a community tip opens an accessible dialog with a static full-page fallback. Overview, combat practice, gear checks and Korean community tips share a class panel, with PvE/PvP context and an illustrative positioning diagram. Bosses have timestamped gameplay, eight links to source KR gameplay loops, accessible mechanic tabs and shareable links. Original position sketches are secondary disclosures. YouTube uses its own pause/speed controls; switching mechanics unloads hidden players. Community cards filter by class, topic and text, with author/date/source disclosures. Guide pages use step illustrations and expandable sections. The name is game-independent; no additional game hub is advertised before it exists. Existing public URLs are retained.
+The hub has an eight-step interactive first-session tutorial; a complete 280-skill bilingual reference with game icons, class learning paths, and level-aware specialization choices; a 2D map with 384 real quest/travel/dungeon markers, search, panning, zoom, nearest travel points and saved completion; and 16 automatically animated boss lessons. Players can pause, scrub and change animation speed. Reduced motion is respected. Optional source footage is Korean. Existing class comparison, community insights, progression checklist and public URLs are retained. Source-era KR recommendations are separated from Global client facts.
 
 ## Develop
 
@@ -52,9 +52,9 @@ AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enablin
 | `assets/encounters.js` | Mechanic/stage selection, share links and insight filters |
 | `assets/encounters.css` | Responsive boss and insight layouts |
 | `onboarding.py` | Beginner priorities, item anatomy, stats and embedded maps |
-| `skillbook.py` | 17 sourced skill definitions, translated inline links and static documents |
-| `bossmedia.py` | Original media URLs and timestamp provenance |
-| `assets/learn.js` / `assets/learn.css` | Checklists, map selection, skill dialog and media lifecycle |
+| `skillbook.py` | 280 client-derived skill entries, icons, build paths, linked dialogs and static documents |
+| `bossmedia.py` | Optional Korean source videos and Inven footage links |
+| `assets/learn.js` / `assets/learn.css` | Legacy checklist, tooltip and accessible skill dialog behavior |
 | `build.py` | Static templates, metadata and sitemap generator |
 | `assets/style.css` | Responsive design, accessibility and print styles |
 | `assets/app.js` | Search, filtering, comparison and local planner |
@@ -62,3 +62,7 @@ AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enablin
 | `docs/` | Generated site deployed by GitHub Pages |
 
 AION 2 and related marks belong to their owners. This project is not affiliated with or endorsed by NC.
+
+New implementation: `firststeps.py`, `growth.py`, `worldmap.py`, `battlelab.py`, `assets/deep-guide.js`, `assets/battle.js` and `assets/deep-guide.css`. Versioned facts are in `data/skills.json` and `data/maps.json`.
+
+Map projection follows the provider’s transform: coordinates are `[vertical, horizontal, altitude]`; source tiles stay on TH.GL CDN and attribution remains visible. Map completion is browser-local and does not change the game. Base skills are 12 active + 10 passive + 13 Stigma per launch class; chain effects live under their parent skill. Point investment stops at level 10; higher target skill levels include equipment, Daevanion and Arcana.

@@ -22,4 +22,6 @@ jobs:
       - run: node --check assets/explorer.js
       - run: node --check assets/encounters.js
       - run: node --check assets/learn.js
+      - run: node --check assets/deep-guide.js
+      - run: node --check assets/battle.js
       - run: git diff --exit-code -- docs
