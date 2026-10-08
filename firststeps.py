@@ -1,46 +1,37 @@
-"""A short, interactive first-session lesson. All diagrams are teaching examples."""
-from html import escape as e
+"""Practical starting priorities without simulated gameplay or lesson gates."""
+from html import escape
 
-# Title, plain concept, action, result, real-game steps, vocabulary.
-LESSONS=[
- ('quest',('Get one task','할 일 하나 받기'),('A quest is a task from the game. It gives you a destination and a reward.','퀘스트는 게임이 주는 심부름이에요. 할 일과 보상이 적혀 있어요.'),('Track Episode','에피소드 추적'),('Your destination is now marked. Follow the selected task.','목적지가 표시됐어요. 이제 선택한 할 일을 따라가면 돼요.'),
- [('Open the quest menu and choose an Episode quest.','게임의 퀘스트 메뉴에서 에피소드를 선택하세요.'),('Read the objective, then use its tracking or destination control.','무엇을 하라는지 읽고 추적·목적지 표시를 누르세요.')],
- [('Episode','에피소드',('The main story. It unlocks areas and systems.','새 지역과 기능을 여는 메인 이야기예요.')),('NPC','NPC',('A character controlled by the game, not another player.','다른 유저가 아니라 게임이 조종하는 인물이에요.'))]),
- ('fight',('Attack, then check your health','공격하고 내 체력 보기'),('The enemy loses HP when you hit it. Your red HP bar is how much damage you can still take.','때리면 적의 생명력(HP)이 줄어요. 내 빨간 HP 막대는 앞으로 버틸 수 있는 양이에요.'),('Use an attack','공격 스킬 사용'),('The enemy lost health. Your MP also fell: some skills spend this resource.','적의 체력이 줄었어요. 내 정신력(MP)도 줄었죠? 일부 스킬은 이 자원을 써요.'),
- [('Find a quest enemy and select it. Use a skill that is in range.','퀘스트에 표시된 적을 선택하고, 닿는 거리에서 공격 스킬을 써보세요.'),('Watch your HP and MP. Move away from danger before continuing.','내 HP와 MP를 보세요. 위험한 공격을 피한 뒤 다시 공격하세요.')],
- [('HP','생명력',('Reaching zero means your character falls.','0이 되면 캐릭터가 쓰러져요.')),('MP','정신력',('A resource used by some skills; some attacks restore it.','일부 스킬의 사용 재료예요. 회복해주는 공격도 있어요.'))]),
- ('dodge',('Move out of the red area','빨간 바닥에서 나오기'),('A colored area can warn where the next hit will land. Watch the ground as well as the enemy.','색칠된 바닥은 다음 공격이 닿을 곳을 알려주기도 해요. 적뿐 아니라 바닥도 보세요.'),('Move to the safe side','안전한 쪽으로 이동'),('You moved before the attack landed. Now attack again.','공격이 터지기 전에 나왔어요. 그다음 다시 공격하면 돼요.'),
- [('Practise moving sideways while keeping the enemy visible.','적이 화면에 보이게 유지하면서 옆으로 움직여보세요.'),('Find your dodge and jump bindings in control settings. Some boss patterns need a jump, not a dodge.','조작 설정에서 내 회피·점프 키를 확인하세요. 점프로 넘어야 하는 보스 공격도 있어요.')],
- [('Telegraph','장판·전조',('A warning of an incoming attack. Not every attack has one.','곧 올 공격을 미리 보여주는 표시예요. 모든 공격에 있는 건 아니에요.')),('Cooldown','재사용 시간',('The wait before you can press the same skill again.','같은 스킬을 다시 누를 수 있을 때까지 기다리는 시간이에요.'))]),
- ('reward',('Finish and collect the reward','완료하고 보상 받기'),('Doing the task and collecting its reward are separate steps. The next quest may wait for that reward.','심부름을 끝내는 것과 보상을 받는 것은 별개예요. 보상을 받아야 다음 이야기가 열리기도 해요.'),('Claim the quest reward','퀘스트 보상 받기'),('EXP grows your character level. Gear goes into your inventory.','경험치는 캐릭터 레벨을 올려줘요. 받은 장비는 가방에서 확인해요.'),
- [('Return to the marked destination or open the completed quest.','표시된 보고 장소로 가거나 완료된 퀘스트를 여세요.'),('Confirm the reward and check that the next Episode objective appears.','보상을 받고 다음 에피소드 목표가 생겼는지 확인하세요.')],
- [('EXP','경험치',('Progress toward your next character level.','모으면 캐릭터 레벨이 올라가요.')),('Kinah','키나',('The game’s ordinary money. You use it for several upgrades.','게임의 기본 돈이에요. 여러 성장 메뉴에서도 써요.'))]),
- ('equip',('Put the new item on','새 장비 입기'),('An item sitting in your bag does not strengthen you. Equipment works when it is in its character slot.','가방에만 있는 장비는 나를 강하게 해주지 않아요. 캐릭터의 해당 부위에 착용해야 해요.'),('Equip the new weapon','새 무기 장착'),('The weapon moved to the equipped slot. Check its attack and requirements before replacing the old one.','무기가 착용 칸으로 갔어요. 교체 전에는 공격력과 착용 조건을 비교하세요.'),
- [('Open Inventory and select the quest reward.','가방을 열고 방금 받은 장비를 선택하세요.'),('Compare the same equipment slot, check class restrictions, then choose Equip.','같은 부위의 기존 장비와 비교하고 직업 제한을 확인한 뒤 장착하세요.')],
- [('Item level','아이템 레벨',('A number describing equipment, separate from your character level.','장비의 수준이에요. 내 캐릭터 레벨과는 달라요.')),('Enhancement','강화',('Spending materials to improve an item you own.','이미 가진 장비를 재료를 써서 더 좋게 만드는 거예요.'))]),
- ('skill',('Spend a skill point','스킬 포인트 써보기'),('A skill is an action. A skill point raises that skill. Your character level and the skill’s level are different.','스킬은 캐릭터가 하는 기술이에요. 스킬 포인트로 그 기술을 키워요. 캐릭터 레벨과 스킬 레벨은 달라요.'),('Raise the selected skill','선택한 스킬 레벨 올리기'),('Skill Lv. 1 → 2. The point was spent on this skill, not on your character level.','스킬 레벨이 1 → 2가 됐어요. 캐릭터 레벨이 아니라 이 기술이 성장한 거예요.'),
- [('Open Skills in game. Use the My skills & build link below to find your class’s first priorities.','게임에서 스킬 메뉴를 여세요. 아래 ‘내 직업 스킬·빌드’ 링크에서 먼저 키울 기술을 확인하세요.'),('Select that skill, check the cost and increase its level when allowed.','해당 기술을 고르고 필요한 포인트를 확인한 뒤 올리세요. 잠겨 있으면 표시된 조건을 먼저 채우세요.')],
- [('Passive','패시브',('A learned effect that works without pressing an attack button.','공격 버튼을 누르지 않아도 적용되는 배운 효과예요.')),('Stigma','스티그마',('An extra skill you choose and equip after the system unlocks.','시스템이 열리면 골라 장착하는 추가 기술이에요.'))]),
- ('travel',('Keep a way back','돌아올 거점 챙기기'),('A Kibelisk is a travel point. Find and activate it in the game as your quest takes you past it.','키벨리스크는 이동 거점이에요. 퀘스트 길에 보이면 게임에서 활성화해두세요.'),('Activate this travel point','이동 거점 활성화'),('The stop is checked in this practice. Use the map guide to find real locations.','연습 거점에 확인 표시가 생겼어요. 실제 위치는 지도에서 찾아보세요.'),
- [('Choose Elyos or Asmodian and your current region in our map.','이 사이트 지도에서 천족·마족과 현재 지역을 선택하세요.'),('Select a Kibelisk marker, find it on your in-game map and interact with it.','키벨리스크 마커를 누른 뒤 게임 지도에서 같은 위치를 찾아 상호작용하세요.')],
- [('Faction','진영',('Elyos and Asmodians begin in different regions.','천족과 마족은 시작하는 지역이 달라요.')),('Sealed Dungeon','봉인 던전',('A field activity with permanent-growth materials. Read its entry and reward screen.','성장 재료를 얻는 필드 콘텐츠예요. 입장 조건과 보상을 확인하세요.'))]),
- ('party',('Enter your first party carefully','첫 파티에 들어가기'),('A dungeon is a separate combat area. Party members survive by responding to boss rules together.','던전은 따로 입장하는 전투 공간이에요. 파티원끼리 보스의 규칙에 함께 대응해야 해요.'),('Choose a learning party','초행 가능한 파티 선택'),('Tell the party it is your first run. Watch one boss pattern before entering.','처음이라고 파티에 알려주세요. 입장 전 보스 패턴 하나부터 보고 가세요.'),
- [('Read the dungeon difficulty and entry requirement; choose a group that welcomes first runs.','던전 난이도와 입장 조건을 보고 초행을 받는 파티를 고르세요.'),('Open our boss guide: watch the cue, where you move, and what ends the attack.','보스 가이드에서 전조 → 이동 위치 → 공격이 끝나는 순간을 순서대로 보세요.')],
- [('Tank / healer / damage','탱커·힐러·딜러',('Roles: manage enemy attention, restore allies, or deal damage. Everyone still avoids mechanics.','적의 시선을 관리하거나, 아군을 회복하거나, 피해를 주는 역할이에요. 누구나 기믹은 피해야 해요.')),('Stagger','그로기',('A boss disruption system. Some phases require skills that damage its stagger gauge.','보스를 무력화하는 시스템이에요. 특정 구간에는 그로기 게이지를 깎는 기술이 필요해요.'))]),
+TOPICS = [
+    ('progress', ('Main progression and travel', '메인 진행과 동선'),
+     ('Use the Episode quest as your route; check prerequisites when progress stops.', '메인 에피소드를 진행 축으로 잡고, 막힌 구간에서는 선행 조건부터 확인합니다.'),
+     ('Include travel points and nearby growth content in that route. Compare the reward before making a long detour.', '이동 거점과 동선 근처 성장 콘텐츠를 함께 챙기는 방식입니다. 멀리 우회할 콘텐츠는 보상을 먼저 비교합니다.'),
+     ('Identify the blocked requirement before spending more time grinding.', '다음 퀘스트가 막힌 이유를 확인하지 않은 채 사냥량만 늘리는 것은 비효율적입니다.'),
+     'maps/', ('Check locations on the map', '지도에서 위치 확인')),
+    ('skills', ('Skill investment priorities', '스킬 투자 순서'),
+     ('Start with your class’s core skills and their conditions, then decide where points go.', '주력 스킬과 발동 조건을 먼저 파악한 뒤 포인트 투자 순서를 정합니다.'),
+     ('The class build guide covers early priorities, passive effects and Stigma choices. Allocated points and total skill level are separate checks.', '직업별 빌드에서 우선 투자할 기술·패시브·스티그마를 함께 확인할 수 있습니다. 직접 투자한 포인트와 합계 스킬 레벨은 구분해야 합니다.'),
+     ('A rotation makes more sense when its trigger conditions, range and cooldowns are clear.', '딜 사이클만 외우기보다 어떤 조건에서 기술이 연결되는지 알아야 실제 전투에 적용하기 쉽습니다.'),
+     'skills/', ('Class skills and investment order', '직업별 스킬·투자 순서')),
+    ('gear', ('Equipment and enhancement', '장비 교체와 강화'),
+     ('Compare the same equipment slot and the options that help your current goal.', '같은 부위의 장비를 비교하고, 현재 필요한 옵션과 교체 계획을 기준으로 강화 여부를 판단합니다.'),
+     ('Separate entry requirements from survival, accuracy and damage. Identify the problem an upgrade is meant to solve before spending materials.', '입장 조건을 맞추려는 것인지, 생존·명중·피해량을 보완하려는 것인지 먼저 구분합니다. 강화 비용은 해결하려는 문제와 함께 봐야 합니다.'),
+     ('A higher equipment score alone does not explain whether its options suit your build.', '장비 점수가 높다는 이유만으로 현재 세팅에 모든 옵션이 유효한 것은 아닙니다.'),
+     'gear/', ('Equipment stats and upgrade decisions', '장비·스탯·강화 판단')),
+    ('party', ('Preparing for a first dungeon', '첫 던전 준비'),
+     ('Match the difficulty and party expectations, then review the mechanics that can end a run.', '난이도·입장 조건·파티 모집 조건을 확인한 뒤, 전멸이나 큰 손실로 이어지는 패턴부터 파악합니다.'),
+     ('A useful boss guide answers three questions: what is the cue, where do I move, and what is my role?', '보스 공략은 전조가 무엇인지, 어디로 이동하는지, 내 역할이 무엇인지로 나눠 보면 핵심이 명확해집니다.'),
+     ('A power figure in a recruitment post is that party’s condition, not a universal recommendation.', '모집글의 전투력 수치는 해당 파티의 조건입니다. 모든 서버·난이도에 적용되는 권장 컷으로 해석하지 않습니다.'),
+     'dungeons/', ('Boss mechanics and movement', '보스별 패턴·이동 위치')),
 ]
 
-def tutorial(lang,base):
- t=lambda a,b:b if lang=='ko' else a;r=base+('ko/' if lang=='ko' else '')
- options=''.join(f'<option value="{key}">{i+1:02} / 08 · {title[lang=="ko"]}</option>' for i,(key,title,*_) in enumerate(LESSONS))
- nav=''.join(f'<button data-lesson-pick="{key}" aria-pressed="{str(i==0).lower()}"><span>{i+1:02}</span>{title[lang=="ko"]}<b data-lesson-done="{key}"></b></button>' for i,(key,title,*_) in enumerate(LESSONS))
- panels=''
- for i,(key,title,concept,action,result,steps,vocab) in enumerate(LESSONS):
-  extra= '<div class="mock-quest"><b>◆ '+t('EPISODE','에피소드')+'</b><p>'+t('Speak to the marked character','표시된 인물에게 말 걸기')+'</p><small>EXP +　◇ '+t('Quest reward','퀘스트 보상')+'</small></div>'
-  if key in ['fight','dodge']:extra='<div class="mock-enemy">♜<span>'+t('ENEMY','적')+'</span><i></i></div><div class="mock-danger"></div><div class="mock-player">'+t('YOU','나')+'</div><div class="mock-hp"><b>HP</b><i></i><b>MP</b><i></i></div>'
-  if key=='reward':extra='<div class="mock-loot"><span>✦</span><strong>EXP</strong><span>◇</span><strong>'+t('GEAR','장비')+'</strong><span>◎</span><strong>'+t('KINAH','키나')+'</strong></div>'
-  if key=='equip':extra='<div class="mock-bag"><span>'+t('INVENTORY','가방')+'</span><b>⚔</b><i>→</i><span>'+t('EQUIPPED','착용 칸')+'</span><b>□</b></div>'
-  if key=='skill':extra='<div class="mock-skill"><span>✦</span><b>'+t('Chosen skill','선택한 기술')+'</b><strong>Lv. <em>1</em></strong><small>'+t('Available points','남은 포인트')+' <em>1</em></small></div>'
-  if key=='travel':extra='<div class="mock-travel"><i>◇</i><b>⌖</b><i>◇</i><p>'+t('KIBELISK','키벨리스크')+'</p></div>'
-  if key=='party':extra='<div class="mock-party"><span>♜</span><span>✚</span><span>⚔</span><span>✦</span><span>➶</span><p>'+t('FIRST RUN WELCOME','초행 환영')+'</p></div>'
-  panels+=f'''<section data-lesson="{key}" {'hidden' if i else ''}><div class="lesson-copy"><span class="section-kicker">LESSON {i+1:02} / 08</span><h2>{title[lang=='ko']}</h2><p>{concept[lang=='ko']}</p></div><div class="lesson-demo" data-demo="{key}"><small>{t('PRACTICE SCREEN · simplified illustration','연습 화면 · 이해를 돕는 예시')}</small><div class="mock-scene">{extra}</div><button class="btn primary" data-lesson-action>{action[lang=='ko']} →</button><p class="lesson-result" data-lesson-result hidden>{result[lang=='ko']}</p></div><div class="real-game"><h3>{t('Now try it in the game','이제 게임에서 해보세요')}</h3><ol>{''.join('<li>'+x[lang=='ko']+'</li>' for x in steps)}</ol></div><div class="lesson-words">{''.join(f'<details><summary>{ko if lang=="ko" else en} <span>?</span></summary><p>{desc[lang=="ko"]}</p></details>' for en,ko,desc in vocab)}</div><button class="btn lesson-next" data-lesson-next>{t('I understand · next','이해했어요 · 다음')} →</button></section>'''
- return f'''<div class="lesson-intro"><h2>{t('Learn the basics, one step at a time.','처음 배우는 조작, 하나씩 해보세요.')}</h2><p>{t('Eight short lessons. Choose a lesson, or follow along in order.','짧은 연습 8개예요. 필요한 단계를 고르거나 순서대로 따라가세요.')}</p></div><section class="first-session" data-tutorial><label class="lesson-mobile">{t("Learning step", "학습 단계")}<select data-lesson-select>{options}</select></label><nav class="lesson-nav" aria-label="{t('Beginner lessons','초보 학습 단계')}">{nav}</nav><div class="lesson-body">{panels}<p class="tutorial-finish" data-tutorial-finish hidden>{t('Ready for the next step. Choose your class and plan your first skill points.','기본 흐름을 익혔어요. 이제 내 직업을 고르고 스킬 포인트 순서를 확인해보세요.')} <a href="{r}skills/">{t('Choose my class','내 직업 고르기')} →</a></p><div class="tutorial-progress"><span data-lesson-progress role="status"></span><button class="text-link" data-lesson-reset>{t('Start over','처음부터')}</button></div></div></section>'''
+def overview(lang, base):
+    ko=lang=='ko';t=lambda en,kr:kr if ko else en;r=base+('ko/' if ko else '')
+    cards=[]
+    for i,(key,title,priority,reason,caution,url,label) in enumerate(TOPICS):
+        cards.append(f'''<article class="start-topic" id="core-{key}"><div class="start-topic-title"><span>{i+1:02}</span><h3>{escape(title[ko])}</h3></div><p class="start-priority">{escape(priority[ko])}</p><p>{escape(reason[ko])}</p><p class="start-caution">{escape(caution[ko])}</p><a href="{r}{url}">{escape(label[ko])} →</a></article>''')
+    distinctions=[
+      (('Character level / skill level','캐릭터 레벨 / 스킬 레벨'),('Character progression and the level of an individual skill are different. Each skill has its own requirements and costs.','캐릭터의 성장 단계와 개별 기술의 레벨은 다릅니다. 스킬 투자에는 해당 기술의 조건과 비용이 따로 적용됩니다.')),
+      (('Item level / useful options','아이템 레벨 / 유효 옵션'),('Equipment level, equip requirements and useful options answer different questions. Compare the same slot and purpose.','장비 수준·착용 조건·옵션의 효율은 별개입니다. 같은 부위와 목적의 장비끼리 비교해야 합니다.')),
+      (('Stigma / Arcana','스티그마 / 아르카나'),('Stigma belongs to skill setup. Arcana is equipment, not a skill in a rotation.','스티그마는 스킬 세팅, 아르카나는 장비에 해당합니다. 아르카나 이름을 딜 사이클에 사용하는 기술과 혼동하지 않습니다.'))]
+    terms=''.join(f'<div><dt>{escape(label[ko])}</dt><dd>{escape(copy[ko])}</dd></div>' for label,copy in distinctions)
+    return f'''<section class="start-reference"><header class="start-reference-heading"><h2>{t('Four priorities for a first character','첫 캐릭터 육성의 핵심 4가지')}</h2><p>{t('Progression, skills, equipment and dungeon preparation — with a direct link to each detailed guide.','메인 진행, 스킬 투자, 장비 판단, 던전 준비를 기준으로 정리했습니다. 필요한 항목에서 상세 공략으로 이어집니다.')}</p></header><div class="start-topic-grid">{''.join(cards)}</div><section class="start-distinctions"><h2>{t('Distinctions that affect your build','세팅할 때 혼동하기 쉬운 구분')}</h2><dl>{terms}</dl></section></section>'''

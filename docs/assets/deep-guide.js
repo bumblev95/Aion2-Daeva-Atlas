@@ -4,21 +4,6 @@
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
  const save=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
  const query=changes=>{const u=new URL(location.href);Object.entries(changes).forEach(([k,v])=>v?u.searchParams.set(k,v):u.searchParams.delete(k));history.replaceState(null,'',u);const a=document.querySelector('.lang');if(a){const other=new URL(a.href);other.search=u.search;other.hash=u.hash;a.href=other.href;}};
- const tutorial=document.querySelector('[data-tutorial]');
- if(tutorial){
-  const panels=[...tutorial.querySelectorAll('[data-lesson]')],key='players-codex-lessons-v1';
-  let done=read(key,[]);if(!Array.isArray(done))done=[];let index=0;
-  const pick=()=>{const select=tutorial.querySelector('[data-lesson-select]');if(select)select.value=panels[index].dataset.lesson;panels.forEach((p,i)=>p.hidden=i!==index);tutorial.querySelectorAll('[data-lesson-pick]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===index));b.querySelector('b').textContent=done.includes(b.dataset.lessonPick)?'✓':'';});tutorial.querySelector('[data-lesson-progress]').textContent=t(`${done.length} / 8 understood`,`${done.length} / 8단계 이해했어요`);query({lesson:panels[index].dataset.lesson});};
-  const requested=new URLSearchParams(location.search).get('lesson'),ri=panels.findIndex(p=>p.dataset.lesson===requested);if(ri>=0)index=ri;
-  tutorial.querySelectorAll('[data-lesson-pick]').forEach((b,i)=>b.addEventListener('click',()=>{index=i;pick();}));
-  tutorial.querySelector('[data-lesson-select]')?.addEventListener('change',event=>{index=panels.findIndex(p=>p.dataset.lesson===event.target.value);pick();});
-  panels.forEach((panel,i)=>{
-   panel.querySelector('[data-lesson-action]').dataset.original=panel.querySelector('[data-lesson-action]').textContent;
-   panel.querySelector('[data-lesson-action]').addEventListener('click',event=>{panel.querySelector('[data-demo]').classList.add('is-done');panel.querySelector('[data-lesson-result]').hidden=false;event.currentTarget.textContent=t('✓ Try the same action in game','✓ 게임에서도 해보세요');if(panel.dataset.lesson==='equip')panel.querySelector('.mock-bag b:last-child').textContent='⚔';if(panel.dataset.lesson==='skill')panel.querySelectorAll('.mock-skill em').forEach((el,i)=>el.textContent=i?'0':'2');});
-   panel.querySelector('[data-lesson-next]').addEventListener('click',()=>{if(!done.includes(panel.dataset.lesson))done.push(panel.dataset.lesson);save(key,done);if(i<panels.length-1)index=i+1;else tutorial.querySelector('[data-tutorial-finish]').hidden=false;pick();});
-  });
-  tutorial.querySelector('[data-lesson-reset]').addEventListener('click',()=>{done=[];save(key,done);index=0;panels.forEach(p=>{p.querySelector('[data-demo]').classList.remove('is-done');p.querySelector('[data-lesson-result]').hidden=true;p.querySelector('[data-lesson-action]').textContent=p.querySelector('[data-lesson-action]').dataset.original;if(p.dataset.lesson==='skill')p.querySelectorAll('.mock-skill em').forEach((el,i)=>el.textContent='1');if(p.dataset.lesson==='equip')p.querySelector('.mock-bag b:last-child').textContent='□';});tutorial.querySelector('[data-tutorial-finish]').hidden=true;pick();});pick();
- }
  const library=document.querySelector('[data-skill-library]');
  if(library){
   const cls=library.querySelector('[data-skill-class-filter]'),search=library.querySelector('[data-skill-search-input]'),cards=[...library.querySelectorAll('.skill-card')],p=new URLSearchParams(location.search);

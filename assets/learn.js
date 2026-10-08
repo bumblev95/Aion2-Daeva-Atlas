@@ -32,6 +32,10 @@
       updateQuery([['step',key]]);
     }
     const stage = new URLSearchParams(location.search).get('step');
+    if (stage === 'endgame') {
+      location.replace(document.body.dataset.base + (ko ? 'ko/' : '') + 'endgame/');
+      return;
+    }
     if (buttons.some(b => b.dataset.journeyStage === stage)) select(stage);
     buttons.forEach(b => b.addEventListener('click',() => select(b.dataset.journeyStage)));
     function save() { progress(); try { localStorage.setItem(storeKey,JSON.stringify(checks.filter(c=>c.checked).map(c=>c.dataset.startTask))); } catch { journey.querySelector('[data-start-progress]').textContent += t(' · this visit only',' · 이번 방문에만 저장'); } }
