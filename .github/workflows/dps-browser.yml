@@ -1,20 +1,29 @@
-name: Validate eDPS browser and mobile flows
+name: Validate calculator and patch browser flows
 on:
   pull_request:
     paths:
       - 'assets/dps*.js'
       - 'assets/liveops.css'
+      - 'assets/patchbook.*'
+      - 'assets/news.js'
+      - 'patchbook.py'
+      - 'data/patch-reviews.json'
       - 'data/skills.json'
       - 'data/dps-resources.json'
       - 'dpsrules.py'
       - 'liveops.py'
       - 'tests/dps*.js'
+      - 'tests/patch-ui.test.js'
       - '.github/workflows/dps-browser.yml'
   push:
     branches: [main]
     paths:
       - 'assets/dps*.js'
       - 'assets/liveops.css'
+      - 'assets/patchbook.*'
+      - 'assets/news.js'
+      - 'patchbook.py'
+      - 'data/patch-reviews.json'
       - 'dpsrules.py'
       - 'liveops.py'
 permissions:
@@ -40,6 +49,10 @@ jobs:
         env:
           DPS_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/dps-ui.test.js
+      - name: Verify summary and full patch pages on desktop and phones
+        env:
+          PATCH_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/patch-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
