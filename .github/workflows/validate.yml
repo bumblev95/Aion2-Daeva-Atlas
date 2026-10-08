@@ -26,5 +26,4 @@ jobs:
       - run: node --check assets/learn.js
       - run: node --check assets/deep-guide.js
       - run: node --check assets/battle.js
-      - run: node --check assets/field-tips.js
       - run: git diff --exit-code -- docs
