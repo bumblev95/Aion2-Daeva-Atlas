@@ -8,7 +8,8 @@ const {simulate, conditionKey} = require('../../assets/dps-engine.js');
 const ROOT = path.resolve(__dirname, '../..');
 const FILES = ['assets/dps-engine.js', 'docs/data/dps.json', 'data/skills.json',
   'research/gameplay-evidence.json', 'research/rotation-learning/claims.json',
-  'research/rotation-learning/scenarios.json', 'research/rotation-learning/train.js'];
+  'research/rotation-learning/scenarios.json', 'research/rotation-learning/train.js',
+  'liveops.py','dpsmath.py','dpsrules.py','data/dps-resources.json','data/skill-snapshot.json'];
 const EPS = 1e-8;
 const read = file => JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'));
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
@@ -24,12 +25,31 @@ function provenance() {
 }
 function validateInputs({catalog, skillbook, evidence, claims, curriculum}) {
   assert.equal(catalog.conditionsVerified, true, 'Renew the condition audit first');
+  assert.equal(catalog.damageVerified, true, 'Renew the damage audit first');
   assert.equal(claims.purpose, 'research-only');
   assert.equal(claims.canSeedLiveCalculator, false);
   assert.equal(curriculum.kind, 'synthetic-simulator-curriculum');
   assert.equal(curriculum.isCombatMeasurement, false);
   assert.equal(evidence.rankVerified, false);
+  const profile = curriculum.sharedBuild;
+  assert(profile && profile.equipmentMode === 'shared-stat-inputs', 'Declare the common equipment/stat profile');
+  assert.equal(profile.actualEquipmentVerified, false);
+  assert.equal(profile.skillLevel, 1, 'Only source-backed base-1 math is audited');
+  assert.deepEqual(profile.specializations, []);assert.deepEqual(profile.stigmas, []);
+  assert.equal(profile.passiveDamageIncluded, false);
+  assert.deepEqual(profile.activationPassives, ['fire-mark']);
+  assert.equal(profile.actionSeconds, 1);assert.equal(profile.actionTimesMeasured, false);
+  assert.deepEqual(Object.keys(profile.stats).sort(),['accuracy','attack','crit','critMultiplier','factor'].sort());
+  assert.deepEqual(Object.keys(profile.mechanicsAssumptions).sort(),['region','patch','conditionMode','resourceMode',
+    'fireMarkEnabled','elementsStart','elementEvents','periodicMode','periodicCrit','periodicRefresh','insigniaMode','targetType'].sort());
+  for (const [key,value] of Object.entries({...profile.stats,...profile.mechanicsAssumptions})) {
+    assert.deepEqual(curriculum.base[key],value,'Shared profile mismatch: '+key);
+  }
   const classIds = catalog.classes.map(c => c.id);
+  for(const c of catalog.classes)for(const s of c.skills) {
+    assert.equal(s.skillLevel,profile.skillLevel,'Skill level mismatch: '+s.id);
+    assert.equal(s.cast,profile.actionSeconds,'Action time mismatch: '+s.id);
+  }
   assert(unique(classIds));
   assert(unique(claims.classes.map(c => c.id)));
   assert.deepEqual([...classIds].sort(), claims.classes.map(c => c.id).sort());
@@ -58,6 +78,10 @@ function validateInputs({catalog, skillbook, evidence, claims, curriculum}) {
   for (const split of ['training', 'validation', 'test']) {
     assert(curriculum[split].length > 0);
     for (const scenario of curriculum[split]) {
+      for(const key of Object.keys({...profile.stats,...profile.mechanicsAssumptions})) {
+        assert(!Object.hasOwn(scenario,key) || scenario[key] === curriculum.base[key], 'Scenario changes shared build: '+key);
+      }
+      assert(!Object.hasOwn(scenario,'skills'), 'Scenario cannot replace the common skill model');
       ids.push(scenario.id);
       const input = {...curriculum.base, ...scenario};
       conditions.push(conditionKey(input));
@@ -214,29 +238,48 @@ function splitMetrics(c, curriculum, split, policy) {
       changePercent:baseline.edps > 0 ? (result.edps / baseline.edps - 1) * 100 : null,
       baselineCasts:Object.fromEntries(baseline.breakdown.map(s => [s.id, s.casts])),
       casts:Object.fromEntries(result.breakdown.map(s => [s.id, s.casts])),
+      baselineDamage:Object.fromEntries(baseline.breakdown.map(s=>[s.id,{direct:s.directDamage,periodic:s.periodicDamage,ticks:s.ticks}])),
+      damage:Object.fromEntries(result.breakdown.map(s=>[s.id,{direct:s.directDamage,periodic:s.periodicDamage,ticks:s.ticks}])),
       blocked:Object.fromEntries(result.breakdown.filter(s => s.blocked.length).map(s => [s.id, s.blocked])),
       warnings:result.warnings};
   });
 }
 const meanChange = metrics => metrics.reduce((sum, m) => sum + m.changePercent, 0) / metrics.length;
+function assumptionSensitivity(c, curriculum, policy) {
+  const cases=[['direct-only',{periodicMode:'omit',insigniaMode:'unverified'}],
+    ['overlapping-dots',{periodicRefresh:'stack'}],['critical-dots',{periodicCrit:'normal'}],
+    ['retained-insignias',{insigniaMode:'retain'}]];
+  return cases.map(([id,overrides])=>{
+    // Fixed selected policy; no held-out alternative changes training/selection.
+    const changed={...curriculum,base:{...curriculum.base,...overrides}};
+    const metrics=splitMetrics(c,changed,'test',policy);
+    return {id,overrides,usedForSelection:false,meanChangePercent:meanChange(metrics),
+      meanPolicyEdps:metrics.reduce((sum,m)=>sum+m.policyEdps,0)/metrics.length};
+  });
+}
 function tierAssessment(catalog) {
   const direct = catalog.classes.reduce((sum, c) => sum + c.directCount, 0);
   const active = catalog.classes.reduce((sum, c) => sum + c.conditionAudit.length, 0);
+  const audits=catalog.classes.flatMap(c=>c.damageAudit);
   return {canPublishTiers:false, tiers:null, directDamageCoverage:{included:direct, active, omitted:active-direct},
+    remainingDamageAudit:{noDirectAttack:audits.filter(s=>s.status==='non-offensive').length,
+      chargeInputRequired:audits.filter(s=>s.status==='charge-input-required').length,
+      summonOrTriggerInputRequired:audits.filter(s=>s.status==='input-required').length,
+      knownPeriodicSkills:audits.filter(s=>s.periodic.length).length},
     blockersKo:[
-      `액티브 ${active}개 중 ${active-direct}개의 기본 직접 피해가 없으며, 준비 기술의 0 피해는 실측 결과가 아닙니다.`,
+      `직접 피해 수치 ${direct}/${active}개를 반영했습니다. 나머지는 비공격 기술·차징·소환·덫으로 구분했으며 미확인 피해를 0인 실측 값으로 취급하지 않습니다.`,
       '기본 동작 시간은 임시 값으로, 실제 모션과 평타 캔슬을 측정하지 않았습니다.',
-      '동일 장비 예산·스킬 레벨·특화·패시브를 갖춘 실제 빌드를 비교하지 않았습니다.',
-      '지속 피해·정령 공격·파티 버프·차징 단계·확률 초기화가 보상 모델에서 빠져 있습니다.',
+      '공통 능력치·기본 1레벨·특화/스티그마 없음으로 통일했지만 실제 동일 장비의 최종빌드를 측정하지 않았습니다.',
+      '확인한 지속 피해 수치는 포함했고 첫 틱·치명·갱신·문양 소모는 연구 가정입니다. 정령 공격·버프/방어·차징·확률 초기화는 아직 미완성입니다.',
       'MP는 미검증 모드이며, 제공한 상태 구간은 실제 유지율을 측정한 값이 아닙니다.',
       '한국 공략과 현재 Global의 조건 대응이 미검증이고, 실전 피해 정답 데이터가 없습니다.',
       '검증·테스트에도 같은 불완전한 엔진을 쓰므로 실제 게임의 정확도가 검증된 것은 아닙니다.'
     ],
     blockers:[
-      `${active-direct}/${active} active skills have no default direct-damage seed; helper zero damage is not a measured total.`,
+      `${direct}/${active} active direct terms are modeled; remaining non-attacks, charges, summons and trap triggers are separately audited rather than measured zero damage.`,
       'Default action durations are placeholders, not measured animation/cancel times.',
-      'Equipment, skill levels, specializations and passives are not calibrated to comparable real builds.',
-      'DoT, pet attacks, party buffs, charge stages and reset probabilities remain outside this partial reward model.',
+      'A common stat budget, base-1 level and no-specialization/Stigma profile is enforced; actual identical equipment/endgame builds are not measured.',
+      'Known DoT numbers are included with explicit tick/crit/refresh and Insignia consumption assumptions; pets, buff/defense composition, charges and resets remain incomplete.',
       'MP mode is explicitly unverified; synthetic availability windows are not measured uptime.',
       'KR guide mapping to current Global rules remains unverified; no measured combat target labels exist.',
       'Held-out simulator scenarios share the same incomplete engine; they cannot validate live-game damage.'
@@ -246,11 +289,12 @@ function runResearch(inputs, allowHints) {
   validateInputs(inputs);
   const {catalog, claims, curriculum} = inputs;
   const settings = {generations:10, population:96, eliteFraction:0.15, learningRate:0.65, pseudocount:0.5, seeds:[7,19,41]};
-  const model = {schema:1, kind:'categorical-cross-entropy-policy-search', purpose:'research-only',
+  const model = {schema:2, kind:'categorical-cross-entropy-policy-search', purpose:'research-only',
     trainingReward:'Mean within-class eDPS ratio to the existing catalog priority, over training scenarios only.',
     trainedOnCombatLogs:false, trainedOnCopiedArticleText:false, currentPatchEquivalent:false,
-    authorHintsOptedIn:allowHints, provenance:provenance(), settings, classes:[]};
-  const results = {schema:1, purpose:'research-only', scenarioKind:curriculum.kind,
+    authorHintsOptedIn:allowHints, commonBuildProfile:structuredClone(curriculum.sharedBuild), provenance:provenance(), settings, classes:[]};
+  const results = {schema:2, purpose:'research-only', scenarioKind:curriculum.kind,
+    commonBuildProfile:structuredClone(curriculum.sharedBuild),
     selection:'Training reward only; validation and test never choose a policy or seed.',
     tierAssessment:tierAssessment(catalog), classes:[]};
   for (const c of catalog.classes) {
@@ -275,27 +319,41 @@ function runResearch(inputs, allowHints) {
       projectedHints:hints.map(h => ({ruleId:h.ruleId, policy:h.policy, trainingScore:evaluate.score(h.policy).score})),
       unsupportedFeatures:[...new Set(rules.flatMap(r => r.requiresFeatures))].sort(),
       replicaTestMeanChanges:runs.map(r => ({seed:r.seed,changePercent:meanChange(splitMetrics(c,curriculum,'test',r.policy))})),
+      assumptionSensitivity:assumptionSensitivity(c,curriculum,selected.policy),
       learningStatus:c.skills.length < 2 ? 'no-order-choice-in-partial-catalog' : 'partial-model-policy-search'});
   }
   return {model, results};
 }
 function report(results) {
-  const coverage = results.tierAssessment.directDamageCoverage;
-  const lines = ['# 공략 기반 회전 학습 연구 / Guide-informed rotation learning', '',
-    '이 결과는 공략의 우선순위 후보를 이용해 **부분 시뮬레이터 안에서** 학습한 회전입니다. 실제 전투 로그를 학습하거나 검증된 최적 DPS·직업 티어를 얻은 결과가 아닙니다.', '',
-    '현재 직접 피해 입력은 '+coverage.included+'/'+coverage.active+' 액티브이며 '+coverage.omitted+'개가 빠져 있습니다. 동작 시간도 임시 입력입니다. 아래 개선률은 같은 직업·같은 입력에서 기존 우선순위와 비교한 값이며, 서로 다른 직업의 실제 전투력 차이가 아닙니다.', '',
-    '텍스트는 사람이 검토해 규칙으로 주석 처리했습니다. 원문을 대량 복제하거나 언어 모델을 미세조정하지 않았습니다. 선택적 공략 후보로 탐색을 시작하고, 좋은 후보를 낸 우선순위 위치·대기 값의 확률을 반복 갱신했습니다. 학습 시드 3개와 별도 검증/테스트 시나리오를 사용했습니다. 모델·결과 JSON에 코드와 입력 파일의 SHA-256을 기록합니다.', '',
-    '| 직업 | 직접 피해 범위 | 검증 시나리오 평균 변화 | 테스트 시나리오 평균 변화 | 학습 공간 최적값과의 차이 |',
+  const coverage=results.tierAssessment.directDamageCoverage, audit=results.tierAssessment.remainingDamageAudit;
+  const lines=['# 공통 조건 재학습 / Controlled-profile rotation learning', '',
+    '공략 후보를 이용해 **부분 시뮬레이터 안에서** 다시 학습했습니다. 실제 고수의 전투 로그 학습이나 검증된 최적 DPS·직업 티어가 아닙니다.', '',
+    '## 동일한 입력 조건 / Common build profile', '',
+    results.commonBuildProfile.descriptionKo, '', results.commonBuildProfile.descriptionEn, '',
+    '모든 기술 동작은 1초인 합성 입력입니다. MP 제한은 미검증 모드이며 파티 버프·방어/증폭 합성·실측 장비는 없습니다. 지속 피해는 첫 틱이 한 주기 후, 치명 없음, 재적용 시 기존 효과 교체로 가정합니다. 문양은 각 중첩의 개별 10초 만료와 폭발 시 전체 소모를 가정합니다. 고통의 연쇄 사용 구간은 명시한 합성 외부 구간이며 지속 피해 시간으로 자동 대체하지 않습니다.', '',
+    '## 보완한 피해 수학 / Damage coverage', '',
+    '직접 피해 초기값은 26개에서 '+coverage.included+'/'+coverage.active+'개로 늘었습니다. 별도 확률 효과·MP 회복·지속 피해 문구 때문에 직접 피해를 버리던 필터를 제거했습니다. 방패 강타·타격쇄·고통의 연쇄의 준비 기술도 실제 직접 피해를 계산합니다.', '',
+    '- 직접 공격이 없는 회복/해제/버프: '+audit.noDirectAttack+'개. 누락된 공격 피해로 계산하지 않습니다.',
+    '- 차징: '+audit.chargeInputRequired+'개. 최소/최대 피해만 확인했으며 중간 단계·충전 시간은 미검증입니다. 학습에 넣지 않았습니다.',
+    '- 정령/신성한 기운/혹한의 바람/덫: '+audit.summonOrTriggerInputRequired+'개. 공격 빈도·발동 시각이 확인될 때까지 자동 피해를 지급하지 않습니다.',
+    '- 지속 피해: '+audit.knownPeriodicSkills+'개. 송곳 화살·협공 저주·약화의 낙인·고통의 연쇄의 수치/주기를 별도 시간축으로 계산합니다. 협공 저주의 5초는 공통 Curse 효과 문구에서 해석한 입력이며 별도 지속 시간 검증이 필요합니다.', '',
+    '각 틱은 전투 종료까지만 계산합니다. 공격 불가 구간에도 효과 시간은 흐르며 그 구간의 피해는 사라집니다. 같은 스킬의 갱신 방식과 치명 규칙은 입력 가정이며 적중률 100% 미만에서는 확률적 적용·갱신을 임의로 지급하지 않습니다. 문양 0–5중첩 피해표를 적용하되 소모·갱신 방식은 아직 가정입니다. 원문과 전 항목 조사는 [생성 카탈로그](../../docs/data/dps.json) 및 [계산 규칙](../../dpsmath.py)에 연결됩니다.', '',
+    '## 학습 결과 / Learned policies', '',
+    '각 변화율은 같은 직업·같은 입력에서 기존 우선순위와 비교한 값입니다. 다른 직업끼리 실제 전투력을 비교한 순위가 아닙니다. 학습 시드 3개와 분리한 학습/검증/테스트를 사용하며 학습 점수로만 정책과 시드를 선택합니다. 원문은 사람이 주석 처리한 정성적 순서 후보로만 사용합니다.', '',
+    '| 직업 | 직접 피해 수치 | 검증 평균 변화 | 테스트 평균 변화 | 학습 공간 전수 비교 |',
     '| --- | --- | --- | --- | --- |'];
-  for (const c of results.classes) lines.push(`| ${c.ko} | ${c.directCount}/${c.activeCount} | ${c.validationMeanChangePercent.toFixed(2)}% | ${c.testMeanChangePercent.toFixed(2)}% | ${c.trainingGapToRestrictedOracle === null ? '미확인' : c.trainingGapToRestrictedOracle.toFixed(8)} |`);
-  lines.push('', '0%는 개선을 찾지 못했다는 뜻이며 최적의 실제 직업이라는 뜻이 아닙니다. 정령성은 현재 피해 입력이 냉기 충격 한 개뿐이어서 기술 간 순서를 배울 수 없습니다. 테스트 변화가 음수이면 그대로 실패 결과로 남깁니다.', '',
-    '치유성 개선에는 외부에서 합성 고통의 연쇄 구간이 주어진 상황에서, 피해 0으로 처리된 고통의 연쇄 준비기를 덜 써서 시간을 절약하는 효과가 포함됩니다. 실제 고통의 연쇄의 피해·직접 유지·디버프 가치가 빠져 있으므로 이를 실제 최적 회전이나 향상률로 해석할 수 없습니다. 결과 JSON은 기존/학습 회전의 사용 횟수를 함께 보존해 이 효과를 드러냅니다.', '',
-    '전수 비교의 범위는 현재 들어 있는 기술의 고정 우선순위와 선언된 쿨타임 대기 값뿐입니다. 버프 배율·평타 캔슬·상황별 오프닝·정령 공격·확률 초기화를 포함한 전체 게임의 최적해를 보장하지 않습니다. 살성의 버프 정렬이나 마도성의 차징 대기는 주장 데이터에 기록했지만 현재 보상 함수에 구현하지 않았습니다.', '',
-    'These are learned policies in a partial synthetic simulator, not measured expert rotations or live-game tiers. Text was manually annotated; categorical proposal probabilities were fitted to training rewards. Three seeds and distinct validation/test conditions are retained, including regressions. Exhaustive comparison certifies only the declared static-priority/cooldown-hold family on training scenarios. The same incomplete engine generates every split, so this is robustness testing, not independent combat validation.', '',
+  for(const c of results.classes)lines.push(`| ${c.ko} | ${c.directCount}/${c.activeCount} | ${c.validationMeanChangePercent.toFixed(2)}% | ${c.testMeanChangePercent.toFixed(2)}% | ${c.trainingGapToRestrictedOracle===null?'공간이 커서 미실시':c.trainingGapToRestrictedOracle.toFixed(8)} |`);
+  lines.push('', '0%는 개선을 찾지 못했다는 뜻이고 음수는 테스트 입력에서 손해를 봤다는 뜻입니다. 모든 실패도 그대로 보존합니다. 현재 6–11개 기술의 정적 우선순위를 탐색합니다. 전수 비교 한도(6개)를 넘는 공간은 전수 검증하지 않으며 최적해를 보장하지 않습니다.', '',
+    '고통의 연쇄의 직접/지속 피해를 넣었으므로 이전 보고서의 “피해 0 준비기를 건너뛰어 얻은 개선”을 그대로 재사용하지 않습니다. 신규 결과에는 기존/학습 회전의 사용 횟수·직접 피해·지속 피해·틱 수가 모두 보존됩니다. 정령성은 직접 공격 7개가 들어갔지만 소환 공격 및 실제 원소 획득 시간축은 없어서 융합을 자동 사용할 수 없습니다.', '',
+    '## 미검증 규칙의 민감도 / Assumption sensitivity', '',
+    '아래는 학습한 정책을 그대로 두고 가정만 바꾼 테스트 평균 변화입니다. 재학습이나 시드 선택에는 쓰지 않았습니다. 가정에 따라 변화율이 크게 바뀌면 실제 최적 패턴으로 확정할 수 없습니다.', '',
+    '| 직업 | 직접 피해만 | 지속 피해 독립 중첩 | 지속 피해 치명 허용 | 문양 소모 없음 |',
+    '| --- | --- | --- | --- | --- |');
+  for(const c of results.classes)lines.push('| '+c.ko+' | '+c.assumptionSensitivity.map(x=>x.meanChangePercent.toFixed(2)+'%').join(' | ')+' |');
+  lines.push('', 'English: source-backed base-1 direct terms increased from 26 to 72. Four DoT formulas have real tick scheduling, fight-end truncation and invulnerability suppression. First-tick phase, critical behavior, refresh and Insignia consumption are explicit research assumptions. Charges/summons/traps stay unavailable without verified timing inputs; non-attacks are separately classified. All eight classes share the declared stat and skill-level profile. Categorical proposal distributions are fitted only to training rewards; held-out and sensitivity results never select policies. No independent combat targets, measured gear loadouts or complete damage/animation models exist, so class tiers remain blocked.', '',
     '## 최종 티어가 아직 차단되는 이유 / Tier blockers', '');
-  results.tierAssessment.blockers.forEach((blocker,i) => lines.push('- '+results.tierAssessment.blockersKo[i]+' / '+blocker));
-  lines.push('', '다음 입력은 직업별 동일 장비 예산·스킬 레벨·특화, 실제 동작/적중 시각, MP 수지, 버프·DoT·정령의 공격 시간축, 초기화 반복 실험입니다. 그 입력으로 공략 후보를 다시 학습하고 실제 로그의 사용 횟수·피해 분포를 재현한 뒤 티어를 평가해야 합니다.', '',
-    'Full inputs and independently measured replay targets are required before comparing class tiers. See [claims](claims.json), [model](model.json), [results](results.json), and [reproduction instructions](README.md).', '');
+  results.tierAssessment.blockers.forEach((blocker,i)=>lines.push('- '+results.tierAssessment.blockersKo[i]+' / '+blocker));
+  lines.push('', '재현과 출처: [README](README.md), [claims](claims.json), [공통 입력](scenarios.json), [model](model.json), [results](results.json). 코드와 입력 SHA-256이 바뀌면 저장 결과를 재학습해야 검증을 통과합니다.', '');
   return lines.join('\n');
 }
 function closeNumber(actual, expected) {
@@ -312,6 +370,8 @@ function verifyArtifacts(inputs, model, results) {
   assert.equal(model.currentPatchEquivalent, false);
   assert.equal(results.modelSha256, hash(Buffer.from(jsonText(model))));
   assert.deepEqual(results.tierAssessment, tierAssessment(inputs.catalog));
+  assert.deepEqual(model.commonBuildProfile,inputs.curriculum.sharedBuild);
+  assert.deepEqual(results.commonBuildProfile,inputs.curriculum.sharedBuild);
   assert.deepEqual(model.classes.map(c => c.id), inputs.catalog.classes.map(c => c.id));
   assert.deepEqual(results.classes.map(c => c.id), inputs.catalog.classes.map(c => c.id));
   for (const c of inputs.catalog.classes) {
@@ -345,6 +405,7 @@ function verifyArtifacts(inputs, model, results) {
     closeNumber(row.greedyTrainingScore, evaluate.score(greedyPolicy(c,inputs.curriculum.base.attack)).score);
     assert.deepEqual(row.projectedHints, hints.map(h => ({ruleId:h.ruleId,policy:h.policy,trainingScore:evaluate.score(h.policy).score})));
     assert.deepEqual(row.replicaTestMeanChanges, saved.runs.map(r => ({seed:r.seed,changePercent:meanChange(splitMetrics(c,inputs.curriculum,'test',r.policy))})));
+    assert.deepEqual(row.assumptionSensitivity,assumptionSensitivity(c,inputs.curriculum,selected.policy));
     for (const split of ['training','validation','test']) {
       const metrics = splitMetrics(c, inputs.curriculum, split, selected.policy);
       assert.equal(row[split].length, metrics.length);
@@ -355,6 +416,8 @@ function verifyArtifacts(inputs, model, results) {
         closeNumber(old.changePercent, metrics[i].changePercent);
         assert.deepEqual(old.casts, metrics[i].casts);
         assert.deepEqual(old.baselineCasts, metrics[i].baselineCasts);
+        assert.deepEqual(old.damage, metrics[i].damage);
+        assert.deepEqual(old.baselineDamage, metrics[i].baselineDamage);
         assert.deepEqual(old.blocked, metrics[i].blocked);
         assert.deepEqual(old.warnings, metrics[i].warnings);
       });

@@ -76,7 +76,8 @@ learning.validateInputs(inputs);
 const assessment=learning.tierAssessment(inputs.catalog);
 assert.equal(assessment.canPublishTiers,false);
 assert.equal(assessment.tiers,null);
-assert.deepEqual(assessment.directDamageCoverage,{included:26,active:96,omitted:70});
+assert.deepEqual(assessment.directDamageCoverage,{included:72,active:96,omitted:24});
+assert.deepEqual(assessment.remainingDamageAudit,{noDirectAttack:13,chargeInputRequired:4,summonOrTriggerInputRequired:7,knownPeriodicSkills:4});
 for (const c of inputs.catalog.classes) {
   assert.deepEqual(learning.projectedHints(c,inputs.claims,false),[],'Unverified guides require explicit research opt-in');
   for (const scenario of inputs.curriculum.test) {
@@ -92,6 +93,14 @@ for (const c of inputs.catalog.classes) {
 const bad=structuredClone(inputs);
 bad.claims.classes[0].rules[0].skills.push('condemnation');
 assert.throws(()=>learning.validateInputs(bad),/Wrong class/);
+for(const override of [{attack:2000},{crit:0},{periodicCrit:'normal'},{insigniaMode:'retain'}]) {
+  const changed=structuredClone(inputs);Object.assign(changed.curriculum.training[0],override);
+  assert.throws(()=>learning.validateInputs(changed),/Scenario changes shared build/);
+}
+const highLevel=structuredClone(inputs);highLevel.catalog.classes[0].skills[0].skillLevel=20;
+assert.throws(()=>learning.validateInputs(highLevel),/Skill level mismatch/);
+const staleDamage=structuredClone(inputs);staleDamage.catalog.damageVerified=false;
+assert.throws(()=>learning.validateInputs(staleDamage),/damage audit/);
 const leakage=structuredClone(inputs);
 leakage.curriculum.test[0]=structuredClone(leakage.curriculum.training[0]);
 assert.throws(()=>learning.validateInputs(leakage),/overlap/);

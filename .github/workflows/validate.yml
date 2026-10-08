@@ -20,6 +20,7 @@ jobs:
       - run: python validate.py
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: node tests/dps.test.js
+      - run: node tests/dps-math.test.js
       - run: node tests/rotation-learning.test.js
       - run: node research/rotation-learning/train.js --verify
       - run: node tests/patchbook.test.js
