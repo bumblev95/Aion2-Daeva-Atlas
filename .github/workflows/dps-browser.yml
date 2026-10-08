@@ -1,0 +1,48 @@
+name: Validate eDPS browser and mobile flows
+on:
+  pull_request:
+    paths:
+      - 'assets/dps*.js'
+      - 'assets/liveops.css'
+      - 'data/skills.json'
+      - 'data/dps-resources.json'
+      - 'dpsrules.py'
+      - 'liveops.py'
+      - 'tests/dps*.js'
+      - '.github/workflows/dps-browser.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/dps*.js'
+      - 'assets/liveops.css'
+      - 'dpsrules.py'
+      - 'liveops.py'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python build.py
+      - name: Install temporary browser test runtime
+        run: |
+          npm --prefix "$RUNNER_TEMP/dps-qa" install --no-save --package-lock=false playwright@1.62.1
+          node "$RUNNER_TEMP/dps-qa/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+      - name: Verify the generated calculator in Chromium
+        env:
+          DPS_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/dps-ui.test.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: edps-browser-evidence
+          path: ${{ runner.temp }}/dps-qa-artifacts/
+          if-no-files-found: ignore

@@ -77,3 +77,16 @@ Map projection follows the provider’s transform: coordinates are `[vertical, h
 - Search Console submission and the current AdSense review status are tracked separately from Analytics activation.
 - On changing the GA4 stream, keep enhanced measurement off (including automatic form/site-search/history events). This integration sends controlled page views and public interaction categories. Rebuild, validate, deploy, and verify opt-in traffic in Realtime.
 - When enabled, the bilingual analytics controls allow refusal/withdrawal; before consent there is no Google tag request. URLs are sent without query strings/fragments, and planner/form values are never collected by this integration. Consent is separate from an advertising CMP.
+
+## Conditional damage model
+
+The eDPS calculator checks reviewed prerequisite states, chain windows and four-element costs separately from expected damage. Its 96-active-skill audit and 43 numeric base-1 MP costs are source references, not a verified final build. Unknown trigger windows/costs remain explicit inputs; an optional MP budget rejects unknown costs. The existing 26 seeded direct-damage inputs are unchanged, and three setup-only actions start at zero damage. See [the condition audit](research/dps-condition-audit.md).
+
+```sh
+node tests/dps.test.js
+python -m unittest discover -s tests -p 'test_*.py'
+```
+
+After editing `dpsrules.py`, `liveops.py`, `data/dps-resources.json` or the DPS assets, regenerate `docs/`. Recheck MP references when `data/skills.json` changes; stale resource hashes make costs unknown, and a changed skill snapshot blocks calculations until the condition audit is renewed. Old saved model versions need review before participating in current same-condition rankings.
+
+`tests/dps-ui.test.js` runs the generated English/Korean calculator in Chromium, checks actual CSV downloads and saved builds, and asserts containment at 320px and 390px. The targeted `dps-browser.yml` workflow installs its pinned Playwright runtime in a temporary directory; it adds no production dependency. Its screenshots and CSV are retained as CI evidence.
