@@ -1,0 +1,8 @@
+.pc-analytics-preferences{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;padding:0 1rem 1.5rem;font-size:.85rem;color:#a9adb8}
+.pc-consent{position:fixed;bottom:1rem;right:1rem;z-index:120;width:min(440px,calc(100vw - 2rem));padding:1.3rem;border:1px solid #606778;border-radius:14px;background:#191d28;box-shadow:0 12px 50px #0009;color:#f0f2f7}
+.pc-consent[hidden]{display:none}
+.pc-consent h2{font-size:1.05rem;margin:0 0 .7rem}
+.pc-consent p{font-size:.9rem;line-height:1.6;margin:0 0 1rem}
+.pc-consent>div{display:flex;gap:.6rem;flex-wrap:wrap}
+.pc-consent .btn{flex:1;justify-content:center;min-height:44px}
+@media print{.pc-consent,.pc-analytics-preferences{display:none}}

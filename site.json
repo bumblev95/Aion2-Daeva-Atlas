@@ -4,10 +4,17 @@
   "repository": "https://github.com/bumblev95/Aion2-Daeva-Atlas",
   "reviewed": "2026-10-07",
   "adsense": {
-    "publisher_id": "",
+    "publisher_id": "ca-pub-9723666081819297",
     "enabled": false,
     "consent_reviewed": false,
     "slot": ""
+  },
+  "analytics": {
+    "measurement_id": "",
+    "enabled": false
+  },
+  "search_console": {
+    "verification_file": "google722860ebc63f523b.html"
   },
   "brand_status": "proposed"
 }

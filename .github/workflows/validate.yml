@@ -18,6 +18,8 @@ jobs:
           node-version: '22'
       - run: python build.py
       - run: python validate.py
+      - run: node --check assets/analytics.js
+      - run: node tests/analytics.test.js
       - run: node --check assets/app.js
       - run: node --check assets/explorer.js
       - run: node --check assets/encounters.js

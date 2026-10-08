@@ -21,6 +21,8 @@ node --check assets/app.js
 node --check assets/explorer.js
 node --check assets/encounters.js
 node --check assets/learn.js
+node --check assets/analytics.js
+node tests/analytics.test.js
 ```
 
 Edit `content.py`, `fieldnotes.py`, `encounters.py`, `visuals.py`, `onboarding.py`, `skillbook.py`, `bossmedia.py`, `assets/` and `site.json`, then regenerate and commit `docs/`. GitHub Pages serves `main` → `/docs`. CI rejects a mismatch between the sources and generated pages.
@@ -36,9 +38,9 @@ Edit `content.py`, `fieldnotes.py`, `encounters.py`, `visuals.py`, `onboarding.p
 
 ## Privacy and monetization
 
-The planner stores its list in browser local storage; the class explorer can also save one preferred class. Existing planner data keeps its original storage key. It does not have a backend or accounts. No site-owned ad, analytics or external font scripts are installed. Beginner completion is local to the browser. Inven source links open additional loops; TH.GL hosts terrain previews and optional marker maps; YouTube hosts thumbnails and on-demand videos and may serve its own ads/storage. Media are not downloaded or republished in the repository. The public contact channel is GitHub Issues.
+The planner stores its list in browser local storage; the class explorer can also save one preferred class. Existing planner data keeps its original storage key. It does not have a backend or accounts. Ad delivery is off. The existing publisher verification tag and Google HTML ownership file are installed. GA4 code is prepared but collection remains off until the dedicated web stream measurement ID is configured. No external font scripts are installed. Beginner completion is local to the browser. Inven source links open additional loops; TH.GL hosts terrain previews and optional marker maps; YouTube hosts thumbnails and on-demand videos and may serve its own ads/storage. Media are not downloaded or republished in the repository. The public contact channel is GitHub Issues.
 
-AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enabling it. A new website still needs its own site review even when its publisher already has an AdSense account. This project does not claim AdSense approval or guaranteed revenue.
+AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enabling it. This project is a path under the existing bumblev95.github.io AdSense site, not a separately registrable AdSense domain. Check the existing host’s review status in AdSense; do not remove and resubmit an in-progress site. This project does not claim AdSense approval or guaranteed revenue.
 
 ## Structure
 
@@ -66,3 +68,12 @@ AION 2 and related marks belong to their owners. This project is not affiliated 
 New implementation: `firststeps.py`, `growth.py`, `worldmap.py`, `battlelab.py`, `assets/deep-guide.js`, `assets/battle.js` and `assets/deep-guide.css`. Versioned facts are in `data/skills.json` and `data/maps.json`.
 
 Map projection follows the provider’s transform: coordinates are `[vertical, horizontal, altitude]`; source tiles stay on TH.GL CDN and attribution remains visible. Map completion is browser-local and does not change the game. Base skills are 12 active + 10 passive + 13 Stigma per launch class; chain effects live under their parent skill. Point investment stops at level 10; higher target skill levels include equipment, Daevanion and Arcana.
+
+## Google connection status (2026-10-08)
+
+- Existing publisher: `ca-pub-9723666081819297`, confirmed against the current host root. Root `ads.txt` already lists this publisher. The project emits the matching metadata without requesting ads.
+- The account-specific verification file `google722860ebc63f523b.html` is preserved by every build, ready for the project URL-prefix property. This is preparation, not a claim that Search Console has confirmed the property.
+- GA4 integration is in `measurement.py` and `assets/analytics.js`. It is disabled with an empty measurement ID; no placeholder or unrelated property receives visits.
+- Search Console submission, current AdSense review status, and creation of the GA4 property remain pending Google sign-in.
+- To finish GA4: create a dedicated PLAYER’S CODEX property/web stream for the project URL. Turn off enhanced measurement, including automatic form/site-search/history events, because this implementation sends only controlled page views and public interaction categories. Set the real `analytics.measurement_id` and `analytics.enabled=true` in `site.json`, rebuild, validate, and deploy. Verify opt-in traffic in Realtime.
+- When enabled, the bilingual analytics controls allow refusal/withdrawal; before consent there is no Google tag request. URLs are sent without query strings/fragments, and planner/form values are never collected by this integration. Consent is separate from an advertising CMP.
