@@ -10,8 +10,8 @@
     "slot": ""
   },
   "analytics": {
-    "measurement_id": "",
-    "enabled": false
+    "measurement_id": "G-S45PCCH32Y",
+    "enabled": true
   },
   "search_console": {
     "verification_file": "google722860ebc63f523b.html"
