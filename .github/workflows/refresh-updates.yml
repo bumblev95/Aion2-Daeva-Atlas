@@ -34,6 +34,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
           node tests/dps.test.js
           node tests/analytics.test.js
+          node tests/patchbook.test.js
+          node --check assets/patchbook.js
           node --check assets/news.js
           node --check assets/dps.js
           python build.py
@@ -42,7 +44,7 @@ jobs:
         id: publish
         run: |
           python scripts/check_news_diff.py
-          git add data/news.json docs/data/news.json docs/index.html docs/ko/index.html docs/updates/index.html docs/ko/updates/index.html
+          git add data/news.json docs/data/news.json docs/index.html docs/ko/index.html docs/updates docs/ko/updates docs/search-index.json docs/sitemap.xml
           if git diff --cached --quiet; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
             exit 0
