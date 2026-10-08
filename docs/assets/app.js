@@ -6,14 +6,88 @@
   const t = (en, kr) => ko ? kr : en;
   const base = document.body.dataset.base;
   const menu = document.querySelector('[data-menu]');
-  if (menu) menu.addEventListener('click', () => {
-    const expanded = menu.getAttribute('aria-expanded') === 'true';
-    menu.setAttribute('aria-expanded', String(!expanded));
-    document.querySelector('#main-nav').classList.toggle('open', !expanded);
-  });
+  const sidebar = document.querySelector('#main-nav');
+  const backdrop = document.querySelector('[data-menu-close]');
+  const narrow = window.matchMedia('(max-width: 850px)');
+  function setMenu(open, focus = false) {
+    if (!menu || !sidebar) return;
+    menu.setAttribute('aria-expanded', String(open));
+    sidebar.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    if (backdrop) backdrop.hidden = !open;
+    if (focus) (open ? sidebar.querySelector('a') : menu)?.focus();
+  }
+  menu?.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true', true));
+  backdrop?.addEventListener('click', () => setMenu(false, true));
+  sidebar?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  narrow.addEventListener?.('change', () => setMenu(false));
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && menu) { menu.setAttribute('aria-expanded','false'); document.querySelector('#main-nav').classList.remove('open'); }
+    if (menu?.getAttribute('aria-expanded') !== 'true') return;
+    if (e.key === 'Escape') { e.preventDefault(); setMenu(false, true); }
+    if (e.key === 'Tab') {
+      const stops = [menu, ...sidebar.querySelectorAll('a[href]')];
+      const i = stops.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); stops.at(-1).focus(); }
+      if (!e.shiftKey && (i === stops.length - 1 || i < 0)) { e.preventDefault(); menu.focus(); }
+    }
   });
+  // All three sections remain readable without JavaScript. Enhance into URL-aware tabs.
+  const hub = document.querySelector('[data-guide-hub]');
+  if (hub) {
+    const tabs = [...hub.querySelectorAll('[data-guide-tab]')];
+    const panels = [...hub.querySelectorAll('[data-guide-view]')];
+    hub.querySelector('[data-guide-tabs]').setAttribute('role', 'tablist');
+    tabs.forEach(tab => {
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', panels.find(p => p.dataset.guideView === tab.dataset.guideTab).id);
+    });
+    panels.forEach(panel => { panel.setAttribute('role', 'tabpanel'); panel.tabIndex = 0; });
+    function selectView(key) {
+      if (!panels.some(p => p.dataset.guideView === key)) key = 'basics';
+      panels.forEach(p => p.hidden = p.dataset.guideView !== key);
+      tabs.forEach(tab => {
+        const selected = tab.dataset.guideTab === key;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+    }
+    function syncView() {
+      let id = '';
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch {}
+      const target = id ? document.getElementById(id) : null;
+      const panel = target?.closest('[data-guide-view]');
+      const params = new URLSearchParams(location.search);
+      selectView(panel?.dataset.guideView || params.get('view') || (params.has('step') ? 'growth' : 'basics'));
+      const detail = target?.closest('details');
+      if (detail) detail.open = true;
+      // An anchor may have been hidden at the instant the browser tried to scroll.
+      if (target) requestAnimationFrame(() => target.scrollIntoView?.({block:'start'}));
+      const other = document.querySelector('.lang');
+      if (other) { const u = new URL(other.href); u.search = location.search; u.hash = location.hash; other.href = u.href; }
+    }
+    function activate(tab) {
+      const u = new URL(location.href);
+      u.searchParams.set('view', tab.dataset.guideTab);
+      u.hash = tab.hash;
+      history.pushState(null, '', u);
+      syncView();
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', e => { if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return; e.preventDefault(); activate(tab); });
+      tab.addEventListener('keydown', e => {
+        let next;
+        if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') next = (i + tabs.length - 1) % tabs.length;
+        if (e.key === 'Home') next = 0;
+        if (e.key === 'End') next = tabs.length - 1;
+        if (next !== undefined) { e.preventDefault(); tabs[next].focus(); activate(tabs[next]); }
+        if (e.key === ' ') { e.preventDefault(); activate(tab); }
+      });
+    });
+    window.addEventListener('hashchange', syncView);
+    window.addEventListener('popstate', syncView);
+    syncView();
+  }
   const filters = document.querySelectorAll('[data-class-filter]');
   filters.forEach(button => button.addEventListener('click', () => {
     filters.forEach(b => b.setAttribute('aria-pressed', String(b === button)));

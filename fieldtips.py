@@ -62,11 +62,11 @@ def panel(lang):
             demo = f'''<div class="tip-bag"><span>◇<small>{t('Keep','보관')}</small></span><span>◇<small>{t('Review','확인')}</small></span><span>◇<small>{t('Review','확인')}</small></span></div>
 <button class="btn" data-tip-toggle aria-pressed="false">{t('Preview the selection','선택 목록 살펴보기')}</button>
 <p class="tip-result" data-tip-effect hidden>{t('Stop if an item you need is selected. Nothing was deleted here.','필요한 장비가 선택됐다면 멈추세요. 여기서는 아무것도 삭제하지 않아요.')}</p>'''
-        cards.append(f'''<article class="field-tip" id="tip-{key}" data-field-tip="{key}">
-<div class="tip-heading"><span>{i+1:02}</span><h3>{escape(tip['title'][ko])}</h3></div>
-<p class="tip-path">{escape(tip['path'][ko])}</p><p>{escape(tip['copy'][ko])}</p>
-<div class="tip-demo"><small class="tip-demo-label">{t('PRACTICE DIAGRAM · NOT A SCREENSHOT','설명용 연습 화면 · 실제 스크린샷 아님')}</small>{demo}</div>
-<div class="tip-evidence"><a href="{IMAGE_ROOT}{tip['image']}?MW=800" target="_blank" rel="noopener noreferrer">{t('Open original screenshot','실제 스크린샷 원본 보기')} ↗</a><a href="{SOURCE}" target="_blank" rel="noopener noreferrer">{AUTHOR} · Inven ↗</a></div></article>''')
+        cards.append(f'''<details class="field-tip" id="tip-{key}" data-field-tip="{key}"{' open' if i==0 else ''}>
+<summary class="tip-heading"><span>{i+1:02}</span><h3>{escape(tip['title'][ko])}</h3><span class="tip-expand" aria-hidden="true">+</span></summary>
+<div class="tip-content"><div class="tip-instructions"><p class="tip-path">{escape(tip['path'][ko])}</p><p>{escape(tip['copy'][ko])}</p>
+<div class="tip-evidence"><a href="{IMAGE_ROOT}{tip['image']}?MW=800" target="_blank" rel="noopener noreferrer">{t('Open original screenshot','실제 스크린샷 원본 보기')} ↗</a><a href="{SOURCE}" target="_blank" rel="noopener noreferrer">{AUTHOR} · Inven ↗</a></div></div>
+<div class="tip-demo"><small class="tip-demo-label">{t('PRACTICE DIAGRAM · NOT A SCREENSHOT','설명용 연습 화면 · 실제 스크린샷 아님')}</small>{demo}</div></div></details>''')
     terms = [
         ('200k', ('200,000 combat power. An example, not a recommended threshold.', '전투력 200,000. 해독 예시이며 권장 컷이 아니에요.')),
         ('3b', ('Three bosses. Confirm the party’s route.', '보스 세 마리. 파티의 진행 경로를 확인해요.')),
@@ -74,7 +74,7 @@ def panel(lang):
     ]
     decoder = ''.join(f'<details class="party-token"><summary>{term} <span>?</span></summary><p>{escape(text[ko])}</p></details>' for term,text in terms)
     return f'''<section class="field-tips" id="field-tips" data-field-tips>
-<div class="section-heading compact"><div><span class="section-kicker">SMALL SETTINGS / EASIER PLAY</span><h2>{t('The little things nobody explained.','아무도 설명해주지 않았던 작은 팁.')}</h2></div></div>
+<div class="section-heading compact"><div><span class="section-kicker">AION 2 · SETTINGS</span><h2>{t('Small settings, more comfortable play.','작은 설정으로 더 편하게 플레이하세요.')}</h2></div></div>
 <p class="field-tips-intro">{t('Try a control here, then use the original KR capture to find it in your game. Practice controls only affect this page.','여기서 먼저 눌러보고, 원본 캡처와 내 게임 메뉴를 비교해보세요. 연습 버튼은 이 페이지에서만 작동해요.')}</p>
 <div class="field-tip-grid">{''.join(cards)}</div>
 <section class="party-reader"><span class="section-kicker">READ A PARTY POST</span><h3>{t('What does this recruitment post mean?','파티 모집글, 무슨 뜻인가요?')}</h3><p class="tiny">{t('Open each part of this sample.','예시의 각 부분을 눌러보세요.')}</p><div class="party-tokens">{decoder}</div></section>

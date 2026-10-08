@@ -81,3 +81,22 @@
 - 추후 스크린샷을 사이트에 직접 싣는 경우 작성자 허락 또는 재사용 라이선스, 해당 원문, 적용 범위(상업적 사용·번역·표시 가공 포함)를 기록하고 출처·원본 맥락을 유지한다. 인벤 약관 15조의 게시물 권리 규정을 외부 사이트에 대한 포괄적 허락으로 해석하지 않는다.
 - 자동 사용 연습의 생명력 45% 및 기준값은 설명용 수치다. 추천값·실제 물약 발동 테스트가 아니다. 추출은 선택 목록의 검토만 가르치고 게임 내 삭제를 수행하지 않는다.
 - 모집글 약어는 예시 해독이며 200k를 권장 전투력으로 제시하지 않는다. 원문 수수료, 초기화 일정, 입장 컷, 신석 성능·가격은 글로벌 현재값으로 옮기지 않았다.
+
+## Layout update · 2026-10-08
+
+The home page is now a task directory, with six guide destinations and compact
+class links. Detailed class exploration, progression checklists and boss lessons
+remain on their dedicated pages. Shared navigation groups beginner, character,
+adventure and reference links; the mobile drawer closes with Escape or its
+backdrop and keeps keyboard focus inside while open.
+
+The beginner page progressively enhances three readable sections into tabs:
+`view=basics`, `view=settings` and `view=growth`. Existing `lesson`, `step`,
+`#field-tips` and `#tip-*` links remain supported. Hash targets reveal their
+containing panel and tip disclosure. Browser Back/Forward restores the selected
+section, and language links retain the current view. All three sections remain
+in the HTML without JavaScript. Mobile lessons use a labeled native selector.
+The screenshot links and all source/region caveats are retained.
+
+Visual rules for this hierarchy live in `assets/layout.css`, loaded after the
+existing component styles. Update its cache version when changing those rules.
