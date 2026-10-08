@@ -1,0 +1,775 @@
+{
+  "region": "Global",
+  "source": "Client-derived base-1 MP column via MetaBot; a dash is unknown, not zero.",
+  "skills": {
+    "keen-strike": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/keen-strike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "rending-blow": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/rending-blow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "leaping-slam": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/leaping-slam",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "mocking-blade": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/mocking-blade",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "overhead-slam": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/overhead-slam",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "sword-aura-rampage": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/sword-aura-rampage",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "ankle-slice": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/ankle-slice",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "crushing-wave": {
+      "mpCost": 250.0,
+      "source": "https://metabot.gg/en/aion-2/skills/crushing-wave",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "250"
+    },
+    "rush-strike": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/rush-strike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "aerial-snare": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/aerial-snare",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "ruinous-blow": {
+      "mpCost": 250.0,
+      "source": "https://metabot.gg/en/aion-2/skills/ruinous-blow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "250"
+    },
+    "defiance": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "vicious-strike": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/vicious-strike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "pummel": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/pummel",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "poach": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/poach",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "shield-smite": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/shield-smite",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "judgment": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/judgment",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "flash-rampage": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/flash-rampage",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "debilitating-smash": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/debilitating-smash",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "warding-strike": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/warding-strike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "shield-rush": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/shield-rush",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "annihilate": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/annihilate",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "punishment": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/punishment",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "defiance-templar": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-templar",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "quick-slice": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/quick-slice",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "savage-roar": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/savage-roar",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "shadowstrike": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/shadowstrike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "ambush": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/ambush",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "heart-gore": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/heart-gore",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "storm-rampage": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/storm-rampage",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "whirlwind-slice": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/whirlwind-slice",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "flash-slice": {
+      "mpCost": 50.0,
+      "source": "https://metabot.gg/en/aion-2/skills/flash-slice",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "50"
+    },
+    "infiltrate": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/infiltrate",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "shadow-fall": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/shadow-fall",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "insignia-explosion": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/insignia-explosion",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "defiance-assassin": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-assassin",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "snipe": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/snipe",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "tempest-shot": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/tempest-shot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "snare-shot": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/snare-shot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "marking-shot": {
+      "mpCost": 50.0,
+      "source": "https://metabot.gg/en/aion-2/skills/marking-shot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "50"
+    },
+    "drill-dart": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/drill-dart",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "arrow-scattershot": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/arrow-scattershot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "gale-arrow": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/gale-arrow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "explosion-trap": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/explosion-trap",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "burst-arrow": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/burst-arrow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "suppressing-arrow": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/suppressing-arrow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "deadshot": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/deadshot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "defiance-ranger": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-ranger",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "flame-arrow": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/flame-arrow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "ice-chain": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/ice-chain",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "firestorm": {
+      "mpCost": 250.0,
+      "source": "https://metabot.gg/en/aion-2/skills/firestorm",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "250"
+    },
+    "bittercold-wind": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/bittercold-wind",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "blaze": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/blaze",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "flame-scattershot": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/flame-scattershot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "frost": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/frost",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "winters-shackles": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/winters-shackles",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "frost-burst": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/frost-burst",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "wish-of-concentration": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/wish-of-concentration",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "hellfire": {
+      "mpCost": 200.0,
+      "source": "https://metabot.gg/en/aion-2/skills/hellfire",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "200"
+    },
+    "defiance-sorcerer": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-sorcerer",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "cold-shock": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/cold-shock",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "combustion": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/combustion",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "summon-fire-spirit": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/summon-fire-spirit",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "summon-water-spirit": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/summon-water-spirit",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "jointstrike-curse": {
+      "mpCost": 80.0,
+      "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "80"
+    },
+    "rapid-scattershot": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/rapid-scattershot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "summon-earth-spirit": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/summon-earth-spirit",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "dimensional-control": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/dimensional-control",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "summon-wind-spirit": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/summon-wind-spirit",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "souls-cry": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/souls-cry",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "elemental-fusion": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/elemental-fusion",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "defiance-spiritmaster": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-spiritmaster",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "earths-retribution": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/earths-retribution",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "judgment-thunder": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/judgment-thunder",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "debilitating-mark": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "divine-aura": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/divine-aura",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "chain-of-torment": {
+      "mpCost": 150.0,
+      "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "150"
+    },
+    "lightning-strike-scattershot": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/lightning-strike-scattershot",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "light-of-regeneration": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/light-of-regeneration",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "condemnation": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/condemnation",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "healing-light": {
+      "mpCost": 50.0,
+      "source": "https://metabot.gg/en/aion-2/skills/healing-light",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "50"
+    },
+    "radiant-recovery": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/radiant-recovery",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "bolt": {
+      "mpCost": 300.0,
+      "source": "https://metabot.gg/en/aion-2/skills/bolt",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "300"
+    },
+    "defiance-cleric": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-cleric",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    },
+    "onslaught": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/onslaught",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "incandescent-blow": {
+      "mpCost": 120.0,
+      "source": "https://metabot.gg/en/aion-2/skills/incandescent-blow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "120"
+    },
+    "rushing-smash": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/rushing-smash",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "impactful-crush": {
+      "mpCost": 100.0,
+      "source": "https://metabot.gg/en/aion-2/skills/impactful-crush",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "100"
+    },
+    "dark-crush": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/dark-crush",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "gust-rampage": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/gust-rampage",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "heat-wave-blow": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/heat-wave-blow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "recuperation": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/recuperation",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "tremor-crush": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/tremor-crush",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "wave-blow": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/wave-blow",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": "—"
+    },
+    "spinning-strike": {
+      "mpCost": 250.0,
+      "source": "https://metabot.gg/en/aion-2/skills/spinning-strike",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "tooltip",
+      "rawMP": "250"
+    },
+    "defiance-chanter": {
+      "mpCost": null,
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-chanter",
+      "sourceLevel": 1,
+      "reviewedAt": "2026-10-08",
+      "costStatus": "unverified",
+      "rawMP": null
+    }
+  },
+  "skillSourceHash": "8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e"
+}
