@@ -8,9 +8,10 @@
  if(tutorial){
   const panels=[...tutorial.querySelectorAll('[data-lesson]')],key='players-codex-lessons-v1';
   let done=read(key,[]);if(!Array.isArray(done))done=[];let index=0;
-  const pick=()=>{panels.forEach((p,i)=>p.hidden=i!==index);tutorial.querySelectorAll('[data-lesson-pick]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===index));b.querySelector('b').textContent=done.includes(b.dataset.lessonPick)?'✓':'';});tutorial.querySelector('[data-lesson-progress]').textContent=t(`${done.length} / 8 understood`,`${done.length} / 8단계 이해했어요`);query({lesson:panels[index].dataset.lesson});};
+  const pick=()=>{const select=tutorial.querySelector('[data-lesson-select]');if(select)select.value=panels[index].dataset.lesson;panels.forEach((p,i)=>p.hidden=i!==index);tutorial.querySelectorAll('[data-lesson-pick]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===index));b.querySelector('b').textContent=done.includes(b.dataset.lessonPick)?'✓':'';});tutorial.querySelector('[data-lesson-progress]').textContent=t(`${done.length} / 8 understood`,`${done.length} / 8단계 이해했어요`);query({lesson:panels[index].dataset.lesson});};
   const requested=new URLSearchParams(location.search).get('lesson'),ri=panels.findIndex(p=>p.dataset.lesson===requested);if(ri>=0)index=ri;
   tutorial.querySelectorAll('[data-lesson-pick]').forEach((b,i)=>b.addEventListener('click',()=>{index=i;pick();}));
+  tutorial.querySelector('[data-lesson-select]')?.addEventListener('change',event=>{index=panels.findIndex(p=>p.dataset.lesson===event.target.value);pick();});
   panels.forEach((panel,i)=>{
    panel.querySelector('[data-lesson-action]').dataset.original=panel.querySelector('[data-lesson-action]').textContent;
    panel.querySelector('[data-lesson-action]').addEventListener('click',event=>{panel.querySelector('[data-demo]').classList.add('is-done');panel.querySelector('[data-lesson-result]').hidden=false;event.currentTarget.textContent=t('✓ Try the same action in game','✓ 게임에서도 해보세요');if(panel.dataset.lesson==='equip')panel.querySelector('.mock-bag b:last-child').textContent='⚔';if(panel.dataset.lesson==='skill')panel.querySelectorAll('.mock-skill em').forEach((el,i)=>el.textContent=i?'0':'2');});
