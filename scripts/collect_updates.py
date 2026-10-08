@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Collect public NC announcements; preserve successful snapshots on failures.
 
-Only headlines, short teasers, timestamps and hashes are published. Full articles
-stay on the publisher's site. Human reviews are bound to a content hash.
+Headlines, timestamps, hashes and original editorial change lists are published.
+Publisher HTML stays on the publisher's site. Reviews bind to a content hash.
 """
 import argparse
 import hashlib
@@ -53,6 +53,8 @@ def reviewed(item, reviews):
     item['changes'] = review.get('changes', []) if valid else []
     item['classScopeReviewed'] = bool(valid and review.get('classScopeReviewed'))
     item['reviewedAt'] = review.get('reviewedAt') if valid else None
+    item['displayTitle'] = review.get('title', {}) if valid else {}
+    item['detail'] = review.get('detail', {}) if valid else {}
     return item
 
 def collect_source(source, previous, reviews, now, fetcher=fetch):

@@ -1,149 +1,5347 @@
 {
   "6ac54c386b722c561dc6aa2b": {
     "contentHash": "3dabf7f9b3d0dbd83990b875f52fc7fddff023f2c954a71e88b0308417ac9e30",
-    "reviewedAt": "2026-10-08T08:21:39Z",
+    "reviewedAt": "2026-10-08T10:02:56Z",
     "classScopeReviewed": true,
     "summary": {
-      "en": "Aerial-hit and Sorcerer effect bugs were fixed. Keyed Hidden Cube rewards increased, and presets expanded. These are Korea changes; no class damage percentage was announced.",
-      "ko": "공중 타격·마도성 피해 적용 오류 수정, 열쇠 사용 히든 큐브 보상 증가, 프리셋 확대가 핵심입니다. 한국판 변경이며 클래스 피해 증가율은 공지되지 않았습니다."
+      "ko": "공중 타격과 마도성·정령 관련 오류 수정, 히든 큐브 보상 100→1,000개, 어비스 재매칭과 프리셋 확장.",
+      "en": "Aerial, Sorcerer and spirit fixes, Hidden Cube crystals 100→1,000, Abyss rematching and more presets."
+    },
+    "title": {
+      "ko": "10월 7일 한국 패치",
+      "en": "October 7 · Korea"
     },
     "changes": [
       {
+        "classId": "all",
         "type": "fix",
         "subject": {
-          "en": "All classes · aerial hits",
-          "ko": "공통 · 공중 타격"
+          "ko": "공중 공격",
+          "en": "Aerial attacks"
         },
         "description": {
-          "en": "In-range aerial attacks now avoid the intermittent missing-hit bug.",
-          "ko": "사거리 안에서도 공중 공격이 간헐적으로 적중하지 않던 오류를 수정했습니다."
-        },
-        "classId": "all"
-      },
-      {
-        "type": "fix",
-        "subject": {
-          "en": "Sorcerer · Fire Wall / Cold Storm",
-          "ko": "마도성 · 불의 장벽 / 냉기 폭풍"
-        },
-        "description": {
-          "en": "Height-related ember and frostbite damage failures were corrected; ember damage now uses the Fire element. No increase percentage is specified.",
-          "ko": "높이에 따른 잔불·동상 추가 피해 누락을 수정하고 잔불 지속 피해에 불 속성을 적용했습니다. 증가율 수치는 없습니다."
-        },
-        "classId": "sorcerer"
-      },
-      {
-        "type": "fix",
-        "subject": {
-          "en": "Sorcerer · Hibernation",
-          "ko": "마도성 · 동면"
-        },
-        "description": {
-          "en": "The backward movement on release was repaired.",
-          "ko": "동면 해제 시 후방 이동이 정상 동작하도록 수정했습니다."
-        },
-        "classId": "sorcerer"
-      },
-      {
-        "type": "fix",
-        "subject": {
-          "en": "Spiritmaster · summoned spirits",
-          "ko": "정령성 · 소환 정령"
-        },
-        "description": {
-          "en": "One Fire Temple trial boss skill no longer deals excessive damage to spirits.",
-          "ko": "시련 불의 신전 보스의 특정 기술이 정령에게 과도한 피해를 주던 오류를 수정했습니다."
-        },
-        "classId": "spiritmaster"
-      },
-      {
-        "type": "system",
-        "subject": {
-          "en": "Keyed Hidden Cubes",
-          "ko": "열쇠 사용 히든 큐브"
-        },
-        "description": {
-          "en": "Soul Crystal reward: 100 → 1,000. Qualifying Chapter 1 claims receive a retroactive difference.",
-          "ko": "영혼 결정 100 → 1,000개. 챕터1 기간의 해당 수령 내역에 추가 수량을 소급 지급할 예정입니다."
+          "ko": "사거리 조건을 충족해도 공중 타격이 누락되던 오류를 해결합니다. 피해 계수 상향 공지는 아닙니다.",
+          "en": "In-range aerial hits no longer intermittently fail. No damage-coefficient increase was announced."
         }
       },
       {
-        "type": "system",
+        "classId": "sorcerer",
+        "type": "fix",
         "subject": {
-          "en": "Presets",
-          "ko": "프리셋"
+          "ko": "불의 장벽",
+          "en": "Fire Wall"
         },
         "description": {
-          "en": "Main presets: 3 → 5. Wardrobe presets: 3 → 6.",
-          "ko": "장비·스킬·아르카나 등을 포함한 프리셋 3 → 5개, 옷장 프리셋 3 → 6개."
+          "ko": "높은 위치에서 잔불 추가 피해가 빠지던 오류를 해결하고, 잔불 지속 피해에 불 속성을 적용합니다.",
+          "en": "Ember bonus damage works at height and its ongoing damage uses the Fire element."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "냉기 폭풍",
+          "en": "Cold Storm"
+        },
+        "description": {
+          "ko": "높은 위치에서 동상 추가 피해가 빠지던 오류를 해결합니다.",
+          "en": "Frostbite bonus damage works at height."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "동면",
+          "en": "Hibernation"
+        },
+        "description": {
+          "ko": "해제 시 후방 이동이 올바르게 작동합니다.",
+          "en": "Release correctly moves the caster backward."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "ko": "소환 정령 · 불의 신전",
+          "en": "Summoned spirits · Fire Temple"
+        },
+        "description": {
+          "ko": "시련 크로메데의 욕망의 특정 스킬이 정령에게 과도한 피해를 주지 않도록 수정합니다.",
+          "en": "The affected Crome­de’s Desire trial skill no longer overdamages spirits."
         }
       }
-    ]
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "업적",
+            "en": "Achievements"
+          },
+          "sourceSection": "업적",
+          "notes": [
+            {
+              "ko": "필드 네임드의 처치 업적이 미완료일 때 월드맵 보스 아이콘에 배지를 표시합니다. 완료했거나 관련 업적이 없으면 배지를 표시하지 않습니다.",
+              "en": "World-map named bosses show an achievement badge only while an applicable kill achievement is incomplete."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "네임 플레이트",
+            "en": "Nameplates"
+          },
+          "sourceSection": "네임 플레이트",
+          "notes": [
+            {
+              "ko": "내 네임 플레이트를 숨길 수 있습니다. 정보 출력 → 일반 → 네임 플레이트 → 내 네임 플레이트 표시에서 설정합니다.",
+              "en": "A new option hides your own nameplate under Information Display → General → Nameplate."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "에레슈란타 표층 입장 후 장비 교체 등으로 허용 스펙을 넘으면 즉시 사망합니다. 추방과 이용 시간 1시간 차감도 계속 적용됩니다.",
+              "en": "Exceeding the Upper Reshanta entry cap after entering causes immediate death, expulsion and a one-hour time deduction."
+            },
+            {
+              "ko": "서버 재매칭으로 아티팩트·회랑 점령 상태를 초기화합니다. 21개 매칭 그룹의 상대 서버와 시작 시간은 아래 표에 담았습니다. 모든 시간은 한국 공지 기준입니다.",
+              "en": "Rematching resets artifact and corridor ownership. The table lists all 21 pairings and their start times in the Korean notice’s timezone."
+            },
+            {
+              "ko": "에레슈란타 표층·하층·중층과 균열 지대의 대규모 전투 끊김을 줄이는 최적화가 적용됩니다.",
+              "en": "Large-battle performance is improved across upper, lower, middle and rift Abyss areas."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "그룹",
+                "서부",
+                "동부",
+                "아티팩트 점령전",
+                "어비스 보스",
+                "수호신장 나흐마"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "이스라펠",
+                  "트리니엘",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "2",
+                  "시엘",
+                  "지켈",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "3",
+                  "네자칸",
+                  "크로메데",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "4",
+                  "바이젤",
+                  "유스티엘",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "5",
+                  "아스펠",
+                  "루드라",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "6",
+                  "아리엘",
+                  "카이시넬",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "7",
+                  "에레슈키갈",
+                  "마르쿠탄",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "8",
+                  "프레기온",
+                  "젠카카",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "9",
+                  "브리트라",
+                  "무닌",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "10",
+                  "메스람타에다",
+                  "콰이링",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "11",
+                  "나니아",
+                  "타하바타",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "12",
+                  "하달",
+                  "오다르",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "13",
+                  "페르노스",
+                  "히타니에",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "14",
+                  "다미누",
+                  "루터스",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "15",
+                  "카사카",
+                  "코치룽",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "16",
+                  "바카르마",
+                  "네몬",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "17",
+                  "챈가룽",
+                  "티아마트",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "18",
+                  "이슈타르",
+                  "루미엘",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ],
+                [
+                  "19",
+                  "인드나흐",
+                  "울고른",
+                  "수/토 오후 9시 20분",
+                  "수/토 오후 9시 45분",
+                  "금/일 오후 10시"
+                ],
+                [
+                  "20",
+                  "포에타",
+                  "파프니르",
+                  "수/토 오후 9시 50분",
+                  "수/토 오후 10시 15분",
+                  "금/일 오후 10시 30분"
+                ],
+                [
+                  "21",
+                  "이스할겐",
+                  "바바룽",
+                  "수/토 오후 10시 20분",
+                  "수/토 오후 10시 45분",
+                  "금/일 오후 11시"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "제련석",
+            "en": "Refining stones"
+          },
+          "sourceSection": "제련석",
+          "notes": [
+            {
+              "ko": "무스펠의 성배 보통·어려움과 비탄의 설원 전 난이도에서 상위 제련석 확률이 올라갑니다. 원정 교환 상점에 달인의 최상급 제련석(각인)이 추가됩니다.",
+              "en": "Higher-grade stone odds rise in normal/hard Muspel’s Chalice and every Snowfield difficulty. The Expedition exchange adds 달인의 최상급 제련석 (bound)."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스 점령전",
+            "en": "Abyss occupation"
+          },
+          "sourceSection": "어비스 점령전",
+          "notes": [
+            {
+              "ko": "차원핵의 마지막 일격을 얻지 못한 종족도 보상을 받습니다.",
+              "en": "The faction without the final hit on the dimensional core also receives a reward."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "산들바람 상회",
+            "en": "Wind Breeze Merchants"
+          },
+          "sourceSection": "산들바람 상회",
+          "notes": [
+            {
+              "ko": "부활의 정령석(각인)·펫 자동 줍기권(각인)의 상회 구매 가격을 내립니다. 자동 줍기권의 NPC 판매 가격도 내립니다. 기존 구매 키나 차액은 로그 확인 후 소급 지급 예정입니다.",
+              "en": "Bound resurrection stones and pet auto-loot tickets cost less. The ticket’s NPC resale value also falls; logged earlier purchases are due a retroactive Kina difference."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "명화의 잔흔",
+            "en": "Masterpiece remnants"
+          },
+          "sourceSection": "명화의 잔흔",
+          "notes": [
+            {
+              "ko": "페스타 모드별 잔흔을 슈고 페스타(잔흔: 명화)로 통합합니다. 기존 잔흔도 물질 변환으로 통합 재료로 바꿀 수 있습니다.",
+              "en": "Mode-specific Festa remnants become one common remnant; earlier items can be converted."
+            },
+            {
+              "ko": "원정 잔흔을 강화석·영혼 결정으로 바꾸는 변환식을 추가합니다. 전에 삭제·판매한 대상 아이템은 로그에 따라 복구 예정이며, NPC 판매분은 판매 키나를 먼저 회수합니다.",
+              "en": "Expedition remnants gain Enhance Stone and Soul Crystal recipes. Logged discarded or sold remnants are due restoration; NPC sale proceeds are reclaimed first."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "사명 퀘스트",
+            "en": "Mission rewards"
+          },
+          "sourceSection": "사명 퀘스트",
+          "notes": [
+            {
+              "ko": "베르테론·알트가르드의 사명 퀘스트 보상을 엘테넨·모르헤임 수준으로 맞춥니다.",
+              "en": "Verteron and Altgard mission rewards are brought in line with Eltnen and Morheim."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "상점 상품 추가 및 변경",
+            "en": "Exchange-shop inventory"
+          },
+          "sourceSection": "상점 상품 추가 및 변경",
+          "notes": [
+            {
+              "ko": "어비스·악몽·페스타 상점에 스티그마 샤드를 추가합니다. 어비스 상점에는 AP 부담을 낮춘 데바니온 결정: 아스펠(각인) 상품을 추가합니다.",
+              "en": "Abyss, Nightmare and Festa stores add Stigma Shards; the Abyss store adds a lower-AP Asphiel Daevanion Crystal offer."
+            },
+            {
+              "ko": "페스타 영혼 결정은 50개 묶음으로 주당 최대 15묶음, 악몽 영혼 결정도 50개 묶음으로 바뀝니다.",
+              "en": "Festa Soul Crystals become 50-unit bundles capped at 15 bundles weekly; Nightmare crystals also use 50-unit bundles."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "일일 던전 보상 조정",
+            "en": "Daily-dungeon rewards"
+          },
+          "sourceSection": "일일 던전 보상 조정",
+          "notes": [
+            {
+              "ko": "낮은 점수 구간의 보상을 늘리고 점수별 보상 차이를 줄입니다.",
+              "en": "Low-score rewards increase, narrowing gaps between score bands."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "히든 큐브",
+            "en": "Hidden Cubes"
+          },
+          "sourceSection": "히든 큐브",
+          "notes": [
+            {
+              "ko": "열쇠를 쓴 영혼 결정 보상은 100→1,000개입니다. 챕터1의 해당 수령분도 새 기준의 차액을 로그에 따라 소급 지급할 예정입니다.",
+              "en": "Keyed Soul Crystal rewards rise from 100 to 1,000. Eligible Chapter 1 claims are due the retroactive difference."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "부활의 신호탄",
+            "en": "Resurrection event"
+          },
+          "sourceSection": "부활의 신호탄",
+          "notes": [
+            {
+              "ko": "기간: 10월 7일 점검 후~10월 21일 점검 전. 기존 판매분에 추가해 45레벨 이상 캐릭터가 매주 30개까지 구매합니다. 단가 25,000 키나, 상회 특수 탭을 이용합니다.",
+              "en": "October 7–21 maintenance window: an additional bound stone offer for level-45+ characters, 30 weekly per character at 25,000 Kina in the Special shop tab."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "이벤트 아이템",
+                "가격",
+                "이벤트 내용",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "부활의 정령석(각인)",
+                  "25,000 키나",
+                  "상점 > 산들바람 상회 > 특수 탭에서아이템 구매 가능",
+                  "캐릭터별 매주 30개(캐릭터 레벨 45이상)"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "원정·초월 한가위 이벤트 종료",
+            "en": "End of the Expedition/Transcendence harvest event"
+          },
+          "sourceSection": "원정&초월 한가위 부스트업 이벤트 종료",
+          "notes": [
+            {
+              "ko": "관련 이벤트 재료·변환식을 제거하고 보상량을 평시 수준으로 되돌립니다. 히든 큐브 외형도 기존 디자인으로 돌아갑니다.",
+              "en": "Associated event items and recipes are removed, normal rewards resume and Hidden Cubes regain their standard appearance."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "개선사항",
+            "en": "Quality of life"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "ko": "내 날개 소리를 켜거나 끄는 사운드 옵션을 추가합니다.",
+              "en": "A sound option toggles your own wing audio."
+            },
+            {
+              "ko": "장비·날개·타이틀·만신전·종족 이해도·스킬·아르카나 프리셋과 HUD 세트를 3→5개로 늘립니다. 옷장 프리셋은 3→6개입니다.",
+              "en": "Equipment, wings, titles, pantheon, race understanding, skills, Arcana and HUD presets expand from 3 to 5; wardrobe presets from 3 to 6."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "Radeon 8060S의 캐릭터 미표시, FSR 화면 아티팩트, Redmi Note 14의 실행 직후 종료, 일부 Galaxy Fold의 UI 잘림을 해결합니다.",
+              "en": "Fixes cover invisible characters on Radeon 8060S, FSR artifacts, Redmi Note 14 startup crashes and cropped UI on some Galaxy Fold devices."
+            },
+            {
+              "ko": "포스 안에서 이동해도 이미 놓은 월드 징표가 계속 보입니다. 정령성 소환 정령에 대한 불의 신전 보스 수정은 직업 카드에도 표시했습니다.",
+              "en": "Placed world markers remain visible after moving within an alliance. The Fire Temple spirit-damage fix is included in the Spiritmaster card."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "업적",
+        "네임 플레이트",
+        "클래스 변경사항",
+        "어비스",
+        "제련석",
+        "어비스 점령전",
+        "산들바람 상회",
+        "명화의 잔흔",
+        "사명 퀘스트",
+        "상점 상품 추가 및 변경",
+        "일일 던전 보상 조정",
+        "히든 큐브",
+        "부활의 신호탄",
+        "원정&초월 한가위 부스트업 이벤트 종료",
+        "개선사항",
+        "수정사항"
+      ],
+      "classTables": []
+    }
   },
   "6ac5e6e8d97eae18cc40e34e": {
     "contentHash": "6e00652e2be66aa3dd1c7539ea5e4ce14aedc2786b180d07fe4c27f29bc115b2",
-    "reviewedAt": "2026-10-08T08:21:39Z",
+    "reviewedAt": "2026-10-08T10:02:56Z",
     "classScopeReviewed": true,
     "summary": {
-      "en": "Founder’s items can be claimed for other characters and servers. Wing morphing gets a weekly limit, leather drops increase, and map-pin and mission bugs are fixed.",
-      "ko": "파운더스 아이템을 다른 캐릭터·서버에서도 받을 수 있게 했습니다. 날개 변환 주간 제한, 가죽 드롭 상향, 지도 징표·미션 오류 수정이 포함됐습니다."
+      "ko": "파운더스 아이템의 캐릭터·서버 공유, 날개 변환 제한, 생가죽 드롭 증가와 지도·미션·조작 오류 수정.",
+      "en": "Founder access across characters and servers, wing conversion limits, more leather and map, mission and control fixes."
+    },
+    "title": {
+      "ko": "10월 7일 북미 패치",
+      "en": "October 6/7 · North America"
+    },
+    "changes": [],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "파운더스 패키지",
+            "en": "Founder’s Pack"
+          },
+          "sourceSection": "파운더스 패키지",
+          "notes": [
+            {
+              "ko": "보유 등급에 맞는 전용 무료 상점에서 아직 없는 스킨·타이틀·기타 패키지 아이템을 다른 캐릭터와 서버에서도 받을 수 있습니다.",
+              "en": "The tier-specific free shop supplies missing pack skins, titles and other items to characters across servers."
+            },
+            {
+              "ko": "전용 상점은 종료 공지가 나올 때까지 모든 캐릭터·서버에 열립니다. 이미 보유한 패키지 아이템은 재구매되지 않습니다.",
+              "en": "Access remains open for every character and server until a closure notice. Owned pack items cannot be claimed again."
+            },
+            {
+              "ko": "인벤토리에 남은 중복 아이템을 버리는 기능과 스킨 중복 등록 방지 수정은 추후 적용 예정입니다.",
+              "en": "Inventory duplicate disposal and duplicate skin registration fixes are planned for a later update."
+            },
+            {
+              "ko": "무료로 받은 중복 스킨은 유료 스킨 구매 한도를 소모하지 않습니다. 패키지 결제가 완료되지 않으면 클라이언트를 종료한 뒤 다시 시도하도록 안내됐습니다.",
+              "en": "Free duplicate skins do not consume paid-skin purchase limits. For incomplete pack purchases, the notice asks players to restart the client and retry."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "아이템·물질 변환",
+            "en": "Items & substance morphing"
+          },
+          "sourceSection": "아이템·물질 변환",
+          "notes": [
+            {
+              "ko": "봉인 날개를 강화석으로 바꾸는 변환식: 서버별 주간 최대 20회.",
+              "en": "Sealed Wings to Enhance Stones: at most 20 conversions per server each week."
+            },
+            {
+              "ko": "혼돈의 하층 에레슈란타, 베르테론, 알트가르드 몬스터의 생가죽 드롭률이 올라갑니다. 상향 비율은 공개되지 않았습니다.",
+              "en": "Raw Leather drop rates increase in Chaotic Lower Reshanta, Verteron and Altgard. The percentage is unspecified."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "산들바람 상회 · 시즌 1",
+            "en": "Wind Breeze Merchants · Season 1"
+          },
+          "sourceSection": "산들바람 상회 · 시즌 1",
+          "notes": [
+            {
+              "ko": "특수 탭에 부활의 정령석(시즌 1)을 추가합니다. 1개 25,000 키나, 서버별 매주 10개까지 구매합니다.",
+              "en": "The Special tab adds Resurrection Spiritstone (Season 1): 25,000 Kina each, up to 10 per server each week."
+            },
+            {
+              "ko": "판매 구간은 공지 기준 10월 6일 점검 후(PDT)부터 12월 15일 점검 전(PST)까지입니다. 한국판 이벤트의 캐릭터별 한도와는 다릅니다.",
+              "en": "The notice gives a sale window from after October 6 maintenance (PDT) until before December 15 maintenance (PST). This uses the North America limit."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "지도·미션 수정",
+            "en": "Map & mission fixes"
+          },
+          "sourceSection": "지도·미션 수정",
+          "notes": [
+            {
+              "ko": "지도 핀 최대 수량의 잘못된 표시를 고칩니다. 배치 가능한 핀은 30개입니다.",
+              "en": "The map-pin maximum display is corrected; players can place 30 pins."
+            },
+            {
+              "ko": "마족 도전 시즌 주간 미션 Daeva of Glorious Deeds의 완료 판정 오류를 해결합니다.",
+              "en": "The Asmodian weekly Challenge Season mission Daeva of Glorious Deeds can complete correctly."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "설정·채팅 수정",
+            "en": "Settings & chat fixes"
+          },
+          "sourceSection": "설정·채팅 수정",
+          "notes": [
+            {
+              "ko": "설정 → 키 설정 → 일반의 이동 조작 항목이 중복 표시되는 문제를 해결합니다.",
+              "en": "Duplicate Movement Controls entries in Key Settings → General are removed."
+            },
+            {
+              "ko": "채팅에서 일부 감정 표현 명령이 실행되지 않는 오류를 해결합니다.",
+              "en": "Affected emote commands work correctly in chat."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [],
+      "classTables": []
+    }
+  },
+  "6abc11b8d97eae18cc40e18d": {
+    "contentHash": "54f1b619a657c31563b63ab6ebf38c817ebddfa944813803630d758eeb29ec21",
+    "reviewedAt": "2026-10-08T10:02:56Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "ko": "어비스 전투 시간 조정과 차원핵 약화, 마도성 툴팁 정정, 불의 신전·비탄의 설원 오류 수정.",
+      "en": "Revised Abyss times and core weakening, corrected Sorcerer tooltips and Fire Temple/Snowfield fixes."
+    },
+    "title": {
+      "ko": "9월 30일 한국 패치",
+      "en": "September 30 · Korea"
     },
     "changes": [
       {
-        "type": "system",
+        "classId": "sorcerer",
+        "type": "tooltip",
         "subject": {
-          "en": "Founder’s items",
-          "ko": "파운더스 아이템"
+          "ko": "원소 강화",
+          "en": "Element Enhancement"
         },
         "description": {
-          "en": "Eligible owners can claim missing items for free through the tier-specific Shop on other characters and servers.",
-          "ko": "구매 등급별 전용 상점에서 미보유 아이템을 무료로 받아 다른 캐릭터·서버에서도 이용할 수 있습니다."
+          "ko": "불·물 속성 공격력이라는 설명을 불·물 속성 증폭으로 정정합니다. 이 항목에는 실제 수치 변경이 없습니다.",
+          "en": "The tooltip says elemental amplification instead of elemental attack. This entry changes wording, not values."
         }
       },
       {
-        "type": "adjustment",
+        "classId": "sorcerer",
+        "type": "tooltip",
         "subject": {
-          "en": "Wing morphing",
-          "ko": "날개 물질 변환"
+          "ko": "저주: 나무",
+          "en": "Curse: Tree"
         },
         "description": {
-          "en": "Sealed Wings → Enhance Stones: maximum 20 morphs per server per week.",
-          "ko": "봉인 날개 → 강화석 변환은 서버별 주간 20회로 제한됩니다."
-        }
-      },
-      {
-        "type": "system",
-        "subject": {
-          "en": "Raw Leather",
-          "ko": "생가죽 드롭"
-        },
-        "description": {
-          "en": "Drop rates rise in Chaotic Lower Reshanta, Verteron and Altgard; no percentage is given.",
-          "ko": "혼돈의 하층 에레슈란타·베르테론·알트가르드 드롭률을 높였습니다. 비율은 공개되지 않았습니다."
-        }
-      },
-      {
-        "type": "system",
-        "subject": {
-          "en": "Resurrection Spiritstone · Season 1",
-          "ko": "부활의 정령석 · 시즌 1"
-        },
-        "description": {
-          "en": "Shop price: 25,000 Kina; maximum 10 per server per week.",
-          "ko": "상점 가격 25,000 키나, 서버별 주간 최대 10개입니다."
-        }
-      },
-      {
-        "type": "fix",
-        "subject": {
-          "en": "Map pins / Asmodian mission",
-          "ko": "지도 징표 / 마족 주간 미션"
-        },
-        "description": {
-          "en": "Pins correctly show a maximum of 30. The affected Asmodian weekly mission can complete normally.",
-          "ko": "지도 징표 최대 30개가 정상 표시되고, 해당 마족 주간 미션 완료 오류가 수정됐습니다."
+          "ko": "불 속성 피해 저항이라는 설명을 불 속성 내성으로 정정합니다.",
+          "en": "The Fire damage resistance tooltip uses the corrected tolerance terminology."
         }
       }
-    ]
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "아티팩트 점령전은 수·토요일에 유지됩니다. 그룹 1/2/3 시작 시간은 각각 21:20/21:50/22:20입니다.",
+              "en": "Artifact battles stay on Wednesday/Saturday, starting at 21:20, 21:50 and 22:20 for groups 1, 2 and 3."
+            },
+            {
+              "ko": "8분 안에 차원핵을 처치하지 못하면 피해 내성·강타 저항을 줄이는 힘의 쇠락이 적용됩니다.",
+              "en": "If the core survives eight minutes, a weakening debuff reduces damage tolerance and strike resistance."
+            },
+            {
+              "ko": "하층의 집행자 타마사·아그로·카이라, 중층의 처형관 드라모스·반역자 듀칼·파멸자 마라카는 수·토요일 그룹별 21:45/22:15/22:45에 등장합니다.",
+              "en": "The three lower executors and three middle bosses appear Wednesday/Saturday at 21:45/22:15/22:45 by group."
+            },
+            {
+              "ko": "수호신장 나흐마·분노한 수호신장 나흐마는 금·일요일 그룹별 22:00/22:30/23:00입니다. 분노한 나흐마에도 힘의 쇠락이 정상 적용됩니다.",
+              "en": "Both Nahma variants appear Friday/Sunday at 22:00/22:30/23:00 by group. Weakening now also applies to enraged Nahma."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "불의 신전 검은연기 무르트의 점프 착지가 예고 범위와 일치하도록 고칩니다.",
+              "en": "Black-Smoke Murt’s Fire Temple jump landing matches its telegraph."
+            },
+            {
+              "ko": "비탄의 설원 트리톤 냉기 수확의 마지막 브레스를 무적 스킬로 무효화할 수 없도록 고칩니다. 빙결된 대상에게 특정 스킬이 피해를 주던 오류도 해결합니다.",
+              "en": "Triton’s final Cold Harvest breath cannot be nullified with immunity skills; affected skills no longer damage frozen targets."
+            },
+            {
+              "ko": "좁아졌던 히든 큐브의 소리 범위를 복원합니다.",
+              "en": "The reduced Hidden Cube audio range is restored."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "어비스",
+        "클래스 변경사항",
+        "수정사항"
+      ],
+      "classTables": []
+    }
+  },
+  "6a9727b8fa34c1011d627551": {
+    "contentHash": "db22944a557bf3b57d4b106880ff4c5342872267c62434d256be508bef38199d",
+    "reviewedAt": "2026-10-08T10:02:56Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "ko": "시공 쟁탈전 신설, 수호성·호법성 피해 재분배와 검성 오류 수정. 다음 주 예고는 실제 적용 항목과 구분합니다.",
+      "en": "Rift occupation arrives; Templar/Chanter damage is redistributed and Gladiator passives fixed. Next-week plans are marked separately."
+    },
+    "title": {
+      "ko": "9월 2일 한국 패치",
+      "en": "September 2 · Korea"
+    },
+    "changes": [
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "맹렬한 일격 · 회심의 일격 · 필사의 일격 · 위협의 맹타",
+          "en": "Ferocious Strike chain"
+        },
+        "description": {
+          "ko": "PVE 피해 +30%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +30%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 130%",
+          "en": "130% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "맹렬한 일격 연계 · 4번 특화",
+          "en": "Ferocious Strike chain · specialization 4"
+        },
+        "description": {
+          "ko": "징벌 쿨타임 감소량을 1→2초로 늘립니다.",
+          "en": "Punishment cooldown reduction increases from one to two seconds."
+        },
+        "before": {
+          "ko": "1초",
+          "en": "1 s"
+        },
+        "after": {
+          "ko": "2초",
+          "en": "2 s"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "심판",
+          "en": "Judgment"
+        },
+        "description": {
+          "ko": "PVE 피해 +15%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +15%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 115%",
+          "en": "115% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "징벌",
+          "en": "Punishment"
+        },
+        "description": {
+          "ko": "PVE 피해 +20%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +20%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 120%",
+          "en": "120% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "nerf",
+        "subject": {
+          "ko": "연속 난타",
+          "en": "Pummel"
+        },
+        "description": {
+          "ko": "PVE 피해 -10%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage -10%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 90%",
+          "en": "90% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "nerf",
+        "subject": {
+          "ko": "응징의 일격",
+          "en": "Pummel follow-up"
+        },
+        "description": {
+          "ko": "PVE 피해 -20%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage -20%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 80%",
+          "en": "80% of old damage"
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "ko": "회전격 · 거리·피해·그로기",
+          "en": "Spinning Strike · range, damage & stagger"
+        },
+        "description": {
+          "ko": "20m 원거리 광역으로 전환합니다. PVE 피해 +50%, 그로기 피해 10→15입니다.",
+          "en": "Becomes a 20 m ranged area attack with +50% PvE damage and stagger damage 10→15."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "nerf",
+        "subject": {
+          "ko": "회전격 · 재시전·정신력",
+          "en": "Spinning Strike · cooldown & resource"
+        },
+        "description": {
+          "ko": "쿨타임 15→30초, 정신력 100→250으로 부담이 늘어납니다.",
+          "en": "Cooldown rises 15→30 seconds and resource cost 100→250."
+        },
+        "before": {
+          "ko": "15초 · 100",
+          "en": "15 s · 100"
+        },
+        "after": {
+          "ko": "30초 · 250",
+          "en": "30 s · 250"
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "ko": "백열격 · 파열격",
+          "en": "Incandescent Strike chain"
+        },
+        "description": {
+          "ko": "PVE 피해 +50%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +50%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 150%",
+          "en": "150% of old damage"
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "nerf",
+        "subject": {
+          "ko": "타격쇄",
+          "en": "Strike Chain"
+        },
+        "description": {
+          "ko": "쿨타임을 10→15초로 늘립니다.",
+          "en": "Cooldown rises from 10 to 15 seconds."
+        },
+        "before": {
+          "ko": "10초",
+          "en": "10 s"
+        },
+        "after": {
+          "ko": "15초",
+          "en": "15 s"
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "fix",
+        "subject": {
+          "ko": "보호의 갑옷 · 노련한 반격 · 살기 파열",
+          "en": "Armor Protection / Veteran Counter / Killing Burst"
+        },
+        "description": {
+          "ko": "균형의 갑옷 15레벨 미만, 파동의 갑주 10레벨·15레벨 미만 버프 보유 시 각각 누락되던 패시브를 정상 적용합니다.",
+          "en": "The corresponding passives now work with sub-level-15 Armor of Balance and sub-level-10/15 Wave Armor buffs."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "시공의 균열 쟁탈전",
+            "en": "Rift occupation"
+          },
+          "sourceSection": "시공의 균열 쟁탈전",
+          "notes": [
+            {
+              "ko": "베르테론·알트가르드에서 종족별 공격·방어 쟁탈전을 엽니다. 월·목·토 20:00/23:00 시공 일정이며, 방어 영지는 첫 주 베르테론, 다음 주 알트가르드로 매주 교대합니다.",
+              "en": "Faction offense/defense runs in Verteron and Altgard at 20:00/23:00 Monday, Thursday and Saturday; defending territories alternate weekly."
+            },
+            {
+              "ko": "입장 조건: 50레벨, 아이템 레벨 4,500, 전투력 500.0k 이상과 두 영지의 주둔지 소탕 VI 업적 완료. 이벤트 열쇠는 주당 3개 충전되며 보상을 받을 때 1개를 소모합니다.",
+              "en": "Entry requires level 50, item level 4,500, combat power 500.0k and both territory-clear VI achievements. Three keys refill weekly; receiving rewards consumes one."
+            },
+            {
+              "ko": "열쇠를 보유한 상태로 알리미에서 신청합니다. 참가 버튼은 방어측 영지에서 활성화됩니다. 진영당 60~200명, 포탈 생성 5분 후 시작, 전투 25분, 포탈 유지 10분 동안 합류할 수 있습니다.",
+              "en": "Apply from the notification UI with a key in the defending territory. Each faction fields 60–200; battle starts five minutes after the portal, runs 25 minutes and allows entry while the ten-minute portal remains."
+            },
+            {
+              "ko": "참가 중 원정·초월·성역을 이용할 수 없습니다. 준비 종료 후 S-PVP가 켜져 해당 참가자끼리 싸웁니다. 일반 플레이어·몬스터·NPC를 공격할 수 없지만 필드 경비병은 참가자를 공격할 수 있습니다. 외형·네임 플레이트 단일화 옵션을 제공합니다.",
+              "en": "Participants cannot enter other dungeons. S-PVP begins after preparation, permits combat only among participants and offers uniform appearance/nameplate options; field guards can still attack participants."
+            },
+            {
+              "ko": "무작위 그룹의 주둔지 5개 중 3개 이상을 점령하면 공격팀 승리입니다. 주둔지는 모노리스 3개를 모두 부숴야 점령됩니다. 방어팀은 제한 시간까지 과반을 지키면 이깁니다.",
+              "en": "An active group has five outposts. Destroy all three monoliths to capture one; the attackers need three captures, while defenders must retain a majority until time expires."
+            },
+            {
+              "ko": "모노리스·수호병·상대 플레이어로 기여도를 쌓고 최소 조건을 채운 참가자에게 직업별 랭킹 보상을 줍니다. 필드 업적과 기존 시즌 처치 미션에는 반영되지 않습니다.",
+              "en": "Monoliths, guards and enemy players grant contribution. Qualifying players receive class-ranked rewards, without advancing field achievements or existing seasonal kill tasks."
+            },
+            {
+              "ko": "퇴장 후 일정 시간이 지나면 재입장할 수 있습니다. 사망·접속 종료로 본 서버에 돌아갔다면 제한된 유지 시간 동안 재참가가 가능합니다.",
+              "en": "Players can re-enter after a delay; returns to the home server following death/disconnection preserve participation for a limited rejoin window."
+            },
+            {
+              "ko": "잡화 상인·상회에 전용 키스크를 추가합니다. 공격팀만 설치·사용할 수 있고, 파티·포스 가입 여부와 무관하게 등록됩니다. 레기온 키스크보다 수용 인원이 많습니다. 서버 주간·시즌 전용 미션도 추가합니다.",
+              "en": "A larger dedicated kisk is sold by general merchants and the shop. Only attackers deploy/use it, independent of party membership. New server weekly/season tasks accompany the mode."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "천족 방어진영 영지",
+                "그룹",
+                "주둔지",
+                "마족 방어진영 영지",
+                "그룹",
+                "주둔지"
+              ],
+              "rows": [
+                [
+                  "베르테론",
+                  "A",
+                  "우가로스 약탈자 야영지",
+                  "알트가르드",
+                  "A",
+                  "묘지 도굴꾼 소굴"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "미로스의 초소",
+                  "알트가르드",
+                  "A",
+                  "타락한 숲지기 폐허"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "밀렵꾼 거점",
+                  "알트가르드",
+                  "A",
+                  "칼날단 임시 초소"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "코흐타 감시 초소",
+                  "알트가르드",
+                  "A",
+                  "성소 외곽 감시대"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "탈영병 숙영지",
+                  "알트가르드",
+                  "A",
+                  "벌목꾼 쉼터 폐허"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "만타쉬 순찰대 거점",
+                  "알트가르드",
+                  "B",
+                  "루베크 도적단 점거지"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "세흐나 감시 초소",
+                  "알트가르드",
+                  "B",
+                  "숲 약탈꾼 야영지"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "사브가 용족 야영지",
+                  "알트가르드",
+                  "B",
+                  "레기온 기지 폐허"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "마크타샤 감시초소",
+                  "알트가르드",
+                  "B",
+                  "플라크 레기온 초소"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "로믈론의 은신처",
+                  "알트가르드",
+                  "B",
+                  "라트리마 감시초소"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "가르고스 도적단 야영지",
+                  "알트가르드",
+                  "C",
+                  "바라타 척결부대 초소"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "협곡 도둑 소굴",
+                  "알트가르드",
+                  "C",
+                  "안드샤 전초기지"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "숲 그늘 처형터",
+                  "알트가르드",
+                  "C",
+                  "아무라타 감시기지"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "변절자의 은신처",
+                  "알트가르드",
+                  "C",
+                  "데틀레프 도적단 야영지"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "고원 언덕 기지",
+                  "알트가르드",
+                  "C",
+                  "그라나흐의 은신처"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "감시자 카이라의 등장 확률은 20→100%, 자정 기준 4시간 주기이며 매번 무작위 장소에 동일한 확률로 등장합니다.",
+              "en": "Watcher Kaira’s spawn chance rises 20→100%, on a four-hour schedule from midnight with equally likely random locations."
+            },
+            {
+              "ko": "어비스 보스·차원핵 능력치와 PVP 기여도를 크게 높입니다. 공지에는 세부 비율이 없으며 추가 조정 가능성이 안내됐습니다.",
+              "en": "Abyss bosses/core stats and PvP contribution increase substantially without specified percentages; further changes are possible."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "다음 주 직업 변경 예고",
+            "en": "Next-week class plans"
+          },
+          "sourceSection": "차 주 클래스 변경사항",
+          "notes": [
+            {
+              "ko": "아래는 9월 2일에 적용된 변경이 아닌 예고입니다: 수호성 방패 강타의 이동 사용·모션, 살성 환영 분신 추가 피해·타격감, 정령성 원소 융합 이후 DPS, 치유성 PVE 피해를 개선할 예정이라고 안내했습니다.",
+              "en": "These were plans, not September 2 applied changes: moving Shield Smite, Assassin clone feedback/extra damage, post-fusion Spiritmaster DPS and Cleric PvE damage."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "개선사항",
+            "en": "Quality of life"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "ko": "주간 천군/마군의 자랑과 백색/흑색 깃발 휘날리며를 통합해 네 영지 어디서든 상대 진영 처치를 셉니다. 쟁탈전 처치는 제외합니다.",
+              "en": "Two weekly Rift kill tasks merge and accept opposing-faction kills across all four territories, excluding occupation battles."
+            },
+            {
+              "ko": "돌파석·조율석·계승석 조각, 아르카나 연성 결정·조각, 불안정한 스티그마 샤드 등의 묶음 한도를 늘립니다. 인벤토리 정렬 시 반영됩니다.",
+              "en": "Stack limits rise for breakthrough/tuning/inheritance fragments, Arcana synthesis materials and unstable Stigma Shards; inventory sorting applies the new stacks."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "신비로운·조화로운·고결한 결정(각인)의 NPC 판매가를 5,000 키나로 고칩니다.",
+              "en": "Three bound crystal types use the corrected 5,000 Kina NPC resale value."
+            },
+            {
+              "ko": "펫 탑승을 낙하 중 해제해도 일반 낙하처럼 스킬을 사용할 수 없습니다.",
+              "en": "Dismounting a pet while falling retains the ordinary falling restriction on skills."
+            },
+            {
+              "ko": "원정·초월 데우스의 아티엘 특정 공격 판정을 모션과 맞추고, 정원 초과 어비스 입장 실패 메시지와 천족 신비로운 트랙의 누락 회오리를 고칩니다.",
+              "en": "Attiel’s affected hits align with their animation; full-Abyss entry errors show a message and missing Elyos race whirlwinds return."
+            },
+            {
+              "ko": "전투·비행 상태에서 차원 침공 입장이 막히던 문제를 고칩니다. 당시 모바일 수정은 9월 9일 예정으로 안내됐습니다.",
+              "en": "Dimensional Invasion entry during combat/flight is repaired, with the mobile repair scheduled for September 9 in this notice."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "회수 및 복구",
+            "en": "Restoration"
+          },
+          "sourceSection": "회수 및 복구",
+          "notes": [
+            {
+              "ko": "8월 26일 이후 판매 등록·일괄 판매 오동작으로 아이템을 잘못 판매해 NPC 복구 횟수를 쓴 대상은 복구 횟수를 초기화합니다.",
+              "en": "NPC restoration uses caused by unintended mass sales after August 26 are reset."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "시공의 균열 쟁탈전",
+        "어비스",
+        "클래스 변경사항",
+        "차 주 클래스 변경사항",
+        "개선사항",
+        "수정사항",
+        "회수 및 복구"
+      ],
+      "classTables": []
+    }
+  },
+  "6aa99cb8a279104f7d9d5c34": {
+    "contentHash": "03e30246dc596c3af8124058cb29feb26d9118241dd2b45d5d7b0a3521b87861",
+    "reviewedAt": "2026-10-08T10:02:56Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "ko": "수호성·살성의 캔슬 딜레이와 피해량을 함께 조정하고, 마도성 불의 표식을 개선합니다. 장비·재화·성역 수정도 포함합니다.",
+      "en": "Templar/Assassin cancel timing and damage change together; Sorcerer marks improve alongside gear, currencies and raid fixes."
+    },
+    "title": {
+      "ko": "9월 16일 한국 패치",
+      "en": "September 16 · Korea"
+    },
+    "changes": [
+      {
+        "classId": "gladiator",
+        "type": "fix",
+        "subject": {
+          "ko": "도약 찍기 · 파멸의 맹타 · 발목 베기",
+          "en": "Leaping Strike / Ruinous Blow / Ankle Slice"
+        },
+        "description": {
+          "ko": "속박 상태에서 도약 찍기·파멸의 맹타와 발목 베기 3번 특화를 사용할 수 없도록 고칩니다. 발목 베기의 1·2·3번 특화 조합에서 3번 사거리 효과 누락도 해결합니다.",
+          "en": "Root blocks these movement skills and Ankle Slice specialization 3; its range specialization works in the 1/2/3 combination."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "nerf",
+        "subject": {
+          "ko": "연속 난타 · 응징의 일격 · 심판",
+          "en": "Pummel chain / Judgment"
+        },
+        "description": {
+          "ko": "캔슬 딜레이를 늘립니다. 추가된 초 단위 수치는 공지하지 않았습니다.",
+          "en": "Cancel delay increases; the notice gives no added-second value."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "연속 난타 · 4번 특화",
+          "en": "Pummel · specialization 4"
+        },
+        "description": {
+          "ko": "응징의 일격에 있던 징벌 쿨타임 감소 효과를 연속 난타에도 적용합니다.",
+          "en": "Pummel also receives the Punishment cooldown reduction from the follow-up specialization."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "adjustment",
+        "subject": {
+          "ko": "응징의 일격 · 5번 특화",
+          "en": "Pummel follow-up · specialization 5"
+        },
+        "description": {
+          "ko": "추가 1회 발동에서 적중 시 추가 피해로 바꿉니다. 전체 성능 증감 수치는 없습니다.",
+          "en": "An extra activation becomes on-hit bonus damage, with no quantified overall gain/loss."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "비호의 일격 · 섬멸 · 징벌",
+          "en": "Warding Strike / Annihilate / Punishment"
+        },
+        "description": {
+          "ko": "PVE 피해 +10%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +10%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 110%",
+          "en": "110% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "방패 강타",
+          "en": "Shield Smite"
+        },
+        "description": {
+          "ko": "PVE 피해 +20%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +20%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 120%",
+          "en": "120% of old damage"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "adjustment",
+        "subject": {
+          "ko": "고결의 갑주",
+          "en": "Noble Armor"
+        },
+        "description": {
+          "ko": "유지 시간과 쿨타임을 모두 5분→2분으로 줄입니다.",
+          "en": "Both duration and cooldown shorten from five to two minutes."
+        },
+        "before": {
+          "ko": "유지·쿨 5분",
+          "en": "Duration/CD 5 min"
+        },
+        "after": {
+          "ko": "유지·쿨 2분",
+          "en": "Duration/CD 2 min"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "adjustment",
+        "subject": {
+          "ko": "도발",
+          "en": "Taunt"
+        },
+        "description": {
+          "ko": "고정 적대치 증가를 피해량에 비례하는 적대치로 바꿉니다.",
+          "en": "Threat changes from a fixed value to damage-proportional threat."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "nerf",
+        "subject": {
+          "ko": "맹수의 포효 · 맹수의 후려치기 · 심장 찌르기",
+          "en": "Beast chain / Heart Stab"
+        },
+        "description": {
+          "ko": "캔슬 딜레이를 늘립니다. 추가 시간은 수치로 공개되지 않았습니다.",
+          "en": "Cancel delays increase without an announced numeric duration."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "ko": "빠른 베기 · 절혼 베기 · 쾌속 베기 · 문양 폭발",
+          "en": "Quick Slash chain / Insignia Burst"
+        },
+        "description": {
+          "ko": "PVE 피해 +10%. 같은 스킬의 기존 피해량을 기준으로 한 변경입니다.",
+          "en": "PvE damage +10%, relative to this skill’s previous damage."
+        },
+        "before": {
+          "ko": "기존 피해의 100%",
+          "en": "100% of old damage"
+        },
+        "after": {
+          "ko": "기존 피해의 110%",
+          "en": "110% of old damage"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "ko": "암습 · 2번 특화",
+          "en": "Ambush · specialization 2"
+        },
+        "description": {
+          "ko": "효과 유지 시간을 5→10초로 늘립니다.",
+          "en": "The effect lasts 10 seconds instead of five."
+        },
+        "before": {
+          "ko": "5초",
+          "en": "5 s"
+        },
+        "after": {
+          "ko": "10초",
+          "en": "10 s"
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "fix",
+        "subject": {
+          "ko": "조준 화살 · 결박의 덫",
+          "en": "Aimed Arrow / Binding Trap"
+        },
+        "description": {
+          "ko": "조준 화살 5번 특화가 4번 없이도 다단 히트를 내도록 고치고, 결박의 덫 전투 메시지를 복원합니다.",
+          "en": "Aimed Arrow specialization 5 can multi-hit without specialization 4; Binding Trap combat messages return."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "adjustment",
+        "subject": {
+          "ko": "공격 스킬 속성",
+          "en": "Attack elements"
+        },
+        "description": {
+          "ko": "바람·땅·불 속성을 각 공격 스킬에 적용합니다. 아래 속성 표에 모든 대상 스킬을 정리했습니다. 피해 증가율이 따로 공지된 항목은 아닙니다.",
+          "en": "Attack skills receive Wind/Earth/Fire elements. Every affected skill is listed in the elemental table; no damage percentage is announced."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "fix",
+        "subject": {
+          "ko": "철산고 · 승천타 · 공파참 · 순보 · 진각 · 참영권 · 질풍격",
+          "en": "Brawler movement skills"
+        },
+        "description": {
+          "ko": "속박 상태에서는 이 스킬들을 사용하지 못하도록 고칩니다. 한국판 권성 항목입니다.",
+          "en": "Root prevents these movement skills. This entry belongs to Korea’s 권성 class."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "adjustment",
+        "subject": {
+          "ko": "수호의 축복",
+          "en": "Guardian’s Blessing"
+        },
+        "description": {
+          "ko": "유지 시간과 쿨타임을 모두 5분→2분으로 줄입니다.",
+          "en": "Duration and cooldown both shorten from five to two minutes."
+        },
+        "before": {
+          "ko": "유지·쿨 5분",
+          "en": "Duration/CD 5 min"
+        },
+        "after": {
+          "ko": "유지·쿨 2분",
+          "en": "Duration/CD 2 min"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "adjustment",
+        "subject": {
+          "ko": "쾌유의 광휘 · 2번 특화",
+          "en": "Radiant Recovery · specialization 2"
+        },
+        "description": {
+          "ko": "스킬 속도 +20% 효과를 연속 시전 +1로 바꿉니다.",
+          "en": "A +20% skill-speed effect becomes one extra consecutive cast."
+        },
+        "before": {
+          "ko": "스킬 속도 +20%",
+          "en": "Skill speed +20%"
+        },
+        "after": {
+          "ko": "연속 시전 +1",
+          "en": "Consecutive cast +1"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "fix",
+        "subject": {
+          "ko": "심판의 번개 · 천벌",
+          "en": "Judgment Lightning / Divine Punishment"
+        },
+        "description": {
+          "ko": "모바일 전투 서포트에서 두 스킬만 반복해 다른 스킬을 못 쓰던 문제를 해결합니다.",
+          "en": "Mobile combat support no longer loops these two skills at the expense of other skills."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "혹한의 바람 · 냉기 폭풍 · 불의 장벽",
+          "en": "Cold Wind / Cold Storm / Fire Wall"
+        },
+        "description": {
+          "ko": "스킬 활성 중 몬스터가 전투 초기화되지 않던 오류를 고칩니다.",
+          "en": "Monsters can reset correctly while these skills remain active."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "adjustment",
+        "subject": {
+          "ko": "불꽃 화살 · 작렬 · 열화 · 4번 특화",
+          "en": "Fire Bolt chain · specialization 4"
+        },
+        "description": {
+          "ko": "열화 적중 시 표식 부여 대신, 열화 시전 후 10초간 불 속성 피해 증폭 +5%를 제공합니다.",
+          "en": "Applying a mark on Blaze hit becomes +5% Fire amplification for ten seconds after casting Blaze."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "buff",
+        "subject": {
+          "ko": "불꽃 폭발",
+          "en": "Flame Burst"
+        },
+        "description": {
+          "ko": "적중해도 불의 표식을 제거하지 않습니다.",
+          "en": "Hitting no longer consumes the Fire Mark."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "buff",
+        "subject": {
+          "ko": "불의 표식 · 패시브",
+          "en": "Fire Mark · passive"
+        },
+        "description": {
+          "ko": "불 속성 공격의 표식 부여 확률을 20→100%로 늘립니다.",
+          "en": "Fire attacks apply the mark with 100% probability instead of 20%."
+        },
+        "before": {
+          "ko": "20%",
+          "en": "20%"
+        },
+        "after": {
+          "ko": "100%",
+          "en": "100%"
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "시공의 균열 쟁탈전",
+            "en": "Rift occupation"
+          },
+          "sourceSection": "시공의 균열 쟁탈전",
+          "notes": [
+            {
+              "ko": "모노리스 공격 기여도를 크게 늘립니다. 참가 중 수배령 사명 퀘스트·레기온 비공정 위상 입장과 다른 영지 이동을 제한합니다.",
+              "en": "Monolith contribution rises substantially. Occupation participants cannot phase into wanted missions/legion airships or travel to another territory."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "어비스 몬스터가 잠재력 증폭석: 어비스의 영웅·유일 등급 비각인 아이템을 드롭합니다.",
+              "en": "Abyss monsters drop unbound heroic and unique Abyss potential stones."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "슈고 페스타 · 신비로운 트랙",
+            "en": "Shugo Festa · race track"
+          },
+          "sourceSection": "슈고 페스타 – ‘신비로운 트랙’",
+          "notes": [
+            {
+              "ko": "주행을 방해하던 장애물·오브젝트 배치를 조정합니다.",
+              "en": "Obstacles and objects that disrupted normal racing are repositioned."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "성역 · 비탄의 설원",
+            "en": "Snowfield raid"
+          },
+          "sourceSection": "성역 – ‘비탄의 설원’",
+          "notes": [
+            {
+              "ko": "쉬움 난이도의 귀환자 트리톤·델트라스 체력을 10% 줄입니다.",
+              "en": "Easy-mode returned Triton and Deltras have 10% less HP."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "신규 장비",
+            "en": "New gear"
+          },
+          "sourceSection": "신규 장비",
+          "notes": [
+            {
+              "ko": "진 가디언/아칸 친위대장 무기·가더를 추가합니다. 어비스 상점 구매와 기존 친위대장 계열을 쓰는 계승 제작을 제공합니다.",
+              "en": "True Guardian/Archon captain weapons and guards arrive through the Abyss store or inheritance crafting with earlier captain equipment."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스 장비 세트 효과",
+            "en": "Abyss gear set bonuses"
+          },
+          "sourceSection": "어비스 장비 세트 효과",
+          "notes": [
+            {
+              "ko": "12세트의 PVE 어비스 피해 증폭을 올립니다. 아래는 변경 후 세트별 전체 수치입니다.",
+              "en": "The 12-piece PvE Abyss amplification increases. The table retains every resulting set value."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "장비",
+                "대상 스탯",
+                "2세트",
+                "5세트",
+                "8세트",
+                "12세트"
+              ],
+              "rows": [
+                [
+                  "십부장",
+                  "PVE 어비스 피해 증폭",
+                  "15%",
+                  "20%",
+                  "-",
+                  "-"
+                ],
+                [
+                  "백부장",
+                  "PVE 어비스 피해 증폭",
+                  "15%",
+                  "20%",
+                  "25%",
+                  "-"
+                ],
+                [
+                  "천부장",
+                  "PVE 어비스 피해 증폭",
+                  "20%",
+                  "25%",
+                  "30%",
+                  "45%"
+                ],
+                [
+                  "군단장",
+                  "PVE 어비스 피해 증폭",
+                  "25%",
+                  "30%",
+                  "35%",
+                  "50%"
+                ],
+                [
+                  "친위대장",
+                  "PVE 어비스 피해 증폭",
+                  "30%",
+                  "35%",
+                  "40%",
+                  "55%"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "직업별 랭킹 보상",
+            "en": "Class-ranked rewards"
+          },
+          "sourceSection": "직업별 랭킹 보상",
+          "notes": [
+            {
+              "ko": "어비스 보스·아티팩트·시공 쟁탈전의 기여도 훈장 보상을 일부 늘립니다.",
+              "en": "Some contribution medals increase for Abyss bosses, artifact battles and Rift occupation."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "영혼 결정",
+            "en": "Soul Crystals"
+          },
+          "sourceSection": "영혼 결정",
+          "notes": [
+            {
+              "ko": "오디움 저장소의 성장의 펫 상자 보상은 기존의 2배, 사명·지령서의 영혼 결정은 3배입니다.",
+              "en": "Odium Storage pet-box rewards double; mission/order Soul Crystals triple."
+            },
+            {
+              "ko": "상회 특수 탭의 영혼 결정 가격은 500 키나, 구매 제한은 30,000개로 변경합니다.",
+              "en": "Special-shop Soul Crystals cost 500 Kina with a 30,000-unit purchase cap."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "마석과 영석",
+            "en": "Manastones & spiritstones"
+          },
+          "sourceSection": "마석과 영석",
+          "notes": [
+            {
+              "ko": "악몽·페스타 교환 상점에 상급 마석·영석(각인)을 추가하고, 보급 의뢰 긴급 보상에 하급 마석·영석을 넣습니다.",
+              "en": "Nightmare/Festa stores add higher-grade bound stones; emergency supply orders add lower-grade stones."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "심연의 초대장 데바 패스",
+            "en": "Abyss invitation pass"
+          },
+          "sourceSection": "1. 신규 데바 패스 : 심연의 초대장",
+          "notes": [
+            {
+              "ko": "구독 메뉴에서 기본 1,000,000 키나·프리미엄 500 큐나로 캐릭터별 1회 구매합니다. 프리미엄은 오드 에너지(각인) 5개도 제공합니다.",
+              "en": "The subscription menu offers basic access for 1,000,000 Kina and premium for 500 Quna once per character; premium also supplies five bound Od Energy."
+            },
+            {
+              "ko": "판매: 9월 16일 점검 후~10월 6일 05:00. 미션·보상 수령: 10월 7일 점검 전까지. 최대 40레벨 이후 반복 보상, 레벨 직접 구매는 50 큐나입니다.",
+              "en": "Sales run September 16 maintenance–October 6 05:00; missions/claims end at October 7 maintenance. The level-40 cap has repeating rewards; a level costs 50 Quna."
+            },
+            {
+              "ko": "주당 XP 상한은 캐릭터별 12,000입니다. XP 획득처와 모든 레벨 보상은 아래 표를 펼쳐 볼 수 있습니다. 패스 주화는 구독의 패스 상점에서 사용합니다.",
+              "en": "Weekly XP is capped at 12,000 per character. All XP sources and level rewards appear below; pass coins are spent in the subscription pass store."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "심연의 초대장 (기본)",
+                  "1,000,000 키나",
+                  "미션 보상",
+                  "캐릭터별 1회"
+                ],
+                [
+                  "심연의 초대장 (프리미엄)",
+                  "500 큐나",
+                  "- 오드 에너지 (각인) 5개미션 보상",
+                  "캐릭터별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "경험치 획득처",
+                "경험치량 (XP)",
+                "최대 경험치 획득량"
+              ],
+              "rows": [
+                [
+                  "심연의 초대장",
+                  "몬스터 10마리 처치",
+                  "50",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "상대 진영 플레이어 KILL",
+                  "100",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "채집 성공",
+                  "30",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "제작 성공",
+                  "20",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "원정, 초월 클리어",
+                  "300",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "성역 클리어",
+                  "700",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "장비 강화 성공",
+                  "10",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "장비 추출",
+                  "10",
+                  "캐릭터별 1주 12,000 XP"
+                ],
+                [
+                  "심연의 초대장",
+                  "장비 영혼 각인",
+                  "20",
+                  "캐릭터별 1주 12,000 XP"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "패스 레벨",
+                "심연의 초대장 (기본)",
+                "수량",
+                "심연의 초대장 (프리미엄)",
+                "수량"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "2",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "3",
+                  "미지의 틈새 도전권 (각인)",
+                  "1",
+                  "미지의 틈새 도전권 (각인)",
+                  "3"
+                ],
+                [
+                  "4",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "5",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "6",
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "전투 강화 주문서 (각인)",
+                  "3"
+                ],
+                [
+                  "7",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "8",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "9",
+                  "즉시 완료권: 일일 던전 (각인)",
+                  "3",
+                  "즉시 완료권: 일일 던전 (각인)",
+                  "5"
+                ],
+                [
+                  "10",
+                  "콘텐츠 이용 충전권 선택 상자 (각인)",
+                  "1",
+                  "콘텐츠 이용 충전권 선택 상자 (각인)",
+                  "1"
+                ],
+                [
+                  "11",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "12",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "13",
+                  "어비스 하층 균열석 (각인)",
+                  "1",
+                  "어비스 중층 균열석 (각인)",
+                  "1"
+                ],
+                [
+                  "14",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "15",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "16",
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "전투 강화 주문서 (각인)",
+                  "3"
+                ],
+                [
+                  "17",
+                  "부활의 정령석 (각인)",
+                  "1",
+                  "부활의 정령석 (각인)",
+                  "2"
+                ],
+                [
+                  "18",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "19",
+                  "즉시 완료권: 악몽 (각인)",
+                  "2",
+                  "즉시 완료권: 악몽 (각인)",
+                  "5"
+                ],
+                [
+                  "20",
+                  "영혼 결정 (각인)",
+                  "350",
+                  "영혼 결정 (각인)",
+                  "1500"
+                ],
+                [
+                  "21",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "22",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "23",
+                  "미지의 틈새 도전권 (각인)",
+                  "1",
+                  "미지의 틈새 도전권 (각인)",
+                  "3"
+                ],
+                [
+                  "24",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "25",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "26",
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "전투 강화 주문서 (각인)",
+                  "3"
+                ],
+                [
+                  "27",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "28",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "29",
+                  "즉시 완료권: 일일 던전 (각인)",
+                  "3",
+                  "즉시 완료권: 일일 던전 (각인)",
+                  "5"
+                ],
+                [
+                  "30",
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "콘텐츠 이용 충전권 선택 상자 (각인)",
+                  "1"
+                ],
+                [
+                  "31",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "32",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "33",
+                  "어비스 하층 균열석 (각인)",
+                  "1",
+                  "어비스 중층 균열석 (각인)",
+                  "1"
+                ],
+                [
+                  "34",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "35",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "36",
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "전투 강화 주문서 (각인)",
+                  "3"
+                ],
+                [
+                  "37",
+                  "부활의 정령석 (각인)",
+                  "1",
+                  "부활의 정령석 (각인)",
+                  "2"
+                ],
+                [
+                  "38",
+                  "작은 오드 에너지 (각인)",
+                  "1",
+                  "오드 에너지 (각인)",
+                  "1"
+                ],
+                [
+                  "39",
+                  "즉시 완료권: 악몽 (각인)",
+                  "2",
+                  "즉시 완료권: 악몽 (각인)",
+                  "5"
+                ],
+                [
+                  "40",
+                  "영혼 결정 (각인)",
+                  "350",
+                  "영혼 결정 (각인)",
+                  "1500"
+                ],
+                [
+                  "반복",
+                  "전투 강화 주문서 (각인)",
+                  "3",
+                  "오드 에너지 (각인)",
+                  "1"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "개선사항",
+            "en": "Quality of life"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "ko": "포스장이 나가거나 위임하면 새 포스장을 1파티 첫 자리에 놓습니다. 경비병의 정령 대상 피해도 플레이어 대상 수준으로 맞춥니다.",
+              "en": "A new alliance leader occupies the first slot of party one. Guard damage to spirits is aligned with damage to players."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "잘못된 시점에 적용되는 쿨타임 초기화 특화로 스킬을 연속 2회 쓰던 오류를 고칩니다. 엘테넨 2부에 노출된 원기둥·키벨리스크를 숨깁니다.",
+              "en": "Mistimed cooldown resets cannot grant unintended double casts. Exposed columns/kisk structures in Eltnen part two are hidden."
+            },
+            {
+              "ko": "델트라스: 검 수집 후 얼음 방벽 파괴, 빙결 대상의 결정점·빙정 낙하 타기팅, 부활 후 기절 해제, 패턴 전환 시 다중 피해 사망, 전투 초기화 후 주시 지속을 고칩니다.",
+              "en": "Deltras fixes cover the post-sword ice wall, frozen-target selection, stun after resurrection, transition damage spikes and fixation remaining after reset."
+            },
+            {
+              "ko": "트리톤: 그로기 때 수정이 조기 폭발하는 오류, 혹한의 분노의 그로기 잠금·패턴 실행, 냉기 수확의 온기 구슬 조기 소멸·보스 급사를 해결합니다.",
+              "en": "Triton fixes cover early crystal explosions during stagger, Cold Fury stagger locking/execution and Cold Harvest orbs disappearing early or causing sudden boss death."
+            },
+            {
+              "ko": "겨울의 핵 보라색 수정은 색약 가독성을 개선하며 피격 판정은 유지합니다. 시련 클리어 후 칭찬 팝업 누락, 권갑 NPC 판매가, 에이전트 블랙 선글라스 디자인도 수정합니다.",
+              "en": "Purple Winter Core crystals gain colorblind readability without hitbox changes. Trial commendation popups, gauntlet resale prices and the Black Agent sunglasses design are corrected."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "시공의 균열 쟁탈전",
+        "어비스",
+        "슈고 페스타 – ‘신비로운 트랙’",
+        "성역 – ‘비탄의 설원’",
+        "신규 장비",
+        "어비스 장비 세트 효과",
+        "직업별 랭킹 보상",
+        "영혼 결정",
+        "마석과 영석",
+        "클래스 변경사항",
+        "1. 신규 데바 패스 : 심연의 초대장",
+        "개선사항",
+        "수정사항"
+      ],
+      "classTables": [
+        {
+          "headers": [
+            "속성 피해",
+            "스킬명"
+          ],
+          "rows": [
+            [
+              "바람속성",
+              "연사, 속사, 나선 화살, 질풍 화살, 번개 화살, 표적 화살, 화살 난사, 광풍 화살, 파열 화살, 제압 화살, 조준 화살, 집중 포화, 속박의 눈, 근접 사격, 사냥꾼의 혼, 화살 폭풍, 기습 차기, 환영 화살, 봉인 화살, 강습 강타, 지원 사격, 퇴보 베기"
+            ],
+            [
+              "땅속성",
+              "올가미 화살, 족쇄 화살, 폭발의 덫, 결박의 덫"
+            ],
+            [
+              "불속성",
+              "송곳 화살, 그리폰 화살, 폭발 화살"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "6aa062386b722c561dc6a46c": {
+    "contentHash": "504f99c13d64e1491b122587a4a493990ff837f027e767478453349aee6d0a08",
+    "reviewedAt": "2026-10-08T10:02:56Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "ko": "비탄의 설원·인장 슬롯 신설, 시공 쟁탈전 단축, 칭찬·프리셋 개선과 직업 오류 수정.",
+      "en": "Snowfield and the seal slot arrive, Rift battles shorten, commendations/presets improve and class bugs are repaired."
+    },
+    "title": {
+      "ko": "9월 9일 한국 패치",
+      "en": "September 9 · Korea"
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "ko": "심판 · 암격쇄 연계",
+          "en": "Judgment / Dark Strike chain"
+        },
+        "description": {
+          "ko": "연계 상황에서 기술 활성화가 늦어지는 오류를 해결합니다.",
+          "en": "The affected chain activation delay is repaired."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "system",
+        "subject": {
+          "ko": "환영 분신 · 4번 특화",
+          "en": "Illusory Clone · specialization 4"
+        },
+        "description": {
+          "ko": "추가 피해가 적용될 때 타격 연출을 보여줍니다. 피해량 계수 변경은 아닙니다.",
+          "en": "Bonus-damage hits gain visible feedback, without a damage-coefficient change."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "ko": "원소 융합",
+          "en": "Element Fusion"
+        },
+        "description": {
+          "ko": "무적 상태에서 기술이 반복 사용되는 오류를 고칩니다.",
+          "en": "The skill no longer repeats while immune."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "buff",
+        "subject": {
+          "ko": "협공: 파멸의 공세",
+          "en": "Joint Strike: Destructive Attack"
+        },
+        "description": {
+          "ko": "정령의 협공 기술을 지연 없이 즉시 사용하도록 개선합니다. 피해 증가율 공지는 없습니다.",
+          "en": "Spirits execute their joint attack immediately; no damage percentage is announced."
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "fix",
+        "subject": {
+          "ko": "구원 · 5번 특화",
+          "en": "Salvation · specialization 5"
+        },
+        "description": {
+          "ko": "무적 중복 불가 효과가 시전자와 최저 생명력 파티원에게만 걸리던 적용 대상을 고칩니다.",
+          "en": "The non-stacking immunity effect no longer applies only to the caster and lowest-HP party member."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "성역",
+            "en": "Sanctuary raids"
+          },
+          "sourceSection": "성역",
+          "notes": [
+            {
+              "ko": "신규 비탄의 설원은 쉬움·보통·어려움 난이도를 제공합니다. 보스방 진입 후 시작 지점에 보스방 앞으로 가는 포탈도 생성합니다.",
+              "en": "The new Snowfield has easy/normal/hard modes. Entering a boss room also creates a starting-area portal to its entrance."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "인장",
+            "en": "Seal slot"
+          },
+          "sourceSection": "인장",
+          "notes": [
+            {
+              "ko": "인장 장비 슬롯을 추가합니다. 제작 또는 비탄의 설원 장비 변경권과 키나를 쓰는 물질 변환으로 얻습니다.",
+              "en": "A seal equipment slot arrives; seals come from crafting or Snowfield exchange tickets plus Kina."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "신규 장비",
+            "en": "New gear"
+          },
+          "sourceSection": "신규 장비",
+          "notes": [
+            {
+              "ko": "진 창룡왕/멸룡왕 무기·가더 제작과 빛나는 계열의 계승 도안을 추가합니다. 해방된 백야 무기·가더를 변환해 제작 재료를 얻을 수 있습니다.",
+              "en": "True dragon-king weapon/guard recipes and inheritance from shining variants are added; converted liberated-night gear supplies materials."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "원정/성역",
+            "en": "Dungeon crafting materials"
+          },
+          "sourceSection": "원정/성역",
+          "notes": [
+            {
+              "ko": "분노의 사념·의지·자아·염원·승화·신념·성화의 획득처를 재분배합니다. 크라오·드라웁니르·우루구구·바크론·불의 신전·사나운 뿔·죽은 드라마타·무의 요람은 각인 재료만 나옵니다.",
+              "en": "Seven draconic material types are redistributed. Krao, Draupnir, Urugugu, Vakron, Fire Temple, Fierce Horn, Dead Dramata and Cradle drop bound materials only."
+            },
+            {
+              "ko": "환영의 회랑·푸른 숨의 섬·타락한 데바의 성·잠식된 데우스는 7종 모두 각인·거래 가능 형태가 나옵니다. 무스펠의 성배는 7종의 각인 재료를 제공합니다.",
+              "en": "The four later expeditions offer all seven types in bound and tradable forms; Muspel’s Chalice offers all seven bound types."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "영혼 결속",
+            "en": "Soul binding"
+          },
+          "sourceSection": "영혼 결속",
+          "notes": [
+            {
+              "ko": "현자의 돌: 진리(각인)를 추가합니다. 권능(각인) 10개를 변환해 진리 1개를 만듭니다.",
+              "en": "A bound Truth philosopher’s stone is added; ten bound Power stones convert into one Truth stone."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "서버 재매칭으로 아티팩트와 회랑 소유 상태를 초기화합니다. 매칭 결과는 CM 공지에서 확인하도록 안내됐습니다.",
+              "en": "Server rematching resets artifact/corridor ownership; the CM notice supplies the new pairings."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스 균열 지대",
+            "en": "Abyss rift"
+          },
+          "sourceSection": "어비스 균열 지대",
+          "notes": [
+            {
+              "ko": "보스 능력치를 올리고 전체 보스 수·페이즈 구성을 조정합니다. 8종의 보스는 일정 체력 아래에서 최대 두 번, 25초간 무적이 됩니다.",
+              "en": "Boss stats increase and phase/boss counts change. Eight bosses gain up to two 25-second immunity phases below HP thresholds."
+            },
+            {
+              "ko": "보스 수 감소에 맞춰 균열 꾸러미 보상을 늘리고 어비스 주간·시즌 미션을 추가합니다.",
+              "en": "Rift bundles increase to offset fewer bosses, with new Abyss weekly/season tasks."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "차원 침공",
+            "en": "Dimensional Invasion"
+          },
+          "sourceSection": "차원 침공",
+          "notes": [
+            {
+              "ko": "입장 아이콘에서 제목·보상 등의 세부 정보를 먼저 보고 입장할 수 있습니다.",
+              "en": "The entry icon previews the encounter title/rewards before entering."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "스트리머 모드",
+            "en": "Streamer mode"
+          },
+          "sourceSection": "스트리머 모드",
+          "notes": [
+            {
+              "ko": "기타 → 계정에서 계정 정보 비공개와 내 캐릭터 이름 숨기기를 각각 설정합니다. 이름 숨김은 표시 영역의 이름을 @플레이어로 바꿉니다.",
+              "en": "Other → Account adds separate account/name privacy toggles; hidden names use @플레이어 throughout the UI."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "옷장",
+            "en": "Wardrobe"
+          },
+          "sourceSection": "옷장",
+          "notes": [
+            {
+              "ko": "패턴 가로·세로를 따로 조정할 수 있습니다. 가로세로 비율 유지 옵션을 켜면 이전처럼 비율을 유지합니다.",
+              "en": "Pattern width and height can change independently; enabling aspect lock keeps the earlier proportional behavior."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "계승 제작",
+            "en": "Inheritance crafting"
+          },
+          "sourceSection": "계승 제작",
+          "notes": [
+            {
+              "ko": "재료 장비의 요구 강화 단계 조건을 충족해야 계승 재료로 등록할 수 있습니다.",
+              "en": "Material gear must meet its required enhancement level."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "칭찬 시스템",
+            "en": "Commendations"
+          },
+          "sourceSection": "칭찬 시스템",
+          "notes": [
+            {
+              "ko": "원정·초월·시련·성역의 마지막 보스 후 대상·사유를 골라 클리어당 한 번 칭찬합니다. 팝업 제한 시간 안에 선택하며 완료 후 결과를 봅니다.",
+              "en": "After the last boss, choose a player and reason for one commendation per clear before the timed popup expires."
+            },
+            {
+              "ko": "칭찬 권한과 후보는 처치 시 파티·던전에 남아 있고 최소 기여도를 채운 파티원입니다. 성역 후보는 당시 자신의 파티로 한정됩니다. 누적 수는 캐릭터 정보에 표시하고 관련 성장·커스텀 업적도 추가합니다.",
+              "en": "Eligible givers/receivers must remain in the party/dungeon and contribute sufficiently. At this date Sanctuary candidates are your own party; totals and related achievements are added."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "성역 명예의 전당",
+            "en": "Sanctuary hall of fame"
+          },
+          "sourceSection": "성역 명예의 전당",
+          "notes": [
+            {
+              "ko": "비탄의 설원 어려움 최종 보스의 전 서버 첫 세 클리어를 기록합니다. 기여도 없는 캐릭터는 제외하며 입장 화면 좌상단에서 볼 수 있습니다.",
+              "en": "The first three cross-server hard Snowfield clears are recorded, excluding non-contributors, in the entry screen’s upper-left tab."
+            },
+            {
+              "ko": "캐릭터·서버·레기온·직업·최고 전투력·최고 아이템 레벨·포스 순번·일자·클리어 시간을 보존합니다. 이후 이름이 바뀌어도 기록은 바뀌지 않습니다.",
+              "en": "Records preserve names, server, legion, class, peak power/item level, alliance position, date and clear time despite later name changes."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "시공의 균열 쟁탈전",
+            "en": "Rift occupation"
+          },
+          "sourceSection": "시공의 균열 쟁탈전",
+          "notes": [
+            {
+              "ko": "준비·진행 중 월드맵 쟁탈전 탭과 알리미 아이콘의 해당 지역 바로가기를 제공합니다.",
+              "en": "A map occupation tab and notification-icon shortcut show the active battle."
+            },
+            {
+              "ko": "그룹당 주둔지 5→4개, 전투 25→15분입니다. 공격팀은 3개 점령, 방어팀은 3개 이상 보호가 승리 조건입니다. 주둔지 구성은 표에 전부 담았습니다.",
+              "en": "Outposts per group fall 5→4 and battle time 25→15 minutes. Attackers need three captures; defenders need at least three protected outposts."
+            },
+            {
+              "ko": "참가 중 비행력 소모가 50% 감소합니다. 짧은 시간에 같은 캐릭터 반복 처치 시 기여도를 제한하고, 처치 도움 기여도를 소폭 낮춥니다.",
+              "en": "Flight consumption drops 50%; repeated same-player kills are limited and assist contribution decreases slightly."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "천족 방어 진영 영지",
+                "그룹",
+                "주둔지",
+                "마족 방어 진영 영지",
+                "그룹",
+                "주둔지"
+              ],
+              "rows": [
+                [
+                  "베르테론",
+                  "A",
+                  "우가로스 약탈자 야영지",
+                  "알트가르드",
+                  "A",
+                  "묘지 도굴꾼 소굴"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "미로스의 초소",
+                  "알트가르드",
+                  "A",
+                  "타락한 숲지기 폐허"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "코흐타 감시 초소",
+                  "알트가르드",
+                  "A",
+                  "칼날단 임시 초소"
+                ],
+                [
+                  "베르테론",
+                  "A",
+                  "탈영병 숙영지",
+                  "알트가르드",
+                  "A",
+                  "성소 외곽 감시대"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "세흐나 감시 초소",
+                  "알트가르드",
+                  "B",
+                  "루베크 도적단 점거지"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "사브가 용족 야영지",
+                  "알트가르드",
+                  "B",
+                  "숲 약탈꾼 야영지"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "마크타샤 감시초소",
+                  "알트가르드",
+                  "B",
+                  "플라크 레기온 초소"
+                ],
+                [
+                  "베르테론",
+                  "B",
+                  "로믈론의 은신처",
+                  "알트가르드",
+                  "B",
+                  "라트리마 감시초소"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "가르고스 도적단 야영지",
+                  "알트가르드",
+                  "C",
+                  "바라타 척결부대 초소"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "협곡 도둑 소굴",
+                  "알트가르드",
+                  "C",
+                  "안드샤 전초기지"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "변절자의 은신처",
+                  "알트가르드",
+                  "C",
+                  "아무라타 감시기지"
+                ],
+                [
+                  "베르테론",
+                  "C",
+                  "고원 언덕 기지",
+                  "알트가르드",
+                  "C",
+                  "데틀레프 도적단 야영지"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "월드 징표",
+            "en": "World markers"
+          },
+          "sourceSection": "월드 징표",
+          "notes": [
+            {
+              "ko": "월드·던전·어비스 지면에 징표를 놓을 수 있습니다. 미니맵 옆 버튼이나 메뉴 키 설정 단축키를 사용하며, 기존 징표 규칙과 이동 가능한 팝업을 제공합니다.",
+              "en": "Ground markers work in worlds/dungeons/Abyss through the minimap button or assigned shortcut, using existing marker rules and a movable popup."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "원정/초월/성역",
+            "en": "Dungeon objects"
+          },
+          "sourceSection": "원정/초월/성역",
+          "notes": [
+            {
+              "ko": "주요 조작 대상의 마우스 오버 외곽선을 복원하고, 잠식된 데우스 그롬카스 전 몬스터 배치를 바꿉니다.",
+              "en": "Interactive targets regain hover outlines; monsters before Gromkas are rearranged."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "UI 개선사항",
+            "en": "Interface"
+          },
+          "sourceSection": "UI 개선사항",
+          "notes": [
+            {
+              "ko": "계승 재료 슬롯을 첫 단계부터 보여주며 결과 미리보기와 결과 확인 체크박스를 제공합니다.",
+              "en": "Inheritance material slots appear from the first stage, with a result preview and confirmation checkbox."
+            },
+            {
+              "ko": "어비스 장비의 PVE 관련 세트 효과를 장비 단계별로 변경·제거합니다. 전체 변경 후 수치는 아래 표에 표시합니다. 대기방과 던전 포스 순서 불일치도 고칩니다.",
+              "en": "Abyss PvE set effects vary or disappear by gear tier; every resulting value is tabulated. Lobby/dungeon alliance-order mismatches are corrected."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "장비",
+                "대상 스탯",
+                "2세트",
+                "5세트",
+                "8세트",
+                "12세트"
+              ],
+              "rows": [
+                [
+                  "십부장",
+                  "PVE 어비스 피해 증폭",
+                  "15%",
+                  "20%",
+                  "X",
+                  "X"
+                ],
+                [
+                  "백부장",
+                  "PVE 어비스 피해 증폭",
+                  "15%",
+                  "20%",
+                  "25%",
+                  "X"
+                ],
+                [
+                  "천부장",
+                  "PVE 어비스 피해 증폭",
+                  "20%",
+                  "25%",
+                  "30%",
+                  "35%"
+                ],
+                [
+                  "군단장",
+                  "PVE 어비스 피해 증폭",
+                  "25%",
+                  "30%",
+                  "35%",
+                  "40%"
+                ],
+                [
+                  "친위대장",
+                  "PVE 어비스 피해 증폭",
+                  "30%",
+                  "35%",
+                  "40%",
+                  "45%"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "비탄의 설원 첫 클리어 이벤트",
+            "en": "Snowfield first-clear event"
+          },
+          "sourceSection": "1. 최초의 성배를 들어라 : 비탄의 설원",
+          "notes": [
+            {
+              "ko": "9월 9일 점검 후부터 20번째 포스 클리어까지 진행합니다. 최초 포스의 타이틀·금빛 펫, 2~5번째 은빛 펫, 6~20번째 구릿빛 펫을 제공하며 데이터 확인 후 지급합니다. 우편 수령 기간은 1개월입니다.",
+              "en": "Runs from September 9 maintenance to the twentieth alliance clear. The first gets a title/gold pet, second–fifth silver and sixth–twentieth copper; delivery follows verification with a one-month mail claim period."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "보상 아이템",
+                "수량",
+                "대상",
+                "보상 지급 일정",
+                "우편수령 기간"
+              ],
+              "rows": [
+                [
+                  "최초 타이틀:‘타이틀 : 최초로 혹한과 냉기의 검을 꺾은 자’",
+                  "1",
+                  "<비탄의 설원>첫 클리어 포스",
+                  "기록 확인 후 지급",
+                  "1개월"
+                ],
+                [
+                  "펫: 황금빛 보이드",
+                  "1",
+                  "<비탄의 설원>첫 클리어 포스",
+                  "기록 확인 후 지급",
+                  "1개월"
+                ],
+                [
+                  "펫: 은빛 보이드",
+                  "1",
+                  "<비탄의 설원>2~5번째 클리어 포스원",
+                  "기록 확인 후 지급",
+                  "1개월"
+                ],
+                [
+                  "펫: 구릿빛 보이드",
+                  "1",
+                  "<비탄의 설원>6~20번째 클리어 포스원",
+                  "기록 확인 후 지급",
+                  "1개월"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "데바 룩 체인지 위크",
+            "en": "Appearance-change week"
+          },
+          "sourceSection": "2. 데바 룩 체인지 위크",
+          "notes": [
+            {
+              "ko": "9월 9~30일 점검 구간 동안 꾸미기 비용을 200→100 큐나로 할인합니다.",
+              "en": "Appearance customization costs 100 rather than 200 Quna between September 9 and 30 maintenance."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "이벤트명",
+                "꾸미기 가격 (파츠)",
+                "제한 횟수"
+              ],
+              "rows": [
+                [
+                  "데바 룩 체인지 위크",
+                  "200큐나 ▶ 100큐나(50% 할인)",
+                  "없음"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 방어구·장식 외형",
+            "en": "New armor & accessories"
+          },
+          "sourceSection": "1. 신규 방어구 외형",
+          "notes": [
+            {
+              "ko": "판매 기간은 9월 9~10월 21일 점검 구간입니다. 네오 레인저·다크 폴리스 세트, 투구·선글라스·피어싱과 가격·교환 티켓·마일리지·제한·꾸미기 가능 여부를 아래 표에 정리했습니다. 가격은 퍼플 스토어 기준으로 다른 스토어와 차이가 날 수 있습니다.",
+              "en": "September 9–October 21 maintenance window. Tables retain armor/accessory prices, tickets, mileage, limits and customization flags. Prices refer to Purple Store and can differ elsewhere."
+            },
+            {
+              "ko": "상점 보관함에서 상품을 수령한 뒤 옷장 방어구·장식 메뉴에서 구성품을 확인합니다.",
+              "en": "After claiming from shop storage, inspect the pieces in the wardrobe’s armor/accessory menus."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품"
+              ],
+              "rows": [
+                [
+                  "네오 레인저 슈트 (외형: 세트)",
+                  "49,000원",
+                  "네오 레인저 슈트 (흉갑) 1개네오 레인저 슈트 (투구) 1개네오 레인저 슈트 (장갑) 1개네오 레인저 슈트 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ],
+                [
+                  "네오 레인저 슈트 (외형: 세트)",
+                  "외형(세트) 교환 티켓 1개",
+                  "네오 레인저 슈트 (흉갑) 1개네오 레인저 슈트 (투구) 1개네오 레인저 슈트 (장갑) 1개네오 레인저 슈트 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품"
+              ],
+              "rows": [
+                [
+                  "다크 폴리스 슈트 (외형: 세트)",
+                  "49,000원",
+                  "다크 폴리스 슈트 (흉갑) 1개다크 폴리스 슈트 (각반) 1개다크 폴리스 슈트 (투구) 1개다크 폴리스 슈트 (장갑) 1개다크 폴리스 슈트 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ],
+                [
+                  "다크 폴리스 슈트 (외형: 세트)",
+                  "외형(세트) 교환 티켓 1개",
+                  "다크 폴리스 슈트 (흉갑) 1개다크 폴리스 슈트 (각반) 1개다크 폴리스 슈트 (투구) 1개다크 폴리스 슈트 (장갑) 1개다크 폴리스 슈트 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "네오 레인저 슈트(외형: 세트)",
+                "거래/삭제/창고/꾸미기",
+                "거래/삭제/창고/꾸미기"
+              ],
+              "rows": [
+                [
+                  "네오 레인저 슈트 (흉갑)",
+                  "X / X / X / O",
+                  "X / X / X / O"
+                ],
+                [
+                  "네오 레인저 슈트 (투구)",
+                  "X / X / X / O",
+                  "X / X / X / O"
+                ],
+                [
+                  "네오 레인저 슈트 (장갑)",
+                  "X / X / X / O",
+                  "X / X / X / O"
+                ],
+                [
+                  "네오 레인저 슈트 (장화)",
+                  "X / X / X / O",
+                  "X / X / X / O"
+                ],
+                [
+                  "다크 폴리스 슈트(외형: 세트)",
+                  "다크 폴리스 슈트(외형: 세트)",
+                  "거래/삭제/창고/꾸미기"
+                ],
+                [
+                  "다크 폴리스 슈트 (흉갑)",
+                  "다크 폴리스 슈트 (흉갑)",
+                  "X / X / X / O"
+                ],
+                [
+                  "다크 폴리스 슈트 (각반)",
+                  "다크 폴리스 슈트 (각반)",
+                  "X / X / X / O"
+                ],
+                [
+                  "다크 폴리스 슈트 (투구)",
+                  "다크 폴리스 슈트 (투구)",
+                  "X / X / X / O"
+                ],
+                [
+                  "다크 폴리스 슈트 (장갑)",
+                  "다크 폴리스 슈트 (장갑)",
+                  "X / X / X / O"
+                ],
+                [
+                  "다크 폴리스 슈트 (장화)",
+                  "다크 폴리스 슈트 (장화)",
+                  "X / X / X / O"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "구분",
+                "상품명"
+              ],
+              "rows": [
+                [
+                  "모자",
+                  "핑키 스핀 헬멧 (외형: 투구)"
+                ],
+                [
+                  "장신구",
+                  "에이전트 블랙 선글라스 (외형: 눈)"
+                ],
+                [
+                  "장신구",
+                  "트위스트 링 피어싱 (외형: 얼굴)"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "구분",
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "모자",
+                  "핑키 스핀 헬멧 (외형: 투구)",
+                  "300 큐나",
+                  "핑키 스핀 헬멧 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "핑키 스핀 헬멧 (외형: 투구)",
+                  "외형(단품) 교환 티켓 1개",
+                  "핑키 스핀 헬멧 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "장신구",
+                  "에이전트 블랙 선글라스 (외형: 눈)",
+                  "300 큐나",
+                  "에이전트 블랙 선글라스 (외형: 눈) 1개",
+                  "서버별 1회"
+                ],
+                [
+                  "장신구",
+                  "에이전트 블랙 선글라스 (외형: 눈)",
+                  "외형(단품) 교환 티켓 1개",
+                  "에이전트 블랙 선글라스 (외형: 눈) 1개",
+                  "서버별 1회"
+                ],
+                [
+                  "장신구",
+                  "트위스트 링 피어싱 (외형: 얼굴)",
+                  "300 큐나",
+                  "트위스트 링 피어싱 (외형: 얼굴) 1개",
+                  "서버별 1회"
+                ],
+                [
+                  "장신구",
+                  "트위스트 링 피어싱 (외형: 얼굴)",
+                  "외형(단품) 교환 티켓 1개",
+                  "트위스트 링 피어싱 (외형: 얼굴) 1개",
+                  "서버별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "거래/삭제/창고/꾸미기"
+              ],
+              "rows": [
+                [
+                  "핑키 스핀 헬멧 (외형: 투구)",
+                  "X / X / X / O"
+                ],
+                [
+                  "에이전트 블랙 선글라스 (외형: 눈)",
+                  "X / X / X / X"
+                ],
+                [
+                  "트위스트 링 피어싱 (외형: 얼굴)",
+                  "X / X / X / X"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 펫",
+            "en": "New pet"
+          },
+          "sourceSection": "2. 신규 펫",
+          "notes": [
+            {
+              "ko": "9월 9~10월 21일 점검 구간에 핑키 스핀 스케이트보드를 판매합니다. 현금 구매 마일리지는 2,900, 교환 티켓 구매에는 마일리지가 없습니다. 보관함 수령 후 펫 메뉴에서 확인합니다.",
+              "en": "The skateboard pet is sold September 9–October 21; cash purchases grant 2,900 mileage, ticket purchases none. Claim in shop storage then check the pet menu."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "패키지 명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "펫: 핑키 스핀 스케이트보드",
+                  "29,000원",
+                  "펫: 핑키 스핀 스케이트보드 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ],
+                [
+                  "펫: 핑키 스핀 스케이트보드",
+                  "펫 교환 티켓 1개",
+                  "펫: 핑키 스핀 스케이트보드 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "거래/삭제/창고",
+                "삭제 일자"
+              ],
+              "rows": [
+                [
+                  "펫: 핑키 스핀 스케이트보드",
+                  "X / X / X",
+                  "-"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 날개 외형",
+            "en": "New wing appearance"
+          },
+          "sourceSection": "3. 신규 날개 외형",
+          "notes": [
+            {
+              "ko": "큐티 드론 날개는 9월 9~10월 21일 판매합니다. 캐릭터별 1회이며 보관함에서 받은 뒤 큐브로 획득합니다.",
+              "en": "Cute drone wings run September 9–October 21, once per character, claimed through shop storage then the cube."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "큐티 드론 날개",
+                  "29,000원",
+                  "큐티 드론 날개 (각인) 1개",
+                  "캐릭터별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "거래/삭제/창고/꾸미기",
+                "삭제 일자"
+              ],
+              "rows": [
+                [
+                  "큐티 드론 날개 (각인)",
+                  "X / X / X / X",
+                  "-"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 감정 표현·데바 패스",
+            "en": "New emotes & pass"
+          },
+          "sourceSection": "4. 신규 감정 표현",
+          "notes": [
+            {
+              "ko": "네오 레인저 감정 표현 4종은 각각 300 큐나·캐릭터별 1회, 9월 9~10월 21일 판매합니다.",
+              "en": "Four Neo Ranger emotes cost 300 Quna each, once per character, September 9–October 21."
+            },
+            {
+              "ko": "밤에 피어난 꽃 패스는 기본 2,000,000 키나·프리미엄 1,000 큐나로 서버당 1회입니다. 프리미엄에 영혼 결정 30,000개를 제공합니다.",
+              "en": "The flower pass is offered once per server: 2,000,000 Kina basic or 1,000 Quna premium, with 30,000 crystals included in premium."
+            },
+            {
+              "ko": "판매는 10월 6일 05:00까지, 미션·수령은 10월 7일 점검 전까지입니다. 최대 50레벨 이후 반복 보상, 레벨 구매 150 큐나, 주당 XP 15,000, 상점 주화는 구독 → 패스 상점에서 씁니다. 모든 XP·보상은 표에 포함했습니다.",
+              "en": "Sales end October 6 05:00 and claims/missions October 7 maintenance. Level-50 has repeat rewards; levels cost 150 Quna, weekly XP caps at 15,000 and coins use the subscription pass store."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "감정 표현: 네오 레인저 좌청룡",
+                  "300 큐나",
+                  "감정 표현: 네오 레인저 좌청룡 (각인) 1개",
+                  "캐릭터별 1회"
+                ],
+                [
+                  "감정 표현: 네오 레인저 우백호",
+                  "300 큐나",
+                  "감정 표현: 네오 레인저 우백호 (각인) 1개",
+                  "캐릭터별 1회"
+                ],
+                [
+                  "감정 표현: 네오 레인저 전주작",
+                  "300 큐나",
+                  "감정 표현: 네오 레인저 전주작 (각인) 1개",
+                  "캐릭터별 1회"
+                ],
+                [
+                  "감정 표현: 네오 레인저 후현무",
+                  "300 큐나",
+                  "감정 표현: 네오 레인저 후현무 (각인) 1개",
+                  "캐릭터별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "밤에 피어난 꽃 (기본)",
+                  "2,000,000 키나",
+                  "미션 보상",
+                  "서버당 1회 구입가능"
+                ],
+                [
+                  "밤에 피어난 꽃 (프리미엄)",
+                  "1,000 큐나",
+                  "- 영혼 결정(각인) 30,000개미션 보상",
+                  "서버당 1회 구입가능"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "경험치 획득처",
+                "경험치량 (XP)",
+                "최대 경험치 획득량"
+              ],
+              "rows": [
+                [
+                  "밤에 피어난 꽃",
+                  "출석",
+                  "1000",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "몬스터 10마리 처치",
+                  "60",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "상대 진영 플레이어 KILL",
+                  "100",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "원정, 초월 클리어",
+                  "300",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "성역 클리어",
+                  "700",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "슈고 페스타 참여",
+                  "500",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "장비 강화 성공",
+                  "10",
+                  "캐릭터별 1주 15,000 XP"
+                ],
+                [
+                  "밤에 피어난 꽃",
+                  "장비 추출",
+                  "10",
+                  "캐릭터별 1주 15,000 XP"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "패스 레벨",
+                "밤에 피어난 꽃 (기본)",
+                "수량",
+                "밤에 피어난 꽃 (프리미엄)",
+                "수량"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "지성 영혼 결정 (각인)",
+                  "300",
+                  "지성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "2",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "3",
+                  "야성 영혼 결정 (각인)",
+                  "300",
+                  "야성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "4",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "5",
+                  "자연 영혼 결정 (각인)",
+                  "300",
+                  "자연 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "6",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "7",
+                  "변형 영혼 결정 (각인)",
+                  "300",
+                  "변형 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "8",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "9",
+                  "특수 영혼 결정 (각인)",
+                  "300",
+                  "특수 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "10",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "11",
+                  "외형 상자: 무기 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 무기 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "12",
+                  "외형 상자: 방어구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 방어구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "13",
+                  "외형 상자: 장신구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 장신구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "14",
+                  "지성 영혼 결정 (각인)",
+                  "300",
+                  "지성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "15",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "16",
+                  "야성 영혼 결정 (각인)",
+                  "300",
+                  "야성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "17",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "18",
+                  "자연 영혼 결정 (각인)",
+                  "300",
+                  "자연 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "19",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "20",
+                  "변형 영혼 결정 (각인)",
+                  "300",
+                  "변형 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "21",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "22",
+                  "특수 영혼 결정 (각인)",
+                  "300",
+                  "특수 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "23",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "24",
+                  "외형 상자: 무기 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 무기 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "25",
+                  "외형 상자: 방어구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 방어구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "26",
+                  "외형 상자: 장신구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 장신구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "27",
+                  "지성 영혼 결정 (각인)",
+                  "300",
+                  "지성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "28",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "29",
+                  "야성 영혼 결정 (각인)",
+                  "300",
+                  "야성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "30",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "31",
+                  "자연 영혼 결정 (각인)",
+                  "300",
+                  "자연 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "32",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "33",
+                  "변형 영혼 결정 (각인)",
+                  "300",
+                  "변형 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "34",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "35",
+                  "특수 영혼 결정 (각인)",
+                  "300",
+                  "특수 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "36",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "37",
+                  "외형 상자: 무기 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 무기 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "38",
+                  "외형 상자: 방어구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 방어구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "39",
+                  "외형 상자: 장신구 (10회) (각인)",
+                  "3",
+                  "빛나는 외형 상자: 장신구 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "40",
+                  "지성 영혼 결정 (각인)",
+                  "300",
+                  "지성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "41",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "42",
+                  "야성 영혼 결정 (각인)",
+                  "300",
+                  "야성 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "43",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "44",
+                  "자연 영혼 결정 (각인)",
+                  "300",
+                  "자연 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "45",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "46",
+                  "변형 영혼 결정 (각인)",
+                  "300",
+                  "변형 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "47",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "48",
+                  "특수 영혼 결정 (각인)",
+                  "300",
+                  "특수 영혼 결정 (각인)",
+                  "2000"
+                ],
+                [
+                  "49",
+                  "영혼 결정 (각인)",
+                  "700",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ],
+                [
+                  "50",
+                  "빛나는 외형 상자 (10회) (각인)",
+                  "1",
+                  "빛나는 외형 상자 (10회) (각인)",
+                  "3"
+                ],
+                [
+                  "반복",
+                  "영혼 결정 (각인)",
+                  "500",
+                  "영혼 결정 (각인)",
+                  "3000"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "개선사항",
+            "en": "Quality of life"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "ko": "인장 추가로 NPC 판매·창고 간편 등록의 장신구 세부 설정을 초기화합니다. 멤버십은 잔여 30분 이하에 남은 시간을 표시하고 만료 때 메시지를 보냅니다. 미접속 만료는 다음 접속 때 안내합니다.",
+              "en": "Seal-slot changes reset accessory quick-sale/storage settings. Memberships show the final 30 minutes and notify expiry, including at next login when expired offline."
+            },
+            {
+              "ko": "프리셋별 스킬 레벨을 다르게 설정합니다. 기존 2·3번 프리셋 스킬 레벨을 초기화하며 연계 기술을 선택해도 원본·선행 스킬을 기준으로 레벨 변경할 수 있습니다. HUD 편집에는 보스 기믹 게이지를 추가합니다.",
+              "en": "Skill levels can differ by preset, resetting earlier presets 2/3. Chain-skill selection can alter the parent level; HUD editing adds a boss-mechanic gauge."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "아이템 장착창의 리스트형 슬롯과 상점 서버 이전 탭을 제거합니다. 필터를 끈 채팅의 미니 UI 활성화, 어비스 회랑 시간 만료 사망 퇴장의 부활 UI 누락을 고칩니다.",
+              "en": "List-style equipment slots and the server-transfer shop tab are removed. Disabled-chat mini UI and corridor timeout resurrection UI are fixed."
+            },
+            {
+              "ko": "몽층 II 변이된 울고른 피격 카메라, 아티엘 공격의 집중 막기·회피 판정, 업스케일러 설명, 상대 종족 주신의 모노리스 퀘스트 마커를 고칩니다.",
+              "en": "Fixes cover mutated Ulgorn’s camera, Attiel block/evasion handling, upscaler descriptions and opposing-faction monolith quest markers."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "성역",
+        "인장",
+        "신규 장비",
+        "원정/성역",
+        "영혼 결속",
+        "어비스",
+        "어비스 균열 지대",
+        "차원 침공",
+        "스트리머 모드",
+        "옷장",
+        "계승 제작",
+        "칭찬 시스템",
+        "성역 명예의 전당",
+        "시공의 균열 쟁탈전",
+        "월드 징표",
+        "원정/초월/성역",
+        "클래스 변경사항",
+        "UI 개선사항",
+        "1. 최초의 성배를 들어라 : 비탄의 설원",
+        "2. 데바 룩 체인지 위크",
+        "1. 신규 방어구 외형",
+        "2. 신규 펫",
+        "3. 신규 날개 외형",
+        "4. 신규 감정 표현",
+        "개선사항",
+        "수정사항"
+      ],
+      "classTables": []
+    }
+  },
+  "6ab2d738a279104f7d9d5d5b": {
+    "contentHash": "a5498d2b3db0ce9b78c6689080110b304997bf9b49293fa3f9fd1bb98ac7ab50",
+    "reviewedAt": "2026-10-08T10:02:56Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "ko": "불의 신전 시련 교체, 자동 영혼 조율, 전장의 권능과 한가위 보상·상점. 직업별 조작·피해·툴팁 오류도 고칩니다.",
+      "en": "Fire Temple trials, automatic soul tuning, battlefield buffs and harvest rewards/shops, plus class-control and tooltip fixes."
+    },
+    "title": {
+      "ko": "9월 23일 한국 패치",
+      "en": "September 23 · Korea"
+    },
+    "changes": [
+      {
+        "classId": "gladiator",
+        "type": "system",
+        "subject": {
+          "ko": "분쇄 돌진",
+          "en": "Crushing Charge"
+        },
+        "description": {
+          "ko": "누른 방향키 방향으로 기술을 사용하도록 조작을 개선합니다.",
+          "en": "The skill follows the direction of the pressed movement key."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "tooltip",
+        "subject": {
+          "ko": "연속 난타 · 5번 특화",
+          "en": "Pummel · specialization 5"
+        },
+        "description": {
+          "ko": "쿨타임 감소 설명을 바로잡습니다. 실제 쿨타임 변경으로 공지된 항목은 아닙니다.",
+          "en": "Cooldown-reduction wording is corrected; no cooldown-value change is announced."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "tooltip",
+        "subject": {
+          "ko": "태풍 연타 · 집중 막기",
+          "en": "Brawler tooltip corrections"
+        },
+        "description": {
+          "ko": "태풍 연타 5번 쿨타임 감소, 집중 막기 3번 성공 효과의 설명을 정정합니다.",
+          "en": "Specialization-5 cooldown wording and specialization-3 block-success wording are corrected."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "tooltip",
+        "subject": {
+          "ko": "질풍 화살 · 광풍 화살 · 화살 난사",
+          "en": "Ranger tooltip corrections"
+        },
+        "description": {
+          "ko": "질풍 화살 2·4·5번 생명력 흡수, 광풍 화살 5번 그로기, 화살 난사 5번 쿨타임 감소 설명을 정정합니다.",
+          "en": "Life-drain, stagger and cooldown-reduction wording is corrected for the listed specializations."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "ko": "영혼의 절규 · 1번 특화",
+          "en": "Soul Scream · specialization 1"
+        },
+        "description": {
+          "ko": "특정 특화 조합에서 정신력을 소모하지 않던 오류를 고칩니다.",
+          "en": "The affected combination now consumes its intended resource."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "냉기의 로브 · 냉기 소환",
+          "en": "Robe of Cold / Frost Summoning"
+        },
+        "description": {
+          "ko": "로브 둔화 대상에도 냉기 소환 패시브 추가 피해가 정상 적용됩니다.",
+          "en": "The passive bonus damage correctly applies to targets slowed by the robe."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "complete",
+      "sections": [
+        {
+          "title": {
+            "ko": "시련",
+            "en": "Trials"
+          },
+          "sourceSection": "시련",
+          "notes": [
+            {
+              "ko": "바크론의 공중섬 대신 불의 신전 시련을 엽니다. 입장 조건은 50레벨·아이템 레벨 4,800입니다.",
+              "en": "Fire Temple replaces Vakron Island trials, requiring level 50 and item level 4,800."
+            },
+            {
+              "ko": "시간·부활 제한, 보스 강화, PC 약화의 단계 합계로 난이도를 4~16단계에서 고릅니다. 단계별 극복의 증표 보상은 주간 1회, 수요일 초기화입니다. 상점 확장·추가 상품의 가격과 한도는 아래 표에 모두 담았습니다.",
+              "en": "Time/resurrection limits, boss strength and player weakening sum to difficulty 4–16. Each difficulty grants weekly tokens once, resetting Wednesday; all store prices/limits appear below."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "입장 레벨",
+                "입장 아이템 레벨"
+              ],
+              "rows": [
+                [
+                  "50",
+                  "4800"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "특성",
+                "단계"
+              ],
+              "rows": [
+                [
+                  "시간 제한",
+                  "1-3단계"
+                ],
+                [
+                  "부활 제한",
+                  "1-3단계"
+                ],
+                [
+                  "보스 강화",
+                  "1-8단계"
+                ],
+                [
+                  "PC 약화",
+                  "1-2단계"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "품목",
+                "가격",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "부활의 정령석 (각인)",
+                  "극복의 증표 1,000개",
+                  "캐릭터 / 주 10개 -> 20개"
+                ],
+                [
+                  "상급 마석 (각인)",
+                  "극복의 증표 2,000 개",
+                  "캐릭터 / 주 5개 -> 10개"
+                ],
+                [
+                  "상급 영석 (각인)",
+                  "극복의 증표 3,000 개",
+                  "캐릭터 / 주 5개 -> 10개"
+                ],
+                [
+                  "상급 심연의 마석 (각인)",
+                  "극복의 증표 3,000 개",
+                  "캐릭터 / 주 5개 -> 10개"
+                ],
+                [
+                  "상급 심연의 영석 (각인)",
+                  "극복의 증표 6,000 개",
+                  "캐릭터 / 주 5개 -> 10개"
+                ],
+                [
+                  "폭주한 공포의 사념 (각인)",
+                  "극복의 증표 3,000 개",
+                  "캐릭터 / 주 3개 -> 5개"
+                ],
+                [
+                  "전투 강화 주문서 (각인) 10개",
+                  "극복의 증표 5,000 개",
+                  "캐릭터 / 주1개"
+                ],
+                [
+                  "상급 치유 물약 (각인)",
+                  "극복의 증표 1,000 개",
+                  "캐릭터 / 주 5개"
+                ],
+                [
+                  "계승석 조각 (영웅) (각인)",
+                  "극복의 증표 5,000 개",
+                  "캐릭터 / 주 5개"
+                ],
+                [
+                  "시련의 강화석 상자 (각인)",
+                  "극복의 증표 4,000 개",
+                  "서버 / 주 10개"
+                ],
+                [
+                  "폭주한 공포의 기운: 무기 (각인)",
+                  "극복의 증표 60,000 개",
+                  "캐릭터 / 주 1개"
+                ],
+                [
+                  "행운의 채집 재료 꾸러미 (각인)",
+                  "극복의 증표 3,000 개",
+                  "서버 / 주 20개"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "어비스",
+            "en": "Abyss"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "ko": "재매칭으로 아티팩트·회랑 점령을 초기화합니다. 하층·중층에 대상 보스가 있으면 전장의 권능이 모든 플레이어에게 적용되고 보스가 없어지면 종료합니다. 균열 지대는 항상 적용합니다.",
+              "en": "Rematching resets ownership. The battlefield buff applies while eligible bosses exist in lower/middle zones and permanently inside the rift."
+            },
+            {
+              "ko": "대상 보스: 정령왕 아그로·감시자 카이라·차원핵·나흐마 2종·집행자 3종·처형관 드라모스·반역자 듀칼·파멸자 마라카입니다.",
+              "en": "Eligible bosses are Agro, Kaira, the core, both Nahmas, the three executors, Dramos, Ducal and Maraka."
+            },
+            {
+              "ko": "이 버프는 노련한 반격·격앙·착취·불패의 진언·보호의 빛·질풍의 권능·대지의 축복을 대체합니다. 적용 중에는 그 효과를 중복 적용하지 않습니다.",
+              "en": "The buff replaces seven listed class buffs rather than stacking with them."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "영혼 각인",
+            "en": "Soul tuning"
+          },
+          "sourceSection": "영혼 각인",
+          "notes": [
+            {
+              "ko": "조율 시전 시간을 줄이고 자동 조율을 추가합니다. 옵션·재료를 등록해 목표 옵션 중 하나가 나오거나 재료가 떨어질 때까지 자동으로 조율합니다.",
+              "en": "Tuning is faster and can repeat automatically with registered materials until a target option appears or materials run out."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "상점",
+            "en": "Shop"
+          },
+          "sourceSection": "상점",
+          "notes": [
+            {
+              "ko": "아틀리에 의상·무기·날개·펫·감정 표현은 마우스 오버 미리보기를 제공합니다. 미리보기가 있으면 4열, 없으면 5열이며 품절·구매 불가 상품은 음영으로 구별합니다.",
+              "en": "Atelier items gain hover previews; the grid uses four columns with previews, five without, and shades unavailable/sold-out offers."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "옷장",
+            "en": "Wardrobe"
+          },
+          "sourceSection": "옷장",
+          "notes": [
+            {
+              "ko": "지원하는 무기 외형에 꾸미기 프리셋을 추가합니다. 상점·꾸미기에서 미리 볼 수 있고 적용에는 꾸미기 비용이 필요합니다.",
+              "en": "Supported weapon skins gain paid customization presets previewable in the shop and wardrobe."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "커스터마이징",
+            "en": "Customization"
+          },
+          "sourceSection": "커스터마이징",
+          "notes": [
+            {
+              "ko": "성별마다 프리셋 3종·헤어 9종·얼굴 2종·눈썹 1종을 추가합니다. 체형의 몸/머리 탭에 체구 항목을 추가합니다.",
+              "en": "Each gender gains three presets, nine hairstyles, two faces and one brow, plus a new body-size control."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "시공의 균열 쟁탈전",
+            "en": "Rift occupation"
+          },
+          "sourceSection": "시공의 균열 쟁탈전",
+          "notes": [
+            {
+              "ko": "쟁탈전에도 전장의 권능을 적용합니다. 공격팀의 본 서버→이벤트 서버 재입장은 잠시 무적이며 활성 주둔지 근처로 도착하고 도착 지점 수도 늘립니다.",
+              "en": "Occupation gains the battlefield buff. Rejoining attackers receive temporary immunity and more arrival points near the active outposts."
+            },
+            {
+              "ko": "방어 주둔지 피격 알림과 HUD 정보 버튼의 보상 미리보기를 추가합니다.",
+              "en": "Defenders receive attacked-outpost notices and the HUD Information button previews rewards."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "UI 개선사항",
+            "en": "Interface"
+          },
+          "sourceSection": "UI 개선사항",
+          "notes": [
+            {
+              "ko": "성역·초월 대기방과 패널에 난이도를 표시하고 월드맵·미니맵·투명맵의 잘못된 퀘스트 영역을 고칩니다.",
+              "en": "Raid/Transcendence lobbies show difficulty; quest-area mismatches across maps are fixed."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "한가위의 풍요로운 여정",
+            "en": "Harvest login journey"
+          },
+          "sourceSection": "한가위의 풍요로운 여정",
+          "notes": [
+            {
+              "ko": "9월 23일 점검 후~10월 28일 점검 전 출석 이벤트입니다. 28일간의 보상 이름·수량을 아래 표에 전부 정리했습니다.",
+              "en": "The September 23–October 28 maintenance login event has all 28 daily rewards tabulated below."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "구분",
+                "일차별 보상",
+                "수량"
+              ],
+              "rows": [
+                [
+                  "1일차",
+                  "한가위 둥근 송편 (각인)",
+                  "10"
+                ],
+                [
+                  "2일차",
+                  "부활의 정령석 (각인)",
+                  "7"
+                ],
+                [
+                  "3일차",
+                  "생명의 결정 (각인)",
+                  "10"
+                ],
+                [
+                  "4일차",
+                  "영혼의 서 (각인)",
+                  "500"
+                ],
+                [
+                  "5일차",
+                  "전투 강화 주문서 (각인)",
+                  "10"
+                ],
+                [
+                  "6일차",
+                  "성장의 마석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "7일차",
+                  "영혼 결정 (각인)",
+                  "10000"
+                ],
+                [
+                  "8일차",
+                  "맛있는 단감 (각인)",
+                  "10"
+                ],
+                [
+                  "9일차",
+                  "부활의 정령석 (각인)",
+                  "7"
+                ],
+                [
+                  "10일차",
+                  "강화석",
+                  "20000"
+                ],
+                [
+                  "11일차",
+                  "영혼의 서: 초기화 (각인)",
+                  "50"
+                ],
+                [
+                  "12일차",
+                  "전투 강화 주문서 (각인)",
+                  "10"
+                ],
+                [
+                  "13일차",
+                  "성장의 영석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "14일차",
+                  "상급 수련의 아르카나 (각인)",
+                  "50"
+                ],
+                [
+                  "15일차",
+                  "한가위 둥근 송편 (각인)",
+                  "10"
+                ],
+                [
+                  "16일차",
+                  "부활의 정령석 (각인)",
+                  "7"
+                ],
+                [
+                  "17일차",
+                  "생명의 결정 (각인)",
+                  "10"
+                ],
+                [
+                  "18일차",
+                  "영혼의 서 (각인)",
+                  "500"
+                ],
+                [
+                  "19일차",
+                  "전투 강화 주문서 (각인)",
+                  "10"
+                ],
+                [
+                  "20일차",
+                  "성장의 마석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "21일차",
+                  "영혼 결정 (각인)",
+                  "10000"
+                ],
+                [
+                  "22일차",
+                  "맛있는 단감 (각인)",
+                  "10"
+                ],
+                [
+                  "23일차",
+                  "부활의 정령석 (각인)",
+                  "7"
+                ],
+                [
+                  "24일차",
+                  "강화석",
+                  "20000"
+                ],
+                [
+                  "25일차",
+                  "영혼의 서: 초기화 (각인)",
+                  "50"
+                ],
+                [
+                  "26일차",
+                  "전투 강화 주문서 (각인)",
+                  "10"
+                ],
+                [
+                  "27일차",
+                  "성장의 영석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "28일차",
+                  "상급 수련의 아르카나 (각인)",
+                  "50"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "한가위 보름달 상회",
+            "en": "Full-moon event shop"
+          },
+          "sourceSection": "한가위 보름달 상회",
+          "notes": [
+            {
+              "ko": "9월 23일~10월 7일 점검 구간에 7일 출석과 주간 미션으로 보름달 주화를 얻습니다. 6일간 200개씩 받고 7일에는 곶감 모자를 받습니다.",
+              "en": "During September 23–October 7, login and weekly tasks grant coins; days 1–6 give 200 coins each and day 7 a hat."
+            },
+            {
+              "ko": "종족·영지별 상인 위치, 미션의 보상·초기화, 상품별 비용·한도·레벨과 삭제 일정을 아래 표에 모두 제공합니다. 이벤트 종료 후 주화는 삭제됩니다.",
+              "en": "Tables retain every merchant location, task reward/reset, item cost/limit/level and deletion time. Event currency is deleted at the end."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "구분",
+                "일차별 보상",
+                "수량"
+              ],
+              "rows": [
+                [
+                  "1일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "2일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "3일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "4일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "5일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "6일차",
+                  "한가위 보름달 주화 (이벤트)",
+                  "200"
+                ],
+                [
+                  "7일차",
+                  "곶감 모자 (외형: 투구) (각인)",
+                  "1"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "아이템 명칭",
+                "사용처"
+              ],
+              "rows": [
+                [
+                  "한가위 보름달 주화 (이벤트)",
+                  "이벤트 상점"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "업적 명칭",
+                "미션 내용",
+                "보상",
+                "개수",
+                "미션 초기화"
+              ],
+              "rows": [
+                [
+                  "[이벤트] 어비스",
+                  "어비스에서 몬스터 10마리 사냥",
+                  "한가위 보름달 주화 (이벤트)",
+                  "80개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 초월",
+                  "초월 던전 1회 클리어",
+                  "한가위 보름달 주화 (이벤트)",
+                  "80개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 원정",
+                  "원정 정복 1회 클리어",
+                  "한가위 보름달 주화 (이벤트)",
+                  "80개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 각성전",
+                  "각성전 1회 클리어",
+                  "한가위 보름달 주화 (이벤트)",
+                  "80개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 악몽",
+                  "단계 무관 1회 클리어",
+                  "한가위 보름달 주화 (이벤트)",
+                  "80개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 접속",
+                  "캐릭터 접속 3회 달성",
+                  "한가위 보름달 주화 (이벤트)",
+                  "100개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 장비 획득",
+                  "유일 등급 장비 1개 획득",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 주문서 사용",
+                  "주문서 5회 사용",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 차원 침공",
+                  "차원 침공 1회 참여",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버 / 주 1회"
+                ],
+                [
+                  "[이벤트] 슈고페스타",
+                  "슈고페스타 1회 참여",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버 / 주 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "종족",
+                "지역",
+                "상인 등장 마을"
+              ],
+              "rows": [
+                [
+                  "천족",
+                  "베르테론",
+                  "새벽의 레기온 기지 / 주미온 마을"
+                ],
+                [
+                  "천족",
+                  "엘테넨",
+                  "라세핀 마을"
+                ],
+                [
+                  "마족",
+                  "알트가르드",
+                  "도망자 마을 / 노르니르 집회소"
+                ],
+                [
+                  "마족",
+                  "모르헤임",
+                  "크로메데의 섬"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "아이템명",
+                "수량",
+                "구매 재화",
+                "개수",
+                "구매 제한",
+                "구매 레벨"
+              ],
+              "rows": [
+                [
+                  "도깨비탈 (외형: 투구) (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버당 1회",
+                  "Lv.10"
+                ],
+                [
+                  "심연의 재련 최종 보스 처치권 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "50개",
+                  "서버당 1회",
+                  "Lv.50"
+                ],
+                [
+                  "침식의 정화소 최종 보스 처치권 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "55개",
+                  "서버당 1회",
+                  "Lv.50"
+                ],
+                [
+                  "성역 최종 보스 처치권 선택 상자 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트",
+                  "70개",
+                  "서버당 1회",
+                  "Lv.50"
+                ],
+                [
+                  "콘텐츠 이용 충전권 선택 상자 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "30개",
+                  "서버당 5회",
+                  "Lv.50"
+                ],
+                [
+                  "영혼의 서: 초기화 (각인)",
+                  "10",
+                  "한가위 보름달 주화 (이벤트)",
+                  "25개",
+                  "서버당 5회",
+                  "Lv.50"
+                ],
+                [
+                  "영혼의 서 (각인)",
+                  "100",
+                  "한가위 보름달 주화 (이벤트)",
+                  "20개",
+                  "서버당 5회",
+                  "Lv.50"
+                ],
+                [
+                  "오드 에너지 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "20개",
+                  "서버당 5회",
+                  "Lv.50"
+                ],
+                [
+                  "상급 수련의 아르카나 (각인)",
+                  "20",
+                  "한가위 보름달 주화 (이벤트)",
+                  "20개",
+                  "서버당 5회",
+                  "Lv.50"
+                ],
+                [
+                  "성장의 마석 상자 (각인)",
+                  "5",
+                  "한가위 보름달 주화 (이벤트)",
+                  "17개",
+                  "서버당 5회",
+                  "Lv.10"
+                ],
+                [
+                  "성장의 영석 상자 (각인)",
+                  "5",
+                  "한가위 보름달 주화 (이벤트)",
+                  "17개",
+                  "서버당 5회",
+                  "Lv.10"
+                ],
+                [
+                  "영혼 결정 (각인)",
+                  "1,000",
+                  "한가위 보름달 주화 (이벤트)",
+                  "10개",
+                  "서버당 10회",
+                  "Lv.10"
+                ],
+                [
+                  "부활의 정령석 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "7개",
+                  "캐릭터당 10회",
+                  "Lv.10"
+                ],
+                [
+                  "생명의 결정 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "7개",
+                  "캐릭터당 10회",
+                  "Lv.10"
+                ],
+                [
+                  "전투 강화 주문서 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "7개",
+                  "캐릭터당 10회",
+                  "Lv.10"
+                ],
+                [
+                  "한가위 둥근 송편 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "5개",
+                  "캐릭터당 5회",
+                  "Lv.10"
+                ],
+                [
+                  "맛있는 단감 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "5개",
+                  "캐릭터당 5회",
+                  "Lv.10"
+                ],
+                [
+                  "봉혼석 (각인)",
+                  "1",
+                  "한가위 보름달 주화 (이벤트)",
+                  "1개",
+                  "-",
+                  "Lv.10"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "아이템 이름",
+                "삭제 일정"
+              ],
+              "rows": [
+                [
+                  "한가위 보름달 주화 (이벤트)",
+                  "26.10.7 5:00"
+                ],
+                [
+                  "심연의 재련 최종 보스 처치권 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "침식의 정화소 최종 보스 처치권 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "성역 최종 보스 처치권 선택 상자 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "콘텐츠 이용 충전권 선택 상자 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "오드 에너지 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "한가위 둥근 송편 (각인)",
+                  "26.11.4 5:00"
+                ],
+                [
+                  "맛있는 단감 (각인)",
+                  "26.11.4 5:00"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "원정·초월 한가위 부스트업",
+            "en": "Harvest dungeon boost"
+          },
+          "sourceSection": "원정&초월 한가위 부스트업",
+          "notes": [
+            {
+              "ko": "9월 23일~10월 7일 점검 구간에 표의 던전 오드 큐브 스티그마 샤드 보상을 2배로 늘립니다. 달토끼의 기운을 추가해 빨강·파랑 선물 꾸러미와 상급 봉혼석으로 변환할 수 있습니다.",
+              "en": "Listed dungeon cubes grant twice the Stigma Shard rewards September 23–October 7 and moon-rabbit materials convertible into red/blue gift bundles or higher soulshots."
+            },
+            {
+              "ko": "난이도·던전별 달토끼의 기운 수량, 교환 재료와 제한, 두 꾸러미 구성품을 표에 전부 정리했습니다.",
+              "en": "Every dungeon/difficulty amount, conversion cost/limit and gift-bundle content is listed below."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "컨텐츠",
+                "난이도",
+                "던전 명",
+                "증가된 보상"
+              ],
+              "rows": [
+                [
+                  "초월",
+                  "모든 단계(1~4단계)",
+                  "붉은 연심의 거울",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "초월",
+                  "모든 단계(1~4단계)",
+                  "심연의 뿔 암굴",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "초월",
+                  "모든 단계(1~4단계)",
+                  "노이란의 숨겨진 유산",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "원정",
+                  "정복(보통~어려움)",
+                  "환영의 회랑",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "원정",
+                  "정복(보통~어려움)",
+                  "푸른 숨의 섬",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "원정",
+                  "정복(보통~어려움)",
+                  "타락한 데바의 성",
+                  "불안정한 스티그마 샤드 (각인)"
+                ],
+                [
+                  "원정",
+                  "정복(보통~어려움)",
+                  "잠식된 데우스 연구기지",
+                  "불안정한 스티그마 샤드 (각인)"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "아이템 명칭",
+                "획득 방법"
+              ],
+              "rows": [
+                [
+                  "달토끼의 기운 (이벤트)",
+                  "원정 및 초월 던전 오드 에너지 보상을 통해 획득"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "컨텐츠",
+                "난이도",
+                "던전 명",
+                "이벤트 주화 획득량"
+              ],
+              "rows": [
+                [
+                  "원정",
+                  "정복(보통)",
+                  "환영의 회랑",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(보통)",
+                  "푸른 숨의 섬",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(보통)",
+                  "타락한 데바의 성",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(보통)",
+                  "잠식된 데우스 연구기지",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(어려움)",
+                  "환영의 회랑",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(어려움)",
+                  "푸른 숨의 섬",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "원정",
+                  "정복(어려움)",
+                  "타락한 데바의 성",
+                  "달토끼의 기운 (이벤트) 15개"
+                ],
+                [
+                  "원정",
+                  "정복(어려움)",
+                  "잠식된 데우스 연구기지",
+                  "달토끼의 기운 (이벤트) 15개"
+                ],
+                [
+                  "초월",
+                  "1~3단계",
+                  "붉은 연심의 거울",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "초월",
+                  "1~3단계",
+                  "심연의 뿔 암굴",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "초월",
+                  "1~3단계",
+                  "노이란의 숨겨진 유산",
+                  "달토끼의 기운 (이벤트) 10개"
+                ],
+                [
+                  "초월",
+                  "4단계",
+                  "심연의 뿔 암굴",
+                  "달토끼의 기운 (이벤트) 15개"
+                ],
+                [
+                  "초월",
+                  "4단계",
+                  "노이란의 숨겨진 유산",
+                  "달토끼의 기운 (이벤트) 15개"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "보상 아이템",
+                "수량",
+                "필요 재료",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "1",
+                  "달토끼의 기운 (이벤트) 600개",
+                  "기간 내 서버 당 1회"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "1",
+                  "달토끼의 기운 (이벤트) 600개",
+                  "기간 내 서버 당 1회"
+                ],
+                [
+                  "상급 봉혼석 (각인)",
+                  "1",
+                  "달토끼의 기운 (이벤트) 1개",
+                  "-"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상자 명칭",
+                "구성품",
+                "수량"
+              ],
+              "rows": [
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "용암 심장의 방어구 선택 상자 (각인)",
+                  "1"
+                ],
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "한가위 둥근 송편 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "맛있는 단감 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "성장의 영석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 빨간색 선물 꾸러미 (각인)",
+                  "영혼 결정 (각인)",
+                  "500"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "용암 심장의 장신구 선택 상자 (각인)",
+                  "1"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "한가위 둥근 송편 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "맛있는 단감 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "성장의 마석 상자 (각인)",
+                  "5"
+                ],
+                [
+                  "달토끼의 파란색 선물 꾸러미 (각인)",
+                  "영혼 결정 (각인)",
+                  "500"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "초월: 아르카나 성장 지원",
+            "en": "Transcendence Arcana support"
+          },
+          "sourceSection": "초월: 아르카나 성장 지원",
+          "notes": [
+            {
+              "ko": "8월 19일 시작한 이벤트의 종료를 9월 23일에서 11월 4일 점검 전으로 연장합니다.",
+              "en": "The event that began August 19 is extended from September 23 until November 4 maintenance."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "아르카나 보급 지원",
+            "en": "Arcana supply support"
+          },
+          "sourceSection": "아르카나 보급 지원",
+          "notes": [
+            {
+              "ko": "8월 26일 시작한 이벤트의 종료를 9월 23일에서 11월 4일 점검 전으로 연장합니다.",
+              "en": "The event that began August 26 is extended from September 23 until November 4 maintenance."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "신규 방어구 외형",
+            "en": "New armor appearances"
+          },
+          "sourceSection": "신규 방어구 외형",
+          "notes": [
+            {
+              "ko": "9월 23일~11월 4일 점검 구간에 구름비 나비꿈 묶음·여우비 내리는 날·밤 나비의 꿈을 판매합니다. 현금/티켓 비용, 구성품·마일리지·한도는 표에 담았습니다. 티켓 구매는 마일리지를 적립하지 않습니다.",
+              "en": "The two outfits and bundle run September 23–November 4; prices, tickets, pieces, mileage and caps appear below. Ticket purchases earn no mileage."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "구름비 나비꿈 세트 (2종)",
+                  "95,000원",
+                  "여우비 내리는 날 (외형: 세트) 1개먹빛 노리개 안경 (외형: 눈) 1개밤 나비의 꿈 (외형: 세트) 1개달꽃 비단 가리개 (외형: 얼굴) 1개* 마일리지 9,500 적립",
+                  "서버별 1회"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품"
+              ],
+              "rows": [
+                [
+                  "여우비 내리는 날 (외형: 세트)",
+                  "49,000원",
+                  "여우비 내리는 날 (흉갑) 1개여우비 내리는 날 (각반) 1개여우비 내리는 날 (투구) 1개여우비 내리는 날 (장갑) 1개여우비 내리는 날 (장화) 1개여우비 내리는 날 (망토) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ],
+                [
+                  "여우비 내리는 날 (외형: 세트)",
+                  "외형(세트) 교환 티켓 1개",
+                  "여우비 내리는 날 (흉갑) 1개여우비 내리는 날 (각반) 1개여우비 내리는 날 (투구) 1개여우비 내리는 날 (장갑) 1개여우비 내리는 날 (장화) 1개여우비 내리는 날 (망토) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ]
+              ]
+            },
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품"
+              ],
+              "rows": [
+                [
+                  "밤 나비의 꿈 (외형: 세트)",
+                  "49,000원",
+                  "밤 나비의 꿈 (흉갑) 1개밤 나비의 꿈 (각반) 1개밤 나비의 꿈 (투구) 1개밤 나비의 꿈 (장갑) 1개밤 나비의 꿈 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ],
+                [
+                  "밤 나비의 꿈 (외형: 세트)",
+                  "외형(세트) 교환 티켓 1개",
+                  "밤 나비의 꿈 (흉갑) 1개밤 나비의 꿈 (각반) 1개밤 나비의 꿈 (투구) 1개밤 나비의 꿈 (장갑) 1개밤 나비의 꿈 (장화) 1개* 마일리지 4,900 적립(외형(세트) 티켓 구매: 마일리지 0)"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 무기 외형",
+            "en": "New weapon appearances"
+          },
+          "sourceSection": "신규 무기 외형",
+          "notes": [
+            {
+              "ko": "그림자에 깃든 빛은 9개 직업별 무기 외형으로 9월 23일~11월 4일 판매합니다. 각각 해당 직업만 구매 가능하며 19,000원 또는 무기 외형 티켓 1개입니다. 현금 구매 마일리지는 1,900입니다.",
+              "en": "Nine class-specific skins run September 23–November 4. Each costs 19,000 won or one weapon ticket, restricted to its class; cash grants 1,900 mileage."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "그림자에 깃든 빛 무기 외형",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "그림자에 깃든 빛 (외형: 대검)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 대검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "검성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 대검)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 대검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "검성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 장검)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 장검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "수호성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 장검)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 장검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "수호성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 단검)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 단검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "살성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 단검)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 단검) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "살성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 활)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 활) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "궁성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 활)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 활) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "궁성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 법서)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 법서) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "마도성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 법서)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 법서) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "마도성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 보주)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 보주) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "정령성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 보주)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 보주) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "정령성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 전곤)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 전곤) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "치유성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 전곤)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 전곤) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "치유성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 법봉)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 법봉) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "호법성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 법봉)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 법봉) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "호법성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 권갑)",
+                  "19,000원",
+                  "그림자에 깃든 빛(외형: 권갑) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "권성 클래스만 구매 가능"
+                ],
+                [
+                  "그림자에 깃든 빛 (외형: 권갑)",
+                  "무기 외형 교환 티켓 1개",
+                  "그림자에 깃든 빛(외형: 권갑) 1개* 마일리지 1,900 적립 · 티켓 마일리지 0",
+                  "권성 클래스만 구매 가능"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 투구 및 장식",
+            "en": "New helmets & ornaments"
+          },
+          "sourceSection": "신규 투구 및 장식",
+          "notes": [
+            {
+              "ko": "장군의 투구·전립·꽃장식 가체·상투관·아기 오목눈이를 9월 23일~11월 4일 판매합니다. 큐나·티켓 가격과 구매 한도는 표에 표시했습니다.",
+              "en": "The listed helmets and bird ornament run September 23–November 4; Quna/ticket costs and caps are tabulated."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "구분",
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "모자",
+                  "장군의 투구 (외형: 투구)",
+                  "300 큐나",
+                  "장군의 투구 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "장군의 투구 (외형: 투구)",
+                  "외형(단품) 교환 티켓 1개",
+                  "장군의 투구 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "전립 (외형: 투구)",
+                  "300 큐나",
+                  "전립 (외형: 투구) 1개",
+                  ""
+                ],
+                [
+                  "모자",
+                  "전립 (외형: 투구)",
+                  "외형(단품) 교환 티켓 1개",
+                  "전립 (외형: 투구) 1개",
+                  ""
+                ],
+                [
+                  "모자",
+                  "꽃장식 가체 (외형: 투구)",
+                  "300 큐나",
+                  "꽃장식 가체 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "꽃장식 가체 (외형: 투구)",
+                  "외형(단품) 교환 티켓 1개",
+                  "꽃장식 가체 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "상투관 (외형: 투구)",
+                  "300 큐나",
+                  "상투관 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "모자",
+                  "상투관 (외형: 투구)",
+                  "외형(단품) 교환 티켓 1개",
+                  "상투관 (외형: 투구) 1개",
+                  "-"
+                ],
+                [
+                  "어깨장식",
+                  "아기 오목눈이 (외형: 어깨)",
+                  "300 큐나",
+                  "아기 오목눈이 (외형: 어깨) 1개",
+                  "서버별 1회"
+                ],
+                [
+                  "어깨장식",
+                  "아기 오목눈이 (외형: 어깨)",
+                  "외형(단품) 교환 티켓 1개",
+                  "아기 오목눈이 (외형: 어깨) 1개",
+                  "서버별 1회"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 펫",
+            "en": "New pets"
+          },
+          "sourceSection": "신규 펫",
+          "notes": [
+            {
+              "ko": "아기 오목눈이·홍염의 검은 구미호는 9월 23일~11월 4일 판매합니다. 현금 구매는 마일리지 2,900을 주며 티켓 구매는 적립하지 않습니다.",
+              "en": "The bird and black fox pets run September 23–November 4; cash grants 2,900 mileage, tickets none."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "패키지 명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "펫: 아기 오목눈이",
+                  "29,000원",
+                  "펫: 아기 오목눈이 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ],
+                [
+                  "펫: 아기 오목눈이",
+                  "펫 교환 티켓 1개",
+                  "펫: 아기 오목눈이 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ],
+                [
+                  "펫: 홍염의 검은 구미호",
+                  "29,000원",
+                  "펫: 홍염의 검은 구미호 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ],
+                [
+                  "펫: 홍염의 검은 구미호",
+                  "펫 교환 티켓 1개",
+                  "펫: 홍염의 검은 구미호 1개* 마일리지 2,900 적립 · 티켓 마일리지 0",
+                  "서버별 1회"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "신규 날개",
+            "en": "New wings"
+          },
+          "sourceSection": "​신규 날개",
+          "notes": [
+            {
+              "ko": "자개 꽃부채 날개는 9월 23일~11월 4일 판매하며 캐릭터별 1회, 29,000원, 마일리지 2,900입니다.",
+              "en": "The fan wings run September 23–November 4, once per character, at 29,000 won with 2,900 mileage."
+            }
+          ],
+          "tables": [
+            {
+              "headers": [
+                "상품명",
+                "가격",
+                "구성품",
+                "구매 제한"
+              ],
+              "rows": [
+                [
+                  "자개 꽃부채 날개",
+                  "29,000원",
+                  "자개 꽃부채 날개 (각인) 1개* 마일리지 2,900 적립",
+                  "캐릭터별 1회"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "ko": "개선사항",
+            "en": "Quality of life"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "ko": "어비스 모든 지역·쟁탈전 모노리스와 경비병에 PVP 피해 증폭을 일부 반영합니다. 이에 맞춰 어비스 보스·차원핵 체력을 조금 늘립니다. 적용 비율은 공개되지 않았습니다.",
+              "en": "Some PvP amplification now applies to Abyss targets and occupation monoliths/guards; bosses/core gain slightly more HP, without specified ratios."
+            },
+            {
+              "ko": "던전 실패 유지 시간 10→20초, 파티원 시야 범위 확대, UI 위 커서에서도 지면 타겟 스킬 발동과 채팅 스크롤 고정을 개선합니다.",
+              "en": "Dungeon retry retention rises 10→20 seconds, party visibility expands, ground targeting works over UI and chat scrolling stays in its panel."
+            },
+            {
+              "ko": "성역 칭찬 후보를 파티→포스로 늘립니다. 팝업을 오른쪽에 두고 많이 칭찬받은 플레이어부터 보여주며 칭찬 창이 있으면 마우스 포인터를 켭니다.",
+              "en": "Raid commendations extend from party to alliance, move right, sort by praise count and enable the pointer while open."
+            },
+            {
+              "ko": "아르카나 보유 상한 1,100개, 성역 포스 간 인원 이동을 지원합니다. 보스전·포스장 자리 이동은 제한됩니다. 백년삼 증표는 캐릭터·서버 창고에 넣을 수 있습니다.",
+              "en": "Arcana capacity is 1,100. Raid alliance parties can reorganize outside boss combat without moving the leader; ginseng tokens can use character/server storage."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "수정사항",
+            "en": "Other fixes"
+          },
+          "sourceSection": "수정사항",
+          "notes": [
+            {
+              "ko": "균열 지대 최소 기여도를 채우면 거리가 멀어도 보스 보상을 받습니다. 스트리머 이름 숨김은 미니맵 파티 리스트·정령성/치유성 소환체 피해 메시지·키스크 팝업에도 반영합니다.",
+              "en": "Qualified rift contribution grants boss rewards at distance. Name hiding now covers minimap lists, summons’ hit messages and kisk popups."
+            },
+            {
+              "ko": "시즌 주간 포인트 게이지, 품절 티켓 교환 상품의 무료 가격 표시, HUD 주사위 버튼과 어비스 획득처 이동 시 지도 해상도 오류를 고칩니다.",
+              "en": "Fixes cover weekly point gauges, sold-out ticket prices showing free, the HUD dice button and map resolution when navigating to Abyss acquisition sources."
+            },
+            {
+              "ko": "사망·기본 부활로 칭찬 창이 닫히거나 랭킹 정보의 칭찬 영역을 눌러 캐릭터 창이 닫히던 오류를 해결합니다.",
+              "en": "Commendation popups survive death/basic resurrection; selecting commendation info no longer closes the ranking character popup."
+            },
+            {
+              "ko": "이스카리엘 결사의 수호를 전투구역 아래로 활강해 피하던 문제, 델트라스의 기본 부활 위치 공격 생성과 밧줄 사용 후 방향키 오류를 고칩니다.",
+              "en": "Fixes prevent gliding below Iskariel’s wipe and repair Deltras attacks at the basic resurrection point and direction controls after ropes."
+            },
+            {
+              "ko": "악몽 퇴장 후 자동 물약 슬롯의 잘못된 비활성 표시를 고치고, 영혼 각인 확률은 유효한 자릿수까지 표시합니다.",
+              "en": "Auto-potion slots display correctly after Nightmare; soul-imprinting probabilities show meaningful precision."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "회수 및 복구",
+            "en": "Retroactive refunds"
+          },
+          "sourceSection": "회수 및 복구",
+          "notes": [
+            {
+              "ko": "9월 16일 악몽·페스타 상점의 상급 마석·영석(각인) 구매 로그로 현재 가격과의 차액에 해당하는 몽환의 파편·백년삼 증표를 큐브에 돌려줍니다.",
+              "en": "Logged September 16 bound-stone purchases receive the price difference in Nightmare/Festa currencies through the cube."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "시련",
+        "어비스",
+        "영혼 각인",
+        "상점",
+        "옷장",
+        "커스터마이징",
+        "시공의 균열 쟁탈전",
+        "클래스 변경사항",
+        "UI 개선사항",
+        "한가위의 풍요로운 여정",
+        "한가위 보름달 상회",
+        "원정&초월 한가위 부스트업",
+        "초월: 아르카나 성장 지원",
+        "아르카나 보급 지원",
+        "신규 방어구 외형",
+        "신규 무기 외형",
+        "신규 투구 및 장식",
+        "신규 펫",
+        "신규 날개",
+        "개선사항",
+        "수정사항"
+      ],
+      "classTables": []
+    }
   }
 }

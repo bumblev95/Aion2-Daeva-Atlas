@@ -6,6 +6,7 @@ import hashlib
 from pathlib import Path
 from content import CLASSES
 import dpsrules
+import patchbook
 
 ROOT = Path(__file__).parent
 E = lambda x: html.escape(str(x), quote=True)
@@ -14,8 +15,7 @@ def load(name):
     return json.loads((ROOT/'data'/name).read_text())
 
 def resources(base, dps=False):
-    version = 2 if dps else 1
-    return f'<link rel="stylesheet" href="{base}assets/liveops.css?v={version}">' + (f'<script defer src="{base}assets/dps-engine.js?v=2"></script><script defer src="{base}assets/dps.js?v=2"></script>' if dps else f'<script defer src="{base}assets/news.js?v=1"></script>')
+    return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=2">' + (f'<script defer src="{base}assets/dps-engine.js?v=2"></script><script defer src="{base}assets/dps.js?v=2"></script>' if dps else f'<link rel="stylesheet" href="{base}assets/patchbook.css?v=1"><script defer src="{base}assets/patchbook.js?v=2"></script><script defer src="{base}assets/news.js?v=2"></script>'+patchbook.config())
 
 def catalog():
     skills = load('skills.json')
@@ -62,26 +62,16 @@ def catalog():
                 conditionsVerified=source_hash == dpsrules.REVIEWED_SKILL_HASH,
                 states=[dict(id=s,en=en,ko=ko,control=s in dpsrules.CONTROL) for s,en,ko in dpsrules.STATES],classes=result)
 
-def patch_card(item,lang):
-    k=lang=='ko';t=lambda a,b:b if k else a
-    status=item.get('reviewState','pending')
-    summary=item.get('summary',{}).get(lang) or t('New source item. Editorial summary is awaiting review.','새 원문이 수집됐습니다. 변경 요약을 검토 중입니다.')
-    changes=''
-    labels={'buff':t('Buff','버프'),'nerf':t('Nerf','너프'),'adjustment':t('Adjustment','조정'),'fix':t('Bug fix','버그 수정'),'system':t('System','시스템')}
-    for row in item.get('changes',[]):
-        name=row.get('subject',{}).get(lang,'')
-        changes+=f'<li><span class="change-badge {E(row["type"])}">{labels[row["type"]]}</span><div><strong>{E(name)}</strong><p>{E(row["description"][lang])}</p></div></li>'
-    review={'reviewed':t('Reviewed summary','요약 검토 완료'),'pending':t('Review pending','요약 검토 중'),'revised':t('Source revised · review pending','원문 수정 · 재검토 중')}[status]
-    no_class=f'<p class="class-scope">{t("No class-specific balance changes listed in this reviewed patch.","검토한 이 패치에는 클래스별 밸런스 변경이 기재되지 않았습니다.")}</p>' if item.get('classScopeReviewed') and not any(x.get('classId') for x in item.get('changes',[])) else ''
-    return f'''<article class="patch-card" data-region="{item['region']}" data-kind="{item['kind']}" data-class-ids="{' '.join(x.get('classId','') for x in item.get('changes',[]))}" data-review="{status}"><header><span class="tag">{'한국' if k and item['region']=='KR' else 'NA · US / Canada' if item['region']=='NA' else 'Korea'}</span><time datetime="{E(item.get('publishedAt') or '')}">{E((item.get('publishedAt') or '')[:10])} UTC</time><span class="review-badge">{review}</span></header><h2>{E(item['title'])}</h2><p>{E(summary)}</p><ul class="patch-changes">{changes}</ul>{no_class}<footer><a class="text-link" href="{E(item['url'])}" target="_blank" rel="noopener">NC · {t('Original notice','공식 원문')} ↗</a><span>{t('Source updated','원문 수정')} {E((item.get('sourceUpdatedAt') or '')[:16].replace('T',' '))} UTC</span></footer></article>'''
+def patch_card(item,lang,base):
+    return patchbook.patch_card(item,lang,base)
 
 def news(lang,base):
     k=lang=='ko';t=lambda a,b:b if k else a;data=load('news.json');r=base+('ko/' if k else '')
     sources=data['sources']
     items=sorted((x for s in sources for x in s['items']),key=lambda x:x.get('publishedAt') or '',reverse=True)
-    cards=''.join(patch_card(x,lang) for x in items)
-    options=''.join(f'<option value="{x["id"]}">{E(x["ko" if k else "en"])}</option>' for x in CLASSES)
-    return resources(base)+f'''<section class="live-desk" data-news-desk data-lang="{lang}" data-feed="{base}data/news.json"><div class="desk-intro"><span class="section-kicker">PATCH DESK / AION 2</span><h1>{t('What changed. Who is affected.','무엇이 바뀌었고,<br>누가 영향을 받는지.')}</h1><p>{t('Official announcements, readable change summaries and class impact. Korea and North America stay separate.','공식 소식, 변경 요약, 직업별 영향을 한곳에서. 한국과 북미 패치를 구분해 보여줍니다.')}</p></div><div class="feed-status"><span class="feed-dot"></span><p data-news-status role="status">{t('Source check','원문 확인')}: {E(data['checkedAt'])} · {t('Hourly collection · page refresh every 5 minutes','매시간 수집 · 열린 화면은 5분마다 재확인')}</p><button type="button" class="btn" data-news-refresh>{t('Refresh','새로 확인')}</button></div><div class="desk-controls"><label>{t('Region','서버 지역')}<select data-news-region><option value="NA">{t('North America · US / Canada','북미 · 미국 / 캐나다')}</option><option value="KR">{t('Korea','한국')}</option><option value="all">{t('All regions','모든 지역')}</option></select></label><label>{t('Show','표시')}<select data-news-kind><option value="all">{t('News & patches','소식·패치 전체')}</option><option value="patch">{t('Patch notes','패치만')}</option><option value="class">{t('Class changes','클래스 변경')}</option></select></label><label>{t('Class','직업')}<select data-news-class><option value="all">{t('All classes','전체 직업')}</option>{options}</select></label></div><p class="desk-note">{t('A bug fix can restore lost damage without changing a coefficient. Unquantified effects are kept as fixes or adjustments. US and Canada use the North America feed; this is not a separately verified Canadian ruleset.','버그 수정은 계수 변경 없이도 실제 딜을 회복시킬 수 있습니다. 수치가 없는 변경은 버그 수정·조정으로 표시합니다. 미국·캐나다는 북미 공지를 함께 사용합니다.')}</p><div class="patch-feed" data-news-items>{cards}</div><p data-news-empty hidden>{t('No matching reviewed class changes. New unreviewed patches remain available in the full feed.','해당 조건의 검토된 클래스 변경이 없습니다. 미검토 패치는 전체 소식에서 볼 수 있습니다.')}</p><section class="source-health"><h2>{t('Source health','원문 수집 상태')}</h2><div data-source-health>{''.join(f'<p>{E(s["id"])} · {E(s["status"])} · {t("Last successful check","마지막 정상 확인")} {E(s.get("lastSuccessAt") or "—")}</p>' for s in sources)}</div><p>{t('If a source fails, its last successful items remain visible with their original dates. A source check is not an editorial review.','수집이 실패하면 기존 항목과 실제 날짜를 유지합니다. 수집 시각과 요약 검토 시각은 서로 다릅니다.')}</p></section><a class="btn" href="{r}tools/dps/">{t('Model the damage impact','DPS 영향 계산하기')} →</a></section>'''
+    cards=''.join(patch_card(x,lang,base) for x in items)
+    options=''.join(f'<option value="{x["id"]}">{E(x["ko" if k else "en"])}</option>' for x in CLASSES)+f'<option value="brawler">{t("Brawler · KR","권성 · 한국판")}</option>'
+    return resources(base)+f'''<section class="live-desk" data-news-desk data-lang="{lang}" data-feed="{base}data/news.json"><div class="desk-intro"><span class="section-kicker">PATCH DESK / AION 2</span><h1>{t('What changed. Who is affected.','무엇이 바뀌었고,<br>누가 영향을 받는지.')}</h1><p>{t('Official announcements, readable change summaries and class impact. Korea and North America stay separate.','공식 소식, 변경 요약, 직업별 영향을 한곳에서. 한국과 북미 패치를 구분해 보여줍니다.')}</p></div><div class="feed-status"><span class="feed-dot"></span><p data-news-status role="status">{t('Source check','원문 확인')}: {E(data['checkedAt'])} · {t('Hourly collection · page refresh every 5 minutes','매시간 수집 · 열린 화면은 5분마다 재확인')}</p><button type="button" class="btn" data-news-refresh>{t('Refresh','새로 확인')}</button></div><div class="desk-controls"><label>{t('Region','서버 지역')}<select data-news-region><option value="NA">{t('North America · US / Canada','북미 · 미국 / 캐나다')}</option><option value="KR">{t('Korea','한국')}</option><option value="all">{t('All regions','모든 지역')}</option></select></label><label>{t('Show','표시')}<select data-news-kind><option value="all">{t('News & patches','소식·패치 전체')}</option><option value="patch" selected>{t('Patch notes','패치만')}</option><option value="class">{t('Class changes','클래스 변경')}</option></select></label><label>{t('Class','직업')}<select data-news-class><option value="all">{t('All classes','전체 직업')}</option>{options}</select></label></div><p class="desk-note">{t('A bug fix can restore lost damage without changing a coefficient. Unquantified effects are kept as fixes or adjustments. US and Canada use the North America feed; this is not a separately verified Canadian ruleset.','버그 수정은 계수 변경 없이도 실제 딜을 회복시킬 수 있습니다. 수치가 없는 변경은 버그 수정·조정으로 표시합니다. 미국·캐나다는 북미 공지를 함께 사용합니다.')}</p><div class="patch-feed" data-news-items>{cards}</div><p data-news-empty hidden>{t('No matching reviewed class changes. New unreviewed patches remain available in the full feed.','해당 조건의 검토된 클래스 변경이 없습니다. 미검토 패치는 전체 소식에서 볼 수 있습니다.')}</p><section class="source-health"><h2>{t('Source health','원문 수집 상태')}</h2><div data-source-health>{''.join(f'<p>{E(s["id"])} · {E(s["status"])} · {t("Last successful check","마지막 정상 확인")} {E(s.get("lastSuccessAt") or "—")}</p>' for s in sources)}</div><p>{t('If a source fails, its last successful items remain visible with their original dates. A source check is not an editorial review.','수집이 실패하면 기존 항목과 실제 날짜를 유지합니다. 수집 시각과 요약 검토 시각은 서로 다릅니다.')}</p></section><a class="btn" href="{r}tools/dps/">{t('Model the damage impact','DPS 영향 계산하기')} →</a></section>'''
 
 def home_strip(lang,base):
     k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
@@ -99,7 +89,7 @@ def screenshots(lang,base,spotlight=None):
         figures+=f'''<figure class="gameplay-shot"><a href="{E(x['url'])}" target="_blank" rel="noopener" aria-label="{E(t('Open full screenshot: ','전체 스크린샷 보기: ')+x['title'][lang])}"><img src="{E(x['thumbnail'])}" alt="{E(x['alt'][lang])}" loading="lazy" width="1920" height="1080"></a><figcaption><span class="section-kicker">NC / {t('OFFICIAL GAMEPLAY SCREENSHOT','공식 인게임 스크린샷')}</span><h3>{E(x['title'][lang])}</h3><p>{E(x['caption'][lang])}</p><a href="{E(x['source'])}" target="_blank" rel="noopener">AION 2 © NC · Steam ↗</a></figcaption></figure>'''
     copy=t('Publisher-provided in-game frames, with the HUD hidden. These illustrate combat and movement; they are not player-submitted evidence for a build or a particular boss mechanic.','공식 공개 인게임 장면이며 HUD는 숨겨져 있습니다. 전투·이동 맥락을 보여주는 자료로, 특정 빌드나 보스 패턴의 실측 증거는 아닙니다.')
     if spotlight:
-        return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=1"><section class="gameplay-context"><h2>{t("See the in-game scene","실제 게임 장면")}</h2><div class="gameplay-grid">{figures}</div><a class="text-link" href="{r}screenshots/">{t("All screenshots & credits","전체 스크린샷·출처 보기")} →</a></section>'
+        return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=2"><section class="gameplay-context"><h2>{t("See the in-game scene","실제 게임 장면")}</h2><div class="gameplay-grid">{figures}</div><a class="text-link" href="{r}screenshots/">{t("All screenshots & credits","전체 스크린샷·출처 보기")} →</a></section>'
     return resources(base)+f'<section class="screenshot-desk"><div class="desk-intro"><span class="section-kicker">IN-GAME / AION 2</span><h1>{t("Real scenes from Atreia.","아트레이아의 실제 장면.")}</h1><p>{copy}</p></div><div class="gameplay-grid">{figures}</div><p class="desk-note">{t("Images are served by the publisher’s Steam CDN. Community settings captures remain linked to their originals until reuse permission is available.","이미지는 공식 Steam 배포 주소에서 표시합니다. 커뮤니티의 설정 캡처는 재사용 허락이 확인되기 전까지 원본 링크를 유지합니다.")}</p></section>'
 
 def coverage(lang):
