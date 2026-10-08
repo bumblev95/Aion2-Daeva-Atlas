@@ -123,3 +123,31 @@ existing component styles. Update its cache version when changing those rules.
 - `data/coverage-audit.json`: 실제 검토한 공략 보강 항목과 출처. 최종빌드 입력, 지역별 패치 차이, 같은 조건의 실측 순위가 현재 보강 대상이다. 검토 완료일은 수집 시간과 별도로 관리한다.
 
 검증: Python 수집·캐시·원문 변경 테스트, Node DPS 수학/시간축 테스트, 기존 방문 분석 테스트, 정적 링크·언어·JSON·SEO 검사.
+
+
+## Full patch pages
+
+`patchbook.py` renders compact cards and a stable `updates/<region>-<articleId>/`
+page for each collected patch in both languages. `data/patch-reviews.json` now
+stores original editorial facts for every section, all numeric reward/schedule
+rows and each class-specific change. Publisher article HTML is not republished.
+The seven source patches present at rollout have complete section coverage.
+
+Class impact is aggregated per class. A buff and a nerf together produce
+`adjustment`; fixes and tooltip-only edits keep their own labels. A percentage
+change is relative to the named skill, not to the class's total DPS. Next-week
+plans remain in their own clearly marked section. Korea's 권성 is retained as a
+Korea-only entry; it is not added to the Global class selector.
+
+A reviewed `detail.coverage: complete` requires source-hash equality, bilingual
+editorial notes, matching `sourceSections` and complete factual tables. On a
+source revision, the collector clears detail, summary and class claims until
+reviewed again. New unreviewed detail routes still link to the publisher. The
+open detail page also checks for revisions without silently retaining changed
+class claims. When reviewing a new patch, update the full section list together
+with the summary and class rows before marking coverage complete.
+
+Hourly publication may change only news data, home strips, patch index/detail
+pages and their sitemap/search registrations. Its whitelist checks tracked and
+untracked files; new detail routes are staged for the existing Pages build.
+Portrait attribution is in `assets/classes/credits.json` and on detail pages.

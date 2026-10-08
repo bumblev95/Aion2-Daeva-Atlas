@@ -14,6 +14,7 @@ import measurement
 import endgame
 import liveops
 from bossmedia import validate_evidence
+import patchbook
 
 ROOT=Path(__file__).parent
 CONFIG=json.loads((ROOT/'site.json').read_text())
@@ -31,6 +32,7 @@ if ads['enabled'] and not (valid_pub and ads['consent_reviewed'] and re.fullmatc
 E=lambda s:html.escape(str(s),quote=True)
 search_index=[]
 pages=[]
+page_dates={}
 L=0
 LANG='en'
 def t(en,ko):return (en,ko)[L]
@@ -217,6 +219,14 @@ def livepages():
     ]:
         write(sub,title,desc,'<div class="wrap">'+body+'</div>')
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Live tools','업데이트·계산 도구'),'keywords':title+' '+desc+' DPS eDPS buff nerf patch 버프 너프 조정 최신'})
+    for item in patchbook.patches(liveops.load('news.json')):
+        sub=patchbook.detail_path(item)
+        title=patchbook.title(item,LANG)
+        desc=item.get('summary',{}).get(LANG) or t('Official patch changes awaiting review.','공식 패치의 전체 변경사항을 검토하고 있습니다.')
+        content=liveops.resources(BASE)+patchbook.render_detail(item,LANG,BASE)
+        write(sub,title,desc,'<div class="wrap">'+content+'</div>','updates/')
+        page_dates[SITE+'/'+path(sub)]=(item.get('reviewedAt') or item.get('sourceUpdatedAt') or REVIEWED)[:10]
+        search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Patch notes','패치 상세'),'keywords':title+' '+desc+' '+' '.join(g['info'][LANG] for g in patchbook.class_groups(item))+' 버프 너프 조정 buff nerf patch'})
 
 def build():
     global L,LANG
@@ -229,7 +239,7 @@ def build():
     shutil.copyfile(ROOT/'data/news.json',OUT/'data/news.json')
     (OUT/'data/dps.json').write_text(json.dumps(liveops.catalog(),ensure_ascii=False,separators=(',',':'))+'\n')
     (OUT/'search-index.json').write_text(json.dumps(search_index,ensure_ascii=False,separators=(',',':')))
-    (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+REVIEWED+'</lastmod></url>' for url in pages)+'</urlset>')
+    (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+page_dates.get(url,REVIEWED)+'</lastmod></url>' for url in pages)+'</urlset>')
     measurement.write_verification(CONFIG,OUT)
     (OUT/'.nojekyll').write_text('')
     (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+SITE+'/sitemap.xml\n')

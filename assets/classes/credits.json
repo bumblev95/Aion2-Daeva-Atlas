@@ -1,0 +1,47 @@
+{
+  "owner": "NC",
+  "source": "https://aion2.ncsoft.jp/en/teaser",
+  "note": "Official class portraits; decorative identification only, not evidence for patch effects.",
+  "assets": [
+    {
+      "file": "gladiator.webp",
+      "classId": "gladiator",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha1_thumb.webp"
+    },
+    {
+      "file": "templar.webp",
+      "classId": "templar",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha2_thumb.webp"
+    },
+    {
+      "file": "assassin.webp",
+      "classId": "assassin",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha3_thumb.webp"
+    },
+    {
+      "file": "ranger.webp",
+      "classId": "ranger",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha4_thumb.webp"
+    },
+    {
+      "file": "chanter.webp",
+      "classId": "chanter",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha5_thumb.webp"
+    },
+    {
+      "file": "cleric.webp",
+      "classId": "cleric",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha6_thumb.webp"
+    },
+    {
+      "file": "sorcerer.webp",
+      "classId": "sorcerer",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha7_thumb.webp"
+    },
+    {
+      "file": "spiritmaster.webp",
+      "classId": "spiritmaster",
+      "url": "https://st.ncjapan.co.jp/ncjapan/ncsoft/aion2/official/teaser/phase1_Q9Dy6kpdkWTtrnWW/images/scene1/en/cha8_thumb.webp"
+    }
+  ]
+}

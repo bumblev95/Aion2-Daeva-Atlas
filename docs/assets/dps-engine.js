@@ -38,7 +38,8 @@
     if (!String(raw || '').trim()) return [];
     return String(raw).split(',').map(x=>number(x,'element times',0,duration)).sort((a,b)=>a-b);
   }
-  function simulate(raw, patch = false) {
+  function simulate(raw, patch = false, choose = null) {
+    if (choose !== null && typeof choose !== 'function') throw new Error('policy');
     if (raw.conditionsVerified === false) throw new Error('condition-snapshot');
     const duration = number(raw.duration, 'duration', 1, 600);
     const attack = number(raw.attack, 'attack', 0, 10000000);
@@ -58,6 +59,7 @@
     const elementEvents = elementTimes(raw.elementEvents, duration);
     const conditionMode = raw.conditionMode || 'tooltip';
     const targetControl = raw.targetControl || 'unknown';
+    const region = raw.region, fireMarkEnabled = raw.fireMarkEnabled;
     if (!['tooltip','windows'].includes(conditionMode) || !['unknown','susceptible','immune'].includes(targetControl)) throw new Error('condition mode');
     const warnings = new Set(resourceMode === 'unverified' ? ['resources-unverified'] : []);
     const skills = raw.skills.filter(s => s.enabled).map(s => ({
@@ -104,12 +106,15 @@
       if (currentGap) {advance(currentGap[1]); continue;}
       const nextGap = gaps.find(g => g[0] > time + 1e-8);
       const end = nextGap ? nextGap[0] : duration;
-      const i = skills.findIndex((s, ix) => {
+      const feasible = [];
+      skills.some((s, ix) => {
         if (ready[ix] > time + EPS || time + s.cast > end + EPS) return false;
         const reason = blocked(s);
         if (reason && !breakdown[ix].blocked.includes(reason)) breakdown[ix].blocked.push(reason);
-        return !reason;
+        if (!reason) feasible.push(ix);
+        return !choose && !reason;
       });
+      let i = feasible.length ? feasible[0] : -1;
       if (i < 0) {
         const future = [duration,...ready.filter(v=>v>time+EPS),
           ...Object.values(windows).flat().map(w=>w[0]).filter(v=>v>time+EPS)];
@@ -120,6 +125,24 @@
         });
         advance(Math.min(...future.filter(v=>v>time+EPS)));
         continue;
+      }
+      if (choose) {
+        // Research policies can select feasible actions or wait. All mechanics,
+        // damage, resource changes and cooldown clocks remain owned by this engine.
+        const describe = ix => Object.freeze({index:ix,id:skills[ix].id,cast:skills[ix].cast,
+          readyAt:ready[ix],requirementsMet:!blocked(skills[ix])});
+        const context = Object.freeze({time,end,duration,
+          feasible:Object.freeze(feasible.map(describe)),
+          cooldowns:Object.freeze(skills.map((s,ix)=>describe(ix)))});
+        const decision = choose(context);
+        if (decision && typeof decision === 'object' && Object.hasOwn(decision,'waitUntil')) {
+          const until = number(decision.waitUntil,'policy wait',0,duration);
+          if (until <= time + EPS || until > end + EPS) throw new Error('policy wait');
+          advance(Math.min(until,end));
+          continue;
+        }
+        if (!Number.isInteger(decision) || !feasible.includes(decision)) throw new Error('policy action');
+        i = decision;
       }
       const s = skills[i], finish = time + s.cast;
       const damage = (s.flat + s.coefficient * attack) * s.hits * (1 + crit * (critMultiplier - 1)) * accuracy * factor * (1 + s.delta);
@@ -134,8 +157,8 @@
       advance(finish);
       s.effects.forEach(e=>{
         if (conditionMode !== 'tooltip') return;
-        if (raw.region === 'KR' && s.conditionRegion === 'Global') {warnings.add('global-only-conditions');return;}
-        if (e.passive === 'fire-mark' && raw.fireMarkEnabled === 'no') return;
+        if (region === 'KR' && s.conditionRegion === 'Global') {warnings.add('global-only-conditions');return;}
+        if (e.passive === 'fire-mark' && fireMarkEnabled === 'no') return;
         if (e.on !== 'hit' && e.on !== 'use') throw new Error('effect trigger');
         if (e.duration === null || e.chance !== 100) {warnings.add('uncertain-state-effect');return;}
         if (e.on === 'hit' && accuracy !== 1) {warnings.add('probabilistic-hit-effects');return;}

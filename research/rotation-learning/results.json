@@ -1,0 +1,1989 @@
+{
+  "schema": 1,
+  "purpose": "research-only",
+  "scenarioKind": "synthetic-simulator-curriculum",
+  "selection": "Training reward only; validation and test never choose a policy or seed.",
+  "tierAssessment": {
+    "canPublishTiers": false,
+    "tiers": null,
+    "directDamageCoverage": {
+      "included": 26,
+      "active": 96,
+      "omitted": 70
+    },
+    "blockersKo": [
+      "액티브 96개 중 70개의 기본 직접 피해가 없으며, 준비 기술의 0 피해는 실측 결과가 아닙니다.",
+      "기본 동작 시간은 임시 값으로, 실제 모션과 평타 캔슬을 측정하지 않았습니다.",
+      "동일 장비 예산·스킬 레벨·특화·패시브를 갖춘 실제 빌드를 비교하지 않았습니다.",
+      "지속 피해·정령 공격·파티 버프·차징 단계·확률 초기화가 보상 모델에서 빠져 있습니다.",
+      "MP는 미검증 모드이며, 제공한 상태 구간은 실제 유지율을 측정한 값이 아닙니다.",
+      "한국 공략과 현재 Global의 조건 대응이 미검증이고, 실전 피해 정답 데이터가 없습니다.",
+      "검증·테스트에도 같은 불완전한 엔진을 쓰므로 실제 게임의 정확도가 검증된 것은 아닙니다."
+    ],
+    "blockers": [
+      "70/96 active skills have no default direct-damage seed; helper zero damage is not a measured total.",
+      "Default action durations are placeholders, not measured animation/cancel times.",
+      "Equipment, skill levels, specializations and passives are not calibrated to comparable real builds.",
+      "DoT, pet attacks, party buffs, charge stages and reset probabilities remain outside this partial reward model.",
+      "MP mode is explicitly unverified; synthetic availability windows are not measured uptime.",
+      "KR guide mapping to current Global rules remains unverified; no measured combat target labels exist.",
+      "Held-out simulator scenarios share the same incomplete engine; they cannot validate live-game damage."
+    ]
+  },
+  "classes": [
+    {
+      "id": "gladiator",
+      "ko": "검성",
+      "directCount": 4,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [],
+      "policy": {
+        "order": [
+          "crushing-wave",
+          "leaping-slam",
+          "mocking-blade",
+          "keen-strike"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 120,
+        "score": 1,
+        "policy": {
+          "order": [
+            "crushing-wave",
+            "leaping-slam",
+            "mocking-blade",
+            "keen-strike"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 120,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 749.3625,
+          "policyEdps": 749.3625,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 6,
+            "mocking-blade": 5,
+            "crushing-wave": 5,
+            "keen-strike": 74
+          },
+          "casts": {
+            "leaping-slam": 6,
+            "mocking-blade": 5,
+            "crushing-wave": 5,
+            "keen-strike": 74
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 630.365625,
+          "policyEdps": 630.365625,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 8,
+            "mocking-blade": 6,
+            "crushing-wave": 6,
+            "keen-strike": 77
+          },
+          "casts": {
+            "leaping-slam": 8,
+            "mocking-blade": 6,
+            "crushing-wave": 6,
+            "keen-strike": 77
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 697.0392857142857,
+          "policyEdps": 697.0392857142857,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 7,
+            "mocking-blade": 6,
+            "crushing-wave": 6,
+            "keen-strike": 75
+          },
+          "casts": {
+            "leaping-slam": 7,
+            "mocking-blade": 6,
+            "crushing-wave": 6,
+            "keen-strike": 75
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 630.1849315068494,
+          "policyEdps": 630.1849315068494,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 5,
+            "mocking-blade": 4,
+            "crushing-wave": 4,
+            "keen-strike": 44
+          },
+          "casts": {
+            "leaping-slam": 5,
+            "mocking-blade": 4,
+            "crushing-wave": 4,
+            "keen-strike": 44
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 695.8894736842105,
+          "policyEdps": 695.8894736842105,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 7,
+            "mocking-blade": 5,
+            "crushing-wave": 5,
+            "keen-strike": 69
+          },
+          "casts": {
+            "leaping-slam": 7,
+            "mocking-blade": 5,
+            "crushing-wave": 5,
+            "keen-strike": 69
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 608.2716138328531,
+          "policyEdps": 608.2716138328531,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 10,
+            "mocking-blade": 8,
+            "crushing-wave": 8,
+            "keen-strike": 113
+          },
+          "casts": {
+            "leaping-slam": 10,
+            "mocking-blade": 8,
+            "crushing-wave": 8,
+            "keen-strike": 113
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 639.648178807947,
+          "policyEdps": 639.648178807947,
+          "changePercent": 0,
+          "baselineCasts": {
+            "leaping-slam": 9,
+            "mocking-blade": 8,
+            "crushing-wave": 8,
+            "keen-strike": 99
+          },
+          "casts": {
+            "leaping-slam": 9,
+            "mocking-blade": 8,
+            "crushing-wave": 8,
+            "keen-strike": 99
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 0.9963364515633288,
+      "projectedHints": [],
+      "unsupportedFeatures": [
+        "animation-cancel",
+        "input-queue",
+        "reset-events",
+        "skill-levels",
+        "specializations"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "templar",
+      "ko": "수호성",
+      "directCount": 4,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [
+        "shield-smite"
+      ],
+      "policy": {
+        "order": [
+          "judgment",
+          "debilitating-smash",
+          "shield-smite",
+          "warding-strike",
+          "vicious-strike"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1.0184034843800098,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 600,
+        "score": 1.0184034843800098,
+        "policy": {
+          "order": [
+            "judgment",
+            "debilitating-smash",
+            "shield-smite",
+            "warding-strike",
+            "vicious-strike"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 600,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 1393.0125,
+          "policyEdps": 1393.0125,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shield-smite": 9,
+            "judgment": 9,
+            "debilitating-smash": 9,
+            "warding-strike": 3,
+            "vicious-strike": 60
+          },
+          "casts": {
+            "shield-smite": 9,
+            "judgment": 9,
+            "debilitating-smash": 9,
+            "warding-strike": 3,
+            "vicious-strike": 60
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 1146.778125,
+          "policyEdps": 1181.19375,
+          "changePercent": 3.0010709351470988,
+          "baselineCasts": {
+            "shield-smite": 12,
+            "judgment": 11,
+            "debilitating-smash": 11,
+            "warding-strike": 4,
+            "vicious-strike": 59
+          },
+          "casts": {
+            "shield-smite": 11,
+            "judgment": 12,
+            "debilitating-smash": 12,
+            "warding-strike": 4,
+            "vicious-strike": 58
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 1271.2714285714285,
+          "policyEdps": 1303.307142857143,
+          "changePercent": 2.519974378855827,
+          "baselineCasts": {
+            "shield-smite": 10,
+            "judgment": 10,
+            "debilitating-smash": 10,
+            "warding-strike": 4,
+            "vicious-strike": 60
+          },
+          "casts": {
+            "shield-smite": 10,
+            "judgment": 12,
+            "debilitating-smash": 10,
+            "warding-strike": 4,
+            "vicious-strike": 58
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 1122.3801369863013,
+          "policyEdps": 1122.3801369863013,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shield-smite": 7,
+            "judgment": 7,
+            "debilitating-smash": 7,
+            "warding-strike": 2,
+            "vicious-strike": 34
+          },
+          "casts": {
+            "shield-smite": 7,
+            "judgment": 7,
+            "debilitating-smash": 7,
+            "warding-strike": 2,
+            "vicious-strike": 34
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 1288.6460526315789,
+          "policyEdps": 1324.053947368421,
+          "changePercent": 2.7476819305452205,
+          "baselineCasts": {
+            "shield-smite": 9,
+            "judgment": 9,
+            "debilitating-smash": 9,
+            "warding-strike": 4,
+            "vicious-strike": 55
+          },
+          "casts": {
+            "shield-smite": 9,
+            "judgment": 11,
+            "debilitating-smash": 9,
+            "warding-strike": 4,
+            "vicious-strike": 53
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 1123.6318443804034,
+          "policyEdps": 1137.7413544668589,
+          "changePercent": 1.2557057862876642,
+          "baselineCasts": {
+            "shield-smite": 15,
+            "judgment": 15,
+            "debilitating-smash": 14,
+            "warding-strike": 5,
+            "vicious-strike": 90
+          },
+          "casts": {
+            "shield-smite": 14,
+            "judgment": 15,
+            "debilitating-smash": 15,
+            "warding-strike": 5,
+            "vicious-strike": 90
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 1160.7541390728477,
+          "policyEdps": 1160.7541390728477,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shield-smite": 13,
+            "judgment": 13,
+            "debilitating-smash": 13,
+            "warding-strike": 5,
+            "vicious-strike": 80
+          },
+          "casts": {
+            "shield-smite": 13,
+            "judgment": 13,
+            "debilitating-smash": 13,
+            "warding-strike": 5,
+            "vicious-strike": 80
+          },
+          "blocked": {
+            "judgment": [
+              "state:judgment-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 1.3738409652726102,
+      "testMeanChangePercent": 0.6278528931438321,
+      "greedyTrainingScore": 1.0095345353667053,
+      "projectedHints": [],
+      "unsupportedFeatures": [
+        "animation-cancel",
+        "availability-events",
+        "party-buffs",
+        "regional-equivalence",
+        "skill-levels",
+        "specializations",
+        "tank-role"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0.6278528931438321
+        },
+        {
+          "seed": 19,
+          "changePercent": 0.6278528931438321
+        },
+        {
+          "seed": 41,
+          "changePercent": 0.6278528931438321
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "assassin",
+      "ko": "살성",
+      "directCount": 3,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [],
+      "policy": {
+        "order": [
+          "ambush",
+          "shadowstrike",
+          "quick-slice"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1.0029648909158926,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 30,
+        "score": 1.0029648909158926,
+        "policy": {
+          "order": [
+            "ambush",
+            "shadowstrike",
+            "quick-slice"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 30,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 958.125,
+          "policyEdps": 958.125,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 5,
+            "ambush": 9,
+            "quick-slice": 76
+          },
+          "casts": {
+            "shadowstrike": 5,
+            "ambush": 9,
+            "quick-slice": 76
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 785.23125,
+          "policyEdps": 792.215625,
+          "changePercent": 0.8894672747677745,
+          "baselineCasts": {
+            "shadowstrike": 6,
+            "ambush": 11,
+            "quick-slice": 80
+          },
+          "casts": {
+            "shadowstrike": 6,
+            "ambush": 12,
+            "quick-slice": 79
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 864.9642857142857,
+          "policyEdps": 864.9642857142857,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 6,
+            "ambush": 10,
+            "quick-slice": 78
+          },
+          "casts": {
+            "shadowstrike": 6,
+            "ambush": 10,
+            "quick-slice": 78
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 766.7876712328767,
+          "policyEdps": 766.7876712328767,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 4,
+            "ambush": 7,
+            "quick-slice": 46
+          },
+          "casts": {
+            "shadowstrike": 4,
+            "ambush": 7,
+            "quick-slice": 46
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 871.65,
+          "policyEdps": 871.65,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 5,
+            "ambush": 9,
+            "quick-slice": 72
+          },
+          "casts": {
+            "shadowstrike": 5,
+            "ambush": 9,
+            "quick-slice": 72
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 773.442363112392,
+          "policyEdps": 773.442363112392,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 8,
+            "ambush": 15,
+            "quick-slice": 116
+          },
+          "casts": {
+            "shadowstrike": 8,
+            "ambush": 15,
+            "quick-slice": 116
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 792.5438741721854,
+          "policyEdps": 792.5438741721854,
+          "changePercent": 0,
+          "baselineCasts": {
+            "shadowstrike": 8,
+            "ambush": 13,
+            "quick-slice": 103
+          },
+          "casts": {
+            "shadowstrike": 8,
+            "ambush": 13,
+            "quick-slice": 103
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 1.0029648909158926,
+      "projectedHints": [],
+      "unsupportedFeatures": [
+        "animation-cancel",
+        "back-position",
+        "buff-windows",
+        "controlled-build",
+        "insignia-stacks",
+        "movement-role",
+        "reset-events",
+        "skill-levels",
+        "specializations"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "ranger",
+      "ko": "궁성",
+      "directCount": 5,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [],
+      "policy": {
+        "order": [
+          "snare-shot",
+          "marking-shot",
+          "burst-arrow",
+          "gale-arrow",
+          "snipe"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 600,
+        "score": 1,
+        "policy": {
+          "order": [
+            "snare-shot",
+            "marking-shot",
+            "burst-arrow",
+            "gale-arrow",
+            "snipe"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 600,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 892.7875,
+          "policyEdps": 892.7875,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 6,
+            "marking-shot": 9,
+            "gale-arrow": 5,
+            "burst-arrow": 3,
+            "snipe": 67
+          },
+          "casts": {
+            "snare-shot": 6,
+            "marking-shot": 9,
+            "gale-arrow": 5,
+            "burst-arrow": 3,
+            "snipe": 67
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 796.228125,
+          "policyEdps": 796.228125,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 8,
+            "marking-shot": 11,
+            "gale-arrow": 6,
+            "burst-arrow": 5,
+            "snipe": 67
+          },
+          "casts": {
+            "snare-shot": 8,
+            "marking-shot": 11,
+            "gale-arrow": 6,
+            "burst-arrow": 5,
+            "snipe": 67
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 749.4964285714286,
+          "policyEdps": 749.4964285714286,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 7,
+            "marking-shot": 10,
+            "gale-arrow": 6,
+            "burst-arrow": 0,
+            "snipe": 71
+          },
+          "casts": {
+            "snare-shot": 7,
+            "marking-shot": 10,
+            "gale-arrow": 6,
+            "burst-arrow": 0,
+            "snipe": 71
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 762.2260273972603,
+          "policyEdps": 768.375,
+          "changePercent": 0.8067124949454163,
+          "baselineCasts": {
+            "snare-shot": 5,
+            "marking-shot": 7,
+            "gale-arrow": 4,
+            "burst-arrow": 2,
+            "snipe": 39
+          },
+          "casts": {
+            "snare-shot": 5,
+            "marking-shot": 7,
+            "gale-arrow": 3,
+            "burst-arrow": 3,
+            "snipe": 39
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 749.4868421052631,
+          "policyEdps": 749.4868421052631,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 7,
+            "marking-shot": 9,
+            "gale-arrow": 5,
+            "burst-arrow": 0,
+            "snipe": 65
+          },
+          "casts": {
+            "snare-shot": 7,
+            "marking-shot": 9,
+            "gale-arrow": 5,
+            "burst-arrow": 0,
+            "snipe": 65
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 736.0353025936599,
+          "policyEdps": 736.0353025936599,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 10,
+            "marking-shot": 15,
+            "gale-arrow": 8,
+            "burst-arrow": 5,
+            "snipe": 101
+          },
+          "casts": {
+            "snare-shot": 10,
+            "marking-shot": 15,
+            "gale-arrow": 8,
+            "burst-arrow": 5,
+            "snipe": 101
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 685.8551324503311,
+          "policyEdps": 685.8551324503311,
+          "changePercent": 0,
+          "baselineCasts": {
+            "snare-shot": 9,
+            "marking-shot": 13,
+            "gale-arrow": 8,
+            "burst-arrow": 0,
+            "snipe": 94
+          },
+          "casts": {
+            "snare-shot": 9,
+            "marking-shot": 13,
+            "gale-arrow": 8,
+            "burst-arrow": 0,
+            "snipe": 94
+          },
+          "blocked": {
+            "burst-arrow": [
+              "state:slow|root"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0.40335624747270815,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 0.9879784766457478,
+      "projectedHints": [],
+      "unsupportedFeatures": [
+        "buff-windows",
+        "regional-equivalence",
+        "reset-probabilities",
+        "skill-levels",
+        "specializations",
+        "trial-logs"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "sorcerer",
+      "ko": "마도성",
+      "directCount": 4,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [],
+      "policy": {
+        "order": [
+          "blaze",
+          "firestorm",
+          "winters-shackles",
+          "flame-arrow"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 120,
+        "score": 1,
+        "policy": {
+          "order": [
+            "blaze",
+            "firestorm",
+            "winters-shackles",
+            "flame-arrow"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 120,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 1430.95,
+          "policyEdps": 1430.95,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 18,
+            "blaze": 18,
+            "winters-shackles": 2,
+            "flame-arrow": 52
+          },
+          "casts": {
+            "firestorm": 18,
+            "blaze": 18,
+            "winters-shackles": 2,
+            "flame-arrow": 52
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 1193.15625,
+          "policyEdps": 1193.15625,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 21,
+            "blaze": 20,
+            "winters-shackles": 3,
+            "flame-arrow": 53
+          },
+          "casts": {
+            "firestorm": 21,
+            "blaze": 20,
+            "winters-shackles": 3,
+            "flame-arrow": 53
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 1297.0928571428572,
+          "policyEdps": 1297.0928571428572,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 19,
+            "blaze": 19,
+            "winters-shackles": 3,
+            "flame-arrow": 53
+          },
+          "casts": {
+            "firestorm": 19,
+            "blaze": 19,
+            "winters-shackles": 3,
+            "flame-arrow": 53
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 1197.6626712328766,
+          "policyEdps": 1197.6626712328766,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 13,
+            "blaze": 13,
+            "winters-shackles": 2,
+            "flame-arrow": 29
+          },
+          "casts": {
+            "firestorm": 13,
+            "blaze": 13,
+            "winters-shackles": 2,
+            "flame-arrow": 29
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 1335.0907894736843,
+          "policyEdps": 1335.0907894736843,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 18,
+            "blaze": 18,
+            "winters-shackles": 3,
+            "flame-arrow": 47
+          },
+          "casts": {
+            "firestorm": 18,
+            "blaze": 18,
+            "winters-shackles": 3,
+            "flame-arrow": 47
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 1164.858069164265,
+          "policyEdps": 1164.858069164265,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 29,
+            "blaze": 28,
+            "winters-shackles": 4,
+            "flame-arrow": 78
+          },
+          "casts": {
+            "firestorm": 29,
+            "blaze": 28,
+            "winters-shackles": 4,
+            "flame-arrow": 78
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 1188.8120860927152,
+          "policyEdps": 1188.8120860927152,
+          "changePercent": 0,
+          "baselineCasts": {
+            "firestorm": 25,
+            "blaze": 25,
+            "winters-shackles": 4,
+            "flame-arrow": 70
+          },
+          "casts": {
+            "firestorm": 25,
+            "blaze": 25,
+            "winters-shackles": 4,
+            "flame-arrow": 70
+          },
+          "blocked": {
+            "blaze": [
+              "state:fire-mark"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 1,
+      "projectedHints": [
+        {
+          "ruleId": "sorcerer-firestorm-priority",
+          "policy": {
+            "order": [
+              "firestorm",
+              "flame-arrow",
+              "blaze",
+              "winters-shackles"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 0.7514111584934383
+        }
+      ],
+      "unsupportedFeatures": [
+        "buff-windows",
+        "charge-stages",
+        "cooldown-resets",
+        "input-queue",
+        "skill-levels",
+        "specializations"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "spiritmaster",
+      "ko": "정령성",
+      "directCount": 1,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [],
+      "policy": {
+        "order": [
+          "cold-shock"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 5,
+        "score": 1,
+        "policy": {
+          "order": [
+            "cold-shock"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 5,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 640.125,
+          "policyEdps": 640.125,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 90
+          },
+          "casts": {
+            "cold-shock": 90
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 517.434375,
+          "policyEdps": 517.434375,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 97
+          },
+          "casts": {
+            "cold-shock": 97
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 573.0642857142857,
+          "policyEdps": 573.0642857142857,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 94
+          },
+          "casts": {
+            "cold-shock": 94
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 499.8236301369863,
+          "policyEdps": 499.8236301369863,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 57
+          },
+          "casts": {
+            "cold-shock": 57
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 579.4815789473685,
+          "policyEdps": 579.4815789473685,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 86
+          },
+          "casts": {
+            "cold-shock": 86
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 512.8378962536023,
+          "policyEdps": 512.8378962536023,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 139
+          },
+          "casts": {
+            "cold-shock": 139
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 525.6655629139073,
+          "policyEdps": 525.6655629139073,
+          "changePercent": 0,
+          "baselineCasts": {
+            "cold-shock": 124
+          },
+          "casts": {
+            "cold-shock": 124
+          },
+          "blocked": {},
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 1,
+      "projectedHints": [],
+      "unsupportedFeatures": [
+        "buff-windows",
+        "element-generation",
+        "input-queue",
+        "party-buffs",
+        "pet-timeline",
+        "reset-probabilities",
+        "skill-levels"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "no-order-choice-in-partial-catalog"
+    },
+    {
+      "id": "cleric",
+      "ko": "치유성",
+      "directCount": 2,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [
+        "chain-of-torment"
+      ],
+      "policy": {
+        "order": [
+          "condemnation",
+          "earths-retribution",
+          "chain-of-torment"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1.055191308253623,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 30,
+        "score": 1.055191308253623,
+        "policy": {
+          "order": [
+            "condemnation",
+            "earths-retribution",
+            "chain-of-torment"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 30,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 823.2625,
+          "policyEdps": 856.575,
+          "changePercent": 4.046400753101231,
+          "baselineCasts": {
+            "chain-of-torment": 5,
+            "condemnation": 12,
+            "earths-retribution": 73
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 12,
+            "earths-retribution": 78
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 647.428125,
+          "policyEdps": 677.409375,
+          "changePercent": 4.630822919532562,
+          "baselineCasts": {
+            "chain-of-torment": 6,
+            "condemnation": 12,
+            "earths-retribution": 79
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 12,
+            "earths-retribution": 85
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 667.725,
+          "policyEdps": 720.3428571428572,
+          "changePercent": 7.88016880345308,
+          "baselineCasts": {
+            "chain-of-torment": 6,
+            "condemnation": 9,
+            "earths-retribution": 79
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 10,
+            "earths-retribution": 84
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 646.5359589041096,
+          "policyEdps": 679.3921232876712,
+          "changePercent": 5.081877338926888,
+          "baselineCasts": {
+            "chain-of-torment": 4,
+            "condemnation": 8,
+            "earths-retribution": 45
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 8,
+            "earths-retribution": 49
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 734.4,
+          "policyEdps": 765.9592105263158,
+          "changePercent": 4.297278121775028,
+          "baselineCasts": {
+            "chain-of-torment": 5,
+            "condemnation": 11,
+            "earths-retribution": 70
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 11,
+            "earths-retribution": 75
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 619.3530259365995,
+          "policyEdps": 658.1087896253603,
+          "changePercent": 6.257459327037829,
+          "baselineCasts": {
+            "chain-of-torment": 8,
+            "condemnation": 15,
+            "earths-retribution": 116
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 16,
+            "earths-retribution": 123
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 664.8377483443709,
+          "policyEdps": 696.6059602649007,
+          "changePercent": 4.778340580034968,
+          "baselineCasts": {
+            "chain-of-torment": 8,
+            "condemnation": 16,
+            "earths-retribution": 100
+          },
+          "casts": {
+            "chain-of-torment": 0,
+            "condemnation": 16,
+            "earths-retribution": 108
+          },
+          "blocked": {
+            "condemnation": [
+              "state:chain-of-torment"
+            ]
+          },
+          "warnings": [
+            "resources-unverified"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 4.689577730350958,
+      "testMeanChangePercent": 5.517899953536398,
+      "greedyTrainingScore": 1.055191308253623,
+      "projectedHints": [
+        {
+          "ruleId": "cleric-priority",
+          "policy": {
+            "order": [
+              "chain-of-torment",
+              "condemnation",
+              "earths-retribution"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1
+        },
+        {
+          "ruleId": "cleric-condemnation-priority",
+          "policy": {
+            "order": [
+              "condemnation",
+              "earths-retribution",
+              "chain-of-torment"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.055191308253623
+        }
+      ],
+      "unsupportedFeatures": [
+        "animation-cancel",
+        "buff-windows",
+        "charge-stages",
+        "cooldown-reduction",
+        "debuff-lifetimes",
+        "dot-damage",
+        "skill-levels",
+        "specializations"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 5.517899953536398
+        },
+        {
+          "seed": 19,
+          "changePercent": 5.517899953536398
+        },
+        {
+          "seed": 41,
+          "changePercent": 5.517899953536398
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    },
+    {
+      "id": "chanter",
+      "ko": "호법성",
+      "directCount": 3,
+      "activeCount": 12,
+      "zeroDamageSetupSkills": [
+        "impactful-crush"
+      ],
+      "policy": {
+        "order": [
+          "dark-crush",
+          "impactful-crush",
+          "rushing-smash",
+          "onslaught"
+        ],
+        "holdSeconds": 0
+      },
+      "trainingScore": 1.0010224846710563,
+      "restrictedOracle": {
+        "status": "enumerated-training-space",
+        "policyCount": 120,
+        "score": 1.0010224846710563,
+        "policy": {
+          "order": [
+            "dark-crush",
+            "impactful-crush",
+            "rushing-smash",
+            "onslaught"
+          ],
+          "holdSeconds": 0
+        },
+        "scope": "Only declared static priorities and cooldown-hold values, under training scenarios; not a global gameplay optimum."
+      },
+      "trainingGapToRestrictedOracle": 0,
+      "uniqueTrainingEvaluations": 120,
+      "training": [
+        {
+          "scenario": "train-open-90",
+          "baselineEdps": 1148.925,
+          "policyEdps": 1148.925,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 6,
+            "rushing-smash": 6,
+            "dark-crush": 6,
+            "onslaught": 72
+          },
+          "casts": {
+            "impactful-crush": 6,
+            "rushing-smash": 6,
+            "dark-crush": 6,
+            "onslaught": 72
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "train-moving-120",
+          "baselineEdps": 938.278125,
+          "policyEdps": 941.15625,
+          "changePercent": 0.3067454013168991,
+          "baselineCasts": {
+            "impactful-crush": 8,
+            "rushing-smash": 8,
+            "dark-crush": 7,
+            "onslaught": 74
+          },
+          "casts": {
+            "impactful-crush": 8,
+            "rushing-smash": 7,
+            "dark-crush": 8,
+            "onslaught": 74
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "train-immune-105",
+          "baselineEdps": 1040.9678571428572,
+          "policyEdps": 1040.9678571428572,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 7,
+            "rushing-smash": 7,
+            "dark-crush": 7,
+            "onslaught": 73
+          },
+          "casts": {
+            "impactful-crush": 7,
+            "rushing-smash": 7,
+            "dark-crush": 7,
+            "onslaught": 73
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "scenario": "validation-short-73",
+          "baselineEdps": 926.306506849315,
+          "policyEdps": 926.306506849315,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 5,
+            "rushing-smash": 5,
+            "dark-crush": 5,
+            "onslaught": 42
+          },
+          "casts": {
+            "impactful-crush": 5,
+            "rushing-smash": 5,
+            "dark-crush": 5,
+            "onslaught": 42
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "validation-immune-95",
+          "baselineEdps": 1063.7644736842105,
+          "policyEdps": 1063.7644736842105,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 7,
+            "rushing-smash": 7,
+            "dark-crush": 7,
+            "onslaught": 65
+          },
+          "casts": {
+            "impactful-crush": 7,
+            "rushing-smash": 7,
+            "dark-crush": 7,
+            "onslaught": 65
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "test-long-173",
+          "baselineEdps": 927.9726224783861,
+          "policyEdps": 927.9726224783861,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 10,
+            "rushing-smash": 10,
+            "dark-crush": 10,
+            "onslaught": 109
+          },
+          "casts": {
+            "impactful-crush": 10,
+            "rushing-smash": 10,
+            "dark-crush": 10,
+            "onslaught": 109
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        },
+        {
+          "scenario": "test-immune-151",
+          "baselineEdps": 952.1150662251656,
+          "policyEdps": 952.1150662251656,
+          "changePercent": 0,
+          "baselineCasts": {
+            "impactful-crush": 9,
+            "rushing-smash": 9,
+            "dark-crush": 9,
+            "onslaught": 97
+          },
+          "casts": {
+            "impactful-crush": 9,
+            "rushing-smash": 9,
+            "dark-crush": 9,
+            "onslaught": 97
+          },
+          "blocked": {
+            "dark-crush": [
+              "state:dark-crush-ready"
+            ]
+          },
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ]
+        }
+      ],
+      "validationMeanChangePercent": 0,
+      "testMeanChangePercent": 0,
+      "greedyTrainingScore": 0.9695423621835206,
+      "projectedHints": [
+        {
+          "ruleId": "chanter-followup-priority",
+          "policy": {
+            "order": [
+              "dark-crush",
+              "impactful-crush",
+              "rushing-smash",
+              "onslaught"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0010224846710563
+        }
+      ],
+      "unsupportedFeatures": [
+        "animation-cancel",
+        "buff-windows",
+        "healing-downtime",
+        "party-role",
+        "regional-equivalence",
+        "skill-levels",
+        "specializations",
+        "stagger-events"
+      ],
+      "replicaTestMeanChanges": [
+        {
+          "seed": 7,
+          "changePercent": 0
+        },
+        {
+          "seed": 19,
+          "changePercent": 0
+        },
+        {
+          "seed": 41,
+          "changePercent": 0
+        }
+      ],
+      "learningStatus": "partial-model-policy-search"
+    }
+  ],
+  "modelSha256": "aeb7abdf1ba89dd6c3236fa6dcc21c255431f01955093b686901b986059ca082"
+}

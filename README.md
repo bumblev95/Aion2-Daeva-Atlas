@@ -30,6 +30,8 @@ node --check assets/dps.js
 node --check assets/news.js
 node tests/analytics.test.js
 node tests/dps.test.js
+node tests/rotation-learning.test.js
+node research/rotation-learning/train.js --verify
 node tests/battle.test.js
 ```
 
@@ -102,4 +104,4 @@ After editing `dpsrules.py`, `liveops.py`, `data/dps-resources.json` or the DPS 
 
 `tests/dps-ui.test.js` runs the generated English/Korean calculator in Chromium, checks actual CSV downloads and saved builds, and asserts containment at 320px and 390px. The targeted `dps-browser.yml` workflow installs its pinned Playwright runtime in a temporary directory; it adds no production dependency. Its screenshots and CSV are retained as CI evidence.
 
-[Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) is research-only and never seeds `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations.
+[Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) never supplies damage, timing or proc defaults to `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations. [Guide-informed policy learning](research/rotation-learning/README.md) annotates text patterns, fits priority/hold proposal distributions through the existing constrained simulator and preserves a hashed model plus held-out results. Its optional KR guide priors are hypotheses, and incomplete damage/build coverage keeps all class tiers blocked.

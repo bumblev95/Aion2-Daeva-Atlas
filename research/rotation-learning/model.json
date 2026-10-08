@@ -1,0 +1,2433 @@
+{
+  "schema": 1,
+  "kind": "categorical-cross-entropy-policy-search",
+  "purpose": "research-only",
+  "trainingReward": "Mean within-class eDPS ratio to the existing catalog priority, over training scenarios only.",
+  "trainedOnCombatLogs": false,
+  "trainedOnCopiedArticleText": false,
+  "currentPatchEquivalent": false,
+  "authorHintsOptedIn": true,
+  "provenance": {
+    "assets/dps-engine.js": "50285413a2c9072d621440cb8f2bd31873d5acf1274860b52da10b03cc4c3771",
+    "docs/data/dps.json": "a5d7432f34caa94dc252ecb33f1108f96860e31572829cc24f590403192e23e8",
+    "data/skills.json": "8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e",
+    "research/gameplay-evidence.json": "19a567e701a5599ea230255bbb761a4ae0e18f293013eff7bc144bd6eb841f94",
+    "research/rotation-learning/claims.json": "4ae553693b2518e9c9f7dda0bbbee171efeb9db052377d7380010d7a7e2129a5",
+    "research/rotation-learning/scenarios.json": "921b264e783bd8bd4e4b0db6d5a8d886ffafcade94ffc69d849e5cd6fb4da852",
+    "research/rotation-learning/train.js": "39bf97d193ce910712e704deecabf575b720d4bc615573e3227f48ace37381e2"
+  },
+  "settings": {
+    "generations": 10,
+    "population": 96,
+    "eliteFraction": 0.15,
+    "learningRate": 0.65,
+    "pseudocount": 0.5,
+    "seeds": [
+      7,
+      19,
+      41
+    ]
+  },
+  "classes": [
+    {
+      "id": "gladiator",
+      "skillIds": [
+        "leaping-slam",
+        "mocking-blade",
+        "crushing-wave",
+        "keen-strike"
+      ],
+      "eligibleHintRuleIds": [],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "crushing-wave",
+              "leaping-slam",
+              "mocking-blade",
+              "keen-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.03146356876681824,
+              0.031315040494680785,
+              0.9059653564161652,
+              0.03125603432233581
+            ],
+            [
+              0.906008353161905,
+              0.03129948848026428,
+              0.03143612403549499,
+              0.03125603432233581
+            ],
+            [
+              0.03127204374894104,
+              0.9061294367027192,
+              0.03133287957004089,
+              0.031265639978298954
+            ],
+            [
+              0.03125603432233581,
+              0.03125603432233581,
+              0.031265639978298954,
+              0.9062222913770295
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787239118790555,
+            0.03034674398106771,
+            0.030313921191283146,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 62
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 90
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 95
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 101
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 102
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 102
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 103
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 104
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 105
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "crushing-wave",
+              "leaping-slam",
+              "mocking-blade",
+              "keen-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.03148232266655579,
+              0.03129034023648987,
+              0.9059713027746186,
+              0.03125603432233581
+            ],
+            [
+              0.9059928011474885,
+              0.031320986853134156,
+              0.03143017767704163,
+              0.03125603432233581
+            ],
+            [
+              0.031268841863619994,
+              0.9061326385880402,
+              0.03134248522600403,
+              0.03125603432233581
+            ],
+            [
+              0.03125603432233581,
+              0.03125603432233581,
+              0.03125603432233581,
+              0.9062318970329926
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787385490690945,
+            0.030329001932535515,
+            0.03031702604977628,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 115
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 116
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 116
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 116
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 116
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 116
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 117
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 117
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 117
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "crushing-wave",
+              "leaping-slam",
+              "mocking-blade",
+              "keen-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.031326933211587527,
+              0.031265639978298954,
+              0.9061513924877778,
+              0.03125603432233581
+            ],
+            [
+              0.9061513924877778,
+              0.0313086367240387,
+              0.031283936465847775,
+              0.03125603432233581
+            ],
+            [
+              0.031265639978298954,
+              0.9061696889753266,
+              0.0313086367240387,
+              0.03125603432233581
+            ],
+            [
+              0.03125603432233581,
+              0.03125603432233581,
+              0.03125603432233581,
+              0.9062318970329926
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787567346688401,
+            0.030307711474296877,
+            0.030320130908269415,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 118
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 119
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "templar",
+      "skillIds": [
+        "shield-smite",
+        "judgment",
+        "debilitating-smash",
+        "warding-strike",
+        "vicious-strike"
+      ],
+      "eligibleHintRuleIds": [],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "judgment",
+              "debilitating-smash",
+              "shield-smite",
+              "warding-strike",
+              "vicious-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0184034843800098,
+          "rankPositionProbabilities": [
+            [
+              0.03031702604977628,
+              0.8784453074047065,
+              0.030477012256795694,
+              0.03045294281442472,
+              0.030307711474296877
+            ],
+            [
+              0.03035840304153173,
+              0.03050983504658026,
+              0.8779320371823225,
+              0.030892013255268705,
+              0.030307711474296877
+            ],
+            [
+              0.8773805556048309,
+              0.03037037892429096,
+              0.03086002325551728,
+              0.031078225882571024,
+              0.030310816332790008
+            ],
+            [
+              0.031029371884648438,
+              0.030363662291632343,
+              0.03042321583106771,
+              0.8772691065734388,
+              0.030914643419212833
+            ],
+            [
+              0.030914643419212833,
+              0.030310816332790008,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.8781591172994034
+            ]
+          ],
+          "holdProbabilities": [
+            0.8774072462667626,
+            0.030874789760778884,
+            0.03110254102386482,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0095345353667053,
+              "uniqueEvaluations": 89
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0143295707796784,
+              "uniqueEvaluations": 158
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 197
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 228
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 240
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 254
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 260
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 262
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 265
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 270
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "judgment",
+              "debilitating-smash",
+              "shield-smite",
+              "warding-strike",
+              "vicious-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0184034843800098,
+          "rankPositionProbabilities": [
+            [
+              0.030307711474296877,
+              0.8777735174099267,
+              0.03129092873321023,
+              0.030320130908269415,
+              0.030307711474296877
+            ],
+            [
+              0.03039261984941525,
+              0.031185173451066528,
+              0.8777464607859151,
+              0.030368034439306343,
+              0.030307711474296877
+            ],
+            [
+              0.8786385599527238,
+              0.03031702604977628,
+              0.030323235766762546,
+              0.03041346675644058,
+              0.030307711474296877
+            ],
+            [
+              0.03034408267378788,
+              0.03041657161493371,
+              0.030331663239815343,
+              0.8785906564216869,
+              0.03031702604977628
+            ],
+            [
+              0.03031702604977628,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.8787598395273332
+            ]
+          ],
+          "holdProbabilities": [
+            0.8785129172825059,
+            0.030466747214430635,
+            0.0304049125544697,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0143295707796784,
+              "uniqueEvaluations": 317
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0143295707796784,
+              "uniqueEvaluations": 347
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 354
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 365
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 369
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 371
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 374
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 375
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 376
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 376
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "judgment",
+              "debilitating-smash",
+              "shield-smite",
+              "warding-strike",
+              "vicious-strike"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0184034843800098,
+          "rankPositionProbabilities": [
+            [
+              0.030313921191283146,
+              0.7064433793841987,
+              0.2026121957346721,
+              0.030322792215549246,
+              0.030307711474296877
+            ],
+            [
+              0.040184976492656246,
+              0.19261891039180395,
+              0.7063852108107966,
+              0.03050319083044626,
+              0.030307711474296877
+            ],
+            [
+              0.8685693639879215,
+              0.03908269353574337,
+              0.03035561500533381,
+              0.03168461599670455,
+              0.030307711474296877
+            ],
+            [
+              0.03056104258155303,
+              0.031547305213957155,
+              0.030339266974900567,
+              0.8771816894830031,
+              0.030370695746586178
+            ],
+            [
+              0.030370695746586178,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.8787061698305233
+            ]
+          ],
+          "holdProbabilities": [
+            0.8782466869818016,
+            0.030644919021195552,
+            0.030492971048409093,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 405
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 422
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 431
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 436
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 441
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 441
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 445
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 446
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 446
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0184034843800098,
+              "uniqueEvaluations": 447
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin",
+      "skillIds": [
+        "shadowstrike",
+        "ambush",
+        "quick-slice"
+      ],
+      "eligibleHintRuleIds": [],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "ambush",
+              "shadowstrike",
+              "quick-slice"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0029648909158926,
+          "rankPositionProbabilities": [
+            [
+              0.03228620085165491,
+              0.9354474293283559,
+              0.03226636981998908
+            ],
+            [
+              0.9354441241564115,
+              0.03228620085165491,
+              0.03226967499193338
+            ],
+            [
+              0.03226967499193338,
+              0.03226636981998908,
+              0.9354639551880775
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787265731863353,
+            0.030340977815294747,
+            0.03031702604977628,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 29
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "ambush",
+              "shadowstrike",
+              "quick-slice"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0029648909158926,
+          "rankPositionProbabilities": [
+            [
+              0.03226636981998908,
+              0.9354672603600218,
+              0.03226636981998908
+            ],
+            [
+              0.9354672603600218,
+              0.03226636981998908,
+              0.03226636981998908
+            ],
+            [
+              0.03226636981998908,
+              0.03226636981998908,
+              0.9354672603600218
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787443152348675,
+            0.030326340625255684,
+            0.030313921191283146,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "ambush",
+              "shadowstrike",
+              "quick-slice"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0029648909158926,
+          "rankPositionProbabilities": [
+            [
+              0.0322828956797106,
+              0.9354507345003003,
+              0.03226636981998908
+            ],
+            [
+              0.9354507345003003,
+              0.0322828956797106,
+              0.03226636981998908
+            ],
+            [
+              0.03226636981998908,
+              0.03226636981998908,
+              0.9354672603600218
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787296780448284,
+            0.030337872956801612,
+            0.03031702604977628,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0029648909158926,
+              "uniqueEvaluations": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ranger",
+      "skillIds": [
+        "snare-shot",
+        "marking-shot",
+        "gale-arrow",
+        "burst-arrow",
+        "snipe"
+      ],
+      "eligibleHintRuleIds": [],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "snare-shot",
+              "marking-shot",
+              "burst-arrow",
+              "gale-arrow",
+              "snipe"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.8786106795907447,
+              0.03034319557136127,
+              0.030310816332790008,
+              0.030427597030807295,
+              0.030307711474296877
+            ],
+            [
+              0.030388120972823153,
+              0.8784390252711956,
+              0.030545454924628318,
+              0.030319687357056112,
+              0.030307711474296877
+            ],
+            [
+              0.03033210679102865,
+              0.03032589707404238,
+              0.03129578969242543,
+              0.8777384949682068,
+              0.030307711474296877
+            ],
+            [
+              0.030361381171106774,
+              0.030584170609103935,
+              0.8775402275758595,
+              0.031200299452646782,
+              0.030313921191283146
+            ],
+            [
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030313921191283146,
+              0.8787629443858263
+            ]
+          ],
+          "holdProbabilities": [
+            0.8786239227626848,
+            0.030385459665543325,
+            0.030375194623178267,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 89
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 157
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 194
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 218
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 227
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 236
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 241
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 246
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 249
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 251
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "snare-shot",
+              "marking-shot",
+              "burst-arrow",
+              "gale-arrow",
+              "snipe"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.8786697986310323,
+              0.030325453522829074,
+              0.030326340625255684,
+              0.030370695746586178,
+              0.030307711474296877
+            ],
+            [
+              0.03034940528834754,
+              0.878694193947764,
+              0.030310816332790008,
+              0.030337872956801612,
+              0.030307711474296877
+            ],
+            [
+              0.03031702604977628,
+              0.03031702604977628,
+              0.03351427251050071,
+              0.8755439639156499,
+              0.030307711474296877
+            ],
+            [
+              0.030356058556547112,
+              0.03035561500533381,
+              0.8755408590571567,
+              0.03343975590666548,
+              0.030307711474296877
+            ],
+            [
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.8787691541028125
+            ]
+          ],
+          "holdProbabilities": [
+            0.878576336053943,
+            0.030368984906191998,
+            0.030439256091271308,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 297
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 327
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 341
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 347
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 352
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 352
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 354
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 356
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 357
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 358
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "snare-shot",
+              "marking-shot",
+              "burst-arrow",
+              "gale-arrow",
+              "snipe"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.8787474200933607,
+              0.03031702604977628,
+              0.030313921191283146,
+              0.030313921191283146,
+              0.030307711474296877
+            ],
+            [
+              0.030313921191283146,
+              0.8786937503965507,
+              0.030320130908269415,
+              0.03036448602959991,
+              0.030307711474296877
+            ],
+            [
+              0.03031702604977628,
+              0.030313921191283146,
+              0.03071868430358783,
+              0.878342656981056,
+              0.030307711474296877
+            ],
+            [
+              0.030313921191283146,
+              0.030367590888093043,
+              0.8783395521225628,
+              0.030671224323764207,
+              0.030307711474296877
+            ],
+            [
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.030307711474296877,
+              0.8787691541028125
+            ]
+          ],
+          "holdProbabilities": [
+            0.8785110072966691,
+            0.030480633083026752,
+            0.030392936671710467,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 391
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 407
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 412
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 413
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 413
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 414
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 417
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 417
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 418
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 419
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sorcerer",
+      "skillIds": [
+        "firestorm",
+        "blaze",
+        "winters-shackles",
+        "flame-arrow"
+      ],
+      "eligibleHintRuleIds": [
+        "sorcerer-firestorm-priority"
+      ],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "blaze",
+              "firestorm",
+              "winters-shackles",
+              "flame-arrow"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.03150013158287049,
+              0.9059891954660594,
+              0.031256937418195595,
+              0.031253735532874555
+            ],
+            [
+              0.9059859935807384,
+              0.03146943805215556,
+              0.03128163767638652,
+              0.0312629306907196
+            ],
+            [
+              0.03126013930351664,
+              0.03128763094891052,
+              0.906182484788093,
+              0.031269744959479776
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.03127894011732483,
+              0.906213588816926
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787119359962963,
+            0.03035561500533381,
+            0.03031702604977628,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 55
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 77
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 85
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 90
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 93
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 94
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 95
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 96
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 96
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 97
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "blaze",
+              "firestorm",
+              "winters-shackles",
+              "flame-arrow"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.03161383118406677,
+              0.905872293979542,
+              0.03126013930351664,
+              0.031253735532874555
+            ],
+            [
+              0.9058786977501843,
+              0.031530535251648964,
+              0.03132783630744731,
+              0.0312629306907196
+            ],
+            [
+              0.031253735532874555,
+              0.03134343523593445,
+              0.9061490936983165,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.0312629306907196,
+              0.9062295982435313
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787505249518537,
+            0.030326340625255684,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 105
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 106
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 107
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 108
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 108
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 109
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 110
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 110
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 110
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 110
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "blaze",
+              "firestorm",
+              "winters-shackles",
+              "flame-arrow"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              0.03140760363155212,
+              0.9060785215320567,
+              0.03126013930351664,
+              0.031253735532874555
+            ],
+            [
+              0.9060657139907726,
+              0.03134306159887187,
+              0.031328293719636024,
+              0.0312629306907196
+            ],
+            [
+              0.03127294684480082,
+              0.0313246813361969,
+              0.9061486362861277,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.0312629306907196,
+              0.9062295982435313
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787505249518537,
+            0.030313921191283146,
+            0.030320130908269415,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 113
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 114
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spiritmaster",
+      "skillIds": [
+        "cold-shock"
+      ],
+      "eligibleHintRuleIds": [],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "cold-shock"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              1
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787691541028125,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "cold-shock"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              1
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787691541028125,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "cold-shock"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1,
+          "rankPositionProbabilities": [
+            [
+              1
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787691541028125,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1,
+              "uniqueEvaluations": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cleric",
+      "skillIds": [
+        "chain-of-torment",
+        "condemnation",
+        "earths-retribution"
+      ],
+      "eligibleHintRuleIds": [
+        "cleric-priority",
+        "cleric-condemnation-priority"
+      ],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "condemnation",
+              "earths-retribution",
+              "chain-of-torment"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.055191308253623,
+          "rankPositionProbabilities": [
+            [
+              0.032268997007944805,
+              0.9354698875479774,
+              0.03226111544407762
+            ],
+            [
+              0.03226111544407762,
+              0.032268997007944805,
+              0.9354698875479774
+            ],
+            [
+              0.9354698875479774,
+              0.03226111544407762,
+              0.032268997007944805
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787443152348675,
+            0.03032944548374882,
+            0.030310816332790008,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 25
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 28
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "condemnation",
+              "earths-retribution",
+              "chain-of-torment"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.055191308253623,
+          "rankPositionProbabilities": [
+            [
+              0.032268997007944805,
+              0.9354698875479774,
+              0.03226111544407762
+            ],
+            [
+              0.03226111544407762,
+              0.032268997007944805,
+              0.9354698875479774
+            ],
+            [
+              0.9354698875479774,
+              0.03226111544407762,
+              0.032268997007944805
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787536298103469,
+            0.030323235766762546,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "condemnation",
+              "earths-retribution",
+              "chain-of-torment"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.055191308253623,
+          "rankPositionProbabilities": [
+            [
+              0.032268997007944805,
+              0.9354698875479774,
+              0.03226111544407762
+            ],
+            [
+              0.03226111544407762,
+              0.032268997007944805,
+              0.9354698875479774
+            ],
+            [
+              0.9354698875479774,
+              0.03226111544407762,
+              0.032268997007944805
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787536298103469,
+            0.030323235766762546,
+            0.030307711474296877,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.055191308253623,
+              "uniqueEvaluations": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chanter",
+      "skillIds": [
+        "impactful-crush",
+        "rushing-smash",
+        "dark-crush",
+        "onslaught"
+      ],
+      "eligibleHintRuleIds": [
+        "chanter-followup-priority"
+      ],
+      "selectedSeed": 7,
+      "runs": [
+        {
+          "seed": 7,
+          "policy": {
+            "order": [
+              "dark-crush",
+              "impactful-crush",
+              "rushing-smash",
+              "onslaught"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0010224846710563,
+          "rankPositionProbabilities": [
+            [
+              0.03126013930351664,
+              0.031253735532874555,
+              0.9062323896307343,
+              0.031253735532874555
+            ],
+            [
+              0.9062323896307343,
+              0.031253735532874555,
+              0.03126013930351664,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.9062387934013765,
+              0.031253735532874555,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.031253735532874555,
+              0.9062387934013765
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787412103763743,
+            0.03032944548374882,
+            0.030313921191283146,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 54
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 70
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 74
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 75
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 76
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 76
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 76
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 77
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 79
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 80
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "policy": {
+            "order": [
+              "dark-crush",
+              "impactful-crush",
+              "rushing-smash",
+              "onslaught"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0010224846710563,
+          "rankPositionProbabilities": [
+            [
+              0.03126334118883769,
+              0.031253735532874555,
+              0.9062291877454132,
+              0.031253735532874555
+            ],
+            [
+              0.9062291877454132,
+              0.031253735532874555,
+              0.03126334118883769,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.9062387934013765,
+              0.031253735532874555,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.031253735532874555,
+              0.9062387934013765
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787443152348675,
+            0.030310816332790008,
+            0.03032944548374882,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 97
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 98
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 99
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 100
+            }
+          ]
+        },
+        {
+          "seed": 41,
+          "policy": {
+            "order": [
+              "dark-crush",
+              "impactful-crush",
+              "rushing-smash",
+              "onslaught"
+            ],
+            "holdSeconds": 0
+          },
+          "trainingScore": 1.0010224846710563,
+          "rankPositionProbabilities": [
+            [
+              0.031256937418195595,
+              0.031253735532874555,
+              0.9062355915160554,
+              0.031253735532874555
+            ],
+            [
+              0.9062355915160554,
+              0.031253735532874555,
+              0.031256937418195595,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.9062387934013765,
+              0.031253735532874555,
+              0.031253735532874555
+            ],
+            [
+              0.031253735532874555,
+              0.031253735532874555,
+              0.031253735532874555,
+              0.9062387934013765
+            ]
+          ],
+          "holdProbabilities": [
+            0.8787536298103469,
+            0.030320130908269415,
+            0.030310816332790008,
+            0.030307711474296877,
+            0.030307711474296877
+          ],
+          "trace": [
+            {
+              "generation": 1,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 102
+            },
+            {
+              "generation": 2,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 105
+            },
+            {
+              "generation": 3,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 105
+            },
+            {
+              "generation": 4,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 105
+            },
+            {
+              "generation": 5,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 105
+            },
+            {
+              "generation": 6,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 106
+            },
+            {
+              "generation": 7,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 106
+            },
+            {
+              "generation": 8,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 106
+            },
+            {
+              "generation": 9,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 106
+            },
+            {
+              "generation": 10,
+              "bestTrainingScore": 1.0010224846710563,
+              "uniqueEvaluations": 106
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

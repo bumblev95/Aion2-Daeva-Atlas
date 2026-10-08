@@ -3,6 +3,7 @@
   "reviewedAt": "2026-10-08",
   "purpose": "research-only",
   "canSeedSimulation": false,
+  "researchHintUse": "Qualitative priority hypotheses may initialize an explicitly opted-in research search; no author damage, timing or proc value becomes a calculator default.",
   "currentPatchEquivalent": false,
   "currentPatchMatchStatus": "unverified",
   "rankVerified": false,
@@ -29,11 +30,17 @@
           "width": 600,
           "height": 338,
           "mediaFps": 15,
-          "reviewedRangeSec": [0, 4.75],
+          "reviewedRangeSec": [
+            0,
+            4.75
+          ],
           "sampleEverySec": 0.25,
           "samplingTimeBasis": "Nominal sample times; selected native 15 FPS frames need not align exactly with the 0.25-second output grid.",
           "observed": "Repeated brief attack motions and subsequent effects at practice dummies.",
-          "authorSkillIdentification": ["고통의 연쇄", "대지의 응보"],
+          "authorSkillIdentification": [
+            "고통의 연쇄",
+            "대지의 응보"
+          ],
           "perCastSkillVerified": false,
           "hitAndResourceVerified": false
         },
@@ -44,11 +51,17 @@
           "width": 600,
           "height": 338,
           "mediaFps": 15,
-          "reviewedRangeSec": [0, 4.75],
+          "reviewedRangeSec": [
+            0,
+            4.75
+          ],
           "sampleEverySec": 0.25,
           "samplingTimeBasis": "Nominal sample times; selected native 15 FPS frames need not align exactly with the 0.25-second output grid.",
           "observed": "Brief attack and green/white follow-up effects repeat in a practice scene.",
-          "authorSkillIdentification": ["치유의 빛", "대지의 응보"],
+          "authorSkillIdentification": [
+            "치유의 빛",
+            "대지의 응보"
+          ],
           "perCastSkillVerified": false,
           "hitAndResourceVerified": false
         }
@@ -92,9 +105,18 @@
           "status": "video-candidate",
           "fullFightVerified": false,
           "chapters": [
-            {"sourceSec": 45, "label": "skill use"},
-            {"sourceSec": 174, "label": "commented gameplay"},
-            {"sourceSec": 562, "label": "unedited footage"}
+            {
+              "sourceSec": 45,
+              "label": "skill use"
+            },
+            {
+              "sourceSec": 174,
+              "label": "commented gameplay"
+            },
+            {
+              "sourceSec": 562,
+              "label": "unedited footage"
+            }
           ],
           "chapterProvenance": "creator video description"
         },
@@ -104,9 +126,18 @@
           "status": "video-candidate",
           "fullFightVerified": false,
           "chapters": [
-            {"sourceSec": 67, "label": "first traffic light"},
-            {"sourceSec": 166, "label": "flight"},
-            {"sourceSec": 450, "label": "full footage"}
+            {
+              "sourceSec": 67,
+              "label": "first traffic light"
+            },
+            {
+              "sourceSec": 166,
+              "label": "flight"
+            },
+            {
+              "sourceSec": 450,
+              "label": "full footage"
+            }
           ],
           "chapterProvenance": "creator video description"
         }
@@ -124,9 +155,18 @@
       "videoStatus": "video-candidate",
       "fullFightVerified": false,
       "chapters": [
-        {"sourceSec": 38, "label": "rotation and mechanics"},
-        {"sourceSec": 84, "label": "cooldown reduction and buffs"},
-        {"sourceSec": 405, "label": "probabilistic resets"}
+        {
+          "sourceSec": 38,
+          "label": "rotation and mechanics"
+        },
+        {
+          "sourceSec": 84,
+          "label": "cooldown reduction and buffs"
+        },
+        {
+          "sourceSec": 405,
+          "label": "probabilistic resets"
+        }
       ],
       "chapterProvenance": "creator article and video description"
     },
@@ -169,7 +209,10 @@
       "article": "https://www.inven.co.kr/board/aion2/6449/5183",
       "status": "author-report",
       "comparisonControlled": false,
-      "confounders": ["different builds", "different movement assignment"],
+      "confounders": [
+        "different builds",
+        "different movement assignment"
+      ],
       "fullFightVerified": false
     },
     {
@@ -213,14 +256,62 @@
       "videoStatus": "video-candidate",
       "creatorReportedContext": "Fierce Horn Exploration solo; distinct from Conquest",
       "fullFightVerified": false
+    },
+    {
+      "id": "cleric-april-priorities",
+      "class": "cleric",
+      "author": "하앑짜악",
+      "publishedAt": "2026-04-11",
+      "article": "https://www.inven.co.kr/board/aion2/6452/16252",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR level 16–20 PvE priorities and debuff maintenance; links a prior meter post"
+    },
+    {
+      "id": "assassin-february-opener",
+      "class": "assassin",
+      "author": "아즈샤라관흥",
+      "publishedAt": "2026-02-12",
+      "article": "https://www.inven.co.kr/board/aion2/6449/4571",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR dummy and difficult Conquest practice; mark priority and burst alignment"
+    },
+    {
+      "id": "gladiator-august-input",
+      "class": "gladiator",
+      "author": "한글로될걸",
+      "publishedAt": "2026-08-13",
+      "article": "https://www.inven.co.kr/board/aion2/6448/27604",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR post-patch input behavior, queue ON and level 16 Rampage"
     }
   ],
+  "textSourcesAdded": [
+    "cleric-april-priorities",
+    "assassin-february-opener",
+    "gladiator-august-input"
+  ],
   "requiredReplayFields": [
-    "source URL", "video timestamp", "fight-relative timestamp", "server and patch",
-    "encounter and difficulty", "equipment and skill levels", "specializations",
-    "passives and Stigma", "party buffs", "skill queue and input settings",
-    "availability start/end", "input", "landed hit", "damage", "state start/end", "resource changes",
-    "cooldown reset", "movement/healing/downtime"
+    "source URL",
+    "video timestamp",
+    "fight-relative timestamp",
+    "server and patch",
+    "encounter and difficulty",
+    "equipment and skill levels",
+    "specializations",
+    "passives and Stigma",
+    "party buffs",
+    "skill queue and input settings",
+    "availability start/end",
+    "input",
+    "landed hit",
+    "damage",
+    "state start/end",
+    "resource changes",
+    "cooldown reset",
+    "movement/healing/downtime"
   ],
   "limitations": [
     "No full boss fight or event-by-event skill replay was independently verified.",

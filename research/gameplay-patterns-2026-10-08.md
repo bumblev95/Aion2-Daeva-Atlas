@@ -1,8 +1,8 @@
 # 실전 스킬 조합 조사 / Gameplay rotation evidence
 
-조사일: 2026-10-08. 이 기록은 eDPS의 다음 개선을 위한 연구 자료입니다. PR #17은 사용 가능한 조건을 검사하지만 고수의 실제 회전을 재현하거나 최적 회전을 찾은 모델은 아닙니다. 아래 자료를 계산 기본값으로 가져오지 않았습니다.
+조사일: 2026-10-08. 이 기록은 eDPS의 다음 개선을 위한 연구 자료입니다. PR #17은 사용 가능한 조건을 검사하지만 고수의 실제 회전을 재현하거나 최적 회전을 찾은 모델은 아닙니다. 공략의 피해·지속 시간·발동 확률을 계산 기본값으로 가져오지 않았습니다. 우선순위 설명은 [회전 학습 연구](rotation-learning/README.md)의 명시적 동의 옵션에서만 후보로 사용합니다.
 
-Reviewed 2026-10-08. These records support future rotation work. PR #17 validates availability; it does not reproduce an expert rotation or optimize a build. None of these observations seeds the simulator.
+Reviewed 2026-10-08. These records support future rotation work. PR #17 validates availability; it does not reproduce an expert rotation or optimize a build. No reported damage, timing or probability seeds the live calculator. Qualitative priorities can initialize an explicitly opted-in research search.
 
 ## 직접 본 것과 아직 확인하지 못한 것
 
@@ -48,5 +48,7 @@ These timestamps are creator-provided navigation points, not independently obser
 그 자료로 오프닝, 지속 딜 우선순위, 버프 대기, 그로기 집중, 회피 후 재개를 구분합니다. 먼저 실제 입력 순서를 재생하는 모델로 관측 사용 횟수와 상태·자원을 대조하고, 이후 조건별 우선순위 모델을 비교할 수 있습니다. 시뮬레이터의 현재 공유 시간축·쿨타임·피해 수학을 바꾸기 전에 재생 회귀 자료가 필요합니다.
 
 For a measured replay, retain video and fight-relative timestamps alongside server/patch, encounter/difficulty, build, party buffs and input settings. Separate input, availability, landed hit, damage, state start/end, resources, resets and downtime. Validate a recorded-action replay before deriving opening/sustained/burst/recovery policies. Unknown values remain unknown; a single successful proc does not establish its probability, and media FPS does not establish game action frames.
+
+텍스트 공략도 추가로 검토했습니다. [하앑짜악의 치유성 우선순위](https://www.inven.co.kr/board/aion2/6452/16252)는 활성화된 단죄의 예외와 남아 있는 디버프의 불필요한 갱신을 구분합니다. [아즈샤라관흥의 살성 오프닝](https://www.inven.co.kr/board/aion2/6449/4571)은 문양·특화와 암습 버프 정렬을 전제로 합니다. [한글로될걸의 패치 후 검성 입력](https://www.inven.co.kr/board/aion2/6448/27604)은 모션 캔슬과 스킬 예약을 별도로 다룹니다. [구조화한 주장](rotation-learning/claims.json)은 이 문맥을 유지하며, 서로 다른 빌드의 설명을 하나의 정답 순서로 합치지 않습니다.
 
 현재 회전 기본값과 직업별 최종 티어를 확정할 실측 근거는 부족합니다. 원본 영상·이미지를 배포 파일에 복제하지 않았으며, [연구 상태 JSON](gameplay-evidence.json)은 계산 데이터와 분리돼 있습니다.

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-10-08",
+  "purpose": "research-only",
+  "extraction": "Manually reviewed paraphrases from original player posts, not training on copied article text.",
+  "evidenceFile": "../gameplay-evidence.json",
+  "mappingStatus": "KR names matched to catalog names; patch, level and specialization equivalence remains unverified.",
+  "canSeedLiveCalculator": false,
+  "classes": [
+    {
+      "id": "gladiator",
+      "rules": [
+        {"id":"gladiator-fallback","sourceId":"gladiator-fallback","type":"fallback","skills":["overhead-slam","crushing-wave","keen-strike","rending-blow"],"ko":"내려찍기가 활성화되지 않은 동안 분쇄 파동을 평타 연계에 넣는 제안.","en":"Add Crushing Wave to the basic-attack sequence when Overhead Slam is unavailable.","context":"KR, high-level skills and reset specializations; author dungeon experiments.","requiresFeatures":["skill-levels","specializations","reset-events","animation-cancel"]},
+        {"id":"gladiator-input-change","sourceId":"gladiator-august-input","type":"input-pattern","skills":["overhead-slam","keen-strike","sword-aura-rampage","ruinous-blow"],"ko":"패치 후 내려찍기 입력 방식과 검기 난무 특화가 공격 모션·평타 누락에 영향을 준다는 설명.","en":"Post-patch input and Rampage specialization reportedly change action recovery and missing basic attacks.","context":"KR 2026-08-13; skill queue ON, Rampage level 16; exact action times unverified.","requiresFeatures":["skill-levels","specializations","animation-cancel","input-queue"]}
+      ]
+    },
+    {
+      "id": "templar",
+      "rules": [
+        {"id":"templar-personal-opener","sourceId":"templar-opener","type":"opening","skills":["taunt","poach","shield-of-protection","vicious-strike","pummel","debilitating-smash","judgment","punishment","empyrean-lords-punishment"],"ko":"도발·포획·보호 후 공격 사이에 평타를 넣는 개인 오프닝. 보스 패턴에 따라 보호·격앙 순서를 바꿈.","en":"A personal opener uses taunt, capture and protection before attacks mixed with basics; protection/buff placement follows the boss.","context":"KR boss fights; author asks for feedback, not a validated optimal priority list.","requiresFeatures":["tank-role","party-buffs","skill-levels","specializations","animation-cancel"]},
+        {"id":"templar-chain-check","sourceId":"templar-opener","type":"research-question","skills":["shield-smite","judgment","warding-strike"],"ko":"위 오프닝을 재현할 때 심판 사용 가능 상태를 따로 확인해야 함. 이 부분은 현재 Global 조건 검사에서 얻은 조사 질문.","en":"A replay needs a separate Judgment availability check; this question comes from the Global gate audit, not an extra claim by the author.","context":"Research question; no KR trigger duration imported.","requiresFeatures":["regional-equivalence","availability-events"]}
+      ]
+    },
+    {
+      "id": "assassin",
+      "rules": [
+        {"id":"assassin-mark-priority","sourceId":"assassin-february-opener","type":"priority","skills":["insignia-explosion","heart-gore"],"order":["insignia-explosion","heart-gore"],"ko":"문양 폭발을 심장 찌르기보다 앞에 배치하는 제안. 문양 수와 특화가 전제됨.","en":"Prioritize Insignia Explosion ahead of Heart Gore in this author's mark/specialization setup.","context":"KR PvE; author reports meter-assisted dummy and dungeon practice, not controlled cross-class data.","requiresFeatures":["insignia-stacks","specializations","back-position"]},
+        {"id":"assassin-burst-hold","sourceId":"assassin-february-opener","type":"hold","skills":["shadowstrike","ambush","triniels-dagger","illusive-clone","swift-contract"],"reportedHoldSeconds":[3,5],"ko":"암습 버프 구간에 기습·비수를 모으기 위해 가까운 쿨타임을 기다리는 제안. 숫자는 해당 작성자 빌드의 주장임.","en":"Hold Shadowstrike briefly to align Ambush/Dagger with its buff window; the reported range is build-specific.","context":"KR February build; reported seconds are annotations, never default simulator timings.","requiresFeatures":["buff-windows","specializations","skill-levels"]},
+        {"id":"assassin-input-comparison","sourceId":"assassin-party-comparison","type":"comparison","skills":["quick-slice","savage-roar","heart-gore"],"ko":"평타 섞기와 연계기 반복의 피해 지분이 달랐지만 장비·이동 역할도 달랐으므로 우열 미확정.","en":"Basic mixing and repeated follow-ups show different shares, with build and movement-role confounders.","context":"Two KR players; not a causal test or an optimal rotation label.","requiresFeatures":["controlled-build","movement-role","animation-cancel","reset-events"]}
+      ]
+    },
+    {
+      "id": "ranger",
+      "rules": [
+        {"id":"ranger-inclusion-test","sourceId":"ranger-repeated-dummy","type":"inclusion","skills":["drill-dart","burst-arrow","explosive-arrow"],"ko":"개인 빌드에서 송곳·파열을 포함한 평균 피해가 좋았다는 반복 허수 실험. 폭발 화살은 별도 스티그마이며 파열 화살과 합치지 않음.","en":"Repeated dummy tests favored including Drill Dart/Burst Arrow in one build; Explosive Arrow is a distinct Stigma skill.","context":"KR, author reports 10+ trials per setup; raw trials and reset rates unavailable.","requiresFeatures":["skill-levels","specializations","reset-probabilities","trial-logs"]},
+        {"id":"ranger-reset-context","sourceId":"ranger-guide","type":"research-question","skills":["arrow-scattershot","marking-shot","drill-dart","burst-arrow"],"ko":"쿨감·버프·확률 초기화를 구분해 비교할 후보. 초기에 작성자가 일주일차라고 밝혔으므로 최적 회전 정답으로 쓰지 않음.","en":"Separate cooldown reduction, buffs and probabilistic resets; this early guide is a hypothesis source, not an expert label.","context":"KR early guide; author qualification and current-patch equivalence unverified.","requiresFeatures":["regional-equivalence","buff-windows","reset-probabilities"]}
+      ]
+    },
+    {
+      "id": "sorcerer",
+      "rules": [
+        {"id":"sorcerer-firestorm-priority","sourceId":"sorcerer-sequence","type":"priority","skills":["firestorm","flame-arrow"],"order":["firestorm","flame-arrow"],"ko":"불꽃 작살을 쿨타임마다 사용하는 설명을 기본 공격보다 앞선 후보 우선순위로 해석함.","en":"Use Firestorm on cooldown; prioritizing it over the basic attack is an explicitly annotated research interpretation.","context":"KR 2026-04-23, Firestorm 20, Flame Arrow 20, queue ON; not a Global preset.","requiresFeatures":["skill-levels","specializations","input-queue"]},
+        {"id":"sorcerer-reset-opener","sourceId":"sorcerer-sequence","type":"opening","skills":["element-enhancement","bittercold-wind","delayed-explosion","winters-shackles","fire-wall","frost-burst","hellfire","blaze","firestorm","wish-of-concentration"],"ko":"오프닝과 초기화 후 회전이 다르며, 집중의 기원을 쓰기 전 지옥의 화염을 보류하는 설명.","en":"The opener differs from the reset cycle; hold Hellfire when the reset skill is ready.","context":"KR specialized build, three-stage Hellfire charge; charge/reset math unmodeled.","requiresFeatures":["buff-windows","cooldown-resets","charge-stages","skill-levels"]},
+        {"id":"sorcerer-buff-hold","sourceId":"sorcerer-sequence","type":"hold","skills":["element-enhancement","hellfire"],"reportedHoldSeconds":[1,2],"ko":"원소 강화가 곧 돌아오면 먼저 버프를 쓰고 지옥의 화염을 차징하는 제안.","en":"Wait for a nearly ready enhancement before charging Hellfire.","context":"Reported 1–2 seconds remain an author annotation, not a measured default.","requiresFeatures":["buff-windows","charge-stages","specializations"]}
+      ]
+    },
+    {
+      "id": "spiritmaster",
+      "rules": [
+        {"id":"spiritmaster-fusion-priority","sourceId":"spiritmaster-party","type":"priority","skills":["elemental-fusion","summon-fire-spirit","jointstrike-curse","dimensional-control","combustion","cold-shock"],"order":["elemental-fusion","summon-fire-spirit"],"ko":"원소 융합을 최우선으로 하고 불 정령 유지·소환 쿨 정렬을 중시한다는 설명. 나머지 기술 사이의 순서는 확정하지 않음.","en":"Prioritize Fusion and maintain Fire Spirit/summon alignment; no total order is asserted for the remaining skills.","context":"KR August build, Fire Spirit level 20, queue OFF; pet damage and reset rates unmeasured.","requiresFeatures":["pet-timeline","element-generation","reset-probabilities","skill-levels","input-queue"]},
+        {"id":"spiritmaster-party-alignment","sourceId":"spiritmaster-party","type":"opening","skills":["flame-blessing","enhance-spirits-benediction","summon-ancient-spirit","elemental-fusion","jointstrike-destructive-attack","jointstrike-corrode"],"ko":"파티 시너지를 확인한 뒤 버프·고대 정령·융합을 맞추는 설명. 버프를 항상 켜져 있다고 가정하지 않음.","en":"Confirm party synergy before aligning buffs, Ancient Spirit and Fusion; never assume permanent buffs.","context":"Party dungeon behavior differs from isolated dummy tests.","requiresFeatures":["party-buffs","buff-windows","pet-timeline","element-generation"]}
+      ]
+    },
+    {
+      "id": "cleric",
+      "rules": [
+        {"id":"cleric-priority","sourceId":"cleric-april-priorities","type":"priority","skills":["prayer-of-amplification","chain-of-torment","earth-punishment","condemnation","debilitating-mark","bolt","divine-aura","judgment-thunder"],"order":["prayer-of-amplification","chain-of-torment","earth-punishment","condemnation","debilitating-mark","bolt","divine-aura","judgment-thunder"],"ko":"버프·디버프·단죄·보조기의 우선순위를 제시하지만, 단죄는 활성화되면 먼저 쓰는 별도 예외가 있음.","en":"A buff/debuff/attack priority list includes an explicit exception for available Condemnation.","context":"KR author's level 16–20 build; availability-dependent exception, not a universal fixed list.","requiresFeatures":["skill-levels","specializations","buff-windows","dot-damage"]},
+        {"id":"cleric-condemnation-priority","sourceId":"cleric-guide","type":"priority","skills":["condemnation","earths-retribution","judgment-thunder"],"order":["condemnation","earths-retribution","judgment-thunder"],"ko":"평타·단죄를 주로 반복하고 단죄 대기 중 심판의 번개를 넣는 설명. 평타 캔슬 속도는 가져오지 않음.","en":"Mix basics with Condemnation and fill its downtime with Judgment Thunder; no cancel timing is imported.","context":"KR April build; proposed priority does not reproduce animation cancelling.","requiresFeatures":["animation-cancel","skill-levels","specializations"]},
+        {"id":"cleric-debuff-maintenance","sourceId":"cleric-april-priorities","type":"maintenance","skills":["debilitating-mark","chain-of-torment"],"ko":"쿨감으로 디버프가 남았는데도 약화의 낙인을 다시 쓰면 시간을 낭비하므로 남은 지속 시간을 확인하는 제안.","en":"Avoid refreshing a still-active mark just because cooldown reduction makes it ready.","context":"KR build-specific duration/CD; no reported duration is imported as Global truth.","requiresFeatures":["debuff-lifetimes","cooldown-reduction","skill-levels"]},
+        {"id":"cleric-downtime-filler","sourceId":"cleric-april-priorities","type":"fallback","skills":["condemnation","bolt","judgment-thunder"],"ko":"단죄가 대기 중일 때 벽력 차징을 넣는 제안. 차징 단계별 피해·동작 시간은 미검증.","en":"Use a charged Bolt while Condemnation is waiting, subject to other priorities.","context":"High-level author's practical recommendation; unmeasured charge stages.","requiresFeatures":["charge-stages","animation-cancel","skill-levels"]}
+      ]
+    },
+    {
+      "id": "chanter",
+      "rules": [
+        {"id":"chanter-followup-priority","sourceId":"chanter-guide","type":"priority","skills":["dark-crush","impactful-crush","incandescent-blow","onslaught"],"order":["dark-crush","impactful-crush","incandescent-blow"],"ko":"암격쇄가 열리면 백열격보다 먼저 쓰도록 배치하고, 타격쇄로 연계를 여는 설명. 격파쇄와의 순서는 확정하지 않음.","en":"Place available Dark Crush ahead of Incandescent Blow and use Impactful Crush as a provider; no priority against Onslaught is asserted.","context":"Evolving KR guide, last edit unknown; cooldown-removal and multi-stage specializations are not Global base rules.","requiresFeatures":["specializations","skill-levels","animation-cancel","regional-equivalence"]},
+        {"id":"chanter-support-maintenance","sourceId":"chanter-guide","type":"maintenance","skills":["spinning-strike","power-of-the-storm","recuperation","healing-touch"],"ko":"공격 연계와 함께 버프·치유를 유지하며 그로기 직전 질풍의 권능을 맞추는 설명.","en":"Maintain support alongside attack chains and align the speed buff with upcoming stagger.","context":"Party role and encounter timing; support casts consume action time.","requiresFeatures":["party-role","buff-windows","healing-downtime","stagger-events"]}
+      ]
+    }
+  ]
+}
