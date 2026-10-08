@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-08T08:06:12Z",
+  "checkedAt": "2026-10-08T08:36:09Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:06:12Z",
-      "lastSuccessAt": "2026-10-08T08:06:12Z",
+      "checkedAt": "2026-10-08T08:36:09Z",
+      "lastSuccessAt": "2026-10-08T08:36:09Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -196,8 +196,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:06:12Z",
-      "lastSuccessAt": "2026-10-08T08:06:12Z",
+      "checkedAt": "2026-10-08T08:36:09Z",
+      "lastSuccessAt": "2026-10-08T08:36:09Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -310,8 +310,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:06:12Z",
-      "lastSuccessAt": "2026-10-08T08:06:12Z",
+      "checkedAt": "2026-10-08T08:36:09Z",
+      "lastSuccessAt": "2026-10-08T08:36:09Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -398,8 +398,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:06:12Z",
-      "lastSuccessAt": "2026-10-08T08:06:12Z",
+      "checkedAt": "2026-10-08T08:36:09Z",
+      "lastSuccessAt": "2026-10-08T08:36:09Z",
       "error": null,
       "fromCache": false,
       "items": [
