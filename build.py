@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Dependency-free bilingual static publishing for GitHub Pages."""
-import json, re, shutil, html
+import json, re, shutil, html, hashlib
 from pathlib import Path
 from datetime import date
 from content import CLASSES, GUIDES, GLOSSARY, SOURCES
@@ -199,7 +199,8 @@ def searchpage():
     write('search/',t('Search AION 2 guides','아이온 2 공략 검색'),t('Search PLAYER’S CODEX guides and tools.','PLAYER’S CODEX의 공략과 도구를 검색하세요.'),content,index=False)
 
 def layoutpreview():
-    content=f'''<div class="wrap">{pagehead(t('Responsive preview','모바일 화면 미리보기'),t('Live pages at narrow screen widths.','좁은 화면에서 보는 실제 페이지입니다.'))}<label class="small">Preview <select data-layout-route><option value="">Home</option><option value="start/">Early game</option><option value="endgame/">Endgame</option><option value="gear/">Gear &amp; stats</option><option value="maps/">Maps</option><option value="skills/">Skills</option><option value="dungeons/">Boss videos</option></select></label><div style="display:flex;gap:20px;align-items:flex-start;overflow:auto;padding-bottom:20px"><div><p class="small">English · 390px</p><iframe title="English mobile preview" src="{href('',lang='en')}" width="390" height="1650" style="display:block;border:1px solid #414356;border-radius:8px"></iframe></div><div><p class="small">한국어 · 360px</p><iframe title="Korean mobile preview" src="{href('',lang='ko')}" width="360" height="1650" style="display:block;border:1px solid #414356;border-radius:8px"></iframe></div></div></div>'''
+    revision=hashlib.sha256((ROOT/'assets/practical-guide.css').read_bytes()).hexdigest()[:10]
+    content=f'''<div class="wrap">{pagehead(t('Responsive preview','모바일 화면 미리보기'),t('Live pages at narrow screen widths.','좁은 화면에서 보는 실제 페이지입니다.'))}<label class="small">Preview <select data-layout-route><option value="?preview={revision}">Home</option><option value="start/?preview={revision}">Early game</option><option value="endgame/?preview={revision}">Endgame</option><option value="gear/?preview={revision}">Gear &amp; stats</option><option value="maps/?preview={revision}">Maps</option><option value="skills/?preview={revision}">Skills</option><option value="dungeons/?preview={revision}">Boss videos</option></select></label><div style="display:flex;gap:20px;align-items:flex-start;overflow:auto;padding-bottom:20px"><div><p class="small">English · 390px</p><iframe title="English mobile preview" src="{href('',lang='en')}?preview={revision}" width="390" height="1650" style="display:block;border:1px solid #414356;border-radius:8px"></iframe></div><div><p class="small">한국어 · 360px</p><iframe title="Korean mobile preview" src="{href('',lang='ko')}?preview={revision}" width="360" height="1650" style="display:block;border:1px solid #414356;border-radius:8px"></iframe></div></div></div>'''
     write('tools/layout-preview/',t('Responsive preview','모바일 화면 미리보기'),t('PLAYER’S CODEX layout review.','PLAYER’S CODEX 화면 검토.'),content,index=False)
 
 def build():
