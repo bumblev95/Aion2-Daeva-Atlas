@@ -23,43 +23,44 @@ KR_SOURCES = {
  'spiritmaster-pvp': dict(title='[공략/PVP] 정령성 가이드 및 직업별 상대법', author='공습경보', publisher='DC Inside', date='2026-03-23', url='https://gall.dcinside.com/mgallery/board/view/?id=aion2&no=1936425', kind='player', scope='KR · PvP / Abyss', note='Explicitly subjective player guide; dispel observations are not a current probability table.'),
 }
 
-def mechanic(id, title, cue, action, mistake, diagram, source):
-    return dict(id=id, title=title, cue=cue, action=action, mistake=mistake, diagram=diagram, source=source)
+def mechanic(id, title, cue, action, mistake, diagram, source, safe, success):
+    return dict(id=id, title=title, cue=cue, action=action, mistake=mistake,
+                diagram=diagram, source=source, safe=safe, success=success)
 
 BOSSES = [
  dict(id='berk', slug='krao-cave', name=('Berk', '완성체 베르크'), dungeon=('Krao Cave', '크라오 동굴'), color='#e5b96d', icon='shield',
       hook=('Cover · retreat · stagger', '바위 보호 · 이탈 · 그로기'), mechanics=[
-  mechanic('cover', ('Rage wave', '격노의 파동'), ('Yellow rocks appear.', '노란 바위가 솟음'), ('Reach a rock early; confirm the protection buff.', '바위에 미리 접근하고 보호 버프 확인'), ('Arriving at the last instant.', '마지막 순간에 도착'), 'cover', 'expedition-tips'),
-  mechanic('spin', ('Whirlwind', '휠윈드'), ('Red particles surround Berk.', '몸 주변에 붉은 가루'), ('Leave melee range.', '보스 주변에서 이탈'), ('Continuing your combo.', '연계 공격 고집'), 'out', 'conquest-one'),
-  mechanic('stagger', ('Stagger check', '그로기 전멸기'), ('The stagger bar unlocks.', '잠긴 그로기 게이지 해제'), ('Use reserved stagger skills together.', '아껴둔 그로기 스킬 집중'), ('Spending them beforehand.', '직전에 모두 소모'), 'stagger', 'conquest-one'),
+  mechanic('cover', ('Rage wave', '격노의 파동'), ('Yellow rocks appear.', '노란 바위가 솟음'), ('Reach a rock early; check protection.', '바위에 미리 접근해 보호 효과 확인'), ('Arriving without the buff.', '보호 효과 없이 막판 도착'), 'cover', 'expedition-tips', ('Beside a rock with protection active.', '바위 주변, 보호 효과가 켜진 위치'), ('Protected through the blast.', '폭발 순간에도 보호 효과 유지')),
+  mechanic('spin', ('Whirlwind', '휠윈드'), ('Red particles surround Berk.', '몸 주변에 붉은 가루'), ('Retreat and avoid his chase.', '물러나 추격 경로 회피'), ('Stopping just outside melee.', '근접 범위 밖에서 멈춤'), 'out', 'conquest-one', ('Away from the moving spin.', '이동하는 회전 공격 밖'), ('Stay clear until spinning ends.', '회전이 끝날 때까지 이탈')),
+  mechanic('stagger', ('Stagger check', '그로기 전멸기'), ('The stagger bar unlocks.', '잠긴 그로기 게이지 해제'), ('Use reserved stagger skills together.', '아껴둔 그로기 스킬 집중'), ('Spending them beforehand.', '직전에 모두 소모'), 'stagger', 'conquest-one', ('Within your skill’s effective range.', '그로기 스킬이 닿는 위치'), ('Empty the unlocked bar.', '해제된 그로기 게이지 소진')),
  ]),
  dict(id='bakarma', slug='draupnir', name=('Bakarma', '초월한 바카르마'), dungeon=('Draupnir', '드라웁니르'), color='#86bbf0', icon='spark',
       hook=('Jump the wave · watch the water', '파동 점프 · 잠수 방향'), mechanics=[
-  mechanic('wave', ('Rippling wave', '출렁이는 파동'), ('Rings spread from the boss.', '보스에서 고리 확산'), ('Jump before contact, then close for stagger.', '닿기 전 점프 후 접근해 그로기'), ('Rushing through the ring.', '고리를 뚫고 돌진'), 'jump', 'conquest-one'),
-  mechanic('dive', ('Track the dive', '잠수 방향 추적'), ('Bakarma dives head-first.', '머리부터 물속 진입'), ('Watch the heading and underwater silhouette.', '머리 방향과 수면 아래 윤곽 추적'), ('Searching the wrong side.', '반대쪽에서 찾기'), 'track', 'expedition-tips'),
+  mechanic('wave', ('Rippling wave', '출렁이는 파동'), ('Rings spread from the boss.', '보스에서 고리 확산'), ('Jump before contact; approach for stagger.', '닿기 전 점프하고 접근해 그로기'), ('Running through rings or tornadoes.', '고리나 회오리로 돌진'), 'jump', 'conquest-one', ('Airborne over a ring; clear of tornadoes.', '고리 위 공중, 회오리와 떨어진 위치'), ('Reach the boss and empty its bar.', '보스에 접근해 그로기 게이지 소진')),
+  mechanic('dive', ('Track the dive', '잠수 방향 추적'), ('Bakarma dives head-first.', '머리부터 물속 진입'), ('Observe heading, then the underwater silhouette.', '머리 방향과 수면 아래 윤곽 관찰'), ('Assuming a fixed return route.', '등장 경로를 미리 단정'), 'track', 'expedition-tips', ('No fixed safe spot established by this tip.', '이 관찰 팁은 고정 안전 위치를 제시하지 않음'), ('Locate its return; read the next attack.', '다시 등장한 위치와 다음 공격 확인')),
  ]),
  dict(id='auldor', slug='urugugu-canyon', name=('Auldor', '신성한 아울도르'), dungeon=('Urugugu Canyon', '우루구구 협곡'), color='#93cca6', icon='target',
       hook=('Share the marked hit · avoid feathers', '징표 함께 맞기 · 깃털 회피'), mechanics=[
-  mechanic('stack', ('Storm strike', '폭풍의 일격'), ('Airborne boss; red target marker.', '보스 비상 후 붉은 조준 표시'), ('Gather on the marked player to share damage.', '징표 대상에게 모여 피해 분담'), ('The marked player runs away.', '징표 혼자 도주'), 'stack', 'conquest-two'),
-  mechanic('feathers', ('Feathers into grab', '깃털과 낚아채기'), ('Feathers fly forward.', '정면으로 깃털 발사'), ('Dodge; if caught, use shock removal immediately.', '회피하고 피격 시 즉시 충격 해제'), ('Remaining suspended.', '공중 속박 방치'), 'fan', 'conquest-two'),
+  mechanic('stack', ('Storm strike', '폭풍의 일격'), ('Airborne boss; red target marker.', '보스 비상 후 붉은 조준 표시'), ('Gather on the marked ally.', '징표 동료에게 집결'), ('The marked player runs away.', '징표 혼자 도주'), 'stack', 'conquest-two', ('Inside the target’s shared-hit marker.', '대상의 피해 분담 표시 안'), ('The party shares the landing hit.', '파티가 함께 낙하 피해 분담')),
+  mechanic('feathers', ('Feathers into grab', '깃털과 낚아채기'), ('Feathers fly forward.', '정면으로 깃털 발사'), ('Dodge; if caught, use shock removal.', '회피, 잡히면 충격 해제'), ('Leaving the aerial control untreated.', '공중 속박 방치'), 'fan', 'conquest-two', ('Outside the forward attack.', '정면 공격 경로 밖'), ('Avoid the grab or break control.', '잡기를 피하거나 속박 해제')),
  ]),
  dict(id='vakron', slug='vakron-island', name=('Vakron', '바크론'), dungeon=('Vakron’s Floating Island', '바크론의 공중섬'), color='#b8a0ef', icon='spirits',
       hook=('Rescue · break the red rock · jump', '구출 · 붉은 바위 · 점프'), mechanics=[
-  mechanic('bind', ('Binding vines', '바인드'), ('A teammate is marked, then bound.', '대상 지정 후 덩굴 속박'), ('Others avoid the marked area, then destroy the vines.', '주변을 비우고 속박 덩굴 공격'), ('Ignoring the trapped player.', '속박된 동료 방치'), 'rescue', 'conquest-two'),
-  mechanic('prison', ('Stone prison', '기암 감옥'), ('The party is pulled into rocks.', '끌어당긴 뒤 바위 감옥'), ('Break the red rock and exit.', '붉은 바위를 깨고 탈출'), ('Hitting an ordinary rock.', '다른 바위 공격'), 'prison', 'conquest-two'),
-  mechanic('rings', ('Rising thorns', '솟구치는 가시'), ('Three rings, then a follow-up.', '고리 세 번 후 후속 공격'), ('Jump the rings; jump again after the third.', '고리마다 점프, 세 번째 뒤 한 번 더'), ('Stopping after three.', '세 번 후 멈춤'), 'jump', 'conquest-two'),
+  mechanic('bind', ('Binding vines', '바인드'), ('A player’s health bar turns green.', '대상의 체력바가 초록색으로 변함'), ('Keep clear, then attack the vines.', '주변을 비운 뒤 덩굴 공격'), ('Rushing into the marked area.', '표시 범위로 미리 진입'), 'rescue', 'conquest-two', ('Outside the mark, within rescue range.', '징표 밖, 구출 가능한 위치'), ('The trapped ally can move again.', '덩굴 파괴 후 동료 이동 가능')),
+  mechanic('prison', ('Stone prison', '기암 감옥'), ('Stagger locks; the party is pulled in.', '그로기 잠금 후 파티를 끌어당김'), ('Break the red rock; use its opening.', '붉은 바위 파괴 후 그 틈으로 탈출'), ('Using stagger skills while locked.', '그로기 잠금 중 스킬 소모'), 'prison', 'conquest-two', ('Outside the rock ring through that gap.', '부순 붉은 바위의 틈을 지나 감옥 밖'), ('Exit; save skills until stagger unlocks.', '탈출하고 그로기 해제까지 스킬 보존')),
+  mechanic('rings', ('Rising thorns', '솟구치는 가시'), ('Red floor; rings and straight attacks.', '붉은 바닥, 고리와 직선 공격'), ('Sidestep lines; jump three rings and the follow-up.', '직선을 옆으로 피하며 고리 세 번과 후속타 점프'), ('Stopping after the third ring.', '세 번째 고리 뒤 멈춤'), 'jump', 'conquest-two', ('Between lines, above the arriving wave.', '직선 사이, 다가오는 파동 위'), ('Avoid the final binding attack too.', '마지막 속박 공격까지 회피')),
  ]),
  dict(id='kromede', slug='fire-temple', name=('Kromede', '크로메데'), dungeon=('Fire Temple', '불의 신전'), color='#ed887c', icon='flame',
       hook=('Read the bow · spread · find gaps', '활 방향 · 산개 · 틈 찾기'), mechanics=[
-  mechanic('bow', ('Downward bow', '아래로 활 쏘기'), ('The bow points at the floor.', '활을 바닥으로 향함'), ('Leave melee range; watch for a repeat at low HP.', '근접 범위 이탈, 저체력 연속 공격 주의'), ('Returning after one burst.', '첫 폭발 뒤 즉시 복귀'), 'out', 'fire-temple'),
-  mechanic('clones', ('Clone attacks', '분신 공격'), ('Kromede moves to the centre.', '보스가 중앙으로 이동'), ('Spread so each player’s clone hits separately.', '개인 분신 공격이 겹치지 않게 산개'), ('Stacking the party.', '한곳에 뭉치기'), 'spread', 'fire-temple'),
-  mechanic('walls', ('Fire walls', '불의 장벽'), ('Walls move across the arena.', '불벽이 다가옴'), ('Move through gaps; watch extra projectiles at low HP.', '빈틈 통과, 저체력 추가 투사체 관찰'), ('Watching only the boss.', '보스만 응시'), 'walls', 'fire-temple'),
+  mechanic('bow', ('Downward bow', '아래로 활 쏘기'), ('The bow points at the floor.', '활을 바닥으로 향함'), ('Retreat; expect a repeat at low HP.', '물러나고 저체력 반복 공격 확인'), ('Returning after one burst.', '첫 폭발 뒤 즉시 복귀'), 'out', 'fire-temple', ('Outside the boss-centred fire.', '보스 중심 화염 범위 밖'), ('Stay clear through both low-HP bursts.', '저체력 두 번의 공격까지 이탈')),
+  mechanic('clones', ('Clone attacks', '분신 공격'), ('Kromede moves to the centre.', '보스가 중앙으로 이동'), ('Spread and evade both clone hits.', '산개하고 분신의 두 공격 회피'), ('Stacking the party.', '한곳에 뭉치기'), 'spread', 'fire-temple', ('Separate from teammates’ attack areas.', '동료 공격 범위와 겹치지 않는 위치'), ('Both hits finish without overlap.', '두 공격이 겹치지 않고 종료')),
+  mechanic('walls', ('Fire walls', '불의 장벽'), ('Gapped walls approach.', '틈이 있는 불벽이 접근'), ('Align with each new gap; watch projectiles.', '매번 새 틈으로 이동하며 투사체 관찰'), ('Assuming the next gap stays put.', '다음 틈도 같은 자리라고 가정'), 'walls', 'fire-temple', ('The current wall’s opening.', '현재 다가오는 불벽의 빈틈'), ('Pass each wall; avoid added projectiles.', '각 불벽과 추가 투사체 회피')),
  ]),
  dict(id='nuakum', slug='fierce-horn', name=('Nuakum', '사나운 뿔 누아쿰'), dungeon=('Fierce Horn Cave', '사나운 뿔 암굴'), color='#7fcbd6', icon='dagger',
       hook=('Rotate blockers · read circles · align', '분담 교대 · 원 크기 · 일직선'), mechanics=[
-  mechanic('intercept', ('Clone interception', '분신 돌진'), ('A clone targets an immobilised player.', '움직일 수 없는 대상에게 분신 돌진'), ('An unmarked teammate intercepts; rotate blockers.', '상처 없는 동료가 가로막고 담당 교대'), ('The same blocker repeats.', '같은 사람이 연속 분담'), 'intercept', 'fierce-horn'),
-  mechanic('circle', ('Landing circles', '본체 낙하 원'), ('A circle appears after the clone.', '분신 뒤 본체 낙하 원 표시'), ('Large circle: solo. Small circle: share.', '큰 원은 혼자, 작은 원은 함께'), ('Treating both sizes alike.', '원 크기를 무시'), 'circles', 'fierce-horn'),
-  mechanic('orb', ('Blue-light mechanic', '파괴의 푸른 빛'), ('Central energy appears; a player is marked.', '중앙 에너지 생성, 대상 지정'), ('Align boss → energy → target for three projectiles.', '보스→에너지→대상 일직선으로 세 발 유도'), ('Standing beside the energy.', '에너지 옆에 서기'), 'orb', 'fierce-horn'),
+  mechanic('intercept', ('Clone interception', '분신 돌진'), ('A clone targets an immobilised player.', '움직일 수 없는 대상에게 분신 돌진'), ('An unhit ally blocks; rotate blockers.', '맞지 않은 동료가 막고 담당 교대'), ('The same blocker repeats.', '같은 사람이 연속 분담'), 'intercept', 'fierce-horn', ('One eligible blocker between clone and target.', '분신과 대상 사이에 가능한 담당자 한 명'), ('Intercept without reusing a debuffed ally.', '약화된 동료를 재사용하지 않고 가로막기')),
+  mechanic('circle', ('Landing circles', '본체 낙하 원'), ('A circle appears after the clone.', '분신 뒤 본체 낙하 원 표시'), ('Large: target alone. Small: share.', '큰 원은 대상 혼자, 작은 원은 분담'), ('Treating both sizes alike.', '원 크기를 무시'), 'circles', 'fierce-horn', ('Allies outside large; inside small.', '동료는 큰 원 밖, 작은 원 안'), ('Match the party position to the size.', '원 크기에 맞춰 낙하 피해 대응')),
+  mechanic('orb', ('Blue-light mechanic', '파괴의 푸른 빛'), ('Central energy; green-health target.', '중앙 에너지, 초록 체력바 대상'), ('Align boss → energy → target each shot.', '매번 보스→에너지→대상 일직선 정렬'), ('Walking through the energy’s dark zone.', '에너지 주변 검은 범위 통과'), 'orb', 'fierce-horn', ('Beyond the energy, outside its dark zone.', '에너지 뒤편, 검은 범위 밖'), ('Three energy hits within four opportunities.', '네 번의 기회 중 에너지에 세 번 적중')),
  ]),
 ]
 

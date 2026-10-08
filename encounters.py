@@ -3,20 +3,21 @@ import html
 from fieldnotes import BOSSES, NOTES, KR_SOURCES, REVIEW_DATE
 from content import CLASSES
 from skillbook import link_skills
-from bossmedia import media, POSTERS
+from bossmedia import media, BOSS_REVIEW_DATE, CHAPTER_INDEX
 from battlelab import animation
 
 def e(value): return html.escape(str(value), quote=True)
 def tr(value, lang): return value[lang == 'ko']
 def root_url(base, lang): return base + ('ko/' if lang == 'ko' else '')
 
-def source_details(key, lang):
+def source_details(key, lang, reviewed=None):
     s = KR_SOURCES[key]
     t = lambda a, b: b if lang == 'ko' else a
     kind = {'guide':t('Reported guide','공략 기사'), 'player':t('Player suggestion','유저 제안'), 'report':t('Single clear report','단일 플레이 후기')}[s['kind']]
     updated = f' · {t("stated revision", "명시된 수정")} {s["updated"]}' if s.get('updated') else ''
+    review_label = t('Article review', '원문 검토') if reviewed else t('Read', '본문 확인')
     return f'''<details class="evidence"><summary>{e(s['publisher'])} · {e(s['author'])} · {s['date']} <span>{t('Source & scope','출처·범위')} ↗</span></summary>
-      <a href="{e(s['url'])}" target="_blank" rel="noopener noreferrer">{e(s['title'])} ↗</a><p>{kind} · {e(s['scope'])}{updated}</p><p>{t('Read', '본문 확인')} {REVIEW_DATE} · {t('Source date is not a current patch guarantee. Global behaviour not checked.','작성일은 현행 패치 확인일이 아닙니다. 글로벌 적용 미확인.')}</p></details>'''
+      <a href="{e(s['url'])}" target="_blank" rel="noopener noreferrer">{e(s['title'])} ↗</a><p>{kind} · {e(s['scope'])}{updated}</p><p>{review_label} {reviewed or REVIEW_DATE} · {t('Source date is not a current patch guarantee. Global behaviour not checked.','작성일은 현행 패치 확인일이 아닙니다. 글로벌 적용 미확인.')}</p></details>'''
 
 def diagram(kind, lang, uid, mini=False):
     """Positions and phase drawings are qualitative editorial examples only."""
@@ -78,7 +79,7 @@ def mechanic_panel(boss, m, lang, first, base):
     t=lambda a,b: b if lang=='ko' else a
     uid=boss['id']+'-'+m['id']
     return f'''<article class="mechanic-panel" id="mechanic-{uid}" data-mechanic-panel="{m['id']}" role="tabpanel" aria-labelledby="pick-{uid}" {'hidden' if not first else ''}>
-      <div class="mechanic-split">{animation(boss,m,lang)}<div class="mechanic-brief"><span class="section-kicker">{t("LOOK → MOVE", "전조 → 대응")}</span><h3>{e(tr(m["title"],lang))}</h3><div class="mechanic-line"><span>{t("CUE","전조")}</span><p>{link_skills(tr(m["cue"],lang),lang,base)}</p></div><div class="mechanic-line action"><span>{t("DO","대응")}</span><p>{link_skills(tr(m["action"],lang),lang,base)}</p></div><div class="mechanic-mistake"><b>×</b><div><small>{t("COMMON TRAP","놓치기 쉬운 점")}</small><p>{link_skills(tr(m["mistake"],lang),lang,base)}</p></div></div>{source_details(m["source"],lang)}{media(boss,m,lang)}</div></div></article>'''
+      <div class="mechanic-split">{animation(boss,m,lang)}<div class="mechanic-brief"><span class="section-kicker">{t("LOOK → MOVE", "전조 → 대응")}</span><h3>{e(tr(m["title"],lang))}</h3><div class="mechanic-line"><span>{t("CUE","전조")}</span><p>{link_skills(tr(m["cue"],lang),lang,base)}</p></div><div class="mechanic-line action"><span>{t("DO","대응")}</span><p>{link_skills(tr(m["action"],lang),lang,base)}</p></div><dl class="mechanic-outcome"><div><dt>{t("POSITION","안전 위치")}</dt><dd>{e(tr(m['safe'],lang))}</dd></div><div><dt>{t("SUCCESS","성공 조건")}</dt><dd>{e(tr(m['success'],lang))}</dd></div></dl><div class="mechanic-mistake"><b>×</b><div><small>{t("COMMON TRAP","놓치기 쉬운 점")}</small><p>{link_skills(tr(m["mistake"],lang),lang,base)}</p></div></div>{media(boss,m,lang)}{source_details(m["source"],lang,BOSS_REVIEW_DATE)}</div></div></article>'''
 
 def boss_lab(lang, base, selected=None):
     t=lambda a,b:b if lang=='ko' else a
@@ -90,7 +91,7 @@ def boss_lab(lang, base, selected=None):
     for b in visible:
         tabs=''.join(f'<button role="tab" data-mechanic-choice="{m["id"]}" id="pick-{b["id"]}-{m["id"]}" aria-controls="mechanic-{b["id"]}-{m["id"]}" aria-selected="{str(i==0).lower()}" tabindex="{0 if i==0 else -1}"><span>0{i+1}</span>{e(tr(m["title"],lang))}</button>' for i,m in enumerate(b['mechanics']))
         panels+=f'''<section class="boss-panel" data-boss-panel="{b['id']}" style="--boss-color:{b['color']}" {'hidden' if b['id']!=active else ''}><div class="boss-title"><div><span class="section-kicker">{e(tr(b['dungeon'],lang))}</span><h2>{e(tr(b['name'],lang))}</h2></div><span class="scope-chip">KR · {t('Conquest','정복')}<small>{t('Source-era mechanics','원문 시점 기믹')}</small></span></div><div class="mechanic-tabs" role="tablist" aria-label="{t('Choose a mechanic','기믹 선택')}">{tabs}</div>{''.join(mechanic_panel(b,m,lang,i==0,base) for i,m in enumerate(b['mechanics']))}<div class="boss-foot"><a href="{root}dungeons/{b['slug']}/">{t('Boss permalink','보스 고정 주소')} ↗</a><button class="text-link" data-copy-fight>{t('Copy selected mechanic','선택한 기믹 링크 복사')} ↗</button><span role="status" data-copy-status></span></div></section>'''
-    return f'''<div class="boss-lab" data-boss-lab data-fixed-boss="{selected or ''}"><div class="boss-picker" aria-label="{t('Choose a dungeon','던전 선택')}">{picks}</div><p class="scope-line">{t('KR Conquest source archive · 2025–2026 · Global and other difficulties not verified.','한국판 정복 공략 자료 · 2025–2026 · 글로벌·다른 난이도 적용 미확인.')}</p>{panels}<noscript><p>{t('Open a boss page, then read all mechanics below.','보스별 페이지에서 모든 기믹을 읽을 수 있습니다.')}</p><style>.boss-lab [hidden]{{display:block!important}}.stage-controls,.mechanic-tabs{{display:none}}</style></noscript></div>'''
+    return f'''<div class="boss-lab" data-boss-lab data-fixed-boss="{selected or ''}"><div class="boss-picker" aria-label="{t('Choose a dungeon','던전 선택')}">{picks}</div><p class="scope-line">{t('KR Conquest source archive · 2025–2026 · Global and other difficulties not verified.','한국판 정복 공략 자료 · 2025–2026 · 글로벌·다른 난이도 적용 미확인.')}</p>{panels}<noscript><p>{t('Open a boss page, then read all mechanics below.','보스별 페이지에서 모든 기믹을 읽을 수 있습니다.')}</p><style>.boss-lab [hidden]{{display:block!important}}.stage-controls,.battle-controls,.mechanic-tabs{{display:none}}</style></noscript></div>'''
 
 def note_card(n, lang, base):
     t=lambda a,b:b if lang=='ko' else a
@@ -113,4 +114,4 @@ def boss_teaser(lang,base):
 def source_registry(lang):
     t=lambda a,b:b if lang=='ko' else a
     rows=''.join(f'<li><a href="{e(s["url"])}">{e(s["title"])}</a><small>{e(s["publisher"])} · {e(s["author"])} · {s["date"]} · {e(s["scope"])}</small></li>' for s in KR_SOURCES.values())
-    return f'<h2>{t("Korean community reading list","한국 커뮤니티 조사 목록")}</h2><p>{t("Short summaries link to their original authors. Player reports are not official balance data. Linked skill entries use Global database English names; original KR builds remain source-era observations.","짧은 요약마다 원 작성자의 글을 연결합니다. 유저 제안은 공식 밸런스 자료가 아닙니다. 연결된 스킬 문서는 글로벌 DB 영문명을 사용합니다. 한국 세팅은 원문 시점의 관찰입니다.")}</p><ul class="source-registry">{rows}</ul>'
+    return f'<h2>{t("Korean community reading list","한국 커뮤니티 조사 목록")}</h2><p>{t("Short summaries link to their original authors. Player reports are not official balance data. Linked skill entries use Global database English names; original KR builds remain source-era observations.","짧은 요약마다 원 작성자의 글을 연결합니다. 유저 제안은 공식 밸런스 자료가 아닙니다. 연결된 스킬 문서는 글로벌 DB 영문명을 사용합니다. 한국 세팅은 원문 시점의 관찰입니다.")}</p><ul class="source-registry">{rows}</ul><h3>{t("Boss scene references","보스 장면 참고 자료")}</h3><p>{t("Each pattern links to its original publisher-hosted scene and section. Article text reviewed on October 8, 2026; Global equivalence and video playback unverified. Source media are not copied.","패턴별 원본 장면과 설명 구간을 연결합니다. 2026년 10월 8일 원문을 대조했으며 글로벌 일치와 영상 재생은 미검증입니다. 원본 파일은 복제하지 않습니다.")}</p><p><a href="{CHAPTER_INDEX}">Couga54 · BIGSKALA {t("chapter index (TW footage; Russian narration)","챕터 안내 (대만 촬영·러시아어 음성)")}</a> · {t("Reported navigation, not a replay audit.","장면 찾기용 안내이며 재생 검증은 아닙니다.")}</p>'

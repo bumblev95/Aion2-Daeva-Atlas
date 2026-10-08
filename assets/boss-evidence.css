@@ -1,0 +1,35 @@
+.mechanic-outcome{margin:18px 0;border:1px solid #40536a;border-radius:8px;background:#142638;overflow:hidden}
+.mechanic-outcome>div{display:grid;grid-template-columns:82px minmax(0,1fr);gap:12px;padding:13px 14px;align-items:start}
+.mechanic-outcome>div+div{border-top:1px solid #40536a}
+.mechanic-outcome dt{font:10px ui-monospace,monospace;color:#a5e4c9;line-height:1.8}
+.mechanic-outcome dd{margin:0;font-size:12px;line-height:1.8;color:#d4dfef;overflow-wrap:anywhere}
+.source-footage{min-width:0}
+.source-footage h4{margin:0;font-size:14px;color:#e3d1fa;line-height:1.6}
+.source-footage .scene-status{font-size:11px;line-height:1.8;color:#f0d2a1;margin:9px 0}
+.source-footage .scene-original{border:1px solid #647a9a;border-radius:6px;background:#25344c;padding:10px 12px;min-height:44px;display:flex;align-items:center;font-size:12px;color:#e2eeff;text-decoration:none}
+.source-footage .scene-original:hover{border-color:#b9cfea}
+.source-footage .scene-credit{font-size:10px;line-height:1.8;color:#b7c8df;margin:10px 0}
+.source-footage .scene-videos{border-top:1px solid #43516b;margin-top:14px;padding-top:12px}
+.scene-videos a{display:block;margin:10px 0;font-size:11px;line-height:1.8;color:#cddcf1;overflow-wrap:anywhere;min-height:32px}
+.scene-videos .source-video-link{display:block}
+.source-footage .tiny{color:#b0c1d9}
+.battle-transcript{border-top:1px solid #34435e;padding:12px 17px;font-size:12px;line-height:1.8;color:#c1d0e6}
+.battle-transcript summary{cursor:pointer;color:#dec5fa}
+.battle-transcript ol{margin:12px 0 0;padding-left:22px}
+.battle-transcript li+li{margin-top:6px}
+.battle-disclaimer{font-size:11px;color:#afc2dc}
+.battle-controls>button,.battle-controls select{min-height:44px}
+@media(max-width:700px){
+ .mechanic-outcome>div{grid-template-columns:70px minmax(0,1fr);gap:9px;padding:12px}
+ .mechanic-outcome dd{font-size:12px}
+ .source-footage{padding:13px}
+ .source-footage .scene-credit,.scene-videos a,.source-footage .tiny{font-size:11px}
+ .battle-transcript{font-size:12px;padding:12px}
+ .battle-disclaimer{font-size:11px;line-height:1.8}
+}
+@media print{
+ .battle-controls{display:none}
+ .battle-transcript ol,.scene-videos>*{display:block!important}
+ .battle-transcript,.source-footage{break-inside:avoid}
+ .source-footage a{color:#222}
+}
