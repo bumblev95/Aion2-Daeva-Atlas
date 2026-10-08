@@ -65,27 +65,21 @@ def explorer(lang, base, selected='gladiator'):
 
 
 def dashboard(lang, base):
-    k = lang == 'ko'
-    t = lambda a, b: b if k else a
-    root = base + ('ko/' if k else '')
-    tiles = [
-      ('check','start/',t('New player','처음 시작'),t('Your next three priorities','단계별 우선순위 3개'),'green'),
-      ('target','maps/',t('World maps','월드 지도'),t('Find your route','확대해서 찾는 내 동선'),'blue'),
-      ('spark','gear/',t('Gear & stats','장비·스탯'),t('Read your loot','아이템 한 줄씩 이해하기'),'gold'),
-      ('swords','classes/',t('Classes','직업 공략'),t('Find your main','내 직업 찾기'),'purple'),
-      ('boss','dungeons/',t('Boss videos','보스 패턴 영상'),t('Jump to the mechanic','패턴 장면으로 바로 이동'),'red'),
-      ('book','skills/',t('Skill dictionary','스킬 문서'),t('Names, effects, timing','한영 이름·효과·사용법'),'teal')]
-    tile_html = ''.join(f'<a class="destination {color}" href="{root}{url}"><span class="destination-icon">{glyph(base,ic)}</span><span><strong>{title}</strong><small>{desc}</small></span><span class="destination-arrow">↗</span></a>' for ic,url,title,desc,color in tiles)
-    return f'''<div class="wrap hub-home"><section class="game-banner"><div class="game-banner-content"><span class="game-eyebrow">PLAYER’S CODEX / MMORPG</span><h1>AION <span>2</span></h1><p>{t('Your first steps. Your next clear.','첫 접속부터 다음 클리어까지.')}</p><div class="banner-actions"><a class="btn primary" href="{root}start/">{t("Start playing", "처음 시작 가이드")} →</a><a class="btn glass" href="#class-explorer">{t("Explore classes", "직업 살펴보기")} ↓</a></div></div><span class="art-credit">{t('AION 2 artwork © NC','AION 2 아트워크 © NC')}</span></section>
-    <nav class="destination-grid" aria-label="{t('Quick navigation','공략 바로가기')}">{tile_html}</nav>
-    {journey(lang,base,True)}
-    {explorer(lang,base)}
-    {boss_teaser(lang,base)}
-    <section class="quick-resources"><div class="section-heading compact"><div><span class="section-kicker">03 / {t('NEXT UP','다음 단계')}</span><h2>{t('A shortcut to your next goal.','다음 목표로 바로 가기.')}</h2></div><a class="text-link" href="{root}guides/">{t('All guides','전체 공략')} ↗</a></div><div class="resource-grid">
-    <a class="resource-card" href="{root}start/"><div class="mini-route"><span>01</span><i></i><span>02</span><i></i><span>03</span></div><span class="section-kicker">{t('GET STARTED','초보 시작')}</span><h3>{t('Your first session','첫 접속 순서')}</h3><p>{t('Set up → Choose → Play','설정 → 직업 선택 → 플레이')}</p><span class="resource-arrow">↗</span></a>
-    <a class="resource-card" href="{root}insights/"><div class="translation-art"><b>한</b><span>⇄</span><b>EN</b></div><span class="section-kicker">{t('KOREA TO GLOBAL','한국에서 글로벌로')}</span><h3>{t('Korean community insights','한국 커뮤니티 인사이트')}</h3><p>{t('Filter by class and activity','직업·콘텐츠별 팁 골라보기')}</p><span class="resource-arrow">↗</span></a>
-    <a class="resource-card community-card" href="https://questlog.gg/aion-2/en-nc/skill-builder" target="_blank" rel="noopener"><div class="mini-slots">{''.join(glyph(base,i) for i in ['swords','flame','shield','spark'])}</div><span class="section-kicker">{t('EXTERNAL TOOL · QUESTLOG','외부 도구 · QUESTLOG')}</span><h3>{t('Community skill builds','커뮤니티 스킬 빌드')}</h3><p>{t('Browse builds on Questlog','Questlog에서 빌드 찾아보기')}</p><span class="resource-arrow">↗</span></a>
-    </div></section></div>'''
+    k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
+    topics=[
+        ('swords','classes/',t('Choose my class','어떤 직업을 할까요?'),t('Roles, playstyles and a side-by-side comparison','역할과 플레이스타일로 내 직업 찾기')),
+        ('book','skills/',t('Build my skills','스킬을 어떻게 찍나요?'),t('Your class’s skills and first investment priorities','직업별 스킬과 처음 투자할 순서')),
+        ('spark','gear/',t('Understand my gear','어떤 장비를 키우나요?'),t('Read item stats before spending materials','능력치 읽기부터 강화 판단까지')),
+        ('target','maps/',t('Find my way','어디로 가야 하나요?'),t('Travel points, quests and nearby growth stops','이동 거점·퀘스트·성장 장소 찾기')),
+        ('boss','dungeons/',t('Learn a boss pattern','보스 패턴이 어렵나요?'),t('Watch the cue and practise where to move','움직이는 설명으로 피할 곳 익히기')),
+        ('check','start/?view=settings#field-tips',t('Make play more comfortable','설정부터 편하게 바꿀까요?'),t('Useful settings and party shorthand','편의 설정과 파티 모집글 읽는 법')),
+    ]
+    cards=''.join(f'<a class="topic-card" href="{r}{url}"><span class="topic-icon">{glyph(base,ic)}</span><div><h3>{title}</h3><p>{desc}</p></div><span class="topic-arrow" aria-hidden="true">→</span></a>' for ic,url,title,desc in topics)
+    classlinks=''.join(f'<a class="home-class" href="{r}classes/{c["id"]}/" style="--class-color:{c["color"]}">{glyph(base,c["icon"])}<span>{c["ko" if k else "en"]}</span></a>' for c in CLASSES)
+    return f'''<div class="wrap hub-home home-clear"><section class="welcome-hero"><div class="welcome-copy"><span class="eyebrow">AION 2 · PLAYER’S CODEX</span><h1>{t('A clear next step.<br>A better next run.','막막한 순간마다,<br>다음 한 걸음.')}</h1><p>{t('From your first quest to a boss clear. Find the guide for what you are doing now.','첫 퀘스트부터 보스 공략까지.<br>지금 필요한 것부터 하나씩 알아보세요.')}</p><a class="btn primary" href="{r}start/">{t('New player? Start here','처음이라면 여기부터')} <span aria-hidden="true">→</span></a><a class="welcome-secondary" href="{r}start/?view=growth#growth">{t('Already playing? Find your next goal','이미 플레이 중이라면, 성장 순서 보기')} →</a></div><span class="art-credit">AION 2 artwork © NC</span></section>
+<section class="home-topics" aria-labelledby="topics-heading"><div class="section-heading"><div><h2 id="topics-heading">{t('What do you need right now?','지금 무엇이 궁금하세요?')}</h2><p>{t('Choose a topic and go straight to the guide.','궁금한 주제를 고르면 해당 공략으로 바로 이동해요.')}</p></div></div><div class="topic-grid">{cards}</div></section>
+<section class="home-classes" id="class-explorer" aria-labelledby="home-classes-heading"><div class="section-heading"><h2 id="home-classes-heading">{t('Go straight to my class','내 직업 바로 보기')}</h2><a class="text-link" href="{r}tools/compare/">{t('Compare two classes','두 직업 비교하기')} →</a></div><div class="home-class-list">{classlinks}</div></section>
+<nav class="home-utility" aria-label="{t('More resources','더 찾아보기')}"><a href="{r}insights/"><strong>{t('Player tips','유저 팁')}</strong><span>{t('Practical community notes','한국 커뮤니티의 실전 노하우')} →</span></a><a href="{r}glossary/"><strong>{t('KR ↔ EN glossary','한영 용어집')}</strong><span>{t('Look up an unfamiliar word','낯선 게임 용어 찾아보기')} →</span></a><a href="{r}tools/planner/"><strong>{t('My checklist','나의 체크리스트')}</strong><span>{t('Keep track of today’s goals','오늘 할 일 간단히 정리하기')} →</span></a></nav></div>'''
 
 
 GUIDE_STEPS = {

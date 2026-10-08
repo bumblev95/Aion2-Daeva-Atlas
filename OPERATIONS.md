@@ -92,3 +92,22 @@
 - 제출할 사이트맵: `https://bumblev95.github.io/Aion2-Daeva-Atlas/sitemap.xml`. 홈페이지/한국어 홈페이지/입문 가이드 URL 검사 후 필요하면 색인 요청한다. 검색 노출은 Google의 결정이며 즉시 보장되지 않는다.
 - GA4는 별도 PLAYER’S CODEX 속성과 웹 스트림으로 구성한다. 전용 G-측정 ID를 site.json에 넣기 전에 자동 향상된 측정(특히 검색어·폼·기록 변경)을 끈다. 구현은 정리된 페이지 URL, 기기/언어, 정해진 기능 이용 이벤트만 전송한다. 플래너·검색 입력값을 이벤트에 추가하지 않는다.
 - GA4 활성화 후 방문자 동의 전 요청 없음/거절/허용/철회, 모바일 조작, Realtime 수신을 확인한다. 광고 동의용 CMP 설치를 이 분석 선택 UI로 대체하지 않는다.
+
+## Layout update · 2026-10-08
+
+The home page is now a task directory, with six guide destinations and compact
+class links. Detailed class exploration, progression checklists and boss lessons
+remain on their dedicated pages. Shared navigation groups beginner, character,
+adventure and reference links; the mobile drawer closes with Escape or its
+backdrop and keeps keyboard focus inside while open.
+
+The beginner page progressively enhances three readable sections into tabs:
+`view=basics`, `view=settings` and `view=growth`. Existing `lesson`, `step`,
+`#field-tips` and `#tip-*` links remain supported. Hash targets reveal their
+containing panel and tip disclosure. Browser Back/Forward restores the selected
+section, and language links retain the current view. All three sections remain
+in the HTML without JavaScript. Mobile lessons use a labeled native selector.
+The screenshot links and all source/region caveats are retained.
+
+Visual rules for this hierarchy live in `assets/layout.css`, loaded after the
+existing component styles. Update its cache version when changing those rules.
