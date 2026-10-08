@@ -1,6 +1,7 @@
 """Beginner routes, item reading and real embedded maps. All copy is bilingual."""
 from html import escape as e
 from firststeps import tutorial
+from fieldtips import panel as field_tips
 
 SOURCES = {
  'start':('Global beginner reference','https://metabot.gg/en/aion-2/guides/beginners-guide'),
@@ -50,7 +51,7 @@ def journey(lang,base,compact=False):
     return f'''<section class="journey" data-journey><div class="section-heading compact"><div><span class="section-kicker">START HERE / GLOBAL</span><h2>{t('What should I do next?','지금 뭘 하면 되나요?')}</h2></div><span class="tiny" role="status" data-start-progress></span></div><div class="journey-tabs" aria-label="{t('Your current stage','현재 진행 단계')}">{tabs}</div>{panels}<div class="journey-footer"><p>{t('Pick your stage. Finish these three before opening another checklist.','현재 단계를 고르고, 이 세 가지부터 해보세요.')}</p>{f'<a href="{r}start/">{t("Full beginner route","초보 가이드 전체")} →</a>' if compact else f'<button class="text-link" data-reset-start>{t("Reset checks","완료 표시 초기화")}</button>'}</div><noscript><style>[data-journey-panel][hidden]{{display:block!important}}.journey-tabs,.task-check{{display:none}}</style></noscript></section>'''
 
 def beginner(lang,base):
-    return tutorial(lang,base)+journey(lang,base)+evidence(lang,'start','unlocks')
+    return tutorial(lang,base)+field_tips(lang)+journey(lang,base)+evidence(lang,'start','unlocks')
 
 STATS=[
  ('might','Might','위력','⚔',('Attack','공격력'),('Helps attacks hit harder.','공격력을 높이는 기본 능력치입니다.')),
