@@ -4,11 +4,11 @@ An independent English/Korean game guide platform. AION 2 is the first game hub.
 
 **Website:** https://bumblev95.github.io/Aion2-Daeva-Atlas/
 
-**PLAYER’S CODEX** contains 16 video-linked mechanics across six dungeon bosses, 21 attributed Korean community notes from 15 sources, six original decision and practice guides, eight class playstyle profiles, a two-class comparison, 32 Korean/English glossary entries, full-text site search and a personal session planner. Both language editions are generated as real HTML, with matching language links, canonical URLs and a sitemap.
+**PLAYER’S CODEX** contains 16 scene-linked mechanics across six dungeon bosses, 21 attributed Korean community notes from 15 sources, six original decision and practice guides, eight class playstyle profiles, a two-class comparison, 32 Korean/English glossary entries, full-text site search and a personal session planner. Both language editions are generated as real HTML, with matching language links, canonical URLs and a sitemap.
 
 ## Visual interface
 
-The hub separates practical early-game and endgame guides, with direct settings references and attributed original screenshot previews; a complete 280-skill bilingual reference with game icons, class learning paths, and level-aware specialization choices; a 2D map with 384 real quest/travel/dungeon markers, search, panning, zoom, nearest travel points and saved completion; and 16 automatically animated boss lessons. Players can pause, scrub and change animation speed. Reduced motion is respected. Optional source footage is Korean. Existing class comparison, community insights, progression checklist and public URLs are retained. Source-era KR recommendations are separated from Global client facts.
+The hub separates practical early-game and endgame guides, with direct settings references and attributed original screenshot previews; a complete 280-skill bilingual reference with game icons, class learning paths, and level-aware specialization choices; a 2D map with 384 real quest/travel/dungeon markers, search, panning, zoom, nearest travel points and saved completion; and 16 automatically animated boss lessons. Players can pause, scrub and change animation speed. Reduced motion is respected. Each boss pattern explains its cue, response, position, mistake and success condition in both languages, with links to the original KR article and its specific scene. Optional videos include existing KR guides and index-reported TW footage with Russian narration; playback and Global equivalence remain unverified. See [the scene review](BOSS_SCENE_REVIEW.md). Existing class comparison, community insights, progression checklist and public URLs are retained. Source-era KR recommendations are separated from Global client facts.
 
 ## Develop
 
@@ -17,12 +17,20 @@ Python 3.12+ and Node 22+ are sufficient. There are no package dependencies.
 ```sh
 python build.py
 python validate.py
+python -m unittest discover -s tests -p 'test_*.py'
 node --check assets/app.js
 node --check assets/explorer.js
 node --check assets/encounters.js
 node --check assets/learn.js
+node --check assets/deep-guide.js
+node --check assets/battle.js
 node --check assets/analytics.js
+node --check assets/dps-engine.js
+node --check assets/dps.js
+node --check assets/news.js
 node tests/analytics.test.js
+node tests/dps.test.js
+node tests/battle.test.js
 ```
 
 Edit `content.py`, `fieldnotes.py`, `encounters.py`, `visuals.py`, `onboarding.py`, `skillbook.py`, `bossmedia.py`, `assets/` and `site.json`, then regenerate and commit `docs/`. GitHub Pages serves `main` → `/docs`. CI rejects a mismatch between the sources and generated pages.
@@ -38,7 +46,7 @@ Edit `content.py`, `fieldnotes.py`, `encounters.py`, `visuals.py`, `onboarding.p
 
 ## Privacy and monetization
 
-The planner stores its list in browser local storage; the class explorer can also save one preferred class. Existing planner data keeps its original storage key. It does not have a backend or accounts. Ad delivery is off. The existing publisher verification tag and Google HTML ownership file are installed. GA4 is connected to the dedicated PLAYER’S CODEX web stream and loads only after the visitor allows analytics. No external font scripts are installed. Beginner completion is local to the browser. Inven source links open additional loops; TH.GL hosts terrain previews and optional marker maps; YouTube hosts thumbnails and on-demand videos and may serve its own ads/storage. Media are not downloaded or republished in the repository. The public contact channel is GitHub Issues.
+The planner stores its list in browser local storage; the class explorer can also save one preferred class. Existing planner data keeps its original storage key. It does not have a backend or accounts. Ad delivery is off. The existing publisher verification tag and Google HTML ownership file are installed. GA4 is connected to the dedicated PLAYER’S CODEX web stream and loads only after the visitor allows analytics. No external font scripts are installed. Beginner completion is local to the browser. Boss references are external links and request no third-party media until opened. Inven and GameChosun host their original scenes; TH.GL hosts terrain previews and optional marker maps; YouTube may serve its own ads/storage when opened. Source media are not downloaded or republished in the repository. The public contact channel is GitHub Issues.
 
 AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enabling it. This project is a path under the existing bumblev95.github.io AdSense site, not a separately registrable AdSense domain. Check the existing host’s review status in AdSense; do not remove and resubmit an in-progress site. This project does not claim AdSense approval or guaranteed revenue.
 
@@ -55,7 +63,10 @@ AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enablin
 | `assets/encounters.css` | Responsive boss and insight layouts |
 | `onboarding.py` | Beginner priorities, item anatomy, stats and embedded maps |
 | `skillbook.py` | 280 client-derived skill entries, icons, build paths, linked dialogs and static documents |
-| `bossmedia.py` | Optional Korean source videos and Inven footage links |
+| `bossmedia.py` | Per-pattern original scenes, attribution, chapter navigation and verification status |
+| `battlelab.py` / `assets/battle.js` | Teaching animation, readable steps and playback controls |
+| `assets/boss-evidence.css` | Responsive scene references, outcomes and lesson transcripts |
+| `tests/test_boss_evidence.py` / `tests/battle.test.js` | Bilingual attribution, generated-page and animation regressions |
 | `assets/learn.js` / `assets/learn.css` | Legacy checklist, tooltip and accessible skill dialog behavior |
 | `build.py` | Static templates, metadata and sitemap generator |
 | `assets/style.css` | Responsive design, accessibility and print styles |
