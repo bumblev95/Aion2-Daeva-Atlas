@@ -5,8 +5,10 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse,unquote
 import xml.etree.ElementTree as ET
+import measurement
 ROOT=Path(__file__).parent
 OUT=ROOT/'docs';cfg=json.loads((ROOT/'site.json').read_text())
+measurement.validate(cfg)
 base=urlparse(cfg['url']).path.rstrip('/')+'/'
 errors=[];checked=0
 class Parser(HTMLParser):
@@ -22,6 +24,9 @@ class Parser(HTMLParser):
  def handle_endtag(self,tag):
   if tag=='script' and self.collect:self.jsons.append(self.raw);self.collect=False
 for f in OUT.rglob('*.html'):
+ if f.name==cfg.get('search_console',{}).get('verification_file'):
+  if f.read_text()!='google-site-verification: '+f.name:errors.append('Invalid Google verification file')
+  continue
  checked+=1;s=f.read_text();p=Parser();p.feed(s)
  hs=[a for tag,a in p.tags if tag=='h1']
  if len(hs)!=1:errors.append(f'{f}: expected one h1')
@@ -44,9 +49,14 @@ for f in OUT.rglob('*.html'):
   if not any(tag=='link'and a.get('rel')=='canonical' for tag,a in p.tags):errors.append(f'{f}: canonical missing')
  if not cfg['adsense']['enabled'] and 'pagead2.googlesyndication.com' in s:errors.append(f'{f}: unexpected ad request')
  if 'ca-pub-0000' in s:errors.append(f'{f}: placeholder publisher')
+ if f.name!='404.html':
+  if cfg['adsense']['publisher_id'] and not any(tag=='meta' and a.get('name')=='google-adsense-account' and a.get('content')==cfg['adsense']['publisher_id'] for tag,a in p.tags):errors.append(f'{f}: publisher verification missing')
+  analytics_enabled=bool(cfg.get('analytics',{}).get('enabled'))
+  if ('id="pc-analytics-config"' in s)!=analytics_enabled:errors.append(f'{f}: analytics state mismatch')
+  if analytics_enabled and not all(x in s for x in ['data-analytics-accept','data-analytics-decline','data-analytics-settings']):errors.append(f'{f}: analytics preferences missing')
 ET.parse(OUT/'sitemap.xml')
 idx=json.loads((OUT/'search-index.json').read_text())
 for item in idx:
  if not (OUT/item['path']/'index.html').exists():errors.append('Search entry is broken: '+item['path'])
 if errors:raise SystemExit('\n'.join(errors))
-print(f'PASS: {checked} HTML documents; internal links, anchors, language pairs, JSON, sitemap and disabled ads checked.')
+print(f'PASS: {checked} HTML documents; internal links, anchors, language pairs, JSON, sitemap, verification and measurement state checked.')
