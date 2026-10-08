@@ -18,6 +18,11 @@ jobs:
           node-version: '22'
       - run: python build.py
       - run: python validate.py
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: node tests/dps.test.js
+      - run: node --check assets/dps-engine.js
+      - run: node --check assets/dps.js
+      - run: node --check assets/news.js
       - run: node --check assets/analytics.js
       - run: node tests/analytics.test.js
       - run: node --check assets/app.js

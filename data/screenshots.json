@@ -1,0 +1,65 @@
+[
+  {
+    "id": "steam-4",
+    "category": "combat",
+    "title": {
+      "en": "Close-range combat",
+      "ko": "근접 전투"
+    },
+    "alt": {
+      "en": "An armored player strikes bird-like enemies on a wooden platform.",
+      "ko": "갑옷을 입은 플레이어가 나무 발판에서 새 형태의 적을 공격하는 장면."
+    },
+    "caption": {
+      "en": "A ground-level combat frame showing enemy distance and attack effects. Use it as visual context alongside the early-game guide.",
+      "ko": "적과의 거리·공격 효과가 보이는 지상 전투 장면입니다. 초반 공략을 읽을 때 전투 맥락을 함께 확인하세요."
+    },
+    "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/a2f4f44f1d3b0b68ae450f2d5f4a08877186d78e/ss_a2f4f44f1d3b0b68ae450f2d5f4a08877186d78e.1920x1080.jpg?t=1791205225",
+    "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/a2f4f44f1d3b0b68ae450f2d5f4a08877186d78e/ss_a2f4f44f1d3b0b68ae450f2d5f4a08877186d78e.600x338.jpg?t=1791205225",
+    "source": "https://store.steampowered.com/app/3393110/AION_2/",
+    "credit": "AION 2 © NC",
+    "reviewedAt": "2026-10-08"
+  },
+  {
+    "id": "steam-5",
+    "category": "boss",
+    "title": {
+      "en": "A large enemy encounter",
+      "ko": "대형 적과의 전투"
+    },
+    "alt": {
+      "en": "An armored player faces a large red-winged creature amid combat effects.",
+      "ko": "갑옷을 입은 플레이어가 전투 효과 속에서 붉은 날개의 거대 생물과 마주한 장면."
+    },
+    "caption": {
+      "en": "A wide boss-scale encounter. The publisher does not identify the enemy here, so this image does not establish a named mechanic.",
+      "ko": "대형 적과 플레이어의 위치가 보이는 장면입니다. 공개 이미지에서 보스명이 확인되지 않아 특정 패턴의 예시로 단정하지 않습니다."
+    },
+    "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/caa60f1a365dd7802a523b18c870bb31550fb2f5/ss_caa60f1a365dd7802a523b18c870bb31550fb2f5.1920x1080.jpg?t=1791205225",
+    "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/caa60f1a365dd7802a523b18c870bb31550fb2f5/ss_caa60f1a365dd7802a523b18c870bb31550fb2f5.600x338.jpg?t=1791205225",
+    "source": "https://store.steampowered.com/app/3393110/AION_2/",
+    "credit": "AION 2 © NC",
+    "reviewedAt": "2026-10-08"
+  },
+  {
+    "id": "steam-7",
+    "category": "flight",
+    "title": {
+      "en": "Flight above the coast",
+      "ko": "해안 상공 비행"
+    },
+    "alt": {
+      "en": "A winged player flies above a tropical coast and green islands.",
+      "ko": "날개를 펼친 플레이어가 해안과 녹색 섬 위를 비행하는 장면."
+    },
+    "caption": {
+      "en": "An airborne travel frame. Flight and height affect the route you choose; consult the map guide for location references.",
+      "ko": "공중 이동 장면입니다. 비행과 고도에 따라 동선이 달라지므로 지도 공략의 위치 자료와 함께 보세요."
+    },
+    "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/d377a394eff9e104aa8dcfa0547f03013172801a/ss_d377a394eff9e104aa8dcfa0547f03013172801a.1920x1080.jpg?t=1791205225",
+    "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3393110/d377a394eff9e104aa8dcfa0547f03013172801a/ss_d377a394eff9e104aa8dcfa0547f03013172801a.600x338.jpg?t=1791205225",
+    "source": "https://store.steampowered.com/app/3393110/AION_2/",
+    "credit": "AION 2 © NC",
+    "reviewedAt": "2026-10-08"
+  }
+]

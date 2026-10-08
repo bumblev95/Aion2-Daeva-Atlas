@@ -1,0 +1,70 @@
+{
+  "reviewedAt": "2026-10-08",
+  "items": [
+    {
+      "id": "endgame-inputs",
+      "region": "NA",
+      "title": {
+        "en": "Final-build inputs and rotation timing",
+        "ko": "최종빌드 입력과 사이클 시간"
+      },
+      "finding": {
+        "en": "Our reference lacks patch-matched higher skill levels, specialization choices, Arcana/Daevanion totals and measured action times. These can change resource flow and cooldown cycles.",
+        "ko": "현재 자료에는 패치별 높은 스킬 레벨·특화 선택·아르카나/데바니온 합산·실측 동작 시간이 부족합니다. 자원 유지와 쿨타임 사이클에도 영향을 주는 항목입니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "Daeva Guides · Sorcerer",
+          "url": "https://daevaguides.com/en/sorcerer/"
+        }
+      ]
+    },
+    {
+      "id": "regional-differences",
+      "region": "KR / NA",
+      "title": {
+        "en": "Regional patch differences",
+        "ko": "지역별 패치 차이"
+      },
+      "finding": {
+        "en": "Korean class fixes and rewards differ from the North America patch. Guides must carry their applicable region and date before using them as current NA advice.",
+        "ko": "한국의 직업 수정·보상 변경은 북미 패치와 다릅니다. 공략을 현재 북미판에 적용하기 전에 지역·기준일을 확인해야 합니다."
+      },
+      "status": "tracked",
+      "sources": [
+        {
+          "title": "NC · Korea patch",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ac54c386b722c561dc6aa2b"
+        },
+        {
+          "title": "NC · Global patch",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ac5e6e8d97eae18cc40e34e"
+        }
+      ]
+    },
+    {
+      "id": "measured-class-ranking",
+      "region": "KR / NA",
+      "title": {
+        "en": "Class ranking needs matched evidence",
+        "ko": "직업 순위에 필요한 동일 조건 자료"
+      },
+      "finding": {
+        "en": "Community DPS estimates are leads, not verified coefficients. A credible endgame tier needs the same patch, boss, gear rules and repeated trials across all classes.",
+        "ko": "커뮤니티 DPS 추정은 검토 대상이며 검증된 계수로 취급하지 않습니다. 최종 티어에는 같은 패치·보스·장비 조건과 직업별 반복 측정이 필요합니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "Inven · DPS estimate discussion",
+          "url": "https://m.inven.co.kr/board/aion2/6444/2295"
+        },
+        {
+          "title": "AbyssLogs · eDPS / fight analysis",
+          "url": "https://github.com/karim-mo/aion2-abysslogs-dps-meter"
+        }
+      ]
+    }
+  ]
+}

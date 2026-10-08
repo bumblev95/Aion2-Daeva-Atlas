@@ -1,0 +1,98 @@
+"""Patch desk, an explicit DPS model and attributed NC gameplay screenshots."""
+import html
+import json
+import re
+import hashlib
+from pathlib import Path
+from content import CLASSES
+
+ROOT = Path(__file__).parent
+E = lambda x: html.escape(str(x), quote=True)
+
+def load(name):
+    return json.loads((ROOT/'data'/name).read_text())
+
+def resources(base, dps=False):
+    return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=1">' + (f'<script defer src="{base}assets/dps-engine.js?v=1"></script><script defer src="{base}assets/dps.js?v=1"></script>' if dps else f'<script defer src="{base}assets/news.js?v=1"></script>')
+
+def catalog():
+    skills = load('skills.json')
+    result = []
+    for c in CLASSES:
+        rows = []
+        # Only direct damage terms are seeded. Periodic, conditional and summoned
+        # damage is not silently collapsed into a single hit.
+        for s in skills:
+            effect = s['en_data']['effect']
+            if s['cls'] != c['id'] or s['kind'] != 'active':
+                continue
+            match = re.search(r'\bdeals\s+([\d,]+(?:\.\d+)?)\s*\(\+([\d.]+)% Attack\)\s*(?:\w+\s+)?damage',effect,re.I)
+            if not match or re.search(r'every|over \d|summons|engraves|per insignia|depending|times|chanc|for each',effect,re.I):
+                continue
+            cd = re.fullmatch(r'([\d.]+)s',s['cooldown'])
+            rows.append(dict(id=s['id'],en=s['en'],ko=s['ko'],flat=float(match[1].replace(',','')),coefficient=float(match[2]),
+                             cooldown=float(cd[1]) if cd else 0,cast=1,hits=1,url=s['url'],icon=s['icon'],effect=effect))
+        # Prioritize cooldown skills; exactly one basic filler avoids starvation
+        # of low-priority damage skills. Order remains editable in the UI.
+        ordered = [x for x in rows if x['cooldown'] > 0] + [x for x in rows if x['cooldown'] == 0][:1]
+        result.append(dict(id=c['id'],en=c['en'],ko=c['ko'],color=c['color'],skills=ordered,
+                           omitted=12-len(ordered)))
+    return dict(version='conditional-rotation-v1',sourceDate=load('skill-snapshot.json')['reviewedAt'],
+                sourceHash=hashlib.sha256((ROOT/'data/skills.json').read_bytes()).hexdigest(),classes=result)
+
+def patch_card(item,lang):
+    k=lang=='ko';t=lambda a,b:b if k else a
+    status=item.get('reviewState','pending')
+    summary=item.get('summary',{}).get(lang) or t('New source item. Editorial summary is awaiting review.','새 원문이 수집됐습니다. 변경 요약을 검토 중입니다.')
+    changes=''
+    labels={'buff':t('Buff','버프'),'nerf':t('Nerf','너프'),'adjustment':t('Adjustment','조정'),'fix':t('Bug fix','버그 수정'),'system':t('System','시스템')}
+    for row in item.get('changes',[]):
+        name=row.get('subject',{}).get(lang,'')
+        changes+=f'<li><span class="change-badge {E(row["type"])}">{labels[row["type"]]}</span><div><strong>{E(name)}</strong><p>{E(row["description"][lang])}</p></div></li>'
+    review={'reviewed':t('Reviewed summary','요약 검토 완료'),'pending':t('Review pending','요약 검토 중'),'revised':t('Source revised · review pending','원문 수정 · 재검토 중')}[status]
+    no_class=f'<p class="class-scope">{t("No class-specific balance changes listed in this reviewed patch.","검토한 이 패치에는 클래스별 밸런스 변경이 기재되지 않았습니다.")}</p>' if item.get('classScopeReviewed') and not any(x.get('classId') for x in item.get('changes',[])) else ''
+    return f'''<article class="patch-card" data-region="{item['region']}" data-kind="{item['kind']}" data-class-ids="{' '.join(x.get('classId','') for x in item.get('changes',[]))}" data-review="{status}"><header><span class="tag">{'한국' if k and item['region']=='KR' else 'NA · US / Canada' if item['region']=='NA' else 'Korea'}</span><time datetime="{E(item.get('publishedAt') or '')}">{E((item.get('publishedAt') or '')[:10])} UTC</time><span class="review-badge">{review}</span></header><h2>{E(item['title'])}</h2><p>{E(summary)}</p><ul class="patch-changes">{changes}</ul>{no_class}<footer><a class="text-link" href="{E(item['url'])}" target="_blank" rel="noopener">NC · {t('Original notice','공식 원문')} ↗</a><span>{t('Source updated','원문 수정')} {E((item.get('sourceUpdatedAt') or '')[:16].replace('T',' '))} UTC</span></footer></article>'''
+
+def news(lang,base):
+    k=lang=='ko';t=lambda a,b:b if k else a;data=load('news.json');r=base+('ko/' if k else '')
+    sources=data['sources']
+    items=sorted((x for s in sources for x in s['items']),key=lambda x:x.get('publishedAt') or '',reverse=True)
+    cards=''.join(patch_card(x,lang) for x in items)
+    options=''.join(f'<option value="{x["id"]}">{E(x["ko" if k else "en"])}</option>' for x in CLASSES)
+    return resources(base)+f'''<section class="live-desk" data-news-desk data-lang="{lang}" data-feed="{base}data/news.json"><div class="desk-intro"><span class="section-kicker">PATCH DESK / AION 2</span><h1>{t('What changed. Who is affected.','무엇이 바뀌었고,<br>누가 영향을 받는지.')}</h1><p>{t('Official announcements, readable change summaries and class impact. Korea and North America stay separate.','공식 소식, 변경 요약, 직업별 영향을 한곳에서. 한국과 북미 패치를 구분해 보여줍니다.')}</p></div><div class="feed-status"><span class="feed-dot"></span><p data-news-status role="status">{t('Source check','원문 확인')}: {E(data['checkedAt'])} · {t('Hourly collection · page refresh every 5 minutes','매시간 수집 · 열린 화면은 5분마다 재확인')}</p><button type="button" class="btn" data-news-refresh>{t('Refresh','새로 확인')}</button></div><div class="desk-controls"><label>{t('Region','서버 지역')}<select data-news-region><option value="NA">{t('North America · US / Canada','북미 · 미국 / 캐나다')}</option><option value="KR">{t('Korea','한국')}</option><option value="all">{t('All regions','모든 지역')}</option></select></label><label>{t('Show','표시')}<select data-news-kind><option value="all">{t('News & patches','소식·패치 전체')}</option><option value="patch">{t('Patch notes','패치만')}</option><option value="class">{t('Class changes','클래스 변경')}</option></select></label><label>{t('Class','직업')}<select data-news-class><option value="all">{t('All classes','전체 직업')}</option>{options}</select></label></div><p class="desk-note">{t('A bug fix can restore lost damage without changing a coefficient. Unquantified effects are kept as fixes or adjustments. US and Canada use the North America feed; this is not a separately verified Canadian ruleset.','버그 수정은 계수 변경 없이도 실제 딜을 회복시킬 수 있습니다. 수치가 없는 변경은 버그 수정·조정으로 표시합니다. 미국·캐나다는 북미 공지를 함께 사용합니다.')}</p><div class="patch-feed" data-news-items>{cards}</div><p data-news-empty hidden>{t('No matching reviewed class changes. New unreviewed patches remain available in the full feed.','해당 조건의 검토된 클래스 변경이 없습니다. 미검토 패치는 전체 소식에서 볼 수 있습니다.')}</p><section class="source-health"><h2>{t('Source health','원문 수집 상태')}</h2><div data-source-health>{''.join(f'<p>{E(s["id"])} · {E(s["status"])} · {t("Last successful check","마지막 정상 확인")} {E(s.get("lastSuccessAt") or "—")}</p>' for s in sources)}</div><p>{t('If a source fails, its last successful items remain visible with their original dates. A source check is not an editorial review.','수집이 실패하면 기존 항목과 실제 날짜를 유지합니다. 수집 시각과 요약 검토 시각은 서로 다릅니다.')}</p></section><a class="btn" href="{r}tools/dps/">{t('Model the damage impact','DPS 영향 계산하기')} →</a></section>'''
+
+def home_strip(lang,base):
+    k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
+    reviewed=[x for s in load('news.json')['sources'] if s['region']=='NA' for x in s['items'] if x['kind']=='patch' and x.get('reviewState')=='reviewed']
+    latest=sorted(reviewed,key=lambda x:x['publishedAt'],reverse=True)
+    lead=latest[0]['summary'][lang] if latest else t('Latest official notices and reviewed changes.','최신 공식 소식과 검토한 변경 요약.')
+    return resources(base)+f'''<section class="home-live" aria-label="{t('Updates and damage tools','업데이트와 DPS 도구')}"><a href="{r}updates/"><span class="section-kicker">PATCH DESK · NA / KR</span><h2>{t('Latest changes','최신 변경사항')} <span>→</span></h2><p>{E(lead)}</p></a><a href="{r}tools/dps/"><span class="section-kicker">DAMAGE LAB</span><h2>{t('Build & eDPS calculator','빌드·eDPS 계산기')} <span>→</span></h2><p>{t('Skill contributions, downtime and patch scenarios. Compare your inputs under the same conditions.','스킬별 기여도·딜 중단 시간·패치 전후 계산. 같은 조건으로 입력한 빌드를 비교합니다.')}</p></a></section>'''
+
+def screenshots(lang,base,spotlight=None):
+    k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
+    selected=load('screenshots.json')
+    if spotlight: selected=[x for x in selected if x['category']==spotlight]
+    figures=''
+    for x in selected:
+        figures+=f'''<figure class="gameplay-shot"><a href="{E(x['url'])}" target="_blank" rel="noopener" aria-label="{E(t('Open full screenshot: ','전체 스크린샷 보기: ')+x['title'][lang])}"><img src="{E(x['thumbnail'])}" alt="{E(x['alt'][lang])}" loading="lazy" width="1920" height="1080"></a><figcaption><span class="section-kicker">NC / {t('OFFICIAL GAMEPLAY SCREENSHOT','공식 인게임 스크린샷')}</span><h3>{E(x['title'][lang])}</h3><p>{E(x['caption'][lang])}</p><a href="{E(x['source'])}" target="_blank" rel="noopener">AION 2 © NC · Steam ↗</a></figcaption></figure>'''
+    copy=t('Publisher-provided in-game frames, with the HUD hidden. These illustrate combat and movement; they are not player-submitted evidence for a build or a particular boss mechanic.','공식 공개 인게임 장면이며 HUD는 숨겨져 있습니다. 전투·이동 맥락을 보여주는 자료로, 특정 빌드나 보스 패턴의 실측 증거는 아닙니다.')
+    if spotlight:
+        return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=1"><section class="gameplay-context"><h2>{t("See the in-game scene","실제 게임 장면")}</h2><div class="gameplay-grid">{figures}</div><a class="text-link" href="{r}screenshots/">{t("All screenshots & credits","전체 스크린샷·출처 보기")} →</a></section>'
+    return resources(base)+f'<section class="screenshot-desk"><div class="desk-intro"><span class="section-kicker">IN-GAME / AION 2</span><h1>{t("Real scenes from Atreia.","아트레이아의 실제 장면.")}</h1><p>{copy}</p></div><div class="gameplay-grid">{figures}</div><p class="desk-note">{t("Images are served by the publisher’s Steam CDN. Community settings captures remain linked to their originals until reuse permission is available.","이미지는 공식 Steam 배포 주소에서 표시합니다. 커뮤니티의 설정 캡처는 재사용 허락이 확인되기 전까지 원본 링크를 유지합니다.")}</p></section>'
+
+def coverage(lang):
+    t=lambda a,b:b if lang=='ko' else a
+    data=load('coverage-audit.json');cards=''
+    for item in data['items']:
+        links=' · '.join(f'<a href="{E(s["url"])}" target="_blank" rel="noopener">{E(s["title"])} ↗</a>' for s in item['sources'])
+        status=t('Evidence needed','자료 보강 필요') if item['status']=='needs-evidence' else t('Tracking in place','추적 중')
+        cards+=f'<article class="patch-card"><span class="tag">{E(item["region"])} · {status}</span><h3>{E(item["title"][lang])}</h3><p>{E(item["finding"][lang])}</p><footer>{links}</footer></article>'
+    return f'<section class="coverage-desk"><h2>{t("What our guides still need","공략 보강 목록")}</h2><p class="desk-note">{t("Community review","커뮤니티 검토")}: {E(data["reviewedAt"])} · {t("Daily source review checks for new evidence; this date changes only after a completed editorial audit.","매일 새 자료를 확인하며, 이 날짜는 실제 공략 검토를 마친 경우에만 바뀝니다.")}</p><div class="patch-feed">{cards}</div></section>'
+
+def dps(lang,base):
+    k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
+    options=''.join(f'<option value="{c["id"]}">{E(c["ko" if k else "en"])}</option>' for c in CLASSES)
+    def field(key,label,value,minimum,maximum,step='1'):
+        return f'<label>{label}<input data-param="{key}" type="number" value="{value}" min="{minimum}" max="{maximum}" step="{step}" required></label>'
+    fields=''.join([field('duration',t('Fight duration · s','전체 전투 시간 · 초'),120,1,600),field('attack',t('Effective attack','입력 공격력'),1000,0,10000000),field('crit',t('Critical chance · %','치명 확률 · %'),0,0,100,'.1'),field('critMultiplier',t('Critical damage multiplier','치명 피해 배율'),1.5,1,10,'.01'),field('accuracy',t('Hit chance · %','적중 확률 · %'),100,0,100,'.1'),field('factor',t('Combined damage multiplier','사용자 지정 피해 배율'),1,0,100,'.01')])
+    return resources(base,True)+f'''<section class="damage-lab" data-dps-lab data-lang="{lang}" data-catalog="{base}data/dps.json" data-feed="{base}data/news.json"><div class="desk-intro"><span class="section-kicker">DAMAGE LAB / CONDITIONAL MODEL</span><h1>{t('Build the rotation.<br>See the damage.','딜 사이클을 구성하고,<br>수치로 비교하세요.')}</h1><p>{t('eDPS uses the whole fight, including movement and invulnerability. Change damage and cooldowns to compare patch scenarios.','eDPS는 이동·무적 시간을 포함한 전체 전투 시간으로 계산합니다. 피해량과 쿨타임을 바꾸면 패치 전후 차이를 바로 보여줍니다.')}</p></div><p class="model-scope">{t('The initial values are selected level-1 Global tooltip terms. Cast time is an editable 1-second assumption. This is not an optimized final build or a verified class tier list.','초기값은 글로벌 기본 1레벨 툴팁 중 직접 피해 항목입니다. 동작 시간 1초는 수정 가능한 가정입니다. 최종빌드·현재 직업 티어를 검증한 수치는 아닙니다.')}</p><form data-dps-form><div class="desk-controls"><label>{t('Class','직업')}<select data-dps-class>{options}</select></label><label>{t('Region','서버 지역')}<select data-param="region"><option value="NA">{t('North America · US / Canada','북미 · 미국 / 캐나다')}</option><option value="KR">{t('Korea · manual values','한국 · 직접 입력')}</option></select></label><label>{t('Build name','빌드 이름')}<input data-param="name" maxlength="60" placeholder="{t('e.g. final build A','예: 최종빌드 A')}"></label></div><div class="dps-params">{fields}<label class="wide-field">{t('No-damage windows · seconds','공격 불가 구간 · 초')}<input data-param="downtime" placeholder="30-40, 90-100" pattern="[0-9., -]*"><small>{t('Comma-separated windows; overlaps are counted once.','쉼표로 구간을 구분합니다. 겹치는 시간은 한 번만 계산합니다.')}</small></label><label class="wide-field">{t('Patch / client reference','패치 / 클라이언트 기준')}<input data-param="patch" maxlength="120" required value="global-tooltip-2026-10-07"></label></div><p data-dps-patch-state class="desk-note" role="status">{t('Checking the current patch…','현재 패치 확인 중…')}</p><section class="rotation-editor"><header><h2>{t('Skill inputs & priority','스킬 입력과 사용 우선순위')}</h2><button type="button" class="btn" data-dps-add>{t('Add custom skill','스킬 직접 추가')}</button></header><p>{t('Higher rows are used first when ready. Enter total direct-hit terms; add periodic damage and pets only when you can supply measured per-cast totals. Cooldowns start at cast start; casts crossing a no-damage window are skipped.','위쪽 스킬부터 사용 가능한 기술을 선택합니다. 지속 피해·펫·조건부 피해는 확인한 회당 합산 피해를 직접 추가합니다. 쿨타임은 동작 시작부터 계산하며 공격 불가 구간에 걸친 동작은 생략합니다.')}</p><div class="dps-table-scroll"><table class="dps-table"><caption class="sr-only">{t('Editable skill damage and cooldowns','스킬 피해량과 쿨타임 입력')}</caption><thead><tr>{''.join('<th scope="col">'+x+'</th>' for x in [t('Use / priority','사용·순서'),t('Skill','스킬'),t('Base damage','고정 피해'),t('Attack %','공격력 %'),t('Hits','타격 수'),t('Cast · s','동작 · 초'),t('CD · s','쿨 · 초'),t('Damage Δ %','변경 피해 %'),t('New CD · s','변경 쿨 · 초')])}</tr></thead><tbody data-dps-skills></tbody></table></div><p data-dps-omitted class="small muted"></p></section><div class="dps-actions"><button type="submit" class="btn primary">{t('Calculate eDPS','eDPS 계산')}</button><button type="button" class="btn" data-dps-compare>{t('Add to comparison','비교에 추가')}</button><button type="button" class="btn" data-dps-confirm-version>{t("Mark reviewed inputs as current","검토한 입력을 현재 기준으로 표시")}</button><button type="button" class="btn" data-dps-export>{t('Export inputs & results','입력·결과 CSV')}</button></div></form><p data-dps-error role="alert" hidden></p><section class="dps-results" aria-live="polite" data-dps-results></section><section class="dps-comparison"><header><h2>{t('Same-condition build comparison','같은 조건의 빌드 비교')}</h2><button type="button" class="text-link" data-dps-clear>{t('Clear','비교 초기화')}</button></header><p>{t('Add at least two builds. Ranking requires identical region, patch, duration, attack, critical assumptions, hit chance, multiplier and downtime. This ranks your model inputs, not the live population.','빌드를 두 개 이상 추가하세요. 지역·패치·전투 시간·공격력·치명·적중·배율·공격 불가 구간이 같아야 순위를 표시합니다. 입력한 모델의 순위이며 전체 서버 실측 순위는 아닙니다.')}</p><p class="small muted">{t("Comparisons stay in this browser. Load a saved build to revise it after a patch; export CSV for a separate copy.","비교는 이 브라우저에 저장합니다. 패치 후 저장 빌드를 불러와 수정하고, 별도 사본은 CSV로 내려받을 수 있습니다.")}</p><div data-dps-comparisons></div></section><details class="dps-method"><summary>{t('Formula, assumptions & what is missing','계산식·가정·미반영 항목')}</summary><p><code>{t('Expected hit = (base + attack × coefficient) × hits × (1 + crit chance × (crit multiplier − 1)) × hit chance × user multiplier','기대 피해 = (고정 피해 + 공격력 × 계수) × 타격 수 × (1 + 치명 확률 × (치명 배율 − 1)) × 적중 확률 × 사용자 배율')}</code></p><p><code>eDPS = {t('total expected damage / full fight seconds','전체 기대 피해 / 전체 전투 시간')}</code></p><p>{t('The game’s defense, amplification stacking, resources, proc chances, cooldown resets, buff windows, hit-specific critical rules and skill-level scaling are not inferred. Fold only known effects into your input; avoid counting them twice. The patch percentage changes the modeled skill’s damage, not the whole class.','게임의 방어·증폭 합연산·자원·발동 확률·쿨 초기화·버프 구간·타격별 치명 규칙·스킬 레벨 상승은 추정하지 않습니다. 확인한 효과만 입력에 반영하고 중복 계산을 피하세요. 변경 피해 %는 해당 스킬의 입력 피해만 바꾸며 직업 전체 배율이 아닙니다.')}</p><p>{t('An endgame ranking still needs patch-matched final skill levels, specializations, Arcana, Daevanion, gear, rotation timings and repeatable combat evidence for every class. Those datasets are currently incomplete.','최종빌드 티어에는 같은 패치의 스킬 레벨·특화·아르카나·데바니온·장비·사이클 시간·반복 측정 자료가 직업별로 필요합니다. 현재 이 자료는 미완성입니다.')}</p><p><a href="https://metabot.gg/en/aion-2/skills" target="_blank" rel="noopener">MetaBot · {t('Global base tooltip sources','글로벌 기본 툴팁 출처')} ↗</a> · <a href="{r}updates/">{t('Official patch desk','공식 패치 확인')} →</a></p></details><noscript><p>{t('The calculator needs JavaScript. Its inputs, formula and scope are documented above.','계산기에는 JavaScript가 필요합니다. 입력 조건과 계산식은 위에서 확인할 수 있습니다.')}</p></noscript></section>'''

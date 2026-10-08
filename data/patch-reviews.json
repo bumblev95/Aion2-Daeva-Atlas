@@ -1,0 +1,149 @@
+{
+  "6ac54c386b722c561dc6aa2b": {
+    "contentHash": "3dabf7f9b3d0dbd83990b875f52fc7fddff023f2c954a71e88b0308417ac9e30",
+    "reviewedAt": "2026-10-08T08:21:39Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "en": "Aerial-hit and Sorcerer effect bugs were fixed. Keyed Hidden Cube rewards increased, and presets expanded. These are Korea changes; no class damage percentage was announced.",
+      "ko": "공중 타격·마도성 피해 적용 오류 수정, 열쇠 사용 히든 큐브 보상 증가, 프리셋 확대가 핵심입니다. 한국판 변경이며 클래스 피해 증가율은 공지되지 않았습니다."
+    },
+    "changes": [
+      {
+        "type": "fix",
+        "subject": {
+          "en": "All classes · aerial hits",
+          "ko": "공통 · 공중 타격"
+        },
+        "description": {
+          "en": "In-range aerial attacks now avoid the intermittent missing-hit bug.",
+          "ko": "사거리 안에서도 공중 공격이 간헐적으로 적중하지 않던 오류를 수정했습니다."
+        },
+        "classId": "all"
+      },
+      {
+        "type": "fix",
+        "subject": {
+          "en": "Sorcerer · Fire Wall / Cold Storm",
+          "ko": "마도성 · 불의 장벽 / 냉기 폭풍"
+        },
+        "description": {
+          "en": "Height-related ember and frostbite damage failures were corrected; ember damage now uses the Fire element. No increase percentage is specified.",
+          "ko": "높이에 따른 잔불·동상 추가 피해 누락을 수정하고 잔불 지속 피해에 불 속성을 적용했습니다. 증가율 수치는 없습니다."
+        },
+        "classId": "sorcerer"
+      },
+      {
+        "type": "fix",
+        "subject": {
+          "en": "Sorcerer · Hibernation",
+          "ko": "마도성 · 동면"
+        },
+        "description": {
+          "en": "The backward movement on release was repaired.",
+          "ko": "동면 해제 시 후방 이동이 정상 동작하도록 수정했습니다."
+        },
+        "classId": "sorcerer"
+      },
+      {
+        "type": "fix",
+        "subject": {
+          "en": "Spiritmaster · summoned spirits",
+          "ko": "정령성 · 소환 정령"
+        },
+        "description": {
+          "en": "One Fire Temple trial boss skill no longer deals excessive damage to spirits.",
+          "ko": "시련 불의 신전 보스의 특정 기술이 정령에게 과도한 피해를 주던 오류를 수정했습니다."
+        },
+        "classId": "spiritmaster"
+      },
+      {
+        "type": "system",
+        "subject": {
+          "en": "Keyed Hidden Cubes",
+          "ko": "열쇠 사용 히든 큐브"
+        },
+        "description": {
+          "en": "Soul Crystal reward: 100 → 1,000. Qualifying Chapter 1 claims receive a retroactive difference.",
+          "ko": "영혼 결정 100 → 1,000개. 챕터1 기간의 해당 수령 내역에 추가 수량을 소급 지급할 예정입니다."
+        }
+      },
+      {
+        "type": "system",
+        "subject": {
+          "en": "Presets",
+          "ko": "프리셋"
+        },
+        "description": {
+          "en": "Main presets: 3 → 5. Wardrobe presets: 3 → 6.",
+          "ko": "장비·스킬·아르카나 등을 포함한 프리셋 3 → 5개, 옷장 프리셋 3 → 6개."
+        }
+      }
+    ]
+  },
+  "6ac5e6e8d97eae18cc40e34e": {
+    "contentHash": "6e00652e2be66aa3dd1c7539ea5e4ce14aedc2786b180d07fe4c27f29bc115b2",
+    "reviewedAt": "2026-10-08T08:21:39Z",
+    "classScopeReviewed": true,
+    "summary": {
+      "en": "Founder’s items can be claimed for other characters and servers. Wing morphing gets a weekly limit, leather drops increase, and map-pin and mission bugs are fixed.",
+      "ko": "파운더스 아이템을 다른 캐릭터·서버에서도 받을 수 있게 했습니다. 날개 변환 주간 제한, 가죽 드롭 상향, 지도 징표·미션 오류 수정이 포함됐습니다."
+    },
+    "changes": [
+      {
+        "type": "system",
+        "subject": {
+          "en": "Founder’s items",
+          "ko": "파운더스 아이템"
+        },
+        "description": {
+          "en": "Eligible owners can claim missing items for free through the tier-specific Shop on other characters and servers.",
+          "ko": "구매 등급별 전용 상점에서 미보유 아이템을 무료로 받아 다른 캐릭터·서버에서도 이용할 수 있습니다."
+        }
+      },
+      {
+        "type": "adjustment",
+        "subject": {
+          "en": "Wing morphing",
+          "ko": "날개 물질 변환"
+        },
+        "description": {
+          "en": "Sealed Wings → Enhance Stones: maximum 20 morphs per server per week.",
+          "ko": "봉인 날개 → 강화석 변환은 서버별 주간 20회로 제한됩니다."
+        }
+      },
+      {
+        "type": "system",
+        "subject": {
+          "en": "Raw Leather",
+          "ko": "생가죽 드롭"
+        },
+        "description": {
+          "en": "Drop rates rise in Chaotic Lower Reshanta, Verteron and Altgard; no percentage is given.",
+          "ko": "혼돈의 하층 에레슈란타·베르테론·알트가르드 드롭률을 높였습니다. 비율은 공개되지 않았습니다."
+        }
+      },
+      {
+        "type": "system",
+        "subject": {
+          "en": "Resurrection Spiritstone · Season 1",
+          "ko": "부활의 정령석 · 시즌 1"
+        },
+        "description": {
+          "en": "Shop price: 25,000 Kina; maximum 10 per server per week.",
+          "ko": "상점 가격 25,000 키나, 서버별 주간 최대 10개입니다."
+        }
+      },
+      {
+        "type": "fix",
+        "subject": {
+          "en": "Map pins / Asmodian mission",
+          "ko": "지도 징표 / 마족 주간 미션"
+        },
+        "description": {
+          "en": "Pins correctly show a maximum of 30. The affected Asmodian weekly mission can complete normally.",
+          "ko": "지도 징표 최대 30개가 정상 표시되고, 해당 마족 주간 미션 완료 오류가 수정됐습니다."
+        }
+      }
+    ]
+  }
+}

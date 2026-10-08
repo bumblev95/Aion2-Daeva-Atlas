@@ -5,6 +5,16 @@
   document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href'));if(d?.tagName==='DETAILS')d.open=true;}));
   const t = (en, kr) => ko ? kr : en;
   const base = document.body.dataset.base;
+  document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('players-codex-dps-v1');}catch{}});
+  const sideTools = document.querySelector('.side-bottom');
+  if (sideTools) {
+    const prefix=base+(ko?'ko/':'');
+    [['updates/',t('News & patch changes','뉴스·패치 변경사항')],['tools/dps/',t('Build & eDPS calculator','빌드·eDPS 계산기')],['screenshots/',t('Gameplay screenshots','인게임 스크린샷')]].forEach(([route,label])=>{
+      const a=document.createElement('a');a.href=prefix+route;a.textContent=label;
+      if(location.pathname===a.pathname)a.setAttribute('aria-current','page');
+      sideTools.append(a);
+    });
+  }
   const menu = document.querySelector('[data-menu]');
   const sidebar = document.querySelector('#main-nav');
   const backdrop = document.querySelector('[data-menu-close]');

@@ -65,6 +65,7 @@ def explorer(lang, base, selected='gladiator'):
 
 
 def dashboard(lang, base):
+    from liveops import home_strip
     k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
     topics=[
         ('swords','classes/',t('Classes and roles','직업·역할'),t('Roles, playstyles and a side-by-side comparison','역할과 플레이스타일로 내 직업 찾기')),
@@ -78,6 +79,7 @@ def dashboard(lang, base):
     classlinks=''.join(f'<a class="home-class" href="{r}classes/{c["id"]}/" style="--class-color:{c["color"]}">{glyph(base,c["icon"])}<span>{c["ko" if k else "en"]}</span></a>' for c in CLASSES)
     return f'''<div class="wrap hub-home home-clear"><section class="welcome-hero"><div class="welcome-copy"><span class="eyebrow">AION 2 · PLAYER’S CODEX</span><h1>{t('From your first build<br>to the next clear.','초반 육성부터<br>다음 던전 공략까지.')}</h1><p>{t('Progression, builds and boss mechanics.<br>Guides organised around your stage of play.','육성 동선, 직업 세팅, 보스 패턴.<br>플레이 단계에 맞는 공략을 한곳에서.')}</p></div><span class="art-credit">AION 2 artwork © NC</span></section>
 <section class="home-stages" aria-label="{t('Guides by stage','진행 단계별 공략')}"><a class="home-stage" href="{r}start/"><span class="stage-kicker">01 / {t('EARLY GAME','초반 성장')}</span><h2>{t('Early-game guide','초반 공략')} <span aria-hidden="true">→</span></h2><p>{t('Progression routes, core skills and first equipment decisions.','육성 동선·주력 스킬·기본 장비 선택')}</p><span class="stage-detail">{t('Core priorities · Useful settings · Level milestones','핵심 요약 · 편의 설정 · 성장 순서')}</span></a><a class="home-stage endgame" href="{r}endgame/"><span class="stage-kicker">02 / {t('ENDGAME','육성 이후')}</span><h2>{t('Endgame guide','엔드게임 공략')} <span aria-hidden="true">→</span></h2><p>{t('Dungeon preparation, boss mechanics and equipment investment.','던전 준비·보스 패턴·장비 개선')}</p><span class="stage-detail">{t('Next goals · Boss references · Upgrade decisions','성장 목표 · 보스별 공략 · 투자 판단')}</span></a></section>
+{home_strip(lang,base)}
 <section class="home-topics" aria-labelledby="topics-heading"><div class="section-heading"><div><h2 id="topics-heading">{t('Browse by topic','주제별 공략')}</h2><p>{t('Class references, equipment, maps and combat.','직업·장비·지도·전투 자료를 바로 찾아볼 수 있습니다.')}</p></div></div><div class="topic-grid">{cards}</div></section>
 <section class="home-classes" id="class-explorer" aria-labelledby="home-classes-heading"><div class="section-heading"><h2 id="home-classes-heading">{t('Go straight to my class','내 직업 바로 보기')}</h2><a class="text-link" href="{r}tools/compare/">{t('Compare two classes','두 직업 비교하기')} →</a></div><div class="home-class-list">{classlinks}</div></section>
 <nav class="home-utility" aria-label="{t('More resources','더 찾아보기')}"><a href="{r}insights/"><strong>{t('Player tips','유저 팁')}</strong><span>{t('Practical community notes','한국 커뮤니티의 실전 노하우')} →</span></a><a href="{r}glossary/"><strong>{t('KR ↔ EN glossary','한영 용어집')}</strong><span>{t('Look up an unfamiliar word','낯선 게임 용어 찾아보기')} →</span></a><a href="{r}tools/planner/"><strong>{t('My checklist','나의 체크리스트')}</strong><span>{t('Keep track of today’s goals','오늘 할 일 간단히 정리하기')} →</span></a></nav></div>'''
