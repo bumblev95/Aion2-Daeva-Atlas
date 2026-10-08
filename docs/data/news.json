@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-08T08:36:09Z",
+  "checkedAt": "2026-10-08T09:48:02Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:36:09Z",
-      "lastSuccessAt": "2026-10-08T08:36:09Z",
+      "checkedAt": "2026-10-08T09:48:02Z",
+      "lastSuccessAt": "2026-10-08T09:48:02Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -196,8 +196,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:36:09Z",
-      "lastSuccessAt": "2026-10-08T08:36:09Z",
+      "checkedAt": "2026-10-08T09:48:02Z",
+      "lastSuccessAt": "2026-10-08T09:48:02Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -310,8 +310,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:36:09Z",
-      "lastSuccessAt": "2026-10-08T08:36:09Z",
+      "checkedAt": "2026-10-08T09:48:02Z",
+      "lastSuccessAt": "2026-10-08T09:48:02Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -398,11 +398,28 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-08T08:36:09Z",
-      "lastSuccessAt": "2026-10-08T08:36:09Z",
+      "checkedAt": "2026-10-08T09:48:02Z",
+      "lastSuccessAt": "2026-10-08T09:48:02Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ac7475738eb0528f90021b1",
+          "title": "[Notice] Temporary Maintenance | October 8 ",
+          "region": "NA",
+          "kind": "news",
+          "source": "na-notice",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ac7475738eb0528f90021b1",
+          "publishedAt": "2026-10-08T09:35:00.001Z",
+          "sourceUpdatedAt": "2026-10-08T09:40:12.213Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "pending",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null
+        },
         {
           "id": "6ac6a4c0fa34c1011d627a96",
           "title": "[Notice] Maintenance | Oct. 6 (PDT) / Oct. 7 (CEST) (Completed)",
