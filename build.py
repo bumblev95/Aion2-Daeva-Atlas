@@ -9,6 +9,7 @@ from encounters import boss_lab, insights, source_registry
 from fieldnotes import BOSSES, NOTES, KR_SOURCES
 import onboarding
 import skillbook
+import fieldtips
 
 ROOT=Path(__file__).parent
 CONFIG=json.loads((ROOT/'site.json').read_text())
@@ -59,6 +60,7 @@ def write(sub,title,description,content,active='',article=False,index=True):
     if article:meta.update({'author':{'@type':'Organization','name':'PLAYER’S CODEX editorial','url':SITE+'/about/'},'publisher':{'@type':'Organization','name':'PLAYER’S CODEX'},'datePublished':REVIEWED,'dateModified':REVIEWED})
     adhead=f'<meta name="google-adsense-account" content="{E(ads["publisher_id"])}">' if valid_pub else ''
     if ads['enabled']:adhead+=f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={E(ads["publisher_id"])}" crossorigin="anonymous"></script>'
+    if 'data-field-tips' in content:adhead+=f'<link rel="stylesheet" href="{BASE}assets/field-tips.css?v=1"><script defer src="{BASE}assets/field-tips.js?v=1"></script>'
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-6"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-6"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-6"></script><script defer src="{BASE}assets/battle.js?v=codex-6"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
     if index:pages.append(canonical)
@@ -85,6 +87,8 @@ def learning():
         heading=pagehead(title,desc) if sub!='start/' else ''
         write(sub,title,desc,f'<div class="wrap">{heading}{body}</div>',sub.rstrip('/'))
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Beginner tools','초보 도구'),'keywords':title+' '+desc})
+    for tip in fieldtips.TIPS:
+        search_index.append({'lang':LANG,'path':path('start/'),'anchor':'tip-'+tip['id'],'title':pair(tip['title']),'description':pair(tip['copy']),'category':t('Practical beginner tips','초보 실전 팁'),'keywords':pair(tip['path'])})
     for sk in skillbook.SKILLS:
         sub='skills/'+sk['id']+'/'
         title=sk['ko' if L else 'en']
@@ -161,6 +165,7 @@ def info():
     sourcebody=f'''<p>{t('This is a curated source register, not a live news feed. The current guide collection was reviewed on October 7, 2026. We do not publish a new “updated” date simply because the website was rebuilt.','실시간 뉴스 피드가 아닌 출처 목록입니다. 현재 가이드의 검토일은 2026년 10월 7일입니다. 사이트를 다시 빌드했다는 이유만으로 검토 날짜를 바꾸지 않습니다.')}</p><h2>{t('The source register','출처 목록')}</h2>{sourcelist(list(SOURCES))}<h2>{t('Publication log','발행 기록')}</h2><p><strong>2026-10-07 · {t('First edition','첫 번째 버전')}</strong><br>{t('Published six editorial guides, eight class profiles, a class comparison tool, a bilingual glossary and a browser-local planner. Ads and analytics remain disabled. No live combat benchmarks have been published.','편집 가이드 6개, 직업 프로필 8개, 직업 비교, 한영 용어집, 브라우저 플래너를 공개했습니다. 광고·분석 스크립트는 꺼져 있으며 실제 전투 벤치마크는 공개하지 않았습니다.')}</p>'''
     sourcebody += f'<h2>{t("Visual field-guide update","시각 공략 업데이트")}</h2><p>{t("16 boss mechanics, 21 short community notes and 15 attributed sources. KR source dates are retained; Global mechanics have not been independently checked.","보스 기믹 16개, 커뮤니티 팁 21개, 출처 15개를 추가했습니다. 한국 원문의 작성일을 유지하며 글로벌 기믹은 별도로 검증하지 않았습니다.")}</p>' + source_registry(LANG)
     sourcebody += '<h2>'+t('Global beginner edition','글로벌 초보 가이드 업데이트')+'</h2><p>'+t('Four progression stages, four live maps, item anatomy, six base stats, 280 skill documents, 16 animated boss lessons, 384 clickable map locations and 8 first-session lessons.','성장 단계 4개, 실제 지도 4개, 장비 툴팁, 기본 스탯 6개, 스킬 문서 280개, 보스 자동 애니메이션 16개, 지도 위치 384곳, 첫 플레이 연습 8단계를 제공합니다.')+'</p>'+onboarding.evidence(LANG,*onboarding.SOURCES.keys())+'<p><a href="https://metabot.gg/en/aion-2/skills">MetaBot skill reference ↗</a></p><p><a href="https://www.youtube.com/watch?v=3OXxi7f1coQ">김호러 Horror · Korean dungeon footage ↗</a> · <a href="https://www.youtube.com/watch?v=Hl0Ky59z8jg">만두집아들 · Nuakum guide ↗</a></p>'
+    sourcebody += '<h2>'+t('Reader-submitted practical tips','독자가 보내준 실전 팁')+'</h2>'+fieldtips.source_note(LANG)
     for sub,title,desc,body in [
         ('about/',t('About PLAYER’S CODEX','PLAYER’S CODEX 소개'),t('An independent guide with visible sources and clear editorial boundaries.','출처와 편집 범위를 명확하게 설명하는 독립 가이드.'),about),
         ('privacy/',t('Privacy & local data','개인정보와 기기 저장'),t('What this release stores and how to delete your saved planner.','현재 버전이 저장하는 정보와 플래너 삭제 방법.'),privacy),
