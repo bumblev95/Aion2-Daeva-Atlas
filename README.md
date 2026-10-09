@@ -30,6 +30,7 @@ node --check assets/dps.js
 node --check assets/news.js
 node tests/analytics.test.js
 node tests/dps.test.js
+node tests/dps-math.test.js
 node tests/rotation-learning.test.js
 node research/rotation-learning/train.js --verify
 node tests/battle.test.js
@@ -93,15 +94,18 @@ Map projection follows the provider’s transform: coordinates are `[vertical, h
 
 ## Conditional damage model
 
-The eDPS calculator checks reviewed prerequisite states, chain windows and four-element costs separately from expected damage. Its 96-active-skill audit and 43 numeric base-1 MP costs are source references, not a verified final build. Unknown trigger windows/costs remain explicit inputs; an optional MP budget rejects unknown costs. The existing 26 seeded direct-damage inputs are unchanged, and three setup-only actions start at zero damage. See [the condition audit](research/dps-condition-audit.md).
+The eDPS calculator checks reviewed prerequisite states, chain windows and four-element costs separately from expected damage. Its 96-active-skill audit and 43 numeric base-1 MP costs are source references, not a verified final build. Unknown trigger windows/costs remain explicit inputs; an optional MP budget rejects unknown costs. Audited base-1 direct-damage inputs increased from 26 to 72 of 96 actives, including the direct damage of setup providers. The remaining audit rows are 13 non-attacks, four charges and seven unresolved summon/ground/trap timing models. Four DoT formulas use a separate tick timeline with fight-end truncation and invulnerability suppression; first-tick, critical and refresh rules remain explicit assumptions. The six-row Insignia damage table is editable and saved, while its consumption rule remains an assumption. Charges and unresolved timing models require confirmed user inputs before they can contribute damage. Global periodic and Insignia defaults do not silently populate KR inputs. See [the condition audit](research/dps-condition-audit.md), [damage formulas](dpsmath.py) and [controlled-profile research report](research/rotation-learning/REPORT.md).
 
 ```sh
 node tests/dps.test.js
+node tests/dps-math.test.js
+node tests/rotation-learning.test.js
+node research/rotation-learning/train.js --verify
 python -m unittest discover -s tests -p 'test_*.py'
 ```
 
-After editing `dpsrules.py`, `liveops.py`, `data/dps-resources.json` or the DPS assets, regenerate `docs/`. Recheck MP references when `data/skills.json` changes; stale resource hashes make costs unknown, and a changed skill snapshot blocks calculations until the condition audit is renewed. Old saved model versions need review before participating in current same-condition rankings.
+After editing `dpsrules.py`, `dpsmath.py`, `liveops.py`, `data/dps-resources.json` or the DPS assets, regenerate `docs/`. Recheck MP references when `data/skills.json` changes; stale resource hashes make costs unknown, and a changed skill snapshot blocks calculations until the condition audit is renewed. Old saved model versions need review before participating in current same-condition rankings.
 
 `tests/dps-ui.test.js` runs the generated English/Korean calculator in Chromium, checks actual CSV downloads and saved builds, and asserts containment at 320px and 390px. The targeted `dps-browser.yml` workflow installs its pinned Playwright runtime in a temporary directory; it adds no production dependency. Its screenshots and CSV are retained as CI evidence.
 
-[Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) never supplies damage, timing or proc defaults to `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations. [Guide-informed policy learning](research/rotation-learning/README.md) annotates text patterns, fits priority/hold proposal distributions through the existing constrained simulator and preserves a hashed model plus held-out results. Its optional KR guide priors are hypotheses, and incomplete damage/build coverage keeps all class tiers blocked.
+[Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) never supplies damage, timing or proc defaults to `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations. [Guide-informed policy learning](research/rotation-learning/README.md) annotates text patterns, fits priority/hold proposal distributions through the existing constrained simulator and preserves a hashed model plus held-out results. Its optional KR guide priors are hypotheses. All eight classes are retrained under the same declared synthetic stat and base-1 skill profile; this is not measured identical gear. Actual animation/cancel times, complete damage/build coverage and independent combat targets remain incomplete, so learned policies stay offline and all class tiers remain blocked.
