@@ -95,8 +95,10 @@
 
 ## Layout update · 2026-10-08
 
-The home page is now a task directory, with six guide destinations and compact
-class links. Detailed class exploration, progression checklists and boss lessons
+The home page leads with three player goals: growth, boss fights and equipment
+enhancement. Early-game and full endgame links remain below those entries;
+skill/location references and compact class links support the main guides.
+Detailed class exploration, progression checklists and boss lessons
 remain on their dedicated pages. Shared navigation groups beginner, character,
 adventure and reference links; the mobile drawer closes with Escape or its
 backdrop and keeps keyboard focus inside while open.
@@ -107,7 +109,10 @@ The beginner page progressively enhances three readable sections into tabs:
 containing panel and tip disclosure. Browser Back/Forward restores the selected
 section, and language links retain the current view. All three sections remain
 in the HTML without JavaScript. Mobile lessons use a labeled native selector.
-The screenshot links and all source/region caveats are retained.
+The screenshot links and all source/region caveats are retained. `gearsteps.py`
+adds a static enhancement procedure and material/source table at `/gear/#upgrade`.
+`tests/post-story-ui.test.js` follows all three home routes in English/Korean and
+checks phone containment, material links and legacy completion storage.
 
 Visual rules for this hierarchy live in `assets/layout.css`, loaded after the
 existing component styles. Update its cache version when changing those rules.

@@ -45,6 +45,38 @@ async function contained(page, label) {
       const page = await context.newPage(), errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(local);
+      assert.equal(await page.locator('[data-rpg-goal]').count(), 3);
+      for (const width of [320, 390, 768, 1440]) {
+        await page.setViewportSize({width, height: 844});
+        await contained(page, lang + ' RPG home');
+      }
+      await page.setViewportSize({width: 390, height: 844});
+      await page.locator('.rpg-home-goals').scrollIntoViewIfNeeded();
+      await page.screenshot({path: path.join(artifacts, 'rpg-goals-home-' + lang + '.png')});
+      await page.locator('[data-rpg-goal="boss"]').click();
+      await page.waitForURL('**/endgame/#boss-guides');
+      assert.equal(await page.locator('#boss-guides').isVisible(), true);
+      const bossLink = page.locator('.endgame-boss').first();
+      const bossUrl = new URL(await bossLink.getAttribute('href'), local).href;
+      await bossLink.click();
+      await page.waitForURL(bossUrl);
+      await page.goto(local);
+      await page.locator('[data-rpg-goal="enhancement"]').click();
+      await page.waitForURL('**/gear/#upgrade');
+      assert.equal(await page.locator('#enhancement-heading').isVisible(), true);
+      assert.equal(await page.locator('#enhancement-process > li').count(), 4);
+      assert.equal(await page.locator('#enhancement-materials tbody tr').count(), 3);
+      for (const width of [320, 390, 768, 1440]) {
+        await page.setViewportSize({width, height: 844});
+        await contained(page, lang + ' enhancement');
+      }
+      await page.setViewportSize({width: 390, height: 844});
+      await page.locator('#enhancement-materials').scrollIntoViewIfNeeded();
+      await page.screenshot({path: path.join(artifacts, 'enhancement-materials-' + lang + '.png')});
+      await page.locator('.rpg-guide-nav a[href="#upgrade-decisions"]').click();
+      await page.waitForURL('**/gear/#upgrade-decisions');
+      assert.equal(await page.locator('#upgrade-decisions').isVisible(), true);
+      await page.goto(local);
       await page.locator('.home-stage.endgame').click();
       await page.waitForURL('**/endgame/#after-story');
       assert.equal(await page.locator('#after-story-heading').isVisible(), true);
@@ -110,9 +142,13 @@ async function contained(page, label) {
       assert.equal(await staticPage.locator('#after-story-heading').isVisible(), true);
       assert.equal(await staticPage.locator('#use-rewards tbody tr').count(), 5);
       await contained(staticPage, lang + ' no-script');
+      await staticPage.goto(local + 'gear/#upgrade');
+      assert.equal(await staticPage.locator('#enhancement-heading').isVisible(), true);
+      assert.equal(await staticPage.locator('#enhancement-process > li').count(), 4);
+      await contained(staticPage, lang + ' enhancement no-script');
       await noScript.close();
     }
-    console.log('PASS: EN/KR home and beginner → post-story guide, both faction map filters, reward use, saved legacy checks, language deep links, no-script guide and 320/390/768/1440px layout.');
+    console.log('PASS: EN/KR three-goal home → growth / boss / enhancement, material routes, both faction map filters, reward use, saved legacy checks, language deep links, no-script guides and 320/390/768/1440px layout.');
   } finally {
     if (browser) await browser.close();
     await new Promise(resolve => server.close(resolve));
