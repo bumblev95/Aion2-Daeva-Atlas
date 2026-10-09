@@ -1,0 +1,57 @@
+/* Daily/weekly reward routes; native navigation and details work without JS. */
+.routine-guide{padding-bottom:42px}
+.routine-intro{padding:22px 25px;margin-bottom:20px;border:1px solid #4c636d;border-radius:12px;background:linear-gradient(130deg,#233643,#1b2635)}
+.routine-intro>p{font-size:16px;line-height:1.85;color:#dce8ee;margin:0 0 15px}
+.routine-intro .routine-reviewed{font:11px ui-monospace,monospace;color:#aac7cc}
+.routine-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.routine-summary>a{display:block;min-width:0;padding:16px;border:1px solid #49606c;border-radius:8px;background:#182632}
+.routine-summary strong{display:block;margin-bottom:8px;font-size:16px;color:#deeceb}
+.routine-summary span{display:block;font-size:12px;line-height:1.8;color:#b8ced7}
+.routine-summary>a:hover{border-color:#9ccacd;background:#243744}
+.routine-guide a:focus-visible,.routine-guide summary:focus-visible{outline:3px solid #c9aff0;outline-offset:4px}
+.routine-scope{margin-bottom:30px;padding:15px 19px;border:1px solid #445469;border-radius:8px;background:#1b2432}
+.routine-scope summary,.routine-detail summary,.routine-source-list summary{cursor:pointer;min-height:32px;line-height:1.7;color:#c6d9e4;font-size:13px}
+.routine-scope p,.routine-source-list>p{font-size:13px;line-height:1.9;color:#adbfd1;max-width:100ch}
+.routine-section{margin:34px 0;scroll-margin-top:105px}
+.routine-section>header{margin:0 0 17px}
+.routine-section h2{font-size:24px;line-height:1.6;margin:6px 0;word-break:keep-all}
+.routine-section>header>p{font-size:14px;line-height:1.85;color:#adbed3;margin:0;max-width:95ch}
+.routine-table{border:1px solid #394b60;border-radius:10px;overflow:hidden}
+.routine-table table{border-collapse:collapse;width:100%;table-layout:fixed;text-align:left}
+.routine-table th,.routine-table td{padding:20px 18px;vertical-align:top;border-bottom:1px solid #354457;line-height:1.85;font-size:14px;overflow-wrap:anywhere;font-weight:400}
+.routine-table thead th{padding:11px 18px;background:#283445;color:#d7e3ed;font-size:12px;font-weight:600}
+.routine-table thead th:first-child{width:29%}
+.routine-table thead th:nth-child(2){width:28%}
+.routine-table tbody th{background:#1c2938}
+.routine-table tbody td{background:#192331}
+.routine-table tr:last-child th,.routine-table tr:last-child td{border-bottom:0}
+.routine-table h3{font-size:16px;line-height:1.65;color:#e2edf3;margin:0 0 9px;word-break:keep-all}
+.routine-table p{margin:0;color:#b7c8dc;font-size:14px;line-height:1.85}
+.routine-table .routine-cadence{font-size:12px;color:#9abccc;line-height:1.8}
+.routine-related{display:inline-flex;align-items:center;min-height:34px;margin:8px 0 4px;font-size:12px;color:#a6d5d3}
+.routine-detail{margin-top:10px;border-top:1px solid #344657;padding-top:9px}
+.routine-detail p{font-size:12px;margin:7px 0 10px}
+.routine-citations{font-size:11px;line-height:1.9;color:#9eb4c8;display:block;overflow-wrap:anywhere}
+.routine-citations a{color:#aabedb;text-decoration:underline;text-underline-offset:3px}
+.routine-mobile-label{display:none}
+.routine-table tr[id],.routine-source-list li[id]{scroll-margin-top:105px}
+.routine-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.routine-choice{padding:22px 20px;border:1px solid #496073;border-radius:10px;background:#202e3d;min-width:0}
+.routine-choice h3{font-size:19px;line-height:1.6;word-break:keep-all;margin:8px 0 14px}
+.routine-choice p{font-size:13px;line-height:1.9;color:#b9c9dc;overflow-wrap:anywhere}
+.routine-choice .routine-reward{padding:12px 0;color:#c5e4d8;border-top:1px solid #485d6b;border-bottom:1px solid #485d6b;font-size:14px}
+.routine-choice .reference-links{margin-top:15px;flex-direction:column;align-items:start}
+.routine-choice .reference-links a{font-size:12px;min-height:34px}
+.routine-use-table thead th:first-child{width:31%}
+.routine-use-table thead th:nth-child(2){width:69%}
+.routine-use-table tbody th{font-weight:600;font-size:14px}
+.routine-use-table td>a{display:inline-flex;align-items:center;min-height:34px;margin-left:6px;font-size:12px;color:#a9d4cf}
+.routine-use-table small{margin-top:9px}
+.routine-source-list{padding:18px 22px;border:1px solid #3a4d63;background:#1a2432;border-radius:10px;scroll-margin-top:105px}
+.routine-source-list ul{padding-left:18px}
+.routine-source-list li{padding:9px 0;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.routine-source-list li p{font-size:12px;margin:2px 0 0;color:#94a9bf}
+.routine-gateway{margin:22px 0;flex-wrap:wrap}
+@media(max-width:950px){.routine-choices{grid-template-columns:1fr}.routine-choice .reference-links{flex-direction:row}.routine-summary{grid-template-columns:1fr}.routine-summary>a{padding:13px 16px}.routine-summary strong{margin-bottom:4px}.routine-table th,.routine-table td{padding:17px 13px;font-size:13px}.routine-table h3{font-size:15px}}
+@media(max-width:700px){.routine-table table,.routine-table tbody,.routine-table tr,.routine-table tbody th,.routine-table td{display:block;width:auto}.routine-table thead{display:none}.routine-table tr{padding:18px;border-bottom:1px solid #3e5265;background:#1b2836}.routine-table tr:last-child{border:0}.routine-table tbody th,.routine-table td{padding:0;border:0;background:transparent}.routine-table td{margin-top:16px}.routine-table h3{font-size:17px;margin-bottom:5px}.routine-mobile-label{display:block;font-size:11px;color:#87b7c0;letter-spacing:.04em;margin-bottom:4px}.routine-table p{font-size:13px}.routine-section h2{font-size:21px}.routine-use-table td{margin-top:7px}.routine-use-table tbody th{color:#d6e9ec}.routine-scope{padding:14px}.routine-intro{padding:20px 17px}.routine-intro>p{font-size:14px}.routine-source-list{padding:17px}.routine-choice{padding:20px}.routine-gateway strong{font-size:15px}}
+@media print{.routine-section,.routine-choice{break-inside:avoid}.routine-table{overflow:visible}.routine-intro,.routine-table tbody th,.routine-table tbody td{background:transparent}.routine-detail,.routine-scope,.routine-source-list{display:none}.routine-summary{grid-template-columns:repeat(3,minmax(0,1fr))}}

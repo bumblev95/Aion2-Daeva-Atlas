@@ -2,6 +2,7 @@
 from html import escape as e
 from fieldnotes import BOSSES
 from poststory import guide as post_story
+from routines import gateway as routine_gateway
 
 
 def guide(lang,base):
@@ -14,7 +15,8 @@ def guide(lang,base):
     ]
     rows=''.join(f'<tr><th scope="row">{e(problem[k])}</th><td>{e(action[k])}</td><td><a href="{r}{url}">{e(label[k])} →</a></td></tr>' for problem,action,url,label in decisions)
     bosses=''.join(f'<a class="endgame-boss" href="{r}dungeons/{b["slug"]}/"><span>{e(b["dungeon"][k])}</span><h3>{e(b["name"][k])}</h3><p>{e(b["hook"][k])}</p><b>{t("Pattern guide", "패턴 공략")} →</b></a>' for b in BOSSES)
-    return f'''<div class="endgame-guide" data-practical-guide><nav class="stage-switch" aria-label="{t('Guide stage','공략 단계')}"><a href="{r}start/">{t('Early game','초반 공략')} →</a><span aria-current="page">{t('Endgame','엔드게임 공략')}</span></nav><nav class="rpg-guide-nav" aria-label="{t('Your next RPG goal','지금 필요한 공략')}"><a href="#after-story">{t('Growth priorities','내실·성장')}</a><a href="#boss-guides">{t('Boss guides','보스 공략')}</a><a href="{r}gear/#upgrade">{t('Enhance equipment','장비 강화')} →</a></nav>
+    return f'''<div class="endgame-guide" data-practical-guide><nav class="stage-switch" aria-label="{t('Guide stage','공략 단계')}"><a href="{r}start/">{t('Early game','초반 공략')} →</a><span aria-current="page">{t('Endgame','엔드게임 공략')}</span></nav><nav class="rpg-guide-nav" aria-label="{t('Your next RPG goal','지금 필요한 공략')}"><a href="#after-story">{t('Growth priorities','내실·성장')}</a><a href="#boss-guides">{t('Boss guides','보스 공략')}</a><a href="{r}routines/">{t('Daily & weekly','일일·주간 숙제')} →</a><a href="{r}gear/#upgrade">{t('Enhance equipment','장비 강화')} →</a></nav>
+{routine_gateway(lang,base)}
 {post_story(lang,base)}
 <section class="reference-section" id="priorities"><div class="start-reference-heading"><h2>{t('Choose the next upgrade by what is blocking you','막힌 지점에 따라 다음 목표 결정')}</h2><p>{t('After the initial progression, entry requirements, execution and equipment efficiency become separate decisions.','초반 육성을 마친 뒤에는 입장 조건, 전투 수행, 장비 효율을 나눠 봐야 합니다.')}</p></div><div class="reference-table"><table><thead><tr><th>{t('Current problem','현재 상황')}</th><th>{t('Priority','우선 판단할 것')}</th><th>{t('Related guide','관련 공략')}</th></tr></thead><tbody>{rows}</tbody></table></div></section>
 <section class="reference-section" id="boss-guides"><div class="start-reference-heading"><h2>{t('Dungeon and boss references','던전·보스별 공략')}</h2><p>{t('Choose the boss you will face. Each guide connects the cue, safe position and response to an animation and original KR footage.','잡으려는 보스를 고르세요. 전조·안전 위치·대응 방법을 패턴 애니메이션과 한국어 원본 장면으로 확인할 수 있습니다.')}</p></div><div class="endgame-boss-grid">{bosses}</div><p class="reference-scope">{t('Boss explanations follow the linked KR source guides. Check the difficulty and current regional mechanics before applying them.','보스 설명은 연결된 한국 서버 공략 기준입니다. 실제 참여할 난이도와 현재 서버의 기믹에 맞춰 적용합니다.')}</p></section>
