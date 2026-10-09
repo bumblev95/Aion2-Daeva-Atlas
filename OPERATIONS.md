@@ -63,7 +63,7 @@
 
 ## 2026-10-07 실제로 눌러 배우는 가이드
 
-- `/start/`: 초반 육성 핵심 요약·편의 설정·3구간 성장 우선순위. `/endgame/`: 육성 이후 목표 결정·던전/보스 공략·장비 투자·파티 준비. 가짜 게임 연습과 학습 완료 저장을 제거하고 실제 성장 체크리스트는 유지.
+- `/start/`: 초반 육성 핵심 요약·편의 설정·스토리 이후를 포함한 4구간 성장 우선순위. `/endgame/#after-story`: 보상 아이템 사용·미완료 봉인 던전·깃털 반납·장신구·반복 콘텐츠를 실제 투자로 연결하는 성장 순서. 글로벌 아이템 자료와 한국 필드 공략을 구분하고 깃털 위치는 원본 인벤 공략으로 연결한다. 기존 던전/보스 공략·장비 투자·파티 준비와 실제 성장 체크리스트 저장은 유지한다.
 - `/skills/`: 출시 8직업의 280개 기본 습득 스킬, 실제 아이콘, 한영 이름, 1레벨 효과, 모든 특화. 직업당 액티브 12·패시브 10·스티그마 13. 파생 연계는 부모 스킬 문서 안에 설명.
 - `growth.py`: 입문용 PvE 편집 제안. 기본 포인트 10과 장비 등을 더한 합계 목표를 구분. 특화 선택은 합계 레벨과 슬롯 수를 적용. 한국 원문을 글로벌 실측 최적 세팅으로 제시하지 않는다.
 - `/maps/`: TH.GL 공개 게임 타일·실제 좌표 기반 2D 지도. 4지역의 퀘스트·키벨리스크·봉인 던전 384곳. 검색·마커·확대·이동·근처 거점·완료 숨기기·위치 공유. WebGL 불필요. 직선거리 가까운 거점은 길찾기 경로가 아니다. 출처 표시는 유지.
@@ -95,8 +95,10 @@
 
 ## Layout update · 2026-10-08
 
-The home page is now a task directory, with six guide destinations and compact
-class links. Detailed class exploration, progression checklists and boss lessons
+The home page leads with three player goals: growth, boss fights and equipment
+enhancement. Early-game and full endgame links remain below those entries;
+skill/location references and compact class links support the main guides.
+Detailed class exploration, progression checklists and boss lessons
 remain on their dedicated pages. Shared navigation groups beginner, character,
 adventure and reference links; the mobile drawer closes with Escape or its
 backdrop and keeps keyboard focus inside while open.
@@ -107,7 +109,10 @@ The beginner page progressively enhances three readable sections into tabs:
 containing panel and tip disclosure. Browser Back/Forward restores the selected
 section, and language links retain the current view. All three sections remain
 in the HTML without JavaScript. Mobile lessons use a labeled native selector.
-The screenshot links and all source/region caveats are retained.
+The screenshot links and all source/region caveats are retained. `gearsteps.py`
+adds a static enhancement procedure and material/source table at `/gear/#upgrade`.
+`tests/post-story-ui.test.js` follows all three home routes in English/Korean and
+checks phone containment, material links and legacy completion storage.
 
 Visual rules for this hierarchy live in `assets/layout.css`, loaded after the
 existing component styles. Update its cache version when changing those rules.
