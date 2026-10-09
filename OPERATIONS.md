@@ -63,7 +63,7 @@
 
 ## 2026-10-07 실제로 눌러 배우는 가이드
 
-- `/start/`: 초반 육성 핵심 요약·편의 설정·3구간 성장 우선순위. `/endgame/`: 육성 이후 목표 결정·던전/보스 공략·장비 투자·파티 준비. 가짜 게임 연습과 학습 완료 저장을 제거하고 실제 성장 체크리스트는 유지.
+- `/start/`: 초반 육성 핵심 요약·편의 설정·스토리 이후를 포함한 4구간 성장 우선순위. `/endgame/#after-story`: 보상 아이템 사용·미완료 봉인 던전·깃털 반납·장신구·반복 콘텐츠를 실제 투자로 연결하는 성장 순서. 글로벌 아이템 자료와 한국 필드 공략을 구분하고 깃털 위치는 원본 인벤 공략으로 연결한다. 기존 던전/보스 공략·장비 투자·파티 준비와 실제 성장 체크리스트 저장은 유지한다.
 - `/skills/`: 출시 8직업의 280개 기본 습득 스킬, 실제 아이콘, 한영 이름, 1레벨 효과, 모든 특화. 직업당 액티브 12·패시브 10·스티그마 13. 파생 연계는 부모 스킬 문서 안에 설명.
 - `growth.py`: 입문용 PvE 편집 제안. 기본 포인트 10과 장비 등을 더한 합계 목표를 구분. 특화 선택은 합계 레벨과 슬롯 수를 적용. 한국 원문을 글로벌 실측 최적 세팅으로 제시하지 않는다.
 - `/maps/`: TH.GL 공개 게임 타일·실제 좌표 기반 2D 지도. 4지역의 퀘스트·키벨리스크·봉인 던전 384곳. 검색·마커·확대·이동·근처 거점·완료 숨기기·위치 공유. WebGL 불필요. 직선거리 가까운 거점은 길찾기 경로가 아니다. 출처 표시는 유지.
@@ -95,8 +95,10 @@
 
 ## Layout update · 2026-10-08
 
-The home page is now a task directory, with six guide destinations and compact
-class links. Detailed class exploration, progression checklists and boss lessons
+The home page leads with three player goals: growth, boss fights and equipment
+enhancement. Early-game and full endgame links remain below those entries;
+skill/location references and compact class links support the main guides.
+Detailed class exploration, progression checklists and boss lessons
 remain on their dedicated pages. Shared navigation groups beginner, character,
 adventure and reference links; the mobile drawer closes with Escape or its
 backdrop and keeps keyboard focus inside while open.
@@ -107,7 +109,10 @@ The beginner page progressively enhances three readable sections into tabs:
 containing panel and tip disclosure. Browser Back/Forward restores the selected
 section, and language links retain the current view. All three sections remain
 in the HTML without JavaScript. Mobile lessons use a labeled native selector.
-The screenshot links and all source/region caveats are retained.
+The screenshot links and all source/region caveats are retained. `gearsteps.py`
+adds a static enhancement procedure and material/source table at `/gear/#upgrade`.
+`tests/post-story-ui.test.js` follows all three home routes in English/Korean and
+checks phone containment, material links and legacy completion storage.
 
 Visual rules for this hierarchy live in `assets/layout.css`, loaded after the
 existing component styles. Update its cache version when changing those rules.
@@ -117,8 +122,10 @@ existing component styles. Update its cache version when changing those rules.
 
 - `/updates/`와 `/ko/updates/`: 한국·북미 공식 공지 4채널을 분리 수집하고 변경 유형(버프·너프·조정·오류 수정·시스템)을 표시한다. 미국·캐나다는 북미 피드를 함께 사용한다. 공지 수집은 내용 검토와 다르다. 요약은 직접 작성하고 전체 원문은 복제하지 않는다. `data/patch-reviews.json`은 원문 내용 해시에 묶여 있으며 원문 수정 시 이전 요약을 표시하지 않는다.
 - `scripts/collect_updates.py`: 인증 없는 공개 NC 게시판 API를 사용한다. 원문 본문은 해시 계산에만 사용하고 저장·재게시하지 않는다. 실패·429 시 재시도나 우회 없이 마지막 성공 항목과 날짜를 유지하고 실패 상태를 게시한다. `.github/workflows/refresh-updates.yml`은 매시간 13분에 실행되며 실제 실행은 GitHub 스케줄 지연이 있을 수 있다. 검증 후 뉴스 데이터와 해당 페이지만 일반 push로 반영하고 기존 main/docs Pages 빌드를 명시적으로 요청한다. 원격 브랜치가 바뀌면 push가 실패하며 강제 덮어쓰기를 하지 않는다.
-- `/tools/dps/`: 전체 전투 시간을 분모로 한 eDPS, 공격 가능 구간 DPS, 스킬별 기여도, 누적 피해, 피해·쿨타임 변경 시나리오와 동일 조건 비교. 입력 우선순위와 하나의 동작 시간축을 사용하며 공격 불가 구간에 걸친 동작을 생략한다. 쿨타임은 동작 시작부터 계산한다. 초기값은 기본 1레벨의 선택된 직접 피해 툴팁이며 동작 1초는 가정이다. 한국 선택 시 글로벌 초기 피해·쿨타임을 비운다. 높은 스킬 레벨·특화·스티그마·펫·자원·방어 공식 등을 추정하지 않는다.
-- 계산 결과는 입력 모델 순위다. 같은 패치의 최종빌드와 반복 실측이 부족해 전체 직업의 확정 티어로 표시하지 않는다. 데이터 갱신 시 기본 입력은 다시 계산하고, 직접 수정한 빌드는 기존 버전을 유지하면서 재검토를 안내한다. 최신 패치에 해당 직업·공통 변경 또는 미검토 항목이 있으면 확인 표시를 붙인다. 비교 데이터는 `players-codex-dps-v1`에 저장하며 개인정보 화면의 기기 삭제로 지운다. CSV 내보내기는 입력 조건·버전·계산 결과를 포함한다.
+- `/tools/dps/`와 `/ko/tools/dps/`: 방문자 입력 없는 서버 계산 순위. `data/dps-benchmark.json`의 공통 20레벨·공격력 1000·치명 25%·적중 100%·동작 1초 가정으로 8개 직업을 계산한다. 3개 학습 시드에서 학습 전투의 누적 피해/시간으로 사이클을 선택하고, 별도 180초·240초 보스 전투에서 평가한다. 종합 순위는 두 전투의 피해 합/전체 시간 합이며 개선율·반올림 값으로 정렬하지 않는다.
+- `data/dps-skill-levels.json`: 96개 액티브의 기본·20레벨 직접/지속 피해와 문양별 수치를 출처와 툴팁 해시에 묶는다. 선형 레벨 배율을 추정하지 않는다. 보스 면역·공격 불가·선행 조건·원소 중첩·문양 만료를 검사한다. 고통의 연쇄가 적중한 뒤 지속 피해 시간만 선행 상태를 제공하는 가정은 화면에 명시한다. 미확인 차징 시간·펫 주기·덫/바닥 발동을 임의로 보완하지 않는다.
+- 서버 계산: `node scripts/build_dps_rankings.js --train`으로 검토된 공식/프로필에서 학습 정책을 갱신한다. `python build.py`는 `--build`로 순위 JSON/CSV를 먼저 계산하고 HTML에 넣는다. 수식·데이터·정책 해시가 달라지면 학습 정책 검증에 실패하므로 재학습 없이 이전 결과를 새 기준으로 게시할 수 없다. `--verify`가 정책·수치·CSV의 재현성을 검증한다.
+- 실제 동일 장비·동작 실측·특화·스티그마·자원 지속 가능성·일부 확률 연계가 미완성이므로 공통 글로벌 모델 순위로 표시하며, 한국 패치나 현재 최종빌드 티어로 확정하지 않는다. 방문자 기기 상태와 URL 매개변수는 점수에 영향을 주지 않는다. 매시간 서버 빌드에서 결과를 재계산하고 더 새로운 북미 패치가 수집되면 재검토 안내를 렌더링한다. 수치 조정을 자동 추정하지 않는다.
 - `/screenshots/`: NC가 Steam에 공개한 실제 인게임 홍보 장면 3개를 공식 CDN에서 표시한다. 전투·대형 적·비행 이미지를 초반·엔드게임·지도 공략에 연결한다. HUD 없는 공식 이미지이며 빌드 실측이나 확인되지 않은 보스명의 증거로 쓰지 않는다. 커뮤니티 이미지의 재사용 상태는 기존 원본 링크 정책을 유지한다.
 - `data/coverage-audit.json`: 실제 검토한 공략 보강 항목과 출처. 최종빌드 입력, 지역별 패치 차이, 같은 조건의 실측 순위가 현재 보강 대상이다. 검토 완료일은 수집 시간과 별도로 관리한다.
 
@@ -148,6 +155,6 @@ class claims. When reviewing a new patch, update the full section list together
 with the summary and class rows before marking coverage complete.
 
 Hourly publication may change only news data, home strips, patch index/detail
-pages and their sitemap/search registrations. Its whitelist checks tracked and
+pages, DPS patch-review notices and their sitemap/search registrations. The scheduled whitelist cannot modify ranking source data or trained policies. Its whitelist checks tracked and
 untracked files; new detail routes are staged for the existing Pages build.
 Portrait attribution is in `assets/classes/credits.json` and on detail pages.

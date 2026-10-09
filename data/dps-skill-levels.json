@@ -1,0 +1,4067 @@
+{
+  "schema": 1,
+  "region": "Global",
+  "reviewedAt": "2026-10-09",
+  "levels": [
+    1,
+    20
+  ],
+  "skillSourceHash": "8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e",
+  "provenance": "Public Global client per-level tooltips, via MetaBot. No combat timing or legal equipment loadout is inferred.",
+  "skills": {
+    "keen-strike": {
+      "source": "https://metabot.gg/en/aion-2/skills/keen-strike",
+      "models": {
+        "1": {
+          "flat": 51.0,
+          "coefficient": 43.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/keen-strike"
+        },
+        "20": {
+          "flat": 602.0,
+          "coefficient": 43.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/keen-strike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "953eb72371e10f749d77aa77a7e05fa06d82b069c3a790f2e0fd48d46ec127b7",
+        "20": "29c835f8d689a9bf1171ad2b2328719898432809ffa4382b3623320b9926d6ff"
+      }
+    },
+    "rending-blow": {
+      "source": "https://metabot.gg/en/aion-2/skills/rending-blow",
+      "models": {
+        "1": {
+          "flat": 70.0,
+          "coefficient": 74.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/rending-blow"
+        },
+        "20": {
+          "flat": 1022.0,
+          "coefficient": 74.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/rending-blow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "cb9b9f8f87ab5f08c63ef07ad9d0a83a14ee2f521b7eac7bb23ba85901a60ffe",
+        "20": "5a41bec9fa8477c265406881b59fe22322e6c2b4117d66320b79766e6f281eee"
+      }
+    },
+    "leaping-slam": {
+      "source": "https://metabot.gg/en/aion-2/skills/leaping-slam",
+      "models": {
+        "1": {
+          "flat": 70.0,
+          "coefficient": 115.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/leaping-slam"
+        },
+        "20": {
+          "flat": 1545.0,
+          "coefficient": 115.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/leaping-slam"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "2b867644d4435a84b79b878391b2f7ad499297add427df3360b98492d645b6ce",
+        "20": "a001d8318bca9bd6f017c41404c2d6b255ab217f22288f2a613c5be8399eef15"
+      }
+    },
+    "mocking-blade": {
+      "source": "https://metabot.gg/en/aion-2/skills/mocking-blade",
+      "models": {
+        "1": {
+          "flat": 207.0,
+          "coefficient": 194.4,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/mocking-blade"
+        },
+        "20": {
+          "flat": 2700.0,
+          "coefficient": 194.4,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/mocking-blade"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "53b1010cef7646cab0784fbb653615bed49ea839dca28e24dc517552fbc20395",
+        "20": "8450d464244f066dcf86531833ae56abc493954671b829784a559569fb05fc9b"
+      }
+    },
+    "overhead-slam": {
+      "source": "https://metabot.gg/en/aion-2/skills/overhead-slam",
+      "models": {
+        "1": {
+          "flat": 174.0,
+          "coefficient": 163.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/overhead-slam"
+        },
+        "20": {
+          "flat": 2272.0,
+          "coefficient": 163.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/overhead-slam"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "4880bc4e03af31f880618a02a960540561084e70c93045af1a4a170821f6efc8",
+        "20": "1da16c98f67c99ea31e75fe8e6167a296875b5e44d0ba2fcdd443a72bc9e2417"
+      }
+    },
+    "sword-aura-rampage": {
+      "source": "https://metabot.gg/en/aion-2/skills/sword-aura-rampage",
+      "models": {
+        "1": {
+          "flat": 124.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/sword-aura-rampage"
+        },
+        "20": {
+          "flat": 1183.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/sword-aura-rampage"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "d79789d308d0d183ed6da333eba26aab8a6f2842220814fcf25a8d9dfe96b904",
+        "20": "de3bae069773095c3f347f725b9399ea7832ba02c1a6946746b774253a6420f4"
+      }
+    },
+    "ankle-slice": {
+      "source": "https://metabot.gg/en/aion-2/skills/ankle-slice",
+      "models": {
+        "1": {
+          "flat": 294.0,
+          "coefficient": 150.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/ankle-slice"
+        },
+        "20": {
+          "flat": 2218.0,
+          "coefficient": 150.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/ankle-slice"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "2406fcfe0e56cd348dc3673cf86a630cb3f0c3b96c9ab381fe6bdc47555ba7db",
+        "20": "0abd738acaa06a479dcebd55ff6271bf4f27facd4eb556d149be1330e3c5470a"
+      }
+    },
+    "crushing-wave": {
+      "source": "https://metabot.gg/en/aion-2/skills/crushing-wave",
+      "models": {
+        "1": {
+          "flat": 206.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/crushing-wave"
+        },
+        "20": {
+          "flat": 1552.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/crushing-wave"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 250.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 250.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "8eb0032e8e7fd10785cc0bdbafd773149c93bc6459d89931f9d1e0784b0a81f2",
+        "20": "2f90a82aa5eafbc89f1cbfeae0d73e115b5ff5e02eb9aa026fdc6606a92227aa"
+      }
+    },
+    "rush-strike": {
+      "source": "https://metabot.gg/en/aion-2/skills/rush-strike",
+      "models": {
+        "1": {
+          "flat": 330.0,
+          "coefficient": 125.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/rush-strike"
+        },
+        "20": {
+          "flat": 1905.0,
+          "coefficient": 125.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/rush-strike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "f9cdbb19bd34744e9ffa78f5942e698921f8cd3af97c06c7604bf88f27d6a871",
+        "20": "9041b4368a75c52234c6dec553505dc968855ba06143377c75484b69d5b8d822"
+      }
+    },
+    "aerial-snare": {
+      "source": "https://metabot.gg/en/aion-2/skills/aerial-snare",
+      "models": {
+        "1": {
+          "flat": 479.0,
+          "coefficient": 181.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/aerial-snare"
+        },
+        "20": {
+          "flat": 2766.0,
+          "coefficient": 181.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/aerial-snare"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "ee71fe9f16de1a93d49d47456f406b79b98f9cef2a7cd94cc7cd3d2658e5a74d",
+        "20": "7c87cd664906f551720c86cb1c9390721ff4f6df05d47c9862bfd5a8430f501f"
+      }
+    },
+    "ruinous-blow": {
+      "source": "https://metabot.gg/en/aion-2/skills/ruinous-blow",
+      "models": {
+        "1": {
+          "flat": 2387.0,
+          "coefficient": 689.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/ruinous-blow"
+        },
+        "20": {
+          "flat": 10810.0,
+          "coefficient": 689.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/ruinous-blow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 250.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 250.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "24bb46f2dfd95e1ec982d6042c2e54f746157090600572b0fa09f97535553f97",
+        "20": "7f7fafc4cd0301864b094b3986963ec6bf7e72237bd6ea5757cef7a9e3024039"
+      }
+    },
+    "defiance": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "vicious-strike": {
+      "source": "https://metabot.gg/en/aion-2/skills/vicious-strike",
+      "models": {
+        "1": {
+          "flat": 79.0,
+          "coefficient": 94.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/vicious-strike"
+        },
+        "20": {
+          "flat": 1228.0,
+          "coefficient": 94.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/vicious-strike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "108ae8899c20cbf7496e84f622158c5ad13a762de6c629b0f3752ab16dca099a",
+        "20": "70047b61dac5f86b2f3c8aa9333e853ae844be29197a578db6e34758c6f107e6"
+      }
+    },
+    "pummel": {
+      "source": "https://metabot.gg/en/aion-2/skills/pummel",
+      "models": {
+        "1": {
+          "flat": 93.0,
+          "coefficient": 119.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/pummel"
+        },
+        "20": {
+          "flat": 1541.0,
+          "coefficient": 119.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/pummel"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "54777f82a8e3f267aa613f0ea8878487c5fb8010679ba553c3bbf407fe537c20",
+        "20": "ecd94ac3c748432b2ba11d4c75dab6dc7021e4aa71efdfe12da422e8bb69f46b"
+      }
+    },
+    "poach": {
+      "source": "https://metabot.gg/en/aion-2/skills/poach",
+      "models": {
+        "1": {
+          "flat": 49.0,
+          "coefficient": 87.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/poach"
+        },
+        "20": {
+          "flat": 1110.0,
+          "coefficient": 87.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/poach"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "4cb046bf35cfdae995feb0eb4a772367c50a944292bd9803a208313c6eac8610",
+        "20": "f7b8ff70b04d41a80aa21c2a79fccddecc69b7de016d195e9fc34db42aa5273a"
+      }
+    },
+    "shield-smite": {
+      "source": "https://metabot.gg/en/aion-2/skills/shield-smite",
+      "models": {
+        "1": {
+          "flat": 173.0,
+          "coefficient": 175.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/shield-smite"
+        },
+        "20": {
+          "flat": 2304.0,
+          "coefficient": 175.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/shield-smite"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "418ef558ef62309f5b3c296b1b508ad831daa13740f98a666c87d8cc334439f8",
+        "20": "1e9c8decbfee987995bb85c76ae4fb4241caf227eab7b20b38b33c83ae713f7f"
+      }
+    },
+    "judgment": {
+      "source": "https://metabot.gg/en/aion-2/skills/judgment",
+      "models": {
+        "1": {
+          "flat": 227.0,
+          "coefficient": 229.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/judgment"
+        },
+        "20": {
+          "flat": 3008.0,
+          "coefficient": 229.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/judgment"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "edde484a05fdbff19860a9ae3da5fcd5f2ab67de4bb2ede786cf026a038a4f0e",
+        "20": "557874597561755dce4fab84ac0f6aed317a402600a484d4930943b73c14bd03"
+      }
+    },
+    "flash-rampage": {
+      "source": "https://metabot.gg/en/aion-2/skills/flash-rampage",
+      "models": {
+        "1": {
+          "flat": 152.0,
+          "coefficient": 108.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/flash-rampage"
+        },
+        "20": {
+          "flat": 1461.0,
+          "coefficient": 108.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/flash-rampage"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "efcd873d8a134364ba3728590e82a60f9c744c45ab4af5336464377f0b7bba3d",
+        "20": "bb8a75b3df6159911add4260a9216480e6339c056f1a4b793825cbde9b15ca05"
+      }
+    },
+    "debilitating-smash": {
+      "source": "https://metabot.gg/en/aion-2/skills/debilitating-smash",
+      "models": {
+        "1": {
+          "flat": 336.0,
+          "coefficient": 184.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/debilitating-smash"
+        },
+        "20": {
+          "flat": 2566.0,
+          "coefficient": 184.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/debilitating-smash"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "be4b2f3ccfb53a33426c6e5677e3e9ffe0d497ab481aebb3e8cb75fcde1c2230",
+        "20": "776e7424265204271fb4c6c87fe6141c4b75892ced971596d0f160ee3fff309d"
+      }
+    },
+    "warding-strike": {
+      "source": "https://metabot.gg/en/aion-2/skills/warding-strike",
+      "models": {
+        "1": {
+          "flat": 388.0,
+          "coefficient": 212.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/warding-strike"
+        },
+        "20": {
+          "flat": 2964.0,
+          "coefficient": 212.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/warding-strike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "024587fc4b2d0f3c1af288fbad9eaf6c0afa0c0f8c2112601bab8ae7b4e416ac",
+        "20": "e886c0fd875fbb9a4c43a43d6182dba2a57712657b2eedcf57f58eb912929af8"
+      }
+    },
+    "shield-rush": {
+      "source": "https://metabot.gg/en/aion-2/skills/shield-rush",
+      "models": {
+        "1": {
+          "flat": 258.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/shield-rush"
+        },
+        "20": {
+          "flat": 1508.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/shield-rush"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "355adcbf3d9c2b2eb2a600063d2c290e0805242b5bee158c794a5ed2ac8eb3d3",
+        "20": "d27b31ac4dc074496ca21ef03c6c9fba4b0a2b3944ae91e1c53a28d94df95142"
+      }
+    },
+    "annihilate": {
+      "source": "https://metabot.gg/en/aion-2/skills/annihilate",
+      "models": {
+        "1": {
+          "flat": 791.0,
+          "coefficient": 321.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/annihilate"
+        },
+        "20": {
+          "flat": 4623.0,
+          "coefficient": 321.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/annihilate"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "de788847136901c1310f5edfc515391becebb0c898c496c872a236333093a70d",
+        "20": "55841493690fecc35115bed855c9baf99ee5e2c0062d1c255ac64a479fa7f79e"
+      }
+    },
+    "punishment": {
+      "source": "https://metabot.gg/en/aion-2/skills/punishment",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/punishment",
+          "charge": {
+            "minimum": {
+              "flat": 1394.0,
+              "coefficient": 430.5
+            },
+            "maximum": {
+              "flat": 4184.0,
+              "coefficient": 1291.5
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/punishment",
+          "charge": {
+            "minimum": {
+              "flat": 6367.0,
+              "coefficient": 430.5
+            },
+            "maximum": {
+              "flat": 19101.0,
+              "coefficient": 1291.5
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "b8943eb85660b1a9b0db5df7579b3865b1bb9492759b7d530dc2d34d8df8e4fe",
+        "20": "003effa5d928c3bf33efe7ea06a5e53035b3071402fc73bdeac7a56f7c83109c"
+      }
+    },
+    "defiance-templar": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-templar",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-templar"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-templar"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "quick-slice": {
+      "source": "https://metabot.gg/en/aion-2/skills/quick-slice",
+      "models": {
+        "1": {
+          "flat": 61.0,
+          "coefficient": 70.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/quick-slice"
+        },
+        "20": {
+          "flat": 860.0,
+          "coefficient": 70.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/quick-slice"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "8e327eec76e3b391ac1ce95e1051db0873954a77a252e5140a34c226d21550fa",
+        "20": "354a7fcd371057c643db61a3fe668b916729c314c713287b35f4d88f29e78068"
+      }
+    },
+    "savage-roar": {
+      "source": "https://metabot.gg/en/aion-2/skills/savage-roar",
+      "models": {
+        "1": {
+          "flat": 68.0,
+          "coefficient": 83.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/savage-roar",
+          "insigniaGain": 1,
+          "insigniaDuration": 10
+        },
+        "20": {
+          "flat": 1021.0,
+          "coefficient": 83.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/savage-roar",
+          "insigniaGain": 1,
+          "insigniaDuration": 10
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "39a8840c06ed02d29b4ac055a418f06177d9a78eaea87384c94146da8dd9112d",
+        "20": "e78af62bb37344e5dab5414b54c1a1e4f3e6a92b7d682a688de1376f17f44300"
+      }
+    },
+    "shadowstrike": {
+      "source": "https://metabot.gg/en/aion-2/skills/shadowstrike",
+      "models": {
+        "1": {
+          "flat": 52.0,
+          "coefficient": 100.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/shadowstrike"
+        },
+        "20": {
+          "flat": 1194.0,
+          "coefficient": 100.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/shadowstrike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "9601d84e3d9084f77edf724215bb15173c18cf61484b206205d20e7551838559",
+        "20": "f1cf64315a3a435ec6ae2f320465ad2aef4e8904b1d88999ffe0a041e48f7529"
+      }
+    },
+    "ambush": {
+      "source": "https://metabot.gg/en/aion-2/skills/ambush",
+      "models": {
+        "1": {
+          "flat": 126.0,
+          "coefficient": 138.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/ambush"
+        },
+        "20": {
+          "flat": 1701.0,
+          "coefficient": 138.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/ambush"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "bc1d327ee8f970207ab45be54bf0b9463fb93682730253d678357fe5e293d47b",
+        "20": "61ff1b5b214267e1a640fb4f8e1117c4f44d1c99950a93c5df0ed3fa5228e517"
+      }
+    },
+    "heart-gore": {
+      "source": "https://metabot.gg/en/aion-2/skills/heart-gore",
+      "models": {
+        "1": {
+          "flat": 111.0,
+          "coefficient": 122.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/heart-gore"
+        },
+        "20": {
+          "flat": 1504.0,
+          "coefficient": 122.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/heart-gore"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "cbb1ebe8a63460a6723ec3213357983ff61d7377775c10bff3626ce21536e98c",
+        "20": "f688bdbdd66ccdba432c792dc5b3327cd52aea9cd22248ce55d9e65ebfd250ae"
+      }
+    },
+    "storm-rampage": {
+      "source": "https://metabot.gg/en/aion-2/skills/storm-rampage",
+      "models": {
+        "1": {
+          "flat": 107.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/storm-rampage"
+        },
+        "20": {
+          "flat": 1049.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/storm-rampage"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "12f159cd6b109098b5944956b4c8749fcfd3290e535b1325bd5b1821fed91d0b",
+        "20": "7c6fbb4695967d22c174699d84fe4409f5a81a0792b67aae71fd0819439725c2"
+      }
+    },
+    "whirlwind-slice": {
+      "source": "https://metabot.gg/en/aion-2/skills/whirlwind-slice",
+      "models": {
+        "1": {
+          "flat": 300.0,
+          "coefficient": 177.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/whirlwind-slice"
+        },
+        "20": {
+          "flat": 2320.0,
+          "coefficient": 177.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/whirlwind-slice"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "37a2cf5a8edba467f0ad24df050350c2ad7c9ef6f28f2d15c78fa91a36f5aee5",
+        "20": "60785ea9b3b77178285401eeba3348fa03c7e664b601b1f532dc29391423b845"
+      }
+    },
+    "flash-slice": {
+      "source": "https://metabot.gg/en/aion-2/skills/flash-slice",
+      "models": {
+        "1": {
+          "flat": 181.0,
+          "coefficient": 107.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/flash-slice"
+        },
+        "20": {
+          "flat": 1402.0,
+          "coefficient": 107.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/flash-slice"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 50.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 50.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "5771dd60d58cb73303e5d2a2829cde4c5122ad349de19c329d7badacc9e4f7a0",
+        "20": "5b13e96b3245d9b42075df552a8eafcb8b03bfbc0f1c1189c92cffc03ce4adb7"
+      }
+    },
+    "infiltrate": {
+      "source": "https://metabot.gg/en/aion-2/skills/infiltrate",
+      "models": {
+        "1": {
+          "flat": 239.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/infiltrate"
+        },
+        "20": {
+          "flat": 1417.0,
+          "coefficient": 105.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/infiltrate"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "9387b60591e21aacb4fcc543ae39ff26cffcc26da900fd7e6745311c42b57b0f",
+        "20": "a858d1dbc7aea4e6940883de47b6f82723ad7618cd75d86adf5473301b2cf3b2"
+      }
+    },
+    "shadow-fall": {
+      "source": "https://metabot.gg/en/aion-2/skills/shadow-fall",
+      "models": {
+        "1": {
+          "flat": 465.0,
+          "coefficient": 204.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/shadow-fall"
+        },
+        "20": {
+          "flat": 2754.0,
+          "coefficient": 204.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/shadow-fall"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "57b48db5511736c7633c154ffb05eb0c8bae81f16abaf5092f972ba690aa1bf2",
+        "20": "ca235cf930281ecbbcefa562c4c3588be9dd24456da0a7fb244d7d4eea3d8f6a"
+      }
+    },
+    "insignia-explosion": {
+      "source": "https://metabot.gg/en/aion-2/skills/insignia-explosion",
+      "models": {
+        "1": {
+          "flat": 663.0,
+          "coefficient": 220.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "insignia-consumption",
+            "stack-expiry-refresh"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/insignia-explosion",
+          "insigniaDamage": [
+            {
+              "stacks": 0,
+              "flat": 663.0,
+              "coefficient": 220.0
+            },
+            {
+              "stacks": 1,
+              "flat": 742.0,
+              "coefficient": 246.4
+            },
+            {
+              "stacks": 2,
+              "flat": 822.0,
+              "coefficient": 272.8
+            },
+            {
+              "stacks": 3,
+              "flat": 902.0,
+              "coefficient": 299.2
+            },
+            {
+              "stacks": 4,
+              "flat": 981.0,
+              "coefficient": 325.6
+            },
+            {
+              "stacks": 5,
+              "flat": 1061.0,
+              "coefficient": 352.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 3055.0,
+          "coefficient": 220.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "insignia-consumption",
+            "stack-expiry-refresh"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/insignia-explosion",
+          "insigniaDamage": [
+            {
+              "stacks": 0,
+              "flat": 3055.0,
+              "coefficient": 220.0
+            },
+            {
+              "stacks": 1,
+              "flat": 3422.0,
+              "coefficient": 246.4
+            },
+            {
+              "stacks": 2,
+              "flat": 3789.0,
+              "coefficient": 272.8
+            },
+            {
+              "stacks": 3,
+              "flat": 4155.0,
+              "coefficient": 299.2
+            },
+            {
+              "stacks": 4,
+              "flat": 4522.0,
+              "coefficient": 325.6
+            },
+            {
+              "stacks": 5,
+              "flat": 4889.0,
+              "coefficient": 352.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "62e3b95b77714bb2591c68da0425697a998737ff92a23e9ce01b967bf44cc171",
+        "20": "77211ad7b8d2e4cdf77e460e1fbd9a5bcc53eb1cdb4f786ba4e4eb88a42ae6b4"
+      }
+    },
+    "defiance-assassin": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-assassin",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-assassin"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-assassin"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "snipe": {
+      "source": "https://metabot.gg/en/aion-2/skills/snipe",
+      "models": {
+        "1": {
+          "flat": 47.0,
+          "coefficient": 39.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/snipe"
+        },
+        "20": {
+          "flat": 520.0,
+          "coefficient": 39.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/snipe"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "6c43ab02952fec48d674e8d3a8b1bb079cb48850ed7a859de55f71754accd7d8",
+        "20": "ba83771dd7170322ab07200194c95a2ebd3eb1447ec2a831b6337d29c9326be4"
+      }
+    },
+    "tempest-shot": {
+      "source": "https://metabot.gg/en/aion-2/skills/tempest-shot",
+      "models": {
+        "1": {
+          "flat": 56.0,
+          "coefficient": 56.7,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/tempest-shot"
+        },
+        "20": {
+          "flat": 733.0,
+          "coefficient": 56.7,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/tempest-shot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "8e568f6d614824f58500522c52a7cb4e855860bab3c18876bab26b67b001cd6b",
+        "20": "3c34d84037a95373dbb08870603b6c9f4304d49fdd170dd94f1da29e78ee8c78"
+      }
+    },
+    "snare-shot": {
+      "source": "https://metabot.gg/en/aion-2/skills/snare-shot",
+      "models": {
+        "1": {
+          "flat": 60.0,
+          "coefficient": 109.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/snare-shot"
+        },
+        "20": {
+          "flat": 1362.0,
+          "coefficient": 109.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/snare-shot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "896ed3139bac45ceb5d553a1a80154902ce07dad28f3dcd94312fe7fb0d2c940",
+        "20": "6f89415f87cacb4202aad3f30fc3e26d2c9f246738841916d324e102e8aa7bc0"
+      }
+    },
+    "marking-shot": {
+      "source": "https://metabot.gg/en/aion-2/skills/marking-shot",
+      "models": {
+        "1": {
+          "flat": 142.0,
+          "coefficient": 146.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/marking-shot"
+        },
+        "20": {
+          "flat": 1888.0,
+          "coefficient": 146.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/marking-shot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 50.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 50.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "15e19f211a71d2680e27164777b387527de9106f259a01b47525c87aaae0bd38",
+        "20": "e1e1275e233d99220c18789e27fdc08bda213cf8f244977d8b1f5f0a267125d5"
+      }
+    },
+    "drill-dart": {
+      "source": "https://metabot.gg/en/aion-2/skills/drill-dart",
+      "models": {
+        "1": {
+          "flat": 112.0,
+          "coefficient": 115.5,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 43.0,
+              "coefficient": 45.0,
+              "interval": 1,
+              "duration": 6,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/drill-dart"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/drill-dart"
+        },
+        "20": {
+          "flat": 1491.0,
+          "coefficient": 115.5,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 581.0,
+              "coefficient": 45.0,
+              "interval": 1,
+              "duration": 6,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/drill-dart"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/drill-dart"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "9a684b1e61ec41c87058c9831e9e80f45c431cb308e2e10f9d4692bff5dc1a9b",
+        "20": "9572fc9438507af201ed51a46c5eb64f75b7a9b3820f6d97bb4f2e8ff0c7860f"
+      }
+    },
+    "arrow-scattershot": {
+      "source": "https://metabot.gg/en/aion-2/skills/arrow-scattershot",
+      "models": {
+        "1": {
+          "flat": 96.0,
+          "coefficient": 70.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/arrow-scattershot"
+        },
+        "20": {
+          "flat": 932.0,
+          "coefficient": 70.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/arrow-scattershot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "d820676313cbd62e82f5a26f26f50c3d00030870ab095501b8d3e7d4258513af",
+        "20": "ec44b67ecee7b7ac39f5497cd29bc9b0951649aa4341e25f9970aad71f9c344b"
+      }
+    },
+    "gale-arrow": {
+      "source": "https://metabot.gg/en/aion-2/skills/gale-arrow",
+      "models": {
+        "1": {
+          "flat": 365.0,
+          "coefficient": 203.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/gale-arrow"
+        },
+        "20": {
+          "flat": 2796.0,
+          "coefficient": 203.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/gale-arrow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "65d1af6f78b2f05bcb415538a5e65184d63b236cb5c39f3893390d02fcd9ffbe",
+        "20": "b2cc36e0be6071483bf96bc1215400fc51e4da2f042132a1be80f02f014b67e2"
+      }
+    },
+    "explosion-trap": {
+      "source": "https://metabot.gg/en/aion-2/skills/explosion-trap",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "trap-trigger-time"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/explosion-trap",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 344.0,
+              "coefficient": 192.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "trap-trigger-time"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/explosion-trap",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 2638.0,
+              "coefficient": 192.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "a8b846fb88740a45b14240b6ea52084110d5d1ece84d7ab11535574f54df5a9d",
+        "20": "3fcbbccc3d86dc9d040b95c03f5e4ebf9806339e015c0817e5973251c164f38b"
+      }
+    },
+    "burst-arrow": {
+      "source": "https://metabot.gg/en/aion-2/skills/burst-arrow",
+      "models": {
+        "1": {
+          "flat": 544.0,
+          "coefficient": 225.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/burst-arrow"
+        },
+        "20": {
+          "flat": 3191.0,
+          "coefficient": 225.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/burst-arrow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "91c0ebb40d494180c8af37cca2bb0877b820eab1d3abf16492510e698450f406",
+        "20": "429bec3bff405ca9f2bbd85fbac73e0e01af4daca314571b6e2ca8144ce1c9e1"
+      }
+    },
+    "suppressing-arrow": {
+      "source": "https://metabot.gg/en/aion-2/skills/suppressing-arrow",
+      "models": {
+        "1": {
+          "flat": 362.0,
+          "coefficient": 150.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/suppressing-arrow"
+        },
+        "20": {
+          "flat": 2122.0,
+          "coefficient": 150.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/suppressing-arrow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "72491f8d968c31be49c40c0ac98e08ea9a994fca5ae614c68edf4ee8c9a4d0ce",
+        "20": "653e5a132826aac3ca194767518ff1b7b1dc3474060f85abc829483dab5957dc"
+      }
+    },
+    "deadshot": {
+      "source": "https://metabot.gg/en/aion-2/skills/deadshot",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/deadshot",
+          "charge": {
+            "minimum": {
+              "flat": 599.0,
+              "coefficient": 188.3
+            },
+            "maximum": {
+              "flat": 1798.0,
+              "coefficient": 564.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/deadshot",
+          "charge": {
+            "minimum": {
+              "flat": 2741.0,
+              "coefficient": 188.3
+            },
+            "maximum": {
+              "flat": 8225.0,
+              "coefficient": 564.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "ad9027c2d7fe6276592e5bf650be4da52d3767533697ee683f16028fb826b877",
+        "20": "781d43b54a5f5ee832f72c318c129412bd27fc5123f4aad8a577ef9b079035fd"
+      }
+    },
+    "defiance-ranger": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-ranger",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-ranger"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-ranger"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "flame-arrow": {
+      "source": "https://metabot.gg/en/aion-2/skills/flame-arrow",
+      "models": {
+        "1": {
+          "flat": 62.0,
+          "coefficient": 63.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/flame-arrow"
+        },
+        "20": {
+          "flat": 848.0,
+          "coefficient": 63.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/flame-arrow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "9922dc9cd565ab0fe23fa38cc87e07a01402209da9921bc910e867d597de5bdc",
+        "20": "f6e833bb2765b6b52e3f6e19fa311c2bf95dadcb92da56c3ad592105007391fc"
+      }
+    },
+    "ice-chain": {
+      "source": "https://metabot.gg/en/aion-2/skills/ice-chain",
+      "models": {
+        "1": {
+          "flat": 79.0,
+          "coefficient": 92.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/ice-chain"
+        },
+        "20": {
+          "flat": 1233.0,
+          "coefficient": 92.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/ice-chain"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "3ed8dacb21368282ab4eb8747545dae79e1c141ee34e62256de08ff989e7a628",
+        "20": "836116360db715bb01ac39f67bfc2c5865f5553458e68b6ebdbc11337748285a"
+      }
+    },
+    "firestorm": {
+      "source": "https://metabot.gg/en/aion-2/skills/firestorm",
+      "models": {
+        "1": {
+          "flat": 114.0,
+          "coefficient": 192.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/firestorm"
+        },
+        "20": {
+          "flat": 2515.0,
+          "coefficient": 192.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/firestorm"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": 250.0
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": 250.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "497e22ea4234c8683cd0c30aa81a38333c210c76d0545f9ab4fb5433ac1a5c5c",
+        "20": "1412cb43f2b1bb9205a7b3fa80186637cb07fc8b835aecab081460aba6cadab6"
+      }
+    },
+    "bittercold-wind": {
+      "source": "https://metabot.gg/en/aion-2/skills/bittercold-wind",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "ground-effect-hit-frequency"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/bittercold-wind",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 238.0,
+              "coefficient": 232.3
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "ground-effect-hit-frequency"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/bittercold-wind",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 3135.0,
+              "coefficient": 232.3
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "21890852c5d747e3e3cd602b90e2d7d9de2ef3f564b4a7f528db0a7be1f446d0",
+        "20": "b9c2ebde64cc48c5649f254bce62c97f894878a49a1c9ebb9fff035bb8bad970"
+      }
+    },
+    "blaze": {
+      "source": "https://metabot.gg/en/aion-2/skills/blaze",
+      "models": {
+        "1": {
+          "flat": 198.0,
+          "coefficient": 193.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/blaze"
+        },
+        "20": {
+          "flat": 2608.0,
+          "coefficient": 193.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/blaze"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "52ae18c5caa889717e2a8631922ad7653e75b4acbffef2ae47c235b9f7fa54f1",
+        "20": "7d29275909b57be584e968633accd469fe255ca501ced74f3f95e9c4f6f5a91a"
+      }
+    },
+    "flame-scattershot": {
+      "source": "https://metabot.gg/en/aion-2/skills/flame-scattershot",
+      "models": {
+        "1": {
+          "flat": 120.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/flame-scattershot"
+        },
+        "20": {
+          "flat": 1149.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/flame-scattershot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "918f4641a56a4c9e7653343f586481ef8b00c1043815e699a90ea3f77769f7ad",
+        "20": "825bbdff7188c3336297c615deebb37dcb01f6c7adc457ca6db9780f1c9945b0"
+      }
+    },
+    "frost": {
+      "source": "https://metabot.gg/en/aion-2/skills/frost",
+      "models": {
+        "1": {
+          "flat": 178.0,
+          "coefficient": 94.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/frost"
+        },
+        "20": {
+          "flat": 1350.0,
+          "coefficient": 94.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/frost"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "c93aa3ab2eadbd4b58cd6e30152c17e2e8da83427caed65f8b6246f7bb1410ef",
+        "20": "9ccbec8ed9ac10203f84b633b40c6f773be7d226049182700aa60bb6cd2ac482"
+      }
+    },
+    "winters-shackles": {
+      "source": "https://metabot.gg/en/aion-2/skills/winters-shackles",
+      "models": {
+        "1": {
+          "flat": 275.0,
+          "coefficient": 145.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/winters-shackles"
+        },
+        "20": {
+          "flat": 2083.0,
+          "coefficient": 145.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/winters-shackles"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "71653956b4385f8f0df1f362fac32b04f0dd3c68f43d90c85640fc3c750ae10e",
+        "20": "b32d4e5eb5991819820093119604a8cb428889c4609c923356c2cbfe59ac2736"
+      }
+    },
+    "frost-burst": {
+      "source": "https://metabot.gg/en/aion-2/skills/frost-burst",
+      "models": {
+        "1": {
+          "flat": 395.0,
+          "coefficient": 155.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/frost-burst"
+        },
+        "20": {
+          "flat": 2294.0,
+          "coefficient": 155.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/frost-burst"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "4058f45027134ceb7ac7c9121773d67287d54b602db1b5fb5d9ccf2b859d7084",
+        "20": "0151877cb584f79269b70b59c4a8979bc2519de22a7b382c3239e9d3d875a4fb"
+      }
+    },
+    "wish-of-concentration": {
+      "source": "https://metabot.gg/en/aion-2/skills/wish-of-concentration",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/wish-of-concentration"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/wish-of-concentration"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 60.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "597b1835a03012cf8160dc988d52c58921f6fed2e747b5dbc41e5989609325b3",
+        "20": "0e4eaa8f12f935c6e62d29caaf2b843ee21328b33f90ee358f5aa3836f578331"
+      }
+    },
+    "hellfire": {
+      "source": "https://metabot.gg/en/aion-2/skills/hellfire",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/hellfire",
+          "charge": {
+            "minimum": {
+              "flat": 1137.0,
+              "coefficient": 339.3
+            },
+            "maximum": {
+              "flat": 3412.0,
+              "coefficient": 1017.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/hellfire",
+          "charge": {
+            "minimum": {
+              "flat": 5170.0,
+              "coefficient": 339.3
+            },
+            "maximum": {
+              "flat": 15510.0,
+              "coefficient": 1017.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 200.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 200.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "c3288562e34e98adf1b5eb78cb41d0adc74a8d85fb95ee17453adbf13958c4d0",
+        "20": "2871804bcf5e3cad507e4b9ebac5d327453bc804f3348b2f02abb3f3be25e468"
+      }
+    },
+    "defiance-sorcerer": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-sorcerer",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-sorcerer"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-sorcerer"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "cold-shock": {
+      "source": "https://metabot.gg/en/aion-2/skills/cold-shock",
+      "models": {
+        "1": {
+          "flat": 54.0,
+          "coefficient": 51.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/cold-shock"
+        },
+        "20": {
+          "flat": 678.0,
+          "coefficient": 51.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/cold-shock"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "30857d284f38e6c4cda1ab64cc31949a4e71bc1de7037865381217f746e53b09",
+        "20": "23bb8134f785602c4fa122e54e5de9c174ca3eca26972b0d2cc5d0e46904852a"
+      }
+    },
+    "combustion": {
+      "source": "https://metabot.gg/en/aion-2/skills/combustion",
+      "models": {
+        "1": {
+          "flat": 63.0,
+          "coefficient": 67.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/combustion"
+        },
+        "20": {
+          "flat": 878.0,
+          "coefficient": 67.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/combustion"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "7c096f2721eaa111a870e8515d441c4702d77279a10df9117237ee1fc543497d",
+        "20": "d45e30bcafa867c3e4b5a336c687af93d54fcd9997f0343046c1829162f4f6d7"
+      }
+    },
+    "summon-fire-spirit": {
+      "source": "https://metabot.gg/en/aion-2/skills/summon-fire-spirit",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-fire-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 68.0,
+              "coefficient": 120.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-fire-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 1522.0,
+              "coefficient": 120.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "67ab8c9cf9019cc20c6b80f1ecfd58bcaf32e96be7bd007c0d59a43f3f8094d7",
+        "20": "2b91f542e1f3f93788873417746e79a781afd56200fcc2bda0ccac6af5d12936"
+      }
+    },
+    "summon-water-spirit": {
+      "source": "https://metabot.gg/en/aion-2/skills/summon-water-spirit",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-water-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 143.0,
+              "coefficient": 145.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-water-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 1900.0,
+              "coefficient": 145.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "6aea663712e28e5f75136d01cb324a7d6d061dd61105e179f7facc4846b0541d",
+        "20": "860155523c670779a134e4b85e6d5286d2ed995e397b27bccf863fc1eae373e7"
+      }
+    },
+    "jointstrike-curse": {
+      "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse",
+      "models": {
+        "1": {
+          "flat": 74.0,
+          "coefficient": 75.0,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 148.0,
+              "coefficient": 150.0,
+              "interval": 1,
+              "duration": 5,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule",
+            "coordinated-spirit-hit",
+            "duration-from-shared-curse-effect"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse"
+        },
+        "20": {
+          "flat": 983.0,
+          "coefficient": 75.0,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 1966.0,
+              "coefficient": 150.0,
+              "interval": 1,
+              "duration": 5,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule",
+            "coordinated-spirit-hit",
+            "duration-from-shared-curse-effect"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/jointstrike-curse"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 80.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 80.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "d28ab3fbe1c0488d64ae924835bf7b2347475358bb588f8ebd59d0364104d1e8",
+        "20": "cb1da709e3826330ba229bd13efd7d9d9b55141de70b99005e5feaa197d6201d"
+      }
+    },
+    "rapid-scattershot": {
+      "source": "https://metabot.gg/en/aion-2/skills/rapid-scattershot",
+      "models": {
+        "1": {
+          "flat": 116.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/rapid-scattershot"
+        },
+        "20": {
+          "flat": 1185.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/rapid-scattershot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "2ffc19ee308b2869ce08046ef6ccede2b446cf279f24bdebec0def26e2c9799c",
+        "20": "63143fd4064099043478dcdd5776345ceb2187df1dabd78ace6065cf76381cc2"
+      }
+    },
+    "summon-earth-spirit": {
+      "source": "https://metabot.gg/en/aion-2/skills/summon-earth-spirit",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-earth-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 247.0,
+              "coefficient": 135.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-earth-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 1883.0,
+              "coefficient": 135.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "06eefad3baf76a1ac7ece30cbd497c7c782ba6d82ebf0a8db6f9bffa8d395eb6",
+        "20": "a9566bcc855f1ba9ac90a6bff6b2c81b9bad3caedae9ab85bec492ff7a30cb55"
+      }
+    },
+    "dimensional-control": {
+      "source": "https://metabot.gg/en/aion-2/skills/dimensional-control",
+      "models": {
+        "1": {
+          "flat": 157.0,
+          "coefficient": 86.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/dimensional-control"
+        },
+        "20": {
+          "flat": 1199.0,
+          "coefficient": 86.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/dimensional-control"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "d6eba238c23eed8a3125652d483a0fca5db54000147aafaa9fc8e433be3cf151",
+        "20": "5a3e40130c7350083b433ceee0df93e72249a6ec82a36754ac1c6e3cff9680ac"
+      }
+    },
+    "summon-wind-spirit": {
+      "source": "https://metabot.gg/en/aion-2/skills/summon-wind-spirit",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-wind-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 273.0,
+              "coefficient": 111.0
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "pet-basic-damage",
+            "pet-attack-frequency",
+            "pet-skill-proc-timeline"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/summon-wind-spirit",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 1595.0,
+              "coefficient": 111.0
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "1c7edf540ff4ceca69c1c44ec58dbddae6bb1c860aa054a3ceb41c2215bfc75e",
+        "20": "9a37f44ce981b4c1ef9ac7b997523ff3608519894728887ffda2a7e02318dbec"
+      }
+    },
+    "souls-cry": {
+      "source": "https://metabot.gg/en/aion-2/skills/souls-cry",
+      "models": {
+        "1": {
+          "flat": 246.0,
+          "coefficient": 100.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/souls-cry"
+        },
+        "20": {
+          "flat": 1437.0,
+          "coefficient": 100.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/souls-cry"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "e2144af7978cde5f95f57ab3f5c314da99388989ff9240d37d4d9a31abbc0dc3",
+        "20": "dbda81d42e03d0b7bf1569adacb8684043a2da418feac726e725ad6ece012251"
+      }
+    },
+    "elemental-fusion": {
+      "source": "https://metabot.gg/en/aion-2/skills/elemental-fusion",
+      "models": {
+        "1": {
+          "flat": 1075.0,
+          "coefficient": 331.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/elemental-fusion"
+        },
+        "20": {
+          "flat": 4907.0,
+          "coefficient": 331.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/elemental-fusion"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "5a603842287cccb3fd54884cfe29516609d176fad388fbc37200dfc6bc5a4695",
+        "20": "cdffcb60dbcb53250483ea0e68cade7dfd4e45ea35eb27384ea1dd82fea19a8e"
+      }
+    },
+    "defiance-spiritmaster": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-spiritmaster",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-spiritmaster"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-spiritmaster"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "earths-retribution": {
+      "source": "https://metabot.gg/en/aion-2/skills/earths-retribution",
+      "models": {
+        "1": {
+          "flat": 50.0,
+          "coefficient": 48.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/earths-retribution"
+        },
+        "20": {
+          "flat": 601.0,
+          "coefficient": 48.3,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/earths-retribution"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "5920fd1f03b19c894340db3072572ec93174c6f54213619e005eeee5da68b25d",
+        "20": "8070c93b04dd4564fd1e7131ac7b7955510ea5e905f7ebf53cd44bd3753a99e7"
+      }
+    },
+    "judgment-thunder": {
+      "source": "https://metabot.gg/en/aion-2/skills/judgment-thunder",
+      "models": {
+        "1": {
+          "flat": 81.0,
+          "coefficient": 108.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/judgment-thunder"
+        },
+        "20": {
+          "flat": 1321.0,
+          "coefficient": 108.6,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/judgment-thunder"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "da18349cda1c5189659d8b50d3139df0aa34d8d3438eb87d7e00b0aa2914d55d",
+        "20": "578576ee6a7ec05ab5ee5b4b16ed648f520fc12b613cdce135a75d6880eb0d01"
+      }
+    },
+    "debilitating-mark": {
+      "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark",
+      "models": {
+        "1": {
+          "flat": 59.0,
+          "coefficient": 113.3,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 74.0,
+              "coefficient": 141.9,
+              "interval": 1,
+              "duration": 10,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark"
+        },
+        "20": {
+          "flat": 1352.0,
+          "coefficient": 113.3,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 1694.0,
+              "coefficient": 141.9,
+              "interval": 1,
+              "duration": 10,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule",
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/debilitating-mark"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "26c23e4768d3ed2ccd32c6508617f5ac6c90a88a12a8e6e6e2cd5765cbee6823",
+        "20": "d26db93ee8d1011b548650b4dd41eb6075d61603fa86ec9fa1693af38c9a9510"
+      }
+    },
+    "divine-aura": {
+      "source": "https://metabot.gg/en/aion-2/skills/divine-aura",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "summon-tick-interval"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/divine-aura",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 394.0,
+              "coefficient": 431.1
+            }
+          ]
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "summon-tick-interval"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/divine-aura",
+          "damageInputRequired": true,
+          "damageConfirmed": false,
+          "referenceTerms": [
+            {
+              "flat": 5315.0,
+              "coefficient": 431.1
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "3188f292bdaac03176880a9256d62683eb14466580826ae23a0e8d6e0b07cdf5",
+        "20": "5f1f10466ba9b1a3662c1eea2e5e5a32ecbce62b88862244cf1124792ca0f4bc"
+      }
+    },
+    "chain-of-torment": {
+      "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment",
+      "models": {
+        "1": {
+          "flat": 138.0,
+          "coefficient": 151.8,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 173.0,
+              "coefficient": 189.8,
+              "interval": 1,
+              "duration": 10,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment"
+        },
+        "20": {
+          "flat": 1871.0,
+          "coefficient": 151.8,
+          "damageStatus": "direct",
+          "periodic": [
+            {
+              "flat": 2339.0,
+              "coefficient": 189.8,
+              "interval": 1,
+              "duration": 10,
+              "firstTick": 1,
+              "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment"
+            }
+          ],
+          "mathUnverified": [
+            "first-tick-phase",
+            "refresh-rule",
+            "periodic-critical-rule"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/chain-of-torment"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": 150.0
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": 150.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "ba2d67827c06ab02f5df818b1ce66a24baf5b4f1add03eaf4e8536430f83999a",
+        "20": "10f203ff2c892c1ada4679e05d8fa6d5a5027aa9d8bbaba65e779a1cdca33d25"
+      }
+    },
+    "lightning-strike-scattershot": {
+      "source": "https://metabot.gg/en/aion-2/skills/lightning-strike-scattershot",
+      "models": {
+        "1": {
+          "flat": 147.0,
+          "coefficient": 113.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/lightning-strike-scattershot"
+        },
+        "20": {
+          "flat": 1437.0,
+          "coefficient": 113.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/lightning-strike-scattershot"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "49bdee6d17a8130093d1e656981e00b3c095ae152ef7f74b0ca71648279515e6",
+        "20": "5cbb4d325c80fba7b963821b96d8e8411a07b3d1ec22ba960818c0132366d688"
+      }
+    },
+    "light-of-regeneration": {
+      "source": "https://metabot.gg/en/aion-2/skills/light-of-regeneration",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/light-of-regeneration"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/light-of-regeneration"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "460267754241f3b003368101a83e71ab278d7f81a10ebd5fad7355e35ea4f4b5",
+        "20": "bbe0943de1534b97ae4aedd09bb37f938c71c50fe484ca956beccbf04ef4ac00"
+      }
+    },
+    "condemnation": {
+      "source": "https://metabot.gg/en/aion-2/skills/condemnation",
+      "models": {
+        "1": {
+          "flat": 325.0,
+          "coefficient": 192.1,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/condemnation"
+        },
+        "20": {
+          "flat": 2517.0,
+          "coefficient": 192.1,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/condemnation"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 3.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 3.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "0aabd3dbc7a3728cb63cd0879f5d4b1fcafb8e0370a698cf2c2c3465f4448867",
+        "20": "151dd373d50cd888cc6e20d12336a2a7c9196bd647aabdd8b08166b7bd27ee81"
+      }
+    },
+    "healing-light": {
+      "source": "https://metabot.gg/en/aion-2/skills/healing-light",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/healing-light"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/healing-light"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 6.0,
+          "mpCost": 50.0
+        },
+        "20": {
+          "cooldown": 6.0,
+          "mpCost": 50.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "8332e6497f6572818cd5391182da557bb960597e618d8e7a424d8f4498344d3e",
+        "20": "dae9a40c6eff45da6364b8040824cbb57a552a0fbb79c81ae71d534f5627b36b"
+      }
+    },
+    "radiant-recovery": {
+      "source": "https://metabot.gg/en/aion-2/skills/radiant-recovery",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/radiant-recovery"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/radiant-recovery"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 12.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 12.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "bc9b2de5d7c58436679baa76e8cfe61ebd0ea198e46fa6e66513a6199e93be53",
+        "20": "11f610c185d23a93b4cfd386f4ca5ca4e07a60da576e5a9224ae615d5c38c36c"
+      }
+    },
+    "bolt": {
+      "source": "https://metabot.gg/en/aion-2/skills/bolt",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/bolt",
+          "charge": {
+            "minimum": {
+              "flat": 987.0,
+              "coefficient": 327.6
+            },
+            "maximum": {
+              "flat": 2963.0,
+              "coefficient": 982.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "charge-input-required",
+          "periodic": [],
+          "mathUnverified": [
+            "charge-duration",
+            "intermediate-charge-damage"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/bolt",
+          "charge": {
+            "minimum": {
+              "flat": 4550.0,
+              "coefficient": 327.6
+            },
+            "maximum": {
+              "flat": 13651.0,
+              "coefficient": 982.8
+            },
+            "intermediateVerified": false,
+            "durationVerified": false
+          },
+          "chargeConfirmed": false
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 45.0,
+          "mpCost": 300.0
+        },
+        "20": {
+          "cooldown": 45.0,
+          "mpCost": 300.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "cbcb1df7a4fa076b101069c6f613dfb884e485377250fc2e658d5d50964581da",
+        "20": "09b1781195862094ef6175553c65071b567a378b4fc4d9eb19eef33a4103d252"
+      }
+    },
+    "defiance-cleric": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-cleric",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-cleric"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-cleric"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    },
+    "onslaught": {
+      "source": "https://metabot.gg/en/aion-2/skills/onslaught",
+      "models": {
+        "1": {
+          "flat": 74.0,
+          "coefficient": 84.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/onslaught"
+        },
+        "20": {
+          "flat": 1125.0,
+          "coefficient": 84.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/onslaught"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "1822c9d2f9cb2b8aa761291b28a8be1b3c9a2390b9adff6883513b2aefd2eb59",
+        "20": "a1b217ec547d95571e951e933b8dfae375d816d25e842be1d7667fbf34304391"
+      }
+    },
+    "incandescent-blow": {
+      "source": "https://metabot.gg/en/aion-2/skills/incandescent-blow",
+      "models": {
+        "1": {
+          "flat": 160.0,
+          "coefficient": 228.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/incandescent-blow"
+        },
+        "20": {
+          "flat": 3013.0,
+          "coefficient": 228.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/incandescent-blow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": 120.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "747d69ee026eb89687e32c28801f598e2336eaf9d327e99da2d6512b254809fd",
+        "20": "e02898f88a72a810783e8d4ad501b213e77cd5280ae6229fa5db6cc5db838227"
+      }
+    },
+    "rushing-smash": {
+      "source": "https://metabot.gg/en/aion-2/skills/rushing-smash",
+      "models": {
+        "1": {
+          "flat": 112.0,
+          "coefficient": 189.8,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/rushing-smash"
+        },
+        "20": {
+          "flat": 2469.0,
+          "coefficient": 189.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/rushing-smash"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "a528a56f59ad8793fd5e3f2efbd044dbb5cc0f820fc1495648ab5ee49ae83afa",
+        "20": "f79dc9c5e31533b1a07d0a02347452a4d74678a52ed5f9643bdba0e74d7a2c03"
+      }
+    },
+    "impactful-crush": {
+      "source": "https://metabot.gg/en/aion-2/skills/impactful-crush",
+      "models": {
+        "1": {
+          "flat": 224.0,
+          "coefficient": 218.4,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/impactful-crush"
+        },
+        "20": {
+          "flat": 2948.0,
+          "coefficient": 218.4,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/impactful-crush"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": 100.0
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": 100.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "b3e1ef7ef2ad00da93260624c0322b406e5c5603dd18a7c6fa8b09e5c6914a15",
+        "20": "ba9e00f867884daecc756debc46b5be06cf7b9d7a30365d7af74716b86a50f9c"
+      }
+    },
+    "dark-crush": {
+      "source": "https://metabot.gg/en/aion-2/skills/dark-crush",
+      "models": {
+        "1": {
+          "flat": 215.0,
+          "coefficient": 210.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/dark-crush"
+        },
+        "20": {
+          "flat": 2966.0,
+          "coefficient": 219.7,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/dark-crush"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 5.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 5.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "a35dee1f0e0c6c0055ea95f8b7139a0e710e8853523151a397459f9b4c5f7ced",
+        "20": "070b94234b6982234a76192e14f2954f8f7d573e666cdcf45f4f38804161d327"
+      }
+    },
+    "gust-rampage": {
+      "source": "https://metabot.gg/en/aion-2/skills/gust-rampage",
+      "models": {
+        "1": {
+          "flat": 120.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/gust-rampage"
+        },
+        "20": {
+          "flat": 1149.0,
+          "coefficient": 82.5,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/gust-rampage"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "1fa2b2d521694517697b7469573b9468fbbf896a859ca1c46cf1e46c0c4710c8",
+        "20": "61f0de8b3f9e2a012fff3fceb0d75e9c4b8e99de40d6cbadde362c8adfa2b871"
+      }
+    },
+    "heat-wave-blow": {
+      "source": "https://metabot.gg/en/aion-2/skills/heat-wave-blow",
+      "models": {
+        "1": {
+          "flat": 345.0,
+          "coefficient": 182.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/heat-wave-blow"
+        },
+        "20": {
+          "flat": 2615.0,
+          "coefficient": 182.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/heat-wave-blow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 10.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 10.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "d672020915e1469ec1d1d77668ff725f936a1554d646f7ee1db735f0341296a0",
+        "20": "4f6cb67f2a832411412904853b9847b37adc1b5b7e2db1280f17e1ab83fc2fef"
+      }
+    },
+    "recuperation": {
+      "source": "https://metabot.gg/en/aion-2/skills/recuperation",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/recuperation"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/recuperation"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 15.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 15.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "cf21699f41669671c34c3f6ed3f7178417ad219a8cdd52c0bda356e6fbfbcafa",
+        "20": "a22446852bf399d9dfd6944e83b8c74d6a93e3e5b0c76707a6030f25951488f3"
+      }
+    },
+    "tremor-crush": {
+      "source": "https://metabot.gg/en/aion-2/skills/tremor-crush",
+      "models": {
+        "1": {
+          "flat": 260.0,
+          "coefficient": 102.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/tremor-crush"
+        },
+        "20": {
+          "flat": 1510.0,
+          "coefficient": 102.0,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/tremor-crush"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "3b07a81cfcee1da299812bd3c532843ebd024640861c2de4e0c0e21e12110ff7",
+        "20": "97eccd5c6eede56dbe4a3276ac2ec993e06052a7cffeca9e2d1584c26877b790"
+      }
+    },
+    "wave-blow": {
+      "source": "https://metabot.gg/en/aion-2/skills/wave-blow",
+      "models": {
+        "1": {
+          "flat": 538.0,
+          "coefficient": 211.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/wave-blow"
+        },
+        "20": {
+          "flat": 3126.0,
+          "coefficient": 211.2,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/wave-blow"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 20.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 20.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "f8e88766925947650735506491e6e66f37657063b1df5b88518b457e3c90c11e",
+        "20": "d3a462f9e2a0ba3eee59bf6a7d2a4f3a287b4b3c6bd66a5bedc963a6bff32cfc"
+      }
+    },
+    "spinning-strike": {
+      "source": "https://metabot.gg/en/aion-2/skills/spinning-strike",
+      "models": {
+        "1": {
+          "flat": 2347.0,
+          "coefficient": 700.1,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/spinning-strike"
+        },
+        "20": {
+          "flat": 10669.0,
+          "coefficient": 700.1,
+          "damageStatus": "direct",
+          "periodic": [],
+          "mathUnverified": [
+            "conditional-bonus-or-stat-conversion"
+          ],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/spinning-strike"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 30.0,
+          "mpCost": 250.0
+        },
+        "20": {
+          "cooldown": 30.0,
+          "mpCost": 250.0
+        }
+      },
+      "tooltipHashes": {
+        "1": "e2568441877123eedc2d81e3e4133c232916d18dbe0c669a5b1463a4f406061c",
+        "20": "f844d0a308880aed3cf1e56d5b11164daba88b5d0660889886d60e6d8d7ac128"
+      }
+    },
+    "defiance-chanter": {
+      "source": "https://metabot.gg/en/aion-2/skills/defiance-chanter",
+      "models": {
+        "1": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 1,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-chanter"
+        },
+        "20": {
+          "flat": 0,
+          "coefficient": 0,
+          "damageStatus": "non-offensive",
+          "periodic": [],
+          "mathUnverified": [],
+          "skillLevel": 20,
+          "source": "https://metabot.gg/en/aion-2/skills/defiance-chanter"
+        }
+      },
+      "metadata": {
+        "1": {
+          "cooldown": 60.0,
+          "mpCost": null
+        },
+        "20": {
+          "cooldown": 41.0,
+          "mpCost": null
+        }
+      },
+      "tooltipHashes": {
+        "1": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e",
+        "20": "86684236df0ce29a454f235117ec8543963c098dd2e6c5c8dd01f6adaaf9ff8e"
+      }
+    }
+  }
+}

@@ -1,0 +1,5161 @@
+{
+  "schema": 1,
+  "kind": "server-computed-dps-ranking",
+  "benchmark": "global-common-level-20-v1",
+  "sourceReviewedAt": "2026-10-09",
+  "scope": {
+    "region": "Global",
+    "skillLevel": 20,
+    "isCombatMeasurement": false,
+    "actualEquipmentVerified": false,
+    "canDescribeAsEndgameTier": false,
+    "currentPatchEquivalent": false,
+    "specializations": [],
+    "stigmas": [],
+    "passiveDamageIncluded": false
+  },
+  "commonConditions": {
+    "region": "NA",
+    "patch": "global-tooltip-review-2026-10-09",
+    "attack": 1000,
+    "crit": 25,
+    "critMultiplier": 1.5,
+    "accuracy": 100,
+    "factor": 1,
+    "conditionMode": "tooltip",
+    "resourceMode": "unverified",
+    "fireMarkEnabled": "yes",
+    "elementsStart": 0,
+    "elementEvents": "",
+    "stateWindows": {},
+    "conditionsVerified": true,
+    "periodicMode": "inputs",
+    "periodicCrit": "none",
+    "periodicRefresh": "replace",
+    "insigniaMode": "consume",
+    "dotStateMode": "duration",
+    "targetType": "npc",
+    "damageVerified": true,
+    "actionSeconds": 1
+  },
+  "methodology": {
+    "aggregation": "sum held-out damage / sum held-out fight seconds",
+    "ranking": "unrounded absolute DPS",
+    "trainingSeeds": [
+      7,
+      19,
+      41
+    ],
+    "selectionSplit": "training",
+    "noExternalStateWindows": true,
+    "noUserInputs": true,
+    "noClientSimulation": true
+  },
+  "provenance": {
+    "files": {
+      "assets/dps-engine.js": "7da17bd25fed9476a1f5c54f6c8d00aed79daf5f7ed299b403630b03c7e4f8e3",
+      "scripts/build_dps_rankings.js": "248681f52a144450a911bdbbb2e30b00c89639a055135dc6fec717c0b1565ddb",
+      "research/rotation-learning/train.js": "cfc74f89117e1f7d8a07752c24fd2d62bbdefece27d42fce5f2de2512f30dc94",
+      "dpsmath.py": "a49d82aa69e6bedad8f75acc0bc9be0ad95a03547f36bf1d6fc82d3ee5b7c566",
+      "dpsrules.py": "ee87789120e7685c1f41187d3de6f0daa29e1de1ad75171c0031125b2d033559",
+      "dpslevels.py": "6d9e5f8b2d9c6a56d4c1f84eea826a5b4bafd71d072743db1cfac9ed5414fea5",
+      "data/skills.json": "8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e",
+      "data/dps-resources.json": "a765ad2af29a887623a2ab302171b0aaabcf9cb4245131e018bd5134420dd762",
+      "data/skill-snapshot.json": "22fdb13c75c60cad45667f88b8eeb6f22c7e9b559f1c78781d2cc632827a8057",
+      "data/dps-skill-levels.json": "d08be77f448db4a2ccf29e3636fb48fe621d3f48b7dd565c2dfb00b641178311",
+      "data/dps-benchmark.json": "d04ab488e5836513527ce3b8a551d56060b40b0bc4f5af4ad74a99bd4b30220c"
+    },
+    "catalogSha256": "5fbdcfc10540cf2cbe4a644e0e6ba5d549af1f9b9e2bf49a05403eb13842a3f9",
+    "modelSha256": "5597538ff751de16abb14365d9085082dee86bcfab8bcfad0f3954dd2c71a5b0"
+  },
+  "overall": [
+    {
+      "classId": "cleric",
+      "en": "Cleric",
+      "ko": "치유성",
+      "color": "#76d5ba",
+      "dps": 7284.850892857143,
+      "totalDamage": 3059637.375,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 1171542.375,
+      "periodicDamage": 1888095,
+      "ticks": 539,
+      "rank": 1,
+      "leaderPercent": 100
+    },
+    {
+      "classId": "chanter",
+      "en": "Chanter",
+      "ko": "호법성",
+      "color": "#e5c779",
+      "dps": 5542.384821428572,
+      "totalDamage": 2327801.625,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 2327801.625,
+      "periodicDamage": 0,
+      "ticks": 0,
+      "rank": 2,
+      "leaderPercent": 76.08096449665052
+    },
+    {
+      "classId": "templar",
+      "en": "Templar",
+      "ko": "수호성",
+      "color": "#79b6fb",
+      "dps": 3310.65,
+      "totalDamage": 1390473,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 1390473,
+      "periodicDamage": 0,
+      "ticks": 0,
+      "rank": 3,
+      "leaderPercent": 45.44567965345894
+    },
+    {
+      "classId": "spiritmaster",
+      "en": "Spiritmaster",
+      "ko": "정령성",
+      "color": "#ef927b",
+      "dps": 3028.684523809524,
+      "totalDamage": 1272047.5,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 644701.5,
+      "periodicDamage": 627346,
+      "ticks": 181,
+      "rank": 4,
+      "leaderPercent": 41.575106592492844
+    },
+    {
+      "classId": "sorcerer",
+      "en": "Sorcerer",
+      "ko": "마도성",
+      "color": "#ac9df3",
+      "dps": 3018.1580357142857,
+      "totalDamage": 1267626.375,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 1267626.375,
+      "periodicDamage": 0,
+      "ticks": 0,
+      "rank": 5,
+      "leaderPercent": 41.43060825958174
+    },
+    {
+      "classId": "ranger",
+      "en": "Ranger",
+      "ko": "궁성",
+      "color": "#8ecd91",
+      "dps": 2971.1985119047617,
+      "totalDamage": 1247903.375,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 884991.375,
+      "periodicDamage": 362912,
+      "ticks": 352,
+      "rank": 6,
+      "leaderPercent": 40.785989385425125
+    },
+    {
+      "classId": "assassin",
+      "en": "Assassin",
+      "ko": "살성",
+      "color": "#d895ed",
+      "dps": 2818.8910714285716,
+      "totalDamage": 1183934.25,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 1183934.25,
+      "periodicDamage": 0,
+      "ticks": 0,
+      "rank": 7,
+      "leaderPercent": 38.6952473411984
+    },
+    {
+      "classId": "gladiator",
+      "en": "Gladiator",
+      "ko": "검성",
+      "color": "#eeab66",
+      "dps": 2541.0160714285716,
+      "totalDamage": 1067226.75,
+      "seconds": 420,
+      "activeSeconds": 360,
+      "directDamage": 1067226.75,
+      "periodicDamage": 0,
+      "ticks": 0,
+      "rank": 8,
+      "leaderPercent": 34.88082472518496
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "boss",
+      "en": "Stationary boss",
+      "ko": "지속 공격 보스",
+      "duration": 180,
+      "downtime": "",
+      "unavailableSeconds": 0,
+      "targetControl": "immune",
+      "rows": [
+        {
+          "classId": "cleric",
+          "en": "Cleric",
+          "ko": "치유성",
+          "color": "#76d5ba",
+          "dps": 8443.068055555555,
+          "totalDamage": 1519752.25,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 581195.25,
+          "periodicDamage": 938557,
+          "ticks": 269,
+          "rank": 1,
+          "leaderPercent": 100
+        },
+        {
+          "classId": "chanter",
+          "en": "Chanter",
+          "ko": "호법성",
+          "color": "#e5c779",
+          "dps": 6427.4625,
+          "totalDamage": 1156943.25,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 1156943.25,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 2,
+          "leaderPercent": 76.12709571576552
+        },
+        {
+          "classId": "templar",
+          "en": "Templar",
+          "ko": "수호성",
+          "color": "#79b6fb",
+          "dps": 3832.0125,
+          "totalDamage": 689762.25,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 689762.25,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 3,
+          "leaderPercent": 45.38649309451589
+        },
+        {
+          "classId": "spiritmaster",
+          "en": "Spiritmaster",
+          "ko": "정령성",
+          "color": "#ef927b",
+          "dps": 3520.5,
+          "totalDamage": 633690,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 321750,
+          "periodicDamage": 311940,
+          "ticks": 90,
+          "rank": 4,
+          "leaderPercent": 41.69692790387381
+        },
+        {
+          "classId": "sorcerer",
+          "en": "Sorcerer",
+          "ko": "마도성",
+          "color": "#ac9df3",
+          "dps": 3516.475,
+          "totalDamage": 632965.5,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 632965.5,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 5,
+          "leaderPercent": 41.64925565992746
+        },
+        {
+          "classId": "ranger",
+          "en": "Ranger",
+          "ko": "궁성",
+          "color": "#8ecd91",
+          "dps": 3436.9909722222224,
+          "totalDamage": 618658.375,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 434109.375,
+          "periodicDamage": 184549,
+          "ticks": 179,
+          "rank": 6,
+          "leaderPercent": 40.707843992334936
+        },
+        {
+          "classId": "assassin",
+          "en": "Assassin",
+          "ko": "살성",
+          "color": "#d895ed",
+          "dps": 3282.95,
+          "totalDamage": 590931,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 590931,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 7,
+          "leaderPercent": 38.88337720835748
+        },
+        {
+          "classId": "gladiator",
+          "en": "Gladiator",
+          "ko": "검성",
+          "color": "#eeab66",
+          "dps": 2882.4875,
+          "totalDamage": 518847.75,
+          "seconds": 180,
+          "activeSeconds": 180,
+          "directDamage": 518847.75,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 8,
+          "leaderPercent": 34.140285036590676
+        }
+      ]
+    },
+    {
+      "id": "moving-boss",
+      "en": "Boss with damage interruptions",
+      "ko": "이동·무적 구간 보스",
+      "duration": 240,
+      "downtime": "45-60,110-135,190-210",
+      "unavailableSeconds": 60,
+      "targetControl": "immune",
+      "rows": [
+        {
+          "classId": "cleric",
+          "en": "Cleric",
+          "ko": "치유성",
+          "color": "#76d5ba",
+          "dps": 6416.188020833333,
+          "totalDamage": 1539885.125,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 590347.125,
+          "periodicDamage": 949538,
+          "ticks": 270,
+          "rank": 1,
+          "leaderPercent": 100
+        },
+        {
+          "classId": "chanter",
+          "en": "Chanter",
+          "ko": "호법성",
+          "color": "#e5c779",
+          "dps": 4878.5765625,
+          "totalDamage": 1170858.375,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 1170858.375,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 2,
+          "leaderPercent": 76.03543640958283
+        },
+        {
+          "classId": "templar",
+          "en": "Templar",
+          "ko": "수호성",
+          "color": "#79b6fb",
+          "dps": 2919.628125,
+          "totalDamage": 700710.75,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 700710.75,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 3,
+          "leaderPercent": 45.50409239130744
+        },
+        {
+          "classId": "spiritmaster",
+          "en": "Spiritmaster",
+          "ko": "정령성",
+          "color": "#ef927b",
+          "dps": 2659.8229166666665,
+          "totalDamage": 638357.5,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 322951.5,
+          "periodicDamage": 315406,
+          "ticks": 91,
+          "rank": 4,
+          "leaderPercent": 41.454878005916186
+        },
+        {
+          "classId": "sorcerer",
+          "en": "Sorcerer",
+          "ko": "마도성",
+          "color": "#ac9df3",
+          "dps": 2644.4203125,
+          "totalDamage": 634660.875,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 634660.875,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 5,
+          "leaderPercent": 41.21481951454008
+        },
+        {
+          "classId": "ranger",
+          "en": "Ranger",
+          "ko": "궁성",
+          "color": "#8ecd91",
+          "dps": 2621.8541666666665,
+          "totalDamage": 629245,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 450882,
+          "periodicDamage": 178363,
+          "ticks": 173,
+          "rank": 6,
+          "leaderPercent": 40.863113084490635
+        },
+        {
+          "classId": "assassin",
+          "en": "Assassin",
+          "ko": "살성",
+          "color": "#d895ed",
+          "dps": 2470.846875,
+          "totalDamage": 593003.25,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 593003.25,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 7,
+          "leaderPercent": 38.50957713485284
+        },
+        {
+          "classId": "gladiator",
+          "en": "Gladiator",
+          "ko": "검성",
+          "color": "#eeab66",
+          "dps": 2284.9125,
+          "totalDamage": 548379,
+          "seconds": 240,
+          "activeSeconds": 180,
+          "directDamage": 548379,
+          "periodicDamage": 0,
+          "ticks": 0,
+          "rank": 8,
+          "leaderPercent": 35.6116823974126
+        }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "classId": "gladiator",
+      "en": "Gladiator",
+      "ko": "검성",
+      "color": "#eeab66",
+      "totalDamage": 1067226.75,
+      "seconds": 420,
+      "dps": 2541.0160714285716,
+      "directDamage": 1067226.75,
+      "periodicDamage": 0,
+      "activeSeconds": 360,
+      "ticks": 0,
+      "policy": {
+        "order": [
+          "aerial-snare",
+          "overhead-slam",
+          "ankle-slice",
+          "mocking-blade",
+          "ruinous-blow",
+          "crushing-wave",
+          "leaping-slam",
+          "rending-blow",
+          "keen-strike",
+          "sword-aura-rampage",
+          "rush-strike"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 41,
+      "trainingDps": 2797.9035714285715,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 197948.25,
+          "directDamage": 197948.25,
+          "periodicDamage": 0,
+          "dps": 2711.6198630136987,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "conditional-state-effect"
+          ],
+          "skills": [
+            {
+              "id": "leaping-slam",
+              "name": "도약 찍기",
+              "casts": 4,
+              "damage": 12127.5,
+              "directDamage": 12127.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Leaping Slam",
+              "ko": "도약 찍기"
+            },
+            {
+              "id": "mocking-blade",
+              "name": "유린의 검",
+              "casts": 4,
+              "damage": 20898,
+              "directDamage": 20898,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Mocking Blade",
+              "ko": "유린의 검"
+            },
+            {
+              "id": "overhead-slam",
+              "name": "내려찍기",
+              "casts": 3,
+              "damage": 13189.5,
+              "directDamage": 13189.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Overhead Slam",
+              "ko": "내려찍기"
+            },
+            {
+              "id": "ankle-slice",
+              "name": "발목 베기",
+              "casts": 7,
+              "damage": 29279.25,
+              "directDamage": 29279.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ankle Slice",
+              "ko": "발목 베기"
+            },
+            {
+              "id": "crushing-wave",
+              "name": "분쇄 파동",
+              "casts": 3,
+              "damage": 8781.75,
+              "directDamage": 8781.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Crushing Wave",
+              "ko": "분쇄 파동"
+            },
+            {
+              "id": "rush-strike",
+              "name": "돌진 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Rush Strike",
+              "ko": "돌진 일격"
+            },
+            {
+              "id": "aerial-snare",
+              "name": "공중 결박",
+              "casts": 2,
+              "damage": 10307.25,
+              "directDamage": 10307.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Aerial Snare",
+              "ko": "공중 결박"
+            },
+            {
+              "id": "ruinous-blow",
+              "name": "파멸의 맹타",
+              "casts": 2,
+              "damage": 39825,
+              "directDamage": 39825,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ruinous Blow",
+              "ko": "파멸의 맹타"
+            },
+            {
+              "id": "sword-aura-rampage",
+              "name": "검기 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Sword Aura Rampage",
+              "ko": "검기 난무"
+            },
+            {
+              "id": "keen-strike",
+              "name": "예리한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Keen Strike",
+              "ko": "예리한 일격"
+            },
+            {
+              "id": "rending-blow",
+              "name": "절단의 맹타",
+              "casts": 32,
+              "damage": 63540,
+              "directDamage": 63540,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rending Blow",
+              "ko": "절단의 맹타"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 271498.5,
+          "directDamage": 271498.5,
+          "periodicDamage": 0,
+          "dps": 2857.878947368421,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "conditional-state-effect",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "leaping-slam",
+              "name": "도약 찍기",
+              "casts": 6,
+              "damage": 18191.25,
+              "directDamage": 18191.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Leaping Slam",
+              "ko": "도약 찍기"
+            },
+            {
+              "id": "mocking-blade",
+              "name": "유린의 검",
+              "casts": 5,
+              "damage": 26122.5,
+              "directDamage": 26122.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Mocking Blade",
+              "ko": "유린의 검"
+            },
+            {
+              "id": "overhead-slam",
+              "name": "내려찍기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Overhead Slam",
+              "ko": "내려찍기"
+            },
+            {
+              "id": "ankle-slice",
+              "name": "발목 베기",
+              "casts": 9,
+              "damage": 37644.75,
+              "directDamage": 37644.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ankle Slice",
+              "ko": "발목 베기"
+            },
+            {
+              "id": "crushing-wave",
+              "name": "분쇄 파동",
+              "casts": 5,
+              "damage": 14636.25,
+              "directDamage": 14636.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Crushing Wave",
+              "ko": "분쇄 파동"
+            },
+            {
+              "id": "rush-strike",
+              "name": "돌진 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Rush Strike",
+              "ko": "돌진 일격"
+            },
+            {
+              "id": "aerial-snare",
+              "name": "공중 결박",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Aerial Snare",
+              "ko": "공중 결박"
+            },
+            {
+              "id": "ruinous-blow",
+              "name": "파멸의 맹타",
+              "casts": 3,
+              "damage": 59737.5,
+              "directDamage": 59737.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ruinous Blow",
+              "ko": "파멸의 맹타"
+            },
+            {
+              "id": "sword-aura-rampage",
+              "name": "검기 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Sword Aura Rampage",
+              "ko": "검기 난무"
+            },
+            {
+              "id": "keen-strike",
+              "name": "예리한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Keen Strike",
+              "ko": "예리한 일격"
+            },
+            {
+              "id": "rending-blow",
+              "name": "절단의 맹타",
+              "casts": 58,
+              "damage": 115166.25,
+              "directDamage": 115166.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rending Blow",
+              "ko": "절단의 맹타"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 518847.75,
+          "directDamage": 518847.75,
+          "periodicDamage": 0,
+          "dps": 2882.4875,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "conditional-state-effect",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "leaping-slam",
+              "name": "도약 찍기",
+              "casts": 12,
+              "damage": 36382.5,
+              "directDamage": 36382.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Leaping Slam",
+              "ko": "도약 찍기"
+            },
+            {
+              "id": "mocking-blade",
+              "name": "유린의 검",
+              "casts": 9,
+              "damage": 47020.5,
+              "directDamage": 47020.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Mocking Blade",
+              "ko": "유린의 검"
+            },
+            {
+              "id": "overhead-slam",
+              "name": "내려찍기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Overhead Slam",
+              "ko": "내려찍기"
+            },
+            {
+              "id": "ankle-slice",
+              "name": "발목 베기",
+              "casts": 18,
+              "damage": 75289.5,
+              "directDamage": 75289.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ankle Slice",
+              "ko": "발목 베기"
+            },
+            {
+              "id": "crushing-wave",
+              "name": "분쇄 파동",
+              "casts": 9,
+              "damage": 26345.25,
+              "directDamage": 26345.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Crushing Wave",
+              "ko": "분쇄 파동"
+            },
+            {
+              "id": "rush-strike",
+              "name": "돌진 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Rush Strike",
+              "ko": "돌진 일격"
+            },
+            {
+              "id": "aerial-snare",
+              "name": "공중 결박",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Aerial Snare",
+              "ko": "공중 결박"
+            },
+            {
+              "id": "ruinous-blow",
+              "name": "파멸의 맹타",
+              "casts": 4,
+              "damage": 79650,
+              "directDamage": 79650,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ruinous Blow",
+              "ko": "파멸의 맹타"
+            },
+            {
+              "id": "sword-aura-rampage",
+              "name": "검기 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Sword Aura Rampage",
+              "ko": "검기 난무"
+            },
+            {
+              "id": "keen-strike",
+              "name": "예리한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Keen Strike",
+              "ko": "예리한 일격"
+            },
+            {
+              "id": "rending-blow",
+              "name": "절단의 맹타",
+              "casts": 128,
+              "damage": 254160,
+              "directDamage": 254160,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rending Blow",
+              "ko": "절단의 맹타"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 548379,
+          "directDamage": 548379,
+          "periodicDamage": 0,
+          "dps": 2284.9125,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "conditional-state-effect",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "leaping-slam",
+              "name": "도약 찍기",
+              "casts": 13,
+              "damage": 39414.375,
+              "directDamage": 39414.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Leaping Slam",
+              "ko": "도약 찍기"
+            },
+            {
+              "id": "mocking-blade",
+              "name": "유린의 검",
+              "casts": 11,
+              "damage": 57469.5,
+              "directDamage": 57469.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Mocking Blade",
+              "ko": "유린의 검"
+            },
+            {
+              "id": "overhead-slam",
+              "name": "내려찍기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Overhead Slam",
+              "ko": "내려찍기"
+            },
+            {
+              "id": "ankle-slice",
+              "name": "발목 베기",
+              "casts": 19,
+              "damage": 79472.25,
+              "directDamage": 79472.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ankle Slice",
+              "ko": "발목 베기"
+            },
+            {
+              "id": "crushing-wave",
+              "name": "분쇄 파동",
+              "casts": 11,
+              "damage": 32199.75,
+              "directDamage": 32199.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Crushing Wave",
+              "ko": "분쇄 파동"
+            },
+            {
+              "id": "rush-strike",
+              "name": "돌진 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Rush Strike",
+              "ko": "돌진 일격"
+            },
+            {
+              "id": "aerial-snare",
+              "name": "공중 결박",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:knockdown|immune-trigger"
+              ],
+              "en": "Aerial Snare",
+              "ko": "공중 결박"
+            },
+            {
+              "id": "ruinous-blow",
+              "name": "파멸의 맹타",
+              "casts": 5,
+              "damage": 99562.5,
+              "directDamage": 99562.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ruinous Blow",
+              "ko": "파멸의 맹타"
+            },
+            {
+              "id": "sword-aura-rampage",
+              "name": "검기 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Sword Aura Rampage",
+              "ko": "검기 난무"
+            },
+            {
+              "id": "keen-strike",
+              "name": "예리한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Keen Strike",
+              "ko": "예리한 일격"
+            },
+            {
+              "id": "rending-blow",
+              "name": "절단의 맹타",
+              "casts": 121,
+              "damage": 240260.625,
+              "directDamage": 240260.625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rending Blow",
+              "ko": "절단의 맹타"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 11,
+        "active": 12,
+        "unresolved": [],
+        "nonOffensive": [
+          {
+            "id": "defiance",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "templar",
+      "en": "Templar",
+      "ko": "수호성",
+      "color": "#79b6fb",
+      "totalDamage": 1390473,
+      "seconds": 420,
+      "dps": 3310.65,
+      "directDamage": 1390473,
+      "periodicDamage": 0,
+      "activeSeconds": 360,
+      "ticks": 0,
+      "policy": {
+        "order": [
+          "annihilate",
+          "shield-rush",
+          "judgment",
+          "shield-smite",
+          "debilitating-smash",
+          "flash-rampage",
+          "poach",
+          "warding-strike",
+          "pummel",
+          "vicious-strike"
+        ],
+        "holdSeconds": 0.25
+      },
+      "selectedSeed": 41,
+      "trainingDps": 3561.692857142857,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 248038.875,
+          "directDamage": 248038.875,
+          "periodicDamage": 0,
+          "dps": 3397.792808219178,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "chain-consumption-assumption"
+          ],
+          "skills": [
+            {
+              "id": "poach",
+              "name": "포획",
+              "casts": 4,
+              "damage": 8932.5,
+              "directDamage": 8932.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Poach",
+              "ko": "포획"
+            },
+            {
+              "id": "shield-smite",
+              "name": "방패 강타",
+              "casts": 7,
+              "damage": 31988.25,
+              "directDamage": 31988.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shield Smite",
+              "ko": "방패 강타"
+            },
+            {
+              "id": "judgment",
+              "name": "심판",
+              "casts": 9,
+              "damage": 53692.875,
+              "directDamage": 53692.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:judgment-ready"
+              ],
+              "en": "Judgment",
+              "ko": "심판"
+            },
+            {
+              "id": "debilitating-smash",
+              "name": "쇠약의 맹타",
+              "casts": 6,
+              "damage": 29740.5,
+              "directDamage": 29740.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Debilitating Smash",
+              "ko": "쇠약의 맹타"
+            },
+            {
+              "id": "warding-strike",
+              "name": "비호의 일격",
+              "casts": 2,
+              "damage": 11450.25,
+              "directDamage": 11450.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Warding Strike",
+              "ko": "비호의 일격"
+            },
+            {
+              "id": "shield-rush",
+              "name": "방패 돌격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Shield Rush",
+              "ko": "방패 돌격"
+            },
+            {
+              "id": "annihilate",
+              "name": "섬멸",
+              "casts": 4,
+              "damage": 35284.5,
+              "directDamage": 35284.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|knockdown|immune-trigger"
+              ],
+              "en": "Annihilate",
+              "ko": "섬멸"
+            },
+            {
+              "id": "flash-rampage",
+              "name": "섬광 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flash Rampage",
+              "ko": "섬광 난무"
+            },
+            {
+              "id": "vicious-strike",
+              "name": "맹렬한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Vicious Strike",
+              "ko": "맹렬한 일격"
+            },
+            {
+              "id": "pummel",
+              "name": "연속 난타",
+              "casts": 25,
+              "damage": 76950,
+              "directDamage": 76950,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Pummel",
+              "ko": "연속 난타"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 326793.375,
+          "directDamage": 326793.375,
+          "periodicDamage": 0,
+          "dps": 3439.930263157895,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified",
+            "chain-consumption-assumption"
+          ],
+          "skills": [
+            {
+              "id": "poach",
+              "name": "포획",
+              "casts": 6,
+              "damage": 13398.75,
+              "directDamage": 13398.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Poach",
+              "ko": "포획"
+            },
+            {
+              "id": "shield-smite",
+              "name": "방패 강타",
+              "casts": 9,
+              "damage": 41127.75,
+              "directDamage": 41127.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shield Smite",
+              "ko": "방패 강타"
+            },
+            {
+              "id": "judgment",
+              "name": "심판",
+              "casts": 10,
+              "damage": 59658.75,
+              "directDamage": 59658.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:judgment-ready"
+              ],
+              "en": "Judgment",
+              "ko": "심판"
+            },
+            {
+              "id": "debilitating-smash",
+              "name": "쇠약의 맹타",
+              "casts": 9,
+              "damage": 44610.75,
+              "directDamage": 44610.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Debilitating Smash",
+              "ko": "쇠약의 맹타"
+            },
+            {
+              "id": "warding-strike",
+              "name": "비호의 일격",
+              "casts": 3,
+              "damage": 17175.375,
+              "directDamage": 17175.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Warding Strike",
+              "ko": "비호의 일격"
+            },
+            {
+              "id": "shield-rush",
+              "name": "방패 돌격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Shield Rush",
+              "ko": "방패 돌격"
+            },
+            {
+              "id": "annihilate",
+              "name": "섬멸",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|knockdown|immune-trigger"
+              ],
+              "en": "Annihilate",
+              "ko": "섬멸"
+            },
+            {
+              "id": "flash-rampage",
+              "name": "섬광 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flash Rampage",
+              "ko": "섬광 난무"
+            },
+            {
+              "id": "vicious-strike",
+              "name": "맹렬한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Vicious Strike",
+              "ko": "맹렬한 일격"
+            },
+            {
+              "id": "pummel",
+              "name": "연속 난타",
+              "casts": 49,
+              "damage": 150822,
+              "directDamage": 150822,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Pummel",
+              "ko": "연속 난타"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 689762.25,
+          "directDamage": 689762.25,
+          "periodicDamage": 0,
+          "dps": 3832.0125,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified",
+            "chain-consumption-assumption"
+          ],
+          "skills": [
+            {
+              "id": "poach",
+              "name": "포획",
+              "casts": 12,
+              "damage": 26797.5,
+              "directDamage": 26797.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Poach",
+              "ko": "포획"
+            },
+            {
+              "id": "shield-smite",
+              "name": "방패 강타",
+              "casts": 18,
+              "damage": 82255.5,
+              "directDamage": 82255.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shield Smite",
+              "ko": "방패 강타"
+            },
+            {
+              "id": "judgment",
+              "name": "심판",
+              "casts": 24,
+              "damage": 143181,
+              "directDamage": 143181,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:judgment-ready"
+              ],
+              "en": "Judgment",
+              "ko": "심판"
+            },
+            {
+              "id": "debilitating-smash",
+              "name": "쇠약의 맹타",
+              "casts": 18,
+              "damage": 89221.5,
+              "directDamage": 89221.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Debilitating Smash",
+              "ko": "쇠약의 맹타"
+            },
+            {
+              "id": "warding-strike",
+              "name": "비호의 일격",
+              "casts": 6,
+              "damage": 34350.75,
+              "directDamage": 34350.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Warding Strike",
+              "ko": "비호의 일격"
+            },
+            {
+              "id": "shield-rush",
+              "name": "방패 돌격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Shield Rush",
+              "ko": "방패 돌격"
+            },
+            {
+              "id": "annihilate",
+              "name": "섬멸",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|knockdown|immune-trigger"
+              ],
+              "en": "Annihilate",
+              "ko": "섬멸"
+            },
+            {
+              "id": "flash-rampage",
+              "name": "섬광 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flash Rampage",
+              "ko": "섬광 난무"
+            },
+            {
+              "id": "vicious-strike",
+              "name": "맹렬한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Vicious Strike",
+              "ko": "맹렬한 일격"
+            },
+            {
+              "id": "pummel",
+              "name": "연속 난타",
+              "casts": 102,
+              "damage": 313956,
+              "directDamage": 313956,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Pummel",
+              "ko": "연속 난타"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 700710.75,
+          "directDamage": 700710.75,
+          "periodicDamage": 0,
+          "dps": 2919.628125,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified",
+            "chain-consumption-assumption"
+          ],
+          "skills": [
+            {
+              "id": "poach",
+              "name": "포획",
+              "casts": 13,
+              "damage": 29030.625,
+              "directDamage": 29030.625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Poach",
+              "ko": "포획"
+            },
+            {
+              "id": "shield-smite",
+              "name": "방패 강타",
+              "casts": 19,
+              "damage": 86825.25,
+              "directDamage": 86825.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shield Smite",
+              "ko": "방패 강타"
+            },
+            {
+              "id": "judgment",
+              "name": "심판",
+              "casts": 26,
+              "damage": 155112.75,
+              "directDamage": 155112.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:judgment-ready"
+              ],
+              "en": "Judgment",
+              "ko": "심판"
+            },
+            {
+              "id": "debilitating-smash",
+              "name": "쇠약의 맹타",
+              "casts": 19,
+              "damage": 94178.25,
+              "directDamage": 94178.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Debilitating Smash",
+              "ko": "쇠약의 맹타"
+            },
+            {
+              "id": "warding-strike",
+              "name": "비호의 일격",
+              "casts": 7,
+              "damage": 40075.875,
+              "directDamage": 40075.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Warding Strike",
+              "ko": "비호의 일격"
+            },
+            {
+              "id": "shield-rush",
+              "name": "방패 돌격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Shield Rush",
+              "ko": "방패 돌격"
+            },
+            {
+              "id": "annihilate",
+              "name": "섬멸",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|knockdown|immune-trigger"
+              ],
+              "en": "Annihilate",
+              "ko": "섬멸"
+            },
+            {
+              "id": "flash-rampage",
+              "name": "섬광 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flash Rampage",
+              "ko": "섬광 난무"
+            },
+            {
+              "id": "vicious-strike",
+              "name": "맹렬한 일격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Vicious Strike",
+              "ko": "맹렬한 일격"
+            },
+            {
+              "id": "pummel",
+              "name": "연속 난타",
+              "casts": 96,
+              "damage": 295488,
+              "directDamage": 295488,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Pummel",
+              "ko": "연속 난타"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 10,
+        "active": 12,
+        "unresolved": [
+          {
+            "id": "punishment",
+            "en": "Punishment",
+            "ko": "징벌",
+            "status": "charge-input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/punishment",
+            "missing": [
+              "charge-duration",
+              "intermediate-charge-damage",
+              "conditional-bonus-or-stat-conversion"
+            ]
+          }
+        ],
+        "nonOffensive": [
+          {
+            "id": "defiance-templar",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "assassin",
+      "en": "Assassin",
+      "ko": "살성",
+      "color": "#d895ed",
+      "totalDamage": 1183934.25,
+      "seconds": 420,
+      "dps": 2818.8910714285716,
+      "directDamage": 1183934.25,
+      "periodicDamage": 0,
+      "activeSeconds": 360,
+      "ticks": 0,
+      "policy": {
+        "order": [
+          "insignia-explosion",
+          "heart-gore",
+          "ambush",
+          "whirlwind-slice",
+          "shadow-fall",
+          "shadowstrike",
+          "infiltrate",
+          "flash-slice",
+          "storm-rampage",
+          "savage-roar",
+          "quick-slice"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 7,
+      "trainingDps": 3023.817857142857,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 201720.375,
+          "directDamage": 201720.375,
+          "periodicDamage": 0,
+          "dps": 2763.292808219178,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "insignia-consumption-assumption"
+          ],
+          "skills": [
+            {
+              "id": "shadowstrike",
+              "name": "암습",
+              "casts": 3,
+              "damage": 7404.75,
+              "directDamage": 7404.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shadowstrike",
+              "ko": "암습"
+            },
+            {
+              "id": "ambush",
+              "name": "기습",
+              "casts": 7,
+              "damage": 24262.875,
+              "directDamage": 24262.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ambush",
+              "ko": "기습"
+            },
+            {
+              "id": "heart-gore",
+              "name": "심장 찌르기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:critical-trigger"
+              ],
+              "en": "Heart Gore",
+              "ko": "심장 찌르기"
+            },
+            {
+              "id": "whirlwind-slice",
+              "name": "회오리 베기",
+              "casts": 7,
+              "damage": 32208.75,
+              "directDamage": 32208.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Whirlwind Slice",
+              "ko": "회오리 베기"
+            },
+            {
+              "id": "flash-slice",
+              "name": "섬광 베기",
+              "casts": 6,
+              "damage": 16686,
+              "directDamage": 16686,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flash Slice",
+              "ko": "섬광 베기"
+            },
+            {
+              "id": "infiltrate",
+              "name": "침투",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Infiltrate",
+              "ko": "침투"
+            },
+            {
+              "id": "shadow-fall",
+              "name": "그림자 낙하",
+              "casts": 3,
+              "damage": 16179.75,
+              "directDamage": 16179.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Shadow Fall",
+              "ko": "그림자 낙하"
+            },
+            {
+              "id": "insignia-explosion",
+              "name": "문양 폭발",
+              "casts": 7,
+              "damage": 54866.25,
+              "directDamage": 54866.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Insignia Explosion",
+              "ko": "문양 폭발"
+            },
+            {
+              "id": "storm-rampage",
+              "name": "폭풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Storm Rampage",
+              "ko": "폭풍 난무"
+            },
+            {
+              "id": "quick-slice",
+              "name": "빠른 베기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Quick Slice",
+              "ko": "빠른 베기"
+            },
+            {
+              "id": "savage-roar",
+              "name": "맹수의 포효",
+              "casts": 24,
+              "damage": 50112,
+              "directDamage": 50112,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Savage Roar",
+              "ko": "맹수의 포효"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 283401,
+          "directDamage": 283401,
+          "periodicDamage": 0,
+          "dps": 2983.1684210526314,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "insignia-consumption-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "shadowstrike",
+              "name": "암습",
+              "casts": 5,
+              "damage": 12341.25,
+              "directDamage": 12341.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shadowstrike",
+              "ko": "암습"
+            },
+            {
+              "id": "ambush",
+              "name": "기습",
+              "casts": 9,
+              "damage": 31195.125,
+              "directDamage": 31195.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ambush",
+              "ko": "기습"
+            },
+            {
+              "id": "heart-gore",
+              "name": "심장 찌르기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:critical-trigger"
+              ],
+              "en": "Heart Gore",
+              "ko": "심장 찌르기"
+            },
+            {
+              "id": "whirlwind-slice",
+              "name": "회오리 베기",
+              "casts": 9,
+              "damage": 41411.25,
+              "directDamage": 41411.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Whirlwind Slice",
+              "ko": "회오리 베기"
+            },
+            {
+              "id": "flash-slice",
+              "name": "섬광 베기",
+              "casts": 9,
+              "damage": 25029,
+              "directDamage": 25029,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flash Slice",
+              "ko": "섬광 베기"
+            },
+            {
+              "id": "infiltrate",
+              "name": "침투",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Infiltrate",
+              "ko": "침투"
+            },
+            {
+              "id": "shadow-fall",
+              "name": "그림자 낙하",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Shadow Fall",
+              "ko": "그림자 낙하"
+            },
+            {
+              "id": "insignia-explosion",
+              "name": "문양 폭발",
+              "casts": 9,
+              "damage": 79464.375,
+              "directDamage": 79464.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Insignia Explosion",
+              "ko": "문양 폭발"
+            },
+            {
+              "id": "storm-rampage",
+              "name": "폭풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Storm Rampage",
+              "ko": "폭풍 난무"
+            },
+            {
+              "id": "quick-slice",
+              "name": "빠른 베기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Quick Slice",
+              "ko": "빠른 베기"
+            },
+            {
+              "id": "savage-roar",
+              "name": "맹수의 포효",
+              "casts": 45,
+              "damage": 93960,
+              "directDamage": 93960,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Savage Roar",
+              "ko": "맹수의 포효"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 590931,
+          "directDamage": 590931,
+          "periodicDamage": 0,
+          "dps": 3282.95,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "insignia-consumption-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "shadowstrike",
+              "name": "암습",
+              "casts": 9,
+              "damage": 22214.25,
+              "directDamage": 22214.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shadowstrike",
+              "ko": "암습"
+            },
+            {
+              "id": "ambush",
+              "name": "기습",
+              "casts": 18,
+              "damage": 62390.25,
+              "directDamage": 62390.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ambush",
+              "ko": "기습"
+            },
+            {
+              "id": "heart-gore",
+              "name": "심장 찌르기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:critical-trigger"
+              ],
+              "en": "Heart Gore",
+              "ko": "심장 찌르기"
+            },
+            {
+              "id": "whirlwind-slice",
+              "name": "회오리 베기",
+              "casts": 18,
+              "damage": 82822.5,
+              "directDamage": 82822.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Whirlwind Slice",
+              "ko": "회오리 베기"
+            },
+            {
+              "id": "flash-slice",
+              "name": "섬광 베기",
+              "casts": 18,
+              "damage": 50058,
+              "directDamage": 50058,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flash Slice",
+              "ko": "섬광 베기"
+            },
+            {
+              "id": "infiltrate",
+              "name": "침투",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Infiltrate",
+              "ko": "침투"
+            },
+            {
+              "id": "shadow-fall",
+              "name": "그림자 낙하",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Shadow Fall",
+              "ko": "그림자 낙하"
+            },
+            {
+              "id": "insignia-explosion",
+              "name": "문양 폭발",
+              "casts": 18,
+              "damage": 166734,
+              "directDamage": 166734,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Insignia Explosion",
+              "ko": "문양 폭발"
+            },
+            {
+              "id": "storm-rampage",
+              "name": "폭풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Storm Rampage",
+              "ko": "폭풍 난무"
+            },
+            {
+              "id": "quick-slice",
+              "name": "빠른 베기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Quick Slice",
+              "ko": "빠른 베기"
+            },
+            {
+              "id": "savage-roar",
+              "name": "맹수의 포효",
+              "casts": 99,
+              "damage": 206712,
+              "directDamage": 206712,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Savage Roar",
+              "ko": "맹수의 포효"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 593003.25,
+          "directDamage": 593003.25,
+          "periodicDamage": 0,
+          "dps": 2470.846875,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "insignia-consumption-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "shadowstrike",
+              "name": "암습",
+              "casts": 11,
+              "damage": 27150.75,
+              "directDamage": 27150.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Shadowstrike",
+              "ko": "암습"
+            },
+            {
+              "id": "ambush",
+              "name": "기습",
+              "casts": 19,
+              "damage": 65856.375,
+              "directDamage": 65856.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ambush",
+              "ko": "기습"
+            },
+            {
+              "id": "heart-gore",
+              "name": "심장 찌르기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:critical-trigger"
+              ],
+              "en": "Heart Gore",
+              "ko": "심장 찌르기"
+            },
+            {
+              "id": "whirlwind-slice",
+              "name": "회오리 베기",
+              "casts": 19,
+              "damage": 87423.75,
+              "directDamage": 87423.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Whirlwind Slice",
+              "ko": "회오리 베기"
+            },
+            {
+              "id": "flash-slice",
+              "name": "섬광 베기",
+              "casts": 19,
+              "damage": 52839,
+              "directDamage": 52839,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flash Slice",
+              "ko": "섬광 베기"
+            },
+            {
+              "id": "infiltrate",
+              "name": "침투",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Infiltrate",
+              "ko": "침투"
+            },
+            {
+              "id": "shadow-fall",
+              "name": "그림자 낙하",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Shadow Fall",
+              "ko": "그림자 낙하"
+            },
+            {
+              "id": "insignia-explosion",
+              "name": "문양 폭발",
+              "casts": 19,
+              "damage": 165549.375,
+              "directDamage": 165549.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Insignia Explosion",
+              "ko": "문양 폭발"
+            },
+            {
+              "id": "storm-rampage",
+              "name": "폭풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Storm Rampage",
+              "ko": "폭풍 난무"
+            },
+            {
+              "id": "quick-slice",
+              "name": "빠른 베기",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Quick Slice",
+              "ko": "빠른 베기"
+            },
+            {
+              "id": "savage-roar",
+              "name": "맹수의 포효",
+              "casts": 93,
+              "damage": 194184,
+              "directDamage": 194184,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Savage Roar",
+              "ko": "맹수의 포효"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 11,
+        "active": 12,
+        "unresolved": [],
+        "nonOffensive": [
+          {
+            "id": "defiance-assassin",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "ranger",
+      "en": "Ranger",
+      "ko": "궁성",
+      "color": "#8ecd91",
+      "totalDamage": 1247903.375,
+      "seconds": 420,
+      "dps": 2971.1985119047617,
+      "directDamage": 884991.375,
+      "periodicDamage": 362912,
+      "activeSeconds": 360,
+      "ticks": 352,
+      "policy": {
+        "order": [
+          "drill-dart",
+          "gale-arrow",
+          "marking-shot",
+          "snare-shot",
+          "suppressing-arrow",
+          "burst-arrow",
+          "arrow-scattershot",
+          "tempest-shot",
+          "snipe"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 41,
+      "trainingDps": 3182.0496031746034,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 213112.125,
+          "directDamage": 157438.125,
+          "periodicDamage": 55674,
+          "dps": 2919.344178082192,
+          "ticks": 54,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption"
+          ],
+          "skills": [
+            {
+              "id": "snare-shot",
+              "name": "올가미 화살",
+              "casts": 4,
+              "damage": 11034,
+              "directDamage": 11034,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snare Shot",
+              "ko": "올가미 화살"
+            },
+            {
+              "id": "marking-shot",
+              "name": "표적 화살",
+              "casts": 7,
+              "damage": 26389.125,
+              "directDamage": 26389.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Marking Shot",
+              "ko": "표적 화살"
+            },
+            {
+              "id": "drill-dart",
+              "name": "송곳 화살",
+              "casts": 13,
+              "damage": 94371.75,
+              "directDamage": 38697.75,
+              "periodicDamage": 55674,
+              "ticks": 54,
+              "blocked": [],
+              "en": "Drill Dart",
+              "ko": "송곳 화살"
+            },
+            {
+              "id": "gale-arrow",
+              "name": "광풍 화살",
+              "casts": 4,
+              "damage": 21739.5,
+              "directDamage": 21739.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Gale Arrow",
+              "ko": "광풍 화살"
+            },
+            {
+              "id": "burst-arrow",
+              "name": "파열 화살",
+              "casts": 2,
+              "damage": 12253.5,
+              "directDamage": 12253.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:slow|root"
+              ],
+              "en": "Burst Arrow",
+              "ko": "파열 화살"
+            },
+            {
+              "id": "suppressing-arrow",
+              "name": "제압 화살",
+              "casts": 3,
+              "damage": 12224.25,
+              "directDamage": 12224.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Suppressing Arrow",
+              "ko": "제압 화살"
+            },
+            {
+              "id": "arrow-scattershot",
+              "name": "화살 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Arrow Scattershot",
+              "ko": "화살 난사"
+            },
+            {
+              "id": "snipe",
+              "name": "저격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snipe",
+              "ko": "저격"
+            },
+            {
+              "id": "tempest-shot",
+              "name": "속사",
+              "casts": 24,
+              "damage": 35100,
+              "directDamage": 35100,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Tempest Shot",
+              "ko": "속사"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 301101,
+          "directDamage": 214497,
+          "periodicDamage": 86604,
+          "dps": 3169.4842105263156,
+          "ticks": 84,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "snare-shot",
+              "name": "올가미 화살",
+              "casts": 6,
+              "damage": 16551,
+              "directDamage": 16551,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snare Shot",
+              "ko": "올가미 화살"
+            },
+            {
+              "id": "marking-shot",
+              "name": "표적 화살",
+              "casts": 9,
+              "damage": 33928.875,
+              "directDamage": 33928.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Marking Shot",
+              "ko": "표적 화살"
+            },
+            {
+              "id": "drill-dart",
+              "name": "송곳 화살",
+              "casts": 18,
+              "damage": 140185.5,
+              "directDamage": 53581.5,
+              "periodicDamage": 86604,
+              "ticks": 84,
+              "blocked": [],
+              "en": "Drill Dart",
+              "ko": "송곳 화살"
+            },
+            {
+              "id": "gale-arrow",
+              "name": "광풍 화살",
+              "casts": 5,
+              "damage": 27174.375,
+              "directDamage": 27174.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Gale Arrow",
+              "ko": "광풍 화살"
+            },
+            {
+              "id": "burst-arrow",
+              "name": "파열 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:slow|root"
+              ],
+              "en": "Burst Arrow",
+              "ko": "파열 화살"
+            },
+            {
+              "id": "suppressing-arrow",
+              "name": "제압 화살",
+              "casts": 5,
+              "damage": 20373.75,
+              "directDamage": 20373.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Suppressing Arrow",
+              "ko": "제압 화살"
+            },
+            {
+              "id": "arrow-scattershot",
+              "name": "화살 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Arrow Scattershot",
+              "ko": "화살 난사"
+            },
+            {
+              "id": "snipe",
+              "name": "저격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snipe",
+              "ko": "저격"
+            },
+            {
+              "id": "tempest-shot",
+              "name": "속사",
+              "casts": 43,
+              "damage": 62887.5,
+              "directDamage": 62887.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Tempest Shot",
+              "ko": "속사"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 618658.375,
+          "directDamage": 434109.375,
+          "periodicDamage": 184549,
+          "dps": 3436.9909722222224,
+          "ticks": 179,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "snare-shot",
+              "name": "올가미 화살",
+              "casts": 12,
+              "damage": 33102,
+              "directDamage": 33102,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snare Shot",
+              "ko": "올가미 화살"
+            },
+            {
+              "id": "marking-shot",
+              "name": "표적 화살",
+              "casts": 18,
+              "damage": 67857.75,
+              "directDamage": 67857.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Marking Shot",
+              "ko": "표적 화살"
+            },
+            {
+              "id": "drill-dart",
+              "name": "송곳 화살",
+              "casts": 36,
+              "damage": 291712,
+              "directDamage": 107163,
+              "periodicDamage": 184549,
+              "ticks": 179,
+              "blocked": [],
+              "en": "Drill Dart",
+              "ko": "송곳 화살"
+            },
+            {
+              "id": "gale-arrow",
+              "name": "광풍 화살",
+              "casts": 9,
+              "damage": 48913.875,
+              "directDamage": 48913.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Gale Arrow",
+              "ko": "광풍 화살"
+            },
+            {
+              "id": "burst-arrow",
+              "name": "파열 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:slow|root"
+              ],
+              "en": "Burst Arrow",
+              "ko": "파열 화살"
+            },
+            {
+              "id": "suppressing-arrow",
+              "name": "제압 화살",
+              "casts": 9,
+              "damage": 36672.75,
+              "directDamage": 36672.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Suppressing Arrow",
+              "ko": "제압 화살"
+            },
+            {
+              "id": "arrow-scattershot",
+              "name": "화살 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Arrow Scattershot",
+              "ko": "화살 난사"
+            },
+            {
+              "id": "snipe",
+              "name": "저격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snipe",
+              "ko": "저격"
+            },
+            {
+              "id": "tempest-shot",
+              "name": "속사",
+              "casts": 96,
+              "damage": 140400,
+              "directDamage": 140400,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Tempest Shot",
+              "ko": "속사"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 629245,
+          "directDamage": 450882,
+          "periodicDamage": 178363,
+          "dps": 2621.8541666666665,
+          "ticks": 173,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "snare-shot",
+              "name": "올가미 화살",
+              "casts": 13,
+              "damage": 35860.5,
+              "directDamage": 35860.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snare Shot",
+              "ko": "올가미 화살"
+            },
+            {
+              "id": "marking-shot",
+              "name": "표적 화살",
+              "casts": 19,
+              "damage": 71627.625,
+              "directDamage": 71627.625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Marking Shot",
+              "ko": "표적 화살"
+            },
+            {
+              "id": "drill-dart",
+              "name": "송곳 화살",
+              "casts": 36,
+              "damage": 285526,
+              "directDamage": 107163,
+              "periodicDamage": 178363,
+              "ticks": 173,
+              "blocked": [],
+              "en": "Drill Dart",
+              "ko": "송곳 화살"
+            },
+            {
+              "id": "gale-arrow",
+              "name": "광풍 화살",
+              "casts": 11,
+              "damage": 59783.625,
+              "directDamage": 59783.625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Gale Arrow",
+              "ko": "광풍 화살"
+            },
+            {
+              "id": "burst-arrow",
+              "name": "파열 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:slow|root"
+              ],
+              "en": "Burst Arrow",
+              "ko": "파열 화살"
+            },
+            {
+              "id": "suppressing-arrow",
+              "name": "제압 화살",
+              "casts": 11,
+              "damage": 44822.25,
+              "directDamage": 44822.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Suppressing Arrow",
+              "ko": "제압 화살"
+            },
+            {
+              "id": "arrow-scattershot",
+              "name": "화살 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Arrow Scattershot",
+              "ko": "화살 난사"
+            },
+            {
+              "id": "snipe",
+              "name": "저격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Snipe",
+              "ko": "저격"
+            },
+            {
+              "id": "tempest-shot",
+              "name": "속사",
+              "casts": 90,
+              "damage": 131625,
+              "directDamage": 131625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Tempest Shot",
+              "ko": "속사"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 9,
+        "active": 12,
+        "unresolved": [
+          {
+            "id": "explosion-trap",
+            "en": "Explosion Trap",
+            "ko": "폭발의 덫",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/explosion-trap",
+            "missing": [
+              "trap-trigger-time"
+            ]
+          },
+          {
+            "id": "deadshot",
+            "en": "Deadshot",
+            "ko": "조준 화살",
+            "status": "charge-input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/deadshot",
+            "missing": [
+              "charge-duration",
+              "intermediate-charge-damage",
+              "conditional-bonus-or-stat-conversion"
+            ]
+          }
+        ],
+        "nonOffensive": [
+          {
+            "id": "defiance-ranger",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "sorcerer",
+      "en": "Sorcerer",
+      "ko": "마도성",
+      "color": "#ac9df3",
+      "totalDamage": 1267626.375,
+      "seconds": 420,
+      "dps": 3018.1580357142857,
+      "directDamage": 1267626.375,
+      "periodicDamage": 0,
+      "activeSeconds": 360,
+      "ticks": 0,
+      "policy": {
+        "order": [
+          "blaze",
+          "firestorm",
+          "flame-scattershot",
+          "winters-shackles",
+          "frost-burst",
+          "frost",
+          "ice-chain",
+          "flame-arrow"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 7,
+      "trainingDps": 3191.8714285714286,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 213777,
+          "directDamage": 213777,
+          "periodicDamage": 0,
+          "dps": 2928.4520547945203,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified"
+          ],
+          "skills": [
+            {
+              "id": "firestorm",
+              "name": "불꽃 작살",
+              "casts": 13,
+              "damage": 64935,
+              "directDamage": 64935,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Firestorm",
+              "ko": "불꽃 작살"
+            },
+            {
+              "id": "blaze",
+              "name": "불꽃 폭발",
+              "casts": 13,
+              "damage": 66397.5,
+              "directDamage": 66397.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:fire-mark"
+              ],
+              "en": "Blaze",
+              "ko": "불꽃 폭발"
+            },
+            {
+              "id": "frost",
+              "name": "빙결",
+              "casts": 2,
+              "damage": 5152.5,
+              "directDamage": 5152.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Frost",
+              "ko": "빙결"
+            },
+            {
+              "id": "winters-shackles",
+              "name": "겨울의 속박",
+              "casts": 2,
+              "damage": 7949.25,
+              "directDamage": 7949.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Winter's Shackles",
+              "ko": "겨울의 속박"
+            },
+            {
+              "id": "frost-burst",
+              "name": "빙결 폭발",
+              "casts": 2,
+              "damage": 8649,
+              "directDamage": 8649,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:frost|immune-trigger"
+              ],
+              "en": "Frost Burst",
+              "ko": "빙결 폭발"
+            },
+            {
+              "id": "flame-scattershot",
+              "name": "화염 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flame Scattershot",
+              "ko": "화염 난사"
+            },
+            {
+              "id": "flame-arrow",
+              "name": "불꽃 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flame Arrow",
+              "ko": "불꽃 화살"
+            },
+            {
+              "id": "ice-chain",
+              "name": "얼음 사슬",
+              "casts": 25,
+              "damage": 60693.75,
+              "directDamage": 60693.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ice Chain",
+              "ko": "얼음 사슬"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 308318.625,
+          "directDamage": 308318.625,
+          "periodicDamage": 0,
+          "dps": 3245.459210526316,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "firestorm",
+              "name": "불꽃 작살",
+              "casts": 18,
+              "damage": 89910,
+              "directDamage": 89910,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Firestorm",
+              "ko": "불꽃 작살"
+            },
+            {
+              "id": "blaze",
+              "name": "불꽃 폭발",
+              "casts": 18,
+              "damage": 91935,
+              "directDamage": 91935,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:fire-mark"
+              ],
+              "en": "Blaze",
+              "ko": "불꽃 폭발"
+            },
+            {
+              "id": "frost",
+              "name": "빙결",
+              "casts": 3,
+              "damage": 7728.75,
+              "directDamage": 7728.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Frost",
+              "ko": "빙결"
+            },
+            {
+              "id": "winters-shackles",
+              "name": "겨울의 속박",
+              "casts": 3,
+              "damage": 11923.875,
+              "directDamage": 11923.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Winter's Shackles",
+              "ko": "겨울의 속박"
+            },
+            {
+              "id": "frost-burst",
+              "name": "빙결 폭발",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:frost|immune-trigger"
+              ],
+              "en": "Frost Burst",
+              "ko": "빙결 폭발"
+            },
+            {
+              "id": "flame-scattershot",
+              "name": "화염 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flame Scattershot",
+              "ko": "화염 난사"
+            },
+            {
+              "id": "flame-arrow",
+              "name": "불꽃 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flame Arrow",
+              "ko": "불꽃 화살"
+            },
+            {
+              "id": "ice-chain",
+              "name": "얼음 사슬",
+              "casts": 44,
+              "damage": 106821,
+              "directDamage": 106821,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ice Chain",
+              "ko": "얼음 사슬"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 632965.5,
+          "directDamage": 632965.5,
+          "periodicDamage": 0,
+          "dps": 3516.475,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "firestorm",
+              "name": "불꽃 작살",
+              "casts": 36,
+              "damage": 179820,
+              "directDamage": 179820,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Firestorm",
+              "ko": "불꽃 작살"
+            },
+            {
+              "id": "blaze",
+              "name": "불꽃 폭발",
+              "casts": 36,
+              "damage": 183870,
+              "directDamage": 183870,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:fire-mark"
+              ],
+              "en": "Blaze",
+              "ko": "불꽃 폭발"
+            },
+            {
+              "id": "frost",
+              "name": "빙결",
+              "casts": 6,
+              "damage": 15457.5,
+              "directDamage": 15457.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Frost",
+              "ko": "빙결"
+            },
+            {
+              "id": "winters-shackles",
+              "name": "겨울의 속박",
+              "casts": 4,
+              "damage": 15898.5,
+              "directDamage": 15898.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Winter's Shackles",
+              "ko": "겨울의 속박"
+            },
+            {
+              "id": "frost-burst",
+              "name": "빙결 폭발",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:frost|immune-trigger"
+              ],
+              "en": "Frost Burst",
+              "ko": "빙결 폭발"
+            },
+            {
+              "id": "flame-scattershot",
+              "name": "화염 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flame Scattershot",
+              "ko": "화염 난사"
+            },
+            {
+              "id": "flame-arrow",
+              "name": "불꽃 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flame Arrow",
+              "ko": "불꽃 화살"
+            },
+            {
+              "id": "ice-chain",
+              "name": "얼음 사슬",
+              "casts": 98,
+              "damage": 237919.5,
+              "directDamage": 237919.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ice Chain",
+              "ko": "얼음 사슬"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 634660.875,
+          "directDamage": 634660.875,
+          "periodicDamage": 0,
+          "dps": 2644.4203125,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified",
+            "target-control-unverified"
+          ],
+          "skills": [
+            {
+              "id": "firestorm",
+              "name": "불꽃 작살",
+              "casts": 36,
+              "damage": 179820,
+              "directDamage": 179820,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Firestorm",
+              "ko": "불꽃 작살"
+            },
+            {
+              "id": "blaze",
+              "name": "불꽃 폭발",
+              "casts": 36,
+              "damage": 183870,
+              "directDamage": 183870,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:fire-mark"
+              ],
+              "en": "Blaze",
+              "ko": "불꽃 폭발"
+            },
+            {
+              "id": "frost",
+              "name": "빙결",
+              "casts": 7,
+              "damage": 18033.75,
+              "directDamage": 18033.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Frost",
+              "ko": "빙결"
+            },
+            {
+              "id": "winters-shackles",
+              "name": "겨울의 속박",
+              "casts": 5,
+              "damage": 19873.125,
+              "directDamage": 19873.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Winter's Shackles",
+              "ko": "겨울의 속박"
+            },
+            {
+              "id": "frost-burst",
+              "name": "빙결 폭발",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:frost|immune-trigger"
+              ],
+              "en": "Frost Burst",
+              "ko": "빙결 폭발"
+            },
+            {
+              "id": "flame-scattershot",
+              "name": "화염 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Flame Scattershot",
+              "ko": "화염 난사"
+            },
+            {
+              "id": "flame-arrow",
+              "name": "불꽃 화살",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Flame Arrow",
+              "ko": "불꽃 화살"
+            },
+            {
+              "id": "ice-chain",
+              "name": "얼음 사슬",
+              "casts": 96,
+              "damage": 233064,
+              "directDamage": 233064,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Ice Chain",
+              "ko": "얼음 사슬"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 8,
+        "active": 12,
+        "unresolved": [
+          {
+            "id": "bittercold-wind",
+            "en": "Bittercold Wind",
+            "ko": "혹한의 바람",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/bittercold-wind",
+            "missing": [
+              "ground-effect-hit-frequency"
+            ]
+          },
+          {
+            "id": "hellfire",
+            "en": "Hellfire",
+            "ko": "지옥의 화염",
+            "status": "charge-input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/hellfire",
+            "missing": [
+              "charge-duration",
+              "intermediate-charge-damage"
+            ]
+          }
+        ],
+        "nonOffensive": [
+          {
+            "id": "wish-of-concentration",
+            "en": "Wish of Concentration",
+            "ko": "집중의 기원"
+          },
+          {
+            "id": "defiance-sorcerer",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "spiritmaster",
+      "en": "Spiritmaster",
+      "ko": "정령성",
+      "color": "#ef927b",
+      "totalDamage": 1272047.5,
+      "seconds": 420,
+      "dps": 3028.684523809524,
+      "directDamage": 644701.5,
+      "periodicDamage": 627346,
+      "activeSeconds": 360,
+      "ticks": 181,
+      "policy": {
+        "order": [
+          "dimensional-control",
+          "jointstrike-curse",
+          "elemental-fusion",
+          "rapid-scattershot",
+          "souls-cry",
+          "combustion",
+          "cold-shock"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 7,
+      "trainingDps": 3142.4480158730157,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 213796.625,
+          "directDamage": 102884.625,
+          "periodicDamage": 110912,
+          "dps": 2928.720890410959,
+          "ticks": 32,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption"
+          ],
+          "skills": [
+            {
+              "id": "jointstrike-curse",
+              "name": "협공: 저주",
+              "casts": 7,
+              "damage": 124559.375,
+              "directDamage": 13647.375,
+              "periodicDamage": 110912,
+              "ticks": 32,
+              "blocked": [],
+              "en": "Jointstrike: Curse",
+              "ko": "협공: 저주"
+            },
+            {
+              "id": "souls-cry",
+              "name": "영혼의 절규",
+              "casts": 2,
+              "damage": 5483.25,
+              "directDamage": 5483.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Soul's Cry",
+              "ko": "영혼의 절규"
+            },
+            {
+              "id": "rapid-scattershot",
+              "name": "연속 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Rapid Scattershot",
+              "ko": "연속 난사"
+            },
+            {
+              "id": "dimensional-control",
+              "name": "공간 지배",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:spirit-trigger"
+              ],
+              "en": "Dimensional Control",
+              "ko": "공간 지배"
+            },
+            {
+              "id": "elemental-fusion",
+              "name": "원소 융합",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "elements"
+              ],
+              "en": "Elemental Fusion",
+              "ko": "원소 융합"
+            },
+            {
+              "id": "cold-shock",
+              "name": "냉기 충격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Cold Shock",
+              "ko": "냉기 충격"
+            },
+            {
+              "id": "combustion",
+              "name": "화염 전소",
+              "casts": 48,
+              "damage": 83754,
+              "directDamage": 83754,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Combustion",
+              "ko": "화염 전소"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 310862.25,
+          "directDamage": 154892.25,
+          "periodicDamage": 155970,
+          "dps": 3272.2342105263156,
+          "ticks": 45,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption"
+          ],
+          "skills": [
+            {
+              "id": "jointstrike-curse",
+              "name": "협공: 저주",
+              "casts": 9,
+              "damage": 173516.625,
+              "directDamage": 17546.625,
+              "periodicDamage": 155970,
+              "ticks": 45,
+              "blocked": [],
+              "en": "Jointstrike: Curse",
+              "ko": "협공: 저주"
+            },
+            {
+              "id": "souls-cry",
+              "name": "영혼의 절규",
+              "casts": 3,
+              "damage": 8224.875,
+              "directDamage": 8224.875,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Soul's Cry",
+              "ko": "영혼의 절규"
+            },
+            {
+              "id": "rapid-scattershot",
+              "name": "연속 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Rapid Scattershot",
+              "ko": "연속 난사"
+            },
+            {
+              "id": "dimensional-control",
+              "name": "공간 지배",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:spirit-trigger"
+              ],
+              "en": "Dimensional Control",
+              "ko": "공간 지배"
+            },
+            {
+              "id": "elemental-fusion",
+              "name": "원소 융합",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "elements"
+              ],
+              "en": "Elemental Fusion",
+              "ko": "원소 융합"
+            },
+            {
+              "id": "cold-shock",
+              "name": "냉기 충격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Cold Shock",
+              "ko": "냉기 충격"
+            },
+            {
+              "id": "combustion",
+              "name": "화염 전소",
+              "casts": 74,
+              "damage": 129120.75,
+              "directDamage": 129120.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Combustion",
+              "ko": "화염 전소"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 633690,
+          "directDamage": 321750,
+          "periodicDamage": 311940,
+          "dps": 3520.5,
+          "ticks": 90,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption"
+          ],
+          "skills": [
+            {
+              "id": "jointstrike-curse",
+              "name": "협공: 저주",
+              "casts": 18,
+              "damage": 347033.25,
+              "directDamage": 35093.25,
+              "periodicDamage": 311940,
+              "ticks": 90,
+              "blocked": [],
+              "en": "Jointstrike: Curse",
+              "ko": "협공: 저주"
+            },
+            {
+              "id": "souls-cry",
+              "name": "영혼의 절규",
+              "casts": 4,
+              "damage": 10966.5,
+              "directDamage": 10966.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Soul's Cry",
+              "ko": "영혼의 절규"
+            },
+            {
+              "id": "rapid-scattershot",
+              "name": "연속 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Rapid Scattershot",
+              "ko": "연속 난사"
+            },
+            {
+              "id": "dimensional-control",
+              "name": "공간 지배",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:spirit-trigger"
+              ],
+              "en": "Dimensional Control",
+              "ko": "공간 지배"
+            },
+            {
+              "id": "elemental-fusion",
+              "name": "원소 융합",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "elements"
+              ],
+              "en": "Elemental Fusion",
+              "ko": "원소 융합"
+            },
+            {
+              "id": "cold-shock",
+              "name": "냉기 충격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Cold Shock",
+              "ko": "냉기 충격"
+            },
+            {
+              "id": "combustion",
+              "name": "화염 전소",
+              "casts": 158,
+              "damage": 275690.25,
+              "directDamage": 275690.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Combustion",
+              "ko": "화염 전소"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 638357.5,
+          "directDamage": 322951.5,
+          "periodicDamage": 315406,
+          "dps": 2659.8229166666665,
+          "ticks": 91,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption"
+          ],
+          "skills": [
+            {
+              "id": "jointstrike-curse",
+              "name": "협공: 저주",
+              "casts": 19,
+              "damage": 352448.875,
+              "directDamage": 37042.875,
+              "periodicDamage": 315406,
+              "ticks": 91,
+              "blocked": [],
+              "en": "Jointstrike: Curse",
+              "ko": "협공: 저주"
+            },
+            {
+              "id": "souls-cry",
+              "name": "영혼의 절규",
+              "casts": 5,
+              "damage": 13708.125,
+              "directDamage": 13708.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Soul's Cry",
+              "ko": "영혼의 절규"
+            },
+            {
+              "id": "rapid-scattershot",
+              "name": "연속 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Rapid Scattershot",
+              "ko": "연속 난사"
+            },
+            {
+              "id": "dimensional-control",
+              "name": "공간 지배",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:spirit-trigger"
+              ],
+              "en": "Dimensional Control",
+              "ko": "공간 지배"
+            },
+            {
+              "id": "elemental-fusion",
+              "name": "원소 융합",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "elements"
+              ],
+              "en": "Elemental Fusion",
+              "ko": "원소 융합"
+            },
+            {
+              "id": "cold-shock",
+              "name": "냉기 충격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Cold Shock",
+              "ko": "냉기 충격"
+            },
+            {
+              "id": "combustion",
+              "name": "화염 전소",
+              "casts": 156,
+              "damage": 272200.5,
+              "directDamage": 272200.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Combustion",
+              "ko": "화염 전소"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 7,
+        "active": 12,
+        "unresolved": [
+          {
+            "id": "summon-fire-spirit",
+            "en": "Summon: Fire Spirit",
+            "ko": "소환: 불의 정령",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/summon-fire-spirit",
+            "missing": [
+              "pet-basic-damage",
+              "pet-attack-frequency",
+              "pet-skill-proc-timeline",
+              "conditional-bonus-or-stat-conversion"
+            ]
+          },
+          {
+            "id": "summon-water-spirit",
+            "en": "Summon: Water Spirit",
+            "ko": "소환: 물의 정령",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/summon-water-spirit",
+            "missing": [
+              "pet-basic-damage",
+              "pet-attack-frequency",
+              "pet-skill-proc-timeline"
+            ]
+          },
+          {
+            "id": "summon-earth-spirit",
+            "en": "Summon: Earth Spirit",
+            "ko": "소환: 땅의 정령",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/summon-earth-spirit",
+            "missing": [
+              "pet-basic-damage",
+              "pet-attack-frequency",
+              "pet-skill-proc-timeline"
+            ]
+          },
+          {
+            "id": "summon-wind-spirit",
+            "en": "Summon: Wind Spirit",
+            "ko": "소환: 바람의 정령",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/summon-wind-spirit",
+            "missing": [
+              "pet-basic-damage",
+              "pet-attack-frequency",
+              "pet-skill-proc-timeline"
+            ]
+          }
+        ],
+        "nonOffensive": [
+          {
+            "id": "defiance-spiritmaster",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "cleric",
+      "en": "Cleric",
+      "ko": "치유성",
+      "color": "#76d5ba",
+      "totalDamage": 3059637.375,
+      "seconds": 420,
+      "dps": 7284.850892857143,
+      "directDamage": 1171542.375,
+      "periodicDamage": 1888095,
+      "activeSeconds": 360,
+      "ticks": 539,
+      "policy": {
+        "order": [
+          "condemnation",
+          "debilitating-mark",
+          "chain-of-torment",
+          "judgment-thunder",
+          "earths-retribution",
+          "lightning-strike-scattershot"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 7,
+      "trainingDps": 7539.408333333334,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 459666.75,
+          "directDamage": 184515.75,
+          "periodicDamage": 275151,
+          "dps": 6296.804794520548,
+          "ticks": 79,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "dot-lifetime-assumption"
+          ],
+          "skills": [
+            {
+              "id": "debilitating-mark",
+              "name": "약화의 낙인",
+              "casts": 7,
+              "damage": 184558.375,
+              "directDamage": 19569.375,
+              "periodicDamage": 164989,
+              "ticks": 53,
+              "blocked": [],
+              "en": "Debilitating Mark",
+              "ko": "약화의 낙인"
+            },
+            {
+              "id": "chain-of-torment",
+              "name": "고통의 연쇄",
+              "casts": 4,
+              "damage": 125412.5,
+              "directDamage": 15250.5,
+              "periodicDamage": 110162,
+              "ticks": 26,
+              "blocked": [],
+              "en": "Chain of Torment",
+              "ko": "고통의 연쇄"
+            },
+            {
+              "id": "condemnation",
+              "name": "단죄",
+              "casts": 11,
+              "damage": 54920.25,
+              "directDamage": 54920.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:chain-of-torment"
+              ],
+              "en": "Condemnation",
+              "ko": "단죄"
+            },
+            {
+              "id": "lightning-strike-scattershot",
+              "name": "벼락 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Lightning Strike Scattershot",
+              "ko": "벼락 난사"
+            },
+            {
+              "id": "earths-retribution",
+              "name": "대지의 응보",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Earth's Retribution",
+              "ko": "대지의 응보"
+            },
+            {
+              "id": "judgment-thunder",
+              "name": "심판의 번개",
+              "casts": 35,
+              "damage": 94775.625,
+              "directDamage": 94775.625,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Judgment Thunder",
+              "ko": "심판의 번개"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 736712.5,
+          "directDamage": 280318.5,
+          "periodicDamage": 456394,
+          "dps": 7754.868421052632,
+          "ticks": 130,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "dot-lifetime-assumption"
+          ],
+          "skills": [
+            {
+              "id": "debilitating-mark",
+              "name": "약화의 낙인",
+              "casts": 9,
+              "damage": 286652.625,
+              "directDamage": 25160.625,
+              "periodicDamage": 261492,
+              "ticks": 84,
+              "blocked": [],
+              "en": "Debilitating Mark",
+              "ko": "약화의 낙인"
+            },
+            {
+              "id": "chain-of-torment",
+              "name": "고통의 연쇄",
+              "casts": 5,
+              "damage": 213965.125,
+              "directDamage": 19063.125,
+              "periodicDamage": 194902,
+              "ticks": 46,
+              "blocked": [],
+              "en": "Chain of Torment",
+              "ko": "고통의 연쇄"
+            },
+            {
+              "id": "condemnation",
+              "name": "단죄",
+              "casts": 18,
+              "damage": 89869.5,
+              "directDamage": 89869.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:chain-of-torment"
+              ],
+              "en": "Condemnation",
+              "ko": "단죄"
+            },
+            {
+              "id": "lightning-strike-scattershot",
+              "name": "벼락 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Lightning Strike Scattershot",
+              "ko": "벼락 난사"
+            },
+            {
+              "id": "earths-retribution",
+              "name": "대지의 응보",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Earth's Retribution",
+              "ko": "대지의 응보"
+            },
+            {
+              "id": "judgment-thunder",
+              "name": "심판의 번개",
+              "casts": 54,
+              "damage": 146225.25,
+              "directDamage": 146225.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Judgment Thunder",
+              "ko": "심판의 번개"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 1519752.25,
+          "directDamage": 581195.25,
+          "periodicDamage": 938557,
+          "dps": 8443.068055555555,
+          "ticks": 269,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "dot-lifetime-assumption"
+          ],
+          "skills": [
+            {
+              "id": "debilitating-mark",
+              "name": "약화의 낙인",
+              "casts": 18,
+              "damage": 607548.25,
+              "directDamage": 50321.25,
+              "periodicDamage": 557227,
+              "ticks": 179,
+              "blocked": [],
+              "en": "Debilitating Mark",
+              "ko": "약화의 낙인"
+            },
+            {
+              "id": "chain-of-torment",
+              "name": "고통의 연쇄",
+              "casts": 9,
+              "damage": 415643.625,
+              "directDamage": 34313.625,
+              "periodicDamage": 381330,
+              "ticks": 90,
+              "blocked": [],
+              "en": "Chain of Torment",
+              "ko": "고통의 연쇄"
+            },
+            {
+              "id": "condemnation",
+              "name": "단죄",
+              "casts": 36,
+              "damage": 179739,
+              "directDamage": 179739,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:chain-of-torment"
+              ],
+              "en": "Condemnation",
+              "ko": "단죄"
+            },
+            {
+              "id": "lightning-strike-scattershot",
+              "name": "벼락 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Lightning Strike Scattershot",
+              "ko": "벼락 난사"
+            },
+            {
+              "id": "earths-retribution",
+              "name": "대지의 응보",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Earth's Retribution",
+              "ko": "대지의 응보"
+            },
+            {
+              "id": "judgment-thunder",
+              "name": "심판의 번개",
+              "casts": 117,
+              "damage": 316821.375,
+              "directDamage": 316821.375,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Judgment Thunder",
+              "ko": "심판의 번개"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 1539885.125,
+          "directDamage": 590347.125,
+          "periodicDamage": 949538,
+          "dps": 6416.188020833333,
+          "ticks": 270,
+          "warnings": [
+            "resources-unverified",
+            "periodic-timing-assumption",
+            "dot-lifetime-assumption"
+          ],
+          "skills": [
+            {
+              "id": "debilitating-mark",
+              "name": "약화의 낙인",
+              "casts": 19,
+              "damage": 591665.875,
+              "directDamage": 53116.875,
+              "periodicDamage": 538549,
+              "ticks": 173,
+              "blocked": [],
+              "en": "Debilitating Mark",
+              "ko": "약화의 낙인"
+            },
+            {
+              "id": "chain-of-torment",
+              "name": "고통의 연쇄",
+              "casts": 11,
+              "damage": 452927.875,
+              "directDamage": 41938.875,
+              "periodicDamage": 410989,
+              "ticks": 97,
+              "blocked": [],
+              "en": "Chain of Torment",
+              "ko": "고통의 연쇄"
+            },
+            {
+              "id": "condemnation",
+              "name": "단죄",
+              "casts": 39,
+              "damage": 194717.25,
+              "directDamage": 194717.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:chain-of-torment"
+              ],
+              "en": "Condemnation",
+              "ko": "단죄"
+            },
+            {
+              "id": "lightning-strike-scattershot",
+              "name": "벼락 난사",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Lightning Strike Scattershot",
+              "ko": "벼락 난사"
+            },
+            {
+              "id": "earths-retribution",
+              "name": "대지의 응보",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Earth's Retribution",
+              "ko": "대지의 응보"
+            },
+            {
+              "id": "judgment-thunder",
+              "name": "심판의 번개",
+              "casts": 111,
+              "damage": 300574.125,
+              "directDamage": 300574.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Judgment Thunder",
+              "ko": "심판의 번개"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 6,
+        "active": 12,
+        "unresolved": [
+          {
+            "id": "divine-aura",
+            "en": "Divine Aura",
+            "ko": "신성한 기운",
+            "status": "input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/divine-aura",
+            "missing": [
+              "summon-tick-interval"
+            ]
+          },
+          {
+            "id": "bolt",
+            "en": "Bolt",
+            "ko": "벽력",
+            "status": "charge-input-required",
+            "source": "https://metabot.gg/en/aion-2/skills/bolt",
+            "missing": [
+              "charge-duration",
+              "intermediate-charge-damage"
+            ]
+          }
+        ],
+        "nonOffensive": [
+          {
+            "id": "light-of-regeneration",
+            "en": "Light of Regeneration",
+            "ko": "재생의 빛"
+          },
+          {
+            "id": "healing-light",
+            "en": "Healing Light",
+            "ko": "치유의 빛"
+          },
+          {
+            "id": "radiant-recovery",
+            "en": "Radiant Recovery",
+            "ko": "쾌유의 광휘"
+          },
+          {
+            "id": "defiance-cleric",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    },
+    {
+      "classId": "chanter",
+      "en": "Chanter",
+      "ko": "호법성",
+      "color": "#e5c779",
+      "totalDamage": 2327801.625,
+      "seconds": 420,
+      "dps": 5542.384821428572,
+      "directDamage": 2327801.625,
+      "periodicDamage": 0,
+      "activeSeconds": 360,
+      "ticks": 0,
+      "policy": {
+        "order": [
+          "gust-rampage",
+          "spinning-strike",
+          "incandescent-blow",
+          "heat-wave-blow",
+          "wave-blow",
+          "impactful-crush",
+          "tremor-crush",
+          "rushing-smash",
+          "dark-crush",
+          "onslaught"
+        ],
+        "holdSeconds": 0
+      },
+      "selectedSeed": 41,
+      "trainingDps": 5805.857142857143,
+      "validation": [
+        {
+          "scenario": "validation-short",
+          "duration": 73,
+          "activeSeconds": 57.8,
+          "totalDamage": 381672,
+          "directDamage": 381672,
+          "periodicDamage": 0,
+          "dps": 5228.3835616438355,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified"
+          ],
+          "skills": [
+            {
+              "id": "rushing-smash",
+              "name": "돌진 격파",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rushing Smash",
+              "ko": "돌진 격파"
+            },
+            {
+              "id": "impactful-crush",
+              "name": "타격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Impactful Crush",
+              "ko": "타격쇄"
+            },
+            {
+              "id": "dark-crush",
+              "name": "암격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dark-crush-ready"
+              ],
+              "en": "Dark Crush",
+              "ko": "암격쇄"
+            },
+            {
+              "id": "heat-wave-blow",
+              "name": "열파격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Heat Wave Blow",
+              "ko": "열파격"
+            },
+            {
+              "id": "tremor-crush",
+              "name": "진동쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Tremor Crush",
+              "ko": "진동쇄"
+            },
+            {
+              "id": "wave-blow",
+              "name": "파동격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Wave Blow",
+              "ko": "파동격"
+            },
+            {
+              "id": "spinning-strike",
+              "name": "회전격",
+              "casts": 3,
+              "damage": 59636.25,
+              "directDamage": 59636.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Spinning Strike",
+              "ko": "회전격"
+            },
+            {
+              "id": "gust-rampage",
+              "name": "질풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Gust Rampage",
+              "ko": "질풍 난무"
+            },
+            {
+              "id": "onslaught",
+              "name": "격파쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Onslaught",
+              "ko": "격파쇄"
+            },
+            {
+              "id": "incandescent-blow",
+              "name": "백열격",
+              "casts": 54,
+              "damage": 322035.75,
+              "directDamage": 322035.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Incandescent Blow",
+              "ko": "백열격"
+            }
+          ]
+        },
+        {
+          "scenario": "validation-immune",
+          "duration": 95,
+          "activeSeconds": 87.3,
+          "totalDamage": 568532.25,
+          "directDamage": 568532.25,
+          "periodicDamage": 0,
+          "dps": 5984.55,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified"
+          ],
+          "skills": [
+            {
+              "id": "rushing-smash",
+              "name": "돌진 격파",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rushing Smash",
+              "ko": "돌진 격파"
+            },
+            {
+              "id": "impactful-crush",
+              "name": "타격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Impactful Crush",
+              "ko": "타격쇄"
+            },
+            {
+              "id": "dark-crush",
+              "name": "암격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dark-crush-ready"
+              ],
+              "en": "Dark Crush",
+              "ko": "암격쇄"
+            },
+            {
+              "id": "heat-wave-blow",
+              "name": "열파격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Heat Wave Blow",
+              "ko": "열파격"
+            },
+            {
+              "id": "tremor-crush",
+              "name": "진동쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Tremor Crush",
+              "ko": "진동쇄"
+            },
+            {
+              "id": "wave-blow",
+              "name": "파동격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Wave Blow",
+              "ko": "파동격"
+            },
+            {
+              "id": "spinning-strike",
+              "name": "회전격",
+              "casts": 4,
+              "damage": 79515,
+              "directDamage": 79515,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Spinning Strike",
+              "ko": "회전격"
+            },
+            {
+              "id": "gust-rampage",
+              "name": "질풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Gust Rampage",
+              "ko": "질풍 난무"
+            },
+            {
+              "id": "onslaught",
+              "name": "격파쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Onslaught",
+              "ko": "격파쇄"
+            },
+            {
+              "id": "incandescent-blow",
+              "name": "백열격",
+              "casts": 82,
+              "damage": 489017.25,
+              "directDamage": 489017.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Incandescent Blow",
+              "ko": "백열격"
+            }
+          ]
+        }
+      ],
+      "test": [
+        {
+          "scenario": "boss",
+          "duration": 180,
+          "activeSeconds": 180,
+          "totalDamage": 1156943.25,
+          "directDamage": 1156943.25,
+          "periodicDamage": 0,
+          "dps": 6427.4625,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified"
+          ],
+          "skills": [
+            {
+              "id": "rushing-smash",
+              "name": "돌진 격파",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rushing Smash",
+              "ko": "돌진 격파"
+            },
+            {
+              "id": "impactful-crush",
+              "name": "타격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Impactful Crush",
+              "ko": "타격쇄"
+            },
+            {
+              "id": "dark-crush",
+              "name": "암격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dark-crush-ready"
+              ],
+              "en": "Dark Crush",
+              "ko": "암격쇄"
+            },
+            {
+              "id": "heat-wave-blow",
+              "name": "열파격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Heat Wave Blow",
+              "ko": "열파격"
+            },
+            {
+              "id": "tremor-crush",
+              "name": "진동쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Tremor Crush",
+              "ko": "진동쇄"
+            },
+            {
+              "id": "wave-blow",
+              "name": "파동격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Wave Blow",
+              "ko": "파동격"
+            },
+            {
+              "id": "spinning-strike",
+              "name": "회전격",
+              "casts": 6,
+              "damage": 119272.5,
+              "directDamage": 119272.5,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Spinning Strike",
+              "ko": "회전격"
+            },
+            {
+              "id": "gust-rampage",
+              "name": "질풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Gust Rampage",
+              "ko": "질풍 난무"
+            },
+            {
+              "id": "onslaught",
+              "name": "격파쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Onslaught",
+              "ko": "격파쇄"
+            },
+            {
+              "id": "incandescent-blow",
+              "name": "백열격",
+              "casts": 174,
+              "damage": 1037670.75,
+              "directDamage": 1037670.75,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Incandescent Blow",
+              "ko": "백열격"
+            }
+          ]
+        },
+        {
+          "scenario": "moving-boss",
+          "duration": 240,
+          "activeSeconds": 180,
+          "totalDamage": 1170858.375,
+          "directDamage": 1170858.375,
+          "periodicDamage": 0,
+          "dps": 4878.5765625,
+          "ticks": 0,
+          "warnings": [
+            "resources-unverified"
+          ],
+          "skills": [
+            {
+              "id": "rushing-smash",
+              "name": "돌진 격파",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Rushing Smash",
+              "ko": "돌진 격파"
+            },
+            {
+              "id": "impactful-crush",
+              "name": "타격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Impactful Crush",
+              "ko": "타격쇄"
+            },
+            {
+              "id": "dark-crush",
+              "name": "암격쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dark-crush-ready"
+              ],
+              "en": "Dark Crush",
+              "ko": "암격쇄"
+            },
+            {
+              "id": "heat-wave-blow",
+              "name": "열파격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Heat Wave Blow",
+              "ko": "열파격"
+            },
+            {
+              "id": "tremor-crush",
+              "name": "진동쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:dodge|flying"
+              ],
+              "en": "Tremor Crush",
+              "ko": "진동쇄"
+            },
+            {
+              "id": "wave-blow",
+              "name": "파동격",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stun|immune-trigger"
+              ],
+              "en": "Wave Blow",
+              "ko": "파동격"
+            },
+            {
+              "id": "spinning-strike",
+              "name": "회전격",
+              "casts": 7,
+              "damage": 139151.25,
+              "directDamage": 139151.25,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Spinning Strike",
+              "ko": "회전격"
+            },
+            {
+              "id": "gust-rampage",
+              "name": "질풍 난무",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [
+                "state:stagger"
+              ],
+              "en": "Gust Rampage",
+              "ko": "질풍 난무"
+            },
+            {
+              "id": "onslaught",
+              "name": "격파쇄",
+              "casts": 0,
+              "damage": 0,
+              "directDamage": 0,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Onslaught",
+              "ko": "격파쇄"
+            },
+            {
+              "id": "incandescent-blow",
+              "name": "백열격",
+              "casts": 173,
+              "damage": 1031707.125,
+              "directDamage": 1031707.125,
+              "periodicDamage": 0,
+              "ticks": 0,
+              "blocked": [],
+              "en": "Incandescent Blow",
+              "ko": "백열격"
+            }
+          ]
+        }
+      ],
+      "damageCoverage": {
+        "modeled": 10,
+        "active": 12,
+        "unresolved": [],
+        "nonOffensive": [
+          {
+            "id": "recuperation",
+            "en": "Recuperation",
+            "ko": "쾌유의 주문"
+          },
+          {
+            "id": "defiance-chanter",
+            "en": "Defiance",
+            "ko": "충격 해제"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -5,6 +5,12 @@ from unittest.mock import patch
 import liveops
 import dpsrules
 import dpsmath
+import dpslevels
+import dpsranking
+import tempfile
+import json
+from pathlib import Path
+from scripts.check_news_diff import allowed_path
 
 class CatalogTests(unittest.TestCase):
     def test_coverage_and_known_gates(self):
@@ -65,15 +71,66 @@ class CatalogTests(unittest.TestCase):
             changed = liveops.catalog()
             self.assertTrue(all(s['mpCost'] is None for c in changed['classes'] for s in c['candidates']))
 
-    def test_bilingual_condition_help_and_mp_controls(self):
+    def test_bilingual_backend_results_without_visitor_calculation(self):
         for lang in ('en', 'ko'):
             page = liveops.dps(lang, '/Aion2-Daeva-Atlas/')
-            for control in ('data-state-windows','data-condition-audit','data-dps-add-source',
-                            'data-param="resourceMode"','data-param="elementEvents"',
-                            'data-param="periodicMode"','data-param="insigniaMode"'):
-                self.assertIn(control,page)
-        self.assertIn('빠진 조건을 항상 활성 상태로 가정하지 않습니다',liveops.dps('ko','/'))
-        self.assertIn('Missing conditions are never assumed',liveops.dps('en','/'))
+            self.assertIn('data-computed-by="backend"',page)
+            self.assertEqual(page.count('data-rank-class='),24)
+            for tag in ('<form','<input','<select','dps-engine.js','assets/dps.js'):
+                self.assertNotIn(tag,page)
+            self.assertIn('dps-rankings.csv',page)
+        self.assertIn('한국 패치 순위로 확정할 수 없습니다',liveops.dps('ko','/'))
+        self.assertIn('sum full fight seconds',liveops.dps('en','/'))
+
+    def test_exact_level_terms_and_periodic_scaling(self):
+        skills={s['id']:s for c in liveops.catalog(skill_level=20)['classes'] for s in c['candidates']}
+        self.assertEqual((skills['keen-strike']['flat'],skills['keen-strike']['coefficient']),(602,43))
+        self.assertEqual((skills['drill-dart']['flat'],skills['drill-dart']['coefficient']),(1491,115.5))
+        self.assertEqual((skills['drill-dart']['periodic'][0]['flat'],skills['drill-dart']['periodic'][0]['coefficient']),(581,45))
+        self.assertEqual(skills['insignia-explosion']['insigniaDamage'][5]['flat'],4889)
+        self.assertEqual(skills['defiance']['cooldown'],41)
+        self.assertTrue(all(s['skillLevel']==20 for s in skills.values()))
+        self.assertTrue(all(a['skillLevel']==20 for c in liveops.catalog(skill_level=20)['classes'] for a in c['damageAudit']))
+        with self.assertRaisesRegex(ValueError,'No reviewed tooltip'):
+            liveops.catalog(skill_level=19)
+        source=next(s for s in liveops.load('skills.json') if s['id']=='drill-dart')
+        bad=dpsmath.damage(source);bad['flat']+=1
+        with self.assertRaisesRegex(ValueError,'Base terms changed'):
+            dpslevels.model(source,bad,20)
+
+    def test_damage_audit_does_not_mutate_shared_rules(self):
+        original=copy.deepcopy(dpsmath.UNRESOLVED)
+        skills=[s for s in liveops.load('skills.json') if s['id'] in dpsmath.UNRESOLVED]
+        baseline=[dpsmath.damage(s) for s in skills]
+        for _ in range(3):
+            self.assertEqual([dpsmath.damage(s) for s in skills],baseline)
+        self.assertEqual(dpsmath.UNRESOLVED,original)
+
+    def test_stale_level_snapshot_cannot_publish(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir()
+            (root/'data/skills.json').write_text('[]')
+            (root/'data/dps-skill-levels.json').write_text(json.dumps({'skillSourceHash':'outdated'}))
+            dpslevels.snapshot.cache_clear()
+            try:
+                with patch.object(dpslevels,'ROOT',root):
+                    with self.assertRaisesRegex(ValueError,'needs review'):
+                        dpslevels.snapshot()
+            finally:
+                dpslevels.snapshot.cache_clear()
+
+    def test_patch_freshness_keeps_regions_and_news_separate(self):
+        def feed(region,kind,posted,updated=None):
+            return dict(region=region,items=[dict(kind=kind,publishedAt=posted,sourceUpdatedAt=updated)])
+        self.assertFalse(dpsranking.needs_patch_review({'sources':[
+            feed('KR','patch','2026-10-10'),feed('NA','news','2026-10-10'),feed('NA','patch','2026-10-07')
+        ]},'2026-10-09'))
+        self.assertTrue(dpsranking.needs_patch_review({'sources':[
+            feed('NA','patch','2026-10-07','2026-10-10')
+        ]},'2026-10-09'))
+        self.assertTrue(allowed_path('docs/ko/tools/dps/index.html'))
+        self.assertFalse(allowed_path('data/dps-ranking-model.json'))
+        self.assertFalse(allowed_path('data/dps-rankings.json'))
 
     def test_changed_skill_snapshot_requires_condition_review(self):
         self.assertTrue(liveops.catalog()['conditionsVerified'])

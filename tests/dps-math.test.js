@@ -64,9 +64,21 @@ assert.equal(simulate({...npc,targetType:'player'},false,followupFirst).total,20
 assert.equal(simulate({...npc,targetType:'npc',targetControl:'immune'},false,followupFirst).total,200);
 assert.equal(simulate({...npc,targetType:'npc',accuracy:50},false,followupFirst).total,100);
 for(const change of [{periodicMode:'omit'},{periodicCrit:'normal'},{periodicRefresh:'stack'},
-                    {insigniaMode:'consume'},{targetType:'npc'},{fireMarkEnabled:'no'}]) {
+                    {insigniaMode:'consume'},{targetType:'npc'},{fireMarkEnabled:'no'},{dotStateMode:'duration'}]) {
   assert.notEqual(conditionKey(input()),conditionKey(input(change)),'Comparison rejects different mechanics assumptions');
 }
+// The optional server assumption comes from an applied matching-duration DoT,
+// not a free time window; missing hit/application/periodic data cannot grant it.
+const dotState=input({region:'NA',duration:7,skills:[
+  skill({id:'provider',effects:[{state:'chain-of-torment',duration:5,on:'hit',chance:100,assumption:'dot-lifetime'}]}),
+  skill({id:'followup',flat:1000,periodic:[],cooldown:0,requires:['chain-of-torment']})]});
+assert.equal(simulate(dotState,false,followupFirst).breakdown[1].casts,0);
+const followupPolicy=ctx=>ctx.feasible.find(s=>s.id==='followup')?.index??ctx.feasible[0].index;
+assert.equal(simulate({...dotState,dotStateMode:'duration'},false,followupPolicy).breakdown[1].casts,5);
+assert.equal(simulate({...dotState,dotStateMode:'duration',accuracy:50},false,followupPolicy).breakdown[1].casts,0);
+assert.equal(simulate({...dotState,dotStateMode:'duration',periodicMode:'omit'},false,followupPolicy).breakdown[1].casts,0);
+assert.equal(simulate({...dotState,dotStateMode:'duration',skills:[{...dotState.skills[0],periodic:[]},dotState.skills[1]]},false,followupPolicy).breakdown[1].casts,0);
+assert.throws(()=>simulate({...dotState,dotStateMode:'free'}),/dot state mode/);
 const csvInput=input(), before=simulate(csvInput), after=simulate(csvInput,true);
 assert(exportCSV(csvInput,{before,after}).includes('before_periodic_damage'));
 console.log('DPS math passed: exact ticks, refresh, downtime, truncation, conditional application, charge/summon input, Insignia and fair comparisons.');

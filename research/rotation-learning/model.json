@@ -46,15 +46,15 @@
     "descriptionEn": "All classes use attack 1000, critical chance 25%, critical multiplier 1.5, hit chance 100%, factor 1 and base-1 active skills without specializations/Stigmas. This is a shared stat-input experiment, not measured identical equipment. Fire Mark only provides an activation condition."
   },
   "provenance": {
-    "assets/dps-engine.js": "e2195887bc3566504c0dae207ee1d2ccbc3cfce79710db301ecdabe4c0f322fe",
-    "docs/data/dps.json": "3cb5c7e9a9534a8da254e391f3eb5e880b7f5cdcf1d33785f7dcecae7060a603",
+    "assets/dps-engine.js": "7da17bd25fed9476a1f5c54f6c8d00aed79daf5f7ed299b403630b03c7e4f8e3",
+    "docs/data/dps.json": "4ea115840e9875b9b3c328039c4607caf458f33262806aef1e80de0444faf9f9",
     "data/skills.json": "8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e",
     "research/gameplay-evidence.json": "19a567e701a5599ea230255bbb761a4ae0e18f293013eff7bc144bd6eb841f94",
     "research/rotation-learning/claims.json": "4ae553693b2518e9c9f7dda0bbbee171efeb9db052377d7380010d7a7e2129a5",
     "research/rotation-learning/scenarios.json": "58c7426024313ac021b645b8f15f120dc97a3eeaf685892842bb8ae8384c2974",
     "research/rotation-learning/train.js": "cfc74f89117e1f7d8a07752c24fd2d62bbdefece27d42fce5f2de2512f30dc94",
-    "liveops.py": "0dc781cf593b2ee5901743c1e30f8aac6489c2ac029bf8e288538c8a52fe3e1f",
-    "dpsmath.py": "977b6223b9517df3eaa2115e3cc024894db46493bbd6a808e2ce5fa7e438f5a1",
+    "liveops.py": "81b38c0989ae5ba732c92e200bc82c431f5d387f086bc59c139a1811e41a3b74",
+    "dpsmath.py": "a49d82aa69e6bedad8f75acc0bc9be0ad95a03547f36bf1d6fc82d3ee5b7c566",
     "dpsrules.py": "ee87789120e7685c1f41187d3de6f0daa29e1de1ad75171c0031125b2d033559",
     "data/dps-resources.json": "a765ad2af29a887623a2ab302171b0aaabcf9cb4245131e018bd5134420dd762",
     "data/skill-snapshot.json": "22fdb13c75c60cad45667f88b8eeb6f22c7e9b559f1c78781d2cc632827a8057"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Dependency-free bilingual static publishing for GitHub Pages."""
-import json, re, shutil, html, hashlib
+import json, re, shutil, html, hashlib, subprocess
 from pathlib import Path
 from datetime import date
 from content import CLASSES, GUIDES, GLOSSARY, SOURCES
@@ -80,7 +80,7 @@ def write(sub,title,description,content,active='',article=False,index=True):
     adhead=f'<meta name="google-adsense-account" content="{E(ads["publisher_id"])}">' if valid_pub else ''
     if ads['enabled']:adhead+=f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={E(ads["publisher_id"])}" crossorigin="anonymous"></script>'
     adhead+=measurement.head(CONFIG,BASE)
-    guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=2">' if sub in ('','start/','endgame/') else ''
+    guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=rpg-goals-1">' if sub in ('','start/','endgame/','gear/') else ''
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-7"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
     if index:pages.append(canonical)
@@ -101,8 +101,8 @@ def home():
 def learning():
     for sub,title,desc,body in [
         ('start/',t('AION 2 early-game guide','아이온 2 초반 공략'),t('Progression routes, skill investment, equipment choices and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
-        ('endgame/',t('Endgame guide.','엔드게임 공략.'),t('Dungeon preparation, boss mechanics and decisions for your next equipment investment.','던전 준비부터 보스 패턴, 다음 장비 투자까지. 막힌 지점에 맞춰 공략을 찾아보세요.'),endgame.guide(LANG,BASE)),
-        ('gear/',t('Understand your gear & stats.','장비와 스탯, 알고 키우세요.'),t('Equipment options, six base stats and upgrade decisions.','장비 옵션·기본 능력치 6개·강화 판단 기준.'),onboarding.gear(LANG,BASE)),
+        ('endgame/',t('Endgame guide.','엔드게임 공략.'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
+        ('gear/',t('Enhance your gear & understand its stats.','장비 강화와 스탯, 알고 키우세요.'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
         ('maps/',t('Find your next destination.','다음 목적지를 찾아보세요.'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
         ('skills/',t('Know the skill behind the name.','스킬 이름 너머의 효과까지.'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
         heading=pagehead(title,desc) if sub!='start/' else ''
@@ -192,7 +192,7 @@ def info():
     terms=f'''<p>{t('PLAYER’S CODEX provides educational game commentary and planning tools. It is an independent fan publication and is not endorsed by NC. AION 2, class names and related trademarks belong to their respective owners.','PLAYER’S CODEX는 게임 해설과 계획 도구를 제공하는 독립 팬 프로젝트이며 NC의 인증을 받지 않았습니다. 아이온 2, 직업명과 관련 상표의 권리는 각 권리자에게 있습니다.')}</p><h2>{t('Using a guide','공략 이용 안내')}</h2><p>{t('Game rules, availability and balance change. Check the current official notice and in-game text before making a decision involving money, limited resources or account changes. Editorial advice does not guarantee a result. The planner is a personal organisational tool, not an automated game client.','게임 규칙, 이용 가능 범위, 밸런스는 바뀔 수 있습니다. 금전, 한정 재화, 계정 변경과 관련한 결정 전에는 최신 공식 공지와 게임 안의 설명을 확인하세요. 편집 조언이 결과를 보장하지는 않습니다. 플래너는 개인 정리 도구이며 게임 자동화 프로그램이 아닙니다.')}</p><h2>{t('Attribution and artwork','출처와 일러스트')}</h2><p>{t('Our articles link to their sources and use original explanations. The AION 2 banner uses publisher promotional artwork, credited to NC. Class symbols, diagrams and teaching animations are original illustrations. Real game skill icons and tooltip facts are sourced from MetaBot and Aion2t.com. Boss animations summarise linked Korean guides; distances and playback timing are illustrative. Gameplay videos open on their original YouTube or Nirr / Inven page. Map terrain and location data are sourced from The Hidden Gaming Lair with attribution. Game artwork and data belong to NC. Linking to a source does not imply a partnership.','글에는 출처 링크와 직접 작성한 설명을 제공합니다. AION 2 배너는 NC의 홍보 아트워크를 출처 표시와 함께 사용합니다. 직업 기호·도해·설명 애니메이션은 자체 제작했습니다. 실제 스킬 아이콘과 툴팁 정보는 MetaBot·Aion2t.com을 참고합니다. 보스 애니메이션은 연결된 한국 공략의 기믹을 요약하며 거리와 재생 시간은 설명용입니다. 실제 영상은 원본 YouTube 또는 Nirr의 인벤 페이지로 연결합니다. 지도 지형과 위치 데이터는 출처를 표시한 The Hidden Gaming Lair 자료이며 게임 아트워크·데이터의 권리는 NC에 있습니다. 출처 링크가 제휴 관계를 의미하지는 않습니다.')}</p><h2>{t('Corrections','수정 요청')}</h2><p>{t('If you believe content is inaccurate or infringes your rights, identify the page and the issue through the contact channel. Do not repost other creators’ full guides into a public report.','정보 오류나 권리 침해가 있다고 판단되면 문의 창구에서 해당 페이지와 문제를 알려주세요. 다른 제작자의 전체 공략을 공개 이슈에 재게시하지 마세요.')}</p>'''
     sourcebody=f'''<p>{t('This is a curated source register, not a live news feed. The current guide collection was reviewed on October 7, 2026. We do not publish a new “updated” date simply because the website was rebuilt.','실시간 뉴스 피드가 아닌 출처 목록입니다. 현재 가이드의 검토일은 2026년 10월 7일입니다. 사이트를 다시 빌드했다는 이유만으로 검토 날짜를 바꾸지 않습니다.')}</p><h2>{t('The source register','출처 목록')}</h2>{sourcelist(list(SOURCES))}<h2>{t('Publication log','발행 기록')}</h2><p><strong>2026-10-07 · {t('First edition','첫 번째 버전')}</strong><br>{t('Published six editorial guides, eight class profiles, a class comparison tool, a bilingual glossary and a browser-local planner. Ads and analytics remain disabled. No live combat benchmarks have been published.','편집 가이드 6개, 직업 프로필 8개, 직업 비교, 한영 용어집, 브라우저 플래너를 공개했습니다. 광고·분석 스크립트는 꺼져 있으며 실제 전투 벤치마크는 공개하지 않았습니다.')}</p>'''
     sourcebody += f'<h2>{t("Visual field-guide update","시각 공략 업데이트")}</h2><p>{t("16 boss mechanics, 21 short community notes and 15 attributed sources. KR source dates are retained; Global mechanics have not been independently checked.","보스 기믹 16개, 커뮤니티 팁 21개, 출처 15개를 추가했습니다. 한국 원문의 작성일을 유지하며 글로벌 기믹은 별도로 검증하지 않았습니다.")}</p>' + source_registry(LANG)
-    sourcebody += '<h2>'+t('Global beginner edition','글로벌 초보 가이드 업데이트')+'</h2><p>'+t('Separate early-game and endgame guides, three early progression stages, four live maps, item anatomy, six base stats, 280 skill documents, 16 animated boss mechanics and 384 map locations.','초반·엔드게임 공략을 분리하고 초반 성장 단계 3개, 실제 지도 4개, 장비 툴팁, 기본 스탯 6개, 스킬 문서 280개, 보스 패턴 애니메이션 16개와 지도 위치 384곳을 제공합니다.')+'</p>'+onboarding.evidence(LANG,*onboarding.SOURCES.keys())+'<p><a href="https://metabot.gg/en/aion-2/skills">MetaBot skill reference ↗</a></p><p><a href="https://www.youtube.com/watch?v=3OXxi7f1coQ">김호러 Horror · Korean dungeon footage ↗</a> · <a href="https://www.youtube.com/watch?v=Hl0Ky59z8jg">만두집아들 · Nuakum guide ↗</a></p>'
+    sourcebody += '<h2>'+t('Global beginner edition','글로벌 초보 가이드 업데이트')+'</h2><p>'+t('Separate early-game and endgame guides, four progression stages including post-story growth, four live maps, item anatomy, six base stats, 280 skill documents, 16 animated boss mechanics and 384 map locations.','초반·엔드게임 공략을 분리하고 스토리 이후를 포함한 성장 단계 4개, 실제 지도 4개, 장비 툴팁, 기본 스탯 6개, 스킬 문서 280개, 보스 패턴 애니메이션 16개와 지도 위치 384곳을 제공합니다.')+'</p>'+onboarding.evidence(LANG,*onboarding.SOURCES.keys())+'<p><a href="https://metabot.gg/en/aion-2/skills">MetaBot skill reference ↗</a></p><p><a href="https://www.youtube.com/watch?v=3OXxi7f1coQ">김호러 Horror · Korean dungeon footage ↗</a> · <a href="https://www.youtube.com/watch?v=Hl0Ky59z8jg">만두집아들 · Nuakum guide ↗</a></p>'
     sourcebody += '<h2>'+t('Reader-submitted practical tips','독자가 보내준 실전 팁')+'</h2>'+fieldtips.source_note(LANG)
     for sub,title,desc,body in [
         ('about/',t('About PLAYER’S CODEX','PLAYER’S CODEX 소개'),t('An independent guide with visible sources and clear editorial boundaries.','출처와 편집 범위를 명확하게 설명하는 독립 가이드.'),about),
@@ -214,7 +214,7 @@ def layoutpreview():
 def livepages():
     for sub,title,desc,body in [
         ('updates/',t('AION 2 news & patch changes','아이온 2 뉴스·패치 변경사항'),t('Official Korea and North America updates with reviewed class impact.','한국·북미 공식 업데이트와 직업별 변경 요약.'),liveops.news(LANG,BASE)+liveops.coverage(LANG)),
-        ('tools/dps/',t('AION 2 build & eDPS calculator','아이온 2 빌드·eDPS 계산기'),t('Compare rotation inputs, downtime and patch scenarios under the same conditions.','같은 조건의 스킬 사이클·공격 불가 구간·패치 전후 DPS를 비교합니다.'),liveops.dps(LANG,BASE)),
+        ('tools/dps/',t('AION 2 class DPS rankings','아이온 2 직업별 DPS 순위'),t('Server-computed class DPS under a common profile, with boss scenarios and skill contributions.','공통 조건의 서버 계산 직업별 DPS 순위와 보스 상황별 차이·스킬 기여도.'),liveops.dps(LANG,BASE)),
         ('screenshots/',t('AION 2 gameplay screenshots','아이온 2 인게임 스크린샷'),t('Official in-game combat, boss and flight frames with source credits.','공식 전투·보스·비행 장면과 원본 출처.'),liveops.screenshots(LANG,BASE)),
     ]:
         write(sub,title,desc,'<div class="wrap">'+body+'</div>')
@@ -231,6 +231,7 @@ def livepages():
 def build():
     global L,LANG
     validate_evidence()
+    subprocess.run(['node', str(ROOT/'scripts/build_dps_rankings.js'), '--build'], cwd=ROOT, check=True)
     if OUT.exists():shutil.rmtree(OUT)
     OUT.mkdir();shutil.copytree(ROOT/'assets',OUT/'assets')
     for L,LANG in enumerate(['en','ko']):
@@ -238,6 +239,8 @@ def build():
     (OUT/'data').mkdir()
     shutil.copyfile(ROOT/'data/news.json',OUT/'data/news.json')
     (OUT/'data/dps.json').write_text(json.dumps(liveops.catalog(),ensure_ascii=False,separators=(',',':'))+'\n')
+    for name in ('dps-rankings.json','dps-rankings.csv'):
+        shutil.copyfile(ROOT/'data'/name,OUT/'data'/name)
     (OUT/'search-index.json').write_text(json.dumps(search_index,ensure_ascii=False,separators=(',',':')))
     (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+page_dates.get(url,REVIEWED)+'</lastmod></url>' for url in pages)+'</urlset>')
     measurement.write_verification(CONFIG,OUT)

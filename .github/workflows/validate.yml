@@ -21,12 +21,13 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: node tests/dps.test.js
       - run: node tests/dps-math.test.js
+      - run: node tests/dps-rankings.test.js
+      - run: node scripts/build_dps_rankings.js --verify
       - run: node tests/rotation-learning.test.js
       - run: node research/rotation-learning/train.js --verify
       - run: node tests/patchbook.test.js
       - run: node --check assets/patchbook.js
       - run: node --check assets/dps-engine.js
-      - run: node --check assets/dps.js
       - run: node --check assets/news.js
       - run: node --check assets/analytics.js
       - run: node tests/analytics.test.js

@@ -1,4 +1,4 @@
-name: Validate calculator and patch browser flows
+name: Validate guide, DPS rankings and patch browser flows
 on:
   pull_request:
     paths:
@@ -14,6 +14,21 @@ on:
       - 'liveops.py'
       - 'tests/dps*.js'
       - 'tests/patch-ui.test.js'
+      - 'tests/post-story-ui.test.js'
+      - 'poststory.py'
+      - 'gearsteps.py'
+      - 'onboarding.py'
+      - 'endgame.py'
+      - 'worldmap.py'
+      - 'visuals.py'
+      - 'build.py'
+      - 'dpsmath.py'
+      - 'dpslevels.py'
+      - 'dpsranking.py'
+      - 'data/dps-*.json'
+      - 'assets/dps-rankings.css'
+      - 'scripts/build_dps_rankings.js'
+      - 'assets/practical-guide.css'
       - '.github/workflows/dps-browser.yml'
   push:
     branches: [main]
@@ -26,6 +41,21 @@ on:
       - 'data/patch-reviews.json'
       - 'dpsrules.py'
       - 'liveops.py'
+      - 'tests/post-story-ui.test.js'
+      - 'poststory.py'
+      - 'gearsteps.py'
+      - 'onboarding.py'
+      - 'endgame.py'
+      - 'worldmap.py'
+      - 'visuals.py'
+      - 'build.py'
+      - 'dpsmath.py'
+      - 'dpslevels.py'
+      - 'dpsranking.py'
+      - 'data/dps-*.json'
+      - 'assets/dps-rankings.css'
+      - 'scripts/build_dps_rankings.js'
+      - 'assets/practical-guide.css'
 permissions:
   contents: read
 jobs:
@@ -45,7 +75,7 @@ jobs:
         run: |
           npm --prefix "$RUNNER_TEMP/dps-qa" install --no-save --package-lock=false playwright@1.62.1
           node "$RUNNER_TEMP/dps-qa/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
-      - name: Verify the generated calculator in Chromium
+      - name: Verify backend-generated rankings, downloads and no-JavaScript display
         env:
           DPS_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/dps-ui.test.js
@@ -53,6 +83,10 @@ jobs:
         env:
           PATCH_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/patch-ui.test.js
+      - name: Verify post-story routes, saved checks and phone layout
+        env:
+          POST_STORY_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/post-story-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:

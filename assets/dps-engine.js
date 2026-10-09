@@ -65,8 +65,10 @@
     const region = raw.region, fireMarkEnabled = raw.fireMarkEnabled;
     const periodicMode = raw.periodicMode || 'omit', periodicCrit = raw.periodicCrit || 'none';
     const periodicRefresh = raw.periodicRefresh || 'replace', insigniaMode = raw.insigniaMode || 'unverified';
+    const dotStateMode = raw.dotStateMode || 'omit';
     if (!['omit','inputs'].includes(periodicMode) || !['none','normal'].includes(periodicCrit) ||
         !['replace','stack'].includes(periodicRefresh) || !['unverified','consume','retain'].includes(insigniaMode)) throw new Error('damage options');
+    if (!['omit','duration'].includes(dotStateMode)) throw new Error('dot state mode');
     if (!['tooltip','windows'].includes(conditionMode) || !['unknown','susceptible','immune'].includes(targetControl)) throw new Error('condition mode');
     const warnings = new Set(resourceMode === 'unverified' ? ['resources-unverified'] : []);
     const skills = raw.skills.filter(s => s.enabled).map(s => ({
@@ -215,7 +217,13 @@
         if (e.requiresState && !available(e.requiresState)) {warnings.add('conditional-state-effect');return;}
         if (e.on === 'hit' && accuracy !== 1) {warnings.add('probabilistic-hit-effects');return;}
         if (control.has(e.state) && targetControl !== 'susceptible') {warnings.add('target-control-unverified');return;}
-        if (e.assumption === 'dot-lifetime') {warnings.add('dot-lifetime-assumption');return;}
+        if (e.assumption === 'dot-lifetime') {
+          warnings.add('dot-lifetime-assumption');
+          // Server benchmarks may explicitly use the applied DoT's duration.
+          // This never grants independent, externally scheduled status windows.
+          if (dotStateMode !== 'duration' || periodicMode !== 'inputs' ||
+              !s.periodic.some(p=>Math.abs(p.duration-e.duration)<EPS)) return;
+        }
         states.set(e.state,Math.max(states.get(e.state) || 0,finish+e.duration));
       });
       if (resourceMode === 'budget' && s.mpGain) {
@@ -260,7 +268,7 @@
       stateWindows(x.stateWindows,duration),x.resourceMode||'unverified',
       budget?[Number(x.mpStart),Number(x.mpMax),Number(x.mpRegen)]:null,
       Number(x.elementsStart||0),elementTimes(x.elementEvents,duration),x.fireMarkEnabled||'yes',
-      x.periodicMode||'omit',x.periodicCrit||'none',x.periodicRefresh||'replace',x.insigniaMode||'unverified',x.targetType||'unknown']);
+      x.periodicMode||'omit',x.periodicCrit||'none',x.periodicRefresh||'replace',x.insigniaMode||'unverified',x.targetType||'unknown',x.dotStateMode||'omit']);
   }
   function exportCSV(input, result) {
     const value = v => typeof v === 'object' && v !== null ? JSON.stringify(v) : (v ?? '');

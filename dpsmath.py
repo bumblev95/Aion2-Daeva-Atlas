@@ -28,13 +28,13 @@ DOTS = {
 def terms(match):
     return dict(flat=float(match[1].replace(',', '')), coefficient=float(match[2].replace(',', '')))
 
-def damage(skill):
+def damage(skill, skill_level=1):
     sid, text = skill['id'], skill['en_data']['effect']
     result = dict(flat=0, coefficient=0, damageStatus='non-offensive', periodic=[],
-                  mathUnverified=[], skillLevel=1, source=skill['url'])
+                  mathUnverified=[], skillLevel=skill_level, source=skill['url'])
     if sid in UNRESOLVED:
         result.update(damageStatus='input-required', damageInputRequired=True,
-                      damageConfirmed=False, mathUnverified=UNRESOLVED[sid])
+                      damageConfirmed=False, mathUnverified=UNRESOLVED[sid].copy())
         matches = list(DIRECT.finditer(text))
         if matches: result['referenceTerms'] = [terms(m) for m in matches]
     elif sid in CHARGES:
@@ -56,9 +56,11 @@ def damage(skill):
         # Assert against the frozen tooltip, so a changed term fails review.
         tail = re.search(r'\b(?:deals|dealing)\s+' + TERM +
                          r'\s*(?:Fire damage|Damage over Time|damage)\s*(?:over Time\s*)?every\s+([\d.]+)s', text, re.I)
-        assert tail and terms(tail) == dict(flat=flat, coefficient=coefficient), sid
+        assert tail, sid
+        if skill_level == 1:
+            assert terms(tail) == dict(flat=flat, coefficient=coefficient), sid
         assert float(tail[3]) == interval and f'for {duration}s' in text, sid
-        result['periodic'] = [dict(flat=flat, coefficient=coefficient, interval=interval,
+        result['periodic'] = [dict(**terms(tail), interval=interval,
                                    duration=duration, firstTick=interval, source=skill['url'])]
         result['mathUnverified'] += ['first-tick-phase', 'refresh-rule', 'periodic-critical-rule']
     if sid == 'savage-roar':
@@ -78,7 +80,7 @@ def damage(skill):
 
 def audit(skill, model):
     return dict(id=skill['id'], en=skill['en'], ko=skill['ko'], source=skill['url'],
-                status=model['damageStatus'], skillLevel=1,
+                status=model['damageStatus'], skillLevel=model['skillLevel'],
                 directTerms=dict(flat=model['flat'], coefficient=model['coefficient'])
                     if model['damageStatus'] == 'direct' else None,
                 periodic=model['periodic'], charge=model.get('charge'),

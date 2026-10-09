@@ -4,6 +4,7 @@ import re
 
 ALLOWED = {'data/news.json', 'docs/data/news.json', 'docs/index.html',
            'docs/ko/index.html', 'docs/updates/index.html', 'docs/ko/updates/index.html',
+           'docs/tools/dps/index.html', 'docs/ko/tools/dps/index.html',
            'docs/search-index.json', 'docs/sitemap.xml'}
 
 def allowed_path(path):
