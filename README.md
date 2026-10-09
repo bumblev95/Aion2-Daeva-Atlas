@@ -62,6 +62,7 @@ AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enablin
 | `assets/encounters.js` | Mechanic/stage selection, share links and insight filters |
 | `assets/encounters.css` | Responsive boss and insight layouts |
 | `onboarding.py` | Beginner priorities, item anatomy, stats and embedded maps |
+| `poststory.py` | Story-to-endgame route, reward use and attributed feather references |
 | `skillbook.py` | 280 client-derived skill entries, icons, build paths, linked dialogs and static documents |
 | `bossmedia.py` | Per-pattern original scenes, attribution, chapter navigation and verification status |
 | `battlelab.py` / `assets/battle.js` | Teaching animation, readable steps and playback controls |

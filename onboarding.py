@@ -2,6 +2,7 @@
 from html import escape as e
 from firststeps import overview
 from fieldtips import panel as field_tips
+from poststory import teaser as post_story_teaser
 
 SOURCES = {
  'start':('Global beginner reference','https://metabot.gg/en/aion-2/guides/beginners-guide'),
@@ -35,11 +36,16 @@ STAGES=[
  ('keep-story',('Keep the Episode quest moving','에피소드 퀘스트 계속 진행'),('If blocked, read the quest requirement first; avoid an unfocused grind.','막히면 퀘스트 조건부터 읽고 필요한 목표를 잡으세요.'),('Tracked quest → requirement','추적 퀘스트 → 진행 조건'),'maps/'),
  ]),
 
+ ('after-story','45+',('Story cleared','메인 완료'),('Turn exploration rewards into a stronger build.','탐험 보상을 실제 스킬·장비 성장으로 연결'),[
+ ('post-points',('Use saved rewards and spend points','보상 아이템 사용·남은 포인트 투자'),('Use Wisdom Stones and Daevanion Crystals, then invest in skills and board nodes.','지혜의 돌·데바니온 결정을 사용하고 스킬·보드 노드에 투자합니다.'),('Inventory → skills / Daevanion','가방 → 스킬·데바니온'),'endgame/#after-story-spend-points'),
+ ('post-sealed',('Collect unfinished Sealed Dungeon rewards','미완료 봉인 던전 보상 챙기기'),('Choose a nearby unfinished dungeon; claim its reward and use the point items.','가까운 미완료 던전의 보상을 받고 포인트 아이템을 사용합니다.'),('Map → Sealed Dungeon','지도 → 봉인 던전'),'endgame/#after-story-field-rewards'),
+ ('post-feathers',('Connect feather collection to its reward','깃털 수집을 반납·성장으로 연결'),('Follow the Monolith turn-in and accessory steps in the KR reference, matching your server’s rewards.','한국 참고 자료의 모노리스 반납·장신구 성장 흐름을 현재 서버 보상에 맞춰 확인합니다.'),('Lord’s Traces → Monolith','주신의 흔적 → 모노리스'),'endgame/#after-story-feathers'),
+ ]),
 ]
 
 def journey(lang,base,compact=False):
     t=lambda a,b:b if lang=='ko' else a;r=root(base,lang)
-    tabs=''.join(f'<button data-journey-stage="{key}" aria-pressed="{str(i==0).lower()}" aria-controls="journey-{key}"><small>LV. {level}</small><strong>{tr(name,lang)}</strong></button>' for i,(key,level,name,heading,tasks) in enumerate(STAGES))
+    tabs=''.join(f'<button data-journey-stage="{key}" aria-pressed="{str(i==0).lower()}" aria-controls="journey-{key}"><small>{t("AFTER STORY","스토리 이후") if key=="after-story" else "LV. "+level}</small><strong>{tr(name,lang)}</strong></button>' for i,(key,level,name,heading,tasks) in enumerate(STAGES))
     panels=''
     for i,(key,level,name,heading,tasks) in enumerate(STAGES):
         cards=''.join(f'''<article class="priority-card"><div class="priority-top"><span>0{j+1}</span><label class="task-check"><input type="checkbox" data-start-task="{task}" aria-label="{e(tr(title,lang))} {t('complete','완료')}"><span>{t('Done','완료')}</span></label></div><h3>{tr(title,lang)}</h3><p>{tr(why,lang)}</p><small class="where-label">{t('WHERE','어디서')}</small><p class="task-where">{tr(where,lang)}</p><a href="{r}{url}">{t('Related guide','관련 공략')} →</a></article>''' for j,(task,title,why,where,url) in enumerate(tasks))
@@ -50,9 +56,9 @@ def beginner(lang,base):
     t=lambda a,b:b if lang=='ko' else a;r=root(base,lang)
     views=[('basics','basics',t('Core guide','핵심 요약'),t('Progression and decisions','진행·투자 판단')),
            ('settings','field-tips',t('Useful settings','편의 설정'),t('Settings and party terms','설정·파티 용어')),
-           ('growth','growth',t('What to do next','성장 순서'),t('Three priorities for your level','레벨별 우선순위'))]
+           ('growth','growth',t('What to do next','성장 순서'),t('Priorities for your current stage','현재 단계별 우선순위'))]
     tabs=''.join(f'<a href="#{anchor}" data-guide-tab="{key}" id="guide-tab-{key}"><span class="guide-tab-number">0{i+1}</span><span><strong>{title}</strong><small>{desc}</small></span></a>' for i,(key,anchor,title,desc) in enumerate(views))
-    return f'''<div class="beginner-hub" data-guide-hub data-practical-guide><div class="guide-intro"><div class="breadcrumbs"><a href="{r}">{t('Home','홈')}</a><span>/</span><span>{t('Early-game guide','초반 공략')}</span></div><h1>{t('Early-game guide.','초반 공략.')}</h1><p>{t('Quest progression, skill investment, equipment choices and useful settings for your first character.','첫 캐릭터의 육성 동선, 스킬 투자, 장비 선택과 필요한 설정을 정리했습니다.')}</p></div><nav class="stage-switch" aria-label="{t('Guide stage','공략 단계')}"><span aria-current="page">{t('Early game','초반 공략')}</span><a href="{r}endgame/">{t('Endgame','엔드게임 공략')} →</a></nav><nav class="guide-tabs" data-guide-tabs aria-label="{t('Early-game guide sections','초반 공략 주제')}">{tabs}</nav><div class="guide-views"><section id="basics" data-guide-view="basics" aria-labelledby="guide-tab-basics">{overview(lang,base)}{evidence(lang,'start','unlocks')}</section><section id="settings" data-guide-view="settings" aria-labelledby="guide-tab-settings">{field_tips(lang)}</section><section id="growth" data-guide-view="growth" aria-labelledby="guide-tab-growth">{journey(lang,base)}<a class="endgame-gateway" href="{r}endgame/"><strong>{t('After initial progression','초반 육성 이후')}</strong><span>{t('Dungeon preparation, boss patterns and equipment investment','던전 준비·보스 패턴·장비 투자 판단')} →</span></a>{evidence(lang,'start','unlocks')}</section></div><nav class="guide-next-links" aria-label="{t('Next guides','이어서 볼 공략')}"><span>{t('Next, explore','이어서 알아보기')}</span><a href="{r}skills/">{t('My skills & build','내 직업 스킬·빌드')} →</a><a href="{r}maps/">{t('Find a destination','지도에서 위치 찾기')} →</a><a href="{r}gear/">{t('Read my equipment','장비·능력치 읽기')} →</a></nav></div>'''
+    return f'''<div class="beginner-hub" data-guide-hub data-practical-guide><div class="guide-intro"><div class="breadcrumbs"><a href="{r}">{t('Home','홈')}</a><span>/</span><span>{t('Early-game guide','초반 공략')}</span></div><h1>{t('Early-game guide.','초반 공략.')}</h1><p>{t('Quest progression, skill investment, equipment choices and useful settings for your first character.','첫 캐릭터의 육성 동선, 스킬 투자, 장비 선택과 필요한 설정을 정리했습니다.')}</p></div><nav class="stage-switch" aria-label="{t('Guide stage','공략 단계')}"><span aria-current="page">{t('Early game','초반 공략')}</span><a href="{r}endgame/">{t('Endgame','엔드게임 공략')} →</a></nav>{post_story_teaser(lang,base)}<nav class="guide-tabs" data-guide-tabs aria-label="{t('Early-game guide sections','초반 공략 주제')}">{tabs}</nav><div class="guide-views"><section id="basics" data-guide-view="basics" aria-labelledby="guide-tab-basics">{overview(lang,base)}{evidence(lang,'start','unlocks')}</section><section id="settings" data-guide-view="settings" aria-labelledby="guide-tab-settings">{field_tips(lang)}</section><section id="growth" data-guide-view="growth" aria-labelledby="guide-tab-growth">{journey(lang,base)}<a class="endgame-gateway" href="{r}endgame/#after-story"><strong>{t('After clearing the story','메인 스토리 완료 이후')}</strong><span>{t('Field rewards, point investment and dungeon farming','필드 보상·포인트 투자·던전 파밍 순서')} →</span></a>{evidence(lang,'start','unlocks')}</section></div><nav class="guide-next-links" aria-label="{t('Next guides','이어서 볼 공략')}"><span>{t('Next, explore','이어서 알아보기')}</span><a href="{r}skills/">{t('My skills & build','내 직업 스킬·빌드')} →</a><a href="{r}maps/">{t('Find a destination','지도에서 위치 찾기')} →</a><a href="{r}gear/">{t('Read my equipment','장비·능력치 읽기')} →</a></nav></div>'''
 
 STATS=[
  ('might','Might','위력','⚔',('Attack','공격력'),('Helps attacks hit harder.','공격력을 높이는 기본 능력치입니다.')),

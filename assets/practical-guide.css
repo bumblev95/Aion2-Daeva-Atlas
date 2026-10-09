@@ -76,9 +76,33 @@
 .endgame-gateway{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 24px;margin-top:20px;border:1px solid #486576;border-radius:10px;background:#233240}
 .endgame-gateway strong{font-size:16px;font-weight:600;color:#e1edf4}
 .endgame-gateway span{font-size:13px;color:#b6d1dd}
-.beginner-hub .journey-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+.beginner-hub .journey-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
 [data-practical-guide] :focus-visible,.home-stage:focus-visible{outline:3px solid #c9aff0;outline-offset:4px}
 @media(max-width:1100px){.endgame-boss-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.endgame-investment{grid-template-columns:1fr;gap:12px}.endgame-investment article{padding:19px 22px}.start-topic,.setting-reference{padding:21px}.home-stage{padding:22px}.home-stage h2{font-size:23px}.reference-table th,.reference-table td{padding:15px}.reference-table th:last-child{width:22%}}
 @media(max-width:700px){.home-stages,.start-topic-grid,.settings-reference-grid{grid-template-columns:1fr}.home-stages{gap:12px;margin-top:17px}.home-stage{padding:21px 22px}.home-stage h2{font-size:24px}.home-stage p{margin-bottom:9px}.start-reference-heading h2,.start-distinctions h2{font-size:21px}.start-distinctions dl>div{grid-template-columns:1fr;gap:6px;padding:16px 0}.endgame-gateway{align-items:flex-start;flex-direction:column;gap:7px}.endgame-checks{grid-template-columns:1fr}.endgame-boss-grid{gap:11px}.endgame-boss{padding:18px}.endgame-boss h3{font-size:17px}.stage-switch>a,.stage-switch>span{padding:8px 14px;font-size:13px}.reference-table table{font-size:13px}.reference-table th,.reference-table td{padding:13px 10px}.reference-table tbody th{font-size:13px}.reference-table th:first-child{width:27%}.reference-table th:last-child{width:24%}.reference-section{margin-bottom:30px}.reference-links{gap:2px}.reference-links>a{width:100%}}
 @media(max-width:480px){.home-clear .welcome-copy{padding:26px 22px}.home-clear .welcome-hero{min-height:0}.home-clear .welcome-copy h1{font-size:31px}.start-topic,.setting-reference{padding:21px 19px;scroll-margin-top:160px}.start-topic h3,.setting-reference h3{font-size:18px}.start-reference-heading p{font-size:13px}.start-topic p,.setting-reference>p{font-size:14px}.start-distinctions dd{font-size:13px}.reference-table table,.reference-table tbody,.reference-table tr,.reference-table td,.reference-table tbody th{display:block;width:auto}.reference-table thead{display:none}.reference-table tr{padding:17px 19px;border-bottom:1px solid #354056}.reference-table tr:last-child{border-bottom:0}.reference-table tbody th,.reference-table td{padding:0;border:0}.reference-table tbody th{font-size:15px;margin-bottom:7px}.reference-table tbody th:first-child{width:auto;background:transparent;word-break:keep-all}.reference-table td{font-size:13px}.reference-table td:last-child{margin-top:9px}.reference-table a{min-height:36px;display:inline-flex;align-items:center}.endgame-boss-grid{grid-template-columns:1fr}.endgame-boss{padding:20px}.endgame-boss h3{font-size:19px}.endgame-boss p{margin-bottom:12px}.beginner-hub .journey-tabs button{padding:10px 7px}.beginner-hub .journey-tabs strong{font-size:12px}.beginner-hub .journey-tabs small{font-size:10px}}
 @media print{.home-stage,.start-topic,.setting-reference,.endgame-boss{break-inside:avoid}.stage-switch{display:none}.reference-table{overflow:visible}}
+
+/* Post-story route: connect each reward to its next concrete use. */
+.post-story-gateway{margin:0 0 23px;flex-wrap:wrap}
+.post-story .reference-scope{max-width:90ch}
+.growth-route{list-style:none;margin:23px 0 28px;padding:0;display:grid;gap:12px}
+.growth-route>li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:16px;padding:23px;background:#1a2332;border:1px solid #3c4c60;border-radius:10px;scroll-margin-top:90px}
+.growth-step-number{display:flex;justify-content:center;align-items:center;align-self:start;min-height:42px;border-radius:10px;background:#2c3f48;color:#b8e0d9;font:600 14px ui-monospace,monospace}
+.growth-route h3,.growth-rewards h3,.growth-rhythm h3{font-size:18px;line-height:1.65;margin:0 0 10px;word-break:keep-all}
+.growth-route p,.growth-rhythm p{font-size:14px;line-height:1.9;color:#b9c8dc;margin:0;overflow-wrap:anywhere;word-break:keep-all}
+.growth-route .growth-result{margin-top:13px;padding-top:12px;border-top:1px solid #354455;color:#bdcbd6;font-size:13px}
+.growth-result strong{display:block;font-size:11px;color:#b9d9cf;margin-bottom:3px}
+.growth-route .reference-links{margin-top:8px}
+.growth-rewards .reference-table th:first-child{width:31%}
+.growth-rewards .reference-table th:last-child{width:69%}
+.growth-rhythm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.growth-rhythm article{padding:21px;border-top:2px solid #789e99;background:#1a2332;min-width:0}
+.growth-bottom-line{padding:18px 22px;border-left:3px solid #8fbcaf;background:#25343e;line-height:1.9;color:#d6e4e5}
+#growth-sources{scroll-margin-top:100px}
+#growth-sources ul{padding-left:20px}
+#growth-sources li{margin:5px 0}
+#growth-sources a{min-height:36px;display:inline-flex;align-items:center;overflow-wrap:anywhere}
+@media(max-width:700px){.beginner-hub .journey-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.growth-route>li{grid-template-columns:34px minmax(0,1fr);gap:11px;padding:19px 15px}.growth-step-number{min-height:34px;font-size:12px}.growth-route h3{font-size:17px}.growth-rhythm{grid-template-columns:1fr}.growth-route .reference-links a{width:100%}}
+@media(max-width:480px){.growth-route>li{grid-template-columns:1fr;gap:12px}.growth-step-number{width:34px}.growth-route p,.growth-rhythm p{font-size:13px}.growth-rewards .reference-table th:first-child,.growth-rewards .reference-table th:last-child{width:auto}.growth-bottom-line{font-size:13px;padding:17px}.post-story-gateway{padding:19px}.post-story-gateway strong{font-size:15px}}
+@media print{.growth-route>li,.growth-rhythm article{break-inside:avoid}}
