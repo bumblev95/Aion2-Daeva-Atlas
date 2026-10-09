@@ -67,6 +67,7 @@ AdSense is configured **off**. See [OPERATIONS.md](OPERATIONS.md) before enablin
 | `assets/encounters.css` | Responsive boss and insight layouts |
 | `onboarding.py` | Beginner priorities, item anatomy, stats and embedded maps |
 | `poststory.py` | Story-to-endgame route, reward use and attributed feather references |
+| `routines.py` / `assets/routines.css` | Daily-expiry, banked and weekly activity rewards; three Daily Dungeon choices and regional sources |
 | `gearsteps.py` | Equipment enhancement procedure and material acquisition routes |
 | `skillbook.py` | 280 client-derived skill entries, icons, build paths, linked dialogs and static documents |
 | `bossmedia.py` | Per-pattern original scenes, attribution, chapter navigation and verification status |
@@ -119,5 +120,9 @@ node scripts/build_dps_rankings.js --verify
 Review the source dates, units, region, methods and samples before committing a snapshot. The review script rejects changed scopes/markup and incomplete launch-class coverage. Weekly URLs are intentionally pinned to reviewed periods; advance them only as part of a new source review. AIONING is linked for manual cross-checks; its data is not imported or republished.
 
 `tests/dps-ui.test.js` checks exact HTML/JSON/CSV agreement, published units and precision, missing-sample rank suppression, ignored visitor/query inputs, native details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The browser workflow retains screenshots and CSV evidence.
+
+## Daily and weekly reward guide
+
+`/routines/` and `/ko/routines/` connect 18 activities to their reward uses. Daily-expiry Duty Missions, accumulating energy/tickets and weekly-reset entries are kept separate. The three Daily Dungeons share one Unknown Fissure counter; quoted maximum rewards require 10,000 score. The guide labels Global counter references and dated KR reward examples, preserves uncertainty about regional reset times, and does not equate raid attempts with boss-kill or reward limits. Fourteen attributed sources were reviewed on October 9, 2026. Updating the guide requires checking the linked source and its region before changing counts or advancing the review date. Navigation, reward links, search and native details work without JavaScript; this guide introduces no additional local-storage state.
 
 [Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) never supplies damage, timing or proc defaults to `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations. [Guide-informed policy learning](research/rotation-learning/README.md) annotates text patterns, fits priority/hold proposal distributions through the existing constrained simulator and preserves a hashed model plus held-out results. Its optional KR guide priors are hypotheses. All eight classes are retrained under the same declared synthetic stat and base-1 skill profile; this is not measured identical gear. Actual animation/cancel times, complete damage/build coverage and independent combat targets remain incomplete, so learned policies stay offline and all class tiers remain blocked.

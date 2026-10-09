@@ -16,6 +16,9 @@ on:
       - 'tests/patch-ui.test.js'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'routines.py'
+      - 'assets/routines.css'
+      - 'tests/routines-ui.test.js'
       - 'gearsteps.py'
       - 'onboarding.py'
       - 'endgame.py'
@@ -43,6 +46,9 @@ on:
       - 'liveops.py'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'routines.py'
+      - 'assets/routines.css'
+      - 'tests/routines-ui.test.js'
       - 'gearsteps.py'
       - 'onboarding.py'
       - 'endgame.py'
@@ -87,6 +93,10 @@ jobs:
         env:
           POST_STORY_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/post-story-ui.test.js
+      - name: Verify daily and weekly rewards, search and no-script mobile layout
+        env:
+          ROUTINES_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/routines-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
