@@ -1,0 +1,620 @@
+{
+  "schema": 1,
+  "kind": "reviewed-public-combat-summaries",
+  "reviewedAt": "2026-10-09",
+  "collectedAt": "2026-10-09T08:24:17Z",
+  "publishers": [
+    "AionFlex",
+    "JaMeter"
+  ],
+  "methodologySource": "https://aionflex.gg/meta/methodology",
+  "launchClassCount": 8,
+  "datasets": [
+    {
+      "id": "global-balance",
+      "kind": "balance",
+      "publisher": "AionFlex",
+      "region": "GLOBAL",
+      "regionVerified": true,
+      "window": "30d",
+      "source": "https://aionflex.gg/meta/classes?region=global&window=30d",
+      "sourceHtmlSha256": "a9f2ae2b2ffb7763e29b48054b3676eb9b48ba09ccaaaa324644d774c19d1a56",
+      "metric": "normalized-index",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "chanter",
+          "value": 124,
+          "topEnd": 116,
+          "resolution": 1,
+          "characterWeeks": 1077,
+          "parses": 21977,
+          "characters": 837,
+          "uploaders": 811,
+          "bosses": 46
+        },
+        {
+          "classId": "sorcerer",
+          "value": 117,
+          "topEnd": 106,
+          "resolution": 1,
+          "characterWeeks": 1228,
+          "parses": 27050,
+          "characters": 924,
+          "uploaders": 912,
+          "bosses": 43
+        },
+        {
+          "classId": "spiritmaster",
+          "value": 113,
+          "topEnd": 103,
+          "resolution": 1,
+          "characterWeeks": 788,
+          "parses": 14623,
+          "characters": 612,
+          "uploaders": 600,
+          "bosses": 40
+        },
+        {
+          "classId": "templar",
+          "value": 106,
+          "topEnd": 97,
+          "resolution": 1,
+          "characterWeeks": 777,
+          "parses": 17924,
+          "characters": 602,
+          "uploaders": 583,
+          "bosses": 47
+        },
+        {
+          "classId": "ranger",
+          "value": 96,
+          "topEnd": 90,
+          "resolution": 1,
+          "characterWeeks": 1619,
+          "parses": 36356,
+          "characters": 1226,
+          "uploaders": 1197,
+          "bosses": 50
+        },
+        {
+          "classId": "assassin",
+          "value": 88,
+          "topEnd": 90,
+          "resolution": 1,
+          "characterWeeks": 1186,
+          "parses": 25810,
+          "characters": 904,
+          "uploaders": 894,
+          "bosses": 45
+        },
+        {
+          "classId": "gladiator",
+          "value": 90,
+          "topEnd": 87,
+          "resolution": 1,
+          "characterWeeks": 1167,
+          "parses": 25708,
+          "characters": 892,
+          "uploaders": 871,
+          "bosses": 46
+        },
+        {
+          "classId": "cleric",
+          "value": 77,
+          "topEnd": 74,
+          "resolution": 1,
+          "characterWeeks": 1013,
+          "parses": 19941,
+          "characters": 800,
+          "uploaders": 774,
+          "bosses": 44
+        }
+      ],
+      "sourceAsOf": "2026-10-07T14:25:00Z",
+      "commonBand": "Under 300K",
+      "sourceWithheld": false
+    },
+    {
+      "id": "kr-balance",
+      "kind": "balance",
+      "publisher": "AionFlex",
+      "region": "KR",
+      "regionVerified": true,
+      "window": "30d",
+      "source": "https://aionflex.gg/meta/classes?region=kr&window=30d",
+      "sourceHtmlSha256": "54707522e4cc67624d31776679df3abd6b0e4aeb3af12e63d0b9a572b6a1f8fc",
+      "metric": "normalized-index",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "cleric",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 97,
+          "parses": 5903,
+          "characters": 38,
+          "uploaders": 14,
+          "bosses": 0
+        },
+        {
+          "classId": "spiritmaster",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 56,
+          "parses": 3139,
+          "characters": 29,
+          "uploaders": 10,
+          "bosses": 0
+        },
+        {
+          "classId": "chanter",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 40,
+          "parses": 1783,
+          "characters": 18,
+          "uploaders": 8,
+          "bosses": 0
+        },
+        {
+          "classId": "sorcerer",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 19,
+          "parses": 819,
+          "characters": 7,
+          "uploaders": 7,
+          "bosses": 0
+        },
+        {
+          "classId": "gladiator",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 14,
+          "parses": 768,
+          "characters": 6,
+          "uploaders": 6,
+          "bosses": 0
+        },
+        {
+          "classId": "templar",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 13,
+          "parses": 326,
+          "characters": 6,
+          "uploaders": null,
+          "bosses": 0
+        },
+        {
+          "classId": "ranger",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 11,
+          "parses": 230,
+          "characters": 8,
+          "uploaders": 8,
+          "bosses": 0
+        },
+        {
+          "classId": "assassin",
+          "value": null,
+          "topEnd": null,
+          "resolution": 1,
+          "characterWeeks": 1,
+          "parses": 5,
+          "characters": 1,
+          "uploaders": null,
+          "bosses": 0
+        }
+      ],
+      "sourceAsOf": "2026-10-07T14:25:00Z",
+      "commonBand": null,
+      "sourceWithheld": true
+    },
+    {
+      "id": "turgen",
+      "kind": "record",
+      "publisher": "AionFlex",
+      "region": "KR",
+      "regionVerified": true,
+      "window": "all-time",
+      "source": "https://aionflex.gg/rankings/boss/2301721-willful-turgen?region=kr",
+      "sourceHtmlSha256": "7d72c3f2026ee2770028a28b00cef8ee28aaa252b85f2a53ab5d6a1340bf67d6",
+      "metric": "published-record-dps",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "gladiator",
+          "publishedRecords": 1,
+          "publishedDps": "350K/s",
+          "value": 350000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "templar",
+          "publishedRecords": 3,
+          "publishedDps": "357K/s",
+          "value": 357000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "ranger",
+          "publishedRecords": 15,
+          "publishedDps": "776K/s",
+          "value": 776000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "assassin",
+          "publishedRecords": 5,
+          "publishedDps": "1.6M/s",
+          "value": 1600000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "sorcerer",
+          "publishedRecords": 3,
+          "publishedDps": "651K/s",
+          "value": 651000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "cleric",
+          "publishedRecords": 7,
+          "publishedDps": "311K/s",
+          "value": 311000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "spiritmaster",
+          "publishedRecords": 5,
+          "publishedDps": "1.2M/s",
+          "value": 1200000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "chanter",
+          "publishedRecords": 12,
+          "publishedDps": "900K/s",
+          "value": 900000.0,
+          "resolution": 1000.0
+        }
+      ],
+      "sourceAsOf": null,
+      "commonBand": null,
+      "sourceWithheld": false,
+      "bossId": "2301721",
+      "en": "Willful Turgen",
+      "ko": "의지의 투르겐",
+      "instance": "DaevaCitadel",
+      "difficulty": "hard"
+    },
+    {
+      "id": "griosa",
+      "kind": "record",
+      "publisher": "AionFlex",
+      "region": "KR",
+      "regionVerified": true,
+      "window": "all-time",
+      "source": "https://aionflex.gg/rankings/boss/2301722-forbidden-hexbeast-griosa?region=kr",
+      "sourceHtmlSha256": "cc982a0fae2493f61289c963bc5031d931276b62e04c09e85252325514ebd56e",
+      "metric": "published-record-dps",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "gladiator",
+          "publishedRecords": 1,
+          "publishedDps": "308K/s",
+          "value": 308000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "templar",
+          "publishedRecords": 3,
+          "publishedDps": "297K/s",
+          "value": 297000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "ranger",
+          "publishedRecords": 15,
+          "publishedDps": "685K/s",
+          "value": 685000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "assassin",
+          "publishedRecords": 5,
+          "publishedDps": "1.6M/s",
+          "value": 1600000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "sorcerer",
+          "publishedRecords": 3,
+          "publishedDps": "554K/s",
+          "value": 554000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "cleric",
+          "publishedRecords": 7,
+          "publishedDps": "269K/s",
+          "value": 269000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "spiritmaster",
+          "publishedRecords": 5,
+          "publishedDps": "1.1M/s",
+          "value": 1100000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "chanter",
+          "publishedRecords": 12,
+          "publishedDps": "932K/s",
+          "value": 932000.0,
+          "resolution": 1000.0
+        }
+      ],
+      "sourceAsOf": null,
+      "commonBand": null,
+      "sourceWithheld": false,
+      "bossId": "2301722",
+      "en": "Forbidden Hexbeast Griosa",
+      "ko": "금기의 마수 그리오사",
+      "instance": "DaevaCitadel",
+      "difficulty": "hard"
+    },
+    {
+      "id": "basilus",
+      "kind": "record",
+      "publisher": "AionFlex",
+      "region": "KR",
+      "regionVerified": true,
+      "window": "all-time",
+      "source": "https://aionflex.gg/rankings/boss/2301723-basilus-the-false?region=kr",
+      "sourceHtmlSha256": "d85f0a778aedd9fdc1f3e52d0305f097d9ddeb3d01b1ba782f24656f2910e795",
+      "metric": "published-record-dps",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "gladiator",
+          "publishedRecords": 1,
+          "publishedDps": "271K/s",
+          "value": 271000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "templar",
+          "publishedRecords": 3,
+          "publishedDps": "289K/s",
+          "value": 289000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "ranger",
+          "publishedRecords": 14,
+          "publishedDps": "713K/s",
+          "value": 713000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "assassin",
+          "publishedRecords": 5,
+          "publishedDps": "1.2M/s",
+          "value": 1200000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "sorcerer",
+          "publishedRecords": 3,
+          "publishedDps": "537K/s",
+          "value": 537000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "cleric",
+          "publishedRecords": 7,
+          "publishedDps": "261K/s",
+          "value": 261000.0,
+          "resolution": 1000.0
+        },
+        {
+          "classId": "spiritmaster",
+          "publishedRecords": 5,
+          "publishedDps": "1.1M/s",
+          "value": 1100000.0,
+          "resolution": 100000.0
+        },
+        {
+          "classId": "chanter",
+          "publishedRecords": 11,
+          "publishedDps": "832K/s",
+          "value": 832000.0,
+          "resolution": 1000.0
+        }
+      ],
+      "sourceAsOf": null,
+      "commonBand": null,
+      "sourceWithheld": false,
+      "bossId": "2301723",
+      "en": "Basilus the False",
+      "ko": "위악의 바실루스",
+      "instance": "DaevaCitadel",
+      "difficulty": "hard"
+    },
+    {
+      "id": "jameter-current",
+      "kind": "weekly",
+      "publisher": "JaMeter",
+      "window": "source-week",
+      "source": "https://jameter.net/report/week/2026-10-07",
+      "sourceHtmlSha256": "09b46a42ee1c49d51e0970eadf8f0be4a1bb368008356c7e880a0afffaafe61f",
+      "metric": "boss-cp-ratio-index",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "sorcerer",
+          "value": 1.25,
+          "resolution": 0.01,
+          "sampleCount": 206
+        },
+        {
+          "classId": "ranger",
+          "value": 1.19,
+          "resolution": 0.01,
+          "sampleCount": 505
+        },
+        {
+          "classId": "gladiator",
+          "value": 1.15,
+          "resolution": 0.01,
+          "sampleCount": 247
+        },
+        {
+          "classId": "assassin",
+          "value": 1.13,
+          "resolution": 0.01,
+          "sampleCount": 207
+        },
+        {
+          "classId": "spiritmaster",
+          "value": 1.1,
+          "resolution": 0.01,
+          "sampleCount": 128
+        },
+        {
+          "classId": "templar",
+          "value": 1.01,
+          "resolution": 0.01,
+          "sampleCount": 204
+        },
+        {
+          "classId": "chanter",
+          "value": 0.87,
+          "resolution": 0.01,
+          "sampleCount": 353
+        },
+        {
+          "classId": "cleric",
+          "value": 0.71,
+          "resolution": 0.01,
+          "sampleCount": 447
+        }
+      ],
+      "sourceAsOf": null,
+      "commonBand": null,
+      "sourceWithheld": false,
+      "periodStart": "2026-10-07",
+      "periodEnd": "2026-10-14",
+      "provisional": true,
+      "region": "UNSPECIFIED",
+      "regionVerified": false,
+      "en": "JaMeter weekly comparison",
+      "ko": "JaMeter 주간 비교"
+    },
+    {
+      "id": "jameter-complete",
+      "kind": "band",
+      "publisher": "JaMeter",
+      "window": "source-week",
+      "source": "https://jameter.net/report/week/2026-09-30",
+      "sourceHtmlSha256": "eecd72941fcae037727c0b73516dc777aacde1f984a1362b5d9f312c9e421962",
+      "metric": "cp-band-median-dps",
+      "patchId": null,
+      "sameEquipment": false,
+      "rawFightTotalsAvailable": false,
+      "rows": [
+        {
+          "classId": "ranger",
+          "sampleCount": 244,
+          "publishedDps": "188만",
+          "value": 1880000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "spiritmaster",
+          "sampleCount": 49,
+          "publishedDps": "182만",
+          "value": 1820000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "assassin",
+          "sampleCount": 104,
+          "publishedDps": "171만",
+          "value": 1710000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "sorcerer",
+          "sampleCount": 81,
+          "publishedDps": "159만",
+          "value": 1590000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "chanter",
+          "sampleCount": 190,
+          "publishedDps": "131만",
+          "value": 1310000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "templar",
+          "sampleCount": 164,
+          "publishedDps": "124만",
+          "value": 1240000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "gladiator",
+          "sampleCount": 70,
+          "publishedDps": "120만",
+          "value": 1200000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "cleric",
+          "sampleCount": 400,
+          "publishedDps": "91.1만",
+          "value": 911000.0,
+          "resolution": 1000.0
+        }
+      ],
+      "sourceAsOf": null,
+      "commonBand": "850.0K ~ 950.0K",
+      "sourceWithheld": false,
+      "periodStart": "2026-09-30",
+      "periodEnd": "2026-10-07",
+      "provisional": false,
+      "region": "UNSPECIFIED",
+      "regionVerified": false,
+      "en": "JaMeter weekly comparison",
+      "ko": "JaMeter 주간 비교"
+    }
+  ]
+}

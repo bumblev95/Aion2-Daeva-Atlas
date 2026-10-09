@@ -95,27 +95,29 @@ Map projection follows the provider’s transform: coordinates are `[vertical, h
 - On changing the GA4 stream, keep enhanced measurement off (including automatic form/site-search/history events). This integration sends controlled page views and public interaction categories. Rebuild, validate, deploy, and verify opt-in traffic in Realtime.
 - When enabled, the bilingual analytics controls allow refusal/withdrawal; before consent there is no Google tag request. URLs are sent without query strings/fragments, and planner/form values are never collected by this integration. Consent is separate from an advertising CMP.
 
-## Conditional damage model
+## Observed DPS comparisons
 
-`/tools/dps/` and `/ko/tools/dps/` show read-only class rankings computed on the backend. Visitors do not supply stats, assemble builds or execute a browser DPS engine. The same eight-class profile in `data/dps-benchmark.json` uses source-backed level-20 terms, attack 1000, 25% critical chance, 100% hit chance and assumed one-second actions. Static priorities/hold times are trained across three seeds, selected on training fights only, then evaluated on separate stationary (180s) and moving (240s) boss fights. The overall score is **sum damage / sum whole fight time**, ranked by unrounded absolute DPS.
+`/tools/dps/` and `/ko/tools/dps/` publish read-only server-ordered combat summaries. The former common-level-20, one-second-action ranking was withdrawn because missing passives, pets, charged attacks, builds and resource limits made cross-class ordering unreliable. The tooltip engine and rotation learner remain offline research; neither supplies production ranks.
 
-The backend includes 72 known direct formulas, four independent DoT timelines and six Insignia-stack variants. Level scaling comes from reviewed per-level client terms rather than multiplying level-1 damage. Unknown charge duration, pet frequency and ground/trap timing remain excluded. Equipment, legal skill-point/bonus budgets, specifications/Stigmas, passive damage, actual animation times, resource sustainability and some proc/chain mechanics remain incomplete. The public table explicitly describes a controlled Global model, not a verified live endgame tier or Korea patch ranking. Class detail panels show excluded damage and actual modeled casts/contributions.
+`data/dps-observations.json` holds a reviewed numeric snapshot with source URLs, source HTML hashes, scope, publication precision and sample counts. No player identities, private report APIs or inferred raw damage/time are stored. The backend keeps these comparisons separate:
 
-`python build.py` runs `scripts/build_dps_rankings.js --build` before rendering HTML, JSON and CSV. The hourly official-feed job also rebuilds these results and marks a newer North America patch for review without inventing a damage adjustment. Changed formulas/catalog/profile hashes reject stale trained policies.
+- JaMeter's dated weekly boss/CP-adjusted index, labelled provisional while that week is in progress. Its public report does not specify a service region, so none is inferred. CP division is a linear adjustment, not an identical-gear simulation or buff-neutral nDPS.
+- A completed JaMeter week’s median DPS in a common CP band (at least 20 records per class); boss and party mix remain uncontrolled.
+- AionFlex's KR highest published class records on each of three Citadel of the Fallen Daeva Hard bosses. Historical records and their small posted counts never become a combined class tier.
+- AionFlex's Global normalized median/P95 indices and separately its KR sample coverage. The normalized order requires a common CP band and 100 character-weeks, 10 uploaders and 3 qualifying bosses per class. Insufficient coverage has no ranks. The Global index is never substituted for a KR index.
 
-When reviewed math or data changes:
+Values retain source precision, ties share places, and no role/healer weight is used. Healing and teammates’ buff gains are not added to personal DPS. The sources’ aggregate calculations are attributed to their publishers: we do not claim to recalculate unavailable raw fights or verify a final endgame build. A newer regional official patch adds a review notice without rewriting historical data.
+
+Source updates require an explicit review; the normal build does not make third-party network requests:
 
 ```sh
-python scripts/review_dps_levels.py --reviewed-at YYYY-MM-DD
-node scripts/build_dps_rankings.js --train
+python scripts/review_dps_observations.py --reviewed-at YYYY-MM-DD --cache /path/to/review-cache
 python build.py
-node research/rotation-learning/train.js --allow-unverified-guide-priors
 node scripts/build_dps_rankings.js --verify
-node research/rotation-learning/train.js --verify
 ```
 
-The level-review script refuses changed base tooltips or unreviewed non-damage mechanics. Inspect the source diff and renew the damage/condition audit first. The offline base-1 research remains a separate experiment: its guide annotations and trained policies do not supply production ranking defaults.
+Review the source dates, units, region, methods and samples before committing a snapshot. The review script rejects changed scopes/markup and incomplete launch-class coverage. Weekly URLs are intentionally pinned to reviewed periods; advance them only as part of a new source review. AIONING is linked for manual cross-checks; its data is not imported or republished.
 
-`tests/dps-ui.test.js` checks exact backend HTML/JSON/CSV agreement, ignored visitor/query inputs, native class/scenario details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The targeted browser workflow retains screenshots and CSV as evidence and adds no production dependencies.
+`tests/dps-ui.test.js` checks exact HTML/JSON/CSV agreement, published units and precision, missing-sample rank suppression, ignored visitor/query inputs, native details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The browser workflow retains screenshots and CSV evidence.
 
 [Gameplay rotation research](research/gameplay-patterns-2026-10-08.md) tracks original creator sources for all eight launch classes, observed practice samples and unverified full-fight candidates. [Its evidence record](research/gameplay-evidence.json) never supplies damage, timing or proc defaults to `docs/data/dps.json`; author reports and video chapter timestamps are not measured rotations. [Guide-informed policy learning](research/rotation-learning/README.md) annotates text patterns, fits priority/hold proposal distributions through the existing constrained simulator and preserves a hashed model plus held-out results. Its optional KR guide priors are hypotheses. All eight classes are retrained under the same declared synthetic stat and base-1 skill profile; this is not measured identical gear. Actual animation/cancel times, complete damage/build coverage and independent combat targets remain incomplete, so learned policies stay offline and all class tiers remain blocked.

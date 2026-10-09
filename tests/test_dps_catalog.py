@@ -75,12 +75,12 @@ class CatalogTests(unittest.TestCase):
         for lang in ('en', 'ko'):
             page = liveops.dps(lang, '/Aion2-Daeva-Atlas/')
             self.assertIn('data-computed-by="backend"',page)
-            self.assertEqual(page.count('data-rank-class='),24)
+            self.assertEqual(page.count('data-rank-class='),56)
             for tag in ('<form','<input','<select','dps-engine.js','assets/dps.js'):
                 self.assertNotIn(tag,page)
             self.assertIn('dps-rankings.csv',page)
-        self.assertIn('한국 패치 순위로 확정할 수 없습니다',liveops.dps('ko','/'))
-        self.assertIn('sum full fight seconds',liveops.dps('en','/'))
+        self.assertIn('글로벌 지수를 한국 순위로 대체하지 않습니다',liveops.dps('ko','/'))
+        self.assertIn('DPS is not recomputed from invented skill timings',liveops.dps('en','/'))
 
     def test_exact_level_terms_and_periodic_scaling(self):
         skills={s['id']:s for c in liveops.catalog(skill_level=20)['classes'] for s in c['candidates']}
