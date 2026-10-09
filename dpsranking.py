@@ -2,10 +2,17 @@
 import html
 import json
 import re
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 E = lambda value: html.escape(str(value), quote=True)
+
+def formatted(value, digits=2):
+    # Round the public decimal representation consistently with Intl's
+    # half-expand display; ranking always keeps the original unrounded score.
+    rounded = Decimal(str(value)).quantize(Decimal(1).scaleb(-digits), rounding=ROUND_HALF_UP)
+    return f'{rounded:,.{digits}f}'
 
 def load():
     data = json.loads((ROOT / 'data/dps-rankings.json').read_text())
@@ -26,7 +33,7 @@ def render(lang, base):
     r = base + ('ko/' if k else '')
     data = load()
     classes = {c['classId']: c for c in data['classes']}
-    fmt = lambda value: f'{value:,.2f}'
+    fmt = formatted
     number = lambda value: f'{value:,g}'
 
     def table(rows, caption):

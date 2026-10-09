@@ -132,6 +132,12 @@ class CatalogTests(unittest.TestCase):
         self.assertFalse(allowed_path('data/dps-ranking-model.json'))
         self.assertFalse(allowed_path('data/dps-rankings.json'))
 
+    def test_display_rounding_matches_decimal_half_up(self):
+        self.assertEqual(dpsranking.formatted(3516.475),'3,516.48')
+        self.assertEqual(dpsranking.formatted(2.675),'2.68')
+        self.assertEqual(dpsranking.formatted(99.991),'99.99')
+        self.assertEqual(dpsranking.formatted(0),'0.00')
+
     def test_changed_skill_snapshot_requires_condition_review(self):
         self.assertTrue(liveops.catalog()['conditionsVerified'])
         with patch.object(dpsrules, 'REVIEWED_SKILL_HASH', 'outdated'):
