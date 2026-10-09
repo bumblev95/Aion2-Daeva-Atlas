@@ -32,7 +32,10 @@ async function contained(page, label) {
   const browser = await chromium.launch({headless: true});
   try {
     for (const lang of ['en', 'ko']) for (const javascript of [true, false]) {
-      const context = await browser.newContext({viewport: {width: 1440, height: 1000}, javaScriptEnabled: javascript});
+      console.log('Verify routines:', lang, javascript ? 'JS' : 'no-JS');
+      // Native fragment navigation starts a smooth scroll under the site's default CSS.
+      // Honor reduced motion so pointer checks and screenshots wait on a fixed layout.
+      const context = await browser.newContext({viewport: {width: 1440, height: 1000}, javaScriptEnabled: javascript, reducedMotion: 'reduce'});
       await context.route('https://**/*', route => route.abort());
       const page = await context.newPage(), errors = [];
       page.on('pageerror', error => errors.push(error.message));
@@ -98,6 +101,20 @@ async function contained(page, label) {
       assert.deepEqual(errors, []);
       await context.close();
     }
+    // Also exercise the default motion preference with a real native anchor jump.
+    const motionContext = await browser.newContext({viewport: {width: 1440, height: 1000}});
+    await motionContext.route('https://**/*', route => route.abort());
+    const motionPage = await motionContext.newPage();
+    await motionPage.goto(base + 'ko/routines/');
+    await motionPage.locator('.rpg-guide-nav a[href="#reward-uses"]').click();
+    await motionPage.waitForURL('**/#reward-uses');
+    await motionPage.waitForFunction(() => {
+      const top = document.querySelector('#reward-uses').getBoundingClientRect().top;
+      return top >= 60 && top <= 130;
+    });
+    await motionPage.locator('#reward-stone a[href*="gear/#upgrade"]').click();
+    await motionPage.waitForURL('**/gear/#upgrade');
+    await motionContext.close();
     console.log('PASS: EN/KR daily/weekly separation, shared scored dungeon choices, regional rewards, source disclosure, search and upgrade routes; JS/no-JS at 320/390/768/1440px.');
   } finally { await browser.close(); await new Promise(resolve => server.close(resolve)); }
 })().catch(error => { console.error(error); server.close(); process.exitCode = 1; });
