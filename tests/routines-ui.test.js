@@ -110,7 +110,8 @@ async function contained(page, label) {
     await motionPage.waitForURL('**/#reward-uses');
     await motionPage.waitForFunction(() => {
       const top = document.querySelector('#reward-uses').getBoundingClientRect().top;
-      return top >= 60 && top <= 130;
+      // Both the fixed-header padding and the section margin contribute to the offset.
+      return top >= 65 && top <= innerHeight / 2;
     });
     await motionPage.locator('#reward-stone a[href*="gear/#upgrade"]').click();
     await motionPage.waitForURL('**/gear/#upgrade');
