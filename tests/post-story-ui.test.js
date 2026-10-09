@@ -95,7 +95,7 @@ async function contained(page, label) {
         await contained(page, lang + ' journey');
       }
       await page.setViewportSize({width: 390, height: 844});
-      await page.locator('[data-journey-panel="after-story"] h3').scrollIntoViewIfNeeded();
+      await page.locator('[data-journey-panel="after-story"] > .journey-heading').scrollIntoViewIfNeeded();
       await page.screenshot({path: path.join(artifacts, 'post-story-checklist-' + lang + '.png')});
       await page.locator('.lang').click();
       await page.waitForURL(url => url.searchParams.get('step') === 'after-story' && url.pathname !== new URL(local + 'start/').pathname);
