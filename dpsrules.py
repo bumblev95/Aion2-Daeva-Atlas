@@ -17,6 +17,8 @@ STATES = [
     ('spirit-trigger', 'Spirit-skill trigger available', '정령 기술 연계 사용 가능'),
     ('dodge', 'After Dodge', '회피 후 사용 가능'), ('flying', 'Flying', '비행 중'),
     ('immune-trigger', 'Confirmed immunity-target proc', '면역 대상 발동 확인'),
+    ('precision', 'Precision', '정밀 조준'),
+    ('block', 'Confirmed Block effect trigger', '막기 효과 발동 확인'),
 ]
 REVIEWED_SKILL_HASH = '8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e'
 CONTROL = {'slow', 'root', 'knockdown', 'stun', 'frost', 'stagger'}
@@ -42,7 +44,9 @@ HELPERS = {'templar': ['shield-smite'], 'chanter': ['impactful-crush'],
            'cleric': ['chain-of-torment']}
 
 def effect(state, duration, on='hit', source=None, **extra):
-    return dict(state=state, duration=duration, on=on, chance=100, source=source, **extra)
+    result = dict(state=state, duration=duration, on=on, chance=100, source=source)
+    result.update(extra)
+    return result
 
 def rules(skill, resources):
     sid = skill['id']; text = skill['en_data']['effect']
@@ -51,7 +55,9 @@ def rules(skill, resources):
                   mpCost=resources.get(sid, {}).get('mpCost'), mpGain=0,
                   source=skill['url'], conditionRegion='Global')
     gain = re.search(r'restores (\d+) MP', text, re.I)
-    if gain and 'on landing a Critical Hit' not in text:
+    if gain and (sid == 'heart-gore' or 'on landing a Critical Hit' not in text):
+        # Heart Gore's crit is its activation gate. Drill Dart's crit qualifies
+        # the MP effect instead; do not conflate these two scopes.
         result['mpGain'] = int(gain[1])
     if sid == 'snare-shot' or sid == 'ice-chain':
         result['effects'].append(effect('slow', 5, source=skill['url']))
@@ -66,6 +72,25 @@ def rules(skill, resources):
         # is a visible model assumption; users can instead supply observed windows.
         result['effects'].append(effect('chain-of-torment', 10, source=skill['url'],
                                        assumption='dot-lifetime'))
+    npc_control = {
+        'poach': ('root', 2, 75), 'shield-smite': ('stun', 3, 60),
+        'shield-rush': ('stun', 3, 30), 'annihilate': ('knockdown', 3, 30),
+        'rush-strike': ('knockdown', 3, 30), 'frost': ('frost', 3, 50),
+        'impactful-crush': ('stun', 3, 60), 'tremor-crush': ('stun', 3, 50),
+        'ankle-slice': ('root', 3, 50), 'suppressing-arrow': ('stun', 3, 40),
+    }
+    if sid in npc_control:
+        state, duration, chance = npc_control[sid]
+        extra = dict(chance=chance, npcChance=100)
+        if sid == 'ankle-slice': extra['requiresState'] = 'block'
+        if sid == 'suppressing-arrow': extra['requiresState'] = 'precision'
+        result['effects'].append(effect(state, duration, source=skill['url'], **extra))
+    if sid in ('shadow-fall', 'wave-blow'):
+        result['effects'].append(effect('knockdown', 3, source=skill['url']))
+    if sid == 'dimensional-control':
+        result['effects'].append(effect('slow', 3, source=skill['url']))
+    if sid == 'marking-shot':
+        result['effects'].append(effect('precision', 10, 'use', skill['url']))
     if sid in ('shield-smite', 'warding-strike', 'shield-rush'):
         result['effects'].append(effect('judgment-ready', 2, 'use', skill['url']))
     if sid in ('impactful-crush', 'spinning-strike', 'marchutans-wrath', 'ensnaring-mark'):

@@ -1,0 +1,141 @@
+{
+  "schema": 2,
+  "kind": "synthetic-simulator-curriculum",
+  "isCombatMeasurement": false,
+  "description": "Controlled synthetic stat budget and level-1/no-specialization skills for all eight classes. Not an identical measured gear loadout or combat log.",
+  "base": {
+    "region": "NA",
+    "patch": "research-synthetic-2026-10-08",
+    "attack": 1000,
+    "crit": 25,
+    "critMultiplier": 1.5,
+    "accuracy": 100,
+    "factor": 1,
+    "conditionMode": "tooltip",
+    "resourceMode": "unverified",
+    "fireMarkEnabled": "yes",
+    "elementsStart": 0,
+    "elementEvents": "",
+    "conditionsVerified": true,
+    "periodicMode": "inputs",
+    "periodicCrit": "none",
+    "periodicRefresh": "replace",
+    "insigniaMode": "consume",
+    "targetType": "npc",
+    "damageVerified": true
+  },
+  "holdSeconds": [
+    0,
+    0.25,
+    0.5,
+    1,
+    2
+  ],
+  "training": [
+    {
+      "id": "train-open-90",
+      "duration": 90,
+      "downtime": "",
+      "targetControl": "susceptible",
+      "stateWindows": {
+        "chain-of-torment": "10-20,35-45,65-75"
+      }
+    },
+    {
+      "id": "train-moving-120",
+      "duration": 120,
+      "downtime": "21-29,62-77",
+      "targetControl": "susceptible",
+      "stateWindows": {
+        "chain-of-torment": "8-18,38-48,88-98"
+      }
+    },
+    {
+      "id": "train-immune-105",
+      "duration": 105,
+      "downtime": "45-56",
+      "targetControl": "immune",
+      "stateWindows": {
+        "chain-of-torment": "15-25,40-50,80-90"
+      }
+    }
+  ],
+  "validation": [
+    {
+      "id": "validation-short-73",
+      "duration": 73,
+      "downtime": "3.3-12.5,40-46",
+      "targetControl": "susceptible",
+      "stateWindows": {
+        "chain-of-torment": "16-27,50-61"
+      }
+    },
+    {
+      "id": "validation-immune-95",
+      "duration": 95,
+      "downtime": "18.7-26.4",
+      "targetControl": "immune",
+      "stateWindows": {
+        "chain-of-torment": "9-19,39-49,69-79"
+      }
+    }
+  ],
+  "test": [
+    {
+      "id": "test-long-173",
+      "duration": 173.5,
+      "downtime": "60.3-84.7,133-142",
+      "targetControl": "susceptible",
+      "stateWindows": {
+        "chain-of-torment": "14-24,41-51,97-107,150-160"
+      }
+    },
+    {
+      "id": "test-immune-151",
+      "duration": 151,
+      "downtime": "24.5-38.2,109-121",
+      "targetControl": "immune",
+      "stateWindows": {
+        "chain-of-torment": "8-18,48-58,88-98,128-138"
+      }
+    }
+  ],
+  "sharedBuild": {
+    "id": "controlled-base-1-v1",
+    "skillLevel": 1,
+    "specializations": [],
+    "stigmas": [],
+    "passiveDamageIncluded": false,
+    "activationPassives": [
+      "fire-mark"
+    ],
+    "equipmentMode": "shared-stat-inputs",
+    "actualEquipmentVerified": false,
+    "stats": {
+      "attack": 1000,
+      "crit": 25,
+      "critMultiplier": 1.5,
+      "accuracy": 100,
+      "factor": 1
+    },
+    "actionSeconds": 1,
+    "actionTimesMeasured": false,
+    "mpBudgetVerified": false,
+    "mechanicsAssumptions": {
+      "region": "NA",
+      "patch": "research-synthetic-2026-10-08",
+      "conditionMode": "tooltip",
+      "resourceMode": "unverified",
+      "fireMarkEnabled": "yes",
+      "elementsStart": 0,
+      "elementEvents": "",
+      "periodicMode": "inputs",
+      "periodicCrit": "none",
+      "periodicRefresh": "replace",
+      "insigniaMode": "consume",
+      "targetType": "npc"
+    },
+    "descriptionKo": "전 직업 공격력 1000·치명 25%·치명 배율 1.5·적중 100%·사용자 배율 1, 액티브 기본 1레벨·특화/스티그마 없음. 실제 동일 장비가 아닌 공통 능력치 실험입니다. 불의 표식은 발동 조건 제공만 반영합니다.",
+    "descriptionEn": "All classes use attack 1000, critical chance 25%, critical multiplier 1.5, hit chance 100%, factor 1 and base-1 active skills without specializations/Stigmas. This is a shared stat-input experiment, not measured identical equipment. Fire Mark only provides an activation condition."
+  }
+}

@@ -33,18 +33,20 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py'
           node tests/dps.test.js
+          node tests/dps-math.test.js
+          node tests/dps-rankings.test.js
           node tests/analytics.test.js
           node tests/patchbook.test.js
           node --check assets/patchbook.js
           node --check assets/news.js
-          node --check assets/dps.js
           python build.py
           python validate.py
+          node scripts/build_dps_rankings.js --verify
       - name: Commit only the collected snapshot and its generated pages
         id: publish
         run: |
           python scripts/check_news_diff.py
-          git add data/news.json docs/data/news.json docs/index.html docs/ko/index.html docs/updates docs/ko/updates docs/search-index.json docs/sitemap.xml
+          git add data/news.json docs/data/news.json docs/index.html docs/ko/index.html docs/updates docs/ko/updates docs/tools/dps/index.html docs/ko/tools/dps/index.html docs/search-index.json docs/sitemap.xml
           if git diff --cached --quiet; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
             exit 0

@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-10-08",
+  "purpose": "research-only",
+  "canSeedSimulation": false,
+  "researchHintUse": "Qualitative priority hypotheses may initialize an explicitly opted-in research search; no author damage, timing or proc value becomes a calculator default.",
+  "currentPatchEquivalent": false,
+  "currentPatchMatchStatus": "unverified",
+  "rankVerified": false,
+  "legend": {
+    "sampled-frames": "Original media frames were inspected; this does not validate a full rotation.",
+    "author-report": "The original author explanation was read; combat events were not independently verified.",
+    "video-candidate": "A source-linked video was identified; full gameplay remains unverified."
+  },
+  "sources": [
+    {
+      "id": "cleric-practice",
+      "class": "cleric",
+      "author": "컷트라이",
+      "publishedAt": "2025-11-28",
+      "article": "https://m.inven.co.kr/board/aion2/6452/408?vtype=mobile",
+      "status": "sampled-frames",
+      "fullFightVerified": false,
+      "encounter": "practice dummies",
+      "media": [
+        {
+          "url": "https://upload3.inven.co.kr/upload/2025/11/28/bbs/i9786102360.mp4",
+          "sha256": "9df70a1d9797e1b429f11bddfc9e98615e1781ab587c93c1314be15e67c4d981",
+          "durationSec": 6.919444,
+          "width": 600,
+          "height": 338,
+          "mediaFps": 15,
+          "reviewedRangeSec": [
+            0,
+            4.75
+          ],
+          "sampleEverySec": 0.25,
+          "samplingTimeBasis": "Nominal sample times; selected native 15 FPS frames need not align exactly with the 0.25-second output grid.",
+          "observed": "Repeated brief attack motions and subsequent effects at practice dummies.",
+          "authorSkillIdentification": [
+            "고통의 연쇄",
+            "대지의 응보"
+          ],
+          "perCastSkillVerified": false,
+          "hitAndResourceVerified": false
+        },
+        {
+          "url": "https://upload3.inven.co.kr/upload/2025/11/28/bbs/i9631334216.mp4",
+          "sha256": "ddd3c3165459de3baa1b610a205d6237d4642b5979a287cc6aa82b79ad30b33c",
+          "durationSec": 4.919444,
+          "width": 600,
+          "height": 338,
+          "mediaFps": 15,
+          "reviewedRangeSec": [
+            0,
+            4.75
+          ],
+          "sampleEverySec": 0.25,
+          "samplingTimeBasis": "Nominal sample times; selected native 15 FPS frames need not align exactly with the 0.25-second output grid.",
+          "observed": "Brief attack and green/white follow-up effects repeat in a practice scene.",
+          "authorSkillIdentification": [
+            "치유의 빛",
+            "대지의 응보"
+          ],
+          "perCastSkillVerified": false,
+          "hitAndResourceVerified": false
+        }
+      ]
+    },
+    {
+      "id": "cleric-guide",
+      "class": "cleric",
+      "author": "소티메리 / 소티",
+      "publishedAt": "2026-04-16",
+      "article": "https://www.inven.co.kr/board/aion2/6452/16524",
+      "status": "author-report",
+      "video": "https://www.youtube.com/watch?v=-iELblTrN1k",
+      "videoStatus": "video-candidate",
+      "fullFightVerified": false
+    },
+    {
+      "id": "sorcerer-sequence",
+      "class": "sorcerer",
+      "author": "나형임 / 나형이",
+      "publishedAt": "2026-04-23",
+      "article": "https://www.inven.co.kr/board/aion2/6453/10552",
+      "status": "author-report",
+      "video": "https://www.youtube.com/watch?v=hFTAb0JDTVU",
+      "videoStatus": "video-candidate",
+      "fullFightVerified": false
+    },
+    {
+      "id": "chanter-guide",
+      "class": "chanter",
+      "author": "무무야자자 / 하구",
+      "publishedAt": "2025-11-24",
+      "lastEditedAt": null,
+      "article": "https://m.inven.co.kr/board/aion2/6451/116",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=_1S-5JZdgyI",
+          "creatorReportedContext": "Kaisinel illusion stage 10 solo",
+          "status": "video-candidate",
+          "fullFightVerified": false,
+          "chapters": [
+            {
+              "sourceSec": 45,
+              "label": "skill use"
+            },
+            {
+              "sourceSec": 174,
+              "label": "commented gameplay"
+            },
+            {
+              "sourceSec": 562,
+              "label": "unedited footage"
+            }
+          ],
+          "chapterProvenance": "creator video description"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=wvkgeSN_QPY",
+          "creatorReportedContext": "Musphel chalice boss party without Cleric",
+          "status": "video-candidate",
+          "fullFightVerified": false,
+          "chapters": [
+            {
+              "sourceSec": 67,
+              "label": "first traffic light"
+            },
+            {
+              "sourceSec": 166,
+              "label": "flight"
+            },
+            {
+              "sourceSec": 450,
+              "label": "full footage"
+            }
+          ],
+          "chapterProvenance": "creator video description"
+        }
+      ]
+    },
+    {
+      "id": "ranger-guide",
+      "class": "ranger",
+      "author": "빵호빵",
+      "publishedAt": "2025-11-27",
+      "article": "https://m.inven.co.kr/board/aion2/6450/214?vtype=mobile",
+      "status": "author-report",
+      "qualificationNote": "Author explicitly described being one week into the game at publication; not an independently verified expert rotation.",
+      "video": "https://www.youtube.com/watch?v=WOEGlqV7uJc",
+      "videoStatus": "video-candidate",
+      "fullFightVerified": false,
+      "chapters": [
+        {
+          "sourceSec": 38,
+          "label": "rotation and mechanics"
+        },
+        {
+          "sourceSec": 84,
+          "label": "cooldown reduction and buffs"
+        },
+        {
+          "sourceSec": 405,
+          "label": "probabilistic resets"
+        }
+      ],
+      "chapterProvenance": "creator article and video description"
+    },
+    {
+      "id": "ranger-repeated-dummy",
+      "class": "ranger",
+      "author": "지옥햄스터",
+      "publishedAt": "2026-04-26",
+      "article": "https://www.inven.co.kr/board/aion2/6450/11715",
+      "status": "author-report",
+      "encounter": "Legion practice dummies",
+      "fullFightVerified": false
+    },
+    {
+      "id": "spiritmaster-party",
+      "class": "spiritmaster",
+      "author": "Sha2co",
+      "publishedAt": "2026-08-13",
+      "article": "https://m.inven.co.kr/board/aion2/6454/9216?stype=nickname&svalue=Sha2co",
+      "status": "author-report",
+      "fullFightVerified": false
+    },
+    {
+      "id": "spiritmaster-solo",
+      "class": "spiritmaster",
+      "author": "응급치료사 / 김바보tv",
+      "publishedAt": "2025-12-14",
+      "article": "https://www.inven.co.kr/board/aion2/6454/634",
+      "status": "author-report",
+      "video": "https://www.youtube.com/watch?v=G1szvt7KwNA",
+      "videoStatus": "video-candidate",
+      "creatorReportedContext": "Fire Temple Conquest solo; build at beginning and rotation at end",
+      "fullFightVerified": false
+    },
+    {
+      "id": "assassin-party-comparison",
+      "class": "assassin",
+      "author": "멍쮸야",
+      "publishedAt": "2026-03-03",
+      "article": "https://www.inven.co.kr/board/aion2/6449/5183",
+      "status": "author-report",
+      "comparisonControlled": false,
+      "confounders": [
+        "different builds",
+        "different movement assignment"
+      ],
+      "fullFightVerified": false
+    },
+    {
+      "id": "gladiator-fallback",
+      "class": "gladiator",
+      "author": "김판금갑옷",
+      "publishedAt": "2026-01-16",
+      "article": "https://www.inven.co.kr/board/aion2/6448/3461",
+      "status": "author-report",
+      "fullFightVerified": false
+    },
+    {
+      "id": "gladiator-practice",
+      "class": "gladiator",
+      "author": "수호굿",
+      "publishedAt": "2026-06-18",
+      "article": "https://www.inven.co.kr/board/aion2/6448/21060",
+      "status": "author-report",
+      "video": "https://www.youtube.com/watch?v=J5GJ9w3zKdM",
+      "videoStatus": "video-candidate",
+      "fullFightVerified": false
+    },
+    {
+      "id": "templar-opener",
+      "class": "templar",
+      "author": "멍덕팝",
+      "publishedAt": "2026-01-08",
+      "article": "https://www.inven.co.kr/board/aion2/6438/4572",
+      "status": "author-report",
+      "qualificationNote": "Author solicits feedback on their personal rotation; optimality is unverified.",
+      "fullFightVerified": false
+    },
+    {
+      "id": "templar-solo",
+      "class": "templar",
+      "author": "Jinsiwooe",
+      "publishedAt": "2025-12-11",
+      "article": "https://www.inven.co.kr/board/aion2/6438/1153",
+      "status": "author-report",
+      "video": "https://www.youtube.com/watch?v=hxDpOjMpsYs",
+      "videoStatus": "video-candidate",
+      "creatorReportedContext": "Fierce Horn Exploration solo; distinct from Conquest",
+      "fullFightVerified": false
+    },
+    {
+      "id": "cleric-april-priorities",
+      "class": "cleric",
+      "author": "하앑짜악",
+      "publishedAt": "2026-04-11",
+      "article": "https://www.inven.co.kr/board/aion2/6452/16252",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR level 16–20 PvE priorities and debuff maintenance; links a prior meter post"
+    },
+    {
+      "id": "assassin-february-opener",
+      "class": "assassin",
+      "author": "아즈샤라관흥",
+      "publishedAt": "2026-02-12",
+      "article": "https://www.inven.co.kr/board/aion2/6449/4571",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR dummy and difficult Conquest practice; mark priority and burst alignment"
+    },
+    {
+      "id": "gladiator-august-input",
+      "class": "gladiator",
+      "author": "한글로될걸",
+      "publishedAt": "2026-08-13",
+      "article": "https://www.inven.co.kr/board/aion2/6448/27604",
+      "status": "author-report",
+      "fullFightVerified": false,
+      "creatorReportedContext": "KR post-patch input behavior, queue ON and level 16 Rampage"
+    }
+  ],
+  "textSourcesAdded": [
+    "cleric-april-priorities",
+    "assassin-february-opener",
+    "gladiator-august-input"
+  ],
+  "requiredReplayFields": [
+    "source URL",
+    "video timestamp",
+    "fight-relative timestamp",
+    "server and patch",
+    "encounter and difficulty",
+    "equipment and skill levels",
+    "specializations",
+    "passives and Stigma",
+    "party buffs",
+    "skill queue and input settings",
+    "availability start/end",
+    "input",
+    "landed hit",
+    "damage",
+    "state start/end",
+    "resource changes",
+    "cooldown reset",
+    "movement/healing/downtime"
+  ],
+  "limitations": [
+    "No full boss fight or event-by-event skill replay was independently verified.",
+    "YouTube media requests were inaccessible despite accessible metadata; HTML responses were not accepted as video.",
+    "Author statements, navigation timestamps and sampled frames do not establish action durations or proc probabilities.",
+    "KR names and high-level specializations require explicit matching before applying Global skill IDs or base-level rules.",
+    "Source media remains on original hosts; no video, screenshot or thumbnail is shipped.",
+    "No optimal rotation preset or final class tier is derived from these records."
+  ]
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Dependency-free bilingual static publishing for GitHub Pages."""
-import json, re, shutil, html, hashlib
+import json, re, shutil, html, hashlib, subprocess
 from pathlib import Path
 from datetime import date
 from content import CLASSES, GUIDES, GLOSSARY, SOURCES
@@ -214,7 +214,7 @@ def layoutpreview():
 def livepages():
     for sub,title,desc,body in [
         ('updates/',t('AION 2 news & patch changes','아이온 2 뉴스·패치 변경사항'),t('Official Korea and North America updates with reviewed class impact.','한국·북미 공식 업데이트와 직업별 변경 요약.'),liveops.news(LANG,BASE)+liveops.coverage(LANG)),
-        ('tools/dps/',t('AION 2 build & eDPS calculator','아이온 2 빌드·eDPS 계산기'),t('Compare rotation inputs, downtime and patch scenarios under the same conditions.','같은 조건의 스킬 사이클·공격 불가 구간·패치 전후 DPS를 비교합니다.'),liveops.dps(LANG,BASE)),
+        ('tools/dps/',t('AION 2 class DPS rankings','아이온 2 직업별 DPS 순위'),t('Server-computed class DPS under a common profile, with boss scenarios and skill contributions.','공통 조건의 서버 계산 직업별 DPS 순위와 보스 상황별 차이·스킬 기여도.'),liveops.dps(LANG,BASE)),
         ('screenshots/',t('AION 2 gameplay screenshots','아이온 2 인게임 스크린샷'),t('Official in-game combat, boss and flight frames with source credits.','공식 전투·보스·비행 장면과 원본 출처.'),liveops.screenshots(LANG,BASE)),
     ]:
         write(sub,title,desc,'<div class="wrap">'+body+'</div>')
@@ -231,6 +231,7 @@ def livepages():
 def build():
     global L,LANG
     validate_evidence()
+    subprocess.run(['node', str(ROOT/'scripts/build_dps_rankings.js'), '--build'], cwd=ROOT, check=True)
     if OUT.exists():shutil.rmtree(OUT)
     OUT.mkdir();shutil.copytree(ROOT/'assets',OUT/'assets')
     for L,LANG in enumerate(['en','ko']):
@@ -238,6 +239,8 @@ def build():
     (OUT/'data').mkdir()
     shutil.copyfile(ROOT/'data/news.json',OUT/'data/news.json')
     (OUT/'data/dps.json').write_text(json.dumps(liveops.catalog(),ensure_ascii=False,separators=(',',':'))+'\n')
+    for name in ('dps-rankings.json','dps-rankings.csv'):
+        shutil.copyfile(ROOT/'data'/name,OUT/'data'/name)
     (OUT/'search-index.json').write_text(json.dumps(search_index,ensure_ascii=False,separators=(',',':')))
     (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+page_dates.get(url,REVIEWED)+'</lastmod></url>' for url in pages)+'</urlset>')
     measurement.write_verification(CONFIG,OUT)
