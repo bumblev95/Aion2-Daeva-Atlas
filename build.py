@@ -214,7 +214,7 @@ def layoutpreview():
 def livepages():
     for sub,title,desc,body in [
         ('updates/',t('AION 2 news & patch changes','아이온 2 뉴스·패치 변경사항'),t('Official Korea and North America updates with reviewed class impact.','한국·북미 공식 업데이트와 직업별 변경 요약.'),liveops.news(LANG,BASE)+liveops.coverage(LANG)),
-        ('tools/dps/',t('AION 2 class DPS rankings','아이온 2 직업별 DPS 순위'),t('Server-computed class DPS under a common profile, with boss scenarios and skill contributions.','공통 조건의 서버 계산 직업별 DPS 순위와 보스 상황별 차이·스킬 기여도.'),liveops.dps(LANG,BASE)),
+        ('tools/dps/',t('AION 2 DPS record comparisons','아이온 2 실전 DPS 비교'),t('Reviewed boss DPS records and class indices with regions, sample counts and source links.','한국 보스별 DPS 기록과 글로벌 전투력 지수, 표본 수와 출처를 함께 비교합니다.'),liveops.dps(LANG,BASE)),
         ('screenshots/',t('AION 2 gameplay screenshots','아이온 2 인게임 스크린샷'),t('Official in-game combat, boss and flight frames with source credits.','공식 전투·보스·비행 장면과 원본 출처.'),liveops.screenshots(LANG,BASE)),
     ]:
         write(sub,title,desc,'<div class="wrap">'+body+'</div>')

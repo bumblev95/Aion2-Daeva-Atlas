@@ -40,37 +40,44 @@ const server=http.createServer((req,res)=>{
       const desk=page.locator('[data-dps-rankings]');
       assert.equal(await desk.getAttribute('data-computed-by'),'backend');
       assert.equal(await desk.locator('form,input,select,textarea').count(),0);
-      assert.equal(await desk.locator('[data-class-detail]').count(),8);
+      assert.equal(await desk.locator('[data-comparison-table]').count(),7);
+      assert(!(await desk.textContent()).includes('7,284.85'));
+      assert((await desk.textContent()).includes('JaMeter'));
       assert(!(await desk.textContent()).includes('Injected visitor build'));
 
-      const checkRows=async(locator,expected)=>{
-        const rows=await locator.evaluateAll(rows=>rows.map(row=>({id:row.dataset.rankClass,
-          dps:Number(row.dataset.dps),place:Number(row.cells[0].textContent),value:row.cells[2].querySelector('strong').textContent,
-          name:row.cells[1].querySelector('a').textContent.trim()})));
+      for(const comparison of results.comparisons){
+        const table=desk.locator('[data-comparison-table="'+comparison.id+'"]');
+        const rows=await table.locator('[data-rank-class]').evaluateAll(rows=>rows.map(row=>({
+          id:row.dataset.rankClass,value:row.dataset.value===''?null:Number(row.dataset.value),
+          place:row.dataset.place===''?null:Number(row.dataset.place),
+          displayPlace:row.cells[0].textContent.trim(),name:row.cells[1].querySelector('a').textContent.trim(),
+          display:row.cells[2].querySelector('strong').textContent.trim()
+        })));
         assert.equal(rows.length,8);
         rows.forEach((row,i)=>{
-          assert.equal(row.id,expected[i].classId);assert.equal(row.place,expected[i].rank);
-          assert(Math.abs(row.dps-expected[i].dps)<1e-6);
-          assert.equal(row.value,expected[i].dps.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
-          assert.equal(row.name,expected[i][lang]);
+          const expected=comparison.rows[i];
+          assert.equal(row.id,expected.classId);assert.equal(row.place,expected.rank);
+          assert.equal(row.value,expected.value);assert.equal(row.name,expected[lang]);
+          assert.equal(row.displayPlace,expected.rank===null?'—':String(expected.rank));
+          const display=comparison.kind==='record'?expected.publishedDps:
+            comparison.kind==='band'?(lang==='ko'?expected.publishedDps+'/s':expected.value.toLocaleString('en-US')+'/s'):
+            expected.value===null?'—':expected.value.toLocaleString('en-US',{
+              minimumFractionDigits:comparison.kind==='weekly'?2:0,maximumFractionDigits:comparison.kind==='weekly'?2:0});
+          assert.equal(row.display,display);
         });
-      };
-      await checkRows(desk.locator('.rank-overall [data-rank-class]'),results.overall);
-      for(const scenario of results.scenarios){
-        const panel=desk.locator('[data-rank-scenario="'+scenario.id+'"]');
-        await panel.locator('summary').click();
-        assert.equal(await panel.getAttribute('open'),'');
-        await checkRows(panel.locator('[data-rank-class]'),scenario.rows);
       }
-      const cleric=desk.locator('[data-class-detail="cleric"]');
-      await cleric.locator('summary').click();
-      assert.equal(await cleric.locator('.rank-breakdown tbody tr').count(),results.classes.find(c=>c.classId==='cleric').policy.order.length);
-      assert((await cleric.textContent()).includes(lang==='ko'?'미확인 피해':'Unresolved damage'));
+      for(const panel of [desk.locator('[data-matched-week]'),desk.locator('[data-kr-coverage]'),
+        ...['turgen','griosa','basilus'].map(id=>desk.locator('[data-rank-scenario="'+id+'"]'))]){
+        if(await panel.getAttribute('open')===null)await panel.locator('summary').click();
+        assert.equal(await panel.getAttribute('open'),'');
+      }
+      const coverage=desk.locator('[data-comparison-table="kr-balance"]');
+      assert.equal(await coverage.locator('[data-place=""]').count(),8,'No ranks when matched KR samples are missing');
       const json=await page.request.get(base+'data/dps-rankings.json');
       assert.deepEqual(await json.json(),results);
 
       const downloadPromise=page.waitForEvent('download');
-      await desk.locator('a[download]').click();
+      await desk.locator('a[download]').first().click();
       const download=await downloadPromise;
       const csvPath=path.join(artifacts,'results-'+lang+'-'+(javascript?'js':'nojs')+'.csv');
       await download.saveAs(csvPath);assert.equal(fs.readFileSync(csvPath,'utf8'),expectedCSV);
@@ -78,8 +85,8 @@ const server=http.createServer((req,res)=>{
       for(const width of [390,320]){
         await page.setViewportSize({width,height:844});
         const sizes=await page.evaluate(()=>({viewport:innerWidth,page:document.documentElement.scrollWidth,
-          table:document.querySelector('.rank-overall .rank-table-scroll').scrollWidth,
-          container:document.querySelector('.rank-overall .rank-table-scroll').clientWidth}));
+          table:document.querySelector('.rank-weekly .rank-table-scroll').scrollWidth,
+          container:document.querySelector('.rank-weekly .rank-table-scroll').clientWidth}));
         assert(sizes.page<=sizes.viewport+1,JSON.stringify(sizes));assert(sizes.table>sizes.container);
       }
       await page.setViewportSize({width:390,height:844});
@@ -89,6 +96,6 @@ const server=http.createServer((req,res)=>{
       assert.deepEqual(engineRequests,[],'The page must never fetch a client DPS engine');
       assert.deepEqual(errors,[]);await context.close();
     }
-    console.log('PASS: backend ranks match JSON/CSV, visitor/query inputs ignored, no client simulation, bilingual native details, no-JS access and 320/390px containment.');
+    console.log('PASS: backend source comparisons match JSON/CSV, visitor/query inputs ignored, no client simulation, bilingual native details, no-JS access and 320/390px containment.');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});
