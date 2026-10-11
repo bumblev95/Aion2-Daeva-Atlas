@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-11T01:49:44Z",
+  "checkedAt": "2026-10-11T08:44:00Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-11T01:49:44Z",
-      "lastSuccessAt": "2026-10-11T01:49:44Z",
+      "checkedAt": "2026-10-11T08:44:00Z",
+      "lastSuccessAt": "2026-10-11T08:44:00Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5306,8 +5306,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-11T01:49:44Z",
-      "lastSuccessAt": "2026-10-11T01:49:44Z",
+      "checkedAt": "2026-10-11T08:44:00Z",
+      "lastSuccessAt": "2026-10-11T08:44:00Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5489,8 +5489,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-11T01:49:44Z",
-      "lastSuccessAt": "2026-10-11T01:49:44Z",
+      "checkedAt": "2026-10-11T08:44:00Z",
+      "lastSuccessAt": "2026-10-11T08:44:00Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5630,11 +5630,30 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-11T01:49:44Z",
-      "lastSuccessAt": "2026-10-11T01:49:44Z",
+      "checkedAt": "2026-10-11T08:44:00Z",
+      "lastSuccessAt": "2026-10-11T08:44:00Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6acaa7506b722c561dc6aae9",
+          "title": "Account Restrictions: Operation Policy Violations and Temporary Security Locks",
+          "region": "NA",
+          "kind": "news",
+          "source": "na-notice",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6acaa7506b722c561dc6aae9",
+          "publishedAt": "2026-10-11T06:00:00.001Z",
+          "sourceUpdatedAt": "2026-10-11T06:00:11.690Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "pending",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {}
+        },
         {
           "id": "6acad81ca7ca1a15cf46bf75",
           "title": "October 11 Yustiel Server Outage (Asia)",
