@@ -5,6 +5,7 @@ existing KR-source collection; they are not claims of Global gameplay testing.
 """
 from html import escape as e
 from fieldnotes import BOSSES, KR_SOURCES
+import growthvisuals
 
 REVIEWED = '2026-10-12'
 ROOT = 'guides/'
@@ -21,6 +22,9 @@ GUIDES = [
 
 # Each small source summary is original; large source tables are not reproduced.
 SOURCES = {
+    'mobalytics-beginner': ('https://mobalytics.gg/gamebase/guides/aion-2-beginner-guide',
+        ('Mobalytics · beginner upgrades', 'Mobalytics · 초보자 성장 점검'),
+        ('Global guide; updated 2026-10-11. Titles, Power Shard material costs and equipment extraction.', '글로벌 공략 · 2026.10.11 수정. 칭호·Power Shard 재료 비용·장비 추출.')),
     'pet-system': ('https://space4games.com/en/games-en/aion-2-pets-guide/',
         ('Space4Games · pet systems', 'Space4Games · 펫 성장 시스템'),
         ('Global play guide; updated 2026-10-10. Owned effects, Insight and Genus Analysis.', '글로벌 플레이 공략 · 2026.10.10 수정. 보유 효과·개별 이해도·종족 분석.')),
@@ -114,9 +118,9 @@ WALKTHROUGHS = {
 }
 
 SECTION_NAV = {
-    'pet-growth': [('pet-families', ('Which pet?', '어떤 펫?')), ('pet-farming', ('Farming locations', '사냥터')), ('pet-spending', ('Spend materials', '재료 사용'))],
+    'pet-growth': [('pet-visual', ('Soul routes', '영혼 사용 그림')), ('pet-families', ('Which pet?', '어떤 펫?')), ('pet-farming', ('Farming locations', '사냥터')), ('pet-spending', ('Spend materials', '재료 사용'))],
     'gear-targets': [('gear-ladder', ('Target gear', '목표 장비')), ('gear-investment', ('Enhancement order', '강화 순서')), ('gear-materials', ('Materials', '재료 획득처')), ('gear-fallbacks', ('Vouchers & crafting', '교환·제작'))],
-    'dungeon-rewards': [('dungeon-plans', ('Dungeon plans', '던전별 공략')), ('dungeon-after', ('Use the rewards', '보상 사용'))],
+    'dungeon-rewards': [('dungeon-visual', ('Choose a run', '갈 던전 고르기')), ('dungeon-plans', ('Dungeon plans', '던전별 공략')), ('dungeon-after', ('Use the rewards', '보상 사용'))],
     'kinah-farming': [('kinah-types', ('Currency types', '키나 종류')), ('kinah-fixed', ('Fixed rewards', '보상 수입')), ('kinah-market', ('Market sales', '판매 재료')), ('kinah-plan', ('Today’s plan', '오늘 할 일'))],
 }
 
@@ -154,14 +158,6 @@ def banner(lang, base, slug):
 
 def pet_guide(v):
     t = v.t
-    systems = v.cards([
-        (('1. Collect and grow individual pets', '1. 펫 수집·개별 이해도'),
-         ('Souls unlock pets and raise their Insight. Owned bonuses work even when another pet is equipped.', '영혼으로 펫을 얻고 개별 이해도를 올립니다. 다른 펫을 꺼내도 보유 효과는 적용됩니다.')),
-        (('2. Build the family’s progress', '2. 종족 이해도와 분석 슬롯'),
-         ('Growing pets also advances their genus. Its level determines which analysis slots and grades are available.', '여러 펫을 성장시키면 해당 종족의 이해도도 쌓입니다. 종족 단계에 따라 분석 슬롯·등급이 열립니다.')),
-        (('3. Spend crystals on analysis', '3. 결정·키나로 옵션 분석'),
-         ('After a pet reaches its Insight cap, spare souls can become genus Soul Crystals. Analysis spends crystals and Kinah.', '개별 이해도 상한 이후의 남는 영혼은 해당 종족의 영혼 결정으로 바꿉니다. 종족 분석에는 결정과 키나를 씁니다.')),
-    ])
     family_rows = [
         ('Cogni · 지성', ('HP · Critical Hit', '생명력·치명타'), ('Start here when improving offensive collection stats.', '치명타 내실을 채우려면 우선 검토')),
         ('Fera · 야성', ('Ground mount speed · Accuracy', '탑승물 지상 이동 속도·명중'), ('Prioritize missing pets when attacks miss.', '공격이 빗나간다면 미보유 펫부터 검토')),
@@ -187,8 +183,7 @@ def pet_guide(v):
          ('Odylium Repository awards Growth Pet Chests. It shares entries with the stone and Kinah dungeons, so choose it when pets are your next upgrade.', '오디움 저장소의 성장 펫 상자로 영혼을 보충합니다. 강화석·키나 던전과 입장 횟수를 공유하니 오늘 필요한 보상으로 선택하세요.')),
     ])+v.a('routines/#daily-choice-odium',t('Compare Daily Dungeon rewards', '일일 던전 보상 비교'),'progress-action')+v.cite('pet-system','odium')
     return (
-        v.section('pet-growth-loop', ('Souls → Insight → permanent growth', '영혼을 모으면 무엇이 오를까?'),
-                  ('Collection bonuses and analysis rolls are separate sources of growth.', '펫을 모아 얻는 보유 효과와 분석으로 뽑는 옵션은 별개의 성장입니다.'), systems+v.cite('pet-system'))+
+        '<div id="pet-growth-loop">'+growthvisuals.pet(v)+v.cite('pet-system')+'</div>'+
         v.section('pet-families', ('Choose the stat you are missing', '부족한 능력치로 종족 선택'),
                   ('Bonus families below follow the KR guide. Do not carry its numerical level caps into another region.', '아래는 한국 자료의 보너스 방향입니다. 단계별 수치·상한을 다른 서버에 그대로 적용하지 않습니다.'), families)+
         v.section('pet-farming', ('Where to get the souls', '어디서 누구를 잡을까?'),
@@ -201,15 +196,7 @@ def pet_guide(v):
 
 def gear_guide(v):
     t=v.t
-    tiers=''
-    for i,(gate,tier) in enumerate([(700,54),(1400,70),(2100,86)],1):
-        pair=[d for d in DUNGEONS if d['tier']==tier]
-        cells=''
-        for d in pair:
-            b=d['encounter']
-            cells+=f'<div><span>{v.p(d["goal"])}</span><h4>{v.p(b["dungeon"])}</h4><p>{v.p(d["loot"])}</p><small>{t("DB item example", "DB 아이템 예시")}: {e(d["example"])}</small>{v.a(ROOT+"dungeon-rewards/#dungeon-"+b["slug"],t("Rewards & boss plan", "보상·공략 보기"))}</div>'
-        tiers+=f'<article class="gear-tier" id="gear-tier-{tier}"><header><span class="progress-chip">0{i} · {t("CONQUEST", "정복")}</span><h3>{t("Entry total", "입장 종합 수치")} {gate:,}</h3><p>{t("Character Lv 45 · target Unique item level", "캐릭터 45레벨 · 목표 유일 장비 레벨")} <b>{tier}</b></p></header><div class="gear-tier-pair">{cells}</div></article>'
-    ladder = tiers+v.cite('entries','gear')
+    ladder=growthvisuals.dungeon_picker(v,DUNGEONS)+v.cite('entries','gear')
     invest=v.cards([
         (('First: a useful Unique at +10', '먼저: 사용할 유일 장비 +10'),
          ('For ordinary Unique gear, +0 to +10 is guaranteed in the cited Global curve. Build the weapon you will use, then patch armor gaps that block survival or entry.', '글로벌 참고표의 일반 유일 장비는 +0~+10이 확정 구간입니다. 사용할 무기를 먼저 갖추고 생존·입장에 부족한 방어구를 보완하세요.')),
@@ -241,8 +228,10 @@ def gear_guide(v):
                   ('Our order prioritizes a usable set before expensive finishing work.', '사용 가능한 장비 구성을 갖춘 뒤 세부 강화에 투자하는 순서를 권합니다.'), invest)+
         v.section('gear-materials', ('Match each upgrade to its supply route', '강화에 필요한 재료와 획득처'), ('Go to the content that supplies the material you lack.', '부족한 재료를 주는 콘텐츠로 연결합니다.'),supply)+
         v.section('gear-fallbacks', ('When the target will not drop', '목표 장비가 안 나올 때의 대안'), ('Keep vouchers and compare conversions before discarding spare equipment.', '여분 장비를 정리하기 전에 교환권·물질 변환 재료로 쓸 수 있는지 확인하세요.'),fallback)+
+        v.section('gear-small-wins', ('Three more checks before spending', '추가 투자 전, 가볍게 챙길 세 가지'),
+                  ('Small checks from the reviewed Global beginner guide.', '검토한 글로벌 초보자 공략에서 더 챙길 수 있는 항목입니다.'),growthvisuals.small_wins(v)+v.cite('mobalytics-beginner'))+
         v.a(ROOT+'kinah-farming/',t('Fund this enhancement plan', '강화 비용 모으는 방법'),'progress-action')+
-        v.sources(['gear','enhance','entries']))
+        v.sources(['gear','enhance','entries','mobalytics-beginner']+[d['db'] for d in DUNGEONS]))
 
 
 def dungeon_brief(lang, base, boss_id):
@@ -273,6 +262,7 @@ def dungeon_guide(v):
     ])+v.a(ROOT+'gear-targets/#gear-fallbacks',t('Equipment and voucher routes', '장비·교환권 사용 경로'),'progress-action')+v.a(ROOT+'kinah-farming/#kinah-market',t('Tradable material examples', '판매 재료 예시'),'progress-action')+v.cite('gear','kinah')
     return (
         '<div class="progress-callout"><strong>'+t('Pick your reward before spending an entry', '입장 전에 보상부터 고르세요')+'</strong><p>'+t('Loot and entry gates below use the Global database; movement lessons come from dated KR Conquest guides. Exploration has different gates/rewards. Reward counters and cube energy are separate from these level gates.', '보상·입장 기준은 글로벌 DB, 패턴 대응은 한국 정복 공략 기준입니다. 탐험 난이도의 조건·보상과 섞지 마세요. 보상 횟수와 큐브 오드는 아래 입장 레벨과 별도로 확인합니다.')+'</p>'+v.a('routines/#routine-conquest',t('Entries and energy planning', '입장·보상 횟수와 오드 계획'))+'</div>'+
+        growthvisuals.dungeon_picker(v,DUNGEONS,'dungeon')+
         f'<nav class="dungeon-jumps" aria-label="{t("Choose a dungeon", "던전 선택")}">{index}</nav>'+
         v.section('dungeon-plans', ('The reward and the fight, together', '보상과 공략을 함께 보기'), ('Choose the matching difficulty; the boss notes are not a verified Global replay.', '참여할 난이도에 맞춰 보세요. 한국 보스 설명을 글로벌 실측 공략으로 표시하지 않습니다.'),cards)+
         v.section('dungeon-after', ('After the clear', '클리어한 뒤 무엇을 할까?'), ('Turn the drop into the next upgrade before choosing another run.', '보상 사용처를 정한 뒤 다음 던전을 고르세요.'),after)+v.sources(keys+['gear','kinah']))
@@ -280,14 +270,7 @@ def dungeon_guide(v):
 
 def kinah_guide(v):
     t=v.t
-    money=v.cards([
-        (('Bound Kinah: fund growth', '귀속 키나: 내 캐릭터 성장 비용'),
-         ('Quest and Daily Dungeon payouts below are bound. They pay eligible enhancement costs but cannot buy Market listings.', '아래 퀘스트·일일 던전 보상은 귀속 키나입니다. 해당 강화 비용에 쓰지만 거래소 물건을 사는 돈으로 쓸 수는 없습니다.')),
-        (('Unbound Kinah: trading funds', '거래 가능 키나: 거래소 구매 자금'),
-         ('Sell eligible tradable items to other players for Market money. Keep this balance for purchases that bound Kinah cannot cover.', '거래 가능한 아이템을 거래소에서 판매해 구매 자금을 만듭니다. 귀속 키나로 결제할 수 없는 구매에 사용할 돈을 따로 남깁니다.')),
-        (('A combined cost can use both', '합산 비용은 두 종류를 함께 사용'),
-         ('The Global “Kina (All)” pool spends bound first, then unbound. Having enough total Kinah does not mean all of it is Market money.', '글로벌의 Kina (All) 비용은 귀속분을 먼저 쓰고 거래 가능분을 이어서 씁니다. 총 보유 키나 전체가 거래소 자금인 것은 아닙니다.')),
-    ])+v.cite('kinah')
+    money=growthvisuals.wallet(v)+v.cite('kinah')
     rows=[
         (('Duty Missions', '사명'), ('50,000 bound each · 5 completed = 250,000', '1회 귀속 5만 · 5회 완료 시 25만'), ('Daily allowance', '일일 횟수'), 'routines/#routine-duties'),
         (("Crobakhi’s Secret Depository", '크로파킨 비밀 보관소'), ('Up to 300,000 bound at 10,000 score', '1만 점 달성 시 최대 귀속 30만'), ('Shared Daily Dungeon pool; not a separate daily allowance', '일일 던전 3종 공통 횟수 사용'), 'routines/#daily-choice-kinah'),
