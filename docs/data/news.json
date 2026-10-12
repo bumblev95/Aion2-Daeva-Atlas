@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-12T04:47:27Z",
+  "checkedAt": "2026-10-12T05:49:28Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-12T04:47:27Z",
-      "lastSuccessAt": "2026-10-12T04:47:27Z",
+      "checkedAt": "2026-10-12T05:49:28Z",
+      "lastSuccessAt": "2026-10-12T05:49:28Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5306,11 +5306,30 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-12T04:47:27Z",
-      "lastSuccessAt": "2026-10-12T04:47:27Z",
+      "checkedAt": "2026-10-12T05:49:28Z",
+      "lastSuccessAt": "2026-10-12T05:49:28Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6acc6e0b3900e51234140440",
+          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [328차]",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6acc6e0b3900e51234140440",
+          "publishedAt": "2026-10-12T05:20:00.001Z",
+          "sourceUpdatedAt": "2026-10-12T05:22:30.876Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "pending",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {}
+        },
         {
           "id": "6acadf90fa34c1011d627ba4",
           "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [327차]",
@@ -5489,8 +5508,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-12T04:47:27Z",
-      "lastSuccessAt": "2026-10-12T04:47:27Z",
+      "checkedAt": "2026-10-12T05:49:28Z",
+      "lastSuccessAt": "2026-10-12T05:49:28Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5630,8 +5649,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-12T04:47:27Z",
-      "lastSuccessAt": "2026-10-12T04:47:27Z",
+      "checkedAt": "2026-10-12T05:49:28Z",
+      "lastSuccessAt": "2026-10-12T05:49:28Z",
       "error": null,
       "fromCache": false,
       "items": [
