@@ -1,4 +1,23 @@
 /* Practical guides: readable references and a distinct entry for each play stage. */
+.growth-guide-links{margin:30px 0 36px}
+.growth-guide-links h2{font-size:21px;line-height:1.6;margin:0 0 15px;color:#dcebe7;word-break:keep-all}
+.growth-guide-links>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.growth-guide-links a{display:block;min-width:0;padding:21px 19px;border:1px solid #436171;border-radius:9px;background:linear-gradient(135deg,#243841,#1c2a3b)}
+.growth-guide-links a:hover{background:#2b414c;border-color:#88b4b3}
+.growth-guide-links a:focus-visible,.growth-gateway:focus-visible{outline:3px solid #ccb7ec;outline-offset:4px}
+.growth-guide-links a>span{display:block;font:11px ui-monospace,monospace;color:#9cc6c4;margin-bottom:11px}
+.growth-guide-links strong{display:block;font-size:16px;line-height:1.6;color:#e4eeeb;margin-bottom:10px;word-break:keep-all}
+.growth-guide-links small{display:block;font-size:12px;line-height:1.85;color:#acc3d1;overflow-wrap:anywhere}
+.growth-gateway{margin:20px 0 27px;flex-wrap:wrap}
+.growth-gateway>span{max-width:75ch}
+.dungeon-reward-brief{margin:20px 0 30px;padding:23px;border:1px solid #52717a;border-radius:10px;background:linear-gradient(130deg,#233a44,#1d2b3b)}
+.dungeon-reward-brief>span{font:11px ui-monospace,monospace;color:#9fc7c7;line-height:1.8}
+.dungeon-reward-brief h2{font-size:21px;line-height:1.6;color:#e2eeea;margin:10px 0}
+.dungeon-reward-brief p{font-size:14px;line-height:1.85;color:#b5cbd8;margin:8px 0}
+.dungeon-reward-brief a{display:inline-flex;align-items:center;min-height:40px;font-size:13px;color:#bcdfd1}
+.dungeon-reward-brief small{display:block;font-size:11px;line-height:1.8;color:#95acbf;margin-top:8px}
+@media(max-width:1200px){.growth-guide-links>div{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.growth-guide-links>div{grid-template-columns:1fr}.growth-guide-links a{padding:17px 19px}.growth-guide-links strong{margin-bottom:5px}.growth-guide-links a>span{margin-bottom:6px}.dungeon-reward-brief{padding:19px}.growth-gateway strong{font-size:16px}}
 .home-clear .welcome-hero{min-height:245px}
 .home-clear .welcome-copy{padding-top:30px;padding-bottom:30px}
 .home-clear .welcome-copy>p{margin-bottom:0}

@@ -1,5 +1,6 @@
 """Practical enhancement steps and material routes with regional sources."""
 from html import escape as e
+from progression import banner
 
 
 def guide(lang, base):
@@ -42,7 +43,7 @@ def guide(lang, base):
     for name, use, where, url, label in materials:
         external = ' target="_blank" rel="noopener noreferrer"' if url.startswith('https://') else ''
         rows.append(f'<tr><th scope="row">{e(name[k])}</th><td>{e(use[k])}</td><td>{e(where[k])}<br><a href="{e(url)}"{external}>{e(label[k])} →</a></td></tr>')
-    return f'''<section class="reference-section enhancement-route post-story" id="upgrade" aria-labelledby="enhancement-heading">
+    return banner(lang,base,'gear-targets') + f'''<section class="reference-section enhancement-route post-story" id="upgrade" aria-labelledby="enhancement-heading">
 <header class="start-reference-heading"><span class="section-kicker">{t('ENHANCE EQUIPMENT', '장비 강화')}</span><h2 id="enhancement-heading">{t('How do I enhance this item?', '이 장비는 어떻게 강화하지?')}</h2><p>{t('Match the equipment to its material, collect what is missing, then follow the enhancement steps.', '장비에 맞는 재료를 확인하고 부족한 재료를 모은 뒤 강화 순서를 따라갑니다.')}</p></header>
 <nav class="rpg-guide-nav" aria-label="{t('Enhancement guide sections', '강화 공략 순서')}"><a href="#enhancement-process">{t('Enhancement steps', '강화 순서')}</a><a href="#enhancement-materials">{t('Materials and sources', '재료·획득처')}</a><a href="#upgrade-decisions">{t('How far to invest', '얼마나 투자할까')}</a></nav>
 <ol class="growth-route" id="enhancement-process">{process}</ol>

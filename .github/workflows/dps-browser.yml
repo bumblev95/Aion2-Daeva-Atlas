@@ -16,6 +16,9 @@ on:
       - 'tests/patch-ui.test.js'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'progression.py'
+      - 'assets/progression.css'
+      - 'tests/progression-ui.test.js'
       - 'routines.py'
       - 'assets/routines.css'
       - 'tests/routines-ui.test.js'
@@ -46,6 +49,9 @@ on:
       - 'liveops.py'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'progression.py'
+      - 'assets/progression.css'
+      - 'tests/progression-ui.test.js'
       - 'routines.py'
       - 'assets/routines.css'
       - 'tests/routines-ui.test.js'
@@ -97,6 +103,10 @@ jobs:
         env:
           ROUTINES_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/routines-ui.test.js
+      - name: Verify pet, gear, dungeon and Kinah growth routes
+        env:
+          PROGRESSION_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/progression-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
