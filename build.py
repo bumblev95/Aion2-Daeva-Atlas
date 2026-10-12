@@ -14,6 +14,7 @@ import measurement
 import endgame
 import routines
 import progression
+import guidebrowse
 import liveops
 from bossmedia import validate_evidence
 import patchbook
@@ -54,22 +55,19 @@ def adslot():
     if not ads['enabled']:return ''
     return f'<aside class="ad-slot" aria-label="Advertisement"><span>ADVERTISEMENT</span><ins class="adsbygoogle" style="display:block" data-ad-client="{E(ads["publisher_id"])}" data-ad-slot="{E(ads["slot"])}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></aside>'
 def header(sub,active):
-    groups=[
-        (t('Guides by stage','진행 단계별 공략'),[('',t('Home','홈'),'grid'),('start/',t('Early game','초반 공략'),'check'),('endgame/',t('Endgame','엔드게임 공략'),'boss'),('routines/',t('Daily & weekly','일일·주간 숙제'),'check')]),
-        (t('Your character','캐릭터 성장'),[('classes/',t('Choose a class','직업 알아보기'),'swords'),('skills/',t('Skills & builds','스킬·빌드'),'book'),('gear/',t('Gear & stats','장비·스탯'),'spark')]),
-        (t('Your adventure','모험과 전투'),[('maps/',t('World maps','월드 지도'),'target'),('dungeons/',t('Boss patterns','보스 패턴'),'boss')]),
-        (t('More guides','더 찾아보기'),[('insights/',t('Player tips','유저 팁'),'book'),('guides/',t('All guides','전체 공략'),'grid')]),
-    ]
-    navhtml=''
-    for label,items in groups:
-        navhtml+=f'<div class="nav-group"><p class="nav-group-label">{label}</p>'
-        for p,n,i in items:
-            current=sub==p or bool(p and sub.startswith(p))
-            navhtml+=f'<a href="{href(p)}" class="side-link{(" active" if current else "")}"{(" aria-current="+chr(34)+"page"+chr(34) if current else "")}>{icon(i)}<span>{n}</span></a>'
-        navhtml+='</div>'
-    return f'''<a class="skip" href="#main">{t('Skip to content','본문으로 건너뛰기')}</a>
-<header class="masthead"><div class="nav">{brand()}<a class="header-game" href="{href()}">AION <span>2</span></a><a class="header-search" href="{href('search/')}" aria-label="{t('Search all guides','전체 공략 검색')}">{icon('search')}<span>{t('Search a class, skill or boss','직업, 스킬, 보스 이름으로 검색')}</span><kbd>/</kbd></a><div class="navtools">{link(sub,'한국어' if LANG=='en' else 'EN','lang',lang='ko' if LANG=='en' else 'en')}<button class="menu" data-menu aria-controls="main-nav" aria-expanded="false" aria-label="{t('Navigation menu','전체 메뉴')}">{icon('grid')}<span>{t('Menu','메뉴')}</span></button></div></div></header>
-<button class="nav-backdrop" data-menu-close hidden tabindex="-1" aria-label="{t('Close menu','메뉴 닫기')}"></button><aside class="sidebar" id="main-nav"><div class="side-game"><strong>AION <em>2</em></strong><span class="small muted">{t('Find your next step','다음 플레이를 위한 가이드')}</span></div><nav aria-label="{t('AION 2 navigation','아이온 2 메뉴')}">{navhtml}</nav><div class="side-bottom"><p class="nav-group-label">{t('My tools','플레이 도구')}</p>{link('tools/compare/',t('Compare classes','직업 비교'))}{link('tools/planner/',t('My checklist','나의 체크리스트'))}{link('glossary/',t('KR ↔ EN glossary','한영 용어집'))}</div></aside>'''
+    section = ('growth' if sub=='endgame/' or sub.startswith(('guides/pet-growth/','guides/kinah-farming/')) else
+               'enhancement' if sub=='gear/' or sub.startswith(('guides/gear-targets/','guides/upgrade-decisions/')) else
+               'boss' if sub.startswith(('dungeons/','guides/dungeon-rewards/')) else
+               'routines' if sub=='routines/' else 'start' if sub=='start/' else 'home' if not sub else '')
+    main=[('home','',t('Home','홈'),'grid'),('growth','endgame/',t('Character growth','내실·성장'),'spark'),('enhancement','gear/',t('Gear & upgrades','장비·강화'),'shield'),('boss','dungeons/',t('Dungeons & bosses','던전·보스'),'boss'),('routines','routines/',t('Daily & weekly','일일·주간 숙제'),'check')]
+    navhtml=''.join(f'<a href="{href(p)}" class="side-link{(" active" if key==section else "")}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{n}</span></a>' for key,p,n,i in main)
+    navhtml+=f'<a class="side-link{(" active" if sub=="start/" else "")}" href="{href("start/")}">{icon("book")}<span>{t("Early-game guide","초반 공략")}</span></a><a class="side-link{(" active" if sub=="guides/" else "")}" href="{href("guides/")}">{icon("grid")}<span>{t("All guides","전체 공략")}</span></a>'
+    refs=[('classes/',t('Class guides','직업 공략')),('skills/',t('Skills & builds','스킬·빌드')),('maps/',t('World maps','월드 지도')),('updates/',t('News & patches','뉴스·패치')),('tools/dps/',t('DPS rankings','DPS 순위')),('tools/compare/',t('Compare classes','직업 비교')),('tools/planner/',t('My checklist','나의 체크리스트')),('insights/',t('Community tips','유저 팁')),('glossary/',t('KR / EN glossary','한영 용어집')),('screenshots/',t('Gameplay screenshots','인게임 스크린샷'))]
+    extra=''.join(f'<a href="{href(p)}"'+(' aria-current="page"' if sub.startswith(p) else '')+f'>{label}</a>' for p,label in refs)
+    expanded=any(sub.startswith(p) for p,_ in refs)
+    mobile=''.join(f'<a href="{href(p)}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{label}</span></a>' for (key,p,_,i),label in zip(main,[t('Home','홈'),t('Growth','성장'),t('Gear','장비'),t('Bosses','보스'),t('Routines','숙제')]))
+    return f'''<a class="skip" href="#main">{t('Skip to content','본문으로 건너뛰기')}</a><header class="masthead"><div class="nav">{brand()}<a class="header-game" href="{href()}">AION <span>2</span></a><a class="header-search" href="{href('search/')}" aria-label="{t('Search all guides','전체 공략 검색')}">{icon('search')}<span>{t('Search guides, items, bosses…','공략·아이템·보스 검색')}</span><kbd>/</kbd></a><div class="navtools">{link(sub,'한국어' if LANG=='en' else 'EN','lang',lang='ko' if LANG=='en' else 'en')}<button class="menu" data-menu aria-controls="main-nav" aria-expanded="false" aria-label="{t('Navigation menu','전체 메뉴')}">{icon('grid')}<span>{t('Menu','메뉴')}</span></button></div></div></header><button class="nav-backdrop" data-menu-close hidden tabindex="-1" aria-label="{t('Close menu','메뉴 닫기')}"></button><aside class="sidebar" id="main-nav"><div class="side-game"><strong>AION <em>2</em></strong><span class="small muted">{t('Choose your next goal','지금 필요한 공략부터')}</span></div><nav aria-label="{t('Main guides','주요 공략')}">{navhtml}</nav><details class="nav-reference"{(' open' if expanded else '')}><summary>{t('References & tools','자료·도구 더보기')}</summary><nav aria-label="{t('References and tools','자료·도구')}">{extra}</nav></details></aside><nav class="mobile-dock" aria-label="{t('Quick navigation','주요 메뉴 바로가기')}">{mobile}</nav>'''
+
 def footer():return f'''<footer class="footer"><div class="wrap"><div class="footer-main"><strong class="footer-brand">PLAYER’S CODEX<span> / AION 2</span></strong><nav class="footer-links" aria-label="{t('Footer','하단 메뉴')}">{link('about/',t('About','소개'))}{link('sources/',t('Sources','출처'))}{link('contact/',t('Contact','문의'))}{link('privacy/',t('Privacy','개인정보'))}{link('terms/',t('Terms','이용 안내'))}<a href="{REPO}">GitHub ↗</a></nav></div><p class="footer-bottom">© 2026 PLAYER’S CODEX · {t('Independent fan project. AION 2 artwork and trademarks © NC. Not affiliated with NC.','독립 팬 프로젝트. AION 2 아트워크·상표 © NC. NC와 제휴 관계가 없습니다.')}</p></div></footer>'''
 def write(sub,title,description,content,active='',article=False,index=True,reviewed=None):
     boss_styles = f'<link rel="stylesheet" href="{BASE}assets/boss-evidence.css?v=boss-scenes-1">' if sub.startswith('dungeons/') else ''
@@ -86,7 +84,8 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
-    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-7"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
+    guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
+    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
     if index:pages.append(canonical)
 def pagehead(title,desc,tag='',crumb=''):
@@ -99,21 +98,22 @@ def sourcelist(keys):
     return '<div class="sources"><strong>'+t('Sources & scope','출처와 적용 범위')+'</strong><ul>'+''.join(f'<li><a href="{E(SOURCES[k]["url"])}" rel="noopener">{E(SOURCES[k]["title"])}</a><span class="source-note">{E(SOURCES[k]["scope"])} · {E(SOURCES[k]["note"])}</span></li>' for k in keys)+'</ul><p class="small muted">'+t('Source review: October 7, 2026. Advice and practice exercises are original editorial analysis, not live gameplay measurements.','출처 검토: 2026년 10월 7일. 조언과 연습 방법은 편집상 분석이며 실제 플레이 측정 결과가 아닙니다.')+'</p></div>'
 
 def home():
-    write('',t('AION 2 classes, guides & tools','아이온 2 직업·공략·플레이 도구'),t('Explore AION 2 classes, visual combat basics, guides, comparisons and a personal checklist on PLAYER’S CODEX.','PLAYER’S CODEX에서 아이온 2 직업, 전투 위치, 공략, 직업 비교와 개인 체크리스트를 확인하세요.'),dashboard(LANG,BASE),'home')
+    write('',t('AION 2 classes, guides & tools','아이온 2 직업·공략·플레이 도구'),t('Explore AION 2 classes, visual combat basics, guides, comparisons and a personal checklist on PLAYER’S CODEX.','PLAYER’S CODEX에서 아이온 2 직업, 전투 위치, 공략, 직업 비교와 개인 체크리스트를 확인하세요.'),guidebrowse.home(LANG,BASE),'home')
 
 
 
 def learning():
     for sub,title,desc,body in [
         ('start/',t('AION 2 early-game guide','아이온 2 초반 공략'),t('Progression routes, skill investment, equipment choices and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
-        ('endgame/',t('Endgame guide.','엔드게임 공략.'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
-        ('routines/',t('Daily & weekly: rewards that make you stronger.','일일·주간 숙제, 보상부터 사용처까지.'),t('Daily Dungeon choices, Duty Missions, weekly activities and how to spend stones, Arcana, pet materials and energy.','일일 던전 선택·사명·주간 콘텐츠와 강화석·아르카나·펫 재료·오드의 사용처를 정리했습니다.'),routines.guide(LANG,BASE)),
-        ('gear/',t('Enhance your gear & understand its stats.','장비 강화와 스탯, 알고 키우세요.'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
+        ('endgame/',t('Character growth','내실·성장'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
+        ('routines/',t('Daily & weekly','일일·주간 숙제'),t('Daily Dungeon choices, Duty Missions, weekly activities and how to spend stones, Arcana, pet materials and energy.','일일 던전 선택·사명·주간 콘텐츠와 강화석·아르카나·펫 재료·오드의 사용처를 정리했습니다.'),routines.guide(LANG,BASE)),
+        ('gear/',t('Gear & enhancement','장비·강화'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
         ('maps/',t('Find your next destination.','다음 목적지를 찾아보세요.'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
         ('skills/',t('Know the skill behind the name.','스킬 이름 너머의 효과까지.'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
+        body=guidebrowse.organize(sub,body,LANG,BASE)
         heading=pagehead(title,desc) if sub!='start/' else ''
         if sub in ('start/','endgame/','maps/'):
-            body += liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])
+            body += '<details class="reader-extra"><summary>'+t('Gameplay screenshots & references','실제 플레이 화면·참고 자료')+'</summary>'+liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])+'</details>'
         write(sub,title,desc,f'<div class="wrap">{heading}{body}</div>',sub.rstrip('/'))
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Daily & weekly','일일·주간 숙제') if sub=='routines/' else t('Endgame guide','엔드게임 공략') if sub=='endgame/' else t('Early-game guide','초반 공략') if sub=='start/' else t('Character reference','캐릭터 공략'),'keywords':title+' '+desc})
         if sub == 'routines/':
@@ -148,7 +148,7 @@ def community():
         search_index.append({'lang':LANG,'path':path('insights/'),'anchor':'note-'+n['id'],'title':pair(n['title']),'description':pair(n['body']),'category':t('KR insight','한국 유저 팁'),'keywords':' '.join(n['classes'])+' '+n['mode']+' '+pair(n['body'])})
 
 def guides():
-    write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Practical reading for your first character, group play, upgrades and Korean-to-global context.','첫 캐릭터, 파티 플레이, 성장 판단과 한국·글로벌 맥락을 위한 가이드.'),f'<div class="wrap">{pagehead(t("Find your next guide.","필요한 공략을 골라보세요."),t("One useful question at a time. Choose where your next session needs a little clarity.","한 번에 질문 하나씩. 다음 플레이에 도움이 필요한 주제를 골라보세요."))}{routines.gateway(LANG,BASE)}{progression.gateway(LANG,BASE)}<div class="guide-grid">{"".join(guidecard(g) for g in GUIDES)}</div></div>','guides')
+    write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Find a guide by your next goal.','지금 필요한 공략을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
         write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)

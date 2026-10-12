@@ -16,6 +16,10 @@ on:
       - 'tests/patch-ui.test.js'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'guidebrowse.py'
+      - 'assets/find-guide.*'
+      - 'assets/app.js'
+      - 'tests/find-guide-ui.test.js'
       - 'progression.py'
       - 'growthvisuals.py'
       - 'assets/growth-visuals.*'
@@ -52,6 +56,10 @@ on:
       - 'liveops.py'
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
+      - 'guidebrowse.py'
+      - 'assets/find-guide.*'
+      - 'assets/app.js'
+      - 'tests/find-guide-ui.test.js'
       - 'progression.py'
       - 'growthvisuals.py'
       - 'assets/growth-visuals.*'
@@ -93,6 +101,10 @@ jobs:
         run: |
           npm --prefix "$RUNNER_TEMP/dps-qa" install --no-save --package-lock=false playwright@1.62.1
           node "$RUNNER_TEMP/dps-qa/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+      - name: Verify focused guide navigation, history, mobile menu and no-script fallback
+        env:
+          FIND_GUIDE_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/find-guide-ui.test.js
       - name: Verify backend-generated rankings, downloads and no-JavaScript display
         env:
           DPS_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts

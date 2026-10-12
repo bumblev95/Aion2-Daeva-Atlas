@@ -23,10 +23,12 @@
     if (!menu || !sidebar) return;
     menu.setAttribute('aria-expanded', String(open));
     sidebar.classList.toggle('open', open);
+    sidebar.inert = narrow.matches && !open;
     document.body.classList.toggle('menu-open', open);
     if (backdrop) backdrop.hidden = !open;
     if (focus) (open ? sidebar.querySelector('a') : menu)?.focus();
   }
+  setMenu(false);
   menu?.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true', true));
   backdrop?.addEventListener('click', () => setMenu(false, true));
   sidebar?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
@@ -35,7 +37,7 @@
     if (menu?.getAttribute('aria-expanded') !== 'true') return;
     if (e.key === 'Escape') { e.preventDefault(); setMenu(false, true); }
     if (e.key === 'Tab') {
-      const stops = [menu, ...sidebar.querySelectorAll('a[href]')];
+      const stops = [menu, ...sidebar.querySelectorAll('a[href], summary')].filter(n => n.getClientRects().length > 0);
       const i = stops.indexOf(document.activeElement);
       if (e.shiftKey && i <= 0) { e.preventDefault(); stops.at(-1).focus(); }
       if (!e.shiftKey && (i === stops.length - 1 || i < 0)) { e.preventDefault(); menu.focus(); }

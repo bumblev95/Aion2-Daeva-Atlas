@@ -54,6 +54,7 @@ async function contained(page, label) {
       await page.goto(local);
       await page.locator('[data-growth-guide="pet-growth"]').click();
       await page.waitForURL('**/guides/pet-growth/');
+      await page.locator('.reader-tabs a[href="#pet-farming"]').click();
       await page.locator('.progress-jumps a[href="#pet-asmodian"]').click();
       assert.equal(await page.locator('#pet-mumu').isVisible(), true);
       await page.locator('#pet-asmodian a[href*="zone=Altgard"]').click();
@@ -99,10 +100,12 @@ async function contained(page, label) {
       await page.locator('.dungeon-reward-brief a').click();
       await page.waitForURL('**/guides/dungeon-rewards/#dungeon-fire-temple');
 
+      await page.locator('.reader-series > summary').click();
       await page.locator('.progress-series a[href$="kinah-farming/"]').click();
       await page.locator('#kinah-fixed a[href$="routines/#routine-duties"]').click();
       await page.waitForURL('**/routines/#routine-duties');
       assert.equal(await page.locator('#routine-duties').isVisible(),true);
+      await page.locator('.reader-tabs a[href="#reward-uses"]').click();
       await page.locator('#reward-pet a[href$="guides/pet-growth/"]').click();
       await page.waitForURL('**/guides/pet-growth/');
       await page.locator('.progress-cite a[href="#growth-source-pet-system"]').first().click();
