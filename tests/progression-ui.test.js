@@ -86,6 +86,7 @@ async function contained(page, label) {
       }
 
       await page.goto(local+'guides/gear-targets/');
+      if (javascript) await page.locator('[data-viz-filter="gate"][data-value="2100"]').click();
       await page.locator('#gear-tier-86 a[href$="dungeon-rewards/#dungeon-fire-temple"]').click();
       await page.waitForURL('**/guides/dungeon-rewards/#dungeon-fire-temple');
       const plan=page.locator('#dungeon-fire-temple');
