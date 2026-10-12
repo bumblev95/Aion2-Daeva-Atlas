@@ -67,6 +67,10 @@ async function contained(page, label) {
         for (const width of [320,390,768,1440]) {
           await page.setViewportSize({width,height:844});
           await contained(page,lang+'/'+slug+'/'+width+'/'+javascript);
+          if (width <= 600) for (const heading of await page.locator('.progress-table tbody th').all()) {
+            const size = await heading.evaluate(node => ({cell:node.getBoundingClientRect().width,row:node.closest('tr').getBoundingClientRect().width}));
+            assert(size.cell >= size.row * .8, 'Mobile row title must use the card width: '+JSON.stringify(size));
+          }
           await page.locator('#growth-sources').evaluate(node => {node.open = true;});
           await contained(page,lang+'/'+slug+'/open-sources/'+width);
           await page.locator('#growth-sources').evaluate(node => {node.open = false;});
