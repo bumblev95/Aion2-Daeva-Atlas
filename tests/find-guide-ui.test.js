@@ -25,7 +25,9 @@ async function contained(page,label){
   assert(sizes.scroll<=sizes.width+1,label+': '+JSON.stringify(sizes));
 }
 async function selected(page,key){
-  assert.equal(await page.locator('[data-reader-panel]:visible').count(),1);
+  await page.waitForFunction(() => document.querySelector('[data-topic-reader]')?.dataset.readerReady === 'true');
+  const panels=await page.locator('[data-reader-panel]').evaluateAll(nodes=>nodes.map(node=>({key:node.dataset.readerPanel,hidden:node.hidden,display:getComputedStyle(node).display,tag:node.tagName})));
+  assert.equal(await page.locator('[data-reader-panel]:visible').count(),1,JSON.stringify(panels));
   assert.equal(await page.locator('[data-reader-tab="'+key+'"]').getAttribute('aria-selected'),'true');
 }
 (async()=>{
@@ -134,3 +136,4 @@ async function selected(page,key){
     console.log('PASS: task-first discovery, search, topic keyboard navigation, history, bilingual deep links, filtering, mobile dock/menu and native disclosure.');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});
+
