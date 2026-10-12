@@ -41,6 +41,7 @@
       choose(panel?.dataset.vizPanel || route?.dataset.vizRoutes.split(' ')[0] || root.dataset.default);
     };
     choose(root.dataset.default);
+    root.dataset.vizReady = 'true';
     revealControls(root);
     if ('ResizeObserver' in window) new ResizeObserver(() => drawEdges(root)).observe(root);
     window.addEventListener('hashchange', followHash);

@@ -44,7 +44,7 @@ class Text:
 
 
 def heading(v, number, title, note):
-    return f'<header class="viz-heading"><span class="viz-kicker">VISUAL GUIDE / {number}</span><h3>{v.p(title)}</h3><p>{v.p(note)}</p></header>'
+    return f'<header class="viz-heading"><span class="viz-kicker">VISUAL GUIDE / {number}</span><h2>{v.p(title)}</h2><p>{v.p(note)}</p></header>'
 
 
 def choices(v, items, label):
@@ -110,13 +110,13 @@ def wallet(v):
     return f'''<section class="growth-viz" id="kinah-visual" data-viz="wallet" data-lang="{'ko' if v.k else 'en'}">{title}{controls}<div class="viz-wallet-inputs" data-viz-controls hidden>{fields}</div><p class="viz-input-error" data-wallet-error hidden>{t('Enter whole numbers from 0 to 1,000,000,000,000 in all three fields.', '세 칸에 0~1,000,000,000,000 사이의 정수를 입력하세요.')}</p><div class="viz-wallet-map">
 <article class="viz-purse viz-bound">{icon('wallet')}<h4>{t('Bound Kinah','귀속 키나')}</h4><p>{t('Duties · Daily Dungeon rewards','사명·일일 던전 보상')}</p><strong data-wallet-value="bound">550,000</strong><span data-wallet-label="bound">{t('Use first for combined costs','합산 비용에 먼저 사용')}</span><dl><div><dt>{t('Used','사용')}</dt><dd data-wallet-value="usedBound">550,000</dd></div><div><dt>{t('Left','남음')}</dt><dd data-wallet-value="leftBound">0</dd></div></dl></article>
 <article class="viz-purse viz-unbound">{icon('market')}<h4>{t('Unbound Kinah','거래 가능 키나')}</h4><p>{t('Completed sales of tradable items','거래 가능한 아이템의 판매 수입')}</p><strong data-wallet-value="unbound">200,000</strong><span data-wallet-label="unbound">{t('Covers the remaining combined cost','합산 비용의 부족분 사용')}</span><dl><div><dt>{t('Used','사용')}</dt><dd data-wallet-value="usedUnbound">50,000</dd></div><div><dt>{t('Left for the Market','거래소 사용 가능')}</dt><dd data-wallet-value="leftUnbound">150,000</dd></div></dl></article>
-<div class="viz-wallet-result"><span aria-hidden="true">↓</span><strong data-wallet-label="result">{t('Cost covered','비용 충당 가능')}</strong><div class="viz-cost-bar" aria-hidden="true"><i data-wallet-bar="bound" style="width:91.6667%"></i><i data-wallet-bar="unbound" style="width:8.3333%"></i><i data-wallet-bar="shortfall" style="width:0%"></i></div><p data-wallet-status role="status" aria-live="polite">{status}</p><small>{t('Mint = bound used · gold = unbound used · stripes = shortfall', '민트 = 귀속 사용 · 금색 = 거래 가능 사용 · 빗금 = 부족분')}</small></div></div><p class="viz-footnote">{t('Illustration before any additional fees. “Kina (All)” uses bound first; Market purchases cannot use bound Kinah.', '추가 수수료를 제외한 사용 예시입니다. Kina (All)은 귀속분을 먼저 쓰며 거래소 구매에는 귀속 키나를 쓸 수 없습니다.')}</p></section>'''
+<div class="viz-wallet-result"><span aria-hidden="true">↓</span><strong data-wallet-label="result">{t('Cost covered','비용 충당 가능')}</strong><div class="viz-cost-bar" aria-hidden="true"><i data-wallet-bar="bound" style="width:91.6667%"></i><i data-wallet-bar="unbound" style="width:8.3333%"></i><i data-wallet-bar="shortfall" style="width:0%"></i></div><p data-wallet-status role="status" aria-live="polite">{status}</p><small>{t('Mint = bound funds · gold = unbound funds · stripes = shortfall', '민트 = 귀속분 · 금색 = 거래 가능분 · 빗금 = 부족분')}</small></div></div><p class="viz-footnote">{t('Illustration before any additional fees. “Kina (All)” uses bound first; Market purchases cannot use bound Kinah.', '추가 수수료를 제외한 사용 예시입니다. Kina (All)은 귀속분을 먼저 쓰며 거래소 구매에는 귀속 키나를 쓸 수 없습니다.')}</p></section>'''
 
 
 def overview(lang, base):
     v=Text(lang,base);t=v.t
     title=heading(v, 'START', ('A reward is only the beginning.', '받은 보상, 이렇게 능력치가 됩니다'),
-                  ('Choose a reward and trace it to the upgrade it funds.', '보상을 선택하면 실제 성장으로 바꾸는 경로가 이어집니다.'))
+                  ('Global reward reference. Choose a reward and trace it to the upgrade it funds.', '글로벌 보상 참고입니다. 보상을 선택하면 실제 성장으로 바꾸는 경로가 이어집니다.'))
     rows=[
         ('feathers','feather',('Feathers','깃털 · 주신의 흔적'),('Collect in the field','필드에서 수집'),'monolith',('Monolith resonance','모노리스 공명'),('Turn in traces and claim scrolls','흔적 반납·주문서 수령'),'amulet',('Revelation Amulet','계시의 아뮬렛'),('Matching scrolls → enhance','전용 주문서로 강화'),'endgame/#after-story-feathers',('See collection route','수집 경로 보기')),
         ('wisdom','crystal',('Wisdom Stones','지혜의 돌'),('Check the activity’s reward list','콘텐츠 보상 목록 확인'),'book',('Use the item','가방에서 사용'),('Gain skill points','스킬 포인트 획득'),'stats',('Skill investment','스킬 성장'),('Spend on useful skills','주력 스킬에 포인트 투자'),'skills/',('Choose skill priorities','스킬 투자 순서')),

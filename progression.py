@@ -222,8 +222,7 @@ def gear_guide(v):
     ])+v.cite('gear')
     return (
         '<div class="progress-callout"><strong>'+t('Entry total ≠ one item’s level', '입장 종합 수치 ≠ 장비 한 개의 레벨')+'</strong><p>'+t('700 / 1,400 / 2,100 are character entry gates for the Conquest pairs below. 54 / 70 / 86 are the target items’ own levels. The ladder is a Global reference, not a current KR best-in-slot list.', '아래 700·1,400·2,100은 정복 입장에 필요한 캐릭터 종합 수치, 54·70·86은 보상 장비 자체의 레벨입니다. 글로벌 성장 참고이며 현재 한국 서버의 최종 장비표가 아닙니다.')+'</p></div>'+
-        v.section('gear-ladder', ('Choose the slot, then the dungeon', '필요한 부위를 정하고 던전을 고르세요'),
-                  ('Each pair splits its main Unique rewards between weapons/accessories and armor/guards. Targets are possible loot, not guaranteed drops.', '각 단계에서 주요 유일 보상이 무기·장신구와 방어구·수호패로 나뉩니다. 목표 보상은 드롭 후보이며 매번 확정 획득은 아닙니다.'),ladder)+
+        '<div id="gear-ladder">'+ladder+'</div>'+
         v.section('gear-investment', ('How far should this item go?', '이 장비에 어디까지 투자할까?'),
                   ('Our order prioritizes a usable set before expensive finishing work.', '사용 가능한 장비 구성을 갖춘 뒤 세부 강화에 투자하는 순서를 권합니다.'), invest)+
         v.section('gear-materials', ('Match each upgrade to its supply route', '강화에 필요한 재료와 획득처'), ('Go to the content that supplies the material you lack.', '부족한 재료를 주는 콘텐츠로 연결합니다.'),supply)+
@@ -296,7 +295,7 @@ def kinah_guide(v):
          ('Set the target purchase price, farm its tradable funding route, and reserve your bound balance for enhancement. Skip analysis rerolls that delay that purchase.', '목표 구매가를 정하고 거래 가능한 재료를 모아 자금을 만듭니다. 귀속분은 강화 비용으로 쓰고, 구매 시점을 늦추는 펫 재분석은 뒤로 미루세요.')),
     ])+v.a(ROOT+'gear-targets/#gear-investment',t('Choose an enhancement stopping point', '장비 강화 투자선 정하기'),'progress-action')+v.a(ROOT+'pet-growth/#pet-spending',t('Plan pet analysis spending', '펫 분석 비용 계획'),'progress-action')
     return (
-        v.section('kinah-types', ('Which kind of Kinah do you need?', '지금 필요한 키나는 어떤 돈일까?'), ('Choose between funding your own upgrades and buying from another player.', '내 장비를 강화할 돈인지, 거래소에서 물건을 살 돈인지 먼저 정하세요.'),money)+
+        '<div id="kinah-types">'+money+'</div>'+
         v.section('kinah-fixed', ('Reliable reward routes', '정해진 보상부터 모으기'), ('Global reward references reviewed 2026-10-12; score and completion conditions still apply.', '2026.10.12 검토한 글로벌 보상 참고입니다. 점수·완료·입장 조건을 함께 봅니다.'),fixed)+
         v.section('kinah-market', ('What can become Market money?', '무엇을 팔아 거래소 자금을 만들까?'), ('The drop matters only if that particular item can be traded and someone buys it.', '해당 아이템이 거래 가능하고 실제 구매자가 있어야 판매 수입이 됩니다.'),market)+
         v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah','duties','depository']))

@@ -49,6 +49,10 @@ async function contained(page, label) {
         await page.locator('[data-viz-panel="wisdom"] a').click();
         await page.waitForURL('**/skills/');
       } else assert.equal(await page.locator('#growth-visual [data-viz-panel]:visible').count(),3);
+      await page.goto(local+'endgame/#growth-visual');
+      await page.setViewportSize({width:390,height:1000});
+      assert.equal(await page.locator('#growth-visual .viz-node:visible').count(),javascript?3:9);
+      await page.setViewportSize({width:1440,height:1000});
 
       await page.goto(local+'guides/pet-growth/#pet-visual');
       if (javascript) {
@@ -123,7 +127,8 @@ async function contained(page, label) {
         }
         if (javascript && id!=='dungeon-visual') {
           for (const width of [1440,390]) {
-            await page.setViewportSize({width,height:1000});
+            await page.setViewportSize({width,height:1600});
+            await page.addStyleTag({content:'html{scroll-behavior:auto!important}'});
             await page.locator('#'+id).screenshot({path:path.join(artifacts,`visual-${id}-${lang}-${width}.png`)});
           }
         }
