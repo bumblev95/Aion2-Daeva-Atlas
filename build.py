@@ -13,6 +13,7 @@ import fieldtips
 import measurement
 import endgame
 import routines
+import progression
 import liveops
 from bossmedia import validate_evidence
 import patchbook
@@ -70,18 +71,19 @@ def header(sub,active):
 <header class="masthead"><div class="nav">{brand()}<a class="header-game" href="{href()}">AION <span>2</span></a><a class="header-search" href="{href('search/')}" aria-label="{t('Search all guides','전체 공략 검색')}">{icon('search')}<span>{t('Search a class, skill or boss','직업, 스킬, 보스 이름으로 검색')}</span><kbd>/</kbd></a><div class="navtools">{link(sub,'한국어' if LANG=='en' else 'EN','lang',lang='ko' if LANG=='en' else 'en')}<button class="menu" data-menu aria-controls="main-nav" aria-expanded="false" aria-label="{t('Navigation menu','전체 메뉴')}">{icon('grid')}<span>{t('Menu','메뉴')}</span></button></div></div></header>
 <button class="nav-backdrop" data-menu-close hidden tabindex="-1" aria-label="{t('Close menu','메뉴 닫기')}"></button><aside class="sidebar" id="main-nav"><div class="side-game"><strong>AION <em>2</em></strong><span class="small muted">{t('Find your next step','다음 플레이를 위한 가이드')}</span></div><nav aria-label="{t('AION 2 navigation','아이온 2 메뉴')}">{navhtml}</nav><div class="side-bottom"><p class="nav-group-label">{t('My tools','플레이 도구')}</p>{link('tools/compare/',t('Compare classes','직업 비교'))}{link('tools/planner/',t('My checklist','나의 체크리스트'))}{link('glossary/',t('KR ↔ EN glossary','한영 용어집'))}</div></aside>'''
 def footer():return f'''<footer class="footer"><div class="wrap"><div class="footer-main"><strong class="footer-brand">PLAYER’S CODEX<span> / AION 2</span></strong><nav class="footer-links" aria-label="{t('Footer','하단 메뉴')}">{link('about/',t('About','소개'))}{link('sources/',t('Sources','출처'))}{link('contact/',t('Contact','문의'))}{link('privacy/',t('Privacy','개인정보'))}{link('terms/',t('Terms','이용 안내'))}<a href="{REPO}">GitHub ↗</a></nav></div><p class="footer-bottom">© 2026 PLAYER’S CODEX · {t('Independent fan project. AION 2 artwork and trademarks © NC. Not affiliated with NC.','독립 팬 프로젝트. AION 2 아트워크·상표 © NC. NC와 제휴 관계가 없습니다.')}</p></div></footer>'''
-def write(sub,title,description,content,active='',article=False,index=True):
+def write(sub,title,description,content,active='',article=False,index=True,reviewed=None):
     boss_styles = f'<link rel="stylesheet" href="{BASE}assets/boss-evidence.css?v=boss-scenes-1">' if sub.startswith('dungeons/') else ''
     if 'data-skill=' in content: content += skillbook.widgets(LANG,BASE,set(re.findall(r'data-skill="([a-z0-9-]+)"',content)))
     route=path(sub)
     canonical=SITE+'/'+route
     en=SITE+'/'+path(sub,'en');ko=SITE+'/'+path(sub,'ko')
     meta={'@context':'https://schema.org','@type':'Article' if article else 'WebPage','headline':title,'name':title,'description':description,'url':canonical,'inLanguage':LANG}
-    if article:meta.update({'author':{'@type':'Organization','name':'PLAYER’S CODEX editorial','url':SITE+'/about/'},'publisher':{'@type':'Organization','name':'PLAYER’S CODEX'},'datePublished':REVIEWED,'dateModified':REVIEWED})
+    if article:meta.update({'author':{'@type':'Organization','name':'PLAYER’S CODEX editorial','url':SITE+'/about/'},'publisher':{'@type':'Organization','name':'PLAYER’S CODEX'},'datePublished':reviewed or REVIEWED,'dateModified':reviewed or REVIEWED})
     adhead=f'<meta name="google-adsense-account" content="{E(ads["publisher_id"])}">' if valid_pub else ''
     if ads['enabled']:adhead+=f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={E(ads["publisher_id"])}" crossorigin="anonymous"></script>'
     adhead+=measurement.head(CONFIG,BASE)
-    guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=rpg-goals-1">' if sub in ('','start/','endgame/','gear/','routines/','tools/planner/','guides/') else ''
+    guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=growth-guides-1">' if sub in ('','start/','endgame/','gear/','routines/','tools/planner/','guides/') or sub.startswith('dungeons/') else ''
+    if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-7"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
@@ -129,12 +131,12 @@ def learning():
 def dungeons():
     title=t('See the cue. Practise the move.','움직임으로 배우는 보스 패턴.')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
-    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{boss_lab(LANG,BASE)}</div>','dungeon')
+    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=name+t(' — mechanic field guide',' — 기믹 공략')
         desc=pair(b['hook'])
-        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True)
+        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True)
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Boss mechanics','보스 기믹'),'keywords':' '.join(b['name']+b['dungeon'])+' '+' '.join(' '.join(m['title']+m['cue']+m['action']) for m in b['mechanics'])})
 
 def community():
@@ -145,7 +147,12 @@ def community():
         search_index.append({'lang':LANG,'path':path('insights/'),'anchor':'note-'+n['id'],'title':pair(n['title']),'description':pair(n['body']),'category':t('KR insight','한국 유저 팁'),'keywords':' '.join(n['classes'])+' '+n['mode']+' '+pair(n['body'])})
 
 def guides():
-    write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Practical reading for your first character, group play, upgrades and Korean-to-global context.','첫 캐릭터, 파티 플레이, 성장 판단과 한국·글로벌 맥락을 위한 가이드.'),f'<div class="wrap">{pagehead(t("Find your next guide.","필요한 공략을 골라보세요."),t("One useful question at a time. Choose where your next session needs a little clarity.","한 번에 질문 하나씩. 다음 플레이에 도움이 필요한 주제를 골라보세요."))}{routines.gateway(LANG,BASE)}<div class="guide-grid">{"".join(guidecard(g) for g in GUIDES)}</div></div>','guides')
+    write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Practical reading for your first character, group play, upgrades and Korean-to-global context.','첫 캐릭터, 파티 플레이, 성장 판단과 한국·글로벌 맥락을 위한 가이드.'),f'<div class="wrap">{pagehead(t("Find your next guide.","필요한 공략을 골라보세요."),t("One useful question at a time. Choose where your next session needs a little clarity.","한 번에 질문 하나씩. 다음 플레이에 도움이 필요한 주제를 골라보세요."))}{routines.gateway(LANG,BASE)}{progression.gateway(LANG,BASE)}<div class="guide-grid">{"".join(guidecard(g) for g in GUIDES)}</div></div>','guides')
+    for slug,title,desc in progression.GUIDES:
+        sub=progression.ROOT+slug+'/'
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
+        page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
+    search_index.extend(progression.search_entries(LANG,BASE))
     for g in GUIDES:
         sub='guides/'+g['slug']+'/'
         toc=''.join(f'<li><a href="#section-{i+1}">{pair(h)}</a></li>' for i,(h,p) in enumerate(g['sections']))

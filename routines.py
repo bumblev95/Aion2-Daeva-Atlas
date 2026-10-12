@@ -4,6 +4,7 @@ Counts describe the cited snapshot, not a live integration with the game account
 Keep daily-expiry, replenishing counters and weekly-reset entries separate.
 """
 from html import escape as e
+from progression import gateway as growth_gateway
 
 REVIEWED = '2026-10-09'
 
@@ -258,7 +259,7 @@ def guide(lang, base):
         ('stone', ('Enhance Stones / Amplify Stone Fragments', '강화석 / 돌파석 조각'),
          ('Gear upgrade materials. Match the stone type and grade to the selected item.', '장비 성장 재료입니다. 선택한 장비에 필요한 종류·등급을 맞춥니다.'), 'gear/#upgrade', ['bio', 'trial']),
         ('kinah', ('Kinah / bound Kinah', '키나 / 귀속 키나'),
-         ('Funds eligible enhancement, crafting and analysis costs. Bound currency cannot be spent everywhere.', '사용 가능한 강화·제작·분석 비용에 씁니다. 귀속 키나는 모든 거래에 쓸 수 있는 돈이 아닙니다.'), 'gear/#upgrade', ['kinah', 'pets']),
+         ('Funds eligible enhancement, crafting and analysis costs. Bound currency cannot be spent everywhere.', '사용 가능한 강화·제작·분석 비용에 씁니다. 귀속 키나는 모든 거래에 쓸 수 있는 돈이 아닙니다.'), 'guides/kinah-farming/', ['kinah', 'pets']),
         ('arcana', ('Arcana cards', '아르카나 카드'),
          ('Equip useful skill-level and stat options; compare slots and set effects.', '스킬 레벨·능력치 옵션을 보고 장착합니다. 부위와 세트 효과도 함께 비교합니다.'), 'skills/', ['arcana']),
         ('points', ('Wisdom Stones / Daevanion Crystals', '지혜의 돌 / 데바니온 결정'),
@@ -266,7 +267,7 @@ def guide(lang, base):
         ('ap', ('Abyss Points / Stigma Shards', '어비스 포인트 / 스티그마 샤드'),
          ('Abyss Points buy shards; use shards for Stigma points and invest them in your build.', '어비스 포인트로 샤드를 사고, 샤드를 사용해 얻은 스티그마 포인트를 빌드에 투자합니다.'), 'skills/', ['ap']),
         ('pet', ('Pet souls / Soul Crystals', '펫 영혼 / 영혼 결정'),
-         ('Souls grow collection progress; Soul Crystals pay for Genus Analysis with Kinah.', '영혼은 펫 수집·성장, 영혼 결정은 키나와 함께 종족 분석에 사용합니다.'), '', ['pets']),
+         ('Souls grow collection progress; Soul Crystals pay for Genus Analysis with Kinah.', '영혼은 펫 수집·성장, 영혼 결정은 키나와 함께 종족 분석에 사용합니다.'), 'guides/pet-growth/', ['pets']),
         ('energy', ('Odyle Energy / challenge tickets', '오드 에너지 / 도전권'),
          ('Energy pays for eligible reward cubes; a challenge ticket adds the stated entry or reward count.', '오드는 해당 큐브 보상 수령에, 도전권은 아이템에 적힌 입장·보상 횟수 충전에 씁니다.'), '#routine-conquest', ['global', 'launch']),
     ]
@@ -286,5 +287,6 @@ def guide(lang, base):
 <section class="routine-section" id="daily-dungeon-choices" aria-labelledby="routine-choices-heading"><header><span class="section-kicker">{t('CHOOSE YOUR REWARD', '필요한 보상으로 선택')}</span><h2 id="routine-choices-heading">{t('Which Daily Dungeon should I choose?', '일일 던전 3종, 어디를 갈까?')}</h2><p>{t('All three use the same Unknown Fissure entry pool. The listed maximums require 10,000 score in the cited Global client; your actual score determines the reward.', '3종은 같은 미지의 틈새 입장 횟수를 공유합니다. 아래 최대치는 확인한 글로벌 자료의 1만 점 기준이며, 실제 보상은 점수에 따라 달라집니다.')}</p></header><div class="routine-choices">{''.join(choice_cards)}</div></section>
 {sections[3]}
 <section class="routine-section" id="reward-uses" aria-labelledby="routine-rewards-heading"><header><span class="section-kicker">{t('AFTER THE RUN', '던전 이후')}</span><h2 id="routine-rewards-heading">{t('Turn the reward into character growth', '받은 보상, 이렇게 성장에 쓰세요')}</h2></header><div class="routine-table routine-use-table"><table><thead><tr><th>{t('Reward', '보상')}</th><th>{t('Next use', '다음에 할 일')}</th></tr></thead><tbody>{''.join(reward_rows)}</tbody></table></div><div class="reference-links"><a href="{r}endgame/#after-story">{t('Post-story growth route', '스토리 이후 내실 순서')} →</a><a href="{r}tools/planner/">{t('Save a personal task', '나의 할 일 적기')} →</a></div></section>
+{growth_gateway(lang,base)}
 <details class="routine-source-list" id="routine-sources"><summary>{t('Original guides and database references · 14 sources', '원문 공략·데이터 참고 · 출처 14개')}</summary><p>{t('Priorities are our editorial synthesis. Source-based counters and reward types are attributed above; no gameplay completion times or guaranteed drops are assumed.', '우선순위는 자료를 종합한 편집상 제안입니다. 횟수·보상 종류는 각 출처로 연결했습니다. 실제 플레이 시간이나 확정 드롭을 가정하지 않습니다.')}</p><ul>{source_items}</ul></details>
 </div>'''

@@ -1,0 +1,96 @@
+/* Reward-first growth guides. Native links/disclosures work without JavaScript. */
+.progress-guide{padding-bottom:38px;--progress-accent:#b2dfcf;--progress-line:#3a5060}
+.progress-guide a:focus-visible,.progress-guide summary:focus-visible{outline:3px solid #d3b9fa;outline-offset:4px}
+.progress-guide a:hover{text-decoration:underline;text-underline-offset:4px}
+.progress-series{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 15px}
+.progress-series a{display:flex;gap:11px;align-items:center;padding:15px 13px;background:#1b2635;border:1px solid #3c4a60;border-radius:8px;font-size:13px;line-height:1.7;color:#b8c5d9;min-width:0;overflow-wrap:anywhere}
+.progress-series a>span{white-space:nowrap;flex-shrink:0;font:11px ui-monospace,monospace;color:#90b8be}
+.progress-series [aria-current=page]{background:#253b43;border-color:#85b5b4;color:#eef6f2}
+.progress-reviewed{font:11px ui-monospace,monospace;color:#97afc2;margin:15px 0 30px}
+.progress-section{margin:36px 0;scroll-margin-top:105px}
+.progress-section>header{margin-bottom:20px;max-width:100ch}
+.progress-section h2{font-size:25px;line-height:1.55;margin:0 0 8px;color:#e2edea;word-break:keep-all}
+.progress-section>header>p{font-size:14px;line-height:1.9;color:#aebed1;margin:0}
+.progress-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.progress-cards>article{padding:22px;border:1px solid var(--progress-line);border-radius:10px;background:linear-gradient(145deg,#21313e,#1b2636);min-width:0}
+.progress-cards h3,.progress-cards h4{font-size:18px;line-height:1.7;margin:0 0 13px;color:#e0eeeb;word-break:keep-all}
+.progress-cards p{font-size:14px;line-height:1.9;margin:0;color:#b7c9d7;overflow-wrap:anywhere}
+.progress-callout{border:1px solid #527b7b;border-left:3px solid #acd6c9;border-radius:8px;padding:21px 24px;background:#233741;margin-bottom:26px}
+.progress-callout>strong{font-size:18px;color:#e5f2e8;line-height:1.7}
+.progress-callout p{font-size:14px;color:#bfced9;line-height:1.9;margin:9px 0 0}
+.progress-callout a{display:inline-flex;min-height:40px;align-items:center;font-size:13px;color:var(--progress-accent)}
+.progress-chip{display:inline-block;color:#b1d1cf;background:#233f46;border:1px solid #43666b;border-radius:4px;padding:4px 8px;font:11px ui-monospace,monospace;line-height:1.6}
+.progress-cite{font-size:11px!important;color:#93adbf!important;line-height:1.9!important;margin:13px 0 0!important;overflow-wrap:anywhere}
+.progress-cite a{color:#adc4d7;text-decoration:underline;text-underline-offset:3px}
+.progress-note{font-size:13px;line-height:1.9;color:#a5bbca;margin:18px 0 0;max-width:105ch}
+.progress-action{display:inline-flex;min-height:44px;align-items:center;color:var(--progress-accent);font-size:13px;margin:13px 25px 0 0}
+.progress-table{border:1px solid var(--progress-line);border-radius:10px;overflow:hidden;background:#1a2837}
+.progress-table table{width:100%;table-layout:fixed;border-collapse:collapse;text-align:left;font-size:14px;line-height:1.85}
+.progress-table th,.progress-table td{padding:19px 20px;vertical-align:top;border-bottom:1px solid #364957;overflow-wrap:anywhere}
+.progress-table thead th{font-size:12px;color:#c2d6df;background:#293b48;font-weight:500}
+.progress-table th:first-child{width:26%}
+.progress-table tbody th{font-weight:600;color:#e0ebe6;background:transparent}
+.progress-table td{color:#b7c7d8}
+.progress-table td a{display:inline-flex;min-height:38px;align-items:center;color:var(--progress-accent);font-size:12px}
+.progress-table tr:last-child th,.progress-table tr:last-child td{border-bottom:0}
+.progress-jumps{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 21px}
+.progress-jumps a{padding:10px 20px;min-height:44px;border:1px solid #547074;border-radius:6px;background:#263b44;color:#cee6e0;font-size:13px}
+.pet-faction{margin:25px 0;scroll-margin-top:105px}
+.progress-subhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.progress-subhead h3{font-size:20px;line-height:1.5;margin:0;color:#d7e7e3}
+.progress-subhead a{display:inline-flex;min-height:36px;align-items:center;font-size:12px;color:var(--progress-accent)}
+.pet-faction article{scroll-margin-top:105px}
+.pet-faction h4{margin-top:13px}
+.pet-faction dl{margin:0}
+.pet-faction dl>div{margin-top:14px}
+.pet-faction dt{font-size:11px;color:#91b9c0;margin-bottom:4px}
+.pet-faction dd{font-size:14px;line-height:1.8;margin:0;color:#c1d3db;overflow-wrap:anywhere}
+.progress-alias{display:block;font-size:11px;line-height:1.9;color:#92a9bf;margin-top:16px;border-top:1px solid #3a4c5a;padding-top:12px}
+.gear-tier{border:1px solid #486675;border-radius:10px;background:#1c2b39;margin:0 0 17px;overflow:hidden;scroll-margin-top:105px}
+.gear-tier>header{padding:20px 24px;border-bottom:1px solid #3b5361;background:linear-gradient(110deg,#2c4349,#202c3c)}
+.gear-tier h3{display:inline;font-size:22px;line-height:1.6;margin-left:16px;color:#e7f0ea;word-break:keep-all}
+.gear-tier>header>p{font-size:13px;color:#afc9d1;margin:9px 0 0}
+.gear-tier b{color:#d6e6d9}
+.gear-tier-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.gear-tier-pair>div{padding:22px 24px;min-width:0}
+.gear-tier-pair>div+div{border-left:1px solid #3a5060}
+.gear-tier-pair span,.progress-label{font-size:11px;color:#91bec2;line-height:1.7;letter-spacing:.02em}
+.gear-tier-pair h4{font-size:20px;line-height:1.6;margin:7px 0;color:#e6ede8}
+.gear-tier-pair p{font-size:14px;line-height:1.8;color:#bfd1dc;margin:0 0 9px}
+.gear-tier-pair small{display:block;font-size:11px;line-height:1.8;color:#94acbd;overflow-wrap:anywhere}
+.gear-tier-pair a{display:inline-flex;min-height:40px;align-items:center;font-size:13px;color:var(--progress-accent);margin-top:8px}
+.dungeon-jumps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dungeon-jumps a{display:block;min-width:0;background:#21323f;border:1px solid #415969;border-radius:8px;padding:17px}
+.dungeon-jumps strong{display:block;font-size:15px;line-height:1.65;color:#dcebe7;word-break:keep-all}
+.dungeon-jumps span{display:block;font-size:11px;line-height:1.8;color:#9dbdca;margin-top:5px}
+.dungeon-plan{margin:23px 0;border:1px solid #476475;border-radius:11px;overflow:hidden;scroll-margin-top:105px;background:#1b2937}
+.dungeon-plan>header{padding:22px 25px;background:linear-gradient(120deg,#29414a,#243044);border-bottom:1px solid #3c5365}
+.dungeon-plan>header h3{font-size:25px;line-height:1.6;margin:10px 0 6px;color:#e5eeeb}
+.dungeon-plan>header p{font-size:13px;color:#b2ccd6;line-height:1.8;margin:0}
+.dungeon-plan-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.dungeon-loot,.dungeon-response{padding:24px;min-width:0}
+.dungeon-response{border-left:1px solid #3b5362;background:#1e2a3b}
+.dungeon-plan h4{font-size:18px;line-height:1.7;margin:8px 0 13px;color:#dceae8;word-break:keep-all}
+.dungeon-loot p{font-size:14px;line-height:1.9;color:#b3c8d5;margin:13px 0}
+.dungeon-loot small{font-size:11px;overflow-wrap:anywhere}
+.dungeon-route-note{font-size:13px;line-height:1.9;color:#a7bfce;padding:13px 0;border-bottom:1px solid #3b5264;margin:5px 0 17px}.dungeon-route-note strong{display:block;color:#bdd5da;font-size:11px;font-weight:500;margin-bottom:5px}
+.dungeon-response ul{padding:0;margin:0;list-style:none}
+.dungeon-response li{margin:14px 0;padding-left:14px;border-left:2px solid #648c95}
+.dungeon-response li strong{display:block;font-size:13px;font-weight:500;color:#c4c2de;line-height:1.8}
+.dungeon-response li span{display:block;font-size:14px;color:#cbdfde;line-height:1.9;margin-top:4px}
+.kinah-formula{padding:20px 23px;border:1px solid #6e6854;background:#303334;border-radius:8px;margin-top:18px}
+.kinah-formula strong{font-size:16px;line-height:1.8;color:#ece0b5}
+.kinah-formula p{font-size:13px;line-height:1.9;color:#c5c9c4;margin:9px 0 0}
+.progress-sources{padding:19px 24px;border:1px solid #3d5265;border-radius:9px;background:#1a2534;margin-top:32px;scroll-margin-top:105px}
+.progress-sources summary{font-size:13px;line-height:1.85;cursor:pointer;min-height:32px;color:#c7d8df}
+.progress-sources>p{font-size:12px;color:#a2b6c7;line-height:1.9}
+.progress-sources ul{padding-left:17px;margin-bottom:0}
+.progress-sources li{padding:10px 0;font-size:13px;line-height:1.8;overflow-wrap:anywhere;scroll-margin-top:105px}
+.progress-sources li>a{color:#bbd7dc}
+.progress-sources li>p{font-size:12px;line-height:1.8;color:#91aabf;margin:4px 0 0}
+.progress-footer{display:flex;gap:12px 28px;flex-wrap:wrap;margin-top:24px}
+.progress-footer a{display:inline-flex;min-height:44px;align-items:center;color:var(--progress-accent);font-size:13px}
+@media(max-width:1150px){.progress-series{grid-template-columns:repeat(2,minmax(0,1fr))}.progress-cards{grid-template-columns:1fr}.progress-cards>article{padding:21px 23px}.pet-faction .progress-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.pet-faction .progress-cards>article{padding:18px}.dungeon-plan-body{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}}
+@media(max-width:800px){.pet-faction .progress-cards{grid-template-columns:1fr}.dungeon-jumps{grid-template-columns:repeat(2,minmax(0,1fr))}.dungeon-plan-body{grid-template-columns:1fr}.dungeon-response{border-left:0;border-top:1px solid #3b5362}.progress-table th,.progress-table td{padding:16px}}
+@media(max-width:600px){.progress-series a{font-size:12px;padding:12px 10px;gap:7px}.progress-section{margin:30px 0}.progress-section h2{font-size:22px}.progress-callout{padding:18px}.progress-cards>article{padding:20px}.gear-tier h3{display:block;margin:8px 0 0;font-size:21px}.gear-tier-pair{grid-template-columns:1fr}.gear-tier-pair>div+div{border-left:0;border-top:1px solid #3a5060}.gear-tier>header,.gear-tier-pair>div{padding:20px}.dungeon-plan>header,.dungeon-loot,.dungeon-response{padding:20px}.dungeon-plan>header h3{font-size:23px}.dungeon-jumps a{padding:13px}.dungeon-jumps strong{font-size:14px}.progress-table table,.progress-table tbody,.progress-table tr,.progress-table tbody th,.progress-table td{display:block;width:auto}.progress-table thead{display:none}.progress-table tr{padding:20px;border-bottom:1px solid #3e5665}.progress-table tr:last-child{border:0}.progress-table tbody th,.progress-table td{padding:0;border:0}.progress-table tbody th:first-child{width:auto;font-size:16px}.progress-table td{margin-top:13px;font-size:13px}.progress-table td:before{content:attr(data-label);display:block;color:#94bec3;font-size:11px;margin-bottom:5px}.progress-sources{padding:17px}.progress-action{margin-right:15px}.kinah-formula{padding:18px}}
+@media print{.progress-series,.progress-jumps,.progress-sources{display:none}.gear-tier,.progress-cards>article,.dungeon-plan{break-inside:avoid}.progress-section{margin:22px 0}}
