@@ -4,7 +4,7 @@
 .progress-guide a:hover{text-decoration:underline;text-underline-offset:4px}
 .progress-series{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 15px}
 .progress-series a{display:flex;gap:11px;align-items:center;padding:15px 13px;background:#1b2635;border:1px solid #3c4a60;border-radius:8px;font-size:13px;line-height:1.7;color:#b8c5d9;min-width:0;overflow-wrap:anywhere}
-.progress-series a>span{font:11px ui-monospace,monospace;color:#90b8be}
+.progress-series a>span{white-space:nowrap;flex-shrink:0;font:11px ui-monospace,monospace;color:#90b8be}
 .progress-series [aria-current=page]{background:#253b43;border-color:#85b5b4;color:#eef6f2}
 .progress-reviewed{font:11px ui-monospace,monospace;color:#97afc2;margin:15px 0 30px}
 .progress-section{margin:36px 0;scroll-margin-top:105px}
