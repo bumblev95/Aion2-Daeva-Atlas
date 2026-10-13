@@ -28,6 +28,8 @@ async function selected(page,key){
   await page.waitForFunction(() => document.querySelector('[data-topic-reader]')?.dataset.readerReady === 'true');
   const panels=await page.locator('[data-reader-panel]').evaluateAll(nodes=>nodes.map(node=>({key:node.dataset.readerPanel,hidden:node.hidden,display:getComputedStyle(node).display,tag:node.tagName})));
   assert.equal(await page.locator('[data-reader-panel]:visible').count(),1,JSON.stringify(panels));
+  assert.equal(await page.locator('[data-reader-panel="'+key+'"]').isVisible(),true);
+  assert.equal(panels.filter(panel=>!panel.hidden).length,1);
   assert.equal(await page.locator('[data-reader-tab="'+key+'"]').getAttribute('aria-selected'),'true');
 }
 (async()=>{
@@ -65,6 +67,10 @@ async function selected(page,key){
       await selected(page,'rewards');
       assert.equal(await page.locator('[data-reader-tab="rewards"]').evaluate(node=>node===document.activeElement),true);
       await page.keyboard.press('Home');await selected(page,'daily');
+      await page.keyboard.press('ArrowLeft');await selected(page,'rewards');
+      await page.keyboard.press('ArrowRight');await selected(page,'daily');
+      await page.keyboard.press('Space');await selected(page,'daily');
+      await page.keyboard.press('Enter');await selected(page,'daily');
       await page.locator('[data-reader-tab="weekly"]').click();
       await page.locator('.navtools .lang').click();
       await page.waitForURL('**/routines/#routine-group-weekly');
@@ -120,19 +126,22 @@ async function selected(page,key){
       assert.deepEqual(errors,[]);
       await context.close();
     }
-    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844},reducedMotion:'reduce'});
+    for(const lang of ['ko','en']) for(const width of [320,390,768,1440]){
+    const local=base+(lang==='ko'?'ko/':'');
+    const context=await browser.newContext({javaScriptEnabled:false,viewport:{width,height:844},reducedMotion:'reduce'});
     await context.route('https://**/*',route=>route.abort());
     const page=await context.newPage();
-    await page.goto(base+'ko/routines/');
+    await page.goto(local+'routines/');
     await page.locator('[data-reader-panel="weekly"]>.reader-fallback').click();
     assert.equal(await page.locator('#routine-daily-dungeon').isVisible(),true);
-    await page.goto(base+'ko/guides/dungeon-rewards/#dungeon-fire-temple');
+    await page.goto(local+'guides/dungeon-rewards/#dungeon-fire-temple');
     assert.equal(await page.locator('#dungeon-fire-temple .dungeon-loot').isVisible(),true);
     await contained(page,'native disclosure');
-    await page.goto(base+'ko/guides/');
+    await page.goto(local+'guides/');
     assert.equal(await page.locator('[data-directory-group]:visible').count(),5);
     assert.equal(await page.locator('[data-directory-controls]').isVisible(),false);
     await context.close();
+    }
     console.log('PASS: task-first discovery, search, topic keyboard navigation, history, bilingual deep links, filtering, mobile dock/menu and native disclosure.');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});

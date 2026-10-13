@@ -22,9 +22,10 @@
       const section=document.createElement('section');
       section.id=detail.id;section.className=detail.className;section.dataset.readerPanel=detail.dataset.readerPanel;
       section.setAttribute('role','tabpanel');section.setAttribute('aria-labelledby',detail.id+'-tab');
+      section.tabIndex=0;
       section.append(...detail.children);detail.replaceWith(section);return section;
     });
-    root.dataset.readerReady='true';
+    list(root,'details.reader-fold').forEach(detail=>{detail.open=false;});
     root.querySelector('[data-reader-tabs]').setAttribute('role','tablist');
     tabs.forEach(tab=>{tab.setAttribute('role','tab');tab.setAttribute('aria-controls',panels.find(p=>p.dataset.readerPanel===tab.dataset.readerTab).id);});
     let current=panels[0].dataset.readerPanel;
@@ -50,6 +51,7 @@
       });
     });
     choose(current);
+    root.dataset.readerReady='true';
     return {root,choose,first:panels[0].dataset.readerPanel};
   });
   function syncHash(scroll=true) {

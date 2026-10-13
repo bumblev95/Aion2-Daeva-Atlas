@@ -100,7 +100,9 @@ def compact_links(lang, base):
 def fold(source, id, title, note=''):
     parts=Fragments(source);a,b=parts.ids[id]
     body=parts.get(id).replace(f' id="{id}"','',1)
-    return source[:a]+f'<details class="reader-fold" id="{id}"><summary><strong>{e(title)}</strong><span>{e(note)}</span></summary><div class="reader-fold-body">{body}</div></details>'+source[b:]
+    # A fragment on the details itself only exposes its summary without scripts.
+    # Start folds open; the enhanced reader collapses them before resolving the hash.
+    return source[:a]+f'<details class="reader-fold" id="{id}" open><summary><strong>{e(title)}</strong><span>{e(note)}</span></summary><div class="reader-fold-body">{body}</div></details>'+source[b:]
 
 
 def organize(sub, source, lang, base):
