@@ -23,7 +23,8 @@ const server = http.createServer((req, res) => {
 const routes = ['pet-growth','gear-targets','dungeon-rewards','kinah-farming'];
 
 async function auditGuideLinks(page) {
-  const links = await page.locator('.progress-guide a').evaluateAll(nodes => nodes.map(n => n.href));
+  const links = await page.locator('[data-topic-reader] a, #growth-sources a').evaluateAll(nodes => nodes.map(n => n.href));
+  assert(links.length>0,'Growth guide must expose links to audit');
   for (const link of links) {
     const u = new URL(link);
     if (u.origin !== new URL(page.url()).origin || !u.pathname.startsWith(prefix)) continue;
@@ -78,7 +79,8 @@ async function contained(page, label) {
         }
         // Cross-page language switch keeps the same guide, not the guide index.
         const other = lang==='ko' ? '' : 'ko/';
-        assert.equal(await page.locator('.navtools a.lang').getAttribute('href'),prefix+other+'guides/'+slug+'/');
+        const languageUrl=new URL(await page.locator('.navtools a.lang').getAttribute('href'),page.url());
+        assert.equal(languageUrl.href,new URL(prefix+other+'guides/'+slug+'/',page.url()).href);
         if (javascript) {
           await page.setViewportSize({width:390,height:844});
           await page.goto(local+'guides/'+slug+'/');

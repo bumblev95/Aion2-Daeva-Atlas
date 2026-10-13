@@ -71,6 +71,8 @@ async function selected(page,key){
       await page.keyboard.press('ArrowRight');await selected(page,'daily');
       await page.keyboard.press('Space');await selected(page,'daily');
       await page.keyboard.press('Enter');await selected(page,'daily');
+      await page.keyboard.press('Tab');
+      assert.equal(await page.locator('[data-reader-panel="daily"]').evaluate(node=>node===document.activeElement),true);
       await page.locator('[data-reader-tab="weekly"]').click();
       await page.locator('.navtools .lang').click();
       await page.waitForURL('**/routines/#routine-group-weekly');
@@ -111,6 +113,7 @@ async function selected(page,key){
       await page.setViewportSize({width:390,height:844});
       await page.goto(local);
       assert.equal(await page.locator('.mobile-dock').isVisible(),true);
+      assert.equal(await page.locator('.mobile-dock a').count(),5);
       assert.equal(await page.locator('#main-nav').evaluate(node=>node.inert),true);
       await page.locator('[data-menu]').click();
       assert.equal(await page.locator('#main-nav').evaluate(node=>node.inert),false);
