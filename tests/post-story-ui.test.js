@@ -45,7 +45,7 @@ async function contained(page, label) {
       const page = await context.newPage(), errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(local);
-      assert.equal(await page.locator('[data-rpg-goal]').count(), 3);
+      assert.equal(await page.locator('[data-rpg-goal]').count(), 4);
       for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({width, height: 844});
         await contained(page, lang + ' RPG home');
@@ -92,6 +92,7 @@ async function contained(page, label) {
       await page.setViewportSize({width: 390, height: 844});
       await page.locator('#after-story-heading').scrollIntoViewIfNeeded();
       await page.screenshot({path: path.join(artifacts, 'post-story-mobile-' + lang + '.png')});
+      await page.goto(local + 'endgame/#use-rewards');
       await page.locator('#use-rewards').scrollIntoViewIfNeeded();
       await page.screenshot({path: path.join(artifacts, 'post-story-rewards-' + lang + '.png')});
       await page.setViewportSize({width: 1440, height: 1000});
@@ -148,7 +149,7 @@ async function contained(page, label) {
       await contained(staticPage, lang + ' enhancement no-script');
       await noScript.close();
     }
-    console.log('PASS: EN/KR three-goal home → growth / boss / enhancement, material routes, both faction map filters, reward use, saved legacy checks, language deep links, no-script guides and 320/390/768/1440px layout.');
+    console.log('PASS: EN/KR four-goal home → growth / boss / enhancement, material routes, both faction map filters, reward use, saved legacy checks, language deep links, no-script guides and 320/390/768/1440px layout.');
   } finally {
     if (browser) await browser.close();
     await new Promise(resolve => server.close(resolve));

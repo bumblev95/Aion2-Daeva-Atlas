@@ -41,13 +41,13 @@ async function contained(page, label) {
       page.on('pageerror', error => errors.push(error.message));
       const local = base + (lang === 'ko' ? 'ko/' : '');
       await page.goto(local);
-      await page.locator('.home-stage-nav a[href$="routines/"]').click();
+      await page.locator('[data-rpg-goal="routines"]').click();
       await page.waitForURL('**/routines/');
       assert.equal(await page.locator('[data-routine-guide]').count(), 1);
       assert.equal(await page.locator('.routine-choice').count(), 3);
       assert.equal(await page.locator('#routine-group-daily tbody tr').count(), 2);
       assert.equal(await page.locator('#routine-group-banked tbody tr').count(), 5);
-      assert.equal(await page.locator('#routine-daily-dungeon').locator('xpath=ancestor::section').getAttribute('id'), 'routine-group-weekly');
+      assert.equal(await page.locator('#routine-daily-dungeon').evaluate(node=>node.closest('.routine-section').id), 'routine-group-weekly');
       assert((await page.locator('#routine-daily-dungeon').textContent()).includes('14'));
       assert((await page.locator('#routine-conquest').textContent()).includes('21'));
       assert((await page.locator('#routine-ascension').textContent()).includes('3'));
@@ -58,13 +58,14 @@ async function contained(page, label) {
       }
       assert((await page.locator('#daily-dungeon-choices > header').textContent()).includes(lang === 'ko' ? '공유' : 'same'));
       assert((await page.locator('#routine-subjugation').textContent()).includes(lang === 'ko' ? '한국 공략' : 'KR guide'));
+      await page.goto(local + 'routines/#routine-conquest');
       await page.locator('#routine-conquest summary').click();
       assert.equal(await page.locator('#routine-conquest details').getAttribute('open'), '');
       await page.locator('#routine-conquest a[href="#routine-source-global"]').click();
       await page.waitForURL('**/#routine-source-global');
       assert.equal(await page.locator('#routine-source-global').isVisible(), true);
       assert.equal(await page.locator('#routine-sources li').count(), 14);
-      await page.locator('.rpg-guide-nav a[href="#reward-uses"]').click();
+      await page.locator('.reader-tabs a[href="#reward-uses"]').click();
       await page.waitForURL('**/#reward-uses');
       assert.equal(await page.locator('#reward-ap').isVisible(), true);
       await page.locator('#reward-stone a[href*="gear/#upgrade"]').click();
@@ -73,7 +74,7 @@ async function contained(page, label) {
 
       for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({width, height: 844});
-        await page.goto(local + 'routines/');
+        await page.goto(local + 'routines/#routine-daily-dungeon');
         await contained(page, lang + '/' + javascript + '/' + width);
         await page.locator('#routine-daily-dungeon summary').click();
         await contained(page, lang + '/open-details/' + width);
@@ -82,6 +83,7 @@ async function contained(page, label) {
         await page.setViewportSize({width: 390, height: 844});
         await page.goto(local + 'routines/');
         await page.screenshot({path: path.join(artifacts, 'routines-' + lang + '-phone.png')});
+        await page.locator('.reader-tabs a[href="#daily-dungeon-choices"]').click();
         await page.locator('#daily-dungeon-choices').scrollIntoViewIfNeeded();
         await page.screenshot({path: path.join(artifacts, 'daily-choices-' + lang + '-phone.png')});
         await page.setViewportSize({width: 1440, height: 1000});
@@ -106,7 +108,7 @@ async function contained(page, label) {
     await motionContext.route('https://**/*', route => route.abort());
     const motionPage = await motionContext.newPage();
     await motionPage.goto(base + 'ko/routines/');
-    await motionPage.locator('.rpg-guide-nav a[href="#reward-uses"]').click();
+    await motionPage.locator('.reader-tabs a[href="#reward-uses"]').click();
     await motionPage.waitForURL('**/#reward-uses');
     await motionPage.waitForFunction(() => {
       const top = document.querySelector('#reward-uses').getBoundingClientRect().top;

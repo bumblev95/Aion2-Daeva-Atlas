@@ -6,6 +6,7 @@ existing KR-source collection; they are not claims of Global gameplay testing.
 from html import escape as e
 from fieldnotes import BOSSES, KR_SOURCES
 import growthvisuals
+import guidebrowse
 
 REVIEWED = '2026-10-12'
 ROOT = 'guides/'
@@ -308,7 +309,9 @@ def render(slug, lang, base):
     sections=''.join(f'<a href="#{id}">{v.p(title)}</a>' for id,title in SECTION_NAV[slug])
     following=next((g for i,g in enumerate(GUIDES) if i>0 and GUIDES[i-1][0]==slug),None)
     next_link=v.a(ROOT+following[0]+'/',t('Next: ','다음: ')+v.p(following[1])) if following else ''
-    return f'<div class="progress-guide" data-progression-guide="{slug}"><nav class="progress-series" aria-label="{t("Growth guide series", "성장 공략 순서")}">{nav}</nav><p class="progress-reviewed">{t("Reviewed", "자료 검토")} · {REVIEWED}</p><nav class="progress-jumps" aria-label="{t("On this page", "이 페이지에서 찾기")}">{sections}</nav>{renderers[slug](v)}<div class="progress-footer">{next_link}{v.a("routines/",t("Daily & weekly rewards", "일일·주간 숙제로 돌아가기"))}{v.a("endgame/#after-story",t("Post-story growth route", "스토리 이후 성장 순서"))}</div></div>'
+    body=guidebrowse.growth_reader(slug,renderers[slug](v),lang)
+    return f'<div class="progress-guide" data-progression-guide="{slug}"><details class="reader-series"><summary>{t("Other growth guides", "다른 성장 공략")}</summary><nav class="progress-series" aria-label="{t("Growth guide series", "성장 공략 순서")}">{nav}</nav></details>{body}<div class="progress-footer">{next_link}{v.a("routines/",t("Daily & weekly rewards", "일일·주간 숙제"))}{v.a("endgame/#after-story",t("Post-story growth route", "스토리 이후 성장 순서"))}</div></div>'
+
 
 
 def search_entries(lang, base):
