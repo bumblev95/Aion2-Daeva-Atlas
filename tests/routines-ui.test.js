@@ -47,7 +47,7 @@ async function contained(page, label) {
       assert.equal(await page.locator('.routine-choice').count(), 3);
       assert.equal(await page.locator('#routine-group-daily tbody tr').count(), 2);
       assert.equal(await page.locator('#routine-group-banked tbody tr').count(), 5);
-      assert.equal(await page.locator('#routine-daily-dungeon').locator('xpath=ancestor::section').getAttribute('id'), 'routine-group-weekly');
+      assert.equal(await page.locator('#routine-daily-dungeon').evaluate(node=>node.closest('.routine-section').id), 'routine-group-weekly');
       assert((await page.locator('#routine-daily-dungeon').textContent()).includes('14'));
       assert((await page.locator('#routine-conquest').textContent()).includes('21'));
       assert((await page.locator('#routine-ascension').textContent()).includes('3'));

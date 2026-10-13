@@ -101,31 +101,38 @@ jobs:
         run: |
           npm --prefix "$RUNNER_TEMP/dps-qa" install --no-save --package-lock=false playwright@1.62.1
           node "$RUNNER_TEMP/dps-qa/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
-      - name: Verify focused guide navigation, history, mobile menu and no-script fallback
+      - if: ${{ !cancelled() }}
+        name: Verify focused guide navigation, history, mobile menu and no-script fallback
         env:
           FIND_GUIDE_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/find-guide-ui.test.js
-      - name: Verify backend-generated rankings, downloads and no-JavaScript display
+      - if: ${{ !cancelled() }}
+        name: Verify backend-generated rankings, downloads and no-JavaScript display
         env:
           DPS_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/dps-ui.test.js
-      - name: Verify summary and full patch pages on desktop and phones
+      - if: ${{ !cancelled() }}
+        name: Verify summary and full patch pages on desktop and phones
         env:
           PATCH_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/patch-ui.test.js
-      - name: Verify post-story routes, saved checks and phone layout
+      - if: ${{ !cancelled() }}
+        name: Verify post-story routes, saved checks and phone layout
         env:
           POST_STORY_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/post-story-ui.test.js
-      - name: Verify daily and weekly rewards, search and no-script mobile layout
+      - if: ${{ !cancelled() }}
+        name: Verify daily and weekly rewards, search and no-script mobile layout
         env:
           ROUTINES_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/routines-ui.test.js
-      - name: Verify pet, gear, dungeon and Kinah growth routes
+      - if: ${{ !cancelled() }}
+        name: Verify pet, gear, dungeon and Kinah growth routes
         env:
           PROGRESSION_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/progression-ui.test.js
-      - name: Verify visual reward routes, slot selector and Kinah allocation
+      - if: ${{ !cancelled() }}
+        name: Verify visual reward routes, slot selector and Kinah allocation
         env:
           GROWTH_VISUAL_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/growth-visuals-ui.test.js
