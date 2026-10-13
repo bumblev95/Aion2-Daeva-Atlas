@@ -24,6 +24,16 @@ async function contained(page,label){
   const sizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
   assert(sizes.scroll<=sizes.width+1,label+': '+JSON.stringify(sizes));
 }
+async function screenshot(page,options){
+  // Topic activation scrolls in a frame callback; capture the settled viewport.
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  await page.waitForFunction(()=>{
+    const header=document.querySelector('.masthead').getBoundingClientRect();
+    const dock=document.querySelector('.mobile-dock');
+    return Math.abs(header.top)<1 && (getComputedStyle(dock).display==='none'||Math.abs(dock.getBoundingClientRect().bottom-innerHeight)<1);
+  });
+  await page.screenshot(options);
+}
 async function selected(page,key){
   await page.waitForFunction(() => document.querySelector('[data-topic-reader]')?.dataset.readerReady === 'true');
   const panels=await page.locator('[data-reader-panel]').evaluateAll(nodes=>nodes.map(node=>({key:node.dataset.readerPanel,hidden:node.hidden,display:getComputedStyle(node).display,tag:node.tagName})));
@@ -48,7 +58,7 @@ async function selected(page,key){
         await page.goto(local);
         assert.equal(await page.locator('[data-rpg-goal]').count(),4);
         await contained(page,'home '+lang+'/'+width);
-        if(width===390||width===1440)await page.screenshot({path:path.join(artifacts,'find-home-'+lang+'-'+width+'.png'),fullPage:true});
+        if(width===390||width===1440)await screenshot(page,{path:path.join(artifacts,'find-home-'+lang+'-'+width+'.png'),fullPage:true});
       }
       await page.locator('#home-query').fill(lang==='ko'?'오디움':'Odylium');
       await page.locator('.find-search button').click();
@@ -89,12 +99,12 @@ async function selected(page,key){
       await page.goBack();
       assert.equal(await page.locator('[data-directory-group="boss"]').isVisible(),true);
       await page.setViewportSize({width:390,height:844});
-      await page.screenshot({path:path.join(artifacts,'find-directory-'+lang+'-390.png')});
+      await screenshot(page,{path:path.join(artifacts,'find-directory-'+lang+'-390.png')});
       await page.locator('[data-directory-filter="all"]').click();
       await page.locator('[data-growth-guide="pet-growth"]').click();
       await page.locator('[data-reader-tab="farm"]').click();
       await selected(page,'farm');
-      await page.screenshot({path:path.join(artifacts,'find-pet-farm-'+lang+'-390.png')});
+      await screenshot(page,{path:path.join(artifacts,'find-pet-farm-'+lang+'-390.png')});
       await page.goto(local+'endgame/#after-story-field-rewards');
       assert.equal(await page.locator('#after-story-field-rewards details').getAttribute('open'),'');
       assert.equal(await page.locator('#after-story-field-rewards a[href*="zone=Altgard"]').isVisible(),true);
@@ -103,7 +113,7 @@ async function selected(page,key){
       assert.equal(await page.locator('#dungeon-fire-temple .dungeon-loot').isVisible(),true);
       await page.goto(local+'endgame/');
       assert.equal(await page.locator('.growth-route details[open]').count(),1);
-      await page.screenshot({path:path.join(artifacts,'find-growth-'+lang+'-390.png'),fullPage:true});
+      await screenshot(page,{path:path.join(artifacts,'find-growth-'+lang+'-390.png'),fullPage:true});
       for(const width of [320,390,768,1440]){
         await page.setViewportSize({width,height:844});
         for(const route of ['guides/','endgame/','gear/','routines/']){
@@ -118,14 +128,14 @@ async function selected(page,key){
       await page.locator('[data-menu]').click();
       assert.equal(await page.locator('#main-nav').evaluate(node=>node.inert),false);
       await page.locator('.nav-reference>summary').click();
-      await page.screenshot({path:path.join(artifacts,'find-menu-'+lang+'-390.png')});
+      await screenshot(page,{path:path.join(artifacts,'find-menu-'+lang+'-390.png')});
       await page.keyboard.press('Escape');
       assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'false');
       assert.equal(await page.locator('[data-menu]').evaluate(node=>node===document.activeElement),true);
       await page.locator('.mobile-dock a[href$="routines/"]').click();
       await selected(page,'daily');
       await page.locator('[data-reader-tab="weekly"]').click();
-      await page.screenshot({path:path.join(artifacts,'find-weekly-'+lang+'-390.png')});
+      await screenshot(page,{path:path.join(artifacts,'find-weekly-'+lang+'-390.png')});
       assert.deepEqual(errors,[]);
       await context.close();
     }
