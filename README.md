@@ -122,6 +122,17 @@ Review the source dates, units, region, methods and samples before committing a 
 
 `tests/dps-ui.test.js` checks exact HTML/JSON/CSV agreement, published units and precision, missing-sample rank suppression, ignored visitor/query inputs, native details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The browser workflow retains screenshots and CSV evidence.
 
+## Practical growth guides (October 13, 2026)
+
+Six additional bilingual topic readers cover gear options/transfers, Shugo
+Festival games/keys, Stigma purchases, crafting goals, KR pendant compensation
+and KR Snowfield of Grief raid movement. They are linked from the existing
+goal directory and related guides. See
+[the source review](research/practical-guides-2026-10-13.md), including
+disputed pendant material costs and separate KR/Global patch scope.
+The advanced-guides UI test exercises navigation, numerical boundaries,
+animation controls and no-script/mobile views.
+
 ## Daily and weekly reward guide
 
 `/routines/` and `/ko/routines/` connect 18 activities to their reward uses. Daily-expiry Duty Missions, accumulating energy/tickets and weekly-reset entries are kept separate. The three Daily Dungeons share one Unknown Fissure counter; quoted maximum rewards require 10,000 score. The guide labels Global counter references and dated KR reward examples, preserves uncertainty about regional reset times, and does not equate raid attempts with boss-kill or reward limits. Fourteen attributed sources were reviewed on October 9, 2026. Updating the guide requires checking the linked source and its region before changing counts or advancing the review date. Navigation, reward links, search and native details work without JavaScript; this guide introduces no additional local-storage state.

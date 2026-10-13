@@ -14,6 +14,7 @@ import measurement
 import endgame
 import routines
 import progression
+import advancedguides
 import guidebrowse
 import liveops
 from bossmedia import validate_evidence
@@ -56,9 +57,9 @@ def adslot():
     return f'<aside class="ad-slot" aria-label="Advertisement"><span>ADVERTISEMENT</span><ins class="adsbygoogle" style="display:block" data-ad-client="{E(ads["publisher_id"])}" data-ad-slot="{E(ads["slot"])}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></aside>'
 def header(sub,active):
     section = ('growth' if sub=='endgame/' or sub.startswith(('guides/pet-growth/','guides/kinah-farming/')) else
-               'enhancement' if sub=='gear/' or sub.startswith(('guides/gear-targets/','guides/upgrade-decisions/')) else
-               'boss' if sub.startswith(('dungeons/','guides/dungeon-rewards/')) else
-               'routines' if sub=='routines/' else 'start' if sub=='start/' else 'home' if not sub else '')
+               'enhancement' if sub=='gear/' or sub.startswith(('guides/gear-targets/','guides/upgrade-decisions/','guides/gear-options/','guides/endgame-crafts/','guides/kr-pendant/','guides/stigma-growth/')) else
+               'boss' if sub.startswith(('dungeons/','guides/dungeon-rewards/','guides/kr-bitan/')) else
+               'routines' if sub=='routines/' or sub.startswith('guides/shugo-festival/') else 'start' if sub=='start/' else 'home' if not sub else '')
     main=[('home','',t('Home','홈'),'grid'),('growth','endgame/',t('Character growth','내실·성장'),'spark'),('enhancement','gear/',t('Gear & upgrades','장비·강화'),'shield'),('boss','dungeons/',t('Dungeons & bosses','던전·보스'),'boss'),('routines','routines/',t('Daily & weekly','일일·주간 숙제'),'check')]
     navhtml=''.join(f'<a href="{href(p)}" class="side-link{(" active" if key==section else "")}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{n}</span></a>' for key,p,n,i in main)
     navhtml+=f'<a class="side-link{(" active" if sub=="start/" else "")}" href="{href("start/")}">{icon("book")}<span>{t("Early-game guide","초반 공략")}</span></a><a class="side-link{(" active" if sub=="guides/" else "")}" href="{href("guides/")}">{icon("grid")}<span>{t("All guides","전체 공략")}</span></a>'
@@ -84,6 +85,8 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
+    if 'ag-related' in content or 'data-practical-page=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/advanced-guides.css?v=1">'
+    if 'data-practical-page=' in content:guidecss+=f'<script defer src="{BASE}assets/advanced-guides.js?v=1"></script>'
     guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
@@ -111,6 +114,7 @@ def learning():
         ('maps/',t('Find your next destination.','다음 목적지를 찾아보세요.'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
         ('skills/',t('Know the skill behind the name.','스킬 이름 너머의 효과까지.'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
         body=guidebrowse.organize(sub,body,LANG,BASE)
+        body=advancedguides.gateway(LANG,BASE,sub.rstrip('/'))+body
         heading=pagehead(title,desc) if sub!='start/' else ''
         if sub in ('start/','endgame/','maps/'):
             body += '<details class="reader-extra"><summary>'+t('Gameplay screenshots & references','실제 플레이 화면·참고 자료')+'</summary>'+liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])+'</details>'
@@ -132,7 +136,7 @@ def learning():
 def dungeons():
     title=t('See the cue. Practise the move.','움직임으로 배우는 보스 패턴.')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
-    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
+    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{advancedguides.gateway(LANG,BASE,"boss")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=name+t(' — mechanic field guide',' — 기믹 공략')
@@ -151,9 +155,14 @@ def guides():
     write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Find a guide by your next goal.','지금 필요한 공략을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
-        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{advancedguides.gateway(LANG,BASE,slug)}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
         page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
     search_index.extend(progression.search_entries(LANG,BASE))
+    for g in advancedguides.GUIDES:
+        sub='guides/'+g['slug']+'/'
+        write(sub,pair(g['title']),pair(g['description']),f'<div class="wrap">{pagehead(pair(g["title"]),pair(g["description"]))}{advancedguides.render(g["slug"],LANG,BASE)}</div>','guides',True,reviewed=advancedguides.REVIEWED)
+        page_dates[SITE+'/'+path(sub)]=advancedguides.REVIEWED
+    search_index.extend(advancedguides.search_entries(LANG,BASE))
     for g in GUIDES:
         sub='guides/'+g['slug']+'/'
         toc=''.join(f'<li><a href="#section-{i+1}">{pair(h)}</a></li>' for i,(h,p) in enumerate(g['sections']))

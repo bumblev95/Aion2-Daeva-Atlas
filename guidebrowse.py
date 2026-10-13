@@ -2,6 +2,7 @@
 from html import escape as e
 from html.parser import HTMLParser
 from content import CLASSES, GUIDES
+import advancedguides
 
 GOALS = [
     ('growth', 'endgame/#after-story', 'spark', ('Character growth', '내실·성장'), ('Story cleared. What next?', '스토리 이후, 무엇부터 할까?')),
@@ -39,6 +40,8 @@ def directory(lang, base):
         ('routines',('Daily & weekly','일일·주간'), [('routines/',('Daily and weekly rewards','일일·주간 숙제와 보상'),('Counters, Daily Dungeons and reward uses','횟수·일일 던전·보상 사용처')),('tools/planner/',('My checklist','나의 체크리스트'),('Keep your own goals','나의 할 일 기록'))]),
         ('start',('Getting started','초반·기초'), [('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치'))]),
     ]
+    for key,title,entries in groups:
+        entries.extend(('guides/'+g['slug']+'/',g['title'],(g['region']+' · '+g['description'][0],g['region']+' · '+g['description'][1])) for g in advancedguides.GUIDES if g['group']==key)
     filters=''.join(f'<button type="button" data-directory-filter="{key}" aria-pressed="false">{title[k]}</button>' for key,title,_ in groups)
     cards=''
     for key,title,entries in groups:

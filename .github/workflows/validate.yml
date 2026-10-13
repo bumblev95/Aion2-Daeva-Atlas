@@ -32,6 +32,7 @@ jobs:
       - run: node --check assets/analytics.js
       - run: node tests/analytics.test.js
       - run: node --check assets/find-guide.js
+      - run: node --check assets/advanced-guides.js
       - run: node --check assets/app.js
       - run: node --check assets/explorer.js
       - run: node --check assets/encounters.js
