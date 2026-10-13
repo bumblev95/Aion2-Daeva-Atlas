@@ -35,6 +35,13 @@ on:
       - 'worldmap.py'
       - 'visuals.py'
       - 'build.py'
+      - 'vakron.py'
+      - 'bossmedia.py'
+      - 'battlelab.py'
+      - 'encounters.py'
+      - 'assets/battle.js'
+      - 'assets/vakron.*'
+      - 'tests/vakron-ui.test.js'
       - 'dpsmath.py'
       - 'dpslevels.py'
       - 'dpsranking.py'
@@ -75,6 +82,13 @@ on:
       - 'worldmap.py'
       - 'visuals.py'
       - 'build.py'
+      - 'vakron.py'
+      - 'bossmedia.py'
+      - 'battlelab.py'
+      - 'encounters.py'
+      - 'assets/battle.js'
+      - 'assets/vakron.*'
+      - 'tests/vakron-ui.test.js'
       - 'dpsmath.py'
       - 'dpslevels.py'
       - 'dpsranking.py'
@@ -136,6 +150,11 @@ jobs:
         env:
           GROWTH_VISUAL_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/growth-visuals-ui.test.js
+      - if: ${{ !cancelled() }}
+        name: Verify bilingual Vakron full run on mobile and preserve legacy patterns
+        env:
+          VAKRON_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/vakron-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
