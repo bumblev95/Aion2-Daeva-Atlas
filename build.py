@@ -14,6 +14,7 @@ import measurement
 import endgame
 import routines
 import progression
+import servertransfer
 import guidebrowse
 import liveops
 from bossmedia import validate_evidence
@@ -83,6 +84,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=growth-guides-1">' if sub in ('','start/','endgame/','gear/','routines/','tools/planner/','guides/') or sub.startswith('dungeons/') else ''
     if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
+    if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
     guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
@@ -111,6 +113,8 @@ def learning():
         ('maps/',t('Find your next destination.','다음 목적지를 찾아보세요.'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
         ('skills/',t('Know the skill behind the name.','스킬 이름 너머의 효과까지.'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
         body=guidebrowse.organize(sub,body,LANG,BASE)
+        if sub in ('start/','endgame/','routines/','gear/'):
+            body=servertransfer.gateway(LANG,BASE,'rewards' if sub=='routines/' else 'checklist')+body
         heading=pagehead(title,desc) if sub!='start/' else ''
         if sub in ('start/','endgame/','maps/'):
             body += '<details class="reader-extra"><summary>'+t('Gameplay screenshots & references','실제 플레이 화면·참고 자료')+'</summary>'+liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])+'</details>'
@@ -132,7 +136,7 @@ def learning():
 def dungeons():
     title=t('See the cue. Practise the move.','움직임으로 배우는 보스 패턴.')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
-    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
+    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{servertransfer.gateway(LANG,BASE,"rewards")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=name+t(' — mechanic field guide',' — 기믹 공략')
@@ -148,10 +152,14 @@ def community():
         search_index.append({'lang':LANG,'path':path('insights/'),'anchor':'note-'+n['id'],'title':pair(n['title']),'description':pair(n['body']),'category':t('KR insight','한국 유저 팁'),'keywords':' '.join(n['classes'])+' '+n['mode']+' '+pair(n['body'])})
 
 def guides():
+    write(servertransfer.ROOT,pair(servertransfer.TITLE),pair(servertransfer.DESCRIPTION),f'<div class="wrap">{pagehead(pair(servertransfer.TITLE),pair(servertransfer.DESCRIPTION))}{servertransfer.render(LANG,BASE)}</div>','guides',True,reviewed=servertransfer.REVIEWED)
+    page_dates[SITE+'/'+path(servertransfer.ROOT)]=servertransfer.REVIEWED
+    search_index.extend(servertransfer.search_entries(LANG,BASE))
     write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Find a guide by your next goal.','지금 필요한 공략을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
-        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
+        transfer_anchor={'pet-growth':'pets','kinah-farming':'storage','dungeon-rewards':'rewards','gear-targets':'checklist'}[slug]
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{servertransfer.gateway(LANG,BASE,transfer_anchor)}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
         page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
     search_index.extend(progression.search_entries(LANG,BASE))
     for g in GUIDES:
@@ -227,7 +235,7 @@ def layoutpreview():
 
 def livepages():
     for sub,title,desc,body in [
-        ('updates/',t('AION 2 news & patch changes','아이온 2 뉴스·패치 변경사항'),t('Official Korea and North America updates with reviewed class impact.','한국·북미 공식 업데이트와 직업별 변경 요약.'),liveops.news(LANG,BASE)+liveops.coverage(LANG)),
+        ('updates/',t('AION 2 news & patch changes','아이온 2 뉴스·패치 변경사항'),t('Official Korea and North America updates with reviewed class impact.','한국·북미 공식 업데이트와 직업별 변경 요약.'),servertransfer.gateway(LANG,BASE,'schedule')+liveops.news(LANG,BASE)+liveops.coverage(LANG)),
         ('tools/dps/',t('AION 2 DPS record comparisons','아이온 2 실전 DPS 비교'),t('Reviewed boss DPS records and class indices with regions, sample counts and source links.','한국 보스별 DPS 기록과 글로벌 전투력 지수, 표본 수와 출처를 함께 비교합니다.'),liveops.dps(LANG,BASE)),
         ('screenshots/',t('AION 2 gameplay screenshots','아이온 2 인게임 스크린샷'),t('Official in-game combat, boss and flight frames with source credits.','공식 전투·보스·비행 장면과 원본 출처.'),liveops.screenshots(LANG,BASE)),
     ]:

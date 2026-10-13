@@ -1,0 +1,41 @@
+.transfer-guide{max-width:980px;margin:0 auto 64px;overflow-wrap:anywhere}
+.transfer-status,.transfer-warning{border:1px solid #a48542;background:#28241b;padding:22px;border-radius:16px;margin-bottom:22px}
+.transfer-badge{display:inline-block;color:#f5dca0;font-size:.85rem;font-weight:750;border:1px solid #a48542;border-radius:30px;padding:7px 12px}
+.transfer-status p,.transfer-section p{line-height:1.75;color:#d4d8e1}
+.transfer-status small,.transfer-note{color:#afb8c9;font-size:.86rem}
+.transfer-jumps,.transfer-related{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.transfer-jumps a,.transfer-related a{border:1px solid #434b5c;border-radius:12px;padding:11px 14px;min-height:44px;color:#e2e8f3;text-decoration:none}
+.transfer-jumps a:hover,.transfer-related a:hover{border-color:#9ed5c5}
+.transfer-section{border:1px solid #394356;border-radius:16px;margin-bottom:16px;padding:0 22px;scroll-margin-top:100px;background:#151c29}
+.transfer-section>summary{display:flex;align-items:center;gap:16px;cursor:pointer;min-height:64px;list-style:none}
+.transfer-section>summary::after{content:'+';margin-left:auto;font-size:1.5rem;color:#9ed5c5}
+.transfer-section[open]>summary::after{content:'−'}
+.transfer-section>summary h2{font-size:1.25rem;margin:18px 0}
+.transfer-section[open]{padding-bottom:18px}
+.transfer-section h3{font-size:1.08rem;margin:0 0 12px}
+.transfer-section>h3{margin:22px 0 12px}
+.transfer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.transfer-grid article{border:1px solid #3b475d;background:#1b2434;border-radius:12px;padding:18px;min-width:0;scroll-margin-top:100px}
+.transfer-grid article p{margin:0;font-size:.95rem}
+.transfer-grid dl{margin:0}.transfer-grid dl div+div{margin-top:14px}
+.transfer-grid dt{color:#abb8cd;font-size:.85rem}.transfer-grid dd{margin:4px 0 0;color:#f2f5fa;font-weight:600;line-height:1.6}
+.transfer-grid dd small{display:block;color:#aebbd0}
+.transfer-checklist{list-style:none;padding:0;counter-reset:transfer}
+.transfer-checklist li{counter-increment:transfer;border:1px solid #3b475d;border-radius:12px;margin:12px 0;background:#1b2434}
+.transfer-checklist label{display:flex;gap:14px;padding:18px;cursor:pointer;min-height:44px}
+.transfer-checklist input{width:24px;height:24px;flex:0 0 24px;accent-color:#9ed5c5;margin:2px 0}
+.transfer-checklist strong{display:block;color:#f1f5fb;font-size:1.05rem;margin-bottom:7px}
+.transfer-checklist strong::before{content:counter(transfer,decimal-leading-zero) ' · ';color:#9ed5c5}
+.transfer-checklist label>span>span{display:block;color:#c5cddd;line-height:1.7;font-size:.93rem}
+.transfer-checklist input:checked+span strong{color:#9ed5c5}
+.transfer-checklist input:checked+span strong::after{content:' ✓'}
+.transfer-example{background:#20352f;border-left:4px solid #9ed5c5;border-radius:8px;padding:20px}
+.transfer-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;margin:20px 0}
+.transfer-flow div{border:1px solid #658c85;background:#20352f;border-radius:12px;padding:18px;text-align:center}
+.transfer-flow b,.transfer-flow div span{display:block;line-height:1.6}.transfer-flow div span{font-size:.86rem;color:#bfdbd1;margin-top:5px}
+.transfer-cite{font-size:.85rem;margin:12px 0}.transfer-cite a{color:#a6d9cc}
+.transfer-gateway{border:1px solid #48695f;border-radius:14px;padding:18px 22px;background:#1c2b28;margin:20px 0;line-height:1.7}
+.transfer-gateway strong{color:#ddede7}.transfer-gateway p{margin:3px 0 8px;color:#bdcfc8}.transfer-gateway a{color:#afe6d4;display:inline-block;min-height:44px;padding:8px 0}
+.transfer-guide a:focus-visible,.transfer-guide summary:focus-visible,.transfer-checklist input:focus-visible{outline:3px solid #b4eddf;outline-offset:4px}
+@media(max-width:600px){.transfer-grid{grid-template-columns:1fr}.transfer-section{padding:0 14px}.transfer-status,.transfer-warning{padding:16px}.transfer-checklist label{padding:14px;gap:11px}.transfer-flow{grid-template-columns:1fr;text-align:center}.transfer-flow>span{transform:rotate(90deg)}.transfer-jumps a{flex:1 1 42%;font-size:.9rem}.transfer-section>summary h2{font-size:1.12rem}.transfer-grid article{padding:16px}}
+@media print{.transfer-section{break-inside:avoid}.transfer-status,.transfer-warning,.transfer-grid article{background:none;color:black}.transfer-checklist input{appearance:auto}}
