@@ -23,6 +23,21 @@ async function contained(page,label) {
   const sizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
   assert(sizes.scroll<=sizes.width+1,label+': '+JSON.stringify(sizes));
 }
+async function screenshot(page, options) {
+  // Topic changes schedule scrolling; capture after it settles at the page top.
+  if (options.fullPage) await page.evaluate(() => scrollTo({top:0,behavior:'instant'}));
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await page.waitForFunction(() => {
+    const header=document.querySelector('.masthead').getBoundingClientRect();
+    const dock=document.querySelector('.mobile-dock');
+    return Math.abs(header.top)<1 && (getComputedStyle(dock).display==='none' || Math.abs(dock.getBoundingClientRect().bottom-innerHeight)<1);
+  });
+  if (options.fullPage) {
+    await page.evaluate(() => scrollTo({top:0,behavior:'instant'}));
+    await page.waitForFunction(() => scrollY===0);
+  }
+  await page.screenshot(options);
+}
 async function panel(page,key) {
   await page.waitForFunction(()=>document.querySelector('[data-topic-reader]')?.dataset.readerReady==='true');
   await page.locator('[data-reader-tab="'+key+'"]').click();
@@ -68,7 +83,7 @@ async function panel(page,key) {
       assert.equal(await page.locator('[data-stigma-to]').getAttribute('aria-invalid'),'true');
       await panel(page,'kr-shop');
       assert.equal(await page.locator('.ag-table tbody tr').count(),5);
-      await page.screenshot({path:path.join(artifacts,'stigma-shop-'+lang+'-390.png'),fullPage:true});
+      await screenshot(page,{path:path.join(artifacts,'stigma-shop-'+lang+'-390.png'),fullPage:true});
       await page.goto(local+'guides/kr-pendant/');
       await page.locator('[data-pendant-failures]').fill('2');
       assert.equal(await page.locator('[data-pendant-chance]').textContent(),'85%');
@@ -84,7 +99,7 @@ async function panel(page,key) {
       }
       await page.locator('[data-pendant-failures]').fill('1');
       assert.equal(await page.locator('[data-pendant-chance]').textContent(),'3%');
-      await page.screenshot({path:path.join(artifacts,'pendant-'+lang+'-390.png'),fullPage:true});
+      await screenshot(page,{path:path.join(artifacts,'pendant-'+lang+'-390.png'),fullPage:true});
       await page.goto(local+'guides/kr-bitan/#bitan-movement');
       const raid=page.locator('[data-raid-lesson="movement"]');
       assert.equal(await raid.getAttribute('data-playing'),'false');
@@ -92,7 +107,7 @@ async function panel(page,key) {
       assert.equal(await raid.getAttribute('data-phase'),'1');
       await raid.locator('[data-raid-next]').click();
       assert.equal(await raid.getAttribute('data-phase'),'2');
-      await page.screenshot({path:path.join(artifacts,'bitan-'+lang+'-390.png'),fullPage:true});
+      await screenshot(page,{path:path.join(artifacts,'bitan-'+lang+'-390.png'),fullPage:true});
       await page.goto(local+'search/?q='+encodeURIComponent(lang==='ko'?'계승':'Soul Binding'));
       await page.locator('[data-search-results] a[href$="guides/gear-options/"]').click();
       for(const width of [320,390,768,1440]) {
@@ -107,7 +122,7 @@ async function panel(page,key) {
           }
           if(width===1440) {
             await page.locator('[data-reader-tab]').first().click();
-            await page.screenshot({path:path.join(artifacts,slug+'-'+lang+'-1440.png'),fullPage:true});
+            await screenshot(page,{path:path.join(artifacts,slug+'-'+lang+'-1440.png'),fullPage:true});
           }
         }
       }
