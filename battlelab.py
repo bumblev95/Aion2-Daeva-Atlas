@@ -19,7 +19,7 @@ CAPTIONS={
 }
 def animation(b,m,lang):
  t=lambda a,k:k if lang=='ko' else a
- captions=[x[lang=='ko'] for x in CAPTIONS[m['diagram']]]
+ captions=[x[lang=='ko'] for x in (m['captions'] if 'captions' in m else CAPTIONS[m['diagram']])]
  uid=b['id']+'-'+m['id']
  if uid=='berk-spin':captions=[t('Red particles: the spin is coming','붉은 가루: 회전 공격 전조예요'),t('Retreat; the spinning boss can chase','물러나요. 회전 중인 보스가 추격해요'),t('A stationary safe circle is not guaranteed','처음 범위 밖도 계속 안전하진 않아요')]
  if uid=='kromede-bow':captions=[t('Bow down: leave the boss-centred fire','활을 내리면 보스 주변 화염에서 이탈'),t('Hold outside through the attack','공격이 이어지는 동안 밖에서 기다려요'),t('Low HP can bring two bursts','저체력에는 두 번 연속 사용해요')]

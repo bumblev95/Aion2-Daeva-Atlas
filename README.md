@@ -8,11 +8,11 @@ An independent English/Korean game guide platform. AION 2 is the first game hub.
 
 ## Visual interface
 
-The hub separates practical early-game and endgame guides, with direct settings references and attributed original screenshot previews; a complete 280-skill bilingual reference with game icons, class learning paths, and level-aware specialization choices; a 2D map with 384 real quest/travel/dungeon markers, search, panning, zoom, nearest travel points and saved completion; and 16 automatically animated boss lessons. Players can pause, scrub and change animation speed. Reduced motion is respected. Each boss pattern explains its cue, response, position, mistake and success condition in both languages, with links to the original KR article and its specific scene. Optional videos include existing KR guides and index-reported TW footage with Russian narration; playback and Global equivalence remain unverified. See [the scene review](BOSS_SCENE_REVIEW.md). Existing class comparison, community insights, progression checklist and public URLs are retained. Source-era KR recommendations are separated from Global client facts.
+The hub separates practical early-game and endgame guides, with direct settings references and attributed original screenshot previews; a complete 280-skill bilingual reference with game icons, class learning paths, and level-aware specialization choices; a 2D map with 384 real quest/travel/dungeon markers, search, panning, zoom, nearest travel points and saved completion; and 16 automatically animated boss lessons. Players can pause, scrub and change animation speed. Reduced motion is respected. Each boss pattern explains its cue, response, position, mistake and success condition in both languages, with links to the original KR article and its specific scene. Optional videos include existing KR guides and index-reported TW footage with Russian narration; playback and Global equivalence remain unverified. Vakron also has a six-stage Global-source full-run supplement with nine original animations for debuffs, first boss, Thamon and traversal. Its article-reported timings and stalled video playback remain explicitly unverified. See [the scene review](BOSS_SCENE_REVIEW.md). Existing class comparison, community insights, progression checklist and public URLs are retained. Source-era KR recommendations are separated from Global client facts.
 
 ## Develop
 
-Python 3.12+ and Node 22+ are sufficient. There are no package dependencies.
+Python 3.12+ and Node 22+ are sufficient for static generation. Browser tests use the temporary Playwright/Chromium runtime installed by CI.
 
 ```sh
 python build.py
@@ -35,6 +35,8 @@ node scripts/build_dps_rankings.js --verify
 node tests/rotation-learning.test.js
 node research/rotation-learning/train.js --verify
 node tests/battle.test.js
+# With the CI Playwright runtime and Chromium installed:
+node tests/vakron-ui.test.js
 ```
 
 Edit `content.py`, `fieldnotes.py`, `encounters.py`, `visuals.py`, `onboarding.py`, `skillbook.py`, `bossmedia.py`, `assets/` and `site.json`, then regenerate and commit `docs/`. GitHub Pages serves `main` → `/docs`. CI rejects a mismatch between the sources and generated pages.

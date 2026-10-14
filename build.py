@@ -19,6 +19,7 @@ import guidebrowse
 import liveops
 from bossmedia import validate_evidence
 import patchbook
+import vakron
 
 ROOT=Path(__file__).parent
 CONFIG=json.loads((ROOT/'site.json').read_text())
@@ -72,6 +73,8 @@ def header(sub,active):
 def footer():return f'''<footer class="footer"><div class="wrap"><div class="footer-main"><strong class="footer-brand">PLAYER’S CODEX<span> / AION 2</span></strong><nav class="footer-links" aria-label="{t('Footer','하단 메뉴')}">{link('about/',t('About','소개'))}{link('sources/',t('Sources','출처'))}{link('contact/',t('Contact','문의'))}{link('privacy/',t('Privacy','개인정보'))}{link('terms/',t('Terms','이용 안내'))}<a href="{REPO}">GitHub ↗</a></nav></div><p class="footer-bottom">© 2026 PLAYER’S CODEX · {t('Independent fan project. AION 2 artwork and trademarks © NC. Not affiliated with NC.','독립 팬 프로젝트. AION 2 아트워크·상표 © NC. NC와 제휴 관계가 없습니다.')}</p></div></footer>'''
 def write(sub,title,description,content,active='',article=False,index=True,reviewed=None):
     boss_styles = f'<link rel="stylesheet" href="{BASE}assets/boss-evidence.css?v=boss-scenes-1">' if sub.startswith('dungeons/') else ''
+    vakron_script = f'<script defer src="{BASE}assets/vakron.js?v=1"></script>' if 'data-vakron-guide' in content else ''
+    if vakron_script:boss_styles+=f'<link rel="stylesheet" href="{BASE}assets/vakron.css?v=1">'
     if 'data-skill=' in content: content += skillbook.widgets(LANG,BASE,set(re.findall(r'data-skill="([a-z0-9-]+)"',content)))
     route=path(sub)
     canonical=SITE+'/'+route
@@ -87,7 +90,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
     guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
-    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script><script defer src="{BASE}assets/battle.js?v={'boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6'}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
+    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script>{vakron_script}<script defer src="{BASE}assets/battle.js?v={'vakron-run-1' if 'data-vakron-guide' in content else ('boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6')}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
     if index:pages.append(canonical)
 def pagehead(title,desc,tag='',crumb=''):
@@ -141,8 +144,13 @@ def dungeons():
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=name+t(' — mechanic field guide',' — 기믹 공략')
         desc=pair(b['hook'])
-        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True)
-        search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Boss mechanics','보스 기믹'),'keywords':' '.join(b['name']+b['dungeon'])+' '+' '.join(' '.join(m['title']+m['cue']+m['action']) for m in b['mechanics'])})
+        supplement=vakron.render(LANG,BASE) if b['id']=='vakron' else ''
+        if supplement:
+            title=pair(b['dungeon'])+t(' — full run guide',' — 전체 진행 공략')
+            desc=t('Six stages: debuffs, first boss, glide route, Thamon, elements and final escape. Original animations with attributed Global-source notes.','여섯 구간: 디버프, 첫 보스, 활강, Thamon, 원소와 최종 탈출. 글로벌 출처를 연결한 자체 학습 애니메이션.')
+        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{supplement}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True,reviewed=vakron.REVIEW_DATE if supplement else None)
+        if supplement:page_dates[SITE+'/'+path(sub)]=vakron.REVIEW_DATE
+        search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Boss mechanics','보스 기믹'),'keywords':' '.join(b['name']+b['dungeon'])+' '+' '.join(' '.join(m['title']+m['cue']+m['action']) for m in b['mechanics'])+(' Thamon Fog Spirit Stones flower glide 안개 정령석 꽃 활강 석화' if supplement else '')})
 
 def community():
     title=t('Korean players, practical takeaways.','한국 유저의 실전 팁.')
@@ -253,6 +261,7 @@ def livepages():
 def build():
     global L,LANG
     validate_evidence()
+    vakron.validate()
     subprocess.run(['node', str(ROOT/'scripts/build_dps_rankings.js'), '--build'], cwd=ROOT, check=True)
     if OUT.exists():shutil.rmtree(OUT)
     OUT.mkdir();shutil.copytree(ROOT/'assets',OUT/'assets')
