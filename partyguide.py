@@ -5,11 +5,11 @@ from fieldnotes import BOSSES
 REVIEWED = '2026-10-14'
 GUIDES = [
     ('3b-meaning',
-     ('What does 3b mean in AION 2? Three-boss party runs', '아이온 2 3b 뜻: 보스 3마리 모두 잡는 파티'),
+     ('AION 2: What Does 3b Mean? Three-Boss Runs', '아이온 2 3b 뜻: 보스 3마리 모두 잡는 파티'),
      ('3b means clearing all three bosses in an AION 2 party run. Decode 200k+ / 3b / tp, compare run plans and open boss mechanics and reward guides.',
       '아이온 2 파티 모집의 3b는 보스 3마리를 모두 잡는다는 뜻입니다. 200k+·3b·tp 모집글 예시와 보스 공략·보상 확인 순서를 정리했습니다.')),
     ('commend-player',
-     ('AION 2: how to commend a player & check a missing popup', '아이온 2 칭찬 방법: 조건·팝업 확인'),
+     ('AION 2: How to Commend a Player', '아이온 2 칭찬 방법: 조건·팝업 확인'),
      ('Choose a player and reason in the post-boss commendation popup. Read the steps, eligibility checks and dated official KR rules; Global details may differ.',
       '마지막 보스 처치 뒤 칭찬 창에서 대상과 사유를 선택합니다. 칭찬 방법·대상 조건·팝업 누락 확인법을 공식 한국 패치 기준으로 정리했습니다. 글로벌은 다를 수 있습니다.')),
 ]

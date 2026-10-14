@@ -39,6 +39,11 @@ E=lambda s:html.escape(str(s),quote=True)
 search_index=[]
 pages=[]
 page_dates={}
+# Significant content/link updates that are separate from the underlying source review.
+# Keep these dates explicit: a routine rebuild must not make every page look newly edited.
+CONTENT_UPDATED = {sub: '2026-10-14' for sub in (
+    '', 'start/', 'guides/', 'glossary/',
+)}
 L=0
 LANG='en'
 def t(en,ko):return (en,ko)[L]
@@ -46,6 +51,10 @@ def pair(v):return v[L]
 def path(sub='',lang=None):
     lang=lang or LANG
     return ('ko/' if lang=='ko' else '')+sub
+def sitemap_lastmod(url):
+    sub=url.removeprefix(SITE+'/')
+    if sub.startswith('ko/'):sub=sub[3:]
+    return max(page_dates.get(url,REVIEWED),CONTENT_UPDATED.get(sub,REVIEWED))
 def href(sub='',lang=None):return BASE+path(sub,lang)
 def link(sub,label,css='',lang=None):return f'<a href="{href(sub,lang)}" class="{css}">{label}</a>'
 def icon(name,css='icon'):
@@ -105,13 +114,13 @@ def sourcelist(keys):
     return '<div class="sources"><strong>'+t('Sources & scope','출처와 적용 범위')+'</strong><ul>'+''.join(f'<li><a href="{E(SOURCES[k]["url"])}" rel="noopener">{E(SOURCES[k]["title"])}</a><span class="source-note">{E(SOURCES[k]["scope"])} · {E(SOURCES[k]["note"])}</span></li>' for k in keys)+'</ul><p class="small muted">'+t('Source review: October 7, 2026. Advice and practice exercises are original editorial analysis, not live gameplay measurements.','출처 검토: 2026년 10월 7일. 조언과 연습 방법은 편집상 분석이며 실제 플레이 측정 결과가 아닙니다.')+'</p></div>'
 
 def home():
-    write('',t('AION 2 guides: progression, boss mechanics & daily rewards','아이온 2 공략: 내실·성장, 보스 패턴, 일일·주간 보상'),t('Plan your next AION 2 upgrade with animated boss mechanics, post-story progression, daily and weekly rewards, class skills and interactive maps.','아이온 2 스토리 이후 성장 순서, 움직이는 보스 패턴, 일일·주간 보상, 직업별 스킬과 실제 지도를 목적별로 찾아보세요.'),guidebrowse.home(LANG,BASE),'home')
+    write('',t('AION 2 Guides: Growth, Bosses & Daily Tasks','아이온 2 공략: 내실·성장, 보스 패턴, 일일·주간 보상'),t('Plan your next AION 2 upgrade with animated boss mechanics, post-story progression, daily and weekly rewards, class skills and interactive maps.','아이온 2 스토리 이후 성장 순서, 움직이는 보스 패턴, 일일·주간 보상, 직업별 스킬과 실제 지도를 목적별로 찾아보세요.'),guidebrowse.home(LANG,BASE),'home')
 
 
 
 def learning():
     for sub,title,desc,body in [
-        ('start/',t('AION 2 beginner guide: leveling, skills & first dungeons','아이온 2 초반 공략: 육성·스킬·첫 던전'),t('Progression routes, skill investment, equipment choices and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
+        ('start/',t('AION 2 Beginner Guide: Leveling & Skills','아이온 2 초반 공략: 육성·스킬·첫 던전'),t('Plan your first AION 2 character: leveling, skill-point spending, early gear, dungeon preparation, party shorthand and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
         ('endgame/',t('AION 2 endgame progression: what to do after the story','아이온 2 스토리 이후 성장 순서: 내실·스킬 포인트·장비'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
         ('routines/',t('AION 2 daily & weekly checklist: dungeons and rewards','아이온 2 일일·주간 숙제: 던전·보상·재료 사용처'),t('Daily Dungeon choices, Duty Missions, weekly activities and how to spend stones, Arcana, pet materials and energy.','일일 던전 선택·사명·주간 콘텐츠와 강화석·아르카나·펫 재료·오드의 사용처를 정리했습니다.'),routines.guide(LANG,BASE)),
         ('gear/',t('AION 2 gear enhancement: materials, upgrades & stats','아이온 2 장비 강화: 재료 획득처·강화 순서·스탯'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
@@ -281,7 +290,7 @@ def build():
     for name in ('dps-rankings.json','dps-rankings.csv'):
         shutil.copyfile(ROOT/'data'/name,OUT/'data'/name)
     (OUT/'search-index.json').write_text(json.dumps(search_index,ensure_ascii=False,separators=(',',':')))
-    (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+page_dates.get(url,REVIEWED)+'</lastmod></url>' for url in pages)+'</urlset>')
+    (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+E(url)+'</loc><lastmod>'+sitemap_lastmod(url)+'</lastmod></url>' for url in pages)+'</urlset>')
     measurement.write_verification(CONFIG,OUT)
     (OUT/'.nojekyll').write_text('')
     (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+SITE+'/sitemap.xml\n')
