@@ -66,6 +66,9 @@ async function contained(page, label) {
         await page.goto(local + 'guides/' + slug + '/');
         await auditGuideLinks(page);
         assert.equal(await page.locator('.progress-series [aria-current="page"]').getAttribute('href'),prefix+(lang==='ko'?'ko/':'')+'guides/'+slug+'/');
+        // Expand native fallback panels before measuring their tables. Closed
+        // details have no visible cell width; this is not a layout failure.
+        if (!javascript) await page.locator('[data-reader-panel]').evaluateAll(nodes => nodes.forEach(node => {node.open = true;}));
         for (const width of [320,390,768,1440]) {
           await page.setViewportSize({width,height:844});
           await contained(page,lang+'/'+slug+'/'+width+'/'+javascript);

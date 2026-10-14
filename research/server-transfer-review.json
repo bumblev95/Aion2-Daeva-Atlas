@@ -1,0 +1,98 @@
+{
+  "reviewDate": "2026-10-13",
+  "checkedAt": "2026-10-13T23:37:07Z",
+  "scope": "Global; not KR/TW",
+  "availability": "unverified",
+  "sources": [
+    {
+      "id": "qa",
+      "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ac7e128d97eae18cc40e3b7",
+      "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ac7e128d97eae18cc40e3b7",
+      "contentSha256": "ae826afd2fbd5012a4e0df5531df75b8be995d99b3ef168d4e799696a6858c4b",
+      "metadata": {
+        "title": "[Notice] Server Transfer Q&A | Updated 10/13 (PDT)",
+        "timestamps": {
+          "postDateTime": "2026-10-09 18:30:00.001",
+          "updateDateTime": "2026-10-13 20:06:58.496",
+          "publishedDateTime": null,
+          "postedEpoch": 1791570600,
+          "updatedEpoch": 1791922018,
+          "commentedEpoch": 0,
+          "localOffsetHours": 0,
+          "version": "0.0.3",
+          "postedAt": "2026-10-09T18:30:00.001Z",
+          "updatedAt": "2026-10-13T20:06:58.496Z",
+          "publishedAt": "2026-10-09T18:30:00.001Z",
+          "commentedAt": "1970-01-01T00:00:00.001Z"
+        }
+      }
+    },
+    {
+      "id": "products",
+      "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ac932a8fa34c1011d627bc9",
+      "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ac932a8fa34c1011d627bc9",
+      "contentSha256": "25c62c6d390cd6f9489318b810fc5b11c7766f81b821686b7fe2c8a3aba63c39",
+      "metadata": {
+        "title": "[Notice] Server Transfer Products Info Oct 13 (PDT) / Oct 14 (CEST) | Updated 10/13 (PDT)",
+        "timestamps": {
+          "postDateTime": "2026-10-09 18:30:00.001",
+          "updateDateTime": "2026-10-13 20:06:22.673",
+          "publishedDateTime": null,
+          "postedEpoch": 1791570600,
+          "updatedEpoch": 1791921982,
+          "commentedEpoch": 0,
+          "localOffsetHours": 0,
+          "version": "0.0.3",
+          "postedAt": "2026-10-09T18:30:00.001Z",
+          "updatedAt": "2026-10-13T20:06:22.673Z",
+          "publishedAt": "2026-10-09T18:30:00.001Z",
+          "commentedAt": "1970-01-01T00:00:00.001Z"
+        }
+      }
+    },
+    {
+      "id": "maintenance",
+      "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ace8dc0263e537d356d10c3",
+      "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ace8dc0263e537d356d10c3",
+      "contentSha256": "c211731e9c91ebae6d2a2f80900371a7951e3f2c2978d68c5616305a29de2b48",
+      "metadata": {
+        "title": "[Notice] Maintenance | Oct. 13 (PDT) / Oct. 14 (CEST)",
+        "timestamps": {
+          "postDateTime": "2026-10-13 01:10:00.001",
+          "updateDateTime": "2026-10-13 09:15:48.865",
+          "publishedDateTime": null,
+          "postedEpoch": 1791853800,
+          "updatedEpoch": 1791882948,
+          "commentedEpoch": 0,
+          "localOffsetHours": 0,
+          "version": "0.0.3",
+          "postedAt": "2026-10-13T01:10:00.001Z",
+          "updatedAt": "2026-10-13T09:15:48.865Z",
+          "publishedAt": "2026-10-13T01:10:00.001Z",
+          "commentedAt": "1970-01-01T00:00:00.001Z"
+        }
+      }
+    }
+  ],
+  "corroboration": {
+    "qaLounge": "https://lounge.plaync.com/feed/83614?country=US&locale=en-US",
+    "steamFeed": "https://steamcommunity.com/app/3393110/announcements/",
+    "suppliedSteamArticle": "https://store.steampowered.com/news/app/3393110/view/712288859283523636",
+    "suppliedSteamBody": "not readable through web retrieval; official feed corroborates Q&A and Products"
+  },
+  "discrepancies": [
+    "Both October 13 revisions say Europe first window October 13 04:00–07:00 PDT / 13:00–16:00 CEST; this predates the published maintenance start October 13 23:30 PDT / October 14 08:30 CEST. Do not repair the date or assert the service is live.",
+    "Daily European column reuses CEST/CET times although CET and CEST have different UTC offsets. Q&A South America column says CEST; Products says CEST/CET. Show as published, anchored to PDT, not as verified CET conversion.",
+    "November reward-ticket expiry says CEST in Q&A versus CET in Products. Use Products date with discrepancy disclosed."
+  ],
+  "reviewedFacts": [
+    "Early Access: after Oct 13 PDT / Oct 14 CEST maintenance to before Oct 20 PDT / Oct 21 CEST maintenance",
+    "Launch: after Oct 20 PDT / Oct 21 CEST maintenance to before Oct 27 PDT / Oct 28 CET maintenance",
+    "0 Quna base and per-character; 1000 Quna per extra slot, once per account during entire event",
+    "same region, same faction; EA to EA; one source to one destination; level 10+; village; no Legion membership/application; no active Duty Missions; collect Market, Shop Storage and mail",
+    "Character Storage and expansions transfer; Server Storage contents including Kina stay; expanded Server Storage count uses larger server value; origin character slots stay",
+    "Quna/Mileage and Membership move; Daeva Pass progress maintained; shared pets/skins move and are removed from origin; Genus Insight choice resets origin",
+    "Dungeon reward claims and guaranteed-reward progress retained; content usage retained; destination Corridor ownership gates access; origin server-wide reward progress retained",
+    "No canceled/reversed requests; title-screen logout/login block during transfer; minimum one minute, queues and throttling possible"
+  ]
+}
