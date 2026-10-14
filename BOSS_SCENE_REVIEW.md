@@ -44,3 +44,24 @@ YouTube playback encountered a human-verification wall. No cast durations, dista
 Python regressions cover all 16 associations in both languages, original-host links, verification claims, readable steps, accessible controls, no-JavaScript content and generated pages. Node regressions exercise the shipped renderer across all lessons, repeated attacks, prison exit geometry, wall openings, playback rate, visibility and reduced motion. Existing site and analytics checks remain in CI. No network media is loaded by the tests.
 
 The responsive layout, wrapping and touch controls are retained. Browser/on-device visual QA was not completed during this review; these checks do not claim it. Future gameplay verification must identify server, difficulty and source date before upgrading the verification status.
+
+## Vakron full-run supplement — 2026-10-13
+
+The existing six bosses and 16 KR patterns, scene references and bookmark parameters remain intact. `vakron.py` adds nine bilingual lessons in six native disclosure sections on the existing Vakron permalink. `assets/vakron.js` draws original response-order SVGs through the existing player controls; it illustrates party movement and retained hazards without presenting geometry or pace as measured gameplay.
+
+Sources: [Vi.ki, updated 2026-10-12](https://aion2.vi.ki/vakron-sky-island-guide) and [NoBS Game Guides, 2026-10-04](https://www.youtube.com/watch?v=jYqmiyFEdk8). Article text and YouTube title/description were inspected. These article-reported navigation points are linked beside the relevant lesson:
+
+| Locator | Supplement |
+| --- | --- |
+| 0:05 | Debuff management |
+| 0:49 / 1:13 | First boss and party movement |
+| 1:48 | Jump/glide route |
+| 2:50 | Thamon |
+| 3:40 | Element/altar route |
+| 3:50 / 4:33 | Final boss |
+
+The YouTube player stayed at 0:05 with a black buffering screen. One reload reached a buffering advertisement; no target gameplay frames were inspected. Transcript export returned a remote file locator inaccessible to this workspace, so it was not used as reviewed evidence. No complete playback, exact scene timing, physical/magic damage tests, or current-server equivalence was verified. These limitations travel with each source link. No source video, screenshot, thumbnail or transcript is committed or rehosted. Vi.ki and our adapted notes are attributed as CC BY-SA 4.0; the original teaching drawings are independently authored.
+
+The Global-source three-jump lesson does not overwrite the KR archive’s separate binding follow-up. PC key references are labelled as such. First boss localised name, grab safe side, exact altar coordinates and Hard-mode behaviour are not invented. Stones/party rescue, first boss hands and flowers, traversal, petrify/shield, altar route and final escape are reachable through the full-run navigation and searchable in both languages.
+
+Validation: static link/anchor/language checks and all existing boss regressions; new evidence-claim gates; real mobile Chromium tests at 320, 390 and 768 CSS pixels in KO/EN. Browser tests cover touch controls (44px minimum), initial reduced motion, scrubbing, pause/replay, speed selection, source flags, retained puddles/red-rock removal, section anchors, reload/language switching, legacy mechanic bookmarks/tabs and all 16 overview references. No-JavaScript tests retain native disclosure and hide ineffective playback controls. Screenshots are emitted as CI artifacts for visual inspection. This is browser emulation, not physical-phone or live-game testing.

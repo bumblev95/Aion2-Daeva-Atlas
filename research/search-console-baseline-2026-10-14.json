@@ -1,0 +1,138 @@
+{
+  "observedOn": "2026-10-14",
+  "siteUrl": "https://bumblev95.github.io/Aion2-Daeva-Atlas/",
+  "range": {
+    "startDate": "2026-09-14",
+    "endDate": "2026-10-11",
+    "timeZone": "America/Los_Angeles",
+    "settledThrough": "2026-10-11"
+  },
+  "propertyTotals": {
+    "keys": [],
+    "clicks": 0,
+    "impressions": 476,
+    "ctr": 0,
+    "position": 7.762605042016807
+  },
+  "visibleQueries": [
+    {
+      "query": "3b aion 2",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "aion 2 3b",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "aion 2 class icons",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "aion 2 codex",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5
+    },
+    {
+      "query": "aion 2 commend player",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 8.125
+    },
+    {
+      "query": "aion 2 what does 3b mean",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 5.4
+    },
+    {
+      "query": "aion 2 what is 3b",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 7.75
+    },
+    {
+      "query": "aion codex",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "aion database",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "aion2 3b",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "query": "aion2codex",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "aion2index",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6.2
+    },
+    {
+      "query": "what does 3b mean in aion 2",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6.5
+    }
+  ],
+  "inspections": [
+    {
+      "inspectionUrl": "https://bumblev95.github.io/Aion2-Daeva-Atlas/",
+      "verdict": "PASS",
+      "coverageState": "Submitted and indexed",
+      "lastCrawlTime": "2026-10-08T04:33:29Z",
+      "robotsTxtState": "ALLOWED",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://bumblev95.github.io/Aion2-Daeva-Atlas/",
+      "userCanonical": "https://bumblev95.github.io/Aion2-Daeva-Atlas/"
+    },
+    {
+      "inspectionUrl": "https://bumblev95.github.io/Aion2-Daeva-Atlas/guides/commend-player/",
+      "verdict": "NEUTRAL",
+      "coverageState": "URL is unknown to Google",
+      "lastCrawlTime": null,
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null
+    }
+  ],
+  "notes": [
+    "Property totals include queries that are not disclosed in query rows. Do not treat the visible query sum as the property total.",
+    "The settled window ends before the October 14 search-title and party-guide changes; this is a baseline, not a measured outcome.",
+    "The Google connection's API scope is read-only. URL Inspection API reports existing Google state and does not request indexing.",
+    "A live audit found all four sampled public pages indexable with no critical/high issue. Tool heuristics such as word counts and title lengths are not Google ranking guarantees."
+  ]
+}

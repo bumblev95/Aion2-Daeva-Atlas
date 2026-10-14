@@ -39,15 +39,21 @@ def patches(feed):
     return sorted((x for s in feed['sources'] for x in s['items'] if x['kind']=='patch'),
                   key=lambda x:x.get('publishedAt') or '',reverse=True)
 def title(item,lang):return item.get('displayTitle',{}).get(lang) or item['title']
-def detail_ready(item):return item.get('reviewState')=='reviewed' and item.get('detail',{}).get('coverage')=='complete'
+def detail_ready(item):return item.get('reviewState')=='reviewed' and item.get('detail',{}).get('coverage') in ('complete','highlights')
 def region_name(item,lang):
     return ('북미 · 미국 / 캐나다' if lang=='ko' else 'NA · US / Canada') if item['region']=='NA' else ('한국' if lang=='ko' else 'Korea')
 def review_label(item,lang):
     t=lambda en,ko:ko if lang=='ko' else en
-    if detail_ready(item):return t('Full change list reviewed','전체 항목 검토 완료')
-    if item.get('reviewState')=='revised':return t('Source revised · reviewing','원문 수정 · 재검토 중')
+    if item.get('kind')=='news':return t('Official notice','공식 공지')
+    if detail_ready(item) and item['detail']['coverage']=='complete':return t('Full change list reviewed','전체 항목 검토 완료')
+    if item.get('reviewState')=='revised':return t('Source revised · summary needs updating','원문 수정 · 요약 갱신 필요')
     if item.get('reviewState')=='reviewed':return t('Summary reviewed','요약 검토 완료')
-    return t('Review pending','검토 중')
+    return t('Summary not added','요약 미등록')
+def read_label(item,lang):
+    t=lambda en,ko:ko if lang=='ko' else en
+    if detail_ready(item):
+        return t('Read full change list','전체 패치 보기') if item['detail']['coverage']=='complete' else t('Read patch summary','패치 요약 보기')
+    return t('View patch status','패치 상태 보기')
 def config():
     values={cid:{key:c[key] for key in ('id','en','ko','icon','color')} for cid,c in CLASS_INFO.items()}
     return '<script type="application/json" id="pc-patch-classes">'+json.dumps(values,ensure_ascii=False).replace('<','\\u003c')+'</script>'
@@ -61,10 +67,10 @@ def patch_card(item,lang,base):
     url=r+detail_path(item) if is_patch else item['url']
     groups=class_groups(item)
     chips=''.join(f'<a class="patch-impact-chip" href="{url}#class-{g["classId"]}">{portrait(g["classId"],base,lang,True)}<strong>{E(g["info"][lang])}</strong>{badge(g["type"],lang)}</a>' for g in groups)
-    summary=item.get('summary',{}).get(lang) or t('The new notice is awaiting an editorial review.','새 공지를 수집했습니다. 변경 내용을 검토하고 있습니다.')
+    summary=item.get('summary',{}).get(lang) or (t('Read the details in NC’s official notice.','NC 공식 공지에서 상세 내용을 확인하세요.') if not is_patch else t('Collected from NC. A change summary has not been added yet.','NC 패치를 수집했습니다. 변경 요약은 아직 등록되지 않았습니다.'))
     if is_patch:
         link=f'<a class="patch-title-link" href="{url}">{E(title(item,lang))}</a>'
-        action=f'<a class="text-link patch-read-link" href="{url}">{t("Read full change list","전체 패치 보기")} <span aria-hidden="true">→</span></a>'
+        action=f'<a class="text-link patch-read-link" href="{url}">{read_label(item,lang)} <span aria-hidden="true">→</span></a>'
     else:
         link=f'<a href="{E(url)}" target="_blank" rel="noopener">{E(item["title"])}</a>'
         action=f'<a class="text-link" href="{E(url)}" target="_blank" rel="noopener">{t("Read official notice","공식 공지 보기")} ↗</a>'
@@ -79,10 +85,11 @@ def table_html(table,lang,index):
 def render_detail(item,lang,base):
     k=lang=='ko';t=lambda en,ko:ko if k else en;r=base+('ko/' if k else '')
     detail=item.get('detail',{}) if detail_ready(item) else {}
+    complete=detail.get('coverage')=='complete'
     groups=class_groups(item);section_rows=detail.get('sections',[])
     intro=f'''<nav class="patch-breadcrumb" aria-label="{t('Breadcrumb','경로')}"><a href="{r}updates/?region={item['region']}&amp;kind=patch">← {t('All patches','패치 목록')}</a><span>{region_name(item,lang)}</span></nav><header class="patch-detail-head"><span class="section-kicker">PATCH NOTES / {item['region']}</span><h1>{E(title(item,lang))}</h1><p>{E(item.get('summary',{}).get(lang) or t('The source notice is available below.','공식 공지에서 변경사항을 확인할 수 있습니다.'))}</p><div class="patch-detail-meta"><time datetime="{E(item.get('publishedAt') or '')}">{E((item.get('publishedAt') or '')[:10])} UTC</time><span class="review-badge">{review_label(item,lang)}</span><span>{t('Source updated','원문 수정')}: {E((item.get('sourceUpdatedAt') or '')[:16].replace('T',' '))} UTC</span></div><a class="text-link" href="{E(item['url'])}" target="_blank" rel="noopener">NC · {t('Official source','공식 원문')} ↗</a></header>'''
     if not detail:
-        state=t('The source has changed or its full list is still under review. Use the official notice for the complete current patch.','원문이 바뀌었거나 전체 항목을 검토하고 있습니다. 현재 전체 내용은 위 공식 원문에서 확인할 수 있습니다.')
+        state=t('A current source-bound summary is not available. Read the official notice above for the latest changes.','원문 변경으로 재검토가 필요하거나 요약이 아직 등록되지 않았습니다. 최신 변경사항은 위 공식 원문에서 확인하세요.')
         return f'<section class="patch-detail">{intro}<p class="patch-review-notice">{state}</p></section>'
     toc=f'<a href="#class-changes">{t("Class changes","직업 변경")}</a>'+''.join(f'<a href="#patch-section-{i}">{E(s["title"][lang])}</a>' for i,s in enumerate(section_rows))
     jumps=''.join(f'<a class="patch-class-jump" href="#class-{g["classId"]}">{portrait(g["classId"],base,lang,True)}<span>{E(g["info"][lang])}</span>{badge(g["type"],lang)}</a>' for g in groups)
@@ -101,7 +108,8 @@ def render_detail(item,lang,base):
             difference=''
             if row.get('before') and row.get('after'):
                 difference=f'<div class="patch-before-after"><span><small>{t("Before","변경 전")}</small>{E(row["before"][lang])}</span><b aria-hidden="true">→</b><span><small>{t("After","변경 후")}</small>{E(row["after"][lang])}</span></div>'
-            content+=f'<li class="patch-skill-change">{badge(row["type"],lang)}<div><h3>{name}</h3><p>{E(row["description"][lang])}</p>{difference}</div></li>'
+            impact=f'<p class="patch-impact-note"><strong>{t("Combat impact","실전 영향")}</strong> {E(row["impact"][lang])}</p>' if row.get('impact') else ''
+            content+=f'<li class="patch-skill-change">{badge(row["type"],lang)}<div><h3>{name}</h3><p>{E(row["description"][lang])}</p>{difference}{impact}</div></li>'
         extra_tables=''.join(table_html(table,lang,i+1) for i,table in enumerate(detail.get('classTables',[]))) if cid=='ranger' else ''
         guide=f'<a class="text-link" href="{r}classes/{cid}/">{t("Class guide","직업 공략")} →</a>' if cid in {c['id'] for c in CLASSES} else ''
         cards+=f'<article class="patch-class-card" id="class-{cid}" style="--class-color:{g["info"]["color"]}"><header>{portrait(cid,base,lang)}<div><span class="section-kicker">{t("CLASS CHANGES","직업 변경")}</span><h2>{E(g["info"][lang])} {badge(g["type"],lang)}</h2><p>{count_text}</p>{guide}</div></header><ul class="patch-skill-list">{content}</ul>{extra_tables}</article>'
@@ -112,6 +120,8 @@ def render_detail(item,lang,base):
         notes=''.join(f'<li>{E(n[lang])}</li>' for n in s['notes'])
         tables=''.join(table_html(tab,lang,j+1) for j,tab in enumerate(s['tables']))
         sections+=f'<section class="patch-full-section" id="patch-section-{i}"><h2><span class="patch-section-number" aria-hidden="true">{i+1:02}</span>{E(s["title"][lang])}</h2><ul class="patch-fact-list">{notes}</ul>{tables}</section>'
-    scope=t('This page reorganizes all reviewed change topics and numeric tables in our own words. Class labels describe the announced changes, not a measured total DPS result. ↑ buff + ↓ nerf within one class = ↔ adjustment.','공식 공지의 전체 변경 주제와 수치 표를 읽기 쉽게 다시 정리했습니다. 직업 표시는 공지된 변경의 분류이며 전체 DPS 실측 결과를 뜻하지 않습니다. 한 직업이 버프와 너프를 함께 받으면 ‘조정’으로 표시합니다.')
+    coverage=t('This page reorganizes all reviewed change topics and numeric tables in our own words.','공식 공지의 전체 변경 주제와 수치 표를 읽기 쉽게 다시 정리했습니다.') if complete else t('Reviewed class changes and selected system highlights. Read the official notice for the full event rewards and product tables.','직업 변경과 주요 시스템 내용을 검토해 요약했습니다. 이벤트 보상·상품 전체 표는 공식 공지에서 확인하세요.')
+    scope=coverage+' '+t('Class labels describe announced changes. Combat-impact notes explain likely effects; they are not measured total DPS percentages. ↑ buff + ↓ nerf within one class = ↔ adjustment.','직업 표시는 공지된 변경을 분류합니다. 실전 영향은 효과를 설명한 분석이며 전체 DPS 실측 상승률이 아닙니다. 한 직업이 버프와 너프를 함께 받으면 ‘조정’으로 표시합니다.')
+    other=t('Everything else in this patch','콘텐츠부터 오류 수정까지') if complete else t('Other patch highlights','주요 시스템·이벤트 변경')
     media=t('Class artwork © NC · official AION 2 teaser. Korea-only class terms and tables are not applied to North America.','직업 이미지 © NC · 공식 AION 2 소개 자료. 한국판 전용 직업·수치·일정은 북미판에 적용하지 않습니다.')
-    return f'''<section class="patch-detail" data-news-detail data-lang="{lang}" data-item-id="{E(item['id'])}" data-content-hash="{E(item['contentHash'])}" data-feed="{base}data/news.json">{intro}<p class="patch-review-notice" data-detail-revision role="status" hidden></p><div data-detail-content><p class="patch-reading-note">{scope}</p><details class="patch-toc"><summary>{t('Jump to a topic','항목 바로가기')} · {len(section_rows)+1}</summary><nav aria-label="{t('Patch contents','패치 목차')}">{toc}</nav></details>{classes}<section id="full-changes" class="patch-full-changes"><div class="patch-full-heading"><span class="section-kicker">FULL CHANGE LIST</span><h2>{t('Everything else in this patch','콘텐츠부터 오류 수정까지')}</h2></div>{sections}</section><p class="patch-media-credit">{media} <a href="https://aion2.ncsoft.jp/en/teaser" target="_blank" rel="noopener">NC ↗</a></p></div><div class="patch-bottom-nav"><a class="btn" href="{r}updates/?region={item['region']}&amp;kind=patch">← {t('Back to patch list','패치 목록으로')}</a><a class="text-link" href="{r}tools/dps/">{t('Compare the damage impact','DPS 변화 비교하기')} →</a></div></section>'''
+    return f'''<section class="patch-detail" data-news-detail data-lang="{lang}" data-item-id="{E(item['id'])}" data-content-hash="{E(item['contentHash'])}" data-feed="{base}data/news.json">{intro}<p class="patch-review-notice" data-detail-revision role="status" hidden></p><div data-detail-content><p class="patch-reading-note">{scope}</p><details class="patch-toc"><summary>{t('Jump to a topic','항목 바로가기')} · {len(section_rows)+1}</summary><nav aria-label="{t('Patch contents','패치 목차')}">{toc}</nav></details>{classes}<section id="full-changes" class="patch-full-changes"><div class="patch-full-heading"><span class="section-kicker">{('FULL CHANGE LIST' if complete else 'PATCH HIGHLIGHTS')}</span><h2>{other}</h2></div>{sections}</section><p class="patch-media-credit">{media} <a href="https://aion2.ncsoft.jp/en/teaser" target="_blank" rel="noopener">NC ↗</a></p></div><div class="patch-bottom-nav"><a class="btn" href="{r}updates/?region={item['region']}&amp;kind=patch">← {t('Back to patch list','패치 목록으로')}</a><a class="text-link" href="{r}tools/dps/">{t('Compare DPS records','실전 DPS 비교 보기')} →</a></div></section>'''

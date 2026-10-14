@@ -1,5 +1,6 @@
 """Source-linked settings reference. Screenshots are previewed from and linked to their original source."""
 from html import escape
+from partyguide import gateway
 
 SOURCE = 'https://m.inven.co.kr/board/aion2/6444/2116'
 AUTHOR = '구원의노래'
@@ -37,7 +38,7 @@ def source_note(lang):
 <p class="small muted">KR · {SOURCE_DATE} · {'검토' if ko else 'Reviewed'} {REVIEW_DATE}</p></details>'''
 
 
-def panel(lang):
+def panel(lang, base="/Aion2-Daeva-Atlas/"):
     ko=lang=='ko';t=lambda en,kr:kr if ko else en
     advice={
       'rear':('The BACK marker makes the rear direction easier to read. It is a position reference, not a guarantee that the area is safe.', 'BACK 표시는 보스의 뒤쪽 방향을 구분하는 기준입니다. 후방에 있다는 것과 해당 공격의 안전지대에 있다는 것은 별개입니다.'),
@@ -49,6 +50,6 @@ def panel(lang):
     for i,tip in enumerate(TIPS):
         key=tip['id']
         cards.append(f'''<article class="setting-reference" id="tip-{key}" data-field-tip="{key}"><header><span>{i+1:02}</span><h3>{escape(tip['title'][ko])}</h3></header><p class="setting-path"><span>{t('MENU','설정 위치')}</span>{escape(tip['path'][ko])}</p><p>{escape(advice[key][ko])}</p><figure class="setting-capture"><a href="{IMAGE_ROOT}{tip['image']}?MW=800" target="_blank" rel="noopener noreferrer"><img src="{IMAGE_ROOT}{tip['image']}?MW=800" alt="{escape(tip['title'][ko])} · {t('Korean game settings screenshot','한국 서버 실제 설정 화면')}" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a><figcaption>{t('KR capture','한국 서버 캡처')} · {AUTHOR} / Inven · {SOURCE_DATE}</figcaption></figure><div class="setting-source"><a href="{IMAGE_ROOT}{tip['image']}?MW=800" target="_blank" rel="noopener noreferrer">{t('Open full screenshot','스크린샷 원본 크게 보기')} ↗</a><a href="{SOURCE}" target="_blank" rel="noopener noreferrer">{AUTHOR} · Inven ↗</a></div></article>''')
-    terms=[('200k',('200,000 combat power. A sample recruitment condition, not a universal recommended threshold.','전투력 200,000. 모집 조건의 해독 예시이며 공통 권장 컷이 아닙니다.')),('3b',('Three bosses. Confirm which route the party intends to run.','보스 세 마리를 의미하는 약어입니다. 구체적인 진행 경로는 파티마다 확인이 필요합니다.')),('tp',('Teleport shorthand. Confirm whether the required travel point is ready.','텔레포트 약어입니다. 필요한 이동 거점의 준비 여부를 확인하는 맥락으로 읽습니다.'))]
+    terms=[('200k',('200,000 combat power. A sample recruitment condition, not a universal recommended threshold.','전투력 200,000. 모집 조건의 해독 예시이며 공통 권장 컷이 아닙니다.')),('3b',('Clear all three bosses in the party run. Confirm the dungeon and route before joining.','보스 세 마리를 모두 잡는 파티라는 뜻입니다. 참가 전에 던전과 진행 경로를 확인하세요.')),('tp',('Teleport shorthand. Confirm whether the required travel point is ready.','텔레포트 약어입니다. 필요한 이동 거점의 준비 여부를 확인하는 맥락으로 읽습니다.'))]
     decoder=''.join(f'<div><dt>{term}</dt><dd>{escape(copy[ko])}</dd></div>' for term,copy in terms)
-    return f'''<section class="field-tips" id="field-tips" data-field-tips><header class="start-reference-heading"><h2>{t('Useful settings and where to find them','편의 설정과 메뉴 위치')}</h2><p>{t('The setting, its purpose and the original screenshot are shown together. Menu paths follow the linked KR captures.','설정 위치·용도·실제 캡처를 함께 정리했습니다. 메뉴 경로는 연결된 한국 서버 원문 캡처 기준입니다.')}</p></header><div class="settings-reference-grid">{''.join(cards)}</div><section class="start-distinctions"><h2>{t('Reading party shorthand','파티 모집글 약어')}</h2><dl class="party-reference">{decoder}</dl></section><p class="reference-scope">{t('Prices, fees, reset schedules and entry requirements vary by region and patch. Check the current game screen for your server.','거래소 가격·수수료, 초기화 일정, 입장 조건은 서버와 패치에 따라 달라집니다. 현재 게임 화면의 조건을 기준으로 판단합니다.')}</p>{source_note(lang)}</section>'''
+    return f'''<section class="field-tips" id="field-tips" data-field-tips><header class="start-reference-heading"><h2>{t('Useful settings and where to find them','편의 설정과 메뉴 위치')}</h2><p>{t('The setting, its purpose and the original screenshot are shown together. Menu paths follow the linked KR captures.','설정 위치·용도·실제 캡처를 함께 정리했습니다. 메뉴 경로는 연결된 한국 서버 원문 캡처 기준입니다.')}</p></header><div class="settings-reference-grid">{''.join(cards)}</div><section class="start-distinctions"><h2>{t('Reading party shorthand','파티 모집글 약어')}</h2><dl class="party-reference">{decoder}</dl>{gateway(lang,base)}</section><p class="reference-scope">{t('Prices, fees, reset schedules and entry requirements vary by region and patch. Check the current game screen for your server.','거래소 가격·수수료, 초기화 일정, 입장 조건은 서버와 패치에 따라 달라집니다. 현재 게임 화면의 조건을 기준으로 판단합니다.')}</p>{source_note(lang)}</section>'''

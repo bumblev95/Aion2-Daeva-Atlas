@@ -46,6 +46,11 @@ def fingerprint(title, body):
     return hashlib.sha256((title+'\n'+text(body)).encode()).hexdigest()
 
 def reviewed(item, reviews):
+    if item.get('kind') == 'news':
+        # Headline-only notices link to NC; they are not queued patch reviews.
+        item.update(reviewState='official', summary={}, changes=[],
+                    classScopeReviewed=False, reviewedAt=None, displayTitle={}, detail={})
+        return item
     review = reviews.get(item['id'], {})
     valid = bool(review and item.get('contentHash') and review.get('contentHash') == item['contentHash'])
     item['reviewState'] = 'reviewed' if valid else 'revised' if review else 'pending'

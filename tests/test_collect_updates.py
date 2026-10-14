@@ -51,4 +51,15 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(text('<script>unsafe()</script><p>A &amp; B</p>'),'A & B')
         self.assertEqual(fingerprint('T','<p>A</p>'),fingerprint('T','A'))
 
+    def test_headline_only_notice_does_not_enter_patch_review_queue(self):
+        source=SOURCES[1]
+        def fetcher(url):
+            self.assertNotIn('/abc',url)
+            return {'contentList':[self.meta]}
+        item=collect_source(source,{},self.reviews,self.now,fetcher)['items'][0]
+        self.assertEqual(item['reviewState'],'official')
+        self.assertEqual(item['summary'],{})
+        self.assertEqual(item['changes'],[])
+        self.assertIsNone(item['reviewedAt'])
+
 if __name__=='__main__':unittest.main()

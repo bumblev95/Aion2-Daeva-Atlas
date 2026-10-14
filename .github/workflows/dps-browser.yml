@@ -20,6 +20,10 @@ on:
       - 'advancedguides.py'
       - 'assets/advanced-guides.*'
       - 'tests/advanced-guides-ui.test.js'
+      - 'servertransfer.py'
+      - 'assets/server-transfer.css'
+      - 'research/server-transfer-review.json'
+      - 'tests/server-transfer-ui.test.js'
       - 'assets/find-guide.*'
       - 'assets/app.js'
       - 'tests/find-guide-ui.test.js'
@@ -38,6 +42,13 @@ on:
       - 'worldmap.py'
       - 'visuals.py'
       - 'build.py'
+      - 'vakron.py'
+      - 'bossmedia.py'
+      - 'battlelab.py'
+      - 'encounters.py'
+      - 'assets/battle.js'
+      - 'assets/vakron.*'
+      - 'tests/vakron-ui.test.js'
       - 'dpsmath.py'
       - 'dpslevels.py'
       - 'dpsranking.py'
@@ -63,6 +74,10 @@ on:
       - 'advancedguides.py'
       - 'assets/advanced-guides.*'
       - 'tests/advanced-guides-ui.test.js'
+      - 'servertransfer.py'
+      - 'assets/server-transfer.css'
+      - 'research/server-transfer-review.json'
+      - 'tests/server-transfer-ui.test.js'
       - 'assets/find-guide.*'
       - 'assets/app.js'
       - 'tests/find-guide-ui.test.js'
@@ -81,6 +96,13 @@ on:
       - 'worldmap.py'
       - 'visuals.py'
       - 'build.py'
+      - 'vakron.py'
+      - 'bossmedia.py'
+      - 'battlelab.py'
+      - 'encounters.py'
+      - 'assets/battle.js'
+      - 'assets/vakron.*'
+      - 'tests/vakron-ui.test.js'
       - 'dpsmath.py'
       - 'dpslevels.py'
       - 'dpsranking.py'
@@ -147,6 +169,17 @@ jobs:
         env:
           GROWTH_VISUAL_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/growth-visuals-ui.test.js
+      - if: ${{ !cancelled() }}
+        name: Verify bilingual Vakron full run on mobile and preserve legacy patterns
+        env:
+          VAKRON_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/vakron-ui.test.js
+      - if: ${{ !cancelled() }}
+        name: Verify Global transfer preparation, deep links and mobile layout
+        env:
+          TRANSFER_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/server-transfer-ui.test.js
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

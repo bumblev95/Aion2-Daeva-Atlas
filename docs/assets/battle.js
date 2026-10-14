@@ -102,6 +102,7 @@
    // One example shot after alignment, not an invented four-shot timeline.
    if(p>.65&&p<.9){const shot=(p-.65)/.25;draw+=circle(lerp(132,317,shot),182,8,'#ffc29f');}
   }
+  if(k.startsWith('vk-') && window.vakronFrame)draw=window.vakronFrame(k,p,ko).replaceAll('vk-arrow',s.box.dataset.encounter+'-arrow');
   s.box.querySelector('[data-battle-scene]').innerHTML=arena+draw;
   s.box.querySelector('[data-animation-caption]').textContent=s.captions[phase];s.box.querySelector('[data-animation-phase]').textContent=`0${phase+1} / 03`;
   const seek=s.box.querySelector('[data-animation-seek]');seek.value=Math.floor(p*1000);seek.setAttribute('aria-valuetext',`${phase+1} / 3: ${s.captions[phase]}`);s.box.dataset.stage=String(phase);

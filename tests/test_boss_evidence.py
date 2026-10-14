@@ -168,7 +168,7 @@ class BossEvidenceTests(unittest.TestCase):
                 self.assertEqual({a['data-scene-reference'] for tag,a in refs},{b['id']+'-'+m['id'] for m in b['mechanics']})
                 asset_urls = [a.get('src',a.get('href','')) for tag,a in page.tags]
                 self.assertIn(BASE+'assets/boss-evidence.css?v=boss-scenes-1',asset_urls)
-                self.assertIn(BASE+'assets/battle.js?v=boss-scenes-1',asset_urls)
+                self.assertIn(BASE+'assets/battle.js?v='+('vakron-run-1' if b['id']=='vakron' else 'boss-scenes-1'),asset_urls)
         self.assertEqual((ROOT/'assets/battle.js').read_bytes(),(ROOT/'docs/assets/battle.js').read_bytes())
         self.assertEqual((ROOT/'assets/boss-evidence.css').read_bytes(),(ROOT/'docs/assets/boss-evidence.css').read_bytes())
 

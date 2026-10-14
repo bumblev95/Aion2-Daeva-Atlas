@@ -90,6 +90,12 @@ def media(boss, m, lang):
         chapter_note += ' '+t('This covers the broader dive phase, not a verified heading demonstration.', '잠수 단계 전체의 링크로, 머리 방향 관찰 장면을 확인한 링크는 아닙니다.')
     if uid == 'kromede-bow':
         chapter_note += ' '+t('This covers the broader bow phase, not a verified example of the KR low-HP repeat.', '활 패턴 전체의 링크로, 한국판 저체력 반복 공격을 확인한 링크는 아닙니다.')
+    global_reference = ''
+    if boss['id'] == 'vakron':
+        from vakron import reference, LESSONS
+        lesson_id = 'rock' if m['id'] == 'prison' else 'jumps'
+        global_reference = '<h4>'+t('Global-source supplement','글로벌 출처 보강')+'</h4>'+reference(next(x for x in LESSONS if x['id']==lesson_id),lang)
+        global_reference += '<p class="tiny muted">'+t('Separate source: not proof that the KR sequence is identical. Read the full run above.','별도 출처이며 한국판과 같은 순서라는 검증은 아닙니다. 위의 전체 진행을 확인하세요.')+'</p>'
     return f'''<section class="source-footage" data-scene-reference="{uid}" data-evidence-status="{ref['status']}" aria-labelledby="scene-{uid}">
       <h4 id="scene-{uid}">{t('Compare with the real scene','실제 장면과 비교')}</h4>
       <p class="scene-status">{t('Article reviewed','원문 대조')} {ref['reviewed']} · {t('Global unverified','글로벌 미확인')}</p>
@@ -102,4 +108,4 @@ def media(boss, m, lang):
         <p class="tiny muted">{chapter_note}</p>
         <a href="{CHAPTER_INDEX}" target="_blank" rel="noopener noreferrer">{t('Chapter index & attribution','챕터 안내·출처')} · Couga54 ↗</a>{archived}
         <p class="tiny muted">{t('YouTube playback could not be checked during this review. No measured distances, speeds, cast durations or current Global equivalence are asserted. Media remain with their creators; these are links, with our own bilingual explanations.','검토 중 YouTube 재생 확인이 제한되었습니다. 거리·속도·시전 시간이나 현재 글로벌판 일치를 보증하지 않습니다. 영상·이미지는 원 작성자의 사이트에 두고 자체 한영 설명과 링크만 제공합니다.')}</p>
-      </details></section>'''
+      </details>{global_reference}</section>'''
