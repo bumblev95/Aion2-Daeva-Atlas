@@ -17,6 +17,9 @@ on:
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
       - 'guidebrowse.py'
+      - 'advancedguides.py'
+      - 'assets/advanced-guides.*'
+      - 'tests/advanced-guides-ui.test.js'
       - 'servertransfer.py'
       - 'assets/server-transfer.css'
       - 'research/server-transfer-review.json'
@@ -68,6 +71,9 @@ on:
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
       - 'guidebrowse.py'
+      - 'advancedguides.py'
+      - 'assets/advanced-guides.*'
+      - 'tests/advanced-guides-ui.test.js'
       - 'servertransfer.py'
       - 'assets/server-transfer.css'
       - 'research/server-transfer-review.json'
@@ -128,6 +134,11 @@ jobs:
         env:
           FIND_GUIDE_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/find-guide-ui.test.js
+      - if: ${{ !cancelled() }}
+        name: Verify practical guides, reward decisions and raid playback
+        env:
+          ADVANCED_GUIDE_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/advanced-guides-ui.test.js
       - if: ${{ !cancelled() }}
         name: Verify backend-generated rankings, downloads and no-JavaScript display
         env:

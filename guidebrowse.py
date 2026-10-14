@@ -2,6 +2,7 @@
 from html import escape as e
 from html.parser import HTMLParser
 from content import CLASSES, GUIDES
+import advancedguides
 import partyguide
 
 GOALS = [
@@ -41,6 +42,8 @@ def directory(lang, base):
         ('routines',('Daily & weekly','일일·주간'), [('routines/',('Daily and weekly rewards','일일·주간 숙제와 보상'),('Counters, Daily Dungeons and reward uses','횟수·일일 던전·보상 사용처')),('tools/planner/',('My checklist','나의 체크리스트'),('Keep your own goals','나의 할 일 기록'))]),
         ('start',('Getting started','초반·기초'), [('guides/3b-meaning/',('3b & party shorthand','3b·파티 약어'),('All three bosses, 200k and tp explained','보스 세 마리·200k·tp 뜻')),('guides/commend-player/',('Commend a player','플레이어 칭찬'),('Steps and missing-popup checks · KR reference','칭찬 방법·창 누락 확인 · 한국 기준')),('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치')),('guides/server-transfer/',('Global server transfer','글로벌 서버 이전'),('Dates, regional hours, costs and storage checklist','이전 기간·지역별 시간·비용·보관함 체크리스트'))]),
     ]
+    for key,title,entries in groups:
+        entries.extend(('guides/'+g['slug']+'/',g['title'],(g['region']+' · '+g['description'][0],g['region']+' · '+g['description'][1])) for g in advancedguides.GUIDES if g['group']==key)
     filters=''.join(f'<button type="button" data-directory-filter="{key}" aria-pressed="false">{title[k]}</button>' for key,title,_ in groups)
     cards=''
     for key,title,entries in groups:

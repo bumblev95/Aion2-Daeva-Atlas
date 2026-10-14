@@ -124,6 +124,17 @@ Review the source dates, units, region, methods and samples before committing a 
 
 `tests/dps-ui.test.js` checks exact HTML/JSON/CSV agreement, published units and precision, missing-sample rank suppression, ignored visitor/query inputs, native details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The browser workflow retains screenshots and CSV evidence.
 
+## Practical growth guides (October 13, 2026)
+
+Six additional bilingual topic readers cover gear options/transfers, Shugo
+Festival games/keys, Stigma purchases, crafting goals, KR pendant compensation
+and KR Snowfield of Grief raid movement. They are linked from the existing
+goal directory and related guides. See
+[the source review](research/practical-guides-2026-10-13.md), including
+disputed pendant material costs and separate KR/Global patch scope.
+The advanced-guides UI test exercises navigation, numerical boundaries,
+animation controls and no-script/mobile views.
+
 ## Daily and weekly reward guide
 
 `/guides/server-transfer/` and `/ko/guides/server-transfer/` provide a Global-only, bilingual preparation guide reviewed October 13, 2026. Home, the directory, growth/gear, dungeon rewards, routines and updates link to it. Seven native checklist items and collapsible topics work without scripts and introduce no saved account or planner state. The guide distinguishes announced periods from unverified live eligibility, records the Europe first-window/date and CEST/CET inconsistencies, and cites current NC Q&A, Products, maintenance and the official Steam feed. `research/server-transfer-review.json` records source timestamps and normalized body hashes; it contains no republished publisher HTML. Recheck these sources before changing dates or claiming availability. `tests/server-transfer-ui.test.js` covers bilingual search, cross-page/language deep links, native disclosure and 320–1440px layout.
