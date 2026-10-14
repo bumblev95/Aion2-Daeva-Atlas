@@ -20,6 +20,7 @@ import liveops
 from bossmedia import validate_evidence
 import patchbook
 import vakron
+import partyguide
 
 ROOT=Path(__file__).parent
 CONFIG=json.loads((ROOT/'site.json').read_text())
@@ -88,6 +89,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
+    if 'party-guide' in content or 'party-shortcuts' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/party-guide.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
     guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
     output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v=codex-6"><script defer src="{BASE}assets/deep-guide.js?v=codex-8"></script>{vakron_script}<script defer src="{BASE}assets/battle.js?v={'vakron-run-1' if 'data-vakron-guide' in content else ('boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6')}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
@@ -103,18 +105,18 @@ def sourcelist(keys):
     return '<div class="sources"><strong>'+t('Sources & scope','출처와 적용 범위')+'</strong><ul>'+''.join(f'<li><a href="{E(SOURCES[k]["url"])}" rel="noopener">{E(SOURCES[k]["title"])}</a><span class="source-note">{E(SOURCES[k]["scope"])} · {E(SOURCES[k]["note"])}</span></li>' for k in keys)+'</ul><p class="small muted">'+t('Source review: October 7, 2026. Advice and practice exercises are original editorial analysis, not live gameplay measurements.','출처 검토: 2026년 10월 7일. 조언과 연습 방법은 편집상 분석이며 실제 플레이 측정 결과가 아닙니다.')+'</p></div>'
 
 def home():
-    write('',t('AION 2 classes, guides & tools','아이온 2 직업·공략·플레이 도구'),t('Explore AION 2 classes, visual combat basics, guides, comparisons and a personal checklist on PLAYER’S CODEX.','PLAYER’S CODEX에서 아이온 2 직업, 전투 위치, 공략, 직업 비교와 개인 체크리스트를 확인하세요.'),guidebrowse.home(LANG,BASE),'home')
+    write('',t('AION 2 guides: progression, boss mechanics & daily rewards','아이온 2 공략: 내실·성장, 보스 패턴, 일일·주간 보상'),t('Plan your next AION 2 upgrade with animated boss mechanics, post-story progression, daily and weekly rewards, class skills and interactive maps.','아이온 2 스토리 이후 성장 순서, 움직이는 보스 패턴, 일일·주간 보상, 직업별 스킬과 실제 지도를 목적별로 찾아보세요.'),guidebrowse.home(LANG,BASE),'home')
 
 
 
 def learning():
     for sub,title,desc,body in [
-        ('start/',t('AION 2 early-game guide','아이온 2 초반 공략'),t('Progression routes, skill investment, equipment choices and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
-        ('endgame/',t('Character growth','내실·성장'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
-        ('routines/',t('Daily & weekly','일일·주간 숙제'),t('Daily Dungeon choices, Duty Missions, weekly activities and how to spend stones, Arcana, pet materials and energy.','일일 던전 선택·사명·주간 콘텐츠와 강화석·아르카나·펫 재료·오드의 사용처를 정리했습니다.'),routines.guide(LANG,BASE)),
-        ('gear/',t('Gear & enhancement','장비·강화'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
-        ('maps/',t('Find your next destination.','다음 목적지를 찾아보세요.'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
-        ('skills/',t('Know the skill behind the name.','스킬 이름 너머의 효과까지.'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
+        ('start/',t('AION 2 beginner guide: leveling, skills & first dungeons','아이온 2 초반 공략: 육성·스킬·첫 던전'),t('Progression routes, skill investment, equipment choices and useful settings.','육성 동선·스킬 투자·장비 선택·편의 설정을 정리한 초반 공략.'),onboarding.beginner(LANG,BASE)),
+        ('endgame/',t('AION 2 endgame progression: what to do after the story','아이온 2 스토리 이후 성장 순서: 내실·스킬 포인트·장비'),t('After the story: Sealed Dungeons, feathers, Monolith rewards, skill points, Daevanion and equipment farming.','스토리 이후 봉인 던전·깃털·모노리스 보상을 스킬 포인트·데바니온·장비 성장으로 연결하는 순서.'),endgame.guide(LANG,BASE)),
+        ('routines/',t('AION 2 daily & weekly checklist: dungeons and rewards','아이온 2 일일·주간 숙제: 던전·보상·재료 사용처'),t('Daily Dungeon choices, Duty Missions, weekly activities and how to spend stones, Arcana, pet materials and energy.','일일 던전 선택·사명·주간 콘텐츠와 강화석·아르카나·펫 재료·오드의 사용처를 정리했습니다.'),routines.guide(LANG,BASE)),
+        ('gear/',t('AION 2 gear enhancement: materials, upgrades & stats','아이온 2 장비 강화: 재료 획득처·강화 순서·스탯'),t('Enhancement materials, where to get them, the enhancement steps, equipment options and base stats.','강화 재료·획득처·실제 강화 순서부터 장비 옵션·기본 능력치까지.'),onboarding.gear(LANG,BASE)),
+        ('maps/',t('AION 2 interactive maps: Sealed Dungeons & travel points','아이온 2 지도: 봉인 던전·이동 거점 위치'),t('Elyos and Asmodian starting maps, with zoom, markers and route priorities.','천족·마족 시작 지역의 실제 지도와 이동 우선순위.'),onboarding.maps(LANG,BASE)),
+        ('skills/',t('AION 2 skills & builds: effects and class priorities','아이온 2 스킬·빌드: 효과·직업별 투자 순서'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
         body=guidebrowse.organize(sub,body,LANG,BASE)
         if sub in ('start/','endgame/','routines/','gear/'):
             body=servertransfer.gateway(LANG,BASE,'rewards' if sub=='routines/' else 'checklist')+body
@@ -137,33 +139,39 @@ def learning():
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Skill dictionary','스킬 문서'),'keywords':' '.join([sk['en'],sk['ko'],*sk['aliases']])})
 
 def dungeons():
-    title=t('See the cue. Practise the move.','움직임으로 배우는 보스 패턴.')
+    title=t('AION 2 dungeon boss guides: animated mechanics','아이온 2 던전 보스 공략: 움직이는 패턴·안전 위치')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
     write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{servertransfer.gateway(LANG,BASE,"rewards")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
-        title=name+t(' — mechanic field guide',' — 기믹 공략')
+        title=t('AION 2 ','아이온 2 ')+pair(b['dungeon'])+t(' boss guide: ',' 보스 공략: ')+name
         desc=pair(b['hook'])
         supplement=vakron.render(LANG,BASE) if b['id']=='vakron' else ''
         if supplement:
-            title=pair(b['dungeon'])+t(' — full run guide',' — 전체 진행 공략')
+            title=t('AION 2 ','아이온 2 ')+pair(b['dungeon'])+t(' — full run guide',' — 전체 진행 공략')
             desc=t('Six stages: debuffs, first boss, glide route, Thamon, elements and final escape. Original animations with attributed Global-source notes.','여섯 구간: 디버프, 첫 보스, 활강, Thamon, 원소와 최종 탈출. 글로벌 출처를 연결한 자체 학습 애니메이션.')
         write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{supplement}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True,reviewed=vakron.REVIEW_DATE if supplement else None)
         if supplement:page_dates[SITE+'/'+path(sub)]=vakron.REVIEW_DATE
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Boss mechanics','보스 기믹'),'keywords':' '.join(b['name']+b['dungeon'])+' '+' '.join(' '.join(m['title']+m['cue']+m['action']) for m in b['mechanics'])+(' Thamon Fog Spirit Stones flower glide 안개 정령석 꽃 활강 석화' if supplement else '')})
 
 def community():
-    title=t('Korean players, practical takeaways.','한국 유저의 실전 팁.')
+    title=t('AION 2 community tips: Korean guides explained','아이온 2 커뮤니티 공략·실전 팁')
     desc=t('Filter short, attributed notes by class, activity and topic.','직업·콘텐츠·주제별로 골라 보는 짧은 공략 요약.')
     write('insights/',title,desc,f'<div class="wrap">{pagehead(title,desc)}{insights(LANG,BASE)}</div>','insights')
     for n in NOTES:
         search_index.append({'lang':LANG,'path':path('insights/'),'anchor':'note-'+n['id'],'title':pair(n['title']),'description':pair(n['body']),'category':t('KR insight','한국 유저 팁'),'keywords':' '.join(n['classes'])+' '+n['mode']+' '+pair(n['body'])})
 
 def guides():
+    for slug, titles, descriptions in partyguide.GUIDES:
+        sub='guides/'+slug+'/'
+        title=pair(titles);desc=pair(descriptions)
+        write(sub,title,desc,f'<div class="wrap party-page">{pagehead(title,desc)}{partyguide.render(slug,LANG,BASE)}</div>','guides',True,reviewed=partyguide.REVIEWED)
+        page_dates[SITE+'/'+path(sub)]=partyguide.REVIEWED
+    search_index.extend(partyguide.search_entries(LANG))
     write(servertransfer.ROOT,pair(servertransfer.TITLE),pair(servertransfer.DESCRIPTION),f'<div class="wrap">{pagehead(pair(servertransfer.TITLE),pair(servertransfer.DESCRIPTION))}{servertransfer.render(LANG,BASE)}</div>','guides',True,reviewed=servertransfer.REVIEWED)
     page_dates[SITE+'/'+path(servertransfer.ROOT)]=servertransfer.REVIEWED
     search_index.extend(servertransfer.search_entries(LANG,BASE))
-    write('guides/',t('AION 2 guides','아이온 2 공략 모음'),t('Find a guide by your next goal.','지금 필요한 공략을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
+    write('guides/',t('AION 2 guides: growth, gear, dungeons & party help','아이온 2 공략 모음: 내실·장비·던전·파티'),t('Find AION 2 progression routes, equipment upgrades, boss mechanics, daily rewards and answers to party questions.','아이온 2 내실·성장 순서, 장비 강화, 보스 패턴, 일일 보상과 파티 약어·칭찬 방법을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
         transfer_anchor={'pet-growth':'pets','kinah-farming':'storage','dungeon-rewards':'rewards','gear-targets':'checklist'}[slug]
@@ -188,7 +196,7 @@ def classes():
     write('classes/',t('AION 2 class explorer','아이온 2 직업 탐색'),t('Explore eight AION 2 class playstyles with visual role guides.','여덟 직업의 플레이스타일과 전투 위치를 한눈에 확인하세요.'),content,'classes')
     for c in CLASSES:
         name=c['ko'] if L else c['en'];sub='classes/'+c['id']+'/'
-        title=t(c['en']+' playstyle guide',name+' 플레이스타일 가이드')
+        title=t('AION 2 '+c['en']+' guide: role, skills & playstyle','아이온 2 '+name+' 공략: 역할·스킬·플레이스타일')
         sections=[(t('Why put this class on your shortlist?','이 직업을 후보로 생각한다면'),pair(c['fit'])),(t('The trade-off to consider','함께 고려할 점'),pair(c['trade'])),(t('Your first practice exercise','첫 번째 연습'),pair(c['practice'])),(t('How to compare fairly','공정하게 비교하는 방법'),t('Use similar equipment and the same available encounter when comparing classes. Repeat more than one attempt. Record control comfort, missed mechanics and whether the playstyle stays enjoyable after a mistake. Your favourite activity and available play time matter more than an unlabelled tier score.','장비와 전투 조건을 비슷하게 맞추고 여러 번 비교하세요. 조작감, 놓친 패턴, 실수 이후에도 즐겁게 이어갈 수 있는지 기록해보세요. 조건 없는 티어 점수보다 자주 하는 콘텐츠와 실제 플레이 시간이 중요합니다.')),(t('Build and version context','세팅과 버전의 맥락'),t('This profile describes a playstyle; it does not prescribe a rotation, skill build or stat priority. Before following a detailed setup, match its region, date, activity and equipment assumptions to your character. Do not infer a global skill value from a Korean clip or an early design announcement.','이 글은 플레이스타일을 설명하며 스킬 연계, 스킬 구성, 능력치 우선순위를 지정하지 않습니다. 자세한 세팅을 따르기 전 지역, 날짜, 콘텐츠, 장비 전제가 자신의 캐릭터와 맞는지 확인하세요. 한국 영상이나 초기 개발 발표의 수치를 글로벌 수치로 단정하지 마세요.'))]
         content=f'''<div class="wrap">{pagehead(title,pair(c['line']),crumb=t('Classes','직업'))}{explorer(LANG,BASE,c['id'])}<section class="class-reading"><h2>{t('Go deeper','더 알아보기')}</h2>{''.join(f'<details class="guide-section"><summary><h3>{h}</h3><span class="detail-toggle" aria-hidden="true">+</span></summary><p>{p}</p></details>' for h,p in sections)}{sourcelist(['core','official'])}</section></div>'''
         write(sub,title,pair(c['fit']),content,'classes',True)
@@ -201,7 +209,7 @@ def compare():
 
 def glossary():
     rows=''.join(f'<tr data-term><td lang="ko"><strong>{E(kr)}</strong></td><td lang="en">{E(en)}</td><td><small>{E(note)}</small></td></tr>' for kr,en,note in GLOSSARY)
-    content=f'''<div class="wrap">{pagehead(t('KR ↔ EN glossary.','한영 용어 검색.'),t('Korean class names and common community terms. Match skill and item names to your current client before copying a build.','한국어 직업명과 커뮤니티 용어를 영어와 함께 확인하세요. 스킬·아이템 이름은 현재 클라이언트와 대조해야 합니다.'))}<label class="sr-only" for="glossary-search">{t('Search Korean or English terms','한국어·영어 용어 검색')}</label><div class="searchbox">{icon('search')}<input id="glossary-search" data-glossary-search type="search" placeholder="{t('Try 검성, tank, cooldown…','검성, tank, cooldown…')}" autocomplete="off"></div><p class="small muted" data-glossary-count role="status">32 {t('terms','개 용어')}</p><p class="no-results" data-glossary-empty hidden>{t('No matching terms. Try a shorter word.','일치하는 용어가 없습니다. 더 짧은 단어로 검색해보세요.')}</p><div class="table-wrap"><table><thead><tr><th>{t('Korean','한국어')}</th><th>{t('English','영어')}</th><th>{t('Context','맥락')}</th></tr></thead><tbody>{rows}</tbody></table></div></div>'''
+    content=f'''<div class="wrap">{pagehead(t('KR ↔ EN glossary.','한영 용어 검색.'),t('Korean class names and common community terms. Match skill and item names to your current client before copying a build.','한국어 직업명과 커뮤니티 용어를 영어와 함께 확인하세요. 스킬·아이템 이름은 현재 클라이언트와 대조해야 합니다.'))}<label class="sr-only" for="glossary-search">{t('Search Korean or English terms','한국어·영어 용어 검색')}</label><div class="searchbox">{icon('search')}<input id="glossary-search" data-glossary-search type="search" placeholder="{t('Try 검성, tank, cooldown…','검성, tank, cooldown…')}" autocomplete="off"></div><p class="small muted" data-glossary-count role="status">32 {t('terms','개 용어')}</p><p class="no-results" data-glossary-empty hidden>{t('No matching terms. Try a shorter word.','일치하는 용어가 없습니다. 더 짧은 단어로 검색해보세요.')}</p>{partyguide.gateway(LANG,BASE)}<div class="table-wrap"><table><thead><tr><th>{t('Korean','한국어')}</th><th>{t('English','영어')}</th><th>{t('Context','맥락')}</th></tr></thead><tbody>{rows}</tbody></table></div></div>'''
     write('glossary/',t('AION 2 Korean–English glossary','아이온 2 한국어·영어 용어집'),t('Search Korean AION 2 class names, combat terms and common guide vocabulary.','아이온 2 한국어·영어 직업명, 전투 용어, 공략 표현을 검색하세요.'),content,'glossary')
     search_index.append({'lang':LANG,'path':path('glossary/'),'title':t('Korean–English glossary','한국어·영어 용어집'),'description':t('32 class names and useful community terms.','직업명과 커뮤니티 용어 32개.'),'category':t('Tool','도구'),'keywords':' '.join(' '.join(row) for row in GLOSSARY)})
 

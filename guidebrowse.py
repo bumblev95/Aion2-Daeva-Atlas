@@ -2,6 +2,7 @@
 from html import escape as e
 from html.parser import HTMLParser
 from content import CLASSES, GUIDES
+import partyguide
 
 GOALS = [
     ('growth', 'endgame/#after-story', 'spark', ('Character growth', '내실·성장'), ('Story cleared. What next?', '스토리 이후, 무엇부터 할까?')),
@@ -22,9 +23,10 @@ def home(lang, base):
     shortcuts=''.join(f'<a href="{r}{route}" data-growth-guide="{key}">{label} <span aria-hidden="true">→</span></a>' for route,key,label in quick)
     classes=''.join(f'<a href="{r}classes/{c["id"]}/" style="--class-color:{c["color"]}">{icon(base,c["icon"])}<span>{c["ko" if k else "en"]}</span></a>' for c in CLASSES)
     return f'''<div class="wrap find-home">
-<section class="find-hero"><span class="find-eyebrow">PLAYER’S CODEX / AION 2</span><h1>{t('What do you need for your next run?', '지금, 어떤 공략이 필요하세요?')}</h1><p>{t('Find your next upgrade, your next reward or the way past a boss.', '내실부터 보스 공략까지, 지금 필요한 것부터 찾아보세요.')}</p><form class="find-search" action="{r}search/" role="search"><label class="sr-only" for="home-query">{t('Search all guides', '전체 공략 검색')}</label>{icon(base,'search')}<input id="home-query" name="q" type="search" placeholder="{t('Try a boss, item or skill name…', '보스, 아이템, 스킬 이름으로 검색')}" autocomplete="off" required><button type="submit">{t('Search','검색')}</button></form><div class="find-hero-links"><a href="{r}start/">{t('New character? Start here','처음 시작한다면 초반 공략')} →</a><a href="{r}guides/">{t('Browse all guides','전체 공략 둘러보기')} →</a></div></section>
+<section class="find-hero"><span class="find-eyebrow">PLAYER’S CODEX / AION 2</span><h1>{t('AION 2 guides for your next run', '아이온 2, 지금 필요한 공략부터')}</h1><p>{t('Find your next upgrade, your next reward or the way past a boss.', '내실부터 보스 공략까지, 지금 필요한 것부터 찾아보세요.')}</p><form class="find-search" action="{r}search/" role="search"><label class="sr-only" for="home-query">{t('Search all guides', '전체 공략 검색')}</label>{icon(base,'search')}<input id="home-query" name="q" type="search" placeholder="{t('Try a boss, item or skill name…', '보스, 아이템, 스킬 이름으로 검색')}" autocomplete="off" required><button type="submit">{t('Search','검색')}</button></form><div class="find-hero-links"><a href="{r}start/">{t('New character? Start here','처음 시작한다면 초반 공략')} →</a><a href="{r}guides/">{t('Browse all guides','전체 공략 둘러보기')} →</a></div></section>
 <section class="rpg-home-goals find-goals" aria-label="{t('Choose your goal','목적별 공략')}">{cards}</section>
-<section class="find-shortcuts"><h2>{t('Popular growth guides','자주 찾는 성장 공략')}</h2><nav aria-label="{t('Growth shortcuts','성장 공략 바로가기')}">{shortcuts}</nav></section>
+<section class="find-shortcuts"><h2>{t('Growth guides','성장 공략 바로가기')}</h2><nav aria-label="{t('Growth shortcuts','성장 공략 바로가기')}">{shortcuts}</nav></section>
+{partyguide.gateway(lang,base)}
 <section class="find-classes" id="class-explorer"><div class="find-section-heading"><h2>{t('My class','내 직업 바로 보기')}</h2><a href="{r}skills/">{t('Skills & builds','스킬·빌드')} →</a></div><div>{classes}</div></section>
 <nav class="find-utility home-stage-nav" aria-label="{t('More resources','다른 자료 찾기')}"><a href="{r}maps/">{icon(base,'target')}{t('World map','월드 지도')}</a><a href="{r}updates/">{icon(base,'book')}{t('News & patches','뉴스·패치')}</a><a href="{r}tools/dps/">{icon(base,'swords')}{t('DPS rankings','DPS 순위')}</a><a href="{r}glossary/">{icon(base,'book')}{t('KR / EN glossary','한영 용어집')}</a></nav>
 </div>'''
@@ -37,7 +39,7 @@ def directory(lang, base):
         ('gear',('Gear & skills','장비·스킬'), [('gear/',('Enhancement basics','장비 강화·스탯'),('Materials and the upgrade process','필요 재료와 실제 강화 순서')),('guides/gear-targets/',('Target gear','목표 장비 획득·강화'),('Choose a slot and a dungeon','부위에 맞는 던전 선택')),('skills/',('Skill library','스킬·빌드 사전'),('Effects and class priorities','스킬 효과·직업별 투자'))]),
         ('boss',('Dungeons','던전·보스'), [('dungeons/',('Animated boss lessons','움직이는 보스 공략'),('See cues and safe movement','전조와 안전한 이동 확인')),('guides/dungeon-rewards/',('Dungeon rewards','던전별 공략·보상'),('Loot targets and how to use them','목표 보상과 성장 사용처'))]),
         ('routines',('Daily & weekly','일일·주간'), [('routines/',('Daily and weekly rewards','일일·주간 숙제와 보상'),('Counters, Daily Dungeons and reward uses','횟수·일일 던전·보상 사용처')),('tools/planner/',('My checklist','나의 체크리스트'),('Keep your own goals','나의 할 일 기록'))]),
-        ('start',('Getting started','초반·기초'), [('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치')),('guides/server-transfer/',('Global server transfer','글로벌 서버 이전'),('Dates, regional hours, costs and storage checklist','이전 기간·지역별 시간·비용·보관함 체크리스트'))]),
+        ('start',('Getting started','초반·기초'), [('guides/3b-meaning/',('3b & party shorthand','3b·파티 약어'),('All three bosses, 200k and tp explained','보스 세 마리·200k·tp 뜻')),('guides/commend-player/',('Commend a player','플레이어 칭찬'),('Steps and missing-popup checks · KR reference','칭찬 방법·창 누락 확인 · 한국 기준')),('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치')),('guides/server-transfer/',('Global server transfer','글로벌 서버 이전'),('Dates, regional hours, costs and storage checklist','이전 기간·지역별 시간·비용·보관함 체크리스트'))]),
     ]
     filters=''.join(f'<button type="button" data-directory-filter="{key}" aria-pressed="false">{title[k]}</button>' for key,title,_ in groups)
     cards=''
