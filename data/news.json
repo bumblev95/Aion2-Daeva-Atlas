@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-13T23:42:38Z",
+  "checkedAt": "2026-10-14T00:06:26Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-13T23:42:38Z",
-      "lastSuccessAt": "2026-10-13T23:42:38Z",
+      "checkedAt": "2026-10-14T00:06:26Z",
+      "lastSuccessAt": "2026-10-14T00:06:26Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5325,8 +5325,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-13T23:42:38Z",
-      "lastSuccessAt": "2026-10-13T23:42:38Z",
+      "checkedAt": "2026-10-14T00:06:26Z",
+      "lastSuccessAt": "2026-10-14T00:06:26Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5370,13 +5370,13 @@
         },
         {
           "id": "6ace0f30577e8c01355dff1d",
-          "title": "[안내] 10/14(수) AION2 정기점검 안내 (연장)",
+          "title": "[안내] 10/14(수) AION2 정기점검 안내 (완료)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ace0f30577e8c01355dff1d",
           "publishedAt": "2026-10-13T11:00:00.915Z",
-          "sourceUpdatedAt": "2026-10-13T22:54:37.476Z",
+          "sourceUpdatedAt": "2026-10-14T00:00:51.518Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "pending",
@@ -5641,8 +5641,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-13T23:42:38Z",
-      "lastSuccessAt": "2026-10-13T23:42:38Z",
+      "checkedAt": "2026-10-14T00:06:26Z",
+      "lastSuccessAt": "2026-10-14T00:06:26Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -5782,8 +5782,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-13T23:42:38Z",
-      "lastSuccessAt": "2026-10-13T23:42:38Z",
+      "checkedAt": "2026-10-14T00:06:26Z",
+      "lastSuccessAt": "2026-10-14T00:06:26Z",
       "error": null,
       "fromCache": false,
       "items": [
