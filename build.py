@@ -269,7 +269,7 @@ def livepages():
     for item in patchbook.patches(liveops.load('news.json')):
         sub=patchbook.detail_path(item)
         title=patchbook.title(item,LANG)
-        desc=item.get('summary',{}).get(LANG) or t('Official patch changes awaiting review.','공식 패치의 전체 변경사항을 검토하고 있습니다.')
+        desc=item.get('summary',{}).get(LANG) or t('Official patch collected; a source-bound summary is not yet available.','공식 패치를 수집했습니다. 원문에 맞춘 변경 요약은 아직 등록되지 않았습니다.')
         content=liveops.resources(BASE)+patchbook.render_detail(item,LANG,BASE)
         write(sub,title,desc,'<div class="wrap">'+content+'</div>','updates/')
         page_dates[SITE+'/'+path(sub)]=(item.get('reviewedAt') or item.get('sourceUpdatedAt') or REVIEWED)[:10]

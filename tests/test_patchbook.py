@@ -84,4 +84,33 @@ class PatchbookTests(unittest.TestCase):
         for path in ['docs/assets/news.js','data/patch-reviews.json','docs/ko/updates/../../skills/index.html','docs/updates/patch.js']:
             self.assertFalse(allowed_path(path),path)
 
+    def test_october_14_regions_keep_different_combat_changes(self):
+        kr=self.reviewed_item('6ace86b86cfe4756db5b8d81')
+        na=self.reviewed_item('6acf20d007b77e214688a7ac')
+        kr_groups={g['classId']:g for g in patchbook.class_groups(kr)}
+        na_groups={g['classId']:g for g in patchbook.class_groups(na)}
+        self.assertEqual(kr_groups['all']['type'],'nerf')
+        self.assertEqual(kr_groups['templar']['type'],'adjustment')
+        self.assertEqual(na_groups['sorcerer']['type'],'fix')
+        self.assertEqual(na_groups['spiritmaster']['type'],'fix')
+        self.assertNotIn('brawler',na_groups)
+        self.assertFalse(any(x['type']=='nerf' for x in na['changes']))
+        for item in (kr,na):
+            self.assertTrue(patchbook.detail_ready(item))
+            self.assertEqual(patchbook.review_label(item,'en'),'Summary reviewed')
+            page=patchbook.render_detail(item,'ko','/')
+            self.assertIn('실전 영향',page)
+            self.assertIn('이벤트 보상·상품 전체 표는 공식 공지',page)
+            self.assertNotIn('전체 항목 검토 완료',page)
+            self.assertIn('패치 요약 보기',patchbook.patch_card(item,'ko','/'))
+
+    def test_notice_and_missing_summary_have_honest_states(self):
+        notice={'id':'notice','title':'Server notice','kind':'news','region':'NA','url':'https://aion2.plaync.com/','reviewState':'pending'}
+        card=patchbook.patch_card(notice,'en','/')
+        self.assertIn('Official notice',card)
+        self.assertNotIn('Review pending',card)
+        self.assertNotIn('editorial review',card)
+        notice['kind']='patch'
+        self.assertEqual(patchbook.review_label(notice,'ko'),'요약 미등록')
+
 if __name__=='__main__':unittest.main()

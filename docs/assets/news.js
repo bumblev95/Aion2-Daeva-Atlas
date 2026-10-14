@@ -14,10 +14,15 @@
     const a=element('a',copy,css);a.href=u.href;a.target='_blank';a.rel='noopener';return a;
   }
   function reviewLabel(x) {
+    if(x.kind==='news')return t('Official notice','공식 공지');
     if(x.reviewState==='reviewed'&&x.detail?.coverage==='complete')return t('Full change list reviewed','전체 항목 검토 완료');
     if(x.reviewState==='reviewed')return t('Summary reviewed','요약 검토 완료');
-    if(x.reviewState==='revised')return t('Source revised · reviewing','원문 수정 · 재검토 중');
-    return t('Review pending','검토 중');
+    if(x.reviewState==='revised')return t('Source revised · summary needs updating','원문 수정 · 요약 갱신 필요');
+    return t('Summary not added','요약 미등록');
+  }
+  function readLabel(x) {
+    if(x.reviewState!=='reviewed')return t('View patch status','패치 상태 보기');
+    return x.detail?.coverage==='complete'?t('Read full change list','전체 패치 보기'):t('Read patch summary','패치 요약 보기');
   }
   let running=false;
   async function fetchFeed() {
@@ -63,7 +68,8 @@
     const h=element('h2'),url=isPatch?local+CodexPatch.detailPath(x):x.url;
     const a=isPatch?element('a',x.displayTitle?.[ko?'ko':'en']||x.title,'patch-title-link'):officialLink(x.url,x.title);
     if(isPatch)a.href=url;h.append(a);
-    e.append(header,h,element('p',x.summary?.[ko?'ko':'en']||t('The new notice is awaiting an editorial review.','새 공지를 수집했습니다. 변경 내용을 검토하고 있습니다.'),'patch-summary-copy'));
+    const fallback=isPatch?t('Collected from NC. A change summary has not been added yet.','NC 패치를 수집했습니다. 변경 요약은 아직 등록되지 않았습니다.'):t('Read the details in NC’s official notice.','NC 공식 공지에서 상세 내용을 확인하세요.');
+    e.append(header,h,element('p',x.summary?.[ko?'ko':'en']||fallback,'patch-summary-copy'));
     if(groups.length){
       const chips=element('div',null,'patch-impact-chips');
       groups.forEach(g=>{
@@ -73,7 +79,7 @@
       });e.append(chips);
     }
     const footer=element('footer');
-    if(isPatch){const read=element('a',t('Read full change list','전체 패치 보기')+' →','text-link patch-read-link');read.href=url;footer.append(read);}
+    if(isPatch){const read=element('a',readLabel(x)+' →','text-link patch-read-link');read.href=url;footer.append(read);}
     else footer.append(officialLink(x.url,t('Read official notice','공식 공지 보기')+' ↗','text-link'));
     footer.append(officialLink(x.url,t('NC source','NC 원문')+' ↗','patch-source-link'));e.append(footer);return e;
   }

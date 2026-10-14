@@ -1,0 +1,21 @@
+{
+  "reviewedAt": "2026-10-14T17:40:37Z",
+  "sources": [
+    {
+      "id": "6ace86b86cfe4756db5b8d81",
+      "region": "KR",
+      "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ace86b86cfe4756db5b8d81",
+      "contentHash": "79940d945da3a419f8fc790a90fe9731706f964d933abee31e65b2438358ac78",
+      "reviewedAt": "2026-10-14T17:40:37Z",
+      "coverage": "All announced class changes and selected system highlights; event/product tables remain at NC."
+    },
+    {
+      "id": "6acf20d007b77e214688a7ac",
+      "region": "NA",
+      "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6acf20d007b77e214688a7ac",
+      "contentHash": "db9bde10552df0a16256346f008c8b32d3babf65a2efe6e79e7f9f14511c4b29",
+      "reviewedAt": "2026-10-14T17:40:37Z",
+      "coverage": "All announced class changes and selected system highlights; event/product tables remain at NC."
+    }
+  ]
+}
