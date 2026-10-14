@@ -18,7 +18,7 @@ def icon(base, name):
 def home(lang, base):
     k=lang=='ko';t=lambda en,ko:ko if k else en;r=base+('ko/' if k else '')
     cards=''.join(f'<a class="home-stage{(" endgame" if key=="growth" else "")}" data-rpg-goal="{key}" href="{r}{route}"><span class="find-goal-icon">{icon(base,glyph)}</span><span><h2>{title[k]}</h2><p>{desc[k]}</p></span><b aria-hidden="true">↗</b></a>' for key,route,glyph,title,desc in GOALS)
-    quick=[('guides/pet-growth/','pet-growth',t('Pet souls','펫 내실')),('guides/gear-targets/','gear-targets',t('Target gear','목표 장비')),('guides/dungeon-rewards/','dungeon-rewards',t('Dungeon rewards','던전 보상')),('guides/kinah-farming/','kinah-farming',t('Kinah farming','키나 파밍'))]
+    quick=[('guides/pet-growth/','pet-growth',t('Pet souls','펫 내실')),('guides/gear-targets/','gear-targets',t('Target gear','목표 장비')),('guides/dungeon-rewards/','dungeon-rewards',t('Dungeon rewards','던전 보상')),('guides/kinah-farming/','kinah-farming',t('Kinah farming','키나 파밍')),('guides/server-transfer/','server-transfer',t('Global server transfer','글로벌 서버 이전'))]
     shortcuts=''.join(f'<a href="{r}{route}" data-growth-guide="{key}">{label} <span aria-hidden="true">→</span></a>' for route,key,label in quick)
     classes=''.join(f'<a href="{r}classes/{c["id"]}/" style="--class-color:{c["color"]}">{icon(base,c["icon"])}<span>{c["ko" if k else "en"]}</span></a>' for c in CLASSES)
     return f'''<div class="wrap find-home">
@@ -37,7 +37,7 @@ def directory(lang, base):
         ('gear',('Gear & skills','장비·스킬'), [('gear/',('Enhancement basics','장비 강화·스탯'),('Materials and the upgrade process','필요 재료와 실제 강화 순서')),('guides/gear-targets/',('Target gear','목표 장비 획득·강화'),('Choose a slot and a dungeon','부위에 맞는 던전 선택')),('skills/',('Skill library','스킬·빌드 사전'),('Effects and class priorities','스킬 효과·직업별 투자'))]),
         ('boss',('Dungeons','던전·보스'), [('dungeons/',('Animated boss lessons','움직이는 보스 공략'),('See cues and safe movement','전조와 안전한 이동 확인')),('guides/dungeon-rewards/',('Dungeon rewards','던전별 공략·보상'),('Loot targets and how to use them','목표 보상과 성장 사용처'))]),
         ('routines',('Daily & weekly','일일·주간'), [('routines/',('Daily and weekly rewards','일일·주간 숙제와 보상'),('Counters, Daily Dungeons and reward uses','횟수·일일 던전·보상 사용처')),('tools/planner/',('My checklist','나의 체크리스트'),('Keep your own goals','나의 할 일 기록'))]),
-        ('start',('Getting started','초반·기초'), [('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치'))]),
+        ('start',('Getting started','초반·기초'), [('start/',('Early-game guide','초반 공략'),('Progression and useful settings','육성 흐름과 편의 설정')),('classes/',('Class guides','직업 공략'),('Find your role and build','역할·스킬·직업별 공략')),('maps/',('World maps','월드 지도'),('Travel points and field rewards','이동 거점·필드 보상 위치')),('guides/server-transfer/',('Global server transfer','글로벌 서버 이전'),('Dates, regional hours, costs and storage checklist','이전 기간·지역별 시간·비용·보관함 체크리스트'))]),
     ]
     filters=''.join(f'<button type="button" data-directory-filter="{key}" aria-pressed="false">{title[k]}</button>' for key,title,_ in groups)
     cards=''

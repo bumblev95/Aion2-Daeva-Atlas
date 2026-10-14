@@ -17,6 +17,10 @@ on:
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
       - 'guidebrowse.py'
+      - 'servertransfer.py'
+      - 'assets/server-transfer.css'
+      - 'research/server-transfer-review.json'
+      - 'tests/server-transfer-ui.test.js'
       - 'assets/find-guide.*'
       - 'assets/app.js'
       - 'tests/find-guide-ui.test.js'
@@ -64,6 +68,10 @@ on:
       - 'tests/post-story-ui.test.js'
       - 'poststory.py'
       - 'guidebrowse.py'
+      - 'servertransfer.py'
+      - 'assets/server-transfer.css'
+      - 'research/server-transfer-review.json'
+      - 'tests/server-transfer-ui.test.js'
       - 'assets/find-guide.*'
       - 'assets/app.js'
       - 'tests/find-guide-ui.test.js'
@@ -155,6 +163,12 @@ jobs:
         env:
           VAKRON_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/vakron-ui.test.js
+      - if: ${{ !cancelled() }}
+        name: Verify Global transfer preparation, deep links and mobile layout
+        env:
+          TRANSFER_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/server-transfer-ui.test.js
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
