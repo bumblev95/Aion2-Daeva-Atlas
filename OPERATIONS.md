@@ -160,3 +160,11 @@ Hourly publication may change only news data, home strips, patch index/detail
 pages, DPS patch-review notices and their sitemap/search registrations. The scheduled whitelist cannot modify ranking source data or trained policies. Its whitelist checks tracked and
 untracked files; new detail routes are staged for the existing Pages build.
 Portrait attribution is in `assets/classes/credits.json` and on detail pages.
+
+### 2026-10-14 patch summaries and notice states
+
+- Headline-only news uses `reviewState: official`; it links to NC and does not enter the hash-bound patch review queue. Static cards and the five-minute refresh script both use this rule, including older cached feeds.
+- Unreviewed patches say “Summary not added”, and revised sources say “summary needs updating”. These labels do not imply an active background editorial job. Hourly collection still only collects official notices; source-bound summaries are separate authored content.
+- `detail.coverage: highlights` can publish reviewed class changes and selected system highlights without claiming the complete event/product tables were reproduced. Complete reviews retain their existing full-list label.
+- October 14 KR / October 13 PDT NA summaries are bound to the retrieved official source hashes. NA repairs Sorcerer/Ancient Spirit effects and adjusts Battlefield stats without numeric values. KR has approximately 30% lower PvP damage, an Assault defense/cooldown trade-off, defensive cooldown gains and elemental assignments. Regional rules are kept separate.
+- Optional bilingual `impact` fields explain restored damage, removed unintended damage, survival or cooldown effects. They are qualitative analysis, not measured DPS multipliers. The existing historical combat rankings keep their dates and are not recalibrated from these notices.

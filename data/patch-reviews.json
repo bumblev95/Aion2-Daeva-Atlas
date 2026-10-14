@@ -5343,5 +5343,1006 @@
       ],
       "classTables": []
     }
+  },
+  "6ace86b86cfe4756db5b8d81": {
+    "contentHash": "79940d945da3a419f8fc790a90fe9731706f964d933abee31e65b2438358ac78",
+    "reviewedAt": "2026-10-14T17:40:37Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ace86b86cfe4756db5b8d81",
+    "changes": [
+      {
+        "classId": "all",
+        "type": "nerf",
+        "subject": {
+          "ko": "PvP 피해량",
+          "en": "PvP damage"
+        },
+        "description": {
+          "ko": "한국 서버의 공통 PvP 피해량이 약 30% 감소합니다. PvE 피해 감소 공지가 아닙니다.",
+          "en": "Korea reduces common PvP damage by approximately 30%; this is not a PvE damage reduction."
+        },
+        "impact": {
+          "ko": "PvP에서 같은 공격의 피해가 줄어 전투 지속 시간이 달라질 수 있습니다. 북미 패치에는 이 수치가 없습니다.",
+          "en": "Reduces PvP damage for the same attack and can change fight duration. The NA patch does not announce this value."
+        },
+        "before": {
+          "ko": "기존 PvP 피해 기준 100%",
+          "en": "Previous PvP damage: 100%"
+        },
+        "after": {
+          "ko": "기존 PvP 피해의 약 70%",
+          "en": "Approximately 70% of previous PvP damage"
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 일격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 일격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 맹격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 맹격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 습격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 습격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 강타 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 강타 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 폭격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 폭격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 공포 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 공포 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 낙인 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 낙인 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 충격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 충격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "buff",
+        "subject": {
+          "ko": "강습 타격 · 방어 효과",
+          "en": "Assault · defensive effect"
+        },
+        "description": {
+          "ko": "적중 인원에 따른 5초 방어력 최대 20% 효과가 방어력과 모든 속성 내성 최대 80%로 바뀝니다.",
+          "en": "The five-second, hit-count-dependent defense bonus rises from a 20% maximum to an 80% maximum and now includes all elemental resistance."
+        },
+        "impact": {
+          "ko": "여러 적에게 적중시킬 때 진입 후 생존에 유리합니다. 최대 효과는 적중 인원 조건을 따릅니다.",
+          "en": "Can improve survival after hitting multiple enemies; the maximum benefit still depends on the number hit."
+        },
+        "before": {
+          "ko": "5초 방어력 최대 +20%",
+          "en": "Up to +20% defense for 5s"
+        },
+        "after": {
+          "ko": "5초 방어력·모든 속성 내성 최대 +80%",
+          "en": "Up to +80% defense and all elemental resistance for 5s"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "nerf",
+        "subject": {
+          "ko": "강습 타격 · 재시전",
+          "en": "Assault · cooldown interaction"
+        },
+        "description": {
+          "ko": "이 강습 스킬에 재시전 시간 감소 효과가 적용되지 않도록 변경합니다.",
+          "en": "Cooldown-reduction effects no longer apply to this Assault skill."
+        },
+        "impact": {
+          "ko": "방어 효과는 강해지지만 쿨다운 감소로 다시 진입하는 빈도는 낮아질 수 있어 전체로는 조정입니다.",
+          "en": "The stronger defense comes with reduced access to cooldown-driven re-engagement; the combined change is an adjustment."
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "buff",
+        "subject": {
+          "ko": "집중 막기",
+          "en": "Defensive skill · cooldown"
+        },
+        "description": {
+          "ko": "막기 성공 시 해당 스킬의 재시전 시간을 0.3초 줄이는 효과가 추가됩니다.",
+          "en": "Successful blocking now reduces this defensive skill’s cooldown by 0.3 seconds."
+        },
+        "impact": {
+          "ko": "성공한 방어 행동이 다음 방어 기회를 앞당깁니다. 직접 피해 계수 상향과는 별개의 생존 개선입니다.",
+          "en": "Successful defense brings the next defensive use closer; this improves survival rather than the attack damage coefficient."
+        },
+        "after": {
+          "ko": "성공 시 재시전 시간 −0.3초",
+          "en": "−0.3s cooldown per successful defense"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "ko": "보호의 방패",
+          "en": "Defensive skill · cooldown"
+        },
+        "description": {
+          "ko": "막기 성공 시 해당 스킬의 재시전 시간을 0.3초 줄이는 효과가 추가됩니다.",
+          "en": "Successful blocking now reduces this defensive skill’s cooldown by 0.3 seconds."
+        },
+        "impact": {
+          "ko": "성공한 방어 행동이 다음 방어 기회를 앞당깁니다. 직접 피해 계수 상향과는 별개의 생존 개선입니다.",
+          "en": "Successful defense brings the next defensive use closer; this improves survival rather than the attack damage coefficient."
+        },
+        "after": {
+          "ko": "성공 시 재시전 시간 −0.3초",
+          "en": "−0.3s cooldown per successful defense"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "ko": "회피 자세",
+          "en": "Defensive skill · cooldown"
+        },
+        "description": {
+          "ko": "회피 성공 시 해당 스킬의 재시전 시간을 0.3초 줄이는 효과가 추가됩니다.",
+          "en": "Successful evasion now reduces this defensive skill’s cooldown by 0.3 seconds."
+        },
+        "impact": {
+          "ko": "성공한 방어 행동이 다음 방어 기회를 앞당깁니다. 직접 피해 계수 상향과는 별개의 생존 개선입니다.",
+          "en": "Successful defense brings the next defensive use closer; this improves survival rather than the attack damage coefficient."
+        },
+        "after": {
+          "ko": "성공 시 재시전 시간 −0.3초",
+          "en": "−0.3s cooldown per successful defense"
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "ko": "집중 방어",
+          "en": "Defensive skill · cooldown"
+        },
+        "description": {
+          "ko": "막기 성공 시 해당 스킬의 재시전 시간을 0.3초 줄이는 효과가 추가됩니다.",
+          "en": "Successful blocking now reduces this defensive skill’s cooldown by 0.3 seconds."
+        },
+        "impact": {
+          "ko": "성공한 방어 행동이 다음 방어 기회를 앞당깁니다. 직접 피해 계수 상향과는 별개의 생존 개선입니다.",
+          "en": "Successful defense brings the next defensive use closer; this improves survival rather than the attack damage coefficient."
+        },
+        "after": {
+          "ko": "성공 시 재시전 시간 −0.3초",
+          "en": "−0.3s cooldown per successful defense"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "buff",
+        "subject": {
+          "ko": "집중 막기",
+          "en": "Defensive skill · cooldown"
+        },
+        "description": {
+          "ko": "막기 성공 시 해당 스킬의 재시전 시간을 0.3초 줄이는 효과가 추가됩니다.",
+          "en": "Successful blocking now reduces this defensive skill’s cooldown by 0.3 seconds."
+        },
+        "impact": {
+          "ko": "성공한 방어 행동이 다음 방어 기회를 앞당깁니다. 직접 피해 계수 상향과는 별개의 생존 개선입니다.",
+          "en": "Successful defense brings the next defensive use closer; this improves survival rather than the attack damage coefficient."
+        },
+        "after": {
+          "ko": "성공 시 재시전 시간 −0.3초",
+          "en": "−0.3s cooldown per successful defense"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "buff",
+        "subject": {
+          "ko": "폭주",
+          "en": "Berserk · KR Brawler"
+        },
+        "description": {
+          "ko": "폭주 중 PvE 피해 내성 20% 증가가 추가됩니다.",
+          "en": "Berserk gains 20% PvE damage resistance."
+        },
+        "impact": {
+          "ko": "폭주 상태의 PvE 생존이 개선됩니다. 한국판 권성 변경입니다.",
+          "en": "Improves PvE survival while Berserk is active; this is a Korea-only Brawler change."
+        },
+        "after": {
+          "ko": "PvE 피해 내성 +20%",
+          "en": "+20% PvE damage resistance"
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "fix",
+        "subject": {
+          "ko": "바이젤의 권능",
+          "en": "Vaizel’s Authority"
+        },
+        "description": {
+          "ko": "간헐적으로 스킬 효과가 적용되지 않던 문제를 수정합니다.",
+          "en": "Repairs intermittent failure to apply the skill’s effect."
+        },
+        "impact": {
+          "ko": "효과 누락이 줄어들지만 전체 피해 상승률은 명시되지 않았습니다.",
+          "en": "Improves effect reliability without a published overall damage percentage."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "ko": "소환: 고대의 정령",
+          "en": "Summon: Ancient Spirit"
+        },
+        "description": {
+          "ko": "한국 공지는 고대의 정령 15레벨 미만에서 발동 스킬을 사용하지 않던 문제를 수정합니다.",
+          "en": "The Korean notice fixes Ancient Spirit failing to use trigger skills below level 15."
+        },
+        "impact": {
+          "ko": "해당 레벨에서 빠지던 정령 행동이 회복될 수 있습니다. 북미 공지의 15레벨 이하 범위와 구별합니다.",
+          "en": "Can restore missing summon actions at those levels. Keep separate from NA’s level-15-or-below wording."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "불의 장벽 · 잔불 유지",
+          "en": "Fire Wall · Embers uptime"
+        },
+        "description": {
+          "ko": "더 높은 스킬 레벨의 다른 플레이어 불의 장벽이 자신의 잔불을 지우지 않도록 바뀝니다.",
+          "en": "A higher-level Fire Wall from another player no longer removes your Embers."
+        },
+        "impact": {
+          "ko": "여러 마도성이 함께 공격할 때 잔불 유지와 피해 누락에 도움이 될 수 있습니다.",
+          "en": "Can preserve your DoT uptime and damage in groups with multiple Sorcerers."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "tooltip",
+        "subject": {
+          "ko": "불의 장벽 · 속성 표기",
+          "en": "Fire Wall · elemental tooltip"
+        },
+        "description": {
+          "ko": "설명에서 빠져 있던 불 속성 표기를 추가합니다.",
+          "en": "Adds the missing fire-element label to the description."
+        },
+        "impact": {
+          "ko": "이 항목만으로 실제 피해가 상향됐다고 판단하지 않습니다.",
+          "en": "This text correction alone does not establish a damage increase."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "불의 장벽 · 특화 3",
+          "en": "Fire Wall · specialization 3"
+        },
+        "description": {
+          "ko": "잔불이 끝난 뒤에도 특화 3의 추가 피해가 발생하던 문제를 수정합니다.",
+          "en": "Stops specialization-3 bonus damage from occurring after Embers has already ended."
+        },
+        "impact": {
+          "ko": "의도하지 않은 추가 피해가 제거되어 해당 상황에서는 피해가 감소할 수 있습니다. 오류 수정에도 감소 방향 효과가 있습니다.",
+          "en": "Removing unintended post-DoT hits can reduce damage in that situation; a bug fix can have a negative damage effect."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "냉기 폭풍 · 동상 유지",
+          "en": "Cold Storm · Frostbite uptime"
+        },
+        "description": {
+          "ko": "더 높은 스킬 레벨의 다른 플레이어 냉기 폭풍이 자신의 동상을 지우지 않도록 바뀝니다.",
+          "en": "A higher-level Cold Storm from another player no longer removes your Frostbite."
+        },
+        "impact": {
+          "ko": "다수 마도성 전투에서 자신의 동상 피해 유지에 도움이 될 수 있습니다.",
+          "en": "Can preserve your Frostbite damage in multi-Sorcerer encounters."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "adjustment",
+        "subject": {
+          "ko": "공격 스킬 속성 적용",
+          "en": "Attack-skill elemental assignment"
+        },
+        "description": {
+          "ko": "다음 스킬에 속성 피해가 적용됩니다. 불: 영혼의 절규·원소 융합·절망의 저주·불길의 축복·협공: 부식·공포의 절규·저주의 구름·마법 차단. 물: 연속 역류. 바람: 협공: 저주·공간 지배·침식·흡인·마법 강탈. 땅: 연속 난사·정령 강림·협공: 파멸의 공세·소환: 고대의 정령.",
+          "en": "Elemental damage is assigned to these skills (KR names retained to avoid guessing regional skill names): Fire: 영혼의 절규, 원소 융합, 절망의 저주, 불길의 축복, 협공: 부식, 공포의 절규, 저주의 구름, 마법 차단. Water: 연속 역류. Wind: 협공: 저주, 공간 지배, 침식, 흡인, 마법 강탈. Earth: 연속 난사, 정령 강림, 협공: 파멸의 공세, 소환: 고대의 정령."
+        },
+        "impact": {
+          "ko": "속성 피해·내성 조건에 따라 실제 피해가 달라질 수 있습니다. 일률적인 버프 또는 DPS 증가율로 바꾸지 않습니다.",
+          "en": "Actual damage depends on elemental damage/resistance conditions; this is not a universal buff or a fixed DPS multiplier."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "adjustment",
+        "subject": {
+          "ko": "공격 스킬 속성 적용",
+          "en": "Attack-skill elemental assignment"
+        },
+        "description": {
+          "ko": "다음 스킬에 속성 피해가 적용됩니다. 불: 루미엘의 공간·나락·강화의 은혜·생기 증발. 물: 영혼 동결·냉기 소환.",
+          "en": "Elemental damage is assigned to these skills (KR names retained to avoid guessing regional skill names): Fire: 루미엘의 공간, 나락, 강화의 은혜, 생기 증발. Water: 영혼 동결, 냉기 소환."
+        },
+        "impact": {
+          "ko": "속성 피해·내성 조건에 따라 실제 피해가 달라질 수 있습니다. 일률적인 버프 또는 DPS 증가율로 바꾸지 않습니다.",
+          "en": "Actual damage depends on elemental damage/resistance conditions; this is not a universal buff or a fixed DPS multiplier."
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "adjustment",
+        "subject": {
+          "ko": "공격 스킬 속성 적용",
+          "en": "Attack-skill elemental assignment"
+        },
+        "description": {
+          "ko": "다음 스킬에 속성 피해가 적용됩니다. 바람: 벼락 난사. 땅: 고결한 기운·주신의 은총.",
+          "en": "Elemental damage is assigned to these skills (KR names retained to avoid guessing regional skill names): Wind: 벼락 난사. Earth: 고결한 기운, 주신의 은총."
+        },
+        "impact": {
+          "ko": "속성 피해·내성 조건에 따라 실제 피해가 달라질 수 있습니다. 일률적인 버프 또는 DPS 증가율로 바꾸지 않습니다.",
+          "en": "Actual damage depends on elemental damage/resistance conditions; this is not a universal buff or a fixed DPS multiplier."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "ko": "계승석·레기온 UI",
+            "en": "Inheritance materials and Legion UI"
+          },
+          "sourceSection": "계승석·레기온 UI",
+          "notes": [
+            {
+              "ko": "장비 부위별 계승석을 유일/영웅 계승의 불꽃으로 통합합니다. 기존 계승석은 빛바랜 아이템으로 바뀌며 물질변환으로 새 재료를 얻습니다. 계승석 조각도 변환할 수 있습니다.",
+              "en": "Replaces slot-specific inheritance stones with Unique/Heroic inheritance flames. Old stones become faded items; both old stones and fragments can be morphed into the new materials."
+            },
+            {
+              "ko": "레기온 목록에 접속 중인 던전 이름을 표시하고 아이템 레벨·전투력 정렬을 지원합니다.",
+              "en": "Legion lists show the dungeon members are in and support item-level/Combat-Power sorting."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "비탄의 설원 최초 토벌 보상",
+            "en": "Snowfield first-clear rewards"
+          },
+          "sourceSection": "비탄의 설원 최초 토벌 보상",
+          "notes": [
+            {
+              "ko": "최초 클리어 포스에는 타이틀과 황금빛 보이드, 2~5번째에는 은빛 보이드, 6~20번째에는 구릿빛 보이드를 우편 지급합니다. 우편 수령 기간은 1개월입니다.",
+              "en": "Mails the title and gold Void pet to the first clearing force, silver Void to clears 2–5, and bronze Void to clears 6–20. Mail can be claimed for one month."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "할로윈 출석·미션·상점",
+            "en": "Halloween attendance, missions and shop"
+          },
+          "sourceSection": "할로윈 출석·미션·상점",
+          "notes": [
+            {
+              "ko": "10월 14일 점검 후부터 11월 4일 점검 전까지 진행합니다. 출석은 매일 00시 초기화하며 보통 35주화, 7·14일차는 각각 100주화를 줍니다.",
+              "en": "Runs from maintenance October 14 until maintenance November 4. Attendance resets at 00:00, with 35 coins on ordinary days and 100 each on days 7 and 14."
+            },
+            {
+              "ko": "한국 이벤트 미션은 캐릭터당 주 1회입니다. 어비스·초월·원정·각성전·악몽은 각 25주화, 접속 3회는 30주화, 장비·주문서·차원 침공·슈고페스타는 각 20주화입니다.",
+              "en": "KR event missions reset weekly per character. Abyss, Transcendence, Expedition, Ascension and Nightmare give 25 coins each, three logins 30, and gear, scroll, invasion and Shugo 20 each."
+            },
+            {
+              "ko": "마을 상점에서 외형 흉갑은 15주화·서버당 1개, 오드 에너지는 10주화·서버당 4개·50레벨 조건입니다. 도전권·성장 재료·강화 소모품도 교환하며 전체 제한은 공식 표를 확인하세요.",
+              "en": "Town shops offer the chest skin for 15 coins with a server cap of one, and Odyle Energy for 10 coins with a server cap of four and a level-50 requirement. Challenge tickets, growth materials and combat consumables have separate official limits."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "원정·초월 할로윈 부스트업",
+            "en": "Expedition and Transcendence Halloween boost"
+          },
+          "sourceSection": "원정·초월 할로윈 부스트업",
+          "notes": [
+            {
+              "ko": "지정된 원정 보통·어려움 및 초월 1~4단계의 오드 에너지 큐브 강화석 보상이 1.5배가 됩니다. 붉은 연심의 거울은 강화석 보상이 추가되는 항목입니다. 적용 던전은 공식 표를 확인하세요.",
+              "en": "Specified Expedition Normal/Hard and Transcendence tiers 1–4 gain 1.5× enhancement-stone Odyle Cube rewards. 붉은 연심의 거울 separately gains enhancement stones; the source table lists eligible dungeons."
+            },
+            {
+              "ko": "캔디 열쇠 조각은 지정 던전·난이도에 따라 3개 또는 5개를 얻습니다. 색깔 열쇠는 100조각으로 만들며 색깔별 서버당 주 1회입니다. 북미의 60조각과 다릅니다.",
+              "en": "Eligible dungeon/difficulty combinations give three or five Candy Key Fragments. Colored keys cost 100 fragments, limited to one per color per server weekly; NA uses 60 fragments instead."
+            },
+            {
+              "ko": "빨강 캔디에는 영혼 결정 10,000개, 노랑에는 강화석 30,000개, 파랑에는 오드 에너지 4개가 포함됩니다. 각 캔디에는 추가 성장 재료와 소모품도 들어 있습니다.",
+              "en": "Red candy includes 10,000 Soul Crystals, yellow 30,000 enhancement stones and blue four Odyle Energy; each also includes additional growth materials and consumables."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "보스·방어력·설정 수정",
+            "en": "Boss, defense and settings fixes"
+          },
+          "sourceSection": "보스·방어력·설정 수정",
+          "notes": [
+            {
+              "ko": "방어력 스탯이 일정량 이상 증가하지 않던 문제를 수정합니다. 시련·성역 재도전 때 부활 횟수 초기화 실패도 수정합니다.",
+              "en": "Repairs defense stats failing to rise above a certain amount and resurrection-count reset failures on Trial/Sanctuary retries."
+            },
+            {
+              "ko": "어비스 카이라·아그로의 충돌 범위를 소폭 확대합니다. 아티엘 사망 뒤 남던 상태이상을 해제하고, 델트라스의 얼음 쐐기 체력을 기존 대비 50% 낮춥니다.",
+              "en": "Slightly expands Kaira/Agro collision areas, clears lingering effects after Atiel dies, and halves Deltras’s Ice Wedge HP."
+            },
+            {
+              "ko": "카메라 Y축 반전과 자신의 네임 플레이트 항목별 숨기기를 추가합니다. 직접 클릭한 드랍은 획득 설정과 무관하게 주울 수 있고, 일반 소모품 설정은 일반 등급 이하에만 적용됩니다.",
+              "en": "Adds camera Y-axis inversion and per-component own-nameplate visibility. Manually clicked drops bypass loot filters; the general-consumables filter affects only ordinary-or-lower-grade items."
+            },
+            {
+              "ko": "응룡왕·기룡왕 각인 장비의 계승의 불꽃 변환 실패와 익스프레스권 사용 뒤 종족 이해도 업적 누락을 수정합니다.",
+              "en": "Repairs inheritance-flame morphing for the named bound gear and missing racial-understanding achievements after Express-ticket use."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "회수·복구와 외형 상품",
+            "en": "Restoration and cosmetic products"
+          },
+          "sourceSection": "회수·복구와 외형 상품",
+          "notes": [
+            {
+              "ko": "10월 7일 전 히든 큐브 사용 로그로 영혼 결정 보상 차액을 소급 지급하고 펫 종족 이해도 포인트에 반영합니다. 자동 줍기권 가격 변경 차액은 구매·판매·복구 이력으로 구분해 지급합니다.",
+              "en": "Uses pre-October-7 Hidden Cube logs to restore the Soul Crystal reward difference and convert it to pet racial-understanding points. Auto-loot-ticket Kina restoration follows purchase/sale/recovery history."
+            },
+            {
+              "ko": "서버 이전 후 아직 접속하지 않은 캐릭터의 소급 보상은 추후 별도 지급됩니다. 새 방어구·무기·펫·날개·투구·장식 외형도 추가되며 전체 상품 표는 공식 원문에 있습니다.",
+              "en": "Transferred characters not yet logged in receive restoration later. Adds armor/weapon/pet/wing/helm/decor cosmetics; the full product tables remain in the official notice."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "계승석·레기온 UI",
+        "비탄의 설원 최초 토벌 보상",
+        "할로윈 출석·미션·상점",
+        "원정·초월 할로윈 부스트업",
+        "보스·방어력·설정 수정",
+        "회수·복구와 외형 상품"
+      ],
+      "classTables": []
+    },
+    "title": {
+      "ko": "10월 14일 · 한국 패치",
+      "en": "October 14 · Korea"
+    },
+    "summary": {
+      "ko": "PvP 피해 약 30% 감소, 강습 방어·속성 내성 최대 20→80%와 쿨다운 감소 제외, 방어 성공 시 0.3초 감소, 마법 직업 속성 적용과 마도성·정령성 오류 수정을 구분합니다.",
+      "en": "Approximately 30% less PvP damage, stronger Assault defenses with a cooldown trade-off, defensive-skill cooldown gains, elemental assignments and class bug fixes."
+    }
+  },
+  "6acf20d007b77e214688a7ac": {
+    "contentHash": "db9bde10552df0a16256346f008c8b32d3babf65a2efe6e79e7f9f14511c4b29",
+    "reviewedAt": "2026-10-14T17:40:37Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6acf20d007b77e214688a7ac",
+    "changes": [
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "불의 장벽",
+          "en": "Fire Wall"
+        },
+        "description": {
+          "ko": "고저차 전투에서 추가 피해가 누락되던 문제와 다른 플레이어의 더 강한 잔불이 자신의 잔불을 지우던 문제를 수정합니다.",
+          "en": "Repairs bonus damage lost at different elevations and prevents a stronger Embers effect from another player from removing yours."
+        },
+        "impact": {
+          "ko": "해당 조건에서 빠지던 피해와 잔불 유지 시간이 회복될 수 있습니다. 공식 피해 계수 변경 수치는 없습니다.",
+          "en": "Damage and DoT uptime can recover in the affected situations. No damage-coefficient change is specified."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "냉기 폭풍",
+          "en": "Cold Storm"
+        },
+        "description": {
+          "ko": "고저차 전투의 추가 피해 누락과 다른 플레이어의 더 강한 동상이 자신의 동상을 지우던 문제를 수정합니다.",
+          "en": "Repairs elevation-dependent bonus damage and keeps your Frostbite from being removed by a stronger effect from another player."
+        },
+        "impact": {
+          "ko": "고저차·다수 마도성이 함께 싸우는 상황에서 피해 누락이 줄 수 있습니다. 전체 DPS 상승률은 공지되지 않았습니다.",
+          "en": "Reduces damage loss in elevation-sensitive fights and groups with multiple Sorcerers. No overall DPS percentage is published."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "ko": "혹한의 바람",
+          "en": "Bittercold Wind"
+        },
+        "description": {
+          "ko": "고저차 전투에서 Frost 재시전 시간 감소 효과가 작동하지 않던 문제를 수정합니다.",
+          "en": "Restores the Frost cooldown-reduction effect when combatants are at different elevations."
+        },
+        "impact": {
+          "ko": "영향받던 상황에서 쿨다운 감소가 정상 작동합니다. 새로 쿨다운 수치를 상향한 공지는 아닙니다.",
+          "en": "Restores the intended cooldown benefit in affected situations; no new cooldown value is announced."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "ko": "소환: 고대의 정령",
+          "en": "Summon: Ancient Spirit"
+        },
+        "description": {
+          "ko": "북미 공지는 고대의 정령 15레벨 이하에서 스킬이 정상 발동하지 않던 문제를 수정한다고 안내합니다.",
+          "en": "The NA notice fixes Ancient Spirit skills failing to activate at level 15 or below."
+        },
+        "impact": {
+          "ko": "해당 정령 레벨에서 빠지던 공격을 회복할 수 있습니다. 한국 원문의 범위는 15레벨 미만으로 서로 다릅니다.",
+          "en": "Can restore missing summon actions at affected levels. The Korean notice separately says below level 15."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "ko": "전장 기본 능력치",
+          "en": "Battlefield base stats"
+        },
+        "description": {
+          "ko": "전투 시간을 적정 수준으로 맞추기 위해 전장 기준 능력치를 조정합니다. 구체적인 전후 수치는 공지에 없습니다.",
+          "en": "Battlefield standard stats change to adjust combat duration; the notice supplies no before/after values."
+        },
+        "impact": {
+          "ko": "PvP 전장 전투 환경 변경입니다. 한국의 PvP 피해 약 30% 감소를 북미에 적용하지 않습니다.",
+          "en": "Affects Battlefield PvP conditions. The Korean approximately 30% PvP damage reduction is not a North American announcement."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "ko": "서버 이전 기간 상점",
+            "en": "Shop during server transfers"
+          },
+          "sourceSection": "서버 이전 기간 상점",
+          "notes": [
+            {
+              "ko": "일일 던전 즉시 완료권과 영혼 결정의 교환 위치가 상점에서 물질변환의 바람길 상단 항목으로 이동합니다.",
+              "en": "Daily Dungeon instant tickets and Soul Crystals move from the Wind Breeze shop to its Special Substance Morph category."
+            },
+            {
+              "ko": "오드 에너지의 서버당 주 16개 제한은 제거되고 캐릭터당 주 제한은 4→20개로 바뀝니다. 하층 어비스 시간석(7일)도 2주간 판매합니다.",
+              "en": "Odyle Energy loses its 16-per-server weekly cap; the per-character weekly cap increases from 4 to 20. Lower Abyss Rift Stones (7-day) are sold for two weeks."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "할로윈 출석·미션·교환",
+            "en": "Halloween attendance, missions and exchanges"
+          },
+          "sourceSection": "할로윈 출석·미션·교환",
+          "notes": [
+            {
+              "ko": "10월 13일 PDT / 14일 CEST 점검 후부터 11월 3일 PST / 4일 CET 점검 전까지 진행합니다. 출석은 보통 35주화, 7·14일차는 각각 100주화입니다.",
+              "en": "Runs from maintenance October 13 PDT / 14 CEST until maintenance November 3 PST / 4 CET. Attendance awards 35 coins on ordinary days and 100 each on days 7 and 14."
+            },
+            {
+              "ko": "북미 이벤트 미션은 서버당 주 1회입니다. 콘텐츠 미션 5종은 각 25주화, 접속 3회는 30주화, 장비·주문서·침공·슈고 미션은 각 20주화입니다.",
+              "en": "NA missions reset weekly per server: five activity missions give 25 coins each, three logins give 30, and gear, scroll, invasion and Shugo missions give 20 each."
+            },
+            {
+              "ko": "마을 주화 상인에서 주화를 교환합니다. 특별 할로윈 상자는 250주화이며 외형 흉갑과 펫 영혼 결정 10,000개가 포함됩니다. 오드 에너지는 10주화, 서버당 주 4개이며 45레벨부터 구매합니다.",
+              "en": "Town merchants exchange event coins. The special chest costs 250 coins and contains the chest skin and 10,000 Pet Soul Crystals. Odyle Energy costs 10 coins, with a weekly server cap of four and a level-45 requirement."
+            },
+            {
+              "ko": "원정·초월에서 캔디 열쇠 조각을 모읍니다. 색깔 열쇠는 조각 60개로 제작하며 색깔별 서버당 주 1회입니다. 빨강은 성장 펫, 노랑은 어비스 포인트, 파랑은 오드 에너지 보상이 포함됩니다.",
+              "en": "Expedition/Transcendence award Candy Key Fragments. Each colored key needs 60 fragments and has a weekly per-server limit of one. Red rewards include pet growth, yellow Abyss Points, and blue Odyle Energy."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "어비스 진입·이벤트",
+            "en": "Abyss access and event"
+          },
+          "sourceSection": "어비스 진입·이벤트",
+          "notes": [
+            {
+              "ko": "어비스 정복자 이벤트는 10월 13일 PDT / 14일 CEST 점검 후부터 10월 27일 PDT / 28일 CET 점검 전까지입니다. 45레벨 이상 캐릭터는 시간석을 50,000키나로 주 7개까지 구매합니다.",
+              "en": "Conquerors of the Abyss runs between maintenance October 13 PDT / 14 CEST and October 27 PDT / 28 CET. Level-45 characters can buy up to seven Rift Stones weekly for 50,000 Kina each."
+            },
+            {
+              "ko": "어비스 주간 미션 중 1시간 체류와 수호군주 나흐마 1회 처치에 진입 시간석 보상이 추가됩니다. 진입 누적 시간 상한은 7시간으로 변경됩니다.",
+              "en": "Abyss weekly missions for spending one hour and defeating Guardian Lord Nahma once gain entry-stone rewards; accumulated entry time is capped at seven hours."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "외형 상품",
+            "en": "Cosmetic products"
+          },
+          "sourceSection": "외형 상품",
+          "notes": [
+            {
+              "ko": "새 방어구·무기 외형, 펫 2종, 거미 날개, 투구·장식이 추가됩니다. 상품 가격과 구매 제한·전체 구성품은 공식 표에서 확인하세요.",
+              "en": "Adds armor and weapon skins, two pets, Spider Wings, and helm/decor items. The official tables provide prices, purchase limits and all components."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "ko": "설정·성능·오류 수정",
+            "en": "Settings, performance and fixes"
+          },
+          "sourceSection": "설정·성능·오류 수정",
+          "notes": [
+            {
+              "ko": "어비스 대규모 전투 끊김을 줄이고 카메라 Y축 반전 및 자신의 HP바 표시 옵션을 추가합니다. 채집 재료 거래 등록은 플레이 이력에 따라 제한됩니다.",
+              "en": "Reduces Abyss large-battle stutter, adds camera Y-axis inversion and own-HP-bar visibility options, and restricts gathering-material listings based on gameplay history."
+            },
+            {
+              "ko": "듀얼 GPU 설정, 4K의 특정 주사율 충돌, FSR 로딩 지연, 슈고페스타 재접속 위치 초기화를 수정합니다. 그래픽 설정은 Steam Cloud에 저장하지 않습니다.",
+              "en": "Fixes dual-GPU settings, certain 4K refresh-rate crashes, FSR loading delays and Shugo reconnect position resets. Graphics settings stop syncing to Steam Cloud."
+            }
+          ],
+          "tables": []
+        }
+      ],
+      "sourceSections": [
+        "서버 이전 기간 상점",
+        "할로윈 출석·미션·교환",
+        "어비스 진입·이벤트",
+        "외형 상품",
+        "설정·성능·오류 수정"
+      ],
+      "classTables": []
+    },
+    "title": {
+      "ko": "10월 13일 PDT / 14일 CEST · 북미 패치",
+      "en": "October 13 PDT / 14 CEST · North America"
+    },
+    "summary": {
+      "ko": "마도성의 고저차 추가 피해·쿨다운 감소와 잔불·동상 유지, 정령성 고대의 정령 스킬 발동 오류를 수정합니다. 전장 기본 능력치도 조정됩니다.",
+      "en": "Sorcerer elevation-dependent damage/cooldown effects and DoT uptime, Ancient Spirit skill activation, and Battlefield base-stat adjustments."
+    }
   }
 }

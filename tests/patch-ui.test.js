@@ -28,6 +28,36 @@ const server=http.createServer((req,res)=>{
       const local=base+(lang==='ko'?'ko/':''),context=await browser.newContext({viewport:{width:1440,height:1000}});
       await context.route('https://**/*',route=>route.abort());
       const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+      // Notices have no fake review queue; current summaries survive live refresh.
+      await page.goto(local+'updates/?region=NA&kind=all');
+      const newPatch=page.locator('.patch-summary[data-kind="patch"]').filter({has:page.locator('a[href*="na-6acf20d007b77e214688a7ac/"]')});
+      assert.equal(await newPatch.isVisible(),true);
+      assert.equal(await newPatch.locator('.review-badge').textContent(),lang==='ko'?'요약 검토 완료':'Summary reviewed');
+      assert.equal(await page.locator('.patch-summary[data-kind="news"]').first().locator('.review-badge').textContent(),lang==='ko'?'공식 공지':'Official notice');
+      await page.locator('[data-news-refresh]').click();
+      await page.waitForFunction(()=>document.querySelector('[data-source-health]').textContent.includes('Last success:')||document.querySelector('[data-source-health]').textContent.includes('마지막 정상 확인:'));
+      assert.equal(await newPatch.locator('.review-badge').textContent(),lang==='ko'?'요약 검토 완료':'Summary reviewed');
+      assert.equal(await page.locator('.patch-summary[data-kind="news"]').first().locator('.review-badge').textContent(),lang==='ko'?'공식 공지':'Official notice');
+      await newPatch.locator('.patch-read-link').click();
+      assert.equal(await page.locator('#class-sorcerer .patch-skill-change').count(),3);
+      assert.equal(await page.locator('#class-spiritmaster .patch-skill-change').count(),1);
+      assert.equal(await page.locator('.patch-impact-note').count(),5);
+      assert.equal(await page.locator('#class-brawler').count(),0);
+      assert.equal(await page.locator('.change-badge.nerf').count(),0);
+      for(const width of [320,390]){
+        await page.setViewportSize({width,height:844});
+        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+      }
+      await page.screenshot({path:path.join(artifacts,'oct14-na-mobile-'+lang+'.png')});
+      await page.goto(local+'updates/kr-6ace86b86cfe4756db5b8d81/');
+      assert.equal(await page.locator('#class-templar>header .change-badge.adjustment').count(),1);
+      assert.equal(await page.locator('#class-all .change-badge.nerf').count(),2);
+      assert.equal(await page.locator('.patch-impact-note').count(),34);
+      for(const width of [320,390]){
+        await page.setViewportSize({width,height:844});
+        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+      }
+      await page.setViewportSize({width:1440,height:1000});
       await page.goto(local+'updates/');
       assert.equal(await page.locator('[data-news-kind]').inputValue(),'patch');
       assert.equal(await page.locator('.patch-skill-change,.patch-fact-table').count(),0);
