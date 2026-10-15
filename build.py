@@ -42,9 +42,10 @@ pages=[]
 page_dates={}
 # Significant content/link updates that are separate from the underlying source review.
 # Keep these dates explicit: a routine rebuild must not make every page look newly edited.
-CONTENT_UPDATED = {sub: '2026-10-14' for sub in (
-    '', 'start/', 'guides/', 'glossary/',
+CONTENT_UPDATED = {sub: '2026-10-15' for sub in (
+    '', 'start/', 'guides/', 'endgame/', 'gear/', 'routines/', 'maps/', 'dungeons/',
 )}
+CONTENT_UPDATED['glossary/'] = '2026-10-14'
 L=0
 LANG='en'
 def t(en,ko):return (en,ko)[L]
@@ -71,11 +72,13 @@ def header(sub,active):
     section = ('growth' if sub=='endgame/' or sub.startswith(('guides/pet-growth/','guides/kinah-farming/')) else
                'enhancement' if sub=='gear/' or sub.startswith(('guides/gear-targets/','guides/upgrade-decisions/','guides/gear-options/','guides/endgame-crafts/','guides/kr-pendant/','guides/stigma-growth/')) else
                'boss' if sub.startswith(('dungeons/','guides/dungeon-rewards/','guides/kr-bitan/')) else
-               'routines' if sub=='routines/' or sub.startswith('guides/shugo-festival/') else 'start' if sub=='start/' else 'home' if not sub else '')
+               'field' if sub=='maps/' else 'classes' if sub.startswith(('classes/','skills/')) else 'records' if sub=='tools/dps/' else 'updates' if sub=='updates/' else 'routines' if sub=='routines/' or sub.startswith('guides/shugo-festival/') else 'start' if sub=='start/' else 'home' if not sub else '')
     main=[('home','',t('Home','홈'),'grid'),('growth','endgame/',t('Character growth','내실·성장'),'spark'),('enhancement','gear/',t('Gear & upgrades','장비·강화'),'shield'),('boss','dungeons/',t('Dungeons & bosses','던전·보스'),'boss'),('routines','routines/',t('Daily & weekly','일일·주간 숙제'),'check')]
     navhtml=''.join(f'<a href="{href(p)}" class="side-link{(" active" if key==section else "")}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{n}</span></a>' for key,p,n,i in main)
+    featured=[('field','maps/',t('Farming map','파밍·수집 지도'),'target'),('classes','classes/',t('Classes & skills','직업·스킬'),'swords'),('records','tools/dps/',t('Compare DPS records','실전 DPS 비교'),'swords'),('updates','updates/',t('News & patches','뉴스·패치'),'book')]
+    navhtml+='<span class="nav-group-label">'+t('Maps, classes & updates','지도·직업·소식')+'</span>'+''.join(f'<a href="{href(p)}" class="side-link{(" active" if key==section else "")}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{n}</span></a>' for key,p,n,i in featured)
     navhtml+=f'<a class="side-link{(" active" if sub=="start/" else "")}" href="{href("start/")}">{icon("book")}<span>{t("Early-game guide","초반 공략")}</span></a><a class="side-link{(" active" if sub=="guides/" else "")}" href="{href("guides/")}">{icon("grid")}<span>{t("All guides","전체 공략")}</span></a>'
-    refs=[('classes/',t('Class guides','직업 공략')),('skills/',t('Skills & builds','스킬·빌드')),('maps/',t('World maps','월드 지도')),('updates/',t('News & patches','뉴스·패치')),('tools/dps/',t('DPS rankings','DPS 순위')),('tools/compare/',t('Compare classes','직업 비교')),('tools/planner/',t('My checklist','나의 체크리스트')),('insights/',t('Community tips','유저 팁')),('glossary/',t('KR / EN glossary','한영 용어집')),('screenshots/',t('Gameplay screenshots','인게임 스크린샷'))]
+    refs=[('skills/',t('Skills & builds','스킬·빌드')),('tools/compare/',t('Compare classes','직업 비교')),('tools/planner/',t('My checklist','나의 체크리스트')),('insights/',t('Community tips','유저 팁')),('glossary/',t('KR / EN glossary','한영 용어집')),('screenshots/',t('Gameplay screenshots','인게임 스크린샷'))]
     extra=''.join(f'<a href="{href(p)}"'+(' aria-current="page"' if sub.startswith(p) else '')+f'>{label}</a>' for p,label in refs)
     expanded=any(sub.startswith(p) for p,_ in refs)
     mobile=''.join(f'<a href="{href(p)}"{(" aria-current=page" if key==section else "")}>{icon(i)}<span>{label}</span></a>' for (key,p,_,i),label in zip(main,[t('Home','홈'),t('Growth','성장'),t('Gear','장비'),t('Bosses','보스'),t('Routines','숙제')]))
@@ -103,8 +106,8 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
     if 'ag-related' in content or 'data-practical-page=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/advanced-guides.css?v=1">'
     if 'data-practical-page=' in content:guidecss+=f'<script defer src="{BASE}assets/advanced-guides.js?v=1"></script>'
-    guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=1"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
-    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v={'map-audit-14' if sub=='maps/' else 'codex-6'}">{(f'<script defer src="{BASE}assets/map-collectibles.js?v=map-audit-14"></script><script defer src="{BASE}assets/map-resources.js?v=map-audit-14"></script>' if sub=="maps/" else "")}<script defer src="{BASE}assets/deep-guide.js?v={'map-audit-14' if sub=='maps/' else 'codex-8'}"></script>{vakron_script}<script defer src="{BASE}assets/battle.js?v={'vakron-run-1' if 'data-vakron-guide' in content else ('boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6')}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
+    guidecss+=f'<link rel="stylesheet" href="{BASE}assets/find-guide.css?v=2"><script defer src="{BASE}assets/find-guide.js?v=1"></script>'
+    output=f'''<!doctype html><html lang="{LANG}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} | PLAYER’S CODEX</title><meta name="description" content="{E(description)}"><meta name="theme-color" content="#101219"><meta name="color-scheme" content="dark"><meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{en}"><link rel="alternate" hreflang="ko" href="{ko}"><link rel="alternate" hreflang="x-default" href="{en}"><meta property="og:type" content="{'article' if article else 'website'}"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(description)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="PLAYER’S CODEX"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" type="image/svg+xml" href="{BASE}assets/favicon.svg"><link rel="stylesheet" href="{BASE}assets/style.css?v=codex-7"><link rel="stylesheet" href="{BASE}assets/encounters.css?v=codex-6"><link rel="stylesheet" href="{BASE}assets/learn.css?v=codex-6"><script defer src="{BASE}assets/app.js?v=codex-8"></script><script defer src="{BASE}assets/explorer.js?v=codex-6"></script><script defer src="{BASE}assets/encounters.js?v=codex-6"></script><script defer src="{BASE}assets/learn.js?v=codex-7"></script><link rel="stylesheet" href="{BASE}assets/deep-guide.css?v={'map-layout-audit-15' if sub=='maps/' else 'codex-6'}">{(f'<script defer src="{BASE}assets/map-collectibles.js?v=map-layout-audit-15"></script><script defer src="{BASE}assets/map-resources.js?v=map-layout-audit-15"></script>' if sub=="maps/" else "")}<script defer src="{BASE}assets/deep-guide.js?v={'map-layout-audit-15' if sub=='maps/' else 'codex-8'}"></script>{vakron_script}<script defer src="{BASE}assets/battle.js?v={'vakron-run-1' if 'data-vakron-guide' in content else ('boss-scenes-1' if sub.startswith('dungeons/') else 'codex-6')}"></script><script type="application/ld+json">{json.dumps(meta,ensure_ascii=False).replace('<',chr(92)+'u003c')}</script>{adhead}<link rel="stylesheet" href="{BASE}assets/layout.css?v=2">{guidecss}{boss_styles}</head><body data-base="{BASE}">{header(sub,active)}<main id="main">{content}</main>{footer()}{measurement.controls(CONFIG,LANG,BASE)}</body></html>'''
     dest=OUT/route/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(output)
     if index:pages.append(canonical)
 def pagehead(title,desc,tag='',crumb=''):
@@ -130,9 +133,9 @@ def learning():
         ('maps/',t('AION 2 resource map: Odyle, ore, gems & collectibles','아이온 2 파밍 지도: 오드·광석·보석·내실 위치'),t('Find gathering materials by type and use, collectibles, Sealed Dungeons and nearby travel points.','필요한 채집 재료의 위치·사용처, 주신의 흔적과 봉인 던전·가까운 이동 거점을 찾으세요.'),onboarding.maps(LANG,BASE)),
         ('skills/',t('AION 2 skills & builds: effects and class priorities','아이온 2 스킬·빌드: 효과·직업별 투자 순서'),t('English and Korean names, effects and practical usage.','영문·한국어 이름부터 효과와 실제 사용 시점까지.'),skillbook.library(LANG,BASE))]:
         body=guidebrowse.organize(sub,body,LANG,BASE)
-        body=advancedguides.gateway(LANG,BASE,sub.rstrip('/'))+body
+        body=body+advancedguides.gateway(LANG,BASE,sub.rstrip('/'))
         if sub in ('start/','endgame/','routines/','gear/'):
-            body=servertransfer.gateway(LANG,BASE,'rewards' if sub=='routines/' else 'checklist')+body
+            body=body+servertransfer.gateway(LANG,BASE,'rewards' if sub=='routines/' else 'checklist')
         heading=pagehead(title,desc) if sub!='start/' else ''
         if sub in ('start/','endgame/','maps/'):
             body += liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])
@@ -154,7 +157,7 @@ def learning():
 def dungeons():
     title=t('AION 2 dungeon boss guides: animated mechanics','아이온 2 던전 보스 공략: 움직이는 패턴·안전 위치')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
-    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{advancedguides.gateway(LANG,BASE,"boss")}{servertransfer.gateway(LANG,BASE,"rewards")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}{liveops.screenshots(LANG,BASE,"boss")}</div>','dungeon')
+    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}{advancedguides.gateway(LANG,BASE,"boss")}{servertransfer.gateway(LANG,BASE,"rewards")}{liveops.screenshots(LANG,BASE,"boss")}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=t('AION 2 ','아이온 2 ')+pair(b['dungeon'])+t(' boss guide: ',' 보스 공략: ')+name
@@ -188,7 +191,7 @@ def guides():
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
         transfer_anchor={'pet-growth':'pets','kinah-farming':'storage','dungeon-rewards':'rewards','gear-targets':'checklist'}[slug]
-        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}{progression.render(slug,LANG,BASE)}</div>','guides',True,reviewed=progression.REVIEWED)
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}</div>','guides',True,reviewed=progression.REVIEWED)
         page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
     search_index.extend(progression.search_entries(LANG,BASE))
     for g in advancedguides.GUIDES:

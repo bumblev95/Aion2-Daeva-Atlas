@@ -45,7 +45,7 @@ async function contained(page, label) {
       const page = await context.newPage(), errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(local);
-      assert.equal(await page.locator('[data-rpg-goal]').count(), 4);
+      assert.equal(await page.locator('[data-rpg-goal]').count(), 6);
       for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({width, height: 844});
         await contained(page, lang + ' RPG home');
@@ -54,9 +54,9 @@ async function contained(page, label) {
       await page.locator('.rpg-home-goals').scrollIntoViewIfNeeded();
       await page.screenshot({path: path.join(artifacts, 'rpg-goals-home-' + lang + '.png')});
       await page.locator('[data-rpg-goal="boss"]').click();
-      await page.waitForURL('**/endgame/#boss-guides');
-      assert.equal(await page.locator('#boss-guides').isVisible(), true);
-      const bossLink = page.locator('.endgame-boss').first();
+      await page.waitForURL('**/dungeons/');
+      assert.equal(await page.locator('[data-boss-lab]').isVisible(), true);
+      const bossLink = page.locator('.boss-panel:not([hidden]) .boss-foot a').first();
       const bossUrl = new URL(await bossLink.getAttribute('href'), local).href;
       await bossLink.click();
       await page.waitForURL(bossUrl);
@@ -149,7 +149,7 @@ async function contained(page, label) {
       await contained(staticPage, lang + ' enhancement no-script');
       await noScript.close();
     }
-    console.log('PASS: EN/KR four-goal home → growth / boss / enhancement, material routes, both faction map filters, reward use, saved legacy checks, language deep links, no-script guides and 320/390/768/1440px layout.');
+    console.log('PASS: EN/KR six-goal home → growth / boss / enhancement, material routes, both faction map filters, reward use, saved legacy checks, language deep links, no-script guides and 320/390/768/1440px layout.');
   } finally {
     if (browser) await browser.close();
     await new Promise(resolve => server.close(resolve));

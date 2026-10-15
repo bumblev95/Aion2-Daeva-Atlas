@@ -71,3 +71,16 @@ details.reader-panel{border:1px solid #3f5266;border-radius:9px;padding:18px;mar
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.find-home *{transition:none!important}}
 @media print{.mobile-dock,.reader-tabs,.reader-series,.find-search{display:none!important}.topic-reader [data-reader-panel][hidden]{display:block!important}.reader-panel{break-inside:avoid}.reader-fallback{display:none}.footer{padding-bottom:0}}
+
+/* Keep frequent tools visible and supporting information after the task. */
+.sidebar .nav-group-label{display:block;margin:14px 13px 7px;color:#a7b9bd;font-size:11px}
+.sidebar .side-link{min-height:42px;padding:8px 13px;margin-bottom:2px}
+.find-home [data-rpg-goal=field] .find-goal-icon{background:#243f44;border-color:#4a747d}
+.find-home [data-rpg-goal=classes] .find-goal-icon{background:#39344a;border-color:#685f84}
+.find-home .home-stage-nav{padding:13px 0;border-bottom:1px solid #303e4e;gap:8px 24px}
+.find-home .home-stage-nav a{color:#c3dfd2;min-height:44px;font-size:13px}
+.find-shortcuts a{min-height:44px}
+.directory-tools{display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0}
+.directory-tools a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:#bdd8cf}
+@media(min-width:1101px){.find-home .find-goals{grid-template-columns:repeat(3,minmax(0,1fr))}.find-home .home-stage{padding:19px;gap:13px}.find-home .home-stage h2{font-size:18px}}
+@media(max-width:620px){.find-home .home-stage-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.find-home .home-stage-nav a{font-size:12px}.find-shortcuts a{min-height:44px}.directory-tools{gap:5px 18px}}

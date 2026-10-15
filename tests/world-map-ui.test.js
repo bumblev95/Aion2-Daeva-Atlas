@@ -21,6 +21,13 @@ const server=http.createServer((q,r)=>{
    assert.equal(await page.locator('[data-map-resource]').inputValue(),'gather_odyle');
    assert.match(await page.locator('[data-map-summary]').textContent(),/706/);
    assert.match(await page.locator('[data-resource-use]').textContent(),lang?/오드 에너지/:/Odyle Energy/);
+   assert.equal(await page.locator('.map-toolbar').evaluate(node=>Boolean(node.compareDocumentPosition(document.querySelector('.resource-finder'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
+   for(const width of [390,1440]){
+    await page.setViewportSize({width,height:1000});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+    await page.screenshot({path:path.join(artifacts,'map-entry-'+(lang?'ko':'en')+'-'+width+'.png')});
+   }
+   await page.setViewportSize({width:390,height:844});
    await page.locator('[data-map-resource]').selectOption('gather_ruby');assert.match(await page.locator('[data-map-summary]').textContent(),/196/);
    await page.locator('.map-place').first().click();assert.match(await page.locator('[data-map-reward]').textContent(),lang?/세공/:/Handicrafting/);
    await page.locator('[data-map-complete]').click();await page.locator('[data-map-hide-done]').check();assert.match(await page.locator('[data-map-summary]').textContent(),/195/);

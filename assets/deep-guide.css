@@ -18,3 +18,31 @@
 .world-pin.gather_odyle{background:#403060;border-color:#d3b3ff}.world-pin.gather_orichalcum{background:#614118;border-color:#f0ca7b}.world-pin.gather_ruby{background:#6d283b;border-color:#ffa1b7}.world-pin.gather_sapphire,.world-pin.gather_diamond{background:#21456f;border-color:#a0d2ff}.world-pin.gather_yggdrasil,.world-pin.gather_asvata{background:#314a29;border-color:#b7dc9a}
 
 .map-region-guide p{margin:8px 0;line-height:1.8}.map-region-context{margin-top:16px;padding:16px 18px;background:#1a273b;border:1px solid #455474;border-radius:10px}.map-region-context h2{font-size:18px;margin:0 0 8px;line-height:1.5}.map-region-context p{font-size:13px;line-height:1.8;margin:0}.map-region-context button{background:none;border:0;color:#d3b9f1;font:inherit;text-align:left;cursor:pointer;min-height:44px;margin-top:8px}.map-region-context [hidden],.map-empty-notice [hidden]{display:none}
+
+/* Select region before resource; keep the map close to its controls. */
+.world-map .map-toolbar{padding:14px 16px;border:1px solid #455b6c;border-radius:9px;background:#1a2938;gap:12px 20px}
+.world-map .map-toolbar select{max-width:100%;min-height:44px}
+.world-map .map-region-context{margin-top:10px;padding:10px 14px}
+.world-map .map-region-context h2{font-size:16px;margin-bottom:3px}
+.world-map .map-region-context p{font-size:12px}
+.map-region-guide{margin:6px 0 12px;font-size:12px;color:#b6cbd4}
+.map-region-guide summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 3px}
+.map-region-guide p{padding:0 14px;margin:4px 0 10px}
+.world-map .resource-finder{margin:12px 0;padding:16px 18px}
+.world-map .resource-finder h2{font-size:18px;margin:0 0 5px}
+.world-map .resource-finder>p{font-size:12px;margin:0 0 10px}
+.world-map .map-goals{margin:10px 0}
+.world-map [data-map-resource-panel]{display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,1.4fr);gap:14px;align-items:start}
+.world-map .resource-select{font-size:12px}
+.world-map .resource-select select{margin:5px 0 0}
+.world-map .resource-brief{padding:10px 14px}
+.world-map .resource-brief h3{font-size:15px;margin:0 0 3px}
+.world-map .resource-brief>p{font-size:12px;margin:0 0 5px}
+.resource-note{font-size:11px;color:#a8becb}
+.resource-note summary{cursor:pointer;min-height:36px;padding:7px 0}
+.world-map .resource-brief .text-link{font-size:11px;min-height:36px;padding:6px 0}
+.world-map .map-filterbar{margin:14px 0 8px}
+.world-map .map-purpose{font-size:12px;margin:8px 0}
+.map-references{padding:12px 0}
+.map-references .resource-reference summary{min-height:44px;padding:10px 0}
+@media(max-width:700px){.world-map .map-toolbar{padding:12px;gap:10px}.world-map .map-toolbar>label{min-width:0;flex:1 1 200px}.world-map .map-toolbar select{width:100%}.world-map .map-route{margin:0}.world-map .resource-finder{padding:14px}.world-map [data-map-resource-panel]{grid-template-columns:1fr;gap:10px}.world-map .resource-brief h3{font-size:15px}}
