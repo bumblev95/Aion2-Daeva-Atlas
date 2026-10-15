@@ -48,6 +48,8 @@ on:
       - 'assets/maps/**'
       - 'data/maps.json'
       - 'tests/world-map-ui.test.js'
+      - 'tests/map-spatial-ui.test.js'
+      - 'research/map-spatial-audit.json'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -110,6 +112,8 @@ on:
       - 'assets/maps/**'
       - 'data/maps.json'
       - 'tests/world-map-ui.test.js'
+      - 'tests/map-spatial-ui.test.js'
+      - 'research/map-spatial-audit.json'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -149,6 +153,10 @@ jobs:
         env:
           MAP_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/world-map-ui.test.js
+      - name: Verify independent map anchors and touch gestures
+        env:
+          MAP_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/map-spatial-ui.test.js
       - if: ${{ !cancelled() }}
         name: Verify focused guide navigation, history, mobile menu and no-script fallback
         env:

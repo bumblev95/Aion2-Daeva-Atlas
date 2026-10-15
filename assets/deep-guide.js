@@ -50,10 +50,11 @@
   function drawPins(){
    pinLayer.replaceChildren();const groups=new Map();pins.forEach((m,index)=>{const p=positions(m),cell=m.id===selected?'selected':Math.floor(p[0]*scale/42)+':'+Math.floor(p[1]*scale/42);if(!groups.has(cell))groups.set(cell,[]);groups.get(cell).push({m,index,p});});
    for(const group of groups.values()){const {m,index,p}=group[0],cluster=group.length>1,b=document.createElement('button');b.type='button';b.className=cluster?'world-pin world-cluster':'world-pin '+m.type;b.style.left=(cluster?group.reduce((v,x)=>v+x.p[0],0)/group.length:p[0])+'px';b.style.top=(cluster?group.reduce((v,x)=>v+x.p[1],0)/group.length:p[1])+'px';b.textContent=cluster?String(group.length):String(index+1);b.setAttribute('aria-label',cluster?t(group.length+' nearby locations; zoom in',group.length+'개 인접 위치·확대'):displayName(m));
-    if(!cluster){b.dataset.pointId=m.id;b.classList.toggle('is-complete',marked(m));b.setAttribute('aria-pressed',String(m.id===selected));const label=document.createElement('span');label.className='map-pin-label';label.textContent=displayName(m);b.append(label);b.addEventListener('click',()=>{if(!moved){showSelection(m.id,true);map.querySelector('[data-map-selection]').scrollIntoView({behavior:'smooth',block:'nearest'});}});}else b.addEventListener('click',()=>{const x=group.reduce((v,n)=>v+n.p[0],0)/group.length,y=group.reduce((v,n)=>v+n.p[1],0)/group.length;scale=Math.min(12,scale*2);panX=viewport.clientWidth/2-x*scale;panY=viewport.clientHeight/2-y*scale;transform();});pinLayer.append(b);
+    if(!cluster){b.dataset.pointId=m.id;b.classList.toggle('is-complete',marked(m));b.setAttribute('aria-pressed',String(m.id===selected));const label=document.createElement('span');label.className='map-pin-label';label.textContent=displayName(m);b.append(label);b.addEventListener('click',()=>{if(!moved){showSelection(m.id,true);map.querySelector('[data-map-selection]').scrollIntoView({behavior:'smooth',block:'nearest'});}});}else b.addEventListener('click',()=>{if(moved)return;const x=group.reduce((v,n)=>v+n.p[0],0)/group.length,y=group.reduce((v,n)=>v+n.p[1],0)/group.length;scale=Math.min(12,scale*2);panX=viewport.clientWidth/2-x*scale;panY=viewport.clientHeight/2-y*scale;transform();});pinLayer.append(b);
    }
   }
   function renderPoints(resetView=true){
+   map.querySelector('[data-map-coverage-note]').hidden=isStarter()||!['all','empyrean_trace'].includes(type);
    const term=search.value.trim().toLocaleLowerCase(),hide=map.querySelector('[data-map-hide-done]').checked;const candidates=all[zone].markers.filter(m=>type==='all'||m.type===type||(type==='gather_all'&&isGather(m.type)));
    pins=candidates.filter(m=>(!hide||!marked(m))&&(!term||m.name.toLocaleLowerCase().includes(term)||(m.ko||'').includes(term)||m.description.toLocaleLowerCase().includes(term)||(m.aliases||[]).some(x=>x.toLocaleLowerCase().includes(term))));pinLayer.replaceChildren();list.replaceChildren();
    pins.slice(0,listLimit).forEach((m,index)=>{const b=document.createElement('button');b.type='button';b.dataset.pointId=m.id;b.className='map-place';b.classList.toggle('is-complete',marked(m));b.setAttribute('aria-pressed',String(m.id===selected));const icon=document.createElement('b');icon.textContent=String(index+1);const label=document.createElement('span');label.textContent=displayName(m);const kind=document.createElement('small');kind.textContent=(marked(m)?'✓ ':'')+labels[m.type];label.append(kind);b.append(icon,label);list.append(b);b.addEventListener('click',()=>showSelection(m.id,true));});map.querySelector('[data-map-more]').hidden=pins.length<=listLimit;
@@ -84,7 +85,40 @@
   map.querySelectorAll('button[data-faction]').forEach(b=>b.addEventListener('click',()=>{zone=b.dataset.faction==='elyos'?'Verteron':'Altgard';selected='';search.value='';renderZone();}));zoneSelect.addEventListener('change',()=>{zone=zoneSelect.value;if(isStarter())type='all';selected='';search.value='';listLimit=100;renderZone();});map.querySelectorAll('[data-map-type]').forEach(b=>b.addEventListener('click',()=>{type=b.dataset.mapType;selected='';renderPoints();}));search.addEventListener('input',()=>{listLimit=100;renderPoints();});map.querySelector('[data-map-hide-done]').addEventListener('change',()=>renderPoints());map.querySelector('[data-world-fit]').addEventListener('click',fit);map.querySelectorAll('[data-world-zoom]').forEach(b=>b.addEventListener('click',()=>zoom(b.dataset.worldZoom==='in'?1.4:1/1.4)));
   map.querySelector('[data-map-more]').addEventListener('click',()=>{listLimit+=100;renderPoints(false);});
   map.querySelector('[data-map-complete]').addEventListener('click',()=>{const m=all[zone].markers.find(m=>m.id===selected);if(!m)return;const id=doneId(m);let ok=true;if(isGather(m.type))visited=visited.includes(id)?visited.filter(x=>x!==id):[...visited,id];else{completed=completed.includes(id)?completed.filter(x=>x!==id):[...completed,id];ok=save(key,completed);}renderPoints(false);if(!ok)map.querySelector('[data-map-copy-status]').textContent=t('Progress is available for this visit only.','이번 방문 동안만 완료 표시가 유지돼요.');});map.querySelector('[data-map-nearest]').addEventListener('click',()=>{type='kibelisk';selected=nearest;search.value='';renderPoints(false);showSelection(selected,true);});map.querySelector('[data-map-copy]').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);map.querySelector('[data-map-copy-status]').textContent=t('Copied','복사했어요');}catch{map.querySelector('[data-map-copy-status]').textContent=t('Copy this page’s address.','주소창의 주소를 복사하세요.');}});map.querySelector('[data-map-reset]').addEventListener('click',()=>{completed=[];save(key,[]);renderPoints(false);});
-  viewport.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,px:panX,py:panY};moved=false;viewport.setPointerCapture(e.pointerId);});viewport.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)moved=true;panX=drag.px+dx;panY=drag.py+dy;transform();});const stop=()=>{drag=null;setTimeout(()=>moved=false,0);};viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);viewport.addEventListener('keydown',e=>{if(e.target!==viewport)return;const dirs={ArrowLeft:[50,0],ArrowRight:[-50,0],ArrowUp:[0,50],ArrowDown:[0,-50]};if(dirs[e.key]){e.preventDefault();panX+=dirs[e.key][0];panY+=dirs[e.key][1];transform();}else if(e.key==='+'||e.key==='-'){e.preventDefault();zoom(e.key==='+'?1.4:1/1.4);}});
-  renderZone();if(params.get('point')&&all[zone].markers.some(m=>m.id===params.get('point'))){const m=all[zone].markers.find(m=>m.id===params.get('point'));type=m.type;selected=m.id;renderPoints(false);showSelection(selected,true);}if('ResizeObserver' in window)new ResizeObserver(fit).observe(viewport);
+  // Keep taps on pins, but capture a moving gesture so dragging never activates a marker.
+  const pointers=new Map();
+  function startGesture(){
+   const pts=[...pointers.values()];if(!pts.length){drag=null;return;}
+   if(pts.length===1){drag={x:pts[0].x,y:pts[0].y,px:panX,py:panY};return;}
+   const [a,b]=pts,rect=viewport.getBoundingClientRect(),x=(a.x+b.x)/2-rect.left,y=(a.y+b.y)/2-rect.top;
+   drag={distance:Math.max(1,Math.hypot(a.x-b.x,a.y-b.y)),scale,x:(x-panX)/scale,y:(y-panY)/scale};
+  }
+  viewport.addEventListener('pointerdown',e=>{
+   if(e.button!==0)return;if(!pointers.size)moved=false;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+   if(pointers.size>1){moved=true;for(const id of pointers.keys())viewport.setPointerCapture(id);}
+   else if(!e.target.closest('button'))viewport.setPointerCapture(e.pointerId);
+   startGesture();
+  });
+  viewport.addEventListener('pointermove',e=>{
+   if(!pointers.has(e.pointerId)||!drag)return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+   if(pointers.size>1){
+    const [a,b]=pointers.values(),rect=viewport.getBoundingClientRect();
+    scale=Math.max(.45,Math.min(12,drag.scale*Math.hypot(a.x-b.x,a.y-b.y)/drag.distance));
+    panX=(a.x+b.x)/2-rect.left-drag.x*scale;panY=(a.y+b.y)/2-rect.top-drag.y*scale;
+   }else{
+    const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+    if(Math.abs(dx)+Math.abs(dy)>4){moved=true;viewport.setPointerCapture(e.pointerId);}
+    if(!moved)return;panX=drag.px+dx;panY=drag.py+dy;
+   }
+   transform();
+  });
+  const stop=e=>{if(!pointers.delete(e.pointerId))return;startGesture();if(!pointers.size)setTimeout(()=>moved=false,0);};
+  viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);viewport.addEventListener('lostpointercapture',e=>{if(e.target===viewport)stop(e);});
+  viewport.addEventListener('keydown',e=>{if(e.target!==viewport)return;const dirs={ArrowLeft:[50,0],ArrowRight:[-50,0],ArrowUp:[0,50],ArrowDown:[0,-50]};if(dirs[e.key]){e.preventDefault();panX+=dirs[e.key][0];panY+=dirs[e.key][1];transform();}else if(e.key==='+'||e.key==='-'){e.preventDefault();zoom(e.key==='+'?1.4:1/1.4);}});
+  renderZone();if(params.get('point')&&all[zone].markers.some(m=>m.id===params.get('point'))){const m=all[zone].markers.find(m=>m.id===params.get('point'));type=m.type;selected=m.id;renderPoints(false);showSelection(selected,true);}if('ResizeObserver' in window){
+   // Its first notification must not undo a shared point's initial centering.
+   let width=viewport.clientWidth,height=viewport.clientHeight;
+   new ResizeObserver(()=>{const w=viewport.clientWidth,h=viewport.clientHeight;if(w&&h&&(w!==width||h!==height)){panX+=(w-width)/2;panY+=(h-height)/2;transform();width=w;height=h;}}).observe(viewport);
+  }
  }
 })();
