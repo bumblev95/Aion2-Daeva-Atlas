@@ -42,6 +42,9 @@ const server=http.createServer((q,r)=>{
    assert.equal(await page.locator('[data-world-zone]').inputValue(),'Altgard');
    assert.match(await page.locator('[data-map-summary]').textContent(),/1371/);
    await page.locator('[data-world-zone]').selectOption('Ishalgen');
+   assert.equal(await page.locator('.map-place').count(),11);
+   assert.match(await page.locator('[data-map-region-title]').textContent(),lang?/마족/:/Asmodian/);
+   await page.locator('[data-map-type="hidden_cube"]').click();
    assert.equal(await page.locator('[data-map-empty-box]').isVisible(),true);
    await page.locator('[data-map-next-region]').click();assert.equal(await page.locator('[data-world-zone]').inputValue(),'Altgard');
    await page.locator('[data-world-zone]').selectOption('Ishalgen');
@@ -54,6 +57,24 @@ const server=http.createServer((q,r)=>{
    await page.locator('.map-place').click();assert.equal(await page.locator('[data-map-selection]').isVisible(),true);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
    await page.locator('[data-map-purpose]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(artifacts,'map-'+(lang?'ko':'en')+'.png')});
+   await page.locator('button[data-faction="elyos"]').click();
+   await page.locator('[data-map-goal="gather"]').click();
+   await page.locator('[data-map-resource]').selectOption('gather_odyle');
+   await page.locator('[data-world-zone]').selectOption('Poeta');
+   assert.equal(await page.locator('.map-place').count(),8);
+   assert.equal(await page.locator('[data-map-empty-box]').isVisible(),false);
+   assert.match(await page.locator('[data-map-region-title]').textContent(),lang?/포에타.*천족/:/Poeta.*Elyos/);
+   assert.match(await page.locator('[data-map-region-description]').textContent(),lang?/NPC 7곳·이동 거점 1곳/:/7 story NPC.*1 travel/);
+   await page.waitForFunction(()=>document.querySelector('[data-map-terrain]').naturalWidth===2048);
+   await page.locator('[data-map-type="gather_all"]').click();
+   await page.locator('[data-map-show-story]').click();assert.equal(await page.locator('.map-place').count(),8);
+   await page.locator('[data-map-region-farming]').click();assert.equal(await page.locator('[data-world-zone]').inputValue(),'Verteron');
+   assert.equal(await page.locator('[data-map-resource]').inputValue(),'gather_odyle');
+   // Shared explicit filters stay intact; provide recovery on direct entry too.
+   await page.goto('http://localhost:8768'+prefix+'/'+lang+'maps/?zone=Poeta&type=gather_odyle');
+   assert.equal(await page.locator('[data-map-empty-box]').isVisible(),true);
+   await page.locator('[data-map-show-story]').click();assert.equal(await page.locator('.map-place').count(),8);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
    await page.close();
   }
   console.log('PASS: EN/KR phone map, same-origin 2048px terrain with external hosts blocked, source coordinate alignment, material counts/uses, faction herbs, temporary visit checks, collectibles/candidate counts, clustering, pagination, empty tutorial recovery, selection and overflow.');
