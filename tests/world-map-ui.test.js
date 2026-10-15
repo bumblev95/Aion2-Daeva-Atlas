@@ -29,7 +29,7 @@ const server=http.createServer((q,r)=>{
    assert.equal(await page.locator('[data-map-resource]').inputValue(),'gather_azpha');assert.match(await page.locator('[data-map-summary]').textContent(),/150/);
    await page.locator('button[data-faction="elyos"]').click();
    await page.locator('[data-map-resource]').selectOption('gather_all');assert.match(await page.locator('[data-map-summary]').textContent(),/2733/);
-   await page.locator('[data-map-goal="dungeons"]').click();assert.equal(await page.locator('.map-place').count(),61);
+   await page.locator('[data-map-goal="dungeons"]').click();assert.equal(await page.locator('.map-place').count(),61);await page.locator('a[href$="endgame/#use-rewards"]').click({trial:true});
    await page.waitForFunction(()=>document.querySelector('[data-map-terrain]').naturalWidth===2048);
    await page.locator('[data-map-type="empyrean_trace"]').click();
    assert.match(await page.locator('[data-map-summary]').textContent(),/559/);
