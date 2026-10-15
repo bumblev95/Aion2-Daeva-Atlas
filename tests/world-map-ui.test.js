@@ -18,7 +18,18 @@ const server=http.createServer((q,r)=>{
    await page.goto('http://localhost:8768'+prefix+'/'+lang+'maps/',{waitUntil:'domcontentloaded'});
    await page.waitForSelector('.world-pin');
    assert.equal(await page.locator('[data-world-zone]').inputValue(),'Verteron');
-   assert.equal(await page.locator('.map-place').count(),61);
+   assert.equal(await page.locator('[data-map-resource]').inputValue(),'gather_odyle');
+   assert.match(await page.locator('[data-map-summary]').textContent(),/706/);
+   assert.match(await page.locator('[data-resource-use]').textContent(),lang?/오드 에너지/:/Odyle Energy/);
+   await page.locator('[data-map-resource]').selectOption('gather_ruby');assert.match(await page.locator('[data-map-summary]').textContent(),/196/);
+   await page.locator('.map-place').first().click();assert.match(await page.locator('[data-map-reward]').textContent(),lang?/세공/:/Handicrafting/);
+   await page.locator('[data-map-complete]').click();await page.locator('[data-map-hide-done]').check();assert.match(await page.locator('[data-map-summary]').textContent(),/195/);
+   await page.locator('[data-resource-reset]').click();assert.match(await page.locator('[data-map-summary]').textContent(),/196/);await page.locator('[data-map-hide-done]').uncheck();
+   await page.locator('[data-map-resource]').selectOption('gather_aria');await page.locator('button[data-faction="asmodian"]').click();
+   assert.equal(await page.locator('[data-map-resource]').inputValue(),'gather_azpha');assert.match(await page.locator('[data-map-summary]').textContent(),/150/);
+   await page.locator('button[data-faction="elyos"]').click();
+   await page.locator('[data-map-resource]').selectOption('gather_all');assert.match(await page.locator('[data-map-summary]').textContent(),/2733/);
+   await page.locator('[data-map-goal="dungeons"]').click();assert.equal(await page.locator('.map-place').count(),61);
    await page.waitForFunction(()=>document.querySelector('[data-map-terrain]').naturalWidth===2048);
    await page.locator('[data-map-type="empyrean_trace"]').click();
    assert.match(await page.locator('[data-map-summary]').textContent(),/559/);
@@ -45,6 +56,6 @@ const server=http.createServer((q,r)=>{
    await page.locator('[data-map-purpose]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(artifacts,'map-'+(lang?'ko':'en')+'.png')});
    await page.close();
   }
-  console.log('PASS: EN/KR phone map, same-origin 2048px terrain with external hosts blocked, source coordinate alignment, collectibles/candidate counts, clustering, pagination, empty tutorial recovery, selection and overflow.');
+  console.log('PASS: EN/KR phone map, same-origin 2048px terrain with external hosts blocked, source coordinate alignment, material counts/uses, faction herbs, temporary visit checks, collectibles/candidate counts, clustering, pagination, empty tutorial recovery, selection and overflow.');
  }finally{if(browser)await browser.close();server.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
