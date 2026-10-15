@@ -120,7 +120,7 @@ python build.py
 node scripts/build_dps_rankings.js --verify
 ```
 
-Review the source dates, units, region, methods and samples before committing a snapshot. The review script rejects changed scopes/markup and incomplete launch-class coverage. Weekly URLs are intentionally pinned to reviewed periods; advance them only as part of a new source review. AIONING is linked for manual cross-checks; its data is not imported or republished.
+Review the source dates, units, region, methods and samples before committing a snapshot. The review script rejects changed scopes/markup and incomplete launch-class coverage. Weekly URLs are intentionally pinned to reviewed periods; advance them only as part of a new source review. Use `--weekly-only` to review JaMeter while preserving every AionFlex value, hash and original per-dataset date if those sources cannot be revalidated. The page and CSV show each comparison’s own review/collection dates; the latest snapshot date does not make older coverage current. AIONING is linked for manual cross-checks; its data is not imported or republished.
 
 `tests/dps-ui.test.js` checks exact HTML/JSON/CSV agreement, published units and precision, missing-sample rank suppression, ignored visitor/query inputs, native details, absence of client simulation, English/Korean rendering with JavaScript disabled and containment at 320px/390px. The browser workflow retains screenshots and CSV evidence.
 
@@ -147,3 +147,5 @@ animation controls and no-script/mobile views.
 The four `/guides/pet-growth/`, `/guides/gear-targets/`, `/guides/dungeon-rewards/` and `/guides/kinah-farming/` routes also have `/ko/` counterparts. Home, endgame, equipment, routines and the guide index lead into them. Pet spawn examples retain KR source names; Conquest reward targets and entry gates are labelled Global. A single dungeon target collection supplies the equipment ladder, reward guide and existing boss-page reward summaries. Entry totals are never presented as individual equipment levels. Bound Kinah, conditional score rewards and tradable materials are distinguished; no live prices or hourly income are claimed.
 
 `tests/progression-ui.test.js` follows home → pet → map, equipment → reward → boss, routines → reward use, language-switch and search paths with and without scripts at 320–1440px. It also audits cross-page fragment destinations and saves screenshots in browser CI. Source review is dated October 12, 2026; Game8 is recorded as public-index discovery only because its article responses required payment (HTTP 402). Recheck the cited region and source when changing any target, cap or payout.
+
+Recent maintenance and verification history is recorded in [CHANGELOG.md](CHANGELOG.md), with the [October 15 source review](research/dps-review-2026-10-15.md).

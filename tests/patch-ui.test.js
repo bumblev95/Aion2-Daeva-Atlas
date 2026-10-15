@@ -50,9 +50,15 @@ const server=http.createServer((req,res)=>{
       }
       await page.screenshot({path:path.join(artifacts,'oct14-na-mobile-'+lang+'.png')});
       await page.goto(local+'updates/kr-6ace86b86cfe4756db5b8d81/');
+      const followup=page.locator('.patch-followup a');
+      assert.equal(await followup.count(),1);
+      assert((await followup.getAttribute('href')).includes('kr-6acf3680263e537d356d1155/'));
       assert.equal(await page.locator('#class-templar>header .change-badge.adjustment').count(),1);
       assert.equal(await page.locator('#class-all .change-badge.nerf').count(),2);
       assert.equal(await page.locator('.patch-impact-note').count(),34);
+      await followup.click();
+      assert((await page.locator('.patch-before-after').textContent()).includes('0.1'));
+      assert((await page.locator('.patch-detail-head>a').getAttribute('href')).includes('articleId=6acf3680263e537d356d1155'));
       for(const width of [320,390]){
         await page.setViewportSize({width,height:844});
         assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));

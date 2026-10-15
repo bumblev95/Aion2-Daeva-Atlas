@@ -1,7 +1,11 @@
 """Source extraction and publication boundaries for measured public summaries."""
 import unittest
+import json
+import tempfile
+from pathlib import Path
 from unittest.mock import patch
 from scripts.review_dps_observations import parse, parse_report, rounded_dps, korean_dps, number
+from scripts import review_dps_observations as reviewer
 import dpsranking
 
 class ObservationTests(unittest.TestCase):
@@ -44,6 +48,58 @@ class ObservationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'region'):parse(html,'balance','KR')
         with self.assertRaisesRegex(ValueError,'window'):parse(html.replace('Last 30 days','All time'),'balance','GLOBAL')
         with self.assertRaisesRegex(ValueError,'columns'):parse(html.replace('<td>44</td>',''),'balance','GLOBAL')
+
+    def test_weekly_review_preserves_other_publisher_and_rejects_unfinished_band(self):
+        def report(short, provisional):
+            def table(head, rows):
+                return '<table><thead><tr>'+''.join('<th>'+x+'</th>' for x in head)+'</tr></thead><tbody>'+''.join(
+                    '<tr>'+''.join('<td>'+x+'</td>' for x in row)+'</tr>' for row in rows)+'</tbody></table>'
+            classes = list(reviewer.KO_CLASSES)
+            return ('<h1>'+short+' 주간 직업별 DPS 리포트</h1><p>같은 보스를 잡은 기록끼리 전투력 1당 DPS '+
+                    ('진행 중인 주입니다 ' if provisional else '')+'같은 전투력끼리 (750.0K ~ 850.0K)</p>'+
+                    table(['직업','기록 수'], [[c,'100'] for c in classes])+
+                    table(['직업',short], [[c,'1.00'] for c in classes])+
+                    table(['직업','기록 수','DPS'], [[c,'40','100만'] for c in classes])+
+                    table(['보스'],[['보스']])+table(['주'],[[short]]))
+        previous = json.loads((reviewer.ROOT / 'data/dps-observations.json').read_text())
+        # Legacy snapshots receive their original dates, never the new review's date.
+        for d in previous['datasets']:
+            d.pop('reviewedAt', None); d.pop('collectedAt', None)
+        previous['reviewedAt'] = '2026-10-09'
+        previous['collectedAt'] = '2026-10-09T08:24:17Z'
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp); (root / 'data').mkdir()
+            (root / 'data/dps-observations.json').write_text(json.dumps(previous))
+            (root / 'jameter-current.html').write_text(report('10.14', True))
+            (root / 'jameter-complete.html').write_text(report('10.7', False))
+            with patch.object(reviewer, 'ROOT', root), patch.object(reviewer, 'urlopen', side_effect=AssertionError('No network for preserved scopes')):
+                result = reviewer.review('2026-10-15', root, weekly_only=True)
+                for before, after in zip(previous['datasets'][:5], result['datasets'][:5]):
+                    self.assertEqual(after, dict(before, reviewedAt=previous['reviewedAt'], collectedAt=previous['collectedAt']))
+                self.assertEqual(result['datasets'][-2]['periodStart'], '2026-10-14')
+                self.assertTrue(result['datasets'][-2]['provisional'])
+                self.assertEqual(result['datasets'][-1]['periodStart'], '2026-10-07')
+                self.assertFalse(result['datasets'][-1]['provisional'])
+                self.assertEqual(result['datasets'][-1]['reviewedAt'], '2026-10-15')
+                (root / 'jameter-complete.html').write_text(report('10.7', True))
+                with self.assertRaisesRegex(ValueError, 'completed source week'):
+                    reviewer.review('2026-10-15', root, weekly_only=True)
+                (root / 'jameter-complete.html').write_text(report('10.7', False).replace('치유성', '알 수 없음'))
+                with self.assertRaisesRegex(ValueError, 'incomplete launch-class coverage'):
+                    reviewer.review('2026-10-15', root, weekly_only=True)
+
+    def test_rereview_does_not_erase_older_coverage_warning(self):
+        data = dpsranking.load()
+        data['sourceReviewedAt'] = '2026-10-20'
+        for d in data['comparisons']:
+            d['reviewedAt'] = '2026-10-20'
+        self.assertEqual(dpsranking.comparison_patch_cutoff(data, 'NA'), '2026-10-07')
+        self.assertEqual(dpsranking.comparison_patch_cutoff(data, 'KR'), '2026-10-07')
+        news = {'sources': [{'region': 'NA', 'items': [{'kind': 'patch', 'publishedAt': '2026-10-14'}]}]}
+        self.assertTrue(dpsranking.needs_patch_review(news, dpsranking.comparison_patch_cutoff(data, 'NA')))
+        with patch.object(dpsranking, 'load', return_value=data):
+            self.assertIn('re-reading historical records', dpsranking.render('en', '/'))
+            self.assertIn('일부 출처의 집계 시점', dpsranking.render('ko', '/'))
 
     def test_old_formula_results_cannot_render(self):
         with patch.object(dpsranking.json,'loads',return_value={'kind':'server-computed-dps-ranking','schema':1}):

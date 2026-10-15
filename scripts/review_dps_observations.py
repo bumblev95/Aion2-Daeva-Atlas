@@ -181,10 +181,21 @@ def parse(source, kind, region):
                          **rounded_dps(cells[3].text())))
     return dict(rows=rows, sourceAsOf=None, commonBand=None, sourceWithheld=False)
 
-def review(reviewed_at, cache=None):
+def review(reviewed_at, cache=None, weekly_only=False):
     date.fromisoformat(reviewed_at)
+    collected_at = datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
     datasets = []
-    for ident, url, kind, region in SOURCES:
+    if weekly_only:
+        previous = json.loads((ROOT / 'data/dps-observations.json').read_text())
+        for dataset in previous['datasets']:
+            if dataset['publisher'] == 'AionFlex':
+                # A successful weekly review must not re-date untouched records.
+                dataset.setdefault('reviewedAt', previous['reviewedAt'])
+                dataset.setdefault('collectedAt', previous['collectedAt'])
+                datasets.append(dataset)
+        if {d['id'] for d in datasets} != {s[0] for s in SOURCES}:
+            raise ValueError('Missing preserved AionFlex scopes')
+    for ident, url, kind, region in ([] if weekly_only else SOURCES):
         file = Path(cache) / f'{ident}.html' if cache else None
         if file and file.exists(): raw = file.read_bytes()
         else:
@@ -200,15 +211,16 @@ def review(reviewed_at, cache=None):
                        window='30d' if kind == 'balance' else 'all-time',
                        source=url, sourceHtmlSha256=hashlib.sha256(raw).hexdigest(),
                        metric='normalized-index' if kind == 'balance' else 'published-record-dps',
-                       patchId=None, sameEquipment=False, rawFightTotalsAvailable=False, **data)
+                       patchId=None, sameEquipment=False, rawFightTotalsAvailable=False,
+                       reviewedAt=reviewed_at, collectedAt=collected_at, **data)
         if kind == 'record':
             boss, en, ko = BOSSES[ident]
             if en not in Document(raw.decode('utf-8')).root.find('h1')[0].text():
                 raise ValueError('Boss identity changed')
             dataset.update(bossId=boss, en=en, ko=ko, instance='DaevaCitadel', difficulty='hard')
         datasets.append(dataset)
-    for name, start, kind in [('jameter-current', '2026-10-07', 'weekly'),
-                              ('jameter-complete', '2026-09-30', 'band')]:
+    for name, start, kind in [('jameter-current', '2026-10-14', 'weekly'),
+                              ('jameter-complete', '2026-10-07', 'band')]:
         url = f'https://jameter.net/report/week/{start}'
         file = Path(cache) / f'{name}.html' if cache else None
         if file and file.exists(): raw = file.read_bytes()
@@ -221,12 +233,15 @@ def review(reviewed_at, cache=None):
         data = parse_report(raw.decode('utf-8'), start, kind)
         if len(data['rows']) != 8 or {x['classId'] for x in data['rows']} != set(CLASSES.values()):
             raise ValueError('Weekly report has incomplete launch-class coverage')
+        if kind == 'band' and data['provisional']:
+            raise ValueError('Matched comparison requires a completed source week')
         datasets.append(dict(id=name, kind=kind, publisher='JaMeter', window='source-week', source=url,
                              sourceHtmlSha256=hashlib.sha256(raw).hexdigest(),
                              metric='boss-cp-ratio-index' if kind == 'weekly' else 'cp-band-median-dps',
-                             patchId=None, sameEquipment=False, rawFightTotalsAvailable=False, **data))
+                             patchId=None, sameEquipment=False, rawFightTotalsAvailable=False,
+                             reviewedAt=reviewed_at, collectedAt=collected_at, **data))
     return dict(schema=1, kind='reviewed-public-combat-summaries', reviewedAt=reviewed_at,
-                collectedAt=datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z'),
+                collectedAt=collected_at,
                 publishers=['AionFlex', 'JaMeter'], methodologySource='https://aionflex.gg/meta/methodology',
                 launchClassCount=8, datasets=datasets)
 
@@ -234,7 +249,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--reviewed-at', required=True)
     parser.add_argument('--cache', type=Path)
+    parser.add_argument('--weekly-only', action='store_true',
+                        help='Review JaMeter only; preserve AionFlex values, hashes and original review dates')
     args = parser.parse_args()
-    result = review(args.reviewed_at, args.cache)
+    result = review(args.reviewed_at, args.cache, args.weekly_only)
     (ROOT / 'data/dps-observations.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    print('Reviewed public summaries: regional comparisons, KR boss records and weekly CP comparisons. No private APIs or player identities stored.')
+    print('Reviewed ' + ('JaMeter weekly comparisons; AionFlex snapshots preserved.' if args.weekly_only else
+                        'regional comparisons, KR boss records and weekly CP comparisons.') +
+          ' No private APIs or player identities stored.')

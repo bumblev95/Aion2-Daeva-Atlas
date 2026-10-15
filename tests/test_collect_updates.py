@@ -62,4 +62,23 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(item['changes'],[])
         self.assertIsNone(item['reviewedAt'])
 
+    def test_explicit_notice_hotfix_uses_body_hash_and_survives_refresh(self):
+        source=SOURCES[1]
+        self.reviews['abc'].update(kind='patch',source=source['id'])
+        result=collect_source(source,{},self.reviews,self.now,self.response)
+        item=result['items'][0]
+        self.assertEqual(item['kind'],'patch')
+        self.assertEqual(item['reviewState'],'reviewed')
+        self.assertEqual(item['contentHash'],self.hash)
+        self.meta['timestamps']['updatedAt']='2026-10-09T00:00:00Z'
+        self.body='<p>A later correction.</p>'
+        changed=collect_source(source,{source['id']:result},self.reviews,self.now,self.response)['items'][0]
+        self.assertEqual(changed['kind'],'patch')
+        self.assertEqual(changed['reviewState'],'revised')
+        self.assertEqual(changed['changes'],[])
+        self.reviews['abc']['source']='different-notice-board'
+        other=collect_source(source,{},self.reviews,self.now,self.response)['items'][0]
+        self.assertEqual(other['kind'],'news')
+        self.assertEqual(other['reviewState'],'official')
+
 if __name__=='__main__':unittest.main()

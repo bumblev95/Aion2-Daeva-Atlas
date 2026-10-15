@@ -6140,7 +6140,17 @@
     "summary": {
       "ko": "PvP 피해 약 30% 감소, 강습 방어·속성 내성 최대 20→80%와 쿨다운 감소 제외, 방어 성공 시 0.3초 감소, 마법 직업 속성 적용과 마도성·정령성 오류 수정을 구분합니다.",
       "en": "Approximately 30% less PvP damage, stronger Assault defenses with a cooldown trade-off, defensive-skill cooldown gains, elemental assignments and class bug fixes."
-    }
+    },
+    "followups": [
+      {
+        "id": "6acf3680263e537d356d1155",
+        "region": "KR",
+        "title": {
+          "en": "October 14 · same-day hotfix supersedes the defensive cooldown value",
+          "ko": "10월 14일 당일 임시점검 · 방어 스킬 쿨다운 수치 정정"
+        }
+      }
+    ]
   },
   "6acf20d007b77e214688a7ac": {
     "contentHash": "db9bde10552df0a16256346f008c8b32d3babf65a2efe6e79e7f9f14511c4b29",
@@ -6343,6 +6353,92 @@
     "summary": {
       "ko": "마도성의 고저차 추가 피해·쿨다운 감소와 잔불·동상 유지, 정령성 고대의 정령 스킬 발동 오류를 수정합니다. 전장 기본 능력치도 조정됩니다.",
       "en": "Sorcerer elevation-dependent damage/cooldown effects and DoT uptime, Ancient Spirit skill activation, and Battlefield base-stat adjustments."
+    }
+  },
+  "6acf3680263e537d356d1155": {
+    "kind": "patch",
+    "source": "kr-notice",
+    "contentHash": "1467342c758bcd1203d7ef573b72b1ee5bb6d22dea89d8d7532e74f64e390095",
+    "reviewedAt": "2026-10-15T00:22:00Z",
+    "classScopeReviewed": true,
+    "title": {
+      "en": "October 14 · Korea same-day hotfix",
+      "ko": "10월 14일 한국 · 당일 임시점검 정정"
+    },
+    "summary": {
+      "en": "A later Korea-only hotfix changes defensive-skill cooldown reduction from 0.3s to 0.1s and fixes its application to passive attacks. This supersedes that part of the morning patch.",
+      "ko": "같은 날 한국 임시점검으로 막기·회피 재사용 시간 감소가 0.3초에서 0.1초로 정정됐고, 패시브 공격에도 적용되던 오류를 수정했습니다. 정규 패치의 해당 수치를 대체합니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "nerf",
+        "subject": {
+          "en": "Block / evasion · cooldown reduction",
+          "ko": "막기·회피 · 재사용 시간 감소"
+        },
+        "description": {
+          "en": "The later October 14 KR maintenance reduces the stated cooldown reduction from 0.3 seconds to 0.1 seconds. The earlier regular-patch figure remains historical.",
+          "ko": "10월 14일 후속 한국 임시점검에서 재시전 시간 감소 효과가 0.3초에서 0.1초로 변경됐습니다. 정규 패치의 0.3초 표기는 변경 이력으로 남깁니다."
+        },
+        "before": {
+          "en": "Cooldown reduction: 0.3s",
+          "ko": "재시전 시간 0.3초 감소"
+        },
+        "after": {
+          "en": "Cooldown reduction: 0.1s",
+          "ko": "재시전 시간 0.1초 감소"
+        },
+        "impact": {
+          "en": "This changes the defensive-skill cooldown effect, not total damage or Global balance.",
+          "ko": "방어 스킬의 재사용 시간 감소 효과에 관한 정정이며 전체 피해량이나 글로벌 밸런스 변경 수치가 아닙니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Block · passive-attack interaction",
+          "ko": "막기 · 패시브 공격 적용 오류"
+        },
+        "description": {
+          "en": "Fixes the cooldown-reduction effect also applying to passive attacks. NC does not publish a resulting total-DPS percentage.",
+          "ko": "막기 스킬의 재시전 시간 감소 효과가 패시브 공격에도 적용되던 현상을 수정합니다. 전체 DPS 변화율은 공지되지 않았습니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Same-day chronology",
+            "ko": "같은 날 변경 순서"
+          },
+          "sourceSection": "임시 점검 안내",
+          "notes": [
+            {
+              "en": "The regular October 14 KR patch announced 0.3s. The later temporary-maintenance notice changes it to 0.1s and confirms maintenance completion. This correction applies only to the Korean service.",
+              "ko": "10월 14일 한국 정규 패치는 0.3초 감소를 공지했습니다. 이후 임시점검 공지가 0.1초로 정정하고 점검 완료를 안내합니다. 한국 서비스에만 적용되는 정정입니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Other fix and compensation",
+            "ko": "추가 수정과 보상 안내"
+          },
+          "sourceSection": "점검 내용",
+          "notes": [
+            {
+              "en": "Fixes a cape clipping outside the Little Ghost pet while mounted; the Korean source also lists temporary-maintenance compensation and its claim period. Consult the linked official notice for the current reward deadline.",
+              "ko": "펫 꼬마유령 탑승 중 망토가 외부로 노출되는 현상을 수정합니다. 임시점검 보상과 수령 기간은 연결된 한국 공식 공지에서 확인하세요."
+            }
+          ],
+          "tables": []
+        }
+      ]
     }
   }
 }

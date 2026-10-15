@@ -43,6 +43,11 @@ const server=http.createServer((req,res)=>{
       assert.equal(await desk.locator('[data-comparison-table]').count(),7);
       assert(!(await desk.textContent()).includes('7,284.85'));
       assert((await desk.textContent()).includes('JaMeter'));
+      assert((await desk.textContent()).includes('2026-10-14 ~ 2026-10-21'));
+      assert((await desk.textContent()).includes('2026-10-07 ~ 2026-10-14'));
+      assert((await desk.textContent()).includes('750.0K ~ 850.0K'));
+      assert((await desk.locator('#kr-records').textContent()).includes('2026-10-09T08:24:17Z'));
+      assert.equal(await desk.locator('.rank-patch-note').count(),1,'Refreshing one source must preserve older regional coverage warnings');
       assert(!(await desk.textContent()).includes('Injected visitor build'));
 
       for(const comparison of results.comparisons){

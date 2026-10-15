@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-15T00:29:04Z",
+  "checkedAt": "2026-10-15T00:47:36Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-15T00:29:04Z",
-      "lastSuccessAt": "2026-10-15T00:29:04Z",
+      "checkedAt": "2026-10-15T00:47:36Z",
+      "lastSuccessAt": "2026-10-15T00:47:36Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -818,7 +818,17 @@
               "회수·복구와 외형 상품"
             ],
             "classTables": []
-          }
+          },
+          "followups": [
+            {
+              "id": "6acf3680263e537d356d1155",
+              "region": "KR",
+              "title": {
+                "en": "October 14 · same-day hotfix supersedes the defensive cooldown value",
+                "ko": "10월 14일 당일 임시점검 · 방어 스킬 쿨다운 수치 정정"
+              }
+            }
+          ]
         },
         {
           "id": "6ac54c386b722c561dc6aa2b",
@@ -1359,7 +1369,8 @@
               "수정사항"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         },
         {
           "id": "6abc11b8d97eae18cc40e18d",
@@ -1467,7 +1478,8 @@
               "수정사항"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         },
         {
           "id": "6ab2d738a279104f7d9d5d5b",
@@ -3106,7 +3118,8 @@
               "수정사항"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         },
         {
           "id": "6aa99cb8a279104f7d9d5c34",
@@ -4119,7 +4132,8 @@
                 ]
               }
             ]
-          }
+          },
+          "followups": []
         },
         {
           "id": "6aa062386b722c561dc6a46c",
@@ -5595,7 +5609,8 @@
               "수정사항"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         },
         {
           "id": "6a9727b8fa34c1011d627551",
@@ -6104,7 +6119,8 @@
               "회수 및 복구"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         }
       ]
     },
@@ -6113,8 +6129,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-15T00:29:04Z",
-      "lastSuccessAt": "2026-10-15T00:29:04Z",
+      "checkedAt": "2026-10-15T00:47:36Z",
+      "lastSuccessAt": "2026-10-15T00:47:36Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6122,20 +6138,96 @@
           "id": "6acf3680263e537d356d1155",
           "title": "[안내] 10/14(수) AION2 임시점검 안내 (완료)",
           "region": "KR",
-          "kind": "news",
+          "kind": "patch",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6acf3680263e537d356d1155",
           "publishedAt": "2026-10-14T08:00:00.781Z",
           "sourceUpdatedAt": "2026-10-14T10:31:58.662Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {}
+          "contentHash": "1467342c758bcd1203d7ef573b72b1ee5bb6d22dea89d8d7532e74f64e390095",
+          "bodyState": "ready",
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "A later Korea-only hotfix changes defensive-skill cooldown reduction from 0.3s to 0.1s and fixes its application to passive attacks. This supersedes that part of the morning patch.",
+            "ko": "같은 날 한국 임시점검으로 막기·회피 재사용 시간 감소가 0.3초에서 0.1초로 정정됐고, 패시브 공격에도 적용되던 오류를 수정했습니다. 정규 패치의 해당 수치를 대체합니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "nerf",
+              "subject": {
+                "en": "Block / evasion · cooldown reduction",
+                "ko": "막기·회피 · 재사용 시간 감소"
+              },
+              "description": {
+                "en": "The later October 14 KR maintenance reduces the stated cooldown reduction from 0.3 seconds to 0.1 seconds. The earlier regular-patch figure remains historical.",
+                "ko": "10월 14일 후속 한국 임시점검에서 재시전 시간 감소 효과가 0.3초에서 0.1초로 변경됐습니다. 정규 패치의 0.3초 표기는 변경 이력으로 남깁니다."
+              },
+              "before": {
+                "en": "Cooldown reduction: 0.3s",
+                "ko": "재시전 시간 0.3초 감소"
+              },
+              "after": {
+                "en": "Cooldown reduction: 0.1s",
+                "ko": "재시전 시간 0.1초 감소"
+              },
+              "impact": {
+                "en": "This changes the defensive-skill cooldown effect, not total damage or Global balance.",
+                "ko": "방어 스킬의 재사용 시간 감소 효과에 관한 정정이며 전체 피해량이나 글로벌 밸런스 변경 수치가 아닙니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Block · passive-attack interaction",
+                "ko": "막기 · 패시브 공격 적용 오류"
+              },
+              "description": {
+                "en": "Fixes the cooldown-reduction effect also applying to passive attacks. NC does not publish a resulting total-DPS percentage.",
+                "ko": "막기 스킬의 재시전 시간 감소 효과가 패시브 공격에도 적용되던 현상을 수정합니다. 전체 DPS 변화율은 공지되지 않았습니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-10-15T00:22:00Z",
+          "displayTitle": {
+            "en": "October 14 · Korea same-day hotfix",
+            "ko": "10월 14일 한국 · 당일 임시점검 정정"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Same-day chronology",
+                  "ko": "같은 날 변경 순서"
+                },
+                "sourceSection": "임시 점검 안내",
+                "notes": [
+                  {
+                    "en": "The regular October 14 KR patch announced 0.3s. The later temporary-maintenance notice changes it to 0.1s and confirms maintenance completion. This correction applies only to the Korean service.",
+                    "ko": "10월 14일 한국 정규 패치는 0.3초 감소를 공지했습니다. 이후 임시점검 공지가 0.1초로 정정하고 점검 완료를 안내합니다. 한국 서비스에만 적용되는 정정입니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Other fix and compensation",
+                  "ko": "추가 수정과 보상 안내"
+                },
+                "sourceSection": "점검 내용",
+                "notes": [
+                  {
+                    "en": "Fixes a cape clipping outside the Little Ghost pet while mounted; the Korean source also lists temporary-maintenance compensation and its claim period. Consult the linked official notice for the current reward deadline.",
+                    "ko": "펫 꼬마유령 탑승 중 망토가 외부로 노출되는 현상을 수정합니다. 임시점검 보상과 수령 기간은 연결된 한국 공식 공지에서 확인하세요."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
+          "followups": []
         },
         {
           "id": "6acf261807b77e214688a7b7",
@@ -6154,7 +6246,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acf06746cfe4756db5b8da3",
@@ -6173,7 +6266,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acedd9928c7452635072bb2",
@@ -6192,7 +6286,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ace2b50577e8c01355dfefa",
@@ -6211,7 +6306,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ace229007b77e214688a757",
@@ -6230,7 +6326,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ace0f30577e8c01355dff1d",
@@ -6249,7 +6346,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acd86146cfe4756db5b8d1b",
@@ -6268,7 +6366,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ad0b5b46cfe4756db5b8d09",
@@ -6287,7 +6386,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acc9380a279104f7d9d6087",
@@ -6306,7 +6406,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acc6e0b3900e51234140440",
@@ -6325,7 +6426,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acadf90fa34c1011d627ba4",
@@ -6344,7 +6446,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac98e106b722c561dc6aab9",
@@ -6363,7 +6466,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac83c90d97eae18cc40e38e",
@@ -6382,7 +6486,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac74eacd97eae18cc40e38c",
@@ -6401,7 +6506,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac5cf78eea53f5d6dbcfb65",
@@ -6420,7 +6526,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac4d4b0d97eae18cc40e2cf",
@@ -6439,7 +6546,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac47240a279104f7d9d5f98",
@@ -6458,7 +6566,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac35900eea53f5d6dbcfa6b",
@@ -6477,7 +6586,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac1a510d97eae18cc40e22b",
@@ -6496,7 +6606,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         }
       ]
     },
@@ -6505,8 +6616,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-15T00:29:04Z",
-      "lastSuccessAt": "2026-10-15T00:29:04Z",
+      "checkedAt": "2026-10-15T00:47:36Z",
+      "lastSuccessAt": "2026-10-15T00:47:36Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6720,7 +6831,8 @@
               "설정·성능·오류 수정"
             ],
             "classTables": []
-          }
+          },
+          "followups": []
         },
         {
           "id": "6ac5e6e8d97eae18cc40e34e",
@@ -6849,7 +6961,8 @@
             ],
             "sourceSections": [],
             "classTables": []
-          }
+          },
+          "followups": []
         }
       ]
     },
@@ -6858,8 +6971,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-15T00:29:04Z",
-      "lastSuccessAt": "2026-10-15T00:29:04Z",
+      "checkedAt": "2026-10-15T00:47:36Z",
+      "lastSuccessAt": "2026-10-15T00:47:36Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6880,7 +6993,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acf52e3058fb5520d6ffc5a",
@@ -6899,7 +7013,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acf28706cfe4756db5b8db3",
@@ -6918,7 +7033,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6abe639e6cfe4756db5b8d1a",
@@ -6937,7 +7053,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ace5580577e8c01355dff39",
@@ -6956,7 +7073,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acdc8e0263e537d356d10d7",
@@ -6975,7 +7093,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ace8dc0263e537d356d10c3",
@@ -6994,7 +7113,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acaa7506b722c561dc6aae9",
@@ -7013,7 +7133,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6acad81ca7ca1a15cf46bf75",
@@ -7032,7 +7153,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac95cd8d97eae18cc40e3d7",
@@ -7051,7 +7173,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac955d0d97eae18cc40e3cd",
@@ -7070,7 +7193,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac932a8fa34c1011d627bc9",
@@ -7089,7 +7213,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac7e128d97eae18cc40e3b7",
@@ -7108,7 +7233,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac7ceb481a1f241964f27e1",
@@ -7127,7 +7253,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac7aff0fa34c1011d627b88",
@@ -7146,7 +7273,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac7475738eb0528f90021b1",
@@ -7165,7 +7293,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac770a8d97eae18cc40e3a4",
@@ -7184,7 +7313,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac6a4c0fa34c1011d627a96",
@@ -7203,7 +7333,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ab3f7806b722c561dc6a621",
@@ -7222,7 +7353,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac3eb6e9ed1202b9b8fb5b8",
@@ -7241,7 +7373,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac3bfa5feeef62e67566809",
@@ -7260,7 +7393,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac3983171f8fb7c2a7a33b8",
@@ -7279,7 +7413,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         },
         {
           "id": "6ac6e1f8c9d0a169e182bd31",
@@ -7298,7 +7433,8 @@
           "classScopeReviewed": false,
           "reviewedAt": null,
           "displayTitle": {},
-          "detail": {}
+          "detail": {},
+          "followups": []
         }
       ]
     }
