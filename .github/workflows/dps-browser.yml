@@ -40,6 +40,9 @@ on:
       - 'onboarding.py'
       - 'endgame.py'
       - 'worldmap.py'
+      - 'assets/deep-guide.js'
+      - 'assets/deep-guide.css'
+      - 'tests/world-map-ui.test.js'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -94,6 +97,9 @@ on:
       - 'onboarding.py'
       - 'endgame.py'
       - 'worldmap.py'
+      - 'assets/deep-guide.js'
+      - 'assets/deep-guide.css'
+      - 'tests/world-map-ui.test.js'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -129,6 +135,8 @@ jobs:
         run: |
           npm --prefix "$RUNNER_TEMP/dps-qa" install --no-save --package-lock=false playwright@1.62.1
           node "$RUNNER_TEMP/dps-qa/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+      - name: Verify map coverage and empty-region recovery on phones
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/world-map-ui.test.js
       - if: ${{ !cancelled() }}
         name: Verify focused guide navigation, history, mobile menu and no-script fallback
         env:
