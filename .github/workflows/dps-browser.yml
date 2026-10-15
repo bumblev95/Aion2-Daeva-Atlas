@@ -40,6 +40,9 @@ on:
       - 'onboarding.py'
       - 'endgame.py'
       - 'worldmap.py'
+      - 'assets/deep-guide.js'
+      - 'assets/deep-guide.css'
+      - 'tests/world-map-ui.test.js'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -94,6 +97,9 @@ on:
       - 'onboarding.py'
       - 'endgame.py'
       - 'worldmap.py'
+      - 'assets/deep-guide.js'
+      - 'assets/deep-guide.css'
+      - 'tests/world-map-ui.test.js'
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
@@ -180,6 +186,8 @@ jobs:
           TRANSFER_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/server-transfer-ui.test.js
 
+      - name: Verify map coverage and empty-region recovery on phones
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/world-map-ui.test.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
