@@ -733,5 +733,98 @@
     "World_D_Starter": "https://cdn.th.gl/aion2/nodes/World_D_Starter.c2bf6e98a49512c7b429656681d49378.raw"
   },
   "providerReference": "https://aion2.th.gl/maps/Ishalgen",
-  "coverage": "Four early regions only. Original three-category subset retained; Empyrean Trace and Hidden Cube candidates refreshed from current source. Hidden Cube locations are possible spawns, not simultaneous live cubes."
+  "coverage": "Four early regions only. Original three-category subset retained; Empyrean Trace and Hidden Cube candidates refreshed from current source. Hidden Cube locations are possible spawns, not simultaneous live cubes.",
+  "existingMarkersVerified": 384,
+  "minorSourceCoordinateUpdates": [
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@-69567:-22695",
+      "sourceId": "kibelisk@-69567:-22694",
+      "old": [
+        -69567,
+        -22695,
+        4278
+      ],
+      "current": [
+        -69567,
+        -22694,
+        4298
+      ]
+    },
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@-106483:-4631",
+      "sourceId": "kibelisk@-106488:-4621",
+      "old": [
+        -106483,
+        -4631,
+        135
+      ],
+      "current": [
+        -106488,
+        -4621,
+        146
+      ]
+    },
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@-15773:-41963",
+      "sourceId": "kibelisk@-15775:-41959",
+      "old": [
+        -15773,
+        -41963,
+        6666
+      ],
+      "current": [
+        -15775,
+        -41959,
+        6686
+      ]
+    },
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@42206:162352",
+      "sourceId": "kibelisk@42207:162356",
+      "old": [
+        42206,
+        162352,
+        31239
+      ],
+      "current": [
+        42207,
+        162356,
+        31259
+      ]
+    },
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@-43632:-18740",
+      "sourceId": "kibelisk@-43627:-18745",
+      "old": [
+        -43632,
+        -18740,
+        4821
+      ],
+      "current": [
+        -43627,
+        -18745,
+        4840
+      ]
+    },
+    {
+      "region": "Verteron",
+      "stableId": "kibelisk@-675:-9160",
+      "sourceId": "kibelisk@-672:-9166",
+      "old": [
+        -675,
+        -9160,
+        18936
+      ],
+      "current": [
+        -672,
+        -9166,
+        18956
+      ]
+    }
+  ]
 }

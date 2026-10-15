@@ -1484,21 +1484,23 @@
         "name": "Marsh Outpost",
         "p": [
           -69567,
-          -22695,
-          4278
+          -22694,
+          4298
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@-69567:-22694"
       },
       {
         "id": "kibelisk@-106483:-4631",
         "type": "kibelisk",
         "name": "Collapsed Verteron Barrier Tower",
         "p": [
-          -106483,
-          -4631,
-          135
+          -106488,
+          -4621,
+          146
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@-106488:-4621"
       },
       {
         "id": "kibelisk@-104105:32451",
@@ -1538,11 +1540,12 @@
         "type": "kibelisk",
         "name": "Hideout in Front of the Ruins",
         "p": [
-          -15773,
-          -41963,
-          6666
+          -15775,
+          -41959,
+          6686
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@-15775:-41959"
       },
       {
         "id": "kibelisk@45001:-24106",
@@ -1692,11 +1695,12 @@
         "type": "kibelisk",
         "name": "Hill of Purification",
         "p": [
-          42206,
-          162352,
-          31239
+          42207,
+          162356,
+          31259
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@42207:162356"
       },
       {
         "id": "kibelisk@64403:78802",
@@ -1769,22 +1773,24 @@
         "type": "kibelisk",
         "name": "Illusion Cavaliers' Campsite",
         "p": [
-          -43632,
-          -18740,
-          4821
+          -43627,
+          -18745,
+          4840
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@-43627:-18745"
       },
       {
         "id": "kibelisk@-675:-9160",
         "type": "kibelisk",
         "name": "Collapsed Pillar",
         "p": [
-          -675,
-          -9160,
-          18936
+          -672,
+          -9166,
+          18956
         ],
-        "description": ""
+        "description": "",
+        "sourceId": "kibelisk@-672:-9166"
       },
       {
         "id": "kibelisk@-106248:77480",
