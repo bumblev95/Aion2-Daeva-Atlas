@@ -26,7 +26,7 @@ def head(config, base):
         'origin': '{0.scheme}://{0.netloc}'.format(urlsplit(config['url'])),
     }).replace('<', '\\u003c')
     return (f'<script type="application/json" id="pc-analytics-config">{payload}</script>'
-            f'<link rel="stylesheet" href="{base}assets/analytics.css?v=1">'
+            f'<link rel="stylesheet" href="{base}assets/analytics.css?v=2">'
             f'<script defer src="{base}assets/analytics.js?v=1"></script>')
 
 

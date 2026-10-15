@@ -56,7 +56,12 @@ async function selected(page,key){
       for(const width of [320,390,768,1440]){
         await page.setViewportSize({width,height:900});
         await page.goto(local);
-        assert.equal(await page.locator('[data-rpg-goal]').count(),4);
+        assert.equal(await page.locator('[data-rpg-goal]').count(),6);
+        assert.equal(await page.locator('[data-rpg-goal="boss"]').getAttribute('href'),prefix+(lang==='ko'?'ko/':'')+'dungeons/');
+        for(const route of ['maps/','classes/','tools/dps/','updates/']){
+          assert.equal(await page.locator('#main-nav>nav a[href$="'+route+'"]').isVisible(),width>850);
+        }
+        assert.equal(await page.locator('#class-explorer').evaluate(node=>Boolean(node.compareDocumentPosition(document.querySelector('.gameplay-context'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
         await contained(page,'home '+lang+'/'+width);
         if(width===390||width===1440)await screenshot(page,{path:path.join(artifacts,'find-home-'+lang+'-'+width+'.png'),fullPage:true});
       }
@@ -113,6 +118,11 @@ async function selected(page,key){
       assert.equal(await page.locator('#dungeon-fire-temple .dungeon-loot').isVisible(),true);
       await page.goto(local+'endgame/');
       assert.equal(await page.locator('.growth-route details[open]').count(),1);
+      for(const [route,core] of [['endgame/','[data-topic-reader]'],['gear/','[data-topic-reader]'],['routines/','[data-topic-reader]'],['dungeons/','[data-boss-lab]']]){
+        await page.goto(local+route);
+        assert.equal(await page.locator(core).evaluate(node=>Boolean(node.compareDocumentPosition(document.querySelector('.transfer-gateway'))&Node.DOCUMENT_POSITION_FOLLOWING)),true,route+' should lead with its own content');
+      }
+      await page.goto(local+'endgame/');
       await screenshot(page,{path:path.join(artifacts,'find-growth-'+lang+'-390.png'),fullPage:true});
       for(const width of [320,390,768,1440]){
         await page.setViewportSize({width,height:844});
@@ -151,7 +161,7 @@ async function selected(page,key){
     assert.equal(await page.locator('#dungeon-fire-temple .dungeon-loot').isVisible(),true);
     await contained(page,'native disclosure');
     await page.goto(local+'guides/');
-    assert.equal(await page.locator('[data-directory-group]:visible').count(),5);
+    assert.equal(await page.locator('[data-directory-group]:visible').count(),7);
     assert.equal(await page.locator('[data-directory-controls]').isVisible(),false);
     await context.close();
     }
