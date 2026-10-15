@@ -113,7 +113,7 @@
    transform();
   });
   const stop=e=>{if(!pointers.delete(e.pointerId))return;startGesture();if(!pointers.size)setTimeout(()=>moved=false,0);};
-  viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);viewport.addEventListener('lostpointercapture',stop);
+  viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);viewport.addEventListener('lostpointercapture',e=>{if(e.target===viewport)stop(e);});
   viewport.addEventListener('keydown',e=>{if(e.target!==viewport)return;const dirs={ArrowLeft:[50,0],ArrowRight:[-50,0],ArrowUp:[0,50],ArrowDown:[0,-50]};if(dirs[e.key]){e.preventDefault();panX+=dirs[e.key][0];panY+=dirs[e.key][1];transform();}else if(e.key==='+'||e.key==='-'){e.preventDefault();zoom(e.key==='+'?1.4:1/1.4);}});
   renderZone();if(params.get('point')&&all[zone].markers.some(m=>m.id===params.get('point'))){const m=all[zone].markers.find(m=>m.id===params.get('point'));type=m.type;selected=m.id;renderPoints(false);showSelection(selected,true);}if('ResizeObserver' in window){
    // Its first notification must not undo a shared point's initial centering.

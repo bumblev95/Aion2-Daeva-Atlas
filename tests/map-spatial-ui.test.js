@@ -56,6 +56,13 @@ const matrix=p=>p.locator('[data-map-world]').evaluate(w=>{const m=new DOMMatrix
     const viewport=page.locator('[data-map-viewport]'),box=await viewport.boundingBox(),cdp=await page.context().newCDPSession(page);
     const point=(id,x,y)=>({id,x:box.x+x,y:box.y+y});
     const touches=d=>[point(1,box.width/2-d,130),point(2,box.width/2+d,130)];
+    const pinBox=await pin.boundingBox(),pinStartScale=(await matrix(page)).scale;
+    const onPin=d=>[{id:8,x:pinBox.x+pinBox.width/2-d,y:pinBox.y+pinBox.height/2},{id:9,x:pinBox.x+pinBox.width/2+50+d,y:pinBox.y+pinBox.height/2}];
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:onPin(0)});
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:onPin(25)});await frame(page);
+    assert.ok((await matrix(page)).scale>pinStartScale*1.9,'pinch can start over a marker despite implicit capture transfer');
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await frame(page);
+    await page.locator('[data-world-fit]').click();await viewport.scrollIntoViewIfNeeded();await frame(page);
     const initial=await matrix(page),selection=new URL(page.url()).searchParams.get('point');
     await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:touches(25)});
     await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:touches(60)});await frame(page);
