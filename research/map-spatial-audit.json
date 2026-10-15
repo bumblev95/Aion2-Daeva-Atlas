@@ -1,0 +1,2174 @@
+{
+  "reviewedAt": "2026-10-15",
+  "baselineCommit": "151c688bf3f191e791275498f56b5cc6e92b6d29",
+  "scope": "Independent fetch of public assets and TH.GL source; provider-relative projection and candidate coordinates. Historical KR screenshots provide separate visual checks for Verteron/Altgard. No current-client gameplay or physical-phone test is claimed.",
+  "providerPage": {
+    "url": "https://aion2.th.gl/maps/Verteron",
+    "sha256": "6abf7ba4c85182b2e65b693ef7f748d618eadb3474774d53524b4dff06c9fab2"
+  },
+  "terrain": [
+    {
+      "region": "Poeta",
+      "tilesMatchingPriorReview": 16,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceTransform": [
+        0.0012549019607843138,
+        256,
+        0.0012549019607843138,
+        256
+      ],
+      "meanAbsoluteChannelDifference": 0.484409,
+      "differenceExplanation": "Lossy WebP recompression, not a geographic transform. Tile row/column order and positive scale unchanged.",
+      "publishedImageSha256": "169b911a4a2d4cf320e814fdff34488137f65e1c69e543eeea94a783225d88d1"
+    },
+    {
+      "region": "Verteron",
+      "tilesMatchingPriorReview": 16,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceTransform": [
+        0.0006274509803921569,
+        256,
+        0.0006274509803921569,
+        256
+      ],
+      "meanAbsoluteChannelDifference": 0.554214,
+      "differenceExplanation": "Lossy WebP recompression, not a geographic transform. Tile row/column order and positive scale unchanged.",
+      "publishedImageSha256": "4f204b35b6fb1d6dedd792a3c0786805d572789a575a0fade6e1929f14bea216"
+    },
+    {
+      "region": "Ishalgen",
+      "tilesMatchingPriorReview": 16,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceTransform": [
+        0.001003921568627451,
+        331.0411294117647,
+        0.001003921568627451,
+        259.0115450980392
+      ],
+      "meanAbsoluteChannelDifference": 0.507997,
+      "differenceExplanation": "Lossy WebP recompression, not a geographic transform. Tile row/column order and positive scale unchanged.",
+      "publishedImageSha256": "26fdedc786518a79a09a307fb693be353d0ab7508534e28abebae732f17bf45d"
+    },
+    {
+      "region": "Altgard",
+      "tilesMatchingPriorReview": 16,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceTransform": [
+        0.0006274509803921569,
+        256,
+        0.0006274509803921569,
+        256
+      ],
+      "meanAbsoluteChannelDifference": 0.591719,
+      "differenceExplanation": "Lossy WebP recompression, not a geographic transform. Tile row/column order and positive scale unchanged.",
+      "publishedImageSha256": "80dda8569f8bf246b763d240341808fb5725623500d05ec9c3b0fd4253f6f6bd"
+    }
+  ],
+  "sourceCoordinates": [
+    {
+      "region": "Poeta",
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_L_Starter.f323c2e07a8e00110454868a7f073383.raw",
+      "sha256": "e4e79d36dbfd19531dc15480493936b6fd96e7207d3a8af567aaf1e52af464f4",
+      "checked": 8,
+      "counts": {
+        "quest_episode": 7,
+        "kibelisk": 1
+      },
+      "positionMismatches": 0,
+      "preservedStableIds": {}
+    },
+    {
+      "region": "Verteron",
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_L_A.09feefff6fbdd8894abf0aa78e4499db.raw",
+      "sha256": "1b200ab260ab3c978bf084f803ec27c45f2f734f7271ef8bcfee9fc437969219",
+      "checked": 4913,
+      "counts": {
+        "sealed_dungeon": 61,
+        "quest_episode": 59,
+        "kibelisk": 61,
+        "empyrean_trace": 559,
+        "hidden_cube": 1440,
+        "gather_cypri": 108,
+        "gather_inina": 100,
+        "gather_yggdrasil": 125,
+        "gather_kukuru": 95,
+        "gather_coriolus": 101,
+        "gather_mela": 96,
+        "gather_aria": 156,
+        "gather_targena": 120,
+        "gather_ruby": 196,
+        "gather_orichalcum": 546,
+        "gather_diamond": 192,
+        "gather_sapphire": 192,
+        "gather_odyle": 706
+      },
+      "positionMismatches": 0,
+      "preservedStableIds": {
+        "kibelisk@-69567:-22695": "kibelisk@-69567:-22694",
+        "kibelisk@-106483:-4631": "kibelisk@-106488:-4621",
+        "kibelisk@-15773:-41963": "kibelisk@-15775:-41959",
+        "kibelisk@42206:162352": "kibelisk@42207:162356",
+        "kibelisk@-43632:-18740": "kibelisk@-43627:-18745",
+        "kibelisk@-675:-9160": "kibelisk@-672:-9166"
+      }
+    },
+    {
+      "region": "Ishalgen",
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_D_Starter.c2bf6e98a49512c7b429656681d49378.raw",
+      "sha256": "4023f81b314ac3a782998d7bc7cdb8801244fca4488cfce0388fcb897393034e",
+      "checked": 11,
+      "counts": {
+        "quest_episode": 8,
+        "kibelisk": 3
+      },
+      "positionMismatches": 0,
+      "preservedStableIds": {}
+    },
+    {
+      "region": "Altgard",
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_D_A.7857378c11b23ba6026ef09e7932b9e1.raw",
+      "sha256": "40b7e74ad87cdc94e211a35e7f0f071d74baa0fdc847144da32f96d8fe542e70",
+      "checked": 4806,
+      "counts": {
+        "sealed_dungeon": 61,
+        "quest_episode": 62,
+        "kibelisk": 61,
+        "empyrean_trace": 559,
+        "hidden_cube": 1371,
+        "gather_conide": 93,
+        "gather_pujery": 105,
+        "gather_asvata": 158,
+        "gather_morfa": 98,
+        "gather_ohkra": 114,
+        "gather_raydam": 96,
+        "gather_azpha": 150,
+        "gather_calendula": 108,
+        "gather_diamond": 200,
+        "gather_sapphire": 200,
+        "gather_ruby": 190,
+        "gather_orichalcum": 530,
+        "gather_odyle": 650
+      },
+      "positionMismatches": 0,
+      "preservedStableIds": {}
+    }
+  ],
+  "samples": [
+    {
+      "region": "Poeta",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-16702:-5970",
+      "sourceId": "kibelisk@-16702:-5970",
+      "position": [
+        -16702,
+        -5970,
+        20293
+      ],
+      "expectedLocalPixel": [
+        497.0164705882353,
+        470.0812549019608
+      ],
+      "expectedNativePixel": [
+        994.0329411764706,
+        940.1625098039216
+      ]
+    },
+    {
+      "region": "Poeta",
+      "type": "quest_episode",
+      "stableId": "quest_episode@N_L0_Q_GuardSylvar_01.episode",
+      "sourceId": "quest_episode@N_L0_Q_GuardSylvar_01.episode",
+      "position": [
+        -16393,
+        -520,
+        20803
+      ],
+      "expectedLocalPixel": [
+        510.6949019607843,
+        470.8567843137255
+      ],
+      "expectedNativePixel": [
+        1021.3898039215686,
+        941.713568627451
+      ]
+    },
+    {
+      "region": "Poeta",
+      "type": "quest_episode",
+      "stableId": "quest_episode@N_L0_Q_Kalid_01.episode",
+      "sourceId": "quest_episode@N_L0_Q_Kalid_01.episode",
+      "position": [
+        -14128,
+        -5740,
+        20364
+      ],
+      "expectedLocalPixel": [
+        497.5937254901961,
+        476.5414901960784
+      ],
+      "expectedNativePixel": [
+        995.1874509803922,
+        953.0829803921569
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_120010552",
+      "sourceId": "empyrean_trace_120010552",
+      "position": [
+        259172,
+        -250682,
+        502
+      ],
+      "expectedLocalPixel": [
+        197.41866666666664,
+        837.2354509803922
+      ],
+      "expectedNativePixel": [
+        394.8373333333333,
+        1674.4709019607844
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_120010057",
+      "sourceId": "empyrean_trace_120010057",
+      "position": [
+        -40521,
+        203296,
+        25592
+      ],
+      "expectedLocalPixel": [
+        767.1165490196079,
+        461.15011764705883
+      ],
+      "expectedNativePixel": [
+        1534.2330980392157,
+        922.3002352941177
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_120010523",
+      "sourceId": "empyrean_trace_120010523",
+      "position": [
+        -220141,
+        96937,
+        3346
+      ],
+      "expectedLocalPixel": [
+        633.646431372549,
+        235.74462745098037
+      ],
+      "expectedNativePixel": [
+        1267.292862745098,
+        471.48925490196075
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_120010557",
+      "sourceId": "empyrean_trace_120010557",
+      "position": [
+        278727,
+        -223735,
+        1709
+      ],
+      "expectedLocalPixel": [
+        231.23450980392158,
+        861.7750588235294
+      ],
+      "expectedNativePixel": [
+        462.46901960784317,
+        1723.5501176470589
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_120010241",
+      "sourceId": "empyrean_trace_120010241",
+      "position": [
+        20481,
+        5760,
+        22807
+      ],
+      "expectedLocalPixel": [
+        519.2282352941177,
+        537.7016470588235
+      ],
+      "expectedNativePixel": [
+        1038.4564705882353,
+        1075.403294117647
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@256035:-288291",
+      "sourceId": "hidden_cube@256035:-288291",
+      "position": [
+        256035,
+        -288291,
+        9901
+      ],
+      "expectedLocalPixel": [
+        150.2230588235294,
+        833.2988235294117
+      ],
+      "expectedNativePixel": [
+        300.4461176470588,
+        1666.5976470588234
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@-68438:202697",
+      "sourceId": "hidden_cube@-68438:202697",
+      "position": [
+        -68438,
+        202697,
+        29575
+      ],
+      "expectedLocalPixel": [
+        766.364862745098,
+        426.11701960784313
+      ],
+      "expectedNativePixel": [
+        1532.729725490196,
+        852.2340392156863
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@-230999:81943",
+      "sourceId": "hidden_cube@-230999:81943",
+      "position": [
+        -230999,
+        81943,
+        2569
+      ],
+      "expectedLocalPixel": [
+        614.830431372549,
+        222.11890196078429
+      ],
+      "expectedNativePixel": [
+        1229.660862745098,
+        444.23780392156857
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@284041:-239203",
+      "sourceId": "hidden_cube@284041:-239203",
+      "position": [
+        284041,
+        -239203,
+        8139
+      ],
+      "expectedLocalPixel": [
+        211.82368627450978,
+        868.4436078431372
+      ],
+      "expectedNativePixel": [
+        423.64737254901956,
+        1736.8872156862744
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@24662:7960",
+      "sourceId": "hidden_cube@24662:7960",
+      "position": [
+        24662,
+        7960,
+        22306
+      ],
+      "expectedLocalPixel": [
+        521.9890196078431,
+        542.9483921568627
+      ],
+      "expectedNativePixel": [
+        1043.9780392156863,
+        1085.8967843137254
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@68470:-130740",
+      "sourceId": "sealed_dungeon@68470:-130740",
+      "position": [
+        68470,
+        -130740,
+        37514
+      ],
+      "expectedLocalPixel": [
+        347.9341176470588,
+        597.9231372549019
+      ],
+      "expectedNativePixel": [
+        695.8682352941177,
+        1195.8462745098038
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@-30593:173344",
+      "sourceId": "sealed_dungeon@-30593:173344",
+      "position": [
+        -30593,
+        173344,
+        28357
+      ],
+      "expectedLocalPixel": [
+        729.5297254901961,
+        473.6087843137255
+      ],
+      "expectedNativePixel": [
+        1459.0594509803923,
+        947.217568627451
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@-113399:85416",
+      "sourceId": "sealed_dungeon@-113399:85416",
+      "position": [
+        -113399,
+        85416,
+        8635
+      ],
+      "expectedLocalPixel": [
+        619.1887058823529,
+        369.69537254901957
+      ],
+      "expectedNativePixel": [
+        1238.3774117647058,
+        739.3907450980391
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@174706:91036",
+      "sourceId": "sealed_dungeon@174706:91036",
+      "position": [
+        174706,
+        91036,
+        23668
+      ],
+      "expectedLocalPixel": [
+        626.2412549019608,
+        731.2389019607843
+      ],
+      "expectedNativePixel": [
+        1252.4825098039216,
+        1462.4778039215687
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@2900:13483",
+      "sourceId": "sealed_dungeon@2900:13483",
+      "position": [
+        2900,
+        13483,
+        21797
+      ],
+      "expectedLocalPixel": [
+        528.9198431372549,
+        515.6392156862745
+      ],
+      "expectedNativePixel": [
+        1057.8396862745099,
+        1031.278431372549
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-57711:-155331",
+      "sourceId": "kibelisk@-57711:-155331",
+      "position": [
+        -57711,
+        -155331,
+        49545
+      ],
+      "expectedLocalPixel": [
+        317.0748235294118,
+        439.5783529411765
+      ],
+      "expectedNativePixel": [
+        634.1496470588236,
+        879.156705882353
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-32231:178104",
+      "sourceId": "kibelisk@-32231:178104",
+      "position": [
+        -32231,
+        178104,
+        33649
+      ],
+      "expectedLocalPixel": [
+        735.5030588235294,
+        471.55325490196077
+      ],
+      "expectedNativePixel": [
+        1471.0061176470588,
+        943.1065098039215
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-189647:91401",
+      "sourceId": "kibelisk@-189647:91401",
+      "position": [
+        -189647,
+        91401,
+        88
+      ],
+      "expectedLocalPixel": [
+        626.699294117647,
+        274.01160784313726
+      ],
+      "expectedNativePixel": [
+        1253.398588235294,
+        548.0232156862745
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "kibelisk",
+      "stableId": "kibelisk@183848:92631",
+      "sourceId": "kibelisk@183848:92631",
+      "position": [
+        183848,
+        92631,
+        30033
+      ],
+      "expectedLocalPixel": [
+        628.2428235294118,
+        742.7112156862745
+      ],
+      "expectedNativePixel": [
+        1256.4856470588236,
+        1485.422431372549
+      ]
+    },
+    {
+      "region": "Verteron",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-675:-9160",
+      "sourceId": "kibelisk@-672:-9166",
+      "position": [
+        -672,
+        -9166,
+        18956
+      ],
+      "expectedLocalPixel": [
+        500.49756862745096,
+        511.1567058823529
+      ],
+      "expectedNativePixel": [
+        1000.9951372549019,
+        1022.3134117647058
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-1699:8765",
+      "sourceId": "kibelisk@-1699:8765",
+      "position": [
+        -1699,
+        8765,
+        7168
+      ],
+      "expectedLocalPixel": [
+        679.6810039215686,
+        514.6117647058824
+      ],
+      "expectedNativePixel": [
+        1359.3620078431372,
+        1029.2235294117647
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-23414:21257",
+      "sourceId": "kibelisk@-23414:21257",
+      "position": [
+        -23414,
+        21257,
+        5078
+      ],
+      "expectedLocalPixel": [
+        704.7629803921568,
+        471.01145098039217
+      ],
+      "expectedNativePixel": [
+        1409.5259607843136,
+        942.0229019607843
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "type": "kibelisk",
+      "stableId": "kibelisk@10688:28307",
+      "sourceId": "kibelisk@10688:28307",
+      "position": [
+        10688,
+        28307,
+        8877
+      ],
+      "expectedLocalPixel": [
+        718.918274509804,
+        539.4829176470588
+      ],
+      "expectedNativePixel": [
+        1437.836549019608,
+        1078.9658352941176
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "type": "quest_episode",
+      "stableId": "quest_episode@N_D0_HQ_Andre_01.episode",
+      "sourceId": "quest_episode@N_D0_HQ_Andre_01.episode",
+      "position": [
+        -645,
+        6722,
+        6973
+      ],
+      "expectedLocalPixel": [
+        675.5789803921568,
+        516.728031372549
+      ],
+      "expectedNativePixel": [
+        1351.1579607843137,
+        1033.456062745098
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "type": "quest_episode",
+      "stableId": "quest_episode@N_D0_Q_Anders_02.episode",
+      "sourceId": "quest_episode@N_D0_Q_Anders_02.episode",
+      "position": [
+        21681,
+        13424,
+        11235
+      ],
+      "expectedLocalPixel": [
+        689.0355450980392,
+        561.555137254902
+      ],
+      "expectedNativePixel": [
+        1378.0710901960783,
+        1123.110274509804
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_125010508",
+      "sourceId": "empyrean_trace_125010508",
+      "position": [
+        253226,
+        -232929,
+        2869
+      ],
+      "expectedLocalPixel": [
+        219.6969411764706,
+        829.7738039215686
+      ],
+      "expectedNativePixel": [
+        439.3938823529412,
+        1659.5476078431373
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_125010520",
+      "sourceId": "empyrean_trace_125010520",
+      "position": [
+        -234570,
+        249400,
+        963
+      ],
+      "expectedLocalPixel": [
+        824.9725490196079,
+        217.63764705882352
+      ],
+      "expectedNativePixel": [
+        1649.9450980392157,
+        435.27529411764704
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_125010503",
+      "sourceId": "empyrean_trace_125010503",
+      "position": [
+        -246976,
+        223761,
+        6791
+      ],
+      "expectedLocalPixel": [
+        792.7981176470589,
+        202.0693333333333
+      ],
+      "expectedNativePixel": [
+        1585.5962352941178,
+        404.1386666666666
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_125010546",
+      "sourceId": "empyrean_trace_125010546",
+      "position": [
+        268603,
+        -224566,
+        280
+      ],
+      "expectedLocalPixel": [
+        230.19168627450978,
+        849.070431372549
+      ],
+      "expectedNativePixel": [
+        460.38337254901955,
+        1698.140862745098
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "empyrean_trace",
+      "stableId": "empyrean_trace_125010225",
+      "sourceId": "empyrean_trace_125010225",
+      "position": [
+        200,
+        26335,
+        10507
+      ],
+      "expectedLocalPixel": [
+        545.0478431372549,
+        512.2509803921569
+      ],
+      "expectedNativePixel": [
+        1090.0956862745097,
+        1024.5019607843137
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@10110:-240047",
+      "sourceId": "hidden_cube@10110:-240047",
+      "position": [
+        10110,
+        -240047,
+        15088
+      ],
+      "expectedLocalPixel": [
+        210.76454901960784,
+        524.6870588235295
+      ],
+      "expectedNativePixel": [
+        421.5290980392157,
+        1049.374117647059
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@-237630:250701",
+      "sourceId": "hidden_cube@-237630:250701",
+      "position": [
+        -237630,
+        250701,
+        442
+      ],
+      "expectedLocalPixel": [
+        826.6051764705883,
+        213.79764705882354
+      ],
+      "expectedNativePixel": [
+        1653.2103529411766,
+        427.5952941176471
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@-248181:225743",
+      "sourceId": "hidden_cube@-248181:225743",
+      "position": [
+        -248181,
+        225743,
+        4780
+      ],
+      "expectedLocalPixel": [
+        795.2853333333334,
+        200.55717647058822
+      ],
+      "expectedNativePixel": [
+        1590.5706666666667,
+        401.11435294117643
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@274911:-213925",
+      "sourceId": "hidden_cube@274911:-213925",
+      "position": [
+        274911,
+        -213925,
+        5327
+      ],
+      "expectedLocalPixel": [
+        243.5450980392157,
+        856.9863529411765
+      ],
+      "expectedNativePixel": [
+        487.0901960784314,
+        1713.972705882353
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "hidden_cube",
+      "stableId": "hidden_cube@-14809:18940",
+      "sourceId": "hidden_cube@-14809:18940",
+      "position": [
+        -14809,
+        18940,
+        5839
+      ],
+      "expectedLocalPixel": [
+        535.7678431372549,
+        493.4161568627451
+      ],
+      "expectedNativePixel": [
+        1071.5356862745098,
+        986.8323137254902
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@15812:-178351",
+      "sourceId": "sealed_dungeon@15812:-178351",
+      "position": [
+        15812,
+        -178351,
+        23737
+      ],
+      "expectedLocalPixel": [
+        288.1869803921569,
+        531.8425098039215
+      ],
+      "expectedNativePixel": [
+        576.3739607843138,
+        1063.685019607843
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@81356:205310",
+      "sourceId": "sealed_dungeon@81356:205310",
+      "position": [
+        81356,
+        205310,
+        416
+      ],
+      "expectedLocalPixel": [
+        769.6439215686274,
+        614.0938039215687
+      ],
+      "expectedNativePixel": [
+        1539.2878431372549,
+        1228.1876078431374
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@-197435:38910",
+      "sourceId": "sealed_dungeon@-197435:38910",
+      "position": [
+        -197435,
+        38910,
+        115
+      ],
+      "expectedLocalPixel": [
+        560.8282352941177,
+        264.23843137254903
+      ],
+      "expectedNativePixel": [
+        1121.6564705882354,
+        528.4768627450981
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@191398:131975",
+      "sourceId": "sealed_dungeon@191398:131975",
+      "position": [
+        191398,
+        131975,
+        24064
+      ],
+      "expectedLocalPixel": [
+        677.6156862745098,
+        752.1857254901961
+      ],
+      "expectedNativePixel": [
+        1355.2313725490196,
+        1504.3714509803922
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "sealed_dungeon",
+      "stableId": "sealed_dungeon@-42956:27914",
+      "sourceId": "sealed_dungeon@-42956:27914",
+      "position": [
+        -42956,
+        27914,
+        11817
+      ],
+      "expectedLocalPixel": [
+        547.0293333333333,
+        458.094431372549
+      ],
+      "expectedNativePixel": [
+        1094.0586666666666,
+        916.188862745098
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "kibelisk",
+      "stableId": "kibelisk@77640:-211694",
+      "sourceId": "kibelisk@77640:-211694",
+      "position": [
+        77640,
+        -211694,
+        3848
+      ],
+      "expectedLocalPixel": [
+        246.34478431372548,
+        609.4305882352942
+      ],
+      "expectedNativePixel": [
+        492.68956862745097,
+        1218.8611764705884
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-215117:232197",
+      "sourceId": "kibelisk@-215117:232197",
+      "position": [
+        -215117,
+        232197,
+        2639
+      ],
+      "expectedLocalPixel": [
+        803.3844705882352,
+        242.04925490196075
+      ],
+      "expectedNativePixel": [
+        1606.7689411764704,
+        484.0985098039215
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "kibelisk",
+      "stableId": "kibelisk@191753:109439",
+      "sourceId": "kibelisk@191753:109439",
+      "position": [
+        191753,
+        109439,
+        17935
+      ],
+      "expectedLocalPixel": [
+        649.3352156862745,
+        752.6312156862746
+      ],
+      "expectedNativePixel": [
+        1298.670431372549,
+        1505.2624313725491
+      ]
+    },
+    {
+      "region": "Altgard",
+      "type": "kibelisk",
+      "stableId": "kibelisk@-1694:28780",
+      "sourceId": "kibelisk@-1694:28780",
+      "position": [
+        -1694,
+        28780,
+        10378
+      ],
+      "expectedLocalPixel": [
+        548.1160784313726,
+        509.8741960784314
+      ],
+      "expectedNativePixel": [
+        1096.2321568627451,
+        1019.7483921568628
+      ]
+    }
+  ],
+  "sampling": "For each growth-region target type: horizontal/vertical extrema and nearest centroid (deduplicated). Tutorial regions: every mapped travel point plus first/last story NPC. Expected pixels computed from independently fetched provider settings and nodes, not the site implementation.",
+  "independentGameReferences": [
+    {
+      "region": "Verteron",
+      "reference": "verteron-inven",
+      "matrix": [
+        [
+          1.4394549329585906,
+          2.883875933752474e-05,
+          -873.6679953549639
+        ],
+        [
+          -2.883875933752474e-05,
+          1.4394549329585906,
+          -884.2834591717294
+        ]
+      ],
+      "features": 2890,
+      "inliers": 2858,
+      "medianResidualPx": 0.31157926333179353,
+      "referenceSize": [
+        1500,
+        1346
+      ],
+      "pageUrl": "https://www.inven.co.kr/board/aion2/6444/316",
+      "imageUrl": "https://upload3.inven.co.kr/upload/2025/11/25/bbs/i1291089442.jpg",
+      "imageSha256": "928d50a02e942baf1c144bf9467d69d7330af48e3ddfcb8f05dbae8da7e9ac50",
+      "method": "SIFT terrain features + RANSAC similarity transform from native TH.GL image to downscaled historical KR game-map screenshot; selected source points projected into screenshot and visually inspected. Transform estimates terrain registration, not live marker truth.",
+      "orientation": "Positive, nearly equal X/Y scale; negligible rotation; no reflection.",
+      "anchors": [
+        {
+          "id": "empyrean_trace_120010001",
+          "type": "empyrean_trace",
+          "position": [
+            -96927,
+            -114072,
+            22492
+          ],
+          "referencePixel": [
+            188.2427949045774,
+            239.52413384191277
+          ],
+          "visualResult": "Surrounding terrain consistent. Tiny/overlapping feather icon is not unambiguous at this overview scale; do not count as independent exact-object confirmation."
+        },
+        {
+          "id": "empyrean_trace_120010222",
+          "type": "empyrean_trace",
+          "position": [
+            69189,
+            -82276,
+            16911
+          ],
+          "referencePixel": [
+            303.12580573487696,
+            839.6573509365824
+          ],
+          "visualResult": "Surrounding terrain consistent. Tiny/overlapping feather icon is not unambiguous at this overview scale; do not count as independent exact-object confirmation."
+        },
+        {
+          "id": "empyrean_trace_120010334",
+          "type": "empyrean_trace",
+          "position": [
+            90973,
+            19000,
+            34880
+          ],
+          "referencePixel": [
+            669.0122145539457,
+            918.3501586802793
+          ],
+          "visualResult": "Surrounding terrain consistent. Tiny/overlapping feather icon is not unambiguous at this overview scale; do not count as independent exact-object confirmation."
+        },
+        {
+          "id": "empyrean_trace_120010447",
+          "type": "empyrean_trace",
+          "position": [
+            177303,
+            108614,
+            24280
+          ],
+          "referencePixel": [
+            992.7714089376187,
+            1230.2323484985966
+          ],
+          "visualResult": "Surrounding terrain consistent. Tiny/overlapping feather icon is not unambiguous at this overview scale; do not count as independent exact-object confirmation."
+        },
+        {
+          "id": "kibelisk@-50756:-110641",
+          "type": "kibelisk",
+          "position": [
+            -50756,
+            -110641,
+            8941
+          ],
+          "referencePixel": [
+            200.64148074448542,
+            406.3281489354915
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@58714:-70520",
+          "type": "kibelisk",
+          "position": [
+            58714,
+            -70520,
+            10920
+          ],
+          "referencePixel": [
+            345.5965322750675,
+            801.8129476080903
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@-43632:-18740",
+          "type": "kibelisk",
+          "position": [
+            -43627,
+            -18745,
+            4840
+          ],
+          "referencePixel": [
+            532.6392372575596,
+            432.0767896895213
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@-7895:14107",
+          "type": "kibelisk",
+          "position": [
+            -7895,
+            14107,
+            25388
+          ],
+          "referencePixel": [
+            651.3278745572721,
+            561.1651818553055
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@-47264:-46290",
+          "type": "sealed_dungeon",
+          "position": [
+            -47264,
+            -46290,
+            16637
+          ],
+          "referencePixel": [
+            433.12578529856444,
+            418.9392129615667
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@-31993:-73352",
+          "type": "sealed_dungeon",
+          "position": [
+            -31993,
+            -73352,
+            6156
+          ],
+          "referencePixel": [
+            335.35865996766177,
+            474.11147138532397
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@10978:130658",
+          "type": "sealed_dungeon",
+          "position": [
+            10978,
+            130658,
+            29952
+          ],
+          "referencePixel": [
+            1072.3988233639525,
+            629.3401698107264
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@101365:-14628",
+          "type": "sealed_dungeon",
+          "position": [
+            101365,
+            -14628,
+            18442
+          ],
+          "referencePixel": [
+            547.5234219750733,
+            955.8962868763069
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        }
+      ]
+    },
+    {
+      "region": "Altgard",
+      "reference": "altgard-unnamed-graveyard",
+      "matrix": [
+        [
+          5.391418233735866,
+          0.0009757172641842455,
+          -2684.9139541625636
+        ],
+        [
+          -0.0009757172641842455,
+          5.391418233735866,
+          -3621.8051200511845
+        ]
+      ],
+      "features": 53,
+      "inliers": 35,
+      "medianResidualPx": 1.205000903409313,
+      "referenceSize": [
+        1500,
+        984
+      ],
+      "pageUrl": "https://www.inven.co.kr/board/aion2/6444/600",
+      "imageUrl": "https://upload3.inven.co.kr/upload/2025/12/02/bbs/i1688238899.jpg",
+      "imageSha256": "081bf4277412af908d6e7c5cc3c48af0953bb6e53993624e2f6ab52d54c26d96",
+      "method": "SIFT terrain features + RANSAC similarity transform from native TH.GL image to downscaled historical KR game-map screenshot; selected source points projected into screenshot and visually inspected. Transform estimates terrain registration, not live marker truth.",
+      "orientation": "Positive, nearly equal X/Y scale; negligible rotation; no reflection.",
+      "anchors": [
+        {
+          "id": "empyrean_trace_125010003",
+          "type": "empyrean_trace",
+          "position": [
+            -89770,
+            -152110,
+            36714
+          ],
+          "referencePixel": [
+            778.4159641700535,
+            683.6664990384661
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010206",
+          "type": "empyrean_trace",
+          "position": [
+            -130112,
+            -161374,
+            37516
+          ],
+          "referencePixel": [
+            652.9622583737851,
+            137.8053405364749
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010115",
+          "type": "empyrean_trace",
+          "position": [
+            -86460,
+            -156555,
+            33737
+          ],
+          "referencePixel": [
+            718.2769852215065,
+            728.4663269083449
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010122",
+          "type": "empyrean_trace",
+          "position": [
+            -102735,
+            -144355,
+            35346
+          ],
+          "referencePixel": [
+            883.3202420763537,
+            508.21287309269155
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@-95757:-170779",
+          "type": "kibelisk",
+          "position": [
+            -95757,
+            -170779,
+            34380
+          ],
+          "referencePixel": [
+            525.783547229189,
+            602.6997092664906
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@-77322:-151858",
+          "type": "kibelisk",
+          "position": [
+            -77322,
+            -151858,
+            31242
+          ],
+          "referencePixel": [
+            781.8563610287979,
+            852.1047818125353
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@-76874:-171505",
+          "type": "sealed_dungeon",
+          "position": [
+            -76874,
+            -171505,
+            38079
+          ],
+          "referencePixel": [
+            516.0059907276232,
+            858.2149629220021
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@-77766:-126995",
+          "type": "sealed_dungeon",
+          "position": [
+            -77766,
+            -126995,
+            28728
+          ],
+          "referencePixel": [
+            1118.2865372218257,
+            846.0359530649457
+          ],
+          "visualResult": "Occluded by author title; cannot independently verify this marker."
+        },
+        {
+          "id": "sealed_dungeon@-132987:-157879",
+          "type": "sealed_dungeon",
+          "position": [
+            -132987,
+            -157879,
+            37930
+          ],
+          "referencePixel": [
+            700.2474700814487,
+            98.89399922490384
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "sealed_dungeon@-105311:-139366",
+          "type": "sealed_dungeon",
+          "position": [
+            -105311,
+            -139366,
+            32438
+          ],
+          "referencePixel": [
+            950.8221015158783,
+            473.34376257087933
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        }
+      ]
+    },
+    {
+      "region": "Altgard",
+      "reference": "altgard-spirit-island",
+      "matrix": [
+        [
+          5.63129948311437,
+          0.0030069516255914726,
+          -8072.189105963894
+        ],
+        [
+          -0.0030069516255914726,
+          5.63129948311437,
+          -2023.874580077659
+        ]
+      ],
+      "features": 34,
+      "inliers": 30,
+      "medianResidualPx": 1.5208159777036991,
+      "referenceSize": [
+        1500,
+        1031
+      ],
+      "pageUrl": "https://www.inven.co.kr/board/aion2/6444/600",
+      "imageUrl": "https://upload3.inven.co.kr/upload/2025/12/02/bbs/i1700818191.jpg",
+      "imageSha256": "91315c65a0509d1e1f6fcfc09256194def85ee68a7ec15891237011a4ee96bbb",
+      "method": "SIFT terrain features + RANSAC similarity transform from native TH.GL image to downscaled historical KR game-map screenshot; selected source points projected into screenshot and visually inspected. Transform estimates terrain registration, not live marker truth.",
+      "orientation": "Positive, nearly equal X/Y scale; negligible rotation; no reflection.",
+      "anchors": [
+        {
+          "id": "empyrean_trace_125010510",
+          "type": "empyrean_trace",
+          "position": [
+            -226483,
+            240778,
+            1672
+          ],
+          "referencePixel": [
+            1098.6570842019346,
+            536.6919936377246
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010509",
+          "type": "empyrean_trace",
+          "position": [
+            -230212,
+            241499,
+            1428
+          ],
+          "referencePixel": [
+            1108.8191648412167,
+            483.9828892370199
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010514",
+          "type": "empyrean_trace",
+          "position": [
+            -201785,
+            237055,
+            270
+          ],
+          "referencePixel": [
+            1046.2246141548485,
+            885.7882245769827
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "empyrean_trace_125010519",
+          "type": "empyrean_trace",
+          "position": [
+            -244118,
+            228547,
+            4245
+          ],
+          "referencePixel": [
+            925.6576763402527,
+            287.540775794552
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        },
+        {
+          "id": "kibelisk@-215117:232197",
+          "type": "kibelisk",
+          "position": [
+            -215117,
+            232197,
+            2639
+          ],
+          "referencePixel": [
+            977.4636627683894,
+            697.3976314779804
+          ],
+          "visualResult": "Corresponding visible icon/feature is consistent with the projected point in this historical KR screenshot; visual corroboration, not a measured live-client position."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "TH.GL is a source comparison, not an independent capture of the current game client.",
+    "Independent screenshots verify terrain and visible trace/travel/dungeon samples in the two growth regions only; hidden cubes and the two tutorial regions have no independent game screenshot position confirmation in this review.",
+    "Source has 559 traces per growth region; historical KR player guides report 560. Missing position identity is unresolved. No guessed marker added.",
+    "Hidden cube positions are possible spawns, not simultaneous objects; no live availability validation.",
+    "2048px overview becomes pixelated when magnified beyond its source resolution.",
+    "Mobile browser emulation is not physical-device gameplay validation."
+  ],
+  "unsupportedRegions": [
+    {
+      "mapKey": "World_L_B",
+      "providerName": "Eltnen",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/World_L_B.4509db1acc066bc3bc885d6b295499f4.raw",
+      "addedToSite": false,
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_L_B.4509db1acc066bc3bc885d6b295499f4.raw",
+      "sha256": "f56b16c575b2cdc710bfa3a10d358c9685f00853031e03d1a5cf5fc08f6dd2b3",
+      "counts": {
+        "hidden_cube": 456,
+        "empyrean_trace": 140,
+        "sealed_dungeon": 20,
+        "kibelisk": 20
+      },
+      "reasonWithheld": "Source coordinates are available; terrain assembly, sample registration and region/patch eligibility are not yet independently reviewed. No speculative points published."
+    },
+    {
+      "mapKey": "World_D_B",
+      "providerName": "Morheim",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/World_D_B.383b93fffd46fe882de1f614611f0920.raw",
+      "addedToSite": false,
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/World_D_B.383b93fffd46fe882de1f614611f0920.raw",
+      "sha256": "88ef65bc13fe8162e8651bacfb282ccbbda6640ec2d36bc9b4888c50b7a1346c",
+      "counts": {
+        "hidden_cube": 455,
+        "empyrean_trace": 140,
+        "sealed_dungeon": 20,
+        "kibelisk": 20
+      },
+      "reasonWithheld": "Source coordinates are available; terrain assembly, sample registration and region/patch eligibility are not yet independently reviewed. No speculative points published."
+    },
+    {
+      "mapKey": "Abyss_Reshanta_A",
+      "providerName": "Chaotic Lower Reshanta",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Abyss_Reshanta_A.bd4b410cbdc0369535225e39b85b7243.raw",
+      "addedToSite": false,
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/Abyss_Reshanta_A.bd4b410cbdc0369535225e39b85b7243.raw",
+      "sha256": "da733f7a74a382084d5238861b3f26bd506c711a94b2bb9145dac2ca23534e8d",
+      "counts": {
+        "empyrean_trace": 200
+      },
+      "reasonWithheld": "Source coordinates are available; terrain assembly, sample registration and region/patch eligibility are not yet independently reviewed. No speculative points published."
+    },
+    {
+      "mapKey": "Abyss_Reshanta_C",
+      "providerName": "Chaotic Middle Reshanta",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Abyss_Reshanta_C.f0a2cf0d9a5b9f0bed2ef65b05c91e63.raw",
+      "addedToSite": false,
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/Abyss_Reshanta_C.f0a2cf0d9a5b9f0bed2ef65b05c91e63.raw",
+      "sha256": "2dcd9b9c4d97c5afae58b39b72c019f271e91dff87de2047fefc51529fffafdd",
+      "counts": {
+        "empyrean_trace": 100
+      },
+      "reasonWithheld": "Source coordinates are available; terrain assembly, sample registration and region/patch eligibility are not yet independently reviewed. No speculative points published."
+    },
+    {
+      "mapKey": "Abyss_Reshanta_D",
+      "providerName": "Chaotic Upper Reshanta",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Abyss_Reshanta_D.95d068dd98fe0cb51ada3bf82cf66368.raw",
+      "addedToSite": false,
+      "sourceUrl": "https://cdn.th.gl/aion2/nodes/Abyss_Reshanta_D.95d068dd98fe0cb51ada3bf82cf66368.raw",
+      "sha256": "950f31a33e00e271dd7542c65fa99ce121940a8762365b55aa4b1759d5dd230d",
+      "counts": {},
+      "reasonWithheld": "Source coordinates are available; terrain assembly, sample registration and region/patch eligibility are not yet independently reviewed. No speculative points published."
+    },
+    {
+      "mapKey": "Legion_Agit_01",
+      "providerName": "Pantheon",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Legion_Agit_01.8d39dd7eef115ea6975446ef4082951f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Fire_Temple_Arena",
+      "providerName": "Fire Temple Arena",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Fire_Temple_Arena.8d39dd7eef115ea6975446ef4082951f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Impetusium_Arena",
+      "providerName": "Impetusium Arena",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Impetusium_Arena.8d39dd7eef115ea6975446ef4082951f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Battlefield_A_1",
+      "providerName": "Odyle Shard Cradle",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Battlefield_A_1.a078c09791b834fbc1e87b2bea5a31e5.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Battlefield_B_1",
+      "providerName": "Stormslumber Snowfield",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Battlefield_B_1.8d39dd7eef115ea6975446ef4082951f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Battlefield_C_1",
+      "providerName": "Sandstorm Temple",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Battlefield_C_1.4d4525d90ead0eb7818e7c1d4cd88f3c.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Draconic_001",
+      "providerName": "Subjugation Closed",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Draconic_001.991a42efc2d7c4305b28f11ad44c0623.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Draconic_002",
+      "providerName": "Beritra Brigade Fortress",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Draconic_002.4ff96ea039068d121846efa26a1f26a0.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Draconic_004",
+      "providerName": "Orcus's Grave",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Draconic_004.52ce49a14b1ec3deb7e152de9c66fa50.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Draconic_005",
+      "providerName": "Fafnite Forge",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Draconic_005.994595c4e0e1a18e254de1397b04976e.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Growth_SilentNecropolis",
+      "providerName": "Silent Graveyard",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Growth_SilentNecropolis.8daafec60da834725587ffb74907010e.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Growth_FafniteBasin",
+      "providerName": "Fafnite Amphitheater",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Growth_FafniteBasin.d777983ff41c9d23b2b7e6d7ccd0d448.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DreamCrossroad",
+      "providerName": "Dream Crossroad",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DreamCrossroad.bfdb24d5a56c865778016b4c10304261.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DreamOfPain",
+      "providerName": "Dream of Torment",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DreamOfPain.153c40d3ebcd646c9f3feccf61505403.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_0003",
+      "providerName": "Nightmare",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_0003.8d39dd7eef115ea6975446ef4082951f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_0004",
+      "providerName": "Narun's Dream",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_0004.35d5e8d43258009c7c433f12608d0f12.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_0005",
+      "providerName": "Subspace of Ascension",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_0005.9e83cd8e8065f1639b292dc6316069f8.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_0006",
+      "providerName": "Dream of Shattered Fragments",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_0006.7a172d80bea678aeccf1009f9245dc41.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "CoastalCave",
+      "providerName": "Coastal Cave",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/CoastalCave.21558ac8de3f771a4279fc2b9ee05a9c.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0004",
+      "providerName": "Illusion Sanctum",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0004.115881c306dd596b03f8ac04f8eaac8c.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "RootCellar",
+      "providerName": "Root Cellar",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/RootCellar.1fd13fd64c121525faa1151c07b507af.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "StrigikAltar",
+      "providerName": "Aullaeu Altar",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/StrigikAltar.20682b50be433de15010cf2be31f02d1.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0008",
+      "providerName": "Illusion Hideout",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0008.c05e5641d39a2677fb19c0f4d87eb97d.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0009",
+      "providerName": "Zumion Relic Storage",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0009.27d8b52d43bb014808c1638b67f3e691.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0010",
+      "providerName": "/nodes/Dungeon_L_0010.29efe1b171c1b0fcb4293d21d1012405.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0010.29efe1b171c1b0fcb4293d21d1012405.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0011",
+      "providerName": "Ardus Shrine",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0011.e9378c167048e5dbac3f8d35c855bb92.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "IllicitTradeSpot",
+      "providerName": "Illicit Trade Spot",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/IllicitTradeSpot.01e75e1eb71d060a6cbec6986211f6b9.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0014",
+      "providerName": "Zikel's Collapsed Barracks",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0014.2ca66e02cc4679e6c2e5fa3bae53da2b.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0017",
+      "providerName": "Fountain of Life",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0017.ed47989a0503f4aacdc40f767b45f57a.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0018",
+      "providerName": "Light Crash Site",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0018.2c124f7c554cf7921b5d10521691e4ae.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_L_0019",
+      "providerName": "Lepharist Research Center",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_L_0019.2e0df43315dcd043348a0f1e27391481.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0001",
+      "providerName": "Crypt",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0001.d7a833ab0970d7e3c2aa8c0eee767e5e.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0002",
+      "providerName": "Zikel's Sanctum",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0002.22ebe1f60c4d4cdd69f8735c84824558.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0006",
+      "providerName": "Collapsed Oracle",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0006.78f947fea6883f024aee090d30355eca.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0007",
+      "providerName": "Root of the Sacred Tree",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0007.ca2b216d8430d672ee2c0b5f4f04c863.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0008",
+      "providerName": "Dranactus Underkeep",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0008.74eb87c6395ae7f83b517fdba75104eb.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0009",
+      "providerName": "/nodes/Dungeon_D_0009.d0034a406706b6d252485e9c30ffe788.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0009.d0034a406706b6d252485e9c30ffe788.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0010",
+      "providerName": "Blades Hideout",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0010.b24c715115f1edeae9fef4d380ab1b5c.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0011",
+      "providerName": "Impetusium",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0011.fc68791eac6e1145ca52d3ef1c63e010.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0014",
+      "providerName": "Kaisinel's Collapsed Sanctum",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0014.838e3fecda2da4ce6f4bbd230bba7014.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0019",
+      "providerName": "Blades Secret Storage",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0019.78074f3ef1980452f28cddfc852d3312.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0020",
+      "providerName": "Executioner's Tower",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0020.b3ed0cc526b07b40e56456acbffb432d.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0021",
+      "providerName": "/nodes/Dungeon_D_0021.1c13703fb7b5fbb82182e90839a4c141.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0021.1c13703fb7b5fbb82182e90839a4c141.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Dungeon_D_0022",
+      "providerName": "/nodes/Dungeon_D_0022.8ca232ba051e6e5ed3938354e652eb5f.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Dungeon_D_0022.8ca232ba051e6e5ed3938354e652eb5f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "KraoCave",
+      "providerName": "Krao Cave",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/KraoCave.ad58ee320683c0065c6cec119c27348a.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Urugugu_Canyon",
+      "providerName": "Urugugu Canyon",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Urugugu_Canyon.8b2878e360b44d182c1693e5bd657fa0.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Fire_Temple",
+      "providerName": "Fire Temple (Fire Temple)",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Fire_Temple.716959fc7f6d2a22228c320550fbae3f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Draupnir",
+      "providerName": "/nodes/Draupnir.7021f42b3ccabdeab9001e4a15a6f16c.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Draupnir.7021f42b3ccabdeab9001e4a15a6f16c.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DeadDramataNest",
+      "providerName": "Dying Dramata's Nest",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DeadDramataNest.3aba1cf161c1fa9ce032395978f87cae.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "BakronIsland",
+      "providerName": "/nodes/BakronIsland.abd7b04a9f99d662ea62597ec17ef313.raw",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/BakronIsland.abd7b04a9f99d662ea62597ec17ef313.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "ReforgedAbyss",
+      "providerName": "Abyssal Forge: Ludra",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/ReforgedAbyss.3a7221071418a47a1faf1abc288a0c6f.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "HornCave",
+      "providerName": "Ferocious Horn Den",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/HornCave.35a3903da1807db84990c4de7ffc0405.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "CradleNihility",
+      "providerName": "Cradle of Nihility",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/CradleNihility.a0db51013bed15929d1a5aec073b9bf2.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "PhantomsHall",
+      "providerName": "Hall of Illusion",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/PhantomsHall.58e952e357868efe6b719c085aa87edb.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "BlueBreathIsle",
+      "providerName": "Azure Breath Island",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/BlueBreathIsle.730d04815cf77e5edf36083abe8fa821.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DaevaCitadel",
+      "providerName": "Citadel of the Fallen Daeva",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DaevaCitadel.014a5d617700715fab62b5bccd038598.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "SunkenTemple",
+      "providerName": "Submerged Life Temple",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/SunkenTemple.9daac60f5b0af4c60641d96e708105dd.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "MirrorHeart",
+      "providerName": "Mirror of Scarlet Desire",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/MirrorHeart.f7f9d60381a34c0a19fbef3e4674f0e3.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DeusCenter",
+      "providerName": "Deus Research Base",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DeusCenter.5af316efd834aabec8b3c51818d49c2b.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "Arkanis",
+      "providerName": "Shattered Arkanis",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/Arkanis.585dbe410f3e767ad9149ff1602de942.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "FafniteGully",
+      "providerName": "Abyssal Horn Den",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/FafniteGully.bb2889ace9888bdf5d2debca78f1a3b5.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "ErosionPurifier",
+      "providerName": "Corroded Decontamination Facility",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/ErosionPurifier.54a1458cbe90aae91958fdfd68f767cd.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "MusphelHolyGrail",
+      "providerName": "Chalice of Muspel",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/MusphelHolyGrail.1bc1eb830f60dc252b5b215c7af2651e.raw",
+      "addedToSite": false
+    },
+    {
+      "mapKey": "DungeonWave",
+      "providerName": "Daeva Bio-Research Base",
+      "terrainConfigAvailable": true,
+      "nodesPath": "/nodes/DungeonWave.e00abe2f3c2b08f62514dc5aa48611a0.raw",
+      "addedToSite": false
+    }
+  ],
+  "publicSnapshot": [
+    {
+      "path": "ko/maps/index.html",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/ko/maps/",
+      "sha256": "37323eed8ff99433e46b0541581a9fd37ad4981e73a66cd57dc598e999ec81af",
+      "bytes": 83363,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "maps/index.html",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/maps/",
+      "sha256": "d3c4f26c56db40618002c5d2d0b07953ffec2befa5c0a08e09d142ee2118d557",
+      "bytes": 82094,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/deep-guide.js",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/deep-guide.js",
+      "sha256": "2b9bb3fc2a1078df7e1125ea55ed40325c50a5e7e0cbbb182b9a7808ec6d1823",
+      "bytes": 29022,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/map-collectibles.js",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/map-collectibles.js",
+      "sha256": "d338e0bc1944af5efe2e23f08d56672bea028ade030ad2c809eb160a45cc016e",
+      "bytes": 199521,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/map-resources.js",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/map-resources.js",
+      "sha256": "ff02483cf97c187eb184474f8b1d78ea10b4a159af07e479fd0c79672e78ba3d",
+      "bytes": 328097,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/deep-guide.css",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/deep-guide.css",
+      "sha256": "405b0cc37f8ca8422ac8d099360e7e386c27858315a57ada48f585144e8d18fb",
+      "bytes": 27443,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/maps/poeta.webp",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/maps/poeta.webp",
+      "sha256": "169b911a4a2d4cf320e814fdff34488137f65e1c69e543eeea94a783225d88d1",
+      "bytes": 334814,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/maps/ishalgen.webp",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/maps/ishalgen.webp",
+      "sha256": "26fdedc786518a79a09a307fb693be353d0ab7508534e28abebae732f17bf45d",
+      "bytes": 393692,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/maps/verteron.webp",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/maps/verteron.webp",
+      "sha256": "4f204b35b6fb1d6dedd792a3c0786805d572789a575a0fade6e1929f14bea216",
+      "bytes": 428370,
+      "matchesBaselineCommit": true
+    },
+    {
+      "path": "assets/maps/altgard.webp",
+      "url": "https://bumblev95.github.io/Aion2-Daeva-Atlas/assets/maps/altgard.webp",
+      "sha256": "80dda8569f8bf246b763d240341808fb5725623500d05ec9c3b0fd4253f6f6bd",
+      "bytes": 440532,
+      "matchesBaselineCommit": true
+    }
+  ],
+  "publicSnapshotNote": "Fetched public files over validated HTTP TLS. Local Chromium direct public navigation failed due to environment network/certificate setup; behavior tested against source/local copies and public-snapshot JS after SHA comparison. This is not a claim of an end-to-end remote-browser session.",
+  "confirmedBugs": [
+    {
+      "trigger": "Two-finger spread/close on the map",
+      "before": "Scale did not change; only a single pointer drag was tracked.",
+      "fix": "Track active pointers; zoom about gesture midpoint; rebase when a finger leaves; cancel cleanly.",
+      "changesCoordinates": false
+    },
+    {
+      "trigger": "Open a shared point link or resize the map viewport",
+      "before": "ResizeObserver(fit) undid the shared-point centering and reset the chosen view.",
+      "fix": "Ignore initial unchanged-size observation; preserve the viewed world centre on viewport size changes.",
+      "changesCoordinates": false
+    }
+  ],
+  "browserValidation": {
+    "sourceSamples": 47,
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "mobileViewports": [
+      320,
+      390
+    ],
+    "physicalDevice": false,
+    "checks": [
+      "projected pin coordinates and actual bounding-box centering",
+      "source link coordinates",
+      "touch spread/close and stable midpoint",
+      "pinch completion followed by a single-finger pan and pointer cancellation",
+      "marker tap and zoom buttons",
+      "completion key and stable IDs across reload/language switch",
+      "horizontal containment"
+    ],
+    "baselineFailures": [
+      "pinch scale remained unchanged",
+      "initial ResizeObserver moved Poeta shared point away from viewport centre"
+    ],
+    "result": "passed locally; CI verification pending"
+  }
+}
