@@ -5,6 +5,26 @@
   document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href'));if(d?.tagName==='DETAILS')d.open=true;}));
   const t = (en, kr) => ko ? kr : en;
   const base = document.body.dataset.base;
+  // Keep the AION 2 guide independent while providing a return path to the multi-game hub.
+  // This runs for both languages and adds no tracking, storage or extra network request.
+  const playerCodexHub = 'https://bumblev95.github.io/player-codex/' + (ko ? 'ko/' : '');
+  const allGamesNav = document.querySelector('#main-nav nav');
+  if (allGamesNav && !allGamesNav.querySelector('[data-player-codex-hub]')) {
+    const allGamesLink = document.createElement('a');
+    allGamesLink.href = playerCodexHub;
+    allGamesLink.className = 'side-link';
+    allGamesLink.dataset.playerCodexHub = 'navigation';
+    allGamesLink.textContent = ko ? '← 전체 게임' : '← All games';
+    allGamesNav.prepend(allGamesLink);
+  }
+  const allGamesFooter = document.querySelector('.footer-links');
+  if (allGamesFooter && !allGamesFooter.querySelector('[data-player-codex-hub]')) {
+    const allGamesLink = document.createElement('a');
+    allGamesLink.href = playerCodexHub;
+    allGamesLink.dataset.playerCodexHub = 'footer';
+    allGamesLink.textContent = ko ? '전체 게임 ↗' : 'All games ↗';
+    allGamesFooter.prepend(allGamesLink);
+  }
   document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('players-codex-dps-v1');}catch{}});
   const sideTools = document.querySelector('.side-bottom');
   if (sideTools) {
