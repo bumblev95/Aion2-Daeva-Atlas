@@ -58,6 +58,19 @@ for(const d of result.comparisons.filter(d=>d.kind==='record')){
 const weekly=result.comparisons.find(d=>d.kind==='weekly');
 assert.equal(weekly.status,'provisional');assert.equal(weekly.region,'UNSPECIFIED');
 assert.equal(weekly.regionVerified,false);
+assert.equal(weekly.periodStart,'2026-10-14');
+assert.equal(weekly.reviewedAt,'2026-10-15');
+const completed=result.comparisons.find(d=>d.kind==='band');
+assert.equal(completed.periodStart,'2026-10-07');
+assert.equal(completed.provisional,false);
+assert.equal(completed.commonBand,'750.0K ~ 850.0K');
+assert.equal(global.reviewedAt,'2026-10-09','A weekly update must not re-date AionFlex');
+for(const mutate of [d=>delete d.reviewedAt,d=>d.reviewedAt='2099-01-01',
+  d=>delete d.collectedAt,d=>d.collectedAt='2099-01-01T00:00:00Z']){
+  const x=structuredClone(inputs);mutate(x.datasets[0]);assert.throws(()=>backend.validateInputs(x));
+}
+assert(backend.csv(result).includes(',2026-10-09,2026-10-09T08:24:17Z,'),
+  'CSV must retain the original per-comparison review and collection dates');
 for(const kind of ['weekly','band']){
   const d=structuredClone(result.comparisons.find(d=>d.kind===kind));
   d.rows[0].sampleCount=kind==='weekly'?49:19;assert.equal(backend.eligible(d),false);

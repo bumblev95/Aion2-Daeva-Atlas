@@ -49,7 +49,7 @@ def reviewed(item, reviews):
     if item.get('kind') == 'news':
         # Headline-only notices link to NC; they are not queued patch reviews.
         item.update(reviewState='official', summary={}, changes=[],
-                    classScopeReviewed=False, reviewedAt=None, displayTitle={}, detail={})
+                    classScopeReviewed=False, reviewedAt=None, displayTitle={}, detail={}, followups=[])
         return item
     review = reviews.get(item['id'], {})
     valid = bool(review and item.get('contentHash') and review.get('contentHash') == item['contentHash'])
@@ -60,6 +60,7 @@ def reviewed(item, reviews):
     item['reviewedAt'] = review.get('reviewedAt') if valid else None
     item['displayTitle'] = review.get('title', {}) if valid else {}
     item['detail'] = review.get('detail', {}) if valid else {}
+    item['followups'] = review.get('followups', []) if valid else []
     return item
 
 def collect_source(source, previous, reviews, now, fetcher=fetch):
@@ -75,11 +76,15 @@ def collect_source(source, previous, reviews, now, fetcher=fetch):
             if not isinstance(meta.get('id'), str) or not meta.get('title'):
                 raise ValueError('invalid article metadata')
             dates = meta.get('timestamps', {})
-            item = dict(id=meta['id'], title=meta['title'][:220], region=source['region'], kind=source['kind'],
+            review = reviews.get(meta['id'], {})
+            # Some actual hotfixes are published on NC's notice board. Only an
+            # explicitly reviewed article on this exact feed is promoted.
+            kind = 'patch' if review.get('kind') == 'patch' and review.get('source') == source['id'] else source['kind']
+            item = dict(id=meta['id'], title=meta['title'][:220], region=source['region'], kind=kind,
                         source=source['id'], url=source['page']+meta['id'],
                         publishedAt=dates.get('postedAt'), sourceUpdatedAt=dates.get('updatedAt'),
                         contentHash=None, bodyState='not-required')
-            if source['kind'] == 'patch':
+            if item['kind'] == 'patch':
                 prior_item = old.get(item['id'], {})
                 if prior_item.get('sourceUpdatedAt') == item['sourceUpdatedAt'] and prior_item.get('title') == item['title'] and prior_item.get('contentHash') and prior_item.get('bodyState') == 'ready':
                     item['contentHash'] = prior_item['contentHash']; item['bodyState'] = 'ready'

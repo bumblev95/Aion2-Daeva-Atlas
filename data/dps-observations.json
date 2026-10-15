@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "kind": "reviewed-public-combat-summaries",
-  "reviewedAt": "2026-10-09",
-  "collectedAt": "2026-10-09T08:24:17Z",
+  "reviewedAt": "2026-10-15",
+  "collectedAt": "2026-10-15T00:19:38Z",
   "publishers": [
     "AionFlex",
     "JaMeter"
@@ -115,7 +115,9 @@
       ],
       "sourceAsOf": "2026-10-07T14:25:00Z",
       "commonBand": "Under 300K",
-      "sourceWithheld": false
+      "sourceWithheld": false,
+      "reviewedAt": "2026-10-09",
+      "collectedAt": "2026-10-09T08:24:17Z"
     },
     {
       "id": "kr-balance",
@@ -222,7 +224,9 @@
       ],
       "sourceAsOf": "2026-10-07T14:25:00Z",
       "commonBand": null,
-      "sourceWithheld": true
+      "sourceWithheld": true,
+      "reviewedAt": "2026-10-09",
+      "collectedAt": "2026-10-09T08:24:17Z"
     },
     {
       "id": "turgen",
@@ -302,7 +306,9 @@
       "en": "Willful Turgen",
       "ko": "의지의 투르겐",
       "instance": "DaevaCitadel",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "reviewedAt": "2026-10-09",
+      "collectedAt": "2026-10-09T08:24:17Z"
     },
     {
       "id": "griosa",
@@ -382,7 +388,9 @@
       "en": "Forbidden Hexbeast Griosa",
       "ko": "금기의 마수 그리오사",
       "instance": "DaevaCitadel",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "reviewedAt": "2026-10-09",
+      "collectedAt": "2026-10-09T08:24:17Z"
     },
     {
       "id": "basilus",
@@ -462,74 +470,78 @@
       "en": "Basilus the False",
       "ko": "위악의 바실루스",
       "instance": "DaevaCitadel",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "reviewedAt": "2026-10-09",
+      "collectedAt": "2026-10-09T08:24:17Z"
     },
     {
       "id": "jameter-current",
       "kind": "weekly",
       "publisher": "JaMeter",
       "window": "source-week",
-      "source": "https://jameter.net/report/week/2026-10-07",
-      "sourceHtmlSha256": "09b46a42ee1c49d51e0970eadf8f0be4a1bb368008356c7e880a0afffaafe61f",
+      "source": "https://jameter.net/report/week/2026-10-14",
+      "sourceHtmlSha256": "9f255178b9ba6c13084b960524b8027e9a6c65c4616f64a114a04b1548af443b",
       "metric": "boss-cp-ratio-index",
       "patchId": null,
       "sameEquipment": false,
       "rawFightTotalsAvailable": false,
+      "reviewedAt": "2026-10-15",
+      "collectedAt": "2026-10-15T00:19:38Z",
       "rows": [
         {
           "classId": "sorcerer",
-          "value": 1.25,
+          "value": 1.21,
           "resolution": 0.01,
-          "sampleCount": 206
-        },
-        {
-          "classId": "ranger",
-          "value": 1.19,
-          "resolution": 0.01,
-          "sampleCount": 505
-        },
-        {
-          "classId": "gladiator",
-          "value": 1.15,
-          "resolution": 0.01,
-          "sampleCount": 247
+          "sampleCount": 118
         },
         {
           "classId": "assassin",
-          "value": 1.13,
+          "value": 1.15,
           "resolution": 0.01,
-          "sampleCount": 207
-        },
-        {
-          "classId": "spiritmaster",
-          "value": 1.1,
-          "resolution": 0.01,
-          "sampleCount": 128
+          "sampleCount": 95
         },
         {
           "classId": "templar",
-          "value": 1.01,
+          "value": 1.13,
           "resolution": 0.01,
-          "sampleCount": 204
+          "sampleCount": 158
+        },
+        {
+          "classId": "spiritmaster",
+          "value": 1.13,
+          "resolution": 0.01,
+          "sampleCount": 125
+        },
+        {
+          "classId": "ranger",
+          "value": 1.05,
+          "resolution": 0.01,
+          "sampleCount": 302
+        },
+        {
+          "classId": "gladiator",
+          "value": 0.99,
+          "resolution": 0.01,
+          "sampleCount": 83
         },
         {
           "classId": "chanter",
-          "value": 0.87,
+          "value": 0.94,
           "resolution": 0.01,
-          "sampleCount": 353
+          "sampleCount": 198
         },
         {
           "classId": "cleric",
-          "value": 0.71,
+          "value": 0.64,
           "resolution": 0.01,
-          "sampleCount": 447
+          "sampleCount": 305
         }
       ],
       "sourceAsOf": null,
       "commonBand": null,
       "sourceWithheld": false,
-      "periodStart": "2026-10-07",
-      "periodEnd": "2026-10-14",
+      "periodStart": "2026-10-14",
+      "periodEnd": "2026-10-21",
       "provisional": true,
       "region": "UNSPECIFIED",
       "regionVerified": false,
@@ -541,75 +553,77 @@
       "kind": "band",
       "publisher": "JaMeter",
       "window": "source-week",
-      "source": "https://jameter.net/report/week/2026-09-30",
-      "sourceHtmlSha256": "eecd72941fcae037727c0b73516dc777aacde1f984a1362b5d9f312c9e421962",
+      "source": "https://jameter.net/report/week/2026-10-07",
+      "sourceHtmlSha256": "0fc00f3d11a29f3548e83c895d141e5c726b3ace33035391e7369c41c5353c60",
       "metric": "cp-band-median-dps",
       "patchId": null,
       "sameEquipment": false,
       "rawFightTotalsAvailable": false,
+      "reviewedAt": "2026-10-15",
+      "collectedAt": "2026-10-15T00:19:38Z",
       "rows": [
         {
           "classId": "ranger",
-          "sampleCount": 244,
-          "publishedDps": "188만",
-          "value": 1880000.0,
+          "sampleCount": 162,
+          "publishedDps": "139만",
+          "value": 1390000.0,
           "resolution": 10000.0
         },
         {
           "classId": "spiritmaster",
-          "sampleCount": 49,
-          "publishedDps": "182만",
-          "value": 1820000.0,
-          "resolution": 10000.0
-        },
-        {
-          "classId": "assassin",
-          "sampleCount": 104,
-          "publishedDps": "171만",
-          "value": 1710000.0,
+          "sampleCount": 107,
+          "publishedDps": "138만",
+          "value": 1380000.0,
           "resolution": 10000.0
         },
         {
           "classId": "sorcerer",
-          "sampleCount": 81,
-          "publishedDps": "159만",
-          "value": 1590000.0,
-          "resolution": 10000.0
-        },
-        {
-          "classId": "chanter",
-          "sampleCount": 190,
-          "publishedDps": "131만",
-          "value": 1310000.0,
-          "resolution": 10000.0
-        },
-        {
-          "classId": "templar",
-          "sampleCount": 164,
-          "publishedDps": "124만",
-          "value": 1240000.0,
+          "sampleCount": 64,
+          "publishedDps": "129만",
+          "value": 1290000.0,
           "resolution": 10000.0
         },
         {
           "classId": "gladiator",
-          "sampleCount": 70,
-          "publishedDps": "120만",
-          "value": 1200000.0,
+          "sampleCount": 114,
+          "publishedDps": "121만",
+          "value": 1210000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "assassin",
+          "sampleCount": 81,
+          "publishedDps": "108만",
+          "value": 1080000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "chanter",
+          "sampleCount": 158,
+          "publishedDps": "101만",
+          "value": 1010000.0,
+          "resolution": 10000.0
+        },
+        {
+          "classId": "templar",
+          "sampleCount": 59,
+          "publishedDps": "93만",
+          "value": 930000.0,
           "resolution": 10000.0
         },
         {
           "classId": "cleric",
-          "sampleCount": 400,
-          "publishedDps": "91.1만",
-          "value": 911000.0,
+          "sampleCount": 186,
+          "publishedDps": "77.4만",
+          "value": 774000.0,
           "resolution": 1000.0
         }
       ],
       "sourceAsOf": null,
-      "commonBand": "850.0K ~ 950.0K",
+      "commonBand": "750.0K ~ 850.0K",
       "sourceWithheld": false,
-      "periodStart": "2026-09-30",
-      "periodEnd": "2026-10-07",
+      "periodStart": "2026-10-07",
+      "periodEnd": "2026-10-14",
       "provisional": false,
       "region": "UNSPECIFIED",
       "regionVerified": false,

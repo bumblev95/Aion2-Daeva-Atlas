@@ -24,6 +24,11 @@
     if(x.reviewState!=='reviewed')return t('View patch status','패치 상태 보기');
     return x.detail?.coverage==='complete'?t('Read full change list','전체 패치 보기'):t('Read patch summary','패치 요약 보기');
   }
+  function followupNote(next) {
+    const note=element('p',null,'patch-reading-note patch-followup');
+    const link=element('a',next.title[ko?'ko':'en']+' →');link.href=local+CodexPatch.detailPath(next);
+    note.append(element('strong',t('Later correction: ','후속 정정 공지: ')),link);return note;
+  }
   let running=false;
   async function fetchFeed() {
     const response=await fetch(surface.dataset.feed+'?t='+Math.floor(Date.now()/300000),{cache:'no-store',signal:AbortSignal.timeout(12000)});
@@ -41,6 +46,9 @@
           note.hidden=false;detail.querySelector('[data-detail-content]').hidden=true;
           detail.querySelector('.patch-detail-head>p').hidden=true;
           detail.querySelector('.review-badge').textContent=t('Source changed · reload required','원문 변경 · 새로고침 필요');
+        } else if(x) {
+          detail.querySelectorAll('.patch-followup').forEach(note=>note.remove());
+          for(const next of [...(x.followups||[])].reverse())detail.querySelector('.patch-detail-head').insertAdjacentElement('afterend',followupNote(next));
         }
       }catch{/* Keep the dated reviewed page on a connection failure. */}
       finally{running=false;}
@@ -70,6 +78,9 @@
     if(isPatch)a.href=url;h.append(a);
     const fallback=isPatch?t('Collected from NC. A change summary has not been added yet.','NC 패치를 수집했습니다. 변경 요약은 아직 등록되지 않았습니다.'):t('Read the details in NC’s official notice.','NC 공식 공지에서 상세 내용을 확인하세요.');
     e.append(header,h,element('p',x.summary?.[ko?'ko':'en']||fallback,'patch-summary-copy'));
+    for(const next of x.followups||[]){
+      e.append(followupNote(next));
+    }
     if(groups.length){
       const chips=element('div',null,'patch-impact-chips');
       groups.forEach(g=>{

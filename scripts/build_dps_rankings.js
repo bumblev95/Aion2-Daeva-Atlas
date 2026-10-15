@@ -30,7 +30,11 @@ function validateInputs(input) {
     assert(Object.keys(d).every(k=>['id','kind','publisher','region','regionVerified','window','source',
       'sourceHtmlSha256','metric','patchId','sameEquipment','rawFightTotalsAvailable','rows','sourceAsOf',
       'commonBand','sourceWithheld','bossId','en','ko','instance','difficulty','periodStart','periodEnd',
-      'provisional'].includes(k)),'Unknown comparison condition');
+      'provisional','reviewedAt','collectedAt'].includes(k)),'Unknown comparison condition');
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(d.reviewedAt),'Missing dataset review date');
+    assert(d.reviewedAt<=input.reviewedAt,'Dataset review is newer than the snapshot review');
+    assert(!Number.isNaN(Date.parse(d.collectedAt)),'Missing dataset collection timestamp');
+    assert(Date.parse(d.collectedAt)<=Date.parse(input.collectedAt),'Dataset collection is newer than the snapshot');
     assert(['balance','record','weekly','band'].includes(d.kind),'Unsupported metric');
     const url=new URL(d.source);
     if(['weekly','band'].includes(d.kind)) {
@@ -143,13 +147,13 @@ function compute(input) {
 function csv(result) {
   const columns=['scope','publisher','region','region_verified','window','period_start','period_end','provisional','boss','metric','place','class','published_value','resolution',
     'top_end_index','published_records','sample_count','character_weeks','parses','uploaders','bosses','status',
-    'same_equipment','patch_id','raw_dps_recomputed','reviewed_at','source_as_of','source'];
+    'same_equipment','patch_id','raw_dps_recomputed','reviewed_at','collected_at','source_as_of','source'];
   const cell=v=>{let s=v===null||v===undefined?'':String(v);if(/^[=+@-]/.test(s))s="'"+s;
     return /[\n\r,\"]/.test(s)?'"'+s.replaceAll('"','""')+'"':s;};
   return [columns,...result.comparisons.flatMap(d=>d.rows.map(r=>[
     d.id,d.publisher,d.region,d.regionVerified,d.window,d.periodStart,d.periodEnd,d.provisional,d.bossId||'',d.metric,r.rank,r.classId,r.value,r.resolution,r.topEnd,
     r.publishedRecords,r.sampleCount,r.characterWeeks,r.parses,r.uploaders,r.bosses,d.status,false,'',false,
-    result.sourceReviewedAt,d.sourceAsOf,d.source]))].map(row=>row.map(cell).join(',')).join('\n')+'\n';
+    d.reviewedAt,d.collectedAt,d.sourceAsOf,d.source]))].map(row=>row.map(cell).join(',')).join('\n')+'\n';
 }
 
 function run(mode) {

@@ -113,4 +113,19 @@ class PatchbookTests(unittest.TestCase):
         notice['kind']='patch'
         self.assertEqual(patchbook.review_label(notice,'ko'),'요약 미등록')
 
+    def test_same_day_hotfix_supersedes_without_rewriting_regular_patch(self):
+        regular=self.reviewed_item('6ace86b86cfe4756db5b8d81')
+        hotfix=self.reviewed_item('6acf3680263e537d356d1155')
+        self.assertIn('0.3초',json.dumps(regular['changes'],ensure_ascii=False))
+        self.assertEqual(hotfix['source'],'kr-notice')
+        self.assertEqual(hotfix['changes'][0]['before']['en'],'Cooldown reduction: 0.3s')
+        self.assertEqual(hotfix['changes'][0]['after']['en'],'Cooldown reduction: 0.1s')
+        for lang in ('en','ko'):
+            for output in (patchbook.patch_card(regular,lang,'/'),patchbook.render_detail(regular,lang,'/')):
+                self.assertIn('patch-followup',output)
+                self.assertIn('updates/kr-6acf3680263e537d356d1155/',output)
+            self.assertIn('articleId=6acf3680263e537d356d1155',patchbook.render_detail(hotfix,lang,'/'))
+        regular['contentHash']='changed'
+        self.assertEqual(reviewed(regular,self.reviews)['followups'],[])
+
 if __name__=='__main__':unittest.main()
