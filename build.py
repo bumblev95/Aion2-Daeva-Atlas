@@ -135,7 +135,7 @@ def learning():
             body=servertransfer.gateway(LANG,BASE,'rewards' if sub=='routines/' else 'checklist')+body
         heading=pagehead(title,desc) if sub!='start/' else ''
         if sub in ('start/','endgame/','maps/'):
-            body += '<details class="reader-extra"><summary>'+t('Gameplay screenshots & references','실제 플레이 화면·참고 자료')+'</summary>'+liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])+'</details>'
+            body += liveops.screenshots(LANG,BASE,{'start/':'combat','endgame/':'boss','maps/':'flight'}[sub])
         write(sub,title,desc,f'<div class="wrap">{heading}{body}</div>',sub.rstrip('/'))
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Daily & weekly','일일·주간 숙제') if sub=='routines/' else t('Endgame guide','엔드게임 공략') if sub=='endgame/' else t('Early-game guide','초반 공략') if sub=='start/' else t('Character reference','캐릭터 공략'),'keywords':title+' '+desc})
         if sub == 'routines/':
@@ -154,7 +154,7 @@ def learning():
 def dungeons():
     title=t('AION 2 dungeon boss guides: animated mechanics','아이온 2 던전 보스 공략: 움직이는 패턴·안전 위치')
     description=t('Automatic animated lessons. Pause, slow down and follow the movement.','자동으로 움직이는 패턴 설명. 멈추거나 느리게 보며 이동을 따라가세요.')
-    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{advancedguides.gateway(LANG,BASE,"boss")}{servertransfer.gateway(LANG,BASE,"rewards")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}</div>','dungeon')
+    write('dungeons/',title,description,f'<div class="wrap">{pagehead(title,description)}{advancedguides.gateway(LANG,BASE,"boss")}{servertransfer.gateway(LANG,BASE,"rewards")}{progression.banner(LANG,BASE,'dungeon-rewards')}{boss_lab(LANG,BASE)}{liveops.screenshots(LANG,BASE,"boss")}</div>','dungeon')
     for b in BOSSES:
         name=pair(b['name']);sub='dungeons/'+b['slug']+'/'
         title=t('AION 2 ','아이온 2 ')+pair(b['dungeon'])+t(' boss guide: ',' 보스 공략: ')+name

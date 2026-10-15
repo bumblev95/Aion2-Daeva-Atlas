@@ -87,13 +87,13 @@ def home_strip(lang,base):
 def screenshots(lang,base,spotlight=None):
     k=lang=='ko';t=lambda a,b:b if k else a;r=base+('ko/' if k else '')
     selected=load('screenshots.json')
-    if spotlight: selected=[x for x in selected if x['category']==spotlight]
+    if spotlight and spotlight != "home": selected=[x for x in selected if x['category']==spotlight]
     figures=''
     for x in selected:
-        figures+=f'''<figure class="gameplay-shot"><a href="{E(x['url'])}" target="_blank" rel="noopener" aria-label="{E(t('Open full screenshot: ','전체 스크린샷 보기: ')+x['title'][lang])}"><img src="{E(x['thumbnail'])}" alt="{E(x['alt'][lang])}" loading="lazy" width="1920" height="1080"></a><figcaption><span class="section-kicker">NC / {t('OFFICIAL GAMEPLAY SCREENSHOT','공식 인게임 스크린샷')}</span><h3>{E(x['title'][lang])}</h3><p>{E(x['caption'][lang])}</p><a href="{E(x['source'])}" target="_blank" rel="noopener">AION 2 © NC · Steam ↗</a></figcaption></figure>'''
+        figures+=f'''<figure class="gameplay-shot"><a href="{E(x['url'])}" target="_blank" rel="noopener" aria-label="{E(t('Open full screenshot: ','전체 스크린샷 보기: ')+x['title'][lang])}"><img src="{E(x['thumbnail'])}" alt="{E(x['alt'][lang])}" srcset="{E(x['thumbnail'])} 600w, {E(x['url'])} 1920w" sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" decoding="async" width="1920" height="1080"></a><figcaption><span class="section-kicker">NC / {t('OFFICIAL GAMEPLAY SCREENSHOT','공식 인게임 스크린샷')}</span><h3>{E(x['title'][lang])}</h3><p>{E(x['caption'][lang])}</p><a class="text-link" href="{r}{dict(combat='start/',boss='dungeons/',flight='maps/')[x['category']]}">{t("Related guide","관련 공략 보기")} →</a><br><a href="{E(x['source'])}" target="_blank" rel="noopener">AION 2 © NC · Steam ↗</a></figcaption></figure>'''
     copy=t('Publisher-provided in-game frames, with the HUD hidden. These illustrate combat and movement; they are not player-submitted evidence for a build or a particular boss mechanic.','공식 공개 인게임 장면이며 HUD는 숨겨져 있습니다. 전투·이동 맥락을 보여주는 자료로, 특정 빌드나 보스 패턴의 실측 증거는 아닙니다.')
     if spotlight:
-        return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=2"><section class="gameplay-context"><h2>{t("See the in-game scene","실제 게임 장면")}</h2><div class="gameplay-grid">{figures}</div><a class="text-link" href="{r}screenshots/">{t("All screenshots & credits","전체 스크린샷·출처 보기")} →</a></section>'
+        return f'<link rel="stylesheet" href="{base}assets/liveops.css?v=2"><section class="gameplay-context"><h2>{t("See the in-game scene","실제 게임 장면")}</h2><p class="small muted">{copy}</p><div class="gameplay-grid">{figures}</div><a class="text-link" href="{r}screenshots/">{t("All screenshots & credits","전체 스크린샷·출처 보기")} →</a></section>'
     return resources(base)+f'<section class="screenshot-desk"><div class="desk-intro"><span class="section-kicker">IN-GAME / AION 2</span><h1>{t("Real scenes from Atreia.","아트레이아의 실제 장면.")}</h1><p>{copy}</p></div><div class="gameplay-grid">{figures}</div><p class="desk-note">{t("Images are served by the publisher’s Steam CDN. Community settings captures remain linked to their originals until reuse permission is available.","이미지는 공식 Steam 배포 주소에서 표시합니다. 커뮤니티의 설정 캡처는 재사용 허락이 확인되기 전까지 원본 링크를 유지합니다.")}</p></section>'
 
 def coverage(lang):
