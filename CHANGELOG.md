@@ -1,5 +1,14 @@
 # Project change history
 
+## 2026-10-15 — independent map review and mobile gestures
+
+- Compared four local terrains with 64 freshly fetched TH.GL tiles; checked 9,738 imported positions and recorded 47 display anchors. Cross-checked growth-region terrain and visible samples against historical KR player screenshots, retaining explicit gaps in object/current-client verification.
+- Fixed missing touch pinch zoom and initial/resize observations overriding a shared-location view. Preserved map IDs, saved completion and language deep links.
+- Clarified the provider's 559 traces versus historical KR guides' 560; no guessed position or unsupported region was added.
+- Added touch/coordinate regressions and source-snapshot replay. Build/link checks, 58 Python tests and both map browser suites pass locally. PR CI remains separate from deployment.
+
+[Review evidence and limits](research/map-audit-2026-10-15.md)
+
 ## 2026-10-15 — weekly DPS refresh and same-day KR correction
 
 - Refreshed JaMeter's provisional October 14–21 index and completed October 7–14 comparison; labelled the changed 750–850K CP band and retained source precision and sample gates.
