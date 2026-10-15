@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-14T23:10:46Z",
+  "checkedAt": "2026-10-15T00:25:30Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-14T23:10:46Z",
-      "lastSuccessAt": "2026-10-14T23:10:46Z",
+      "checkedAt": "2026-10-15T00:25:30Z",
+      "lastSuccessAt": "2026-10-15T00:25:30Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6113,8 +6113,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-14T23:10:46Z",
-      "lastSuccessAt": "2026-10-14T23:10:46Z",
+      "checkedAt": "2026-10-15T00:25:30Z",
+      "lastSuccessAt": "2026-10-15T00:25:30Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6505,8 +6505,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-14T23:10:46Z",
-      "lastSuccessAt": "2026-10-14T23:10:46Z",
+      "checkedAt": "2026-10-15T00:25:30Z",
+      "lastSuccessAt": "2026-10-15T00:25:30Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6858,11 +6858,30 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-14T23:10:46Z",
-      "lastSuccessAt": "2026-10-14T23:10:46Z",
+      "checkedAt": "2026-10-15T00:25:30Z",
+      "lastSuccessAt": "2026-10-15T00:25:30Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ad0182403fa4a097c8ca7b6",
+          "title": "[Notice] Steam Payment Issue Resolved",
+          "region": "NA",
+          "kind": "news",
+          "source": "na-notice",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ad0182403fa4a097c8ca7b6",
+          "publishedAt": "2026-10-15T00:02:44.343Z",
+          "sourceUpdatedAt": "2026-10-15T00:02:44.343Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {}
+        },
         {
           "id": "6acf52e3058fb5520d6ffc5a",
           "title": "[Notice] Advance Notice of Server Transfer Limits",
