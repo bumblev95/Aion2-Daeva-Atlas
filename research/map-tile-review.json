@@ -1,0 +1,737 @@
+{
+  "reviewedAt": "2026-10-15",
+  "credit": "Map imagery © NC; tiles from The Hidden Gaming Lair. Tiles joined in source row/column order without geographic warping.",
+  "projection": "x=2*(a*p[1]+b); y=2*(c*p[0]+d), same as provider zoom 2, displayed at half native resolution.",
+  "tiles": [
+    {
+      "region": "Poeta",
+      "x": 0,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/0/0.webp",
+      "sha256": "5d3bd61e3f4e2381de26123408123fcf2e8175d2ea1aa1bb18c52e4425ac656b",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 1,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/0/1.webp",
+      "sha256": "4c71f090002a576536b872fe78701f1f6c3149b09672eb690c73c660797a7018",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 2,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/0/2.webp",
+      "sha256": "d0575eebd3c4c8deff06eb95fcb7cb26288bcb63827126d71a907d3900f9e2c9",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 3,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/0/3.webp",
+      "sha256": "9fa19091f2baa2a2c3b292f979908c2d507395fb0831632d0d703e9ab8fd845e",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 0,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/1/0.webp",
+      "sha256": "0cc18d9f66397929495a23468a546c69f86a524caaa5b6011fbd12ab7a1dcca8",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 1,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/1/1.webp",
+      "sha256": "5b83a35845e6f92bdc7634e3ecf83697e36e1d2fbb0306418f2c68e752fe0e46",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 2,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/1/2.webp",
+      "sha256": "33fdb9f812beee0427b239195d13663049bbeb4e9a573318f6d24716c1b50b62",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 3,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/1/3.webp",
+      "sha256": "ff8e80c80765e9b163164478eec3bb088ae7cf5c12158e6908c5f4830e85b075",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 0,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/2/0.webp",
+      "sha256": "0decc9fb2a56c924e699cc082bc155d101db90137cdd1f88f089f18effd4e3fc",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 1,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/2/1.webp",
+      "sha256": "50be8995b98ded90a5050162059b6ff83c92862a71189259b8ff72fd07b33b1d",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 2,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/2/2.webp",
+      "sha256": "58e853c3f7a09b57506b7cd99f30017479c5e91b29f0b2eaf6c8f50f4a5c4148",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 3,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/2/3.webp",
+      "sha256": "580dbeb77ad336e52b8a8378d5399ba791a1ce957012103eb84990e587f85fd1",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 0,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/3/0.webp",
+      "sha256": "afa5851b662318fc4f9e359b72a663ee0af42581da40937b2fcffbbbd29a9847",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 1,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/3/1.webp",
+      "sha256": "3ce4e17a87741086edd9ac7ccd41f4697d4dd29fd289e985cff08011c378fb21",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 2,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/3/2.webp",
+      "sha256": "7eb34dc34b03727a58c6d3559c679536e533cc413c7f5228f6f7f7e0d93fbece",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Poeta",
+      "x": 3,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_Starter-d3c5c3c6ca62ee6aac2ffde266e685f0/2/3/3.webp",
+      "sha256": "a6af0a6f347daab91d0398a4dff6a8aaa4f7b4da9f8d6076c1ebc608bca800fa",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 0,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/0/0.webp",
+      "sha256": "4608c439892d6ae8d9feca7d6240cf240d126eeb55316de40d032535d2d91bb9",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 1,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/0/1.webp",
+      "sha256": "5b3685ef0fa2ebc31b956aeb941b107e3a9c4b22d85726d42cb2e88dbc123126",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 2,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/0/2.webp",
+      "sha256": "1ed29d2a96936b16a20b3f801b15f370672ff88da5955013bf43cd2e04b32623",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 3,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/0/3.webp",
+      "sha256": "a7834187d34099527d4f35968f12dc891fd6cdf2e891968aa90309fbe1808a1f",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 0,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/1/0.webp",
+      "sha256": "78769612bd9c06096ac9fe7cb9f13fdec80effed788eb04aa121d8130d81fe66",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 1,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/1/1.webp",
+      "sha256": "ce9b34a5db2e698d2204ff1b925912b11c15b64ba883bdb033a7b81be3e9b465",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 2,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/1/2.webp",
+      "sha256": "7e6bd1c190f2c59ff247065b35f51c2192b16b8773dc7a0c81ac599556057157",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 3,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/1/3.webp",
+      "sha256": "71756de416896466f3f193122fae9ea88e29c410eb918c15f4563d9e76379582",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 0,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/2/0.webp",
+      "sha256": "b60b4d3ba06fb8b5064f5bd56c8c90f344ff68be35e048ccfb1dadbfbca06cf2",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 1,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/2/1.webp",
+      "sha256": "30b736c986b7d7337952400524a6b78b05b1a9b420b09020b60829e93cc2298d",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 2,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/2/2.webp",
+      "sha256": "786b1fabac10a1aa2c0a56f2557dc7c776d25734365e38b551e2669a6944766c",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 3,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/2/3.webp",
+      "sha256": "58523006d8bd1e759c6d7acca942a2a52ef375b42a89faeb56564ed10afbd9c5",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 0,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/3/0.webp",
+      "sha256": "e6e5b9d8c0ed72b663e9eadd2e740197c20c623848adcab7d21e0017d871f8e5",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 1,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/3/1.webp",
+      "sha256": "76ee45ed855fa6abc0a9ddf150bf5b082478b469d4baf1f10eb33724b799a216",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 2,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/3/2.webp",
+      "sha256": "aa233b056b93b13a5be9e02666e59c58a267360f850be37ed94199fa761a9e27",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Verteron",
+      "x": 3,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_L_A-a2ebd439a33c918cc5aaa12079561577/2/3/3.webp",
+      "sha256": "1eb8ed0d480387b54085aa0840332256344296166cb27e819891385cb31f0fcc",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 0,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/0/0.webp",
+      "sha256": "027125cd71d51c96fb4baff153fa41a50dbe5ab2966abf2d8c56f1531a074842",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 1,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/0/1.webp",
+      "sha256": "ee7d36554ff278d0c7f0f374e11f1fb097b46706dae298c52ebf7f56fda40022",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 2,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/0/2.webp",
+      "sha256": "701ed3a4556ff8f411a50dbf1133880c041bb31cd0a37a8ed6c780e1dee22046",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 3,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/0/3.webp",
+      "sha256": "458422a52411e1399a82cb97274cee76de57c6050eab4c119d62df90c86cdf30",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 0,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/1/0.webp",
+      "sha256": "87dc87c17abe0070bbd6b15a1f91c3eea566326fd6cd2a6d16320d050f221820",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 1,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/1/1.webp",
+      "sha256": "3a89f257578c05ab2aaf3639c3b942193646141ba730b57c709ad7b82527192f",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 2,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/1/2.webp",
+      "sha256": "8005ebdc288be7f65f583e7cc42bdaa5bd1dda4ac62bd4083c97e87e850e70bc",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 3,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/1/3.webp",
+      "sha256": "f893a7790170f29f1c7107839aa66148ecf3e616b1bc74acb41875b16259e079",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 0,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/2/0.webp",
+      "sha256": "b414be36ae5740aa26a80cad66a1ee449161f72e965ab1d601c1b3cc32ef2eec",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 1,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/2/1.webp",
+      "sha256": "77856cb34b8dbac8b8877d4cadb9e2d0887655a5008cde196e4ca0486455aa57",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 2,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/2/2.webp",
+      "sha256": "f4dca848fab83b95f47dee5c4fef341dd8bc022969e843b9057d4cfca9fab265",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 3,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/2/3.webp",
+      "sha256": "ee4aa3d3188986e24be4c68c9cbc053590e82edd844dac4010682f11ce7dc647",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 0,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/3/0.webp",
+      "sha256": "72846d321d19e38894d8cdd630dd1711da6cfc0a05866b408ca29b5866992422",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 1,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/3/1.webp",
+      "sha256": "67f337e19e966487b7495e3ddf0af362d32e6f55889dfed72bd0a77c32ac6c42",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 2,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/3/2.webp",
+      "sha256": "a83108fadcea35405441fa227330f8a28f2bd60408e1acbd0919131fe8b89da7",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Ishalgen",
+      "x": 3,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_Starter-0fa1d09e5c5736647f2eb5578abf4e3e/2/3/3.webp",
+      "sha256": "3e4cedbcfa438d05e00cfad3972a75c6f92f3bd8082f24d405272d013cb78164",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 0,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/0/0.webp",
+      "sha256": "32f32dee5279d227ae2012741a665b82b0660671ac39a0bbcd0afeefc4bbeba1",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 1,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/0/1.webp",
+      "sha256": "76a3594fdac949fbf938e3c8bcba7dfd9962860bc3cfa94456aedb3d1e863339",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 2,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/0/2.webp",
+      "sha256": "c4ce5ed9e12d60bf7b33949990d4ca4af6367e0acfd4b2193faefd71125f0ce6",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 3,
+      "y": 0,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/0/3.webp",
+      "sha256": "1df3a9a48cace1a6ad7760c7ef1db6fff574a78c6d65c260549d9c9896a01386",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 0,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/1/0.webp",
+      "sha256": "582c8054d7f2ff6fb478fdc9f34c78864378d124189a01254c1863b4506b2a49",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 1,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/1/1.webp",
+      "sha256": "ba4e8ad17ce25a679d9193d09ccc2d0c33bb1a1e85fdc11cb31e7d3dbdaf8c93",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 2,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/1/2.webp",
+      "sha256": "c0ad497cae86b0fddb765d94c3207b9d5282df8c43b4a8db1e24bdd02c2d9aa5",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 3,
+      "y": 1,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/1/3.webp",
+      "sha256": "3200591e8ed4be57baf4402a1d53a6c23a31aafbdd09b1fc30f94d11051bf8e4",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 0,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/2/0.webp",
+      "sha256": "9e74aaafb480f214a06607db664d99cd74c8ee3c759b5dfdfd1e1c9d16dfc469",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 1,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/2/1.webp",
+      "sha256": "96ab810e53b72414a06e27a781df4480f0f84e352228da986925c68a8a7c9b16",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 2,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/2/2.webp",
+      "sha256": "6235ca3da4a1e4f2acaacc781a194d492582b9ced1116394541a2734323f414f",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 3,
+      "y": 2,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/2/3.webp",
+      "sha256": "0285419d179bb8bb95d69909ab734a18d6b4f7a445bfee47df2d6543ec9afa26",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 0,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/3/0.webp",
+      "sha256": "392303804e44164130e60ada981972fa2538978f8877dd6982ed4d0088af79e8",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 1,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/3/1.webp",
+      "sha256": "e274d58760ea33402293e4c56d3044dcd37b0976bc742676daf40cfca049dc3a",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 2,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/3/2.webp",
+      "sha256": "2ed9536e5c2d527546ad5bf4cae135abcb2427646e7ed302da47ecc1388677bf",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "region": "Altgard",
+      "x": 3,
+      "y": 3,
+      "url": "https://cdn.th.gl/aion2/map-tiles/World_D_A-21441cc101435d4ab6af7f22c57178dc/2/3/3.webp",
+      "sha256": "9a8e379785041cba940995445b6ce9fb694fd040557f522a6a0ffa89b97c0fac",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "collectibleCounts": {
+    "Poeta": {
+      "empyrean_trace": 0,
+      "hidden_cube": 0
+    },
+    "Verteron": {
+      "empyrean_trace": 559,
+      "hidden_cube": 1440
+    },
+    "Ishalgen": {
+      "empyrean_trace": 0,
+      "hidden_cube": 0
+    },
+    "Altgard": {
+      "empyrean_trace": 559,
+      "hidden_cube": 1371
+    }
+  },
+  "nodesSources": {
+    "World_L_A": "https://cdn.th.gl/aion2/nodes/World_L_A.09feefff6fbdd8894abf0aa78e4499db.raw",
+    "World_L_Starter": "https://cdn.th.gl/aion2/nodes/World_L_Starter.f323c2e07a8e00110454868a7f073383.raw",
+    "World_D_A": "https://cdn.th.gl/aion2/nodes/World_D_A.7857378c11b23ba6026ef09e7932b9e1.raw",
+    "World_D_Starter": "https://cdn.th.gl/aion2/nodes/World_D_Starter.c2bf6e98a49512c7b429656681d49378.raw"
+  },
+  "providerReference": "https://aion2.th.gl/maps/Ishalgen",
+  "coverage": "Four early regions only. Original three-category subset retained; Empyrean Trace and Hidden Cube candidates refreshed from current source. Hidden Cube locations are possible spawns, not simultaneous live cubes."
+}
