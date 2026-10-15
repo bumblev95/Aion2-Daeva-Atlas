@@ -1,0 +1,64 @@
+{
+  "reviewedAt": "2026-10-15",
+  "scope": "Verteron and Altgard. Static source locations, not live spawns. One node type may yield multiple grades; no independent grade-specific coordinates or respawn timers are asserted.",
+  "sourceCounts": {
+    "Verteron": {
+      "gather_cypri": 108,
+      "gather_inina": 100,
+      "gather_yggdrasil": 125,
+      "gather_kukuru": 95,
+      "gather_coriolus": 101,
+      "gather_mela": 96,
+      "gather_aria": 156,
+      "gather_targena": 120,
+      "gather_ruby": 196,
+      "gather_orichalcum": 546,
+      "gather_diamond": 192,
+      "gather_sapphire": 192,
+      "gather_odyle": 706
+    },
+    "Altgard": {
+      "gather_conide": 93,
+      "gather_pujery": 105,
+      "gather_asvata": 158,
+      "gather_morfa": 98,
+      "gather_ohkra": 114,
+      "gather_raydam": 96,
+      "gather_azpha": 150,
+      "gather_calendula": 108,
+      "gather_diamond": 200,
+      "gather_sapphire": 200,
+      "gather_ruby": 190,
+      "gather_orichalcum": 530,
+      "gather_odyle": 650
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.inven.co.kr/board/aion2/6444/398",
+      "publishedAt": "2025-11-23",
+      "region": "KR",
+      "use": "Material families and general uses; summarized in original wording, no article images copied."
+    },
+    {
+      "url": "https://www.inven.co.kr/board/aion2/6444/534",
+      "region": "KR",
+      "use": "Crafting-material priorities; no old patch-specific yields or rates carried over."
+    },
+    {
+      "url": "https://metabot.gg/ko_KR/aion-2/guides/crafting-guide",
+      "region": "Global",
+      "use": "Cross-check field gathering versus shop, monster and dungeon materials; herb naming aliases."
+    }
+  ],
+  "nodes": {
+    "Verteron": {
+      "url": "https://cdn.th.gl/aion2/nodes/World_L_A.09feefff6fbdd8894abf0aa78e4499db.raw",
+      "sha256": "1b200ab260ab3c978bf084f803ec27c45f2f734f7271ef8bcfee9fc437969219"
+    },
+    "Altgard": {
+      "url": "https://cdn.th.gl/aion2/nodes/World_D_A.7857378c11b23ba6026ef09e7932b9e1.raw",
+      "sha256": "40b7e74ad87cdc94e211a35e7f0f071d74baa0fdc847144da32f96d8fe542e70"
+    }
+  }
+}
