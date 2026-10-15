@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 from content import CLASSES, GUIDES
 import advancedguides
 import partyguide
+import liveops
 
 GOALS = [
     ('growth', 'endgame/#after-story', 'spark', ('Character growth', '내실·성장'), ('Story cleared. What next?', '스토리 이후, 무엇부터 할까?')),
@@ -28,6 +29,7 @@ def home(lang, base):
 <section class="rpg-home-goals find-goals" aria-label="{t('Choose your goal','목적별 공략')}">{cards}</section>
 <section class="find-shortcuts"><h2>{t('Growth guides','성장 공략 바로가기')}</h2><nav aria-label="{t('Growth shortcuts','성장 공략 바로가기')}">{shortcuts}</nav></section>
 {partyguide.gateway(lang,base)}
+{liveops.screenshots(lang,base,"home")}
 <section class="find-classes" id="class-explorer"><div class="find-section-heading"><h2>{t('My class','내 직업 바로 보기')}</h2><a href="{r}skills/">{t('Skills & builds','스킬·빌드')} →</a></div><div>{classes}</div></section>
 <nav class="find-utility home-stage-nav" aria-label="{t('More resources','다른 자료 찾기')}"><a href="{r}maps/">{icon(base,'target')}{t('World map','월드 지도')}</a><a href="{r}updates/">{icon(base,'book')}{t('News & patches','뉴스·패치')}</a><a href="{r}tools/dps/">{icon(base,'swords')}{t('DPS rankings','DPS 순위')}</a><a href="{r}glossary/">{icon(base,'book')}{t('KR / EN glossary','한영 용어집')}</a></nav>
 </div>'''
