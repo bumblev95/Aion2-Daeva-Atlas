@@ -70,6 +70,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'tests/patch-ui.test.js'
       - 'assets/dps*.js'
       - 'assets/liveops.css'
       - 'assets/patchbook.*'
