@@ -228,4 +228,22 @@
     if(canSave)status.textContent=t('Saved only in this browser. No account needed.','이 브라우저에만 저장됩니다. 계정은 필요하지 않습니다.');
   }
   document.querySelector('[data-clear-local]')?.addEventListener('click',()=>{try{localStorage.removeItem('daeva-atlas-planner-v1');localStorage.removeItem('raidnote-aion2-class-v1');localStorage.removeItem('players-codex-start-v1');localStorage.removeItem('players-codex-map-v1');localStorage.removeItem('players-codex-lessons-v1');document.querySelector('[data-clear-status]').textContent=t('Your saved planner, lessons, map checks and class have been deleted from this browser.','이 브라우저의 저장된 플래너·학습·지도 완료 표시·직업을 삭제했습니다.');}catch{document.querySelector('[data-clear-status]').textContent=t('Use your browser settings to clear site data.','브라우저 설정에서 사이트 데이터를 삭제하세요.');}});
+  // Auto ads on editorial guides only. Manual ad slots remain disabled while
+  // approval and a region-appropriate certified CMP are configured.
+  const adsensePublisher = 'ca-pub-9723666081819297';
+  const adRoute = location.pathname.replace(/^\/Aion2-Daeva-Atlas\/(?:ko\/)?/, '');
+  const interactiveOrPolicy = /^(?:tools\/|maps\/|dungeons\/|skills\/|search\/|privacy\/|terms\/|contact\/|about\/)/.test(adRoute);
+  if (!interactiveOrPolicy && navigator.globalPrivacyControl !== true &&
+      document.querySelector('meta[name="google-adsense-account"][content="' + adsensePublisher + '"]') &&
+      !document.querySelector('script[data-auto-adsense="player-codex"]')) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+    const adScript = document.createElement('script');
+    adScript.async = true;
+    adScript.crossOrigin = 'anonymous';
+    adScript.dataset.autoAdsense = 'player-codex';
+    adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + adsensePublisher;
+    document.head.appendChild(adScript);
+  }
 })();
