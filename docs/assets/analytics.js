@@ -21,7 +21,9 @@
     try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.origin + url.pathname : ''; }
     catch { return ''; }
   };
-  const defaults = {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'};
+  // Only analytics consent belongs to this controller; advertising consent is
+  // managed separately via the AdSense publisher CMP.
+  const defaults = {analytics_storage:'denied'};
   function start() {
     if (loaded || navigator.globalPrivacyControl === true) return;
     loaded = active = true;
