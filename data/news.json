@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-18T00:11:35Z",
+  "checkedAt": "2026-10-18T02:04:56Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-18T00:11:35Z",
-      "lastSuccessAt": "2026-10-18T00:11:35Z",
+      "checkedAt": "2026-10-18T02:04:56Z",
+      "lastSuccessAt": "2026-10-18T02:04:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6129,11 +6129,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-18T00:11:35Z",
-      "lastSuccessAt": "2026-10-18T00:11:35Z",
+      "checkedAt": "2026-10-18T02:04:56Z",
+      "lastSuccessAt": "2026-10-18T02:04:56Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ad1b400263e537d356d1185",
+          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [332차]",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad1b400263e537d356d1185",
+          "publishedAt": "2026-10-18T01:00:00.001Z",
+          "sourceUpdatedAt": "2026-10-18T01:00:11.690Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6ad1b400263e537d356d1183",
           "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [331차]",
@@ -6636,8 +6656,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-18T00:11:35Z",
-      "lastSuccessAt": "2026-10-18T00:11:35Z",
+      "checkedAt": "2026-10-18T02:04:56Z",
+      "lastSuccessAt": "2026-10-18T02:04:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6991,8 +7011,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-18T00:11:35Z",
-      "lastSuccessAt": "2026-10-18T00:11:35Z",
+      "checkedAt": "2026-10-18T02:04:56Z",
+      "lastSuccessAt": "2026-10-18T02:04:56Z",
       "error": null,
       "fromCache": false,
       "items": [
