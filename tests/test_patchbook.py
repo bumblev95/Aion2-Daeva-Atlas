@@ -26,6 +26,31 @@ class PatchbookTests(unittest.TestCase):
         item['changes'].append({'classId':'templar','type':'nerf'})
         self.assertEqual(patchbook.class_groups(item)[0]['type'],'adjustment')
 
+    def test_oct21_kr_highlights_keep_conditions_and_regional_scope(self):
+        item=self.reviewed_item('6ad7c138577e8c01355e006c')
+        self.assertEqual(item['region'],'KR')
+        self.assertEqual(item['detail']['coverage'],'highlights')
+        self.assertTrue(item['classScopeReviewed'])
+        self.assertEqual({r['classId'] for r in item['changes']},
+            {'all','gladiator','templar','assassin','brawler','chanter','ranger','cleric','spiritmaster','sorcerer'})
+        sorcerer=[r for r in item['changes'] if r['classId']=='sorcerer' and r['type']=='fix']
+        self.assertEqual(len(sorcerer),4)
+        self.assertTrue(all('before' not in r and 'after' not in r for r in sorcerer))
+        self.assertTrue(any('누락' in r['description']['ko'] for r in sorcerer))
+        self.assertTrue(any('의도하지 않은' in r['description']['ko'] for r in sorcerer))
+        corrode=next(r for r in item['changes'] if r['classId']=='spiritmaster')
+        self.assertNotIn('before',corrode)
+        self.assertIn('75%',corrode['after']['ko'])
+        self.assertNotEqual(item['reviewedAt'],item['publishedAt'])
+        output=patchbook.render_detail(item,'ko','/Aion2-Daeva-Atlas/')
+        self.assertIn('시행 예정',output)
+        self.assertIn('인게임 테스트는 수행하지 못했습니다',output)
+        self.assertIn('data/maps.json',output)
+        item['contentHash']='new-revision'
+        revised=reviewed(item,self.reviews)
+        self.assertEqual(revised['changes'],[])
+        self.assertEqual(revised['detail'],{})
+
     def test_fixes_and_tooltip_edits_are_not_advertised_as_buffs(self):
         self.assertEqual(patchbook.classification([{'type':'fix'}]),'fix')
         self.assertEqual(patchbook.classification([{'type':'tooltip'}]),'tooltip')

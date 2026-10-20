@@ -1,4 +1,494 @@
 {
+  "6ad7c138577e8c01355e006c": {
+    "contentHash": "3b7887cfc19c4cb1cbbcacdfe20e803544709974154e6e061de6ea4c5b580e52",
+    "reviewedAt": "2026-10-20T19:48:51Z",
+    "classScopeReviewed": true,
+    "title": {
+      "en": "October 21 · Korea (announced)",
+      "ko": "10월 21일 한국 패치 · 시행 예정"
+    },
+    "summary": {
+      "en": "KR October 21: faster Assault actions, stronger healing reduction, Sorcerer conditional-damage fixes, season extension and Arcana inventory changes. Not an NA patch or measured DPS update.",
+      "ko": "한국 10월 21일 예정: 강습 동작 가속·받는 치유량 감소 강화, 마도성 조건부 피해 수정, 시즌 연장과 아르카나 보유 한도 변경. 북미 패치나 실측 DPS 갱신이 아닙니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "buff",
+        "subject": {
+          "en": "Assault actions · all nine KR classes",
+          "ko": "강습 · 한국 9직업"
+        },
+        "description": {
+          "en": "The listed Assault actions become 50% faster and their sounds improve. NC does not give action seconds, damage coefficients or cooldown changes.",
+          "ko": "9직업의 강습 계열 스킬 속도가 50% 빨라지고 사운드가 개선됩니다. 동작 초·피해 계수·쿨타임 변경 수치는 공지되지 않았습니다."
+        },
+        "impact": {
+          "en": "Analysis: potentially shorter action commitment; not 50% more damage or total DPS. KR timing and rotation reproduction remain pending.",
+          "ko": "해석: 동작 점유 시간이 줄 수 있으나 피해·전체 DPS 50% 증가를 뜻하지 않습니다. 한국판 동작 시간·로테이션 재현은 대기 중입니다."
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "buff",
+        "subject": {
+          "en": "칼날 날리기 · healing reduction",
+          "ko": "칼날 날리기"
+        },
+        "description": {
+          "en": "Increases base healing received reduction and specialization 1's increase. These are healing-suppression values, not damage multipliers.",
+          "ko": "기본 받는 치유량 감소와 1번 특화의 증가량을 상향합니다. 피해 배율이 아닌 치유 억제 수치입니다."
+        },
+        "before": {
+          "en": "Base 70%; specialization 1 increase 20%",
+          "ko": "기본 70% · 1번 특화 증가량 20%"
+        },
+        "after": {
+          "en": "Base 75%; specialization 1 increase 25%",
+          "ko": "기본 75% · 1번 특화 증가량 25%"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "en": "쇠약의 맹타 · specialization 3",
+          "ko": "쇠약의 맹타"
+        },
+        "description": {
+          "en": "Specialization 3 applies stronger healing received reduction.",
+          "ko": "3번 특화의 받는 치유량 감소량을 높입니다."
+        },
+        "before": {
+          "en": "Healing received reduction 60%",
+          "ko": "받는 치유량 감소 60%"
+        },
+        "after": {
+          "en": "Healing received reduction 75%",
+          "ko": "받는 치유량 감소 75%"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "독 바르기 · level 1",
+          "ko": "독 바르기"
+        },
+        "description": {
+          "en": "Level 1 applies stronger healing received reduction; higher-level scaling is not supplied.",
+          "ko": "1레벨의 받는 치유량 감소를 높입니다. 상위 레벨 환산값은 공지되지 않았습니다."
+        },
+        "before": {
+          "en": "Level 1: 12%",
+          "ko": "1레벨 12%"
+        },
+        "after": {
+          "en": "Level 1: 25%",
+          "ko": "1레벨 25%"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "adjustment",
+        "subject": {
+          "en": "강습 타격 · KR only",
+          "ko": "강습 타격"
+        },
+        "description": {
+          "en": "Alongside the 50%-faster action and sound update, this action no longer depends on combat speed. NC gives no replacement action duration.",
+          "ko": "공통 속도 50% 가속·사운드 개선과 함께 전투 속도의 영향을 받지 않도록 변경됩니다. 대체 동작 시간은 공지되지 않았습니다."
+        },
+        "impact": {
+          "en": "Analysis: timing depends on the previous combat-speed setup; do not infer a fixed DPS gain. Brawler remains KR-only.",
+          "ko": "해석: 이전 전투 속도 세팅에 따라 체감이 달라 고정 DPS 상승률을 산출하지 않습니다. 권성은 한국 전용으로 유지합니다."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "buff",
+        "subject": {
+          "en": "혈류 차단 · level 1",
+          "ko": "혈류 차단"
+        },
+        "description": {
+          "en": "Increases level-1 healing received reduction.",
+          "ko": "1레벨의 받는 치유량 감소를 높입니다."
+        },
+        "before": {
+          "en": "Level 1: 46%",
+          "ko": "1레벨 46%"
+        },
+        "after": {
+          "en": "Level 1: 76%",
+          "ko": "1레벨 76%"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "fix",
+        "subject": {
+          "en": "혈류 차단 · debuff removal",
+          "ko": "혈류 차단 · 해제"
+        },
+        "description": {
+          "en": "Fixes the debuff failing to be removed.",
+          "ko": "디버프가 해제되지 않는 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: restores intended debuff removal and opponent recovery counterplay; no damage multiplier is supplied.",
+          "ko": "해석: 의도된 디버프 해제와 상대의 회복 대응을 복원하는 수정이며 피해 배율 변경이 아닙니다."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "en": "마르쿠탄의 분노 · specialization 3",
+          "ko": "마르쿠탄의 분노"
+        },
+        "description": {
+          "en": "Strengthens specialization-3 healing received reduction.",
+          "ko": "3번 특화의 받는 치유량 감소를 강화합니다."
+        },
+        "before": {
+          "en": "70%",
+          "ko": "70%"
+        },
+        "after": {
+          "en": "100%",
+          "ko": "100%"
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "en": "송곳 화살 · base effect",
+          "ko": "송곳 화살"
+        },
+        "description": {
+          "en": "Increases base healing received reduction.",
+          "ko": "기본 받는 치유량 감소를 높입니다."
+        },
+        "before": {
+          "en": "60%",
+          "ko": "60%"
+        },
+        "after": {
+          "en": "75%",
+          "ko": "75%"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "buff",
+        "subject": {
+          "en": "파멸의 목소리 · base effect",
+          "ko": "파멸의 목소리"
+        },
+        "description": {
+          "en": "Increases base healing received reduction.",
+          "ko": "기본 받는 치유량 감소를 높입니다."
+        },
+        "before": {
+          "en": "60%",
+          "ko": "60%"
+        },
+        "after": {
+          "en": "100%",
+          "ko": "100%"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "buff",
+        "subject": {
+          "en": "회복 차단 · level 1",
+          "ko": "회복 차단"
+        },
+        "description": {
+          "en": "Increases level-1 healing received reduction; no higher-level values are inferred.",
+          "ko": "1레벨 받는 치유량 감소를 높입니다. 상위 레벨 값은 추정하지 않습니다."
+        },
+        "before": {
+          "en": "Level 1: 32%",
+          "ko": "1레벨 32%"
+        },
+        "after": {
+          "en": "Level 1: 52%",
+          "ko": "1레벨 52%"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "fix",
+        "subject": {
+          "en": "Absolution · level 25 refresh",
+          "ko": "면죄"
+        },
+        "description": {
+          "en": "Level-25 Absolution can correctly refresh a lower-level Absolution effect.",
+          "ko": "25레벨 면죄가 낮은 레벨 면죄 효과를 갱신하지 못하던 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: effect refresh/reliability fix, not an announced damage or cooldown buff. Verify mixed-level refresh in game.",
+          "ko": "해석: 효과 갱신·안정성 수정이며 공지된 피해·쿨타임 상향은 아닙니다. 서로 다른 레벨의 갱신 재현은 대기 중입니다."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "buff",
+        "subject": {
+          "en": "Jointstrike: Corrode · healing reduction",
+          "ko": "협공: 부식"
+        },
+        "description": {
+          "en": "Base healing received reduction becomes 75%; specialization 3 changes to a 25% increase. NC supplies no prior values here.",
+          "ko": "기본 받는 치유량 감소를 75%, 3번 특화를 받는 치유량 감소 25% 증가로 변경합니다. 이 항목의 종전 수치는 공지에 없습니다."
+        },
+        "after": {
+          "en": "Base 75%; specialization 3 increase 25%",
+          "ko": "기본 75% · 3번 특화 증가량 25%"
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "buff",
+        "subject": {
+          "en": "불꽃 작살 · specialization 3",
+          "ko": "불꽃 작살"
+        },
+        "description": {
+          "en": "Increases specialization-3 healing received reduction.",
+          "ko": "3번 특화의 받는 치유량 감소를 높입니다."
+        },
+        "before": {
+          "en": "60%",
+          "ko": "60%"
+        },
+        "after": {
+          "en": "75%",
+          "ko": "75%"
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "en": "Cold Storm · stacked Frostbite bonus",
+          "ko": "냉기 폭풍 · 동상 중첩"
+        },
+        "description": {
+          "en": "Fixes missing additional damage when Frostbite is stacked.",
+          "ko": "동상 중첩 시 추가 피해가 누락되던 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: restores missing conditional damage. NC gives no coefficient or total-DPS percentage; stacking/rotation tests remain pending.",
+          "ko": "해석: 누락된 조건부 피해 회복입니다. 계수·전체 DPS 상승률은 공지되지 않았으며 중첩·로테이션 검증은 대기 중입니다."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "en": "Cold Storm · Frostbite levels 2–4",
+          "ko": "냉기 폭풍 · 2~4레벨 동상"
+        },
+        "description": {
+          "en": "Fixes unintended additional damage against targets carrying level-2–4 Frostbite effects.",
+          "ko": "2~4레벨 동상 효과를 가진 대상에게 의도하지 않은 추가 피해가 적용되던 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: removes unintended conditional damage, distinct from the missing stacked-damage repair. Net DPS is not established.",
+          "ko": "해석: 의도하지 않은 조건부 피해 제거이며 중첩 피해 누락 회복과 별개입니다. 합산 DPS 영향은 확정하지 않습니다."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "en": "Cold Storm · specialization 1 reapplication",
+          "ko": "냉기 폭풍 · 1번 특화"
+        },
+        "description": {
+          "en": "Fixes an extra Frostbite application inside the area after the effect ends when specialization 1 is selected.",
+          "ko": "1번 특화에서 효과 종료 후 범위 내 대상에게 동상이 한 번 더 부여되던 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: removes an unintended reapplication, not a quantified damage or cooldown change. Verify expiration and reapplication conditions.",
+          "ko": "해석: 의도하지 않은 재부여 제거이며 수치가 확인된 피해·쿨타임 변경은 아닙니다. 종료·재부여 조건 검증이 필요합니다."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "fix",
+        "subject": {
+          "en": "Fire Wall · no-Embers targets",
+          "ko": "불의 장벽"
+        },
+        "description": {
+          "en": "Fixes additional damage occurring even when the target has no Embers.",
+          "ko": "잔불이 없는 대상에게도 추가 피해가 적용되던 오류를 수정합니다."
+        },
+        "impact": {
+          "en": "Analysis: removes unintended damage on targets without the required effect; no arbitrary reduction is assigned to measured DPS.",
+          "ko": "해석: 필수 효과가 없는 대상의 의도하지 않은 피해를 제거합니다. 실측 DPS에 임의 감산률을 적용하지 않습니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, announcement and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "적용 범위",
+          "notes": [
+            {
+              "en": "Announced October 20 at 19:30 UTC; the source revised at 19:40:33 UTC was re-read in full and rebound to its new hash at 19:48:51 UTC. The reviewed facts remain valid. The announced update date is October 21 in Korea, not a confirmed deployment completion.",
+              "ko": "10월 20일 19:30 UTC 발표 후 19:40:33 UTC에 수정된 원문 전체를 19:48:51 UTC에 다시 읽고 새 해시에 연결했습니다. 검토한 변경 사실은 유지됩니다. 시행 예정일은 한국 10월 21일이며 실제 적용 완료를 확인한 것은 아닙니다."
+            },
+            {
+              "en": "KR-only: do not copy healing suppression, speed, season dates or collectible changes to NA. Skills/research inputs remain the existing NA reference; historical ranking values, periods and conditions are unchanged.",
+              "ko": "한국 전용입니다. 치유 억제·속도·시즌 일정·수집 위치를 북미에 옮기지 않습니다. 스킬·연구 입력은 기존 북미 기준을 유지하며 과거 순위 값·기간·조건도 보존합니다."
+            },
+            {
+              "en": "All nine KR Assault variants are covered: 강습 일격/맹격/습격/타격/충격/강타/낙인/공포/폭격. Healing reduction is not damage dealt; stacking and specialization arithmetic require client verification.",
+              "ko": "강습 일격·맹격·습격·타격·충격·강타·낙인·공포·폭격 9종을 공통 속도 항목에 포함했습니다. 받는 치유량 감소는 가하는 피해가 아니며 중첩·특화 합산은 클라이언트 검증이 필요합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Season 4 extension and deadlines",
+            "ko": "시즌4 연장·마감"
+          },
+          "sourceSection": "Chapter 1 일정 변경",
+          "notes": [
+            {
+              "en": "Season 4 ends November 11 instead of November 4. Seasonal content/missions reset, seasonal-item deletion, pass/season-shop sales and seasonal crafting/boss supply deadlines move to November 11. The two named Daeva passes remain usable through November 11; subscription closes November 10.",
+              "ko": "시즌4 종료는 11월 4일에서 11월 11일로 연장됩니다. 시즌 콘텐츠·미션 초기화, 시즌 아이템 삭제, 패스·시즌 상점 판매, 시즌 제작·보스 의뢰 납품 마감도 11월 11일로 이동합니다. 불꽃의 유산·환영의 첫 만남 패스 이용은 11월 11일까지, 구독은 11월 10일까지입니다."
+            },
+            {
+              "en": "Growth Support use ends November 11; activation and coin purchase/validity end November 4. The two Arcana support events announce extension through November 11, but their printed after-ranges begin November 4 despite earlier starts in the before-ranges; do not infer that the events restart.",
+              "ko": "성장 서포트 이용은 11월 11일까지, 활성화·주화 구매 및 유효 기간은 11월 4일까지로 연장됩니다. 아르카나 지원 이벤트 2종도 11월 11일 종료 연장을 공지하나 변경 후 표의 시작일이 종전과 달리 11월 4일로 적혀 있어 신규 재시작으로 해석하지 않습니다."
+            },
+            {
+              "en": "P1 interpretation: KR planning deadlines change, but unlocks, costs and rewards must be checked in the relevant client before rewriting the NA beginner path. Verify pass/subscription prerequisites and each individual item deadline.",
+              "ko": "P1 해석: 한국 성장 계획의 마감이 달라집니다. 북미 입문 경로를 바꾸기 전 해당 지역의 해금·비용·보상·선행조건을 확인해야 합니다. 패스 구독 조건과 개별 아이템 만료일은 직접 검증 대기입니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Abyss rematching",
+            "ko": "어비스 재매칭"
+          },
+          "sourceSection": "어비스",
+          "notes": [
+            {
+              "en": "KR server groups are rematched and artifact ownership/Abyss corridors reset. NC lists 21 pairings and their artifact, Abyss-boss and Nahma times. Use the full source table for your server; no NA schedule is derived here.",
+              "ko": "한국 서버 재매칭으로 아티팩트 점령·어비스 회랑이 초기화됩니다. 21개 그룹의 상대 서버와 점령전·어비스 보스·나흐마 시간은 원문 표에서 자신의 서버를 확인하세요. 북미 일정으로 환산하지 않습니다."
+            },
+            {
+              "en": "P1 interpretation: verify actual KR pairing, reset state and boss spawn schedule after maintenance; this is not a boss-pattern or difficulty change.",
+              "ko": "P1 해석: 점검 후 실제 한국 매칭·점령 초기화·보스 출현 시간을 확인해야 합니다. 보스 패턴·난도 변경을 공지한 항목은 아닙니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Arcana inventory and extraction",
+            "ko": "아르카나 보유·추출"
+          },
+          "sourceSection": "개선사항",
+          "notes": [
+            {
+              "en": "Arcana capacity changes from 1,100 to 500. NC instructs over-cap holders to extract excess items; it does not state automatic deletion. Extraction adds 상급 수련의 아르카나 (각인) and stops granting 신비로운 결정 (각인). Accumulated progress is removed, with later crystal grants based on retained progress announced but no payout formula supplied.",
+              "ko": "아르카나 최대 보유는 1,100개에서 500개로 변경되며 초과분은 추출로 정리하도록 안내합니다. 자동 삭제라고 공지하지는 않았습니다. 상급 수련의 아르카나(각인) 추출 항목이 추가되고 신비로운 결정(각인)은 추출에서 제외됩니다. 누적 진행도는 제거되며 보유 진행도에 따른 추후 지급만 예고됐고 산식은 없습니다."
+            },
+            {
+              "en": "P1 interpretation: KR inventory/investment guidance needs this warning. Verify over-cap restrictions, extraction output/costs and progress compensation in game; do not auto-select items or invent conversion values.",
+              "ko": "P1 해석: 한국 인벤토리·투자 안내에 유의해야 합니다. 초과 보유 시 실제 제한, 추출 결과·비용과 진행도 보상은 직접 확인 대기이며 정리 대상을 자동 선택하거나 환산값을 만들지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Verteron collectible relocation",
+            "ko": "베르테론 주신의 흔적 이동"
+          },
+          "sourceSection": "수정사항 · 수집",
+          "notes": [
+            {
+              "en": "Empyrean Traces obstructed by Halloween decorations at Verteron's 새벽의 레기온 기지 and 주미온 마을 move to interactable positions. NC provides neither coordinates nor a count.",
+              "ko": "베르테론 새벽의 레기온 기지·주미온 마을에서 할로윈 장식 때문에 조작할 수 없던 주신의 흔적을 조작 가능한 위치로 옮깁니다. 새 좌표와 개수는 공지되지 않았습니다."
+            },
+            {
+              "en": "P1 interpretation: existing KR position guidance may be stale locally. /maps/ and /ko/maps/ use data/maps.json (Verteron) via worldmap.py; keep current coordinates until KR in-game coordinates, height, interaction prerequisites and acquisition state are verified. No new spawn or reset rule was announced.",
+              "ko": "P1 해석: 해당 구역의 한국 위치 안내가 오래될 수 있습니다. /maps/·/ko/maps/는 worldmap.py와 data/maps.json의 Verteron 자료를 사용합니다. 한국 인게임 좌표·고도·상호작용 선행조건·획득 상태를 검증할 때까지 좌표는 유지합니다. 새 스폰·리셋 규칙은 공지되지 않았습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Fire Temple result and reward-source fixes",
+            "ko": "불의 신전 판정·보상 교체"
+          },
+          "sourceSection": "수정사항 · 던전·보상",
+          "notes": [
+            {
+              "en": "Fixes an intermittent failed-clear result when the trial Fire Temple boss dies exactly as the dungeon expires. No boss attack trigger, avoidance mechanic, animation or difficulty change is specified.",
+              "ko": "시련 불의 신전의 만료와 동시에 보스를 처치하면 간헐적으로 실패 처리되던 오류를 수정합니다. 보스 공격 발동조건·대응법·애니메이션·난도 변경은 명시하지 않았습니다."
+            },
+            {
+              "en": "P1 interpretation: /dungeons/fire-temple/ and /ko/dungeons/fire-temple/ need result-boundary verification for the KR trial difficulty. Check actual region/difficulty, simultaneous expiry/kill timing and clear/reward result; do not modify pattern animations from this notice.",
+              "ko": "P1 해석: /dungeons/fire-temple/·/ko/dungeons/fire-temple/ 관련 한국 시련 난도의 판정 경계 검증이 필요합니다. 실제 지역·난도, 만료·처치 동시 타이밍, 성공 판정·보상을 확인하며 이 공지만으로 패턴 애니메이션을 바꾸지 않습니다."
+            },
+            {
+              "en": "Season shop, expedition exchange, Growth Support and achievements replace the named bound Unique/Heroic inheritance-stone shards with corresponding inheritance flames. Exact costs, quantities and prerequisites are not supplied; verify them before changing investment recommendations.",
+              "ko": "시즌 상점·원정 교환·성장 서포트·업적의 유일·영웅 계승석 조각(각인)을 해당 계승의 불꽃(각인)으로 교체합니다. 정확한 비용·수량·선행조건은 없어 투자 추천 변경 전 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Other system highlights and review limits",
+            "ko": "기타 시스템·검토 범위"
+          },
+          "sourceSection": "기타 개선·회수 및 복구",
+          "notes": [
+            {
+              "en": "P2: rank-icon and uniform-player appearance optimization can be set separately for field, Abyss and Rift contention. Pet-box batch use increases without a stated count; key-category duplication, Fold multi-window display and Halloween-weapon idle-motion interruption are repaired.",
+              "ko": "P2: 계급 아이콘·타 플레이어 동일 외형 최적화를 필드·어비스·시공의 균열 쟁탈전별로 나눠 설정할 수 있습니다. 펫 상자 일괄 사용 개수는 수치 없이 증가하며 이동 조작 중복·폴드 멀티윈도우·할로윈 무기 대기 모션 중단 오류도 수정됩니다."
+            },
+            {
+              "en": "NC announces retroactive 명화의 잔흔 grants based on pre-October-7 expedition/transcendence play and deletion/sale/restoration history. Sales can cause 실렌티움 (각인) recovery; the source gives no exchange rate. Verify eligibility and recovered currency rather than estimating.",
+              "ko": "10월 7일 이전 원정·초월 플레이 및 삭제·판매·복구 이력에 따라 명화의 잔흔을 소급 지급하고 판매 이력에는 실렌티움(각인)을 회수할 수 있다고 안내합니다. 교환 비율은 없으므로 지급 대상·회수액은 추정하지 않고 확인 대기로 둡니다."
+            },
+            {
+              "en": "These are class/system highlights, not a complete recreation of the 21-server table or every event range. No in-game tests were possible. No final-build tier or patch-adjusted historical DPS is published.",
+              "ko": "직업·시스템 주요 항목 요약이며 21개 서버 표와 모든 이벤트 표의 완전 재정리를 주장하지 않습니다. 인게임 테스트는 수행하지 못했습니다. 최종빌드 티어나 패치로 재계산한 과거 DPS를 발표하지 않습니다."
+            },
+            {
+              "en": "Review targets: /skills/cold-storm/, /skills/fire-wall/, /skills/absolution/ and Korean counterparts; /start/ (onboarding.py), /endgame/ (endgame.py) and Korean counterparts. P1 skills require tooltip level/specialization, conditions, action timing and rotation reproduction. NA data/skills.json and data/skill-snapshot.json remain unchanged until region-matched numeric evidence exists.",
+              "ko": "보강 경로: /skills/cold-storm/·/skills/fire-wall/·/skills/absolution/와 한국어 대응 페이지, onboarding.py의 /start/·endgame.py의 /endgame/ 및 한국어 대응 페이지입니다. P1 스킬은 툴팁 레벨·특화·조건·동작 시간·로테이션 재현을 확인해야 합니다. 지역이 맞는 수치 근거 전까지 북미 data/skills.json·data/skill-snapshot.json은 유지합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
+  },
   "6ac54c386b722c561dc6aa2b": {
     "contentHash": "3dabf7f9b3d0dbd83990b875f52fc7fddff023f2c954a71e88b0308417ac9e30",
     "reviewedAt": "2026-10-08T10:02:56Z",
