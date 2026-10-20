@@ -4,7 +4,7 @@
     {
       "id": "kr-20261021-conditions-and-positions",
       "region": "KR",
-      "reviewedAt": "2026-10-20T19:40:44Z",
+      "reviewedAt": "2026-10-20T19:48:51Z",
       "title": {"en": "October 21 KR changes: in-game checks pending", "ko": "10월 21일 한국 변경 · 직접 검증 대기"},
       "finding": {
         "en": "P1: verify Assault action timing and rotations, healing-reduction tooltip levels/specializations, Absolution Lv25 refresh and Cold Storm/Fire Wall conditional damage. Check KR trial Fire Temple expiry/kill results, relocated Verteron Empyrean Traces, Arcana 500-item cap/extraction outputs and season/support deadlines. Exact guide/data targets and separate factual/interpretive notes are in the hash-bound patch highlights. No in-game validation, new coordinates, NA input changes or final tiers are claimed.",

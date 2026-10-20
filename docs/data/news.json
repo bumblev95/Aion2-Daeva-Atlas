@@ -21,8 +21,8 @@
           "source": "kr-update",
           "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c",
           "publishedAt": "2026-10-20T19:30:00.001Z",
-          "sourceUpdatedAt": "2026-10-20T19:39:33.984Z",
-          "contentHash": "05308a557fb3a9c94d08a37a769ba11a4208fb3f0cf062b00fd4211a4fa0a3c2",
+          "sourceUpdatedAt": "2026-10-20T19:40:33.920Z",
+          "contentHash": "3b7887cfc19c4cb1cbbcacdfe20e803544709974154e6e061de6ea4c5b580e52",
           "bodyState": "ready",
           "reviewState": "reviewed",
           "summary": {
@@ -356,7 +356,7 @@
             }
           ],
           "classScopeReviewed": true,
-          "reviewedAt": "2026-10-20T19:40:44Z",
+          "reviewedAt": "2026-10-20T19:48:51Z",
           "displayTitle": {
             "en": "October 21 · Korea (announced)",
             "ko": "10월 21일 한국 패치 · 시행 예정"
@@ -372,8 +372,8 @@
                 "sourceSection": "적용 범위",
                 "notes": [
                   {
-                    "en": "Announced October 20 at 19:30 UTC; source revision October 20 at 19:39:33 UTC was read and hash-checked. The announced update date is October 21 in Korea, not a confirmed deployment completion.",
-                    "ko": "10월 20일 19:30 UTC 발표, 19:39:33 UTC 수정 원문을 읽고 해시를 확인했습니다. 시행 예정일은 한국 10월 21일이며 실제 적용 완료를 확인한 것은 아닙니다."
+                    "en": "Announced October 20 at 19:30 UTC; the source revised at 19:40:33 UTC was re-read in full and rebound to its new hash at 19:48:51 UTC. The reviewed facts remain valid. The announced update date is October 21 in Korea, not a confirmed deployment completion.",
+                    "ko": "10월 20일 19:30 UTC 발표 후 19:40:33 UTC에 수정된 원문 전체를 19:48:51 UTC에 다시 읽고 새 해시에 연결했습니다. 검토한 변경 사실은 유지됩니다. 시행 예정일은 한국 10월 21일이며 실제 적용 완료를 확인한 것은 아닙니다."
                   },
                   {
                     "en": "KR-only: do not copy healing suppression, speed, season dates or collectible changes to NA. Skills/research inputs remain the existing NA reference; historical ranking values, periods and conditions are unchanged.",
