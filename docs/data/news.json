@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-20T09:58:56Z",
+  "checkedAt": "2026-10-20T11:53:57Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-20T09:58:56Z",
-      "lastSuccessAt": "2026-10-20T09:58:56Z",
+      "checkedAt": "2026-10-20T11:53:57Z",
+      "lastSuccessAt": "2026-10-20T11:53:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6129,11 +6129,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-20T09:58:56Z",
-      "lastSuccessAt": "2026-10-20T09:58:56Z",
+      "checkedAt": "2026-10-20T11:53:57Z",
+      "lastSuccessAt": "2026-10-20T11:53:57Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ad749b0263e537d356d11e2",
+          "title": "[안내] 10/21(수) AION2 정기점검 안내",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad749b0263e537d356d11e2",
+          "publishedAt": "2026-10-20T11:00:00.435Z",
+          "sourceUpdatedAt": "2026-10-20T11:00:18.344Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6ad5ce00577e8c01355dfff6",
           "title": "[안내] AION2 정기점검 사전 안내",
@@ -6668,26 +6688,6 @@
           "displayTitle": {},
           "detail": {},
           "followups": []
-        },
-        {
-          "id": "6ac1a510d97eae18cc40e22b",
-          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [321차]",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ac1a510d97eae18cc40e22b",
-          "publishedAt": "2026-10-04T01:00:00.001Z",
-          "sourceUpdatedAt": "2026-10-04T01:00:27.152Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
         }
       ]
     },
@@ -6696,8 +6696,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-20T09:58:56Z",
-      "lastSuccessAt": "2026-10-20T09:58:56Z",
+      "checkedAt": "2026-10-20T11:53:57Z",
+      "lastSuccessAt": "2026-10-20T11:53:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7059,8 +7059,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-20T09:58:56Z",
-      "lastSuccessAt": "2026-10-20T09:58:56Z",
+      "checkedAt": "2026-10-20T11:53:57Z",
+      "lastSuccessAt": "2026-10-20T11:53:57Z",
       "error": null,
       "fromCache": false,
       "items": [
