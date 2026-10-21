@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-21T01:56:03Z",
+  "checkedAt": "2026-10-21T02:53:35Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-21T01:56:03Z",
-      "lastSuccessAt": "2026-10-21T01:56:03Z",
+      "checkedAt": "2026-10-21T02:53:35Z",
+      "lastSuccessAt": "2026-10-21T02:53:35Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6630,11 +6630,94 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-21T01:56:03Z",
-      "lastSuccessAt": "2026-10-21T01:56:03Z",
+      "checkedAt": "2026-10-21T02:53:35Z",
+      "lastSuccessAt": "2026-10-21T02:53:35Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ad8207a577e8c01355e00c1",
+          "title": "[안내] 10월 3주차 알려진 이슈 및 조치 안내",
+          "region": "KR",
+          "kind": "patch",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad8207a577e8c01355e00c1",
+          "publishedAt": "2026-10-21T02:20:00.001Z",
+          "sourceUpdatedAt": "2026-10-21T02:21:23.171Z",
+          "contentHash": "1e2d41d2112b1edb42b1caf2fb4fd7300bd95102d0a98654badba20961a80b5f",
+          "bodyState": "ready",
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "KR known issue: extracting Noble Crystal Arcana fails with an invalid-data message. NC has not announced a fix time. This is not an NA, class-balance or DPS change.",
+            "ko": "한국 알려진 이슈: 고결한 결정 아르카나 추출 시 데이터 오류 메시지가 표시되고 추출되지 않습니다. 조치 일정은 아직 공지되지 않았으며 북미·직업 밸런스·DPS 변경이 아닙니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Noble Crystal Arcana · extraction unavailable",
+                "ko": "고결한 결정 아르카나 · 추출 불가"
+              },
+              "description": {
+                "en": "After the third-week October KR update, attempting extraction displays an invalid Arcana extraction-data system message and does not complete. The notice reports investigation and response in progress, not a completed fix.",
+                "ko": "한국 10월 3주차 업데이트 후 추출을 시도하면 ‘아르카나 추출 데이터가 정상적이지 않습니다.’ 메시지가 표시되고 완료되지 않습니다. 공지는 원인 파악·조치 중이라고 밝혔으며 수정 완료 공지가 아닙니다."
+              },
+              "impact": {
+                "en": "P1 analysis: the October 21 KR guidance to extract excess Arcana may currently fail for this named item. Do not infer that every Arcana type is affected or that items are deleted.",
+                "ko": "P1 해석: 10월 21일 한국 패치의 초과 아르카나 추출 안내가 이 명칭의 아이템에는 현재 작동하지 않을 수 있습니다. 모든 아르카나가 영향받거나 아이템이 삭제된다고 확대 해석하지 않습니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-10-21T02:52:51Z",
+          "displayTitle": {
+            "en": "October 21 · Korea Arcana extraction issue",
+            "ko": "10월 21일 한국 · 아르카나 추출 장애"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Officially confirmed issue",
+                  "ko": "공식 확인 사실"
+                },
+                "sourceSection": "인 게임 컨텐츠 관련 이슈",
+                "notes": [
+                  {
+                    "en": "Published October 21 at 02:20 UTC for Korea and revised at 02:21 UTC. NC names only Noble Crystal Arcana and says the extraction attempt stops after the invalid-data message.",
+                    "ko": "한국 공지는 10월 21일 02:20 UTC에 게시되고 02:21 UTC에 수정됐습니다. NC가 명시한 대상은 고결한 결정 아르카나이며, 데이터 오류 메시지 후 추출이 진행되지 않습니다."
+                  },
+                  {
+                    "en": "A detailed response schedule remains unannounced. The October 21 update page and its historical Arcana values remain unchanged; this notice adds a current operational warning.",
+                    "ko": "상세 후속 조치 일정은 미정입니다. 10월 21일 업데이트 원문의 아르카나 수치와 변경 이력은 유지하고, 이 공지는 현재 동작 장애 주의사항으로 별도 기록합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Guide impact and verification pending",
+                  "ko": "공략 영향과 직접 검증 대기"
+                },
+                "sourceSection": "조치 현황",
+                "notes": [
+                  {
+                    "en": "P1 guide impact: add this warning to the reviewed update route /updates/kr-6ad8207a577e8c01355e00c1/ and the source-bound data in data/patch-reviews.json and data/news.json. No skill, DPS, boss, map or NA research input changes.",
+                    "ko": "P1 공략 영향: 검토 페이지 /ko/updates/kr-6ad8207a577e8c01355e00c1/ 및 해시에 연결된 data/patch-reviews.json·data/news.json에 이 주의를 반영합니다. 스킬·DPS·보스·지도·북미 연구 입력은 변경하지 않습니다."
+                  },
+                  {
+                    "en": "In-game verification pending: reproduce the exact item and message, check whether other Arcana types extract normally, and confirm the later fix time and outcome. No in-game validation was performed in this review.",
+                    "ko": "직접 검증 대기: 해당 아이템·메시지를 재현하고 다른 아르카나 종류는 정상 추출되는지, 이후 수정 시각과 결과를 확인해야 합니다. 이번 검토에서 인게임 검증은 수행하지 않았습니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
+          "followups": []
+        },
         {
           "id": "6ad81937263e537d356d128d",
           "title": "[안내] AION2 1주년 기념 축제 참여 신청 안내",
@@ -6643,7 +6726,7 @@
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad81937263e537d356d128d",
           "publishedAt": "2026-10-21T01:50:00.001Z",
-          "sourceUpdatedAt": "2026-10-21T01:49:59.403Z",
+          "sourceUpdatedAt": "2026-10-21T02:13:23.409Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -7169,26 +7252,6 @@
           "displayTitle": {},
           "detail": {},
           "followups": []
-        },
-        {
-          "id": "6ac47240a279104f7d9d5f98",
-          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [322차]",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ac47240a279104f7d9d5f98",
-          "publishedAt": "2026-10-06T04:00:00.319Z",
-          "sourceUpdatedAt": "2026-10-06T04:00:11.674Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
         }
       ]
     },
@@ -7197,8 +7260,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-21T01:56:03Z",
-      "lastSuccessAt": "2026-10-21T01:56:03Z",
+      "checkedAt": "2026-10-21T02:53:35Z",
+      "lastSuccessAt": "2026-10-21T02:53:35Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7560,8 +7623,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-21T01:56:03Z",
-      "lastSuccessAt": "2026-10-21T01:56:03Z",
+      "checkedAt": "2026-10-21T02:53:35Z",
+      "lastSuccessAt": "2026-10-21T02:53:35Z",
       "error": null,
       "fromCache": false,
       "items": [

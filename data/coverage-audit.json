@@ -4,14 +4,17 @@
     {
       "id": "kr-20261021-conditions-and-positions",
       "region": "KR",
-      "reviewedAt": "2026-10-20T19:48:51Z",
+      "reviewedAt": "2026-10-21T02:52:51Z",
       "title": {"en": "October 21 KR changes: in-game checks pending", "ko": "10월 21일 한국 변경 · 직접 검증 대기"},
       "finding": {
-        "en": "P1: verify Assault action timing and rotations, healing-reduction tooltip levels/specializations, Absolution Lv25 refresh and Cold Storm/Fire Wall conditional damage. Check KR trial Fire Temple expiry/kill results, relocated Verteron Empyrean Traces, Arcana 500-item cap/extraction outputs and season/support deadlines. Exact guide/data targets and separate factual/interpretive notes are in the hash-bound patch highlights. No in-game validation, new coordinates, NA input changes or final tiers are claimed.",
-        "ko": "P1: 강습 동작 시간·로테이션, 치유 감소 툴팁 레벨·특화, 면죄 25레벨 갱신, 냉기 폭풍·불의 장벽 조건부 피해를 직접 검증해야 합니다. 한국 시련 불의 신전 만료·처치 판정, 베르테론 주신의 흔적 이동 좌표·고도·획득조건, 아르카나 500개 한도·추출 결과·비용, 시즌·서포트 해금·보상·선행조건·마감도 대기 중입니다. 정확한 공략·자료 경로와 사실/해석 구분은 해시에 묶인 패치 요약에 기록했습니다. 인게임 검증·새 좌표·북미 입력 변경·최종 티어를 주장하지 않습니다."
+        "en": "P1: verify Assault action timing and rotations, healing-reduction tooltip levels/specializations, Absolution Lv25 refresh and Cold Storm/Fire Wall conditional damage. Check KR trial Fire Temple expiry/kill results, relocated Verteron Empyrean Traces, Arcana 500-item cap and extraction outputs, and season/support deadlines. NC now confirms that Noble Crystal Arcana extraction fails; reproduce the named item/message, test other Arcana types separately and confirm the later fix. Exact guide/data targets and separate factual/interpretive notes are in the hash-bound patch highlights. No in-game validation, new coordinates, NA input changes or final tiers are claimed.",
+        "ko": "P1: 강습 동작 시간·로테이션, 치유 감소 툴팁 레벨·특화, 면죄 25레벨 갱신, 냉기 폭풍·불의 장벽 조건부 피해를 직접 검증해야 합니다. 한국 시련 불의 신전 만료·처치 판정, 베르테론 주신의 흔적 이동 좌표·고도·획득조건, 아르카나 500개 한도·추출 결과, 시즌·서포트 해금·보상·선행조건·마감도 대기 중입니다. NC가 고결한 결정 아르카나 추출 실패를 확인했으므로 해당 아이템·메시지 재현, 다른 아르카나의 정상 여부, 후속 수정 결과를 각각 확인해야 합니다. 정확한 공략·자료 경로와 사실/해석 구분은 해시에 묶인 패치 요약에 기록했습니다. 인게임 검증·새 좌표·북미 입력 변경·최종 티어를 주장하지 않습니다."
       },
       "status": "needs-evidence",
-      "sources": [{"title": "NC · October 21 Korea update (announced)", "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c"}]
+      "sources": [
+        {"title": "NC · October 21 Korea update", "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c"},
+        {"title": "NC · October third-week known issues", "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad8207a577e8c01355e00c1"}
+      ]
     },
     {
       "id": "endgame-inputs",
