@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-08",
+  "reviewedAt": "2026-10-21",
   "items": [
     {
       "id": "kr-20261021-conditions-and-positions",
@@ -14,6 +14,26 @@
       "sources": [
         {"title": "NC · October 21 Korea update", "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c"},
         {"title": "NC · October third-week known issues", "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad8207a577e8c01355e00c1"}
+      ]
+    },
+    {
+      "id": "na-20261021-hard-mode-and-class-fixes",
+      "region": "NA",
+      "reviewedAt": "2026-10-21T07:05:56Z",
+      "title": {
+        "en": "October 21 NA Hard mode and class fixes: in-game checks pending",
+        "ko": "10월 21일 북미 어려움·직업 수정 · 직접 검증 대기"
+      },
+      "finding": {
+        "en": "P1: reproduce Krao Cave and Draupnir Hard mode at item level 2600, including the 4-minute Frenzy trigger, 3-revive per-player rule, boss patterns, reward eligibility and Ariel Board/morph caps. Verify Spinning Strike display behavior and Cold Storm/Fire Wall tooltip levels, stacked conditions, expiration/reapplication and rotations. Recheck the moved Verteron Empyrean Traces using NA coordinates, altitude, acquisition conditions and completion state. Exact guide/data targets and factual-versus-interpretive notes are in the hash-bound highlights. No in-game validation, coefficient/cooldown input changes, historical DPS recalculation or final tier is claimed.",
+        "ko": "P1: 아이템 레벨 2600의 크라오 동굴·드라웁니르 어려움에서 4분 광폭화 발동, 개인당 부활 3회, 보스 패턴·보상 자격과 아리엘 보드·변환 한도를 재현해야 합니다. 회전격 표시 동작과 냉기 폭풍·불의 장벽의 툴팁 레벨·중첩 조건·종료/재부여·로테이션도 확인해야 합니다. 이동된 베르테론 주신의 흔적은 북미 좌표·고도·획득 조건·완료 상태를 다시 확인해야 합니다. 정확한 공략·자료 경로와 사실/해석 구분은 해시에 묶인 highlights 요약에 기록했습니다. 인게임 검증, 계수·쿨타임 입력 변경, 과거 DPS 재계산이나 최종 티어를 주장하지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 20 PDT / 21 CEST North America patch",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ad85be86cfe4756db5b8e92"
+        }
       ]
     },
     {

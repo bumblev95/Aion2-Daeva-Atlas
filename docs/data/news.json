@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-21T03:00:41Z",
+  "checkedAt": "2026-10-21T07:07:19Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-21T03:00:41Z",
-      "lastSuccessAt": "2026-10-21T03:00:41Z",
+      "checkedAt": "2026-10-21T07:07:19Z",
+      "lastSuccessAt": "2026-10-21T07:07:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6630,8 +6630,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-21T03:00:41Z",
-      "lastSuccessAt": "2026-10-21T03:00:41Z",
+      "checkedAt": "2026-10-21T07:07:19Z",
+      "lastSuccessAt": "2026-10-21T07:07:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7260,11 +7260,224 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-21T03:00:41Z",
-      "lastSuccessAt": "2026-10-21T03:00:41Z",
+      "checkedAt": "2026-10-21T07:07:19Z",
+      "lastSuccessAt": "2026-10-21T07:07:19Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6ad85be86cfe4756db5b8e92",
+          "title": "[Notice] Patch Notes | Oct. 20 (PDT) / Oct. 21 (CEST)",
+          "region": "NA",
+          "kind": "patch",
+          "source": "na-update",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ad85be86cfe4756db5b8e92",
+          "publishedAt": "2026-10-21T06:30:00.001Z",
+          "sourceUpdatedAt": "2026-10-21T06:30:11.674Z",
+          "contentHash": "f372a5da417e6ec8c484dd8a966a9495e7b7329cfc1bc92716aee9e1591253ff",
+          "bodyState": "ready",
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "NA adds Krao Cave and Draupnir Hard mode, the Ariel Daevanion Board, Sorcerer conditional-damage fixes, and Abyss capacity/boss durability changes. No new skill coefficients or cooldown values are published.",
+            "ko": "북미에 크라오 동굴·드라웁니르 어려움, 아리엘 데바니온 보드, 마도성 조건부 피해 수정, 어비스 수용 인원·보스 내구도 조정이 적용됩니다. 새 스킬 계수·쿨타임 수치는 공지되지 않았습니다."
+          },
+          "changes": [
+            {
+              "classId": "chanter",
+              "type": "fix",
+              "subject": {
+                "en": "Spinning Strike · effect display",
+                "ko": "회전격 · 효과 표시"
+              },
+              "description": {
+                "en": "Fixes skill effects not displaying correctly. NC does not state that damage, cooldown or duration values change.",
+                "ko": "스킬 효과가 올바르게 표시되지 않던 문제를 수정합니다. 피해·쿨타임·지속시간 수치 변경은 공지되지 않았습니다."
+              },
+              "impact": {
+                "en": "Analysis: treat this as a display/effect reliability fix until NA client reproduction confirms a mechanical difference; no DPS multiplier is assigned.",
+                "ko": "해석: 북미 클라이언트 재현으로 실제 동작 차이가 확인되기 전에는 표시·효과 안정성 수정으로 구분하며 DPS 배율을 부여하지 않습니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "fix",
+              "subject": {
+                "en": "Cold Storm · stacked Frostbite bonus",
+                "ko": "냉기 폭풍 · 동상 중첩"
+              },
+              "description": {
+                "en": "Restores extra damage that failed to trigger when attacking a target with stacked Frostbite.",
+                "ko": "동상이 중첩된 대상을 공격할 때 추가 피해가 발생하지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "Analysis: restores missing conditional damage. NC provides no coefficient or total-DPS percentage; stack count, tooltip level and rotation reproduction remain pending.",
+                "ko": "해석: 누락된 조건부 피해를 복원합니다. 계수·전체 DPS 변화율은 공지되지 않았으며 중첩 수·툴팁 레벨·로테이션 재현은 대기 중입니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "fix",
+              "subject": {
+                "en": "Cold Storm · Frostbite level matching",
+                "ko": "냉기 폭풍 · 동상 레벨 일치"
+              },
+              "description": {
+                "en": "Fixes the Frostbite effect not matching Cold Storm's skill level.",
+                "ko": "동상 효과가 냉기 폭풍의 스킬 레벨과 일치하지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "Analysis: level/effect consistency fix. The notice gives no affected before/after level values, so skill inputs are not inferred.",
+                "ko": "해석: 레벨·효과 일치 수정입니다. 영향받은 레벨의 전후 수치가 없어 스킬 입력값을 추정하지 않습니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "fix",
+              "subject": {
+                "en": "Cold Storm · Specialty 1 reapplication",
+                "ko": "냉기 폭풍 · 1번 특화 재부여"
+              },
+              "description": {
+                "en": "Removes an additional Frostbite application that occurred inside the Cold Storm area after the effect ended when Specialty 1 was selected.",
+                "ko": "1번 특화 사용 시 효과 종료 후 냉기 폭풍 범위 안의 대상에게 동상이 한 번 더 부여되던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "Analysis: removes an unintended conditional reapplication; do not convert it into an arbitrary damage reduction.",
+                "ko": "해석: 의도하지 않은 조건부 재부여를 제거하며 임의의 피해 감소율로 환산하지 않습니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "fix",
+              "subject": {
+                "en": "Fire Wall · targets without Embers",
+                "ko": "불의 장벽 · 잔불 없는 대상"
+              },
+              "description": {
+                "en": "Removes extra damage that was incorrectly dealt to targets not affected by Embers.",
+                "ko": "잔불 효과가 없는 대상에게 추가 피해가 잘못 적용되던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "Analysis: removes unintended damage when the required condition is absent. No coefficient or measured DPS adjustment is published.",
+                "ko": "해석: 필수 조건이 없는 대상의 의도하지 않은 피해를 제거합니다. 계수나 실측 DPS 조정치는 공지되지 않았습니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-10-21T07:05:56Z",
+          "displayTitle": {
+            "en": "October 20 PDT / 21 CEST · North America",
+            "ko": "10월 20일 PDT / 21일 CEST · 북미 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, announcement and effective window",
+                  "ko": "지역·발표일·시행 구간"
+                },
+                "sourceSection": "Patch scope",
+                "notes": [
+                  {
+                    "en": "Published October 21 at 06:30 UTC and revised at 06:30:11 UTC for the North American service. The title identifies October 20 PDT / October 21 CEST, and the event begins October 21; the separate maintenance notice had not yet been marked complete when reviewed.",
+                    "ko": "북미 서비스 공지는 10월 21일 06:30 UTC에 게시되고 06:30:11 UTC에 수정됐습니다. 제목은 10월 20일 PDT / 21일 CEST를 명시하고 이벤트는 10월 21일 시작합니다. 검토 시점에는 별도 점검 공지가 완료로 갱신되지 않았습니다."
+                  },
+                  {
+                    "en": "NA-only: these fixes and systems now have their own regional source. KR values, dates and the KR-only Arcana issue are not copied into NA inputs.",
+                    "ko": "북미 전용입니다. 이번 수정·시스템에는 북미 원문이 별도로 확인됐으며 한국 수치·일정과 한국 한정 아르카나 장애를 북미 입력에 복사하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Krao Cave and Draupnir Hard mode",
+                  "ko": "크라오 동굴·드라웁니르 어려움"
+                },
+                "sourceSection": "Content & Systems · Expedition",
+                "notes": [
+                  {
+                    "en": "Hard mode is added to Krao Cave and Draupnir. Entry requires item level 2600, Frenzy starts at 4 minutes, and each player has up to 3 revives. This is a new difficulty, not confirmation that the existing KR Conquest animations match NA Hard mode.",
+                    "ko": "크라오 동굴과 드라웁니르에 어려움 난도가 추가됩니다. 입장 아이템 레벨은 2600, 광폭화 제한은 4분, 부활은 플레이어당 3회입니다. 새 난도이며 기존 한국 정복 공략 애니메이션이 북미 어려움과 동일하다고 확인된 것은 아닙니다."
+                  },
+                  {
+                    "en": "P1 guide targets: /dungeons/krao-cave/, /dungeons/draupnir/ and their /ko/ counterparts, plus /guides/dungeon-rewards/ and progression.py. Verify NA difficulty labels, entry gate, Frenzy trigger, per-player revive counting, boss patterns and reward eligibility before changing the existing guides.",
+                    "ko": "P1 보강 경로: /dungeons/krao-cave/·/dungeons/draupnir/와 /ko/ 대응 페이지, /guides/dungeon-rewards/ 및 progression.py입니다. 기존 공략 수정 전 북미 난도 표기·입장 조건·광폭화 발동·개인별 부활 집계·보스 패턴·보상 자격을 직접 검증해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Hard-mode rewards and Ariel board",
+                  "ko": "어려움 보상·아리엘 보드"
+                },
+                "sourceSection": "Content & Systems · Rewards / Ariel Daevanion Board",
+                "notes": [
+                  {
+                    "en": "Hard mode adds Philosopher's Stone: Revelation (chance and guaranteed selection), dungeon-specific Ariel Fragments, hero artwork, more Kina than Normal, Unique materials and achievement skins. NC does not publish drop rates or exact Kina amounts.",
+                    "ko": "어려움은 계시의 현자의 돌(확률 획득·확정 보상 선택), 던전별 아리엘 조각, 영웅 명화, 일반보다 많은 키나, 유일 제작 재료와 업적 외형을 추가합니다. 획득 확률·정확한 키나 양은 공지되지 않았습니다."
+                  },
+                  {
+                    "en": "Substance Morph converts 100 Ariel Fragments into one Daevanion Crystal: Ariel up to 30 times per character, or 1 fragment into 5 Enhance Stones without a stated limit. Ariel board points come from fragments collected in Hard mode and morphed; the morphable amount is limited per dungeon, but the per-dungeon values are not listed.",
+                    "ko": "물질변환으로 아리엘 조각 100개를 아리엘 데바니온 결정 1개로 캐릭터당 최대 30회, 조각 1개를 강화석 5개로 별도 제한 없이 바꿀 수 있습니다. 어려움에서 모은 조각을 변환해 아리엘 보드 포인트를 얻으며 던전별 변환 한도가 있으나 개별 수치는 공지되지 않았습니다."
+                  },
+                  {
+                    "en": "P1 guide targets: /endgame/, /guides/dungeon-rewards/, growthvisuals.py and progression.py. Verify the board unlock, actual morph menu, per-dungeon caps, reward claims and prerequisites in the NA client; no unannounced cost or drop chance is inferred.",
+                    "ko": "P1 보강 경로: /endgame/·/guides/dungeon-rewards/, growthvisuals.py와 progression.py입니다. 북미 클라이언트에서 보드 해금·실제 변환 메뉴·던전별 한도·보상 수령·선행조건을 확인해야 하며 공지되지 않은 비용·확률은 추정하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Abyss and system adjustments",
+                  "ko": "어비스·시스템 조정"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes",
+                "notes": [
+                  {
+                    "en": "Abyss capacity increases, Lower Abyss Dimensional Core HP increases, all Abyss boss HP increases, and Kaira/Argo collision hitboxes become slightly larger. NC gives no player cap, HP or hitbox before/after values, and announces no new boss pattern or reward table.",
+                    "ko": "어비스 입장 수용 인원이 늘고 하층 차원의 핵 HP와 모든 어비스 보스 HP가 증가하며 카이라·아르고 충돌 판정 범위가 소폭 커집니다. 인원·HP·판정 범위 전후 수치는 없고 새 보스 패턴·보상 표도 공지되지 않았습니다."
+                  },
+                  {
+                    "en": "Analysis: larger HP pools can lengthen fights, while larger collision may change contact/targeting feel; measured difficulty and strategy impact remain unverified. Market restrictions for gathered materials are relaxed for some previously restricted accounts but remain for others.",
+                    "ko": "해석: HP 증가는 전투 시간을 늘릴 수 있고 충돌 범위 확대는 접촉·타기팅 체감에 영향을 줄 수 있으나 실제 난도·공략 영향은 미검증입니다. 채집 재료 거래 제한은 일부 기존 제한 계정에서 완화되지만 다른 계정에는 유지됩니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Map, settings and review limits",
+                  "ko": "지도·설정·검토 한계"
+                },
+                "sourceSection": "Fixes / review scope",
+                "notes": [
+                  {
+                    "en": "Verteron Empyrean Traces blocked by Halloween decorations at Dawn Legion Base and Zumion Village move to accessible locations. P1 target: /maps/, /ko/maps/ and data/maps.json. Keep current coordinates until the exact NA in-game coordinates, altitude, spawn/acquisition condition and completion state are verified.",
+                    "ko": "베르테론 새벽빛 군단 주둔지·주미온 마을에서 할로윈 장식 때문에 접근할 수 없던 주신의 흔적이 이동합니다. P1 경로는 /maps/·/ko/maps/ 및 data/maps.json입니다. 북미 인게임 좌표·고도·스폰/획득 조건·완료 상태 확인 전에는 현재 좌표를 유지합니다."
+                  },
+                  {
+                    "en": "Also fixes duplicate Movement Controls entries and a mismatch between an unnamed title's actual and tooltip effects. The exact title and before/after effect are not provided, so no stat input changes are made.",
+                    "ko": "이동 조작 설정의 중복 표시와 이름이 공개되지 않은 타이틀의 실제 효과·툴팁 불일치도 수정합니다. 타이틀명과 전후 효과가 없어 능력치 입력값은 변경하지 않습니다."
+                  },
+                  {
+                    "en": "Skill review targets: /skills/spinning-strike/, /skills/cold-storm/, /skills/fire-wall/ and Korean counterparts, with source-bound records in data/patch-reviews.json and data/news.json. Validate tooltip level/specialty, stacked-condition timing, expiration/reapplication and rotation under NA conditions. data/skills.json, data/skill-snapshot.json and historical DPS remain unchanged because the source provides no coefficients, cooldowns or level values.",
+                    "ko": "스킬 보강 경로: /skills/spinning-strike/·/skills/cold-storm/·/skills/fire-wall/와 한국어 대응 페이지, 원문 해시 기록은 data/patch-reviews.json·data/news.json입니다. 북미 조건에서 툴팁 레벨·특화, 중첩 조건 타이밍, 종료·재부여와 로테이션을 재현해야 합니다. 계수·쿨타임·레벨 수치가 없어 data/skills.json·data/skill-snapshot.json과 과거 DPS는 유지합니다."
+                  },
+                  {
+                    "en": "This is a highlights review of classes and major systems, not a complete republication of the event/product tables. No in-game validation or final class tier is claimed.",
+                    "ko": "직업과 주요 시스템의 highlights 검토이며 이벤트·상품 표 전체를 재정리한 complete 검토가 아닙니다. 인게임 검증이나 최종 직업 티어를 주장하지 않습니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
+          "followups": []
+        },
         {
           "id": "6acf20d007b77e214688a7ac",
           "title": "[Notice] Patch Notes | Oct. 13 (PDT) / Oct. 14 (CEST)",
@@ -7623,8 +7836,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-21T03:00:41Z",
-      "lastSuccessAt": "2026-10-21T03:00:41Z",
+      "checkedAt": "2026-10-21T07:07:19Z",
+      "lastSuccessAt": "2026-10-21T07:07:19Z",
       "error": null,
       "fromCache": false,
       "items": [
