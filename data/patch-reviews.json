@@ -1,15 +1,15 @@
 {
   "6ad7c138577e8c01355e006c": {
-    "contentHash": "3b7887cfc19c4cb1cbbcacdfe20e803544709974154e6e061de6ea4c5b580e52",
-    "reviewedAt": "2026-10-20T19:48:51Z",
+    "contentHash": "71560a8ab7ca59a8355b2cd8f3615ba33de66c5d88c41c9e15c35f199856ecc3",
+    "reviewedAt": "2026-10-21T01:47:22Z",
     "classScopeReviewed": true,
     "title": {
-      "en": "October 21 · Korea (announced)",
-      "ko": "10월 21일 한국 패치 · 시행 예정"
+      "en": "October 21 · Korea",
+      "ko": "10월 21일 한국 패치"
     },
     "summary": {
-      "en": "KR October 21: faster Assault actions, stronger healing reduction, Sorcerer conditional-damage fixes, season extension and Arcana inventory changes. Not an NA patch or measured DPS update.",
-      "ko": "한국 10월 21일 예정: 강습 동작 가속·받는 치유량 감소 강화, 마도성 조건부 피해 수정, 시즌 연장과 아르카나 보유 한도 변경. 북미 패치나 실측 DPS 갱신이 아닙니다."
+      "en": "KR October 21: faster Assault actions, stronger healing reduction, Sorcerer conditional-damage fixes, season extension and Arcana inventory changes. The revised source corrects two Arcana event ranges. Not an NA patch or measured DPS update.",
+      "ko": "한국 10월 21일: 강습 동작 가속·받는 치유량 감소 강화, 마도성 조건부 피해 수정, 시즌 연장과 아르카나 보유 한도 변경. 수정 원문은 아르카나 이벤트 2종의 기간을 정정했습니다. 북미 패치나 실측 DPS 갱신이 아닙니다."
     },
     "changes": [
       {
@@ -348,8 +348,8 @@
           "sourceSection": "적용 범위",
           "notes": [
             {
-              "en": "Announced October 20 at 19:30 UTC; the source revised at 19:40:33 UTC was re-read in full and rebound to its new hash at 19:48:51 UTC. The reviewed facts remain valid. The announced update date is October 21 in Korea, not a confirmed deployment completion.",
-              "ko": "10월 20일 19:30 UTC 발표 후 19:40:33 UTC에 수정된 원문 전체를 19:48:51 UTC에 다시 읽고 새 해시에 연결했습니다. 검토한 변경 사실은 유지됩니다. 시행 예정일은 한국 10월 21일이며 실제 적용 완료를 확인한 것은 아닙니다."
+              "en": "Announced October 20 at 19:30 UTC and revised again October 21 at 01:37:16 UTC. The full revised source was re-read and rebound to its new hash at 01:47:22 UTC. The separate official maintenance notice was marked complete at 00:30:01 UTC, confirming the October 21 Korea effective date.",
+              "ko": "10월 20일 19:30 UTC 발표 후 10월 21일 01:37:16 UTC에 다시 수정됐습니다. 수정 원문 전체를 읽고 01:47:22 UTC에 새 해시에 연결했습니다. 별도 공식 점검 공지는 00:30:01 UTC에 완료로 갱신돼 한국 10월 21일 적용을 확인했습니다."
             },
             {
               "en": "KR-only: do not copy healing suppression, speed, season dates or collectible changes to NA. Skills/research inputs remain the existing NA reference; historical ranking values, periods and conditions are unchanged.",
@@ -374,8 +374,8 @@
               "ko": "시즌4 종료는 11월 4일에서 11월 11일로 연장됩니다. 시즌 콘텐츠·미션 초기화, 시즌 아이템 삭제, 패스·시즌 상점 판매, 시즌 제작·보스 의뢰 납품 마감도 11월 11일로 이동합니다. 불꽃의 유산·환영의 첫 만남 패스 이용은 11월 11일까지, 구독은 11월 10일까지입니다."
             },
             {
-              "en": "Growth Support use ends November 11; activation and coin purchase/validity end November 4. The two Arcana support events announce extension through November 11, but their printed after-ranges begin November 4 despite earlier starts in the before-ranges; do not infer that the events restart.",
-              "ko": "성장 서포트 이용은 11월 11일까지, 활성화·주화 구매 및 유효 기간은 11월 4일까지로 연장됩니다. 아르카나 지원 이벤트 2종도 11월 11일 종료 연장을 공지하나 변경 후 표의 시작일이 종전과 달리 11월 4일로 적혀 있어 신규 재시작으로 해석하지 않습니다."
+              "en": "Growth Support use ends November 11; activation and coin purchase/validity end November 4. NC's October 21 01:37 UTC correction now prints August 19–November 11 for both Arcana support events. For Arcana Supply Support, the before-range starts August 26 while the corrected after-range starts August 19; this is the publisher's stated range, not an inferred restart or retroactive entitlement.",
+              "ko": "성장 서포트 이용은 11월 11일까지, 활성화·주화 구매 및 유효 기간은 11월 4일까지로 연장됩니다. NC의 10월 21일 01:37 UTC 정정 후 아르카나 지원 이벤트 2종의 변경 후 기간은 모두 8월 19일~11월 11일로 표기됩니다. 아르카나 보급 지원은 변경 전 시작일이 8월 26일이지만 정정 후에는 8월 19일로 적혀 있으며, 이를 신규 재시작이나 소급 지급으로 해석하지 않습니다."
             },
             {
               "en": "P1 interpretation: KR planning deadlines change, but unlocks, costs and rewards must be checked in the relevant client before rewriting the NA beginner path. Verify pass/subscription prerequisites and each individual item deadline.",

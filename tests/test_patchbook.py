@@ -43,7 +43,9 @@ class PatchbookTests(unittest.TestCase):
         self.assertIn('75%',corrode['after']['ko'])
         self.assertNotEqual(item['reviewedAt'],item['publishedAt'])
         output=patchbook.render_detail(item,'ko','/Aion2-Daeva-Atlas/')
-        self.assertIn('시행 예정',output)
+        self.assertIn('한국 10월 21일 적용을 확인했습니다',output)
+        self.assertNotIn('시행 예정',output)
+        self.assertIn('8월 19일~11월 11일',output)
         self.assertIn('인게임 테스트는 수행하지 못했습니다',output)
         self.assertIn('data/maps.json',output)
         item['contentHash']='new-revision'
