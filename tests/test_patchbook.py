@@ -155,4 +155,22 @@ class PatchbookTests(unittest.TestCase):
         regular['contentHash']='changed'
         self.assertEqual(reviewed(regular,self.reviews)['followups'],[])
 
+    def test_unresolved_arcana_issue_is_not_reported_as_a_fix(self):
+        item=self.reviewed_item('6ad8207a577e8c01355e00c1')
+        self.assertEqual(item['region'],'KR')
+        self.assertEqual(item['source'],'kr-notice')
+        self.assertEqual(item['detail']['coverage'],'highlights')
+        self.assertEqual([row['type'] for row in item['changes']],['system'])
+        self.assertTrue(all('before' not in row and 'after' not in row for row in item['changes']))
+        self.assertIn('조치 일정은 아직 공지되지',item['summary']['ko'])
+        self.assertNotIn('북미',item['changes'][0]['description']['ko'])
+        page=patchbook.render_detail(item,'ko','/')
+        self.assertIn('수정 완료 공지가 아닙니다',page)
+        self.assertIn('인게임 검증은 수행하지 않았습니다',page)
+        self.assertIn('data/patch-reviews.json',page)
+        item['contentHash']='changed'
+        revised=reviewed(item,self.reviews)
+        self.assertEqual(revised['reviewState'],'revised')
+        self.assertEqual(revised['changes'],[])
+
 if __name__=='__main__':unittest.main()
