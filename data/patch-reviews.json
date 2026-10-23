@@ -7185,5 +7185,163 @@
         }
       ]
     }
+  },
+  "6adbaeb06cfe4756db5b8efb": {
+    "kind": "patch",
+    "source": "na-notice",
+    "contentHash": "d28ccd927d9119af7fe06e63d069210f05113d21cff5007e01f6a6104e2a89b0",
+    "reviewedAt": "2026-10-23T20:35:14Z",
+    "classScopeReviewed": true,
+    "title": {
+      "en": "November 4 · North America Ludra preview",
+      "ko": "11월 4일 북미 · 루드라 사전 안내"
+    },
+    "summary": {
+      "en": "NA preview: Ludra arrives November 4 with new mechanics. Normal requires item level 2800 and Hard requires 3000. NC also announced a Hard-clear race, daily Odyle Energy support and a dungeon-clear community event; detailed attack patterns and reward/drop rates were not published.",
+      "ko": "북미 사전 안내: 루드라가 11월 4일 새 기믹과 함께 추가됩니다. 일반은 아이템 레벨 2800, 어려움은 3000이 필요합니다. 어려움 선착순 클리어, 오딜 에너지 지원, 던전 클리어 이벤트도 발표됐지만 세부 공격 패턴과 보상 확률은 공개되지 않았습니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Ludra · Normal and Hard launch",
+          "ko": "루드라 · 일반·어려움 출시"
+        },
+        "description": {
+          "en": "Ludra becomes available in North America on November 4 with Normal and Hard difficulties and newly announced mechanics.",
+          "ko": "북미에 루드라 일반·어려움 난도가 11월 4일 추가되며 새로운 기믹이 예고됐습니다."
+        },
+        "after": {
+          "en": "Normal item level 2800; Hard item level 3000",
+          "ko": "일반 아이템 레벨 2800 · 어려움 3000"
+        },
+        "impact": {
+          "en": "P1 analysis: this creates a new endgame preparation target, but NC has not published attack triggers, counters, enrage timing, revive rules or drop rates. Do not publish a pattern guide from the preview alone.",
+          "ko": "P1 해석: 새 최종 콘텐츠 준비 목표가 생깁니다. 다만 공격 발동조건·대응법·광폭화·부활 규칙·드롭률은 공개되지 않았으므로 이 예고만으로 패턴 공략을 발표하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Ludra Hunt · clear recognition",
+          "ko": "루드라 사냥 · 클리어 칭호"
+        },
+        "description": {
+          "en": "From November 4 maintenance until November 24 maintenance (PST), the first 20 Hard-clear parties in each listed region receive ranked titles; other Normal or Hard clears receive the Ludra Hunter title.",
+          "ko": "PST 기준 11월 4일 점검 후부터 11월 24일 점검 전까지 각 대상 지역의 어려움 선착순 20개 파티에는 순위별 칭호가, 그 밖의 일반·어려움 클리어에는 루드라 사냥꾼 칭호가 지급됩니다."
+        },
+        "impact": {
+          "en": "P1 analysis: clear timing and party eligibility matter for the event, but ranking is regional and is not evidence of class strength or measured DPS.",
+          "ko": "P1 해석: 이벤트에는 클리어 시각과 파티 자격이 중요하지만 지역별 선착순 기록은 직업 성능이나 실측 DPS 근거가 아닙니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Odyle Energy Boost",
+          "ko": "오딜 에너지 지원"
+        },
+        "description": {
+          "en": "From October 28 after maintenance through November 10 before maintenance (PST), each character can claim two Odyle Energy from in-game mail once per day; each mail expires after seven days.",
+          "ko": "PST 기준 10월 28일 점검 후부터 11월 10일 점검 전까지 캐릭터별로 매일 게임 우편에서 오딜 에너지 2개를 받을 수 있으며 우편은 수령 후 7일 뒤 만료됩니다."
+        },
+        "after": {
+          "en": "2 Odyle Energy per character per day; mail expires in 7 days",
+          "ko": "캐릭터당 매일 오딜 에너지 2개 · 우편 7일 만료"
+        },
+        "impact": {
+          "en": "P1 analysis: this temporarily increases available Expedition and Transcendence Dungeon runs. Actual mailbox reset, claim prerequisites and regional maintenance timing require client verification.",
+          "ko": "P1 해석: 원정·초월 던전 이용 기회가 일시적으로 늘어납니다. 실제 우편 초기화 시각·수령 조건·지역 점검 시각은 클라이언트 확인이 필요합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, announcement and effective dates",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "Ludra Updates",
+          "notes": [
+            {
+              "en": "Published October 23 at 19:00 UTC and revised at 19:00:27 UTC for the North American service. Ludra and its related events are scheduled for November 4; the Odyle Energy support starts after the October 28 maintenance.",
+              "ko": "북미 서비스 공지는 10월 23일 19:00 UTC에 게시되고 19:00:27 UTC에 수정됐습니다. 루드라와 관련 이벤트는 11월 4일, 오딜 에너지 지원은 10월 28일 점검 후 시작 예정입니다."
+            },
+            {
+              "en": "NA-only: do not apply this schedule, item-level gate or event eligibility to Korea. No class skill, coefficient, cooldown or level-effect changes are announced.",
+              "ko": "북미 전용입니다. 일정·아이템 레벨 조건·이벤트 자격을 한국에 적용하지 않습니다. 직업 스킬·계수·쿨타임·레벨 효과 변경은 공지되지 않았습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Ludra encounter facts and guide impact",
+            "ko": "루드라 전투 사실과 공략 영향"
+          },
+          "sourceSection": "Ludra Updates / Ludra Hunt",
+          "notes": [
+            {
+              "en": "Official fact: Normal and Hard open immediately at item levels 2800 and 3000. The notice says there are new mechanics but does not identify the region/arena, pattern conditions, counters, animations, enrage timer, revive limit or loot probabilities.",
+              "ko": "공식 사실: 일반 2800·어려움 3000 아이템 레벨에서 두 난도가 즉시 열립니다. 새 기믹이 있다고만 밝혔으며 전투 지역·패턴 조건·대응법·애니메이션·광폭화·부활 제한·보상 확률은 공개하지 않았습니다."
+            },
+            {
+              "en": "P1 guide impact: publish the source-bound preview at /updates/na-6adbaeb06cfe4756db5b8efb/ and /ko/updates/na-6adbaeb06cfe4756db5b8efb/. Current main has no dedicated Ludra dungeon page, so no route or boss-pattern animation is invented from this announcement.",
+              "ko": "P1 공략 영향: 해시에 연결된 사전 안내를 /updates/na-6adbaeb06cfe4756db5b8efb/와 /ko/updates/na-6adbaeb06cfe4756db5b8efb/에 게시합니다. 현재 main에는 루드라 전용 던전 페이지가 없으므로 이 공지만으로 경로나 보스 패턴 애니메이션을 만들지 않습니다."
+            },
+            {
+              "en": "Direct verification pending: difficulty labels and item-level gate, party size and eligibility, every attack trigger/counter, enrage and revive rules, clear recognition, title delivery and rewards in the NA client after November 4.",
+              "ko": "직접 검증 대기: 11월 4일 이후 북미 클라이언트에서 난도 표기·아이템 레벨 조건, 파티 인원·자격, 모든 공격 발동조건·대응, 광폭화·부활 규칙, 클리어 판정·칭호 지급·보상을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Temporary growth support and priorities",
+            "ko": "기간 한정 성장 지원·우선순위"
+          },
+          "sourceSection": "Odyle Energy Boost / Daeva Bootcamp!",
+          "notes": [
+            {
+              "en": "The two daily Odyle Energy items are sent per character and expire from mail after seven days. NC says they can be used for more Expeditions and Transcendence Dungeons; it does not announce a permanent reset or cap change.",
+              "ko": "매일 오딜 에너지 2개는 캐릭터별 우편으로 지급되고 7일 뒤 만료됩니다. 추가 원정·초월 던전에 사용할 수 있다고 안내했지만 영구적인 초기화·한도 변경은 아닙니다."
+            },
+            {
+              "en": "Daeva Bootcamp counts eligible regional clears of Krao Cave, Draupnir, Urugugu Canyon and Vakron Sky Island (Normal/Hard), plus every stage of Shattered Arkanis and Deus Research Base. Rewards unlock at global milestones; this review does not recreate the full reward or Twitch Drop tables.",
+              "ko": "데바 부트캠프는 크라오 동굴·드라웁니르·우루구구 협곡·바크론 공중섬 일반/어려움과 산산조각 난 아르카니스·데우스 연구기지 전 단계의 지역별 클리어를 집계합니다. 글로벌 목표 달성 시 보상이 열리며 이번 검토는 전체 보상·Twitch Drops 표를 재작성하지 않습니다."
+            },
+            {
+              "en": "P1 guide targets after verification: /start/, /endgame/ and /guides/dungeon-rewards/ in both languages. Confirm mailbox reset, character/account scope, event unlocks, eligible-dungeon recognition, reward delivery and prerequisites before changing evergreen priorities.",
+              "ko": "P1 검증 후 보강 경로: 양 언어의 /start/·/endgame/·/guides/dungeon-rewards/입니다. 상시 우선순위를 바꾸기 전 우편 초기화·캐릭터/계정 범위·이벤트 해금·대상 던전 집계·보상 지급·선행조건을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Review scope and preserved research",
+            "ko": "검토 범위·보존한 연구 자료"
+          },
+          "sourceSection": "Review limits",
+          "notes": [
+            {
+              "en": "This is a highlights review of the boss launch and progression-relevant events, not a complete republication of login rewards, Twitch Drops, cosmetics, contest rules or every reward row. No in-game validation is claimed.",
+              "ko": "보스 출시와 성장 관련 이벤트의 highlights 검토이며 출석 보상·Twitch Drops·외형·공모전 규칙·모든 보상 행을 완전히 재게시한 것이 아닙니다. 인게임 검증을 주장하지 않습니다."
+            },
+            {
+              "en": "Exact source-bound data paths are data/patch-reviews.json and data/news.json. data/skills.json, data/skill-snapshot.json, data/coverage-audit.json inputs and historical DPS/ranking observations remain unchanged because no numeric skill change or measured combat result is supplied.",
+              "ko": "정확한 해시 연결 데이터 경로는 data/patch-reviews.json과 data/news.json입니다. 수치형 스킬 변경이나 실측 전투 결과가 없어 data/skills.json·data/skill-snapshot.json·data/coverage-audit.json 입력과 과거 DPS·순위 관측값은 유지합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
   }
 }
