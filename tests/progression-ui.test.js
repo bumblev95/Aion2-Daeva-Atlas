@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
 const routes = ['pet-growth','gear-targets','dungeon-rewards','kinah-farming'];
 
 async function auditGuideLinks(page) {
-  const links = await page.locator('[data-topic-reader] a, #growth-sources a').evaluateAll(nodes => nodes.map(n => n.href));
+  const links = await page.locator('[data-topic-reader] a, #growth-sources a, [data-ludra-entry] a').evaluateAll(nodes => nodes.map(n => n.href));
   assert(links.length>0,'Growth guide must expose links to audit');
   for (const link of links) {
     const u = new URL(link);
@@ -88,6 +88,22 @@ async function contained(page, label) {
           await page.setViewportSize({width:390,height:844});
           await page.goto(local+'guides/'+slug+'/');
           await page.screenshot({path:path.join(artifacts,'growth-'+slug+'-'+lang+'-phone.png')});
+        }
+        if(['gear-targets','dungeon-rewards'].includes(slug)) {
+          const note=page.locator('[data-ludra-entry]');
+          assert.equal(await note.isVisible(),true);
+          for(const token of ['2,800','3,000','102']) assert((await note.textContent()).includes(token));
+          await note.locator('a[href$="endgame-crafts/#craft-na-ludra"]').click();
+          await page.waitForURL('**/guides/endgame-crafts/#craft-na-ludra');
+          assert.equal(await page.locator('#craft-na-ludra').isVisible(),true);
+          await page.locator('#craft-na-ludra a[href$="updates/na-6adbaeb06cfe4756db5b8efb/"]').click();
+          await page.waitForURL('**/updates/na-6adbaeb06cfe4756db5b8efb/');
+          assert.match(await page.locator('h1').textContent(),/Ludra|루드라/);
+          assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang==='ko');
+          await page.locator('.navtools a.lang').click();
+          await page.waitForURL('**/updates/na-6adbaeb06cfe4756db5b8efb/');
+          assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
+          await page.goto(local+'guides/'+slug+'/');
         }
       }
 

@@ -3,11 +3,13 @@ from html import escape as e
 import json
 
 REVIEWED = '2026-10-13'
+LUDRA_PREVIEW = 'updates/na-6adbaeb06cfe4756db5b8efb/'
+LUDRA_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb'
 GUIDES = [
     dict(slug='gear-options', group='gear', region='GLOBAL', title=('Gear options & transfers', '장비 옵션·영혼 부여·계승'), description=('Choose between Sync, Bind, Reset and a transfer.', '옵션 변경·수치 상승·전체 재설정·계승을 상황에 맞게 선택합니다.')),
     dict(slug='shugo-festival', group='routines', region='GLOBAL', title=('Shugo Festival: play, keys & purchases', '페스타 종목·열쇠·상점 공략'), description=('Choose an activity, a reward claim and your next purchase.', '종목을 고르고, 보상 열쇠를 쓰고, 성장 재료로 교환하는 순서.')),
     dict(slug='stigma-growth', group='gear', region='GLOBAL / KR', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate Global purchases from dated KR stock and level costs.', '글로벌 구매 참고와 한국 상점 한도·레벨별 소모량을 구분합니다.')),
-    dict(slug='endgame-crafts', group='gear', region='GLOBAL', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Match one useful craft to its materials and reward routes.', '필요한 완성품 하나를 정하고 재료·보상 획득처를 연결합니다.')),
+    dict(slug='endgame-crafts', group='gear', region='GLOBAL / NA', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Global crafting references and NA Ludra launch preparation.', '글로벌 제작 참고와 북미 루드라 출시 준비를 구분합니다.')),
     dict(slug='kr-pendant', group='gear', region='KR', title=('KR Draconic Pendant enhancement', '한국 펜던트 강화·실패 보정'), description=('Read the next attempt and understand increasing failure compensation.', '유일 펜던트의 다음 시도 확률과 실패 보정을 이해합니다.')),
     dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14 change.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일 변경 사항.')),
 ]
@@ -22,6 +24,7 @@ SOURCES = {
     'orbs': ('https://www.inven.co.kr/board/aion2/6444/2340', 'Inven · 모뮤 · 2026-10-09', 'KR proposed raid strategy'),
     'movement': ('https://www.inven.co.kr/board/aion2/6444/2338', 'Inven · 깔개수호 · 2026-10-08', 'KR raid strategy'),
     'patch': ('https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ace86b86cfe4756db5b8d81', 'NC · KR · 2026-10-14 (07:02 revision)', 'Official regional patch'),
+    'ludra-na': (LUDRA_NOTICE, 'NC · NA · Ludra Awakens on November 4th · 2026-10-23', 'Official NA announcement; rechecked 2026-10-25. Entry and events, not a crafting or loot table.'),
 }
 # Base probability and compensation agree across both KR tables. Costs do not.
 PENDANT_CHANCES = [75, 50, 33, 33, 25, 25, 25, 20, 20, 20, 15, 10, 10, 8, 6, 5, 4, 3, 2, 1]
@@ -140,10 +143,21 @@ def stigma(v):
 
 
 def crafts(v):
+    scope='<div class="ag-note" data-ludra-scope><strong>'+v.t('NA · November 4, 2026: check entry separately', '북미 · 2026년 11월 4일: 입장 조건은 별도 확인')+'</strong><p>'+v.t('NC announces character entry item level 2,800 for Normal and 3,000 for Hard. The Global recipe below is a third-party reference, not confirmation of the NA launch recipe or rewards.', 'NC가 발표한 캐릭터 입장 아이템 레벨은 일반 2,800·어려움 3,000입니다. 아래 글로벌 제작식은 제3자 참고 자료이며 북미 출시 제작식·보상 확정 정보가 아닙니다.')+'</p>'+v.link(LUDRA_PREVIEW,v.t('NA official-news summary & source', '북미 공식 소식 요약·원문'))+' · <a href="#craft-na-ludra">'+v.t('Before launch / verify in game', '출시 전 준비 / 인게임 확인')+' →</a></div>'
     bracelet=v.cards([
-        ('shield',('Abyssal Bracelet','Abyssal Bracelet · 팔찌'),('Global play guide recipe: 3 Ludra Gear Vouchers (Bound) + 5,000,000 Kina.', '글로벌 플레이 공략의 제작 재료: Ludra Gear Voucher (Bound) 3개 + 키나 5,000,000.')),
-        ('boss',('Collect raid rewards','레이드 보상 모으기'),('Follow the Ludra reward route; keep vouchers for the intended craft.', '루드라 보상에서 교환권을 모으고 제작용으로 남깁니다.')),
+        ('shield',('Abyssal Bracelet · Global reference','Abyssal Bracelet · 글로벌 참고'),('Mobalytics Global recipe, rechecked October 25: 3 Ludra Gear Vouchers (Bound) + 5,000,000 Kina. NA applicability remains unverified.', '10월 25일 재확인한 Mobalytics 글로벌 제작식: Ludra Gear Voucher (Bound) 3개 + 키나 5,000,000. 북미 적용은 미확인입니다.')),
+        ('boss',('Check before collecting or buying','모으거나 구매하기 전에 확인'),('In NA, first check the live reward and Substance Morph previews for the voucher name, quantity, binding, currency cost and recipe availability. Do not spend based on this reference alone.', '북미에서는 실제 보상·물질 변환 창의 교환권 이름·수량·귀속·키나 비용·레시피 해금 여부를 먼저 확인하세요. 이 참고 제작식만 보고 재료를 구매하지 마세요.')),
     ])
+    prep=v.steps([
+        (('Before launch · compare your entry total', '출시 전 · 캐릭터 입장 수치 비교'),('Use the announced NA goals: Normal 2,800 / Hard 3,000. Global gear level 102 describes one equipment item; it is neither this character entry total nor a confirmed NA reward level.', '북미 공지 목표인 일반 2,800·어려움 3,000과 현재 수치를 비교하세요. 글로벌 장비 레벨 102는 개별 장비의 수치이며 캐릭터 입장 종합 수치나 확정된 북미 보상 레벨이 아닙니다.')),
+        (('Before launch · plan temporary energy', '출시 전 · 임시 에너지 지원 계획'),('NC announces 2 Odyle Energy per character per day by mail, October 28 after maintenance–November 10 before maintenance (PST). Mail expires 7 days after receipt; check regional maintenance notices and the mailbox timer.', 'NC는 PST 기준 10월 28일 점검 후~11월 10일 점검 전 캐릭터당 매일 오딜 에너지 2개 우편 지급을 안내했습니다. 우편은 받은 뒤 7일 후 만료되므로 지역 점검 공지와 우편 타이머를 확인하세요.')),
+        (('Before launch · read Ludra Hunt eligibility', '출시 전 · 루드라 사냥 이벤트 자격 읽기'),('The first 20 Hard-clear parties per listed region receive ranked titles; other event-period Normal/Hard clears receive Ludra Hunter. Announced window: November 4 after maintenance–November 24 before maintenance (PST). Read NC’s full rules; entry level alone does not guarantee a clear or title eligibility.', '대상 지역별 어려움 선착순 20개 파티에 순위별 칭호, 그 밖의 이벤트 기간 일반·어려움 클리어에 루드라 사냥꾼 칭호를 안내했습니다. PST 기준 11월 4일 점검 후~11월 24일 점검 전이며 NC 전체 규칙을 확인하세요. 입장 수치 달성만으로 클리어·칭호 자격이 보장되지는 않습니다.')),
+    ])
+    pending=v.cards([
+        ('check',('Verify in the NA client · entry & events', '북미 인게임 확인 · 입장·이벤트'),('After launch: difficulty labels, displayed entry gate, party size, unlock requirements, entry/reward limits, clear recognition and title delivery. When support starts: mail reset time, claim conditions and expiry. No direct gameplay verification is claimed.', '출시 후: 난도·표시 입장 조건·파티 인원·선행조건·입장/보상 제한·클리어 판정·칭호 지급. 지원 시작 후: 우편 초기화 시각·수령 조건·만료 시간. 직접 플레이 검증은 아직 하지 않았습니다.')),
+        ('boss',('Verify in the NA client · rewards & combat', '북미 인게임 확인 · 보상·전투'),('Check actual gear levels and bracelet recipes. Attack triggers, counters, enrage/revive rules and drop probabilities are not published in this notice; no NA pattern or drop-rate guide can be derived from it.', '실제 보상 장비 레벨과 팔찌 제작식을 확인해야 합니다. 이 공지는 공격 발동조건·대응법·광폭화/부활 규칙·드롭 확률을 공개하지 않았으므로 북미 패턴·확률 공략의 근거로 쓰지 않습니다.')),
+    ])
+    na=('<p class="ag-small">'+v.t('NA announcement: October 23 · rechecked October 25, 2026. The older Global references below keep their original review scope.', '북미 발표: 10월 23일 · 2026년 10월 25일 재확인. 아래 기존 글로벌 참고 자료의 검토 범위는 유지합니다.')+'</p>'+prep+pending+v.link(LUDRA_PREVIEW,v.t('Read the NA official-news summary', '북미 공식 소식 요약 읽기'))+' · <a href="'+LUDRA_NOTICE+'" target="_blank" rel="noopener noreferrer">'+v.t('NC · official NA notice', 'NC · 북미 공식 원문')+' ↗</a>')
     arcana=v.cards([
         ('book',('Base Unique Arcana','기본 유일 아르카나 제작'),('Global table: 5 Mysterious Crystals + 2,000,000 Kina. Extra selected options add costs.', '글로벌 표의 기본 제작은 Mysterious Crystal 5개 + 키나 2,000,000. 추가 선택 옵션에는 비용이 더 듭니다.')),
         ('spark',('Choose the right card','필요한 카드부터 선택'),('Chalice, Parchment, Compass, Bell and Mirror occupy different slots. Compare the skill/passive bonus before crafting.', '성배·양피지·나침반·종·거울은 슬롯이 다릅니다. 제작 전에 필요한 스킬·패시브 보너스를 비교하세요.')),
@@ -153,9 +167,10 @@ def crafts(v):
         (('Reserve useful cards','쓸 카드는 먼저 남기기'),('Crystals have season reward and Arcana extraction routes; do not extract a card you still need.', '결정은 시즌 보상·아르카나 추출 경로를 확인합니다. 쓸 카드를 먼저 남기세요.')),
         (('Review the full recipe','총 제작 비용 확인'),('Base crafting and optional picks are different budgets. Keep enough Kinah for the next useful upgrade.', '기본 제작과 추가 선택 비용을 구분하고 다음 성장에 쓸 키나도 남깁니다.')),
     ])
-    return [(('bracelet',('Bracelet','팔찌')),v.section('craft-bracelet',('A raid reward with a purpose','목표를 정하고 레이드 보상 모으기'),bracelet)),
+    return [(('bracelet',('Bracelet','팔찌')),v.section('craft-bracelet',('A raid reward with a purpose','목표를 정하고 레이드 보상 모으기'),scope+bracelet)),
+            (('na-ludra',('NA · November 4','북미 · 11월 4일')),v.section('craft-na-ludra',('Prepare from confirmed NA information','확인된 북미 정보로 준비하기'),na)),
             (('arcana',('Arcana','아르카나')),v.section('craft-arcana',('Craft for a skill you use','자주 쓰는 스킬을 위한 제작'),arcana)),
-            (('materials',('Material route','재료 모으기')),v.section('craft-materials',('Keep, collect, then craft','남길 것·모을 것·만들 것'),route+v.link('routines/#routine-transcendence',v.t('Arcana reward route','아르카나 보상 경로'))+v.link('guides/kinah-farming/',v.t('Plan your Kinah','키나 예산 준비'))))],['gear','arcana','arcana-guide']
+            (('materials',('Material route','재료 모으기')),v.section('craft-materials',('Keep, collect, then craft','남길 것·모을 것·만들 것'),route+v.link('routines/#routine-transcendence',v.t('Arcana reward route','아르카나 보상 경로'))+v.link('guides/kinah-farming/',v.t('Plan your Kinah','키나 예산 준비'))))],['ludra-na','gear','arcana','arcana-guide']
 
 
 def pendant(v):
@@ -213,7 +228,10 @@ def render(slug, lang, base):
     from guidebrowse import Fragments
     panels=[(key,title,[next(iter(Fragments(body).ids))]) for (key,title),body in entries]
     scope=v.t('Dated source guidance; confirm the material and reward preview for your region.', '출처 날짜가 있는 공략입니다. 재료·보상은 자신의 서버 미리보기와 맞춰 확인하세요.')
-    lead=f'<div class="ag-scope"><span class="ag-region">{g["region"]}</span><span>{v.t("Reviewed","검토")} {REVIEWED}</span><p>{scope}</p></div>'
+    reviewed=v.t('Reviewed','검토')+' '+REVIEWED
+    if slug=='endgame-crafts':
+        reviewed=v.t('Global references: 2026-10-13 · Ludra sections rechecked: 2026-10-25', '글로벌 참고: 2026-10-13 · 루드라 항목 재확인: 2026-10-25')
+    lead=f'<div class="ag-scope"><span class="ag-region">{g["region"]}</span><span>{reviewed}</span><p>{scope}</p></div>'
     return '<div class="advanced-guide" data-practical-page="'+slug+'">'+reader(lang,slug,source,panels,tail=['ag-sources'],lead=lead)+'</div>'
 
 
