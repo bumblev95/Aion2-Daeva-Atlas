@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-25T01:05:16Z",
+  "checkedAt": "2026-10-25T06:01:57Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-25T01:05:16Z",
-      "lastSuccessAt": "2026-10-25T01:05:16Z",
+      "checkedAt": "2026-10-25T06:01:57Z",
+      "lastSuccessAt": "2026-10-25T06:01:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6630,8 +6630,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-25T01:05:16Z",
-      "lastSuccessAt": "2026-10-25T01:05:16Z",
+      "checkedAt": "2026-10-25T06:01:57Z",
+      "lastSuccessAt": "2026-10-25T06:01:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6657,13 +6657,13 @@
         },
         {
           "id": "6add4eb428c7452635072d00",
-          "title": "[안내] Plaync 마이페이지 결제 페이지 접속 및 선물 수령 불가 현상 안내",
+          "title": "[안내] Plaync 마이페이지 결제 페이지 접속 및 선물 수령 불가 현상 안내 (완료)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6add4eb428c7452635072d00",
           "publishedAt": "2026-10-25T00:35:00.309Z",
-          "sourceUpdatedAt": "2026-10-25T00:35:48.019Z",
+          "sourceUpdatedAt": "2026-10-25T02:39:34.208Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -7260,8 +7260,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-25T01:05:16Z",
-      "lastSuccessAt": "2026-10-25T01:05:16Z",
+      "checkedAt": "2026-10-25T06:01:57Z",
+      "lastSuccessAt": "2026-10-25T06:01:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7836,8 +7836,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-25T01:05:16Z",
-      "lastSuccessAt": "2026-10-25T01:05:16Z",
+      "checkedAt": "2026-10-25T06:01:57Z",
+      "lastSuccessAt": "2026-10-25T06:01:57Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7863,13 +7863,13 @@
         },
         {
           "id": "6acf216828c7452635072ccd",
-          "title": "[Notice] Temporary Maintenance (EU) | Oct 24 PDT / Oct 25 CEST",
+          "title": "[Notice] Temporary Maintenance (EU) | Oct 24 PDT / Oct 25 CEST (Complete)",
           "region": "NA",
           "kind": "news",
           "source": "na-notice",
           "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6acf216828c7452635072ccd",
           "publishedAt": "2026-10-24T00:00:00.001Z",
-          "sourceUpdatedAt": "2026-10-24T00:00:11.691Z",
+          "sourceUpdatedAt": "2026-10-25T02:58:29.261Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
