@@ -164,6 +164,10 @@ async function panel(page,key) {
     await motion.route('https://**/*',route=>route.abort());
     const page=await motion.newPage();
     await page.goto(base+'ko/guides/kr-bitan/');
+    // The reader reparents native disclosures. Let it and font layout settle
+    // before scrolling the observed lesson into view for the autoplay check.
+    await page.waitForFunction(()=>document.querySelector('[data-topic-reader]')?.dataset.readerReady==='true' && document.fonts.status==='loaded');
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
     const raid=page.locator('[data-raid-lesson="orbs"]');
     await raid.scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('[data-raid-lesson="orbs"]').dataset.phase!=='0',{},{timeout:6500});
