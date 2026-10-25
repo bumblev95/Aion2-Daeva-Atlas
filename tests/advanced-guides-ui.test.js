@@ -84,6 +84,21 @@ async function panel(page,key) {
       await panel(page,'kr-shop');
       assert.equal(await page.locator('.ag-table tbody tr').count(),5);
       await screenshot(page,{path:path.join(artifacts,'stigma-shop-'+lang+'-390.png'),fullPage:true});
+      await page.goto(local+'guides/endgame-crafts/');
+      assert.equal(await page.locator('[data-ludra-scope]').isVisible(),true);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/3 Ludra Gear Vouchers|3개/);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/5,000,000/);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/NA applicability remains unverified|북미 적용은 미확인/);
+      await page.locator('[data-ludra-scope] a[href="#craft-na-ludra"]').click();
+      assert.equal(await page.locator('[data-reader-panel="na-ludra"]').isVisible(),true);
+      const preparation=await page.locator('#craft-na-ludra').textContent();
+      for(const token of ['2,800','3,000','102','PST']) assert(preparation.includes(token));
+      assert.match(preparation,/not published|공개하지 않았/);
+      await screenshot(page,{path:path.join(artifacts,'na-ludra-preparation-'+lang+'-390.png'),fullPage:true});
+      await page.locator('.navtools a.lang').click();
+      await page.waitForURL('**/guides/endgame-crafts/#craft-na-ludra');
+      assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
+      assert.equal(await page.locator('#craft-na-ludra').isVisible(),true);
       await page.goto(local+'guides/kr-pendant/');
       await page.locator('[data-pendant-failures]').fill('2');
       assert.equal(await page.locator('[data-pendant-chance]').textContent(),'85%');
@@ -137,6 +152,11 @@ async function panel(page,key) {
         assert.equal(await fallback.locator('.reader-panel').last().getAttribute('open'),'');
         await contained(fallback,'no-script '+slug+'/'+lang);
         assert.equal(await fallback.locator('a[href^="https://"]').count()>0,true);
+        if(slug==='endgame-crafts') {
+          await fallback.locator('[data-reader-panel="na-ludra"] > summary').click();
+          assert.equal(await fallback.locator('#craft-na-ludra').isVisible(),true);
+          await contained(fallback,'no-script NA preparation/'+lang);
+        }
       }
       await native.close();
     }

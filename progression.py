@@ -7,6 +7,7 @@ from html import escape as e
 from fieldnotes import BOSSES, KR_SOURCES
 import growthvisuals
 import guidebrowse
+from advancedguides import LUDRA_NOTICE, LUDRA_PREVIEW
 
 REVIEWED = '2026-10-12'
 ROOT = 'guides/'
@@ -219,8 +220,8 @@ def gear_guide(v):
         (('Wrong weapon or missing accessory', '다른 직업 무기·부족한 장신구'),
          ('The weapon-side dungeons have accessory-chest recipes and weapon-selection conversions. A weapon swap also needs the matching dungeon weapon; a voucher alone is not a free weapon.', '무기 쪽 던전에는 장신구 상자와 무기 선택 변환이 있습니다. 무기 교환에는 해당 던전 무기도 필요하므로 교환권만으로 무기를 받는 것으로 생각하면 안 됩니다.')),
         (('Planning past this ladder', '다음 단계까지 준비할 때'),
-         ('In this Global snapshot, Ludra weapons/guard and Splendent Wise or Ebony Dragon Lord crafts reach item level 102. Price the recipe chain before buying materials.', '확인한 글로벌 자료에서는 루드라 무기·수호패와 Splendent Wise / Ebony Dragon Lord 제작이 장비 레벨 102 목표입니다. 재료 구매 전 전체 제작 경로를 계산하세요.')),
-    ])+v.cite('gear')
+         ('MetaBot’s Global reference lists Ludra weapons/guard and Splendent Wise or Ebony Dragon Lord crafts at individual equipment level 102. Rechecked October 25: this is not the NA character entry total of 2,800 / 3,000, and NA loot levels and recipes remain unverified.', '10월 25일 재확인한 MetaBot 글로벌 참고는 루드라 무기·수호패와 Splendent Wise / Ebony Dragon Lord 제작의 개별 장비 레벨을 102로 안내합니다. 북미 캐릭터 입장 종합 수치 2,800·3,000과 다르며 북미 보상 레벨·제작식은 미확인입니다.')),
+    ])+v.cite('gear')+v.a(LUDRA_PREVIEW,t('NA Ludra official-news summary', '북미 루드라 공식 소식 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('NA preparation and crafting checks', '북미 준비·제작 확인 항목'),'progress-action')
     return (
         '<div class="progress-callout"><strong>'+t('Entry total ≠ one item’s level', '입장 종합 수치 ≠ 장비 한 개의 레벨')+'</strong><p>'+t('700 / 1,400 / 2,100 are character entry gates for the Conquest pairs below. 54 / 70 / 86 are the target items’ own levels. The ladder is a Global reference, not a current KR best-in-slot list.', '아래 700·1,400·2,100은 정복 입장에 필요한 캐릭터 종합 수치, 54·70·86은 보상 장비 자체의 레벨입니다. 글로벌 성장 참고이며 현재 한국 서버의 최종 장비표가 아닙니다.')+'</p></div>'+
         '<div id="gear-ladder">'+ladder+'</div>'+
@@ -302,6 +303,11 @@ def kinah_guide(v):
         v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah','duties','depository']))
 
 
+def ludra_entry(v):
+    t=v.t
+    return '<aside class="progress-callout" data-ludra-entry><strong>'+t('NA Ludra · November 4, 2026', '북미 루드라 · 2026년 11월 4일')+'</strong><p>'+t('NC’s October 23 announcement, rechecked October 25: character entry item level 2,800 (Normal) / 3,000 (Hard). Global equipment level 102 describes one item, not that entry total. The older Global bracelet recipe and loot levels are not confirmed for this NA release.', 'NC 10월 23일 발표·10월 25일 재확인: 캐릭터 입장 아이템 레벨은 일반 2,800·어려움 3,000입니다. 글로벌 장비 레벨 102는 개별 장비 수치이며 입장 종합 수치와 다릅니다. 기존 글로벌 팔찌 제작식·보상 레벨의 이번 북미 적용은 미확인입니다.')+'</p>'+v.a(LUDRA_PREVIEW,t('NA official-news summary', '북미 공식 소식 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('Before launch / verify in game', '출시 전 준비 / 인게임 확인'),'progress-action')+'<a href="'+LUDRA_NOTICE+'" target="_blank" rel="noopener noreferrer">'+t('NC · official NA source', 'NC · 북미 공식 원문')+' ↗</a></aside>'
+
+
 def render(slug, lang, base):
     v=View(lang,base);t=v.t
     renderers={'pet-growth':pet_guide, 'gear-targets':gear_guide, 'dungeon-rewards':dungeon_guide, 'kinah-farming':kinah_guide}
@@ -310,6 +316,8 @@ def render(slug, lang, base):
     following=next((g for i,g in enumerate(GUIDES) if i>0 and GUIDES[i-1][0]==slug),None)
     next_link=v.a(ROOT+following[0]+'/',t('Next: ','다음: ')+v.p(following[1])) if following else ''
     body=guidebrowse.growth_reader(slug,renderers[slug](v),lang)
+    if slug in ('gear-targets','dungeon-rewards'):
+        body=ludra_entry(v)+body
     return f'<div class="progress-guide" data-progression-guide="{slug}"><details class="reader-series"><summary>{t("Other growth guides", "다른 성장 공략")}</summary><nav class="progress-series" aria-label="{t("Growth guide series", "성장 공략 순서")}">{nav}</nav></details>{body}<div class="progress-footer">{next_link}{v.a("routines/",t("Daily & weekly rewards", "일일·주간 숙제"))}{v.a("endgame/#after-story",t("Post-story growth route", "스토리 이후 성장 순서"))}</div></div>'
 
 

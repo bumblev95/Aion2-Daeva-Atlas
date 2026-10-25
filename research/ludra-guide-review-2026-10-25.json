@@ -1,0 +1,46 @@
+{
+  "reviewedOn": "2026-10-25",
+  "scope": "NA Ludra announcement versus existing Global crafting and equipment references; no gameplay verification",
+  "official": {
+    "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb",
+    "publishedAt": "2026-10-23T19:00:00.001Z",
+    "updatedAt": "2026-10-23T19:00:27.180Z",
+    "title": "Ludra Awakens on November 4th",
+    "contentHash": "d28ccd927d9119af7fe06e63d069210f05113d21cff5007e01f6a6104e2a89b0",
+    "hashMethod": "SHA-256 of title + newline + scripts.collect_updates.text(body)",
+    "matchesExistingReview": true
+  },
+  "globalReferences": [
+    {
+      "url": "https://mobalytics.gg/gamebase/guides/aion-2-endgame-gear",
+      "scope": "Third-party Global play guide; rechecked only the Abyssal Bracelet paragraph, not the entire article",
+      "confirmedInSource": "3 Ludra Gear Vouchers (Bound) + 5,000,000 Kina",
+      "naApplicability": "unverified",
+      "htmlSha256": "2454ab960e3e068889c7ca165795a5e45993f8eb20c51ca1d592affb41c11bfd"
+    },
+    {
+      "url": "https://metabot.gg/en/aion-2/guides/gear-progression-guide",
+      "scope": "Third-party Global client reference; rechecked only Ludra weapon/guard and Splendent craft equipment levels",
+      "confirmedInSource": "Individual equipment level 102; distinct from character entry totals 2800 / 3000",
+      "naApplicability": "unverified",
+      "htmlSha256": "1ba6be4ada9c83b148e52cce13a9ceba97a898c21bed2cf4071ecfe1c933ca16"
+    }
+  ],
+  "latestFeedsChecked": [
+    "NA notice feed (10 entries)",
+    "NA update feed (3 returned entries)"
+  ],
+  "pending": [
+    "NA recipe availability, voucher identity/count/binding and Kina cost",
+    "NA reward item levels, loot tables and drop probabilities",
+    "NA entry display, party/unlock requirements and entry/reward limits",
+    "Attack triggers/counters, enrage and revive rules",
+    "Mailbox reset/claim conditions/expiry, clear recognition and title delivery"
+  ],
+  "preserved": [
+    "KR boss lessons and boss data",
+    "Skill inputs and historical DPS observations",
+    "DPS engine, math, ranking research and production ranking outputs",
+    "Existing source-bound official-news review and feed snapshots"
+  ]
+}
