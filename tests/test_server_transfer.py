@@ -20,12 +20,12 @@ class TransferGuide(unittest.TestCase):
         for lang in ('en','ko'):
             source=(ROOT/'docs'/('ko' if lang=='ko' else '')/transfer.ROOT/'index.html').read_text()
             text=' '.join(Text(source).parts)
-            for token in ('1,000 Quna','2,000 Quna','0 Quna','Genus Insight','CEST/CET','23:30 PDT','04:00–07:00 PDT'):
+            for token in ('1,000 Quna','2,000 Quna','0 Quna','Genus Insight','CEST/CET','03:30 PDT','20:00–23:00 PDT'):
                 self.assertIn(token,text)
             for id in ('checklist','schedule','cost','storage','pets','rewards','transfer-sources'):
                 self.assertIn('id="'+id+'"',source)
             self.assertEqual(source.count('type="checkbox"'),7)
-            self.assertIn('미확인' if lang=='ko' else 'unverified',text)
+            self.assertIn('서버 이전 중단' if lang=='ko' else 'server transfers on hold',text)
             self.assertIn('취소·되돌리기' if lang=='ko' else 'canceled or reversed',text)
             self.assertIn('이전되지 않습니다' if lang=='ko' else 'do not move',text)
             self.assertIn('출발 서버의 Genus Insight는 초기화' if lang=='ko' else 'Origin Genus Insight resets',text)
@@ -49,9 +49,9 @@ class TransferGuide(unittest.TestCase):
         self.assertEqual(transfer.REGIONS[2][2],'03:00–07:00 / 09:00–13:00')
         self.assertEqual(transfer.REGIONS[4][2],'20:00–+1 00:00 / 02:00–06:00')
         evidence=json.loads((ROOT/'research/server-transfer-review.json').read_text())
-        self.assertEqual(evidence['availability'],'unverified')
-        self.assertEqual(len(evidence['discrepancies']),3)
-        self.assertEqual({s['id'] for s in evidence['sources']},{'qa','products','maintenance'})
+        self.assertEqual(evidence['availability'],'paused-by-publisher')
+        self.assertEqual(len(evidence['discrepancies']),5)
+        self.assertEqual({s['id'] for s in evidence['sources']},{'hold','qa','products','maintenance'})
 
 
 if __name__=='__main__':unittest.main()

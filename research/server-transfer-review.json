@@ -1,27 +1,54 @@
 {
-  "reviewDate": "2026-10-13",
-  "checkedAt": "2026-10-13T23:37:07Z",
+  "reviewDate": "2026-10-26",
+  "checkedAt": "2026-10-26T20:55:17Z",
   "scope": "Global; not KR/TW",
-  "availability": "unverified",
+  "availability": "paused-by-publisher",
+  "hashMethod": "Current contentSha256 values are SHA-256 of normalized visible body text; titleBodySha256 also binds the current title. Legacy hashes from the 2026-10-13 review are retained separately.",
   "sources": [
+    {
+      "id": "hold",
+      "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6adfa9906276ae76f3e4a593",
+      "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6adfa9906276ae76f3e4a593",
+      "contentSha256": "c7f692f041f85d99d3620b58e903aec13d593e6343810070a0c914681f05ce63",
+      "titleBodySha256": "42db0ec6f15c24e32fb8c26d380dbc4933788d4d9b7218d736c5b0f15eeee2e4",
+      "metadata": {
+        "title": "[Notice] Server Transfers on Hold",
+        "timestamps": {
+          "postDateTime": "2026-10-26 19:27:12.089",
+          "updateDateTime": "2026-10-26 19:27:12.089",
+          "publishedDateTime": null,
+          "postedEpoch": 1793042832,
+          "updatedEpoch": 1793042832,
+          "commentedEpoch": 0,
+          "localOffsetHours": 0,
+          "version": "0.0.3",
+          "postedAt": "2026-10-26T19:27:12.089Z",
+          "updatedAt": "2026-10-26T19:27:12.089Z",
+          "publishedAt": "2026-10-26T19:27:12.089Z",
+          "commentedAt": "1970-01-01T00:00:00.001Z"
+        }
+      }
+    },
     {
       "id": "qa",
       "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ac7e128d97eae18cc40e3b7",
       "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ac7e128d97eae18cc40e3b7",
-      "contentSha256": "ae826afd2fbd5012a4e0df5531df75b8be995d99b3ef168d4e799696a6858c4b",
+      "contentSha256": "cdfa632f35899ea20df0504fc706848f3daf5313bbf7e558dce295ec5a1cbf3e",
+      "titleBodySha256": "a2326b834537d31044b8459d0ffc4a6374faf48ce7469a91079902abddb3ea03",
+      "legacyContentSha256": "ae826afd2fbd5012a4e0df5531df75b8be995d99b3ef168d4e799696a6858c4b",
       "metadata": {
-        "title": "[Notice] Server Transfer Q&A | Updated 10/13 (PDT)",
+        "title": "[Notice] Server Transfer Q&A | Updated 10/20, 01:00 (PDT)",
         "timestamps": {
           "postDateTime": "2026-10-09 18:30:00.001",
-          "updateDateTime": "2026-10-13 20:06:58.496",
+          "updateDateTime": "2026-10-20 08:42:03.144",
           "publishedDateTime": null,
           "postedEpoch": 1791570600,
-          "updatedEpoch": 1791922018,
+          "updatedEpoch": 1792485723,
           "commentedEpoch": 0,
           "localOffsetHours": 0,
           "version": "0.0.3",
           "postedAt": "2026-10-09T18:30:00.001Z",
-          "updatedAt": "2026-10-13T20:06:58.496Z",
+          "updatedAt": "2026-10-20T08:42:03.144Z",
           "publishedAt": "2026-10-09T18:30:00.001Z",
           "commentedAt": "1970-01-01T00:00:00.001Z"
         }
@@ -31,20 +58,22 @@
       "id": "products",
       "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ac932a8fa34c1011d627bc9",
       "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ac932a8fa34c1011d627bc9",
-      "contentSha256": "25c62c6d390cd6f9489318b810fc5b11c7766f81b821686b7fe2c8a3aba63c39",
+      "contentSha256": "a9dde3c4403e93146bc1275981d588e881a06e32f90e3db4aefb0e4fa3f07e61",
+      "titleBodySha256": "3038877f70d06f16308c4430bad1f6df7fe2710bc07273b4c479f589c753ef59",
+      "legacyContentSha256": "25c62c6d390cd6f9489318b810fc5b11c7766f81b821686b7fe2c8a3aba63c39",
       "metadata": {
-        "title": "[Notice] Server Transfer Products Info Oct 13 (PDT) / Oct 14 (CEST) | Updated 10/13 (PDT)",
+        "title": "[Notice] Server Transfer Products Info Oct 13 (PDT) / Oct 14 (CEST) | Updated 10/20, 01:00 (PDT)",
         "timestamps": {
           "postDateTime": "2026-10-09 18:30:00.001",
-          "updateDateTime": "2026-10-13 20:06:22.673",
+          "updateDateTime": "2026-10-20 08:52:03.098",
           "publishedDateTime": null,
           "postedEpoch": 1791570600,
-          "updatedEpoch": 1791921982,
+          "updatedEpoch": 1792486323,
           "commentedEpoch": 0,
           "localOffsetHours": 0,
           "version": "0.0.3",
           "postedAt": "2026-10-09T18:30:00.001Z",
-          "updatedAt": "2026-10-13T20:06:22.673Z",
+          "updatedAt": "2026-10-20T08:52:03.098Z",
           "publishedAt": "2026-10-09T18:30:00.001Z",
           "commentedAt": "1970-01-01T00:00:00.001Z"
         }
@@ -54,20 +83,22 @@
       "id": "maintenance",
       "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ace8dc0263e537d356d10c3",
       "api": "https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6ace8dc0263e537d356d10c3",
-      "contentSha256": "c211731e9c91ebae6d2a2f80900371a7951e3f2c2978d68c5616305a29de2b48",
+      "contentSha256": "fd65bc05e9ad6aeadb564273c26a99ecc0978a86a23043204d777a0f7da501fe",
+      "titleBodySha256": "ae3affebffaf41621c4c8bb24a70126025c18230419b7d5a5f0fa269dd3759b0",
+      "legacyContentSha256": "c211731e9c91ebae6d2a2f80900371a7951e3f2c2978d68c5616305a29de2b48",
       "metadata": {
-        "title": "[Notice] Maintenance | Oct. 13 (PDT) / Oct. 14 (CEST)",
+        "title": "[Notice] Maintenance | Oct. 13 (PDT) / Oct. 14 (CEST) (Completed)",
         "timestamps": {
           "postDateTime": "2026-10-13 01:10:00.001",
-          "updateDateTime": "2026-10-13 09:15:48.865",
+          "updateDateTime": "2026-10-14 18:11:06.157",
           "publishedDateTime": null,
           "postedEpoch": 1791853800,
-          "updatedEpoch": 1791882948,
+          "updatedEpoch": 1792001466,
           "commentedEpoch": 0,
           "localOffsetHours": 0,
           "version": "0.0.3",
           "postedAt": "2026-10-13T01:10:00.001Z",
-          "updatedAt": "2026-10-13T09:15:48.865Z",
+          "updatedAt": "2026-10-14T18:11:06.157Z",
           "publishedAt": "2026-10-13T01:10:00.001Z",
           "commentedAt": "1970-01-01T00:00:00.001Z"
         }
@@ -78,21 +109,34 @@
     "qaLounge": "https://lounge.plaync.com/feed/83614?country=US&locale=en-US",
     "steamFeed": "https://steamcommunity.com/app/3393110/announcements/",
     "suppliedSteamArticle": "https://store.steampowered.com/news/app/3393110/view/712288859283523636",
-    "suppliedSteamBody": "not readable through web retrieval; official feed corroborates Q&A and Products"
+    "suppliedSteamBody": "not readable through web retrieval during the original review; official feed corroborated Q&A and Products at that time"
   },
   "discrepancies": [
-    "Both October 13 revisions say Europe first window October 13 04:00–07:00 PDT / 13:00–16:00 CEST; this predates the published maintenance start October 13 23:30 PDT / October 14 08:30 CEST. Do not repair the date or assert the service is live.",
-    "Daily European column reuses CEST/CET times although CET and CEST have different UTC offsets. Q&A South America column says CEST; Products says CEST/CET. Show as published, anchored to PDT, not as verified CET conversion.",
-    "November reward-ticket expiry says CEST in Q&A versus CET in Products. Use Products date with discrepancy disclosed."
+    "The October 14 revision headers say the first Europe/Asia window began at 03:30 PDT / 12:30 CEST, while a residual footnote says 04:00 PDT / 13:00 CEST. Products separately says Europe began at 12:30 CEST with one additional round. Preserve the conflict rather than selecting a value.",
+    "The October 20 revision shortens Asia's morning window on October 21 and 28 to 20:00-23:00 PDT / 05:00-08:00 CEST and says the first Europe/Asia round after October 21 maintenance began at 05:00 PDT / 14:00 CEST. These are one-off historical exceptions, not a new regular schedule.",
+    "Daily European columns reuse CEST/CET clock times although CET and CEST have different UTC offsets. Q&A South America says CEST; Products says CEST/CET. Show as published, anchored to PDT, not as a verified CET conversion.",
+    "November reward-ticket expiry says CEST in Q&A versus CET in Products. Use the Products date with the discrepancy disclosed.",
+    "The October 26 hold notice gives no technical cause or reopening time. Do not infer either from the earlier transfer windows."
   ],
   "reviewedFacts": [
-    "Early Access: after Oct 13 PDT / Oct 14 CEST maintenance to before Oct 20 PDT / Oct 21 CEST maintenance",
-    "Launch: after Oct 20 PDT / Oct 21 CEST maintenance to before Oct 27 PDT / Oct 28 CET maintenance",
+    "Global server transfers are on hold from the October 26 notice until further notice while NC investigates an issue; no reopening time is published",
+    "Early Access historical period: after Oct 13 PDT / Oct 14 CEST maintenance to before Oct 20 PDT / Oct 21 CEST maintenance",
+    "Launch historical period: after Oct 20 PDT / Oct 21 CEST maintenance to before Oct 27 PDT / Oct 28 CET maintenance",
+    "October 20 revision adds one-off Europe/Asia schedule changes for October 21 and Asia changes for October 28",
     "0 Quna base and per-character; 1000 Quna per extra slot, once per account during entire event",
     "same region, same faction; EA to EA; one source to one destination; level 10+; village; no Legion membership/application; no active Duty Missions; collect Market, Shop Storage and mail",
     "Character Storage and expansions transfer; Server Storage contents including Kina stay; expanded Server Storage count uses larger server value; origin character slots stay",
     "Quna/Mileage and Membership move; Daeva Pass progress maintained; shared pets/skins move and are removed from origin; Genus Insight choice resets origin",
     "Dungeon reward claims and guaranteed-reward progress retained; content usage retained; destination Corridor ownership gates access; origin server-wide reward progress retained",
     "No canceled/reversed requests; title-screen logout/login block during transfer; minimum one minute, queues and throttling possible"
+  ],
+  "interpretation": [
+    "The hold supersedes the earlier application windows for current availability but does not cancel the documented transfer rules for a possible future reopening.",
+    "No class, skill coefficient, cooldown, eDPS or historical combat record changes follow from this system notice."
+  ],
+  "directVerificationPending": [
+    "Whether the in-game Server Transfer tab is hidden, disabled or returns a specific message during the hold",
+    "Any NC follow-up with a reopening timestamp, revised eligibility window, compensation or issue resolution",
+    "The transfer flow and destination capacity only after an official reopening"
   ]
 }
