@@ -33,7 +33,7 @@ const server=http.createServer((req,res)=>{
       await page.goto(local);
       await page.locator('[data-growth-guide="server-transfer"]').click();
       await page.waitForURL('**/guides/server-transfer/');
-      assert((await page.locator('.transfer-badge').innerText()).includes(lang==='ko'?'미확인':'unverified'));
+      assert((await page.locator('.transfer-badge').innerText()).includes(lang==='ko'?'중단':'on hold'));
       await page.locator('.transfer-checklist input').first().check();
       assert.equal(await page.locator('.transfer-checklist input').first().isChecked(),true);
       await page.reload();
