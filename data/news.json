@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-27T20:48:20Z",
+  "checkedAt": "2026-10-27T20:55:20Z",
   "pollMinutes": 60,
   "sources": [
     {
       "id": "kr-update",
       "region": "KR",
       "kind": "patch",
-      "status": "ready",
-      "checkedAt": "2026-10-27T20:48:20Z",
+      "status": "unavailable",
+      "checkedAt": "2026-10-27T20:55:20Z",
       "lastSuccessAt": "2026-10-27T20:48:20Z",
-      "error": null,
-      "fromCache": false,
+      "error": "URLError",
+      "fromCache": true,
       "items": [
         {
           "id": "6ae0fbb828c7452635072d36",
@@ -6890,11 +6890,11 @@
       "id": "kr-notice",
       "region": "KR",
       "kind": "news",
-      "status": "ready",
-      "checkedAt": "2026-10-27T20:48:20Z",
+      "status": "unavailable",
+      "checkedAt": "2026-10-27T20:55:20Z",
       "lastSuccessAt": "2026-10-27T20:48:20Z",
-      "error": null,
-      "fromCache": false,
+      "error": "URLError",
+      "fromCache": true,
       "items": [
         {
           "id": "6ae08430066b033317c0290b",
@@ -7521,8 +7521,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-27T20:48:20Z",
-      "lastSuccessAt": "2026-10-27T20:48:20Z",
+      "checkedAt": "2026-10-27T20:55:20Z",
+      "lastSuccessAt": "2026-10-27T20:55:20Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8097,8 +8097,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-27T20:48:20Z",
-      "lastSuccessAt": "2026-10-27T20:48:20Z",
+      "checkedAt": "2026-10-27T20:55:20Z",
+      "lastSuccessAt": "2026-10-27T20:55:20Z",
       "error": null,
       "fromCache": false,
       "items": [
