@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-27T08:58:27Z",
+  "checkedAt": "2026-10-27T09:05:56Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-27T08:58:27Z",
-      "lastSuccessAt": "2026-10-27T08:58:27Z",
+      "checkedAt": "2026-10-27T09:05:56Z",
+      "lastSuccessAt": "2026-10-27T09:05:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6630,8 +6630,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-27T08:58:27Z",
-      "lastSuccessAt": "2026-10-27T08:58:27Z",
+      "checkedAt": "2026-10-27T09:05:56Z",
+      "lastSuccessAt": "2026-10-27T09:05:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7260,8 +7260,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-27T08:58:27Z",
-      "lastSuccessAt": "2026-10-27T08:58:27Z",
+      "checkedAt": "2026-10-27T09:05:56Z",
+      "lastSuccessAt": "2026-10-27T09:05:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7836,8 +7836,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-27T08:58:27Z",
-      "lastSuccessAt": "2026-10-27T08:58:27Z",
+      "checkedAt": "2026-10-27T09:05:56Z",
+      "lastSuccessAt": "2026-10-27T09:05:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7998,8 +7998,8 @@
           "classScopeReviewed": true,
           "reviewedAt": "2026-10-27T08:58:12Z",
           "displayTitle": {
-            "en": "November 4 · North America Ludra preview · revised October 27",
-            "ko": "11월 4일 북미 · 루드라 사전 안내 · 10월 27일 수정"
+            "en": "November 4 · North America Ludra preview",
+            "ko": "11월 4일 북미 · 루드라 사전 안내"
           },
           "detail": {
             "coverage": "highlights",
