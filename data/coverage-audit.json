@@ -2,6 +2,26 @@
   "reviewedAt": "2026-10-27",
   "items": [
     {
+      "id": "kr-20261028-outland-gathering-ludra",
+      "region": "KR",
+      "reviewedAt": "2026-10-27T20:48:00Z",
+      "title": {
+        "en": "October 28 KR systems · Abyss schedule, Outland and gathering limit",
+        "ko": "10월 28일 한국 시스템 · 어비스 일정·아웃랜드·채집 제한"
+      },
+      "finding": {
+        "en": "P1 combat/growth: verify Argo's 09:00/21:00 KR server spawns and first post-maintenance appearance; Abyss Outland queues, player count, match/ranking rules, Traveler's Coin amounts, weekly cap/shop and Wednesday 05:00 reset; and the gathering cap, character/account/server scope, HUD counter, failed/cancelled attempts and 05:00 reset. Reproduce Ludra's wrong-party-position teleport, mobile required-floor handling and Arcana compensation eligibility/delivery before changing evergreen guides. Exact public and source targets are recorded in the source-hash-bound highlights. No NA application, map-coordinate change, skill/eDPS input change, historical ranking rewrite or final tier is supported.",
+        "ko": "P1 전투·성장: 한국 서버 아그로 09:00·21:00 출현과 점검 후 첫 등장, 어비스 아웃랜드의 매칭·인원·경기/순위 규칙·방랑자의 주화 수량·주간 한도/상점·수요일 05:00 초기화, 채집 제한 수치·캐릭터/계정/서버 범위·HUD 카운터·실패/취소 집계·05:00 초기화를 직접 확인해야 합니다. 상시 공략 변경 전 루드라의 잘못된 파티 위치 텔레포트, 모바일 필수 장판 처리, 아르카나 보상 대상·지급도 재현해야 합니다. 정확한 공개·소스 경로는 원문 해시 highlights에 기록했습니다. 북미 적용, 지도 좌표 변경, 스킬/eDPS 입력 변경, 과거 순위 재작성이나 최종 티어의 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 28 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ae0fbb828c7452635072d36"
+        }
+      ]
+    },
+    {
       "id": "na-20261027-ludra-odyle-correction",
       "region": "NA / Global",
       "reviewedAt": "2026-10-27T08:58:12Z",
