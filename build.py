@@ -22,6 +22,7 @@ from bossmedia import validate_evidence
 import patchbook
 import vakron
 import partyguide
+import outland
 
 ROOT=Path(__file__).parent
 CONFIG=json.loads((ROOT/'site.json').read_text())
@@ -102,6 +103,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
+    if sub == outland.ROOT:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/outland.css?v=1">'
     if 'party-guide' in content or 'party-shortcuts' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/party-guide.css?v=1">'
     if 'data-viz=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/growth-visuals.css?v=1"><script defer src="{BASE}assets/growth-visuals.js?v=1"></script>'
     if 'ag-related' in content or 'data-practical-page=' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/advanced-guides.css?v=1">'
@@ -180,6 +182,10 @@ def community():
         search_index.append({'lang':LANG,'path':path('insights/'),'anchor':'note-'+n['id'],'title':pair(n['title']),'description':pair(n['body']),'category':t('KR insight','한국 유저 팁'),'keywords':' '.join(n['classes'])+' '+n['mode']+' '+pair(n['body'])})
 
 def guides():
+    title=pair(outland.TITLE);desc=pair(outland.DESCRIPTION)
+    write(outland.ROOT,title,desc,f'<div class="wrap party-page">{pagehead(title,desc)}{outland.render(LANG,BASE)}</div>','guides',True,reviewed=outland.REVIEWED)
+    page_dates[SITE+'/'+path(outland.ROOT)]=outland.REVIEWED
+    search_index.append(dict(lang=LANG,path=path(outland.ROOT),title=title,description=desc,category=t('KR PvP','한국 PvP'),keywords='Abyss Outland 어비스 아웃랜드 방랑자의 주화 PvP 45 3000'))
     for slug, titles, descriptions in partyguide.GUIDES:
         sub='guides/'+slug+'/'
         title=pair(titles);desc=pair(descriptions)
