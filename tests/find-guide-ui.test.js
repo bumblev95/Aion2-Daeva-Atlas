@@ -161,8 +161,14 @@ async function selected(page,key){
     assert.equal(await page.locator('#dungeon-fire-temple .dungeon-loot').isVisible(),true);
     await contained(page,'native disclosure');
     await page.goto(local+'guides/');
-    assert.equal(await page.locator('[data-directory-group]:visible').count(),7);
+    assert.equal(await page.locator('[data-directory-group]:visible').count(),8);
     assert.equal(await page.locator('[data-directory-controls]').isVisible(),false);
+    await page.locator('a[href$="guides/abyss-outland/"]').click();
+    assert.equal(await page.locator('.outland-guide').isVisible(),true);
+    assert.equal(await page.locator('.outland-steps>li').count(),5);
+    await contained(page,'Outland no-script '+lang+'/'+width);
+    await page.locator('.navtools .lang').click();
+    assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
     await context.close();
     }
     console.log('PASS: task-first discovery, search, topic keyboard navigation, history, bilingual deep links, filtering, mobile dock/menu and native disclosure.');
