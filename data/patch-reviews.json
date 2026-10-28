@@ -1,15 +1,15 @@
 {
   "6ae0fbb828c7452635072d36": {
-    "contentHash": "3c1d8162d43b4f9d8bdf4953f4e879f839fec971e3b490b3c514b47f8c639d2a",
-    "reviewedAt": "2026-10-27T20:48:00Z",
+    "contentHash": "26961edb8f3ed3c937bfa9f63582c2f6c36d0d7aee0fe217546f82a28f42501a",
+    "reviewedAt": "2026-10-28T08:49:42Z",
     "classScopeReviewed": true,
     "title": {
       "en": "October 28 · Korea",
       "ko": "10월 28일 한국 패치"
     },
     "summary": {
-      "en": "KR October 28: Argo moves to fixed twice-daily spawn times, Abyss Outland opens as a scheduled solo PvP survival mode, and all gathering attempts begin counting toward a daily server-based limit. The patch also fixes Ludra party-position handling, mobile dodge support and several system issues. No class coefficient, cooldown or level-effect change is announced.",
-      "ko": "한국 10월 28일: 아그로 출현이 하루 두 번의 고정 시각으로 바뀌고, 개인 PvP 생존 콘텐츠 어비스 아웃랜드가 정해진 시간에 열리며, 모든 채집 시도가 서버 단위 일일 제한에 집계됩니다. 루드라 파티 위치 판정·모바일 회피 서포트 등 시스템 오류도 수정됩니다. 직업 계수·쿨타임·스킬 레벨 효과 변경은 공지되지 않았습니다."
+      "en": "KR October 28: Argo moves to fixed twice-daily spawn times, Abyss Outland opens as a scheduled solo PvP survival mode, and all gathering attempts begin counting toward a daily server-based limit. The latest source revision was re-read and does not add a new class coefficient, cooldown, skill-level effect or other semantic change to the reviewed highlights.",
+      "ko": "한국 10월 28일: 아그로 출현이 하루 두 번의 고정 시각으로 바뀌고, 개인 PvP 생존 콘텐츠 어비스 아웃랜드가 정해진 시간에 열리며, 모든 채집 시도가 서버 단위 일일 제한에 집계됩니다. 최신 수정 원문을 다시 읽었으며 기존 highlights에 새 직업 계수·쿨타임·스킬 레벨 효과나 다른 의미 변경은 확인되지 않았습니다."
     },
     "changes": [
       {
@@ -156,8 +156,8 @@
           "sourceSection": "적용 범위",
           "notes": [
             {
-              "en": "Published October 27 at 19:30 UTC (October 28 04:30 KST) and last updated at 19:30:28 UTC. The changes are scheduled for the October 28 KR maintenance. This review is bound to source hash 3c1d8162… and uses the source revision time rather than collection time.",
-              "ko": "10월 27일 19:30 UTC(한국 10월 28일 04:30)에 게시되고 19:30:28 UTC에 최종 갱신됐습니다. 한국 10월 28일 점검 적용 예정입니다. 이번 검토는 원문 해시 3c1d8162…에 연결했으며 수집 시각을 원문 수정 시각으로 대신하지 않습니다."
+              "en": "Published October 27 at 19:30 UTC (October 28 04:30 KST) and revised October 28 at 01:57:43 UTC. The latest body was re-read and this review is now bound to source hash 26961edb…. Its readable gameplay facts match the previous extraction; the current source includes an official Abyss guidebook link. The earlier full markup was not retained, so an exhaustive presentation-only diff is not claimed.",
+              "ko": "10월 27일 19:30 UTC(한국 10월 28일 04:30)에 게시되고 10월 28일 01:57:43 UTC에 수정됐습니다. 최신 본문을 다시 읽고 이번 검토를 원문 해시 26961edb…에 다시 연결했습니다. 읽을 수 있는 게임 변경 사실은 이전 추출 내용과 같고 현재 원문에는 공식 어비스 가이드북 링크가 있습니다. 이전 전체 마크업은 보관하지 않아 표시 요소만의 완전한 전후 비교는 주장하지 않습니다."
             },
             {
               "en": "KR-only: do not apply the Argo schedule, Outland rules, gathering limit, Ludra fix or compensation to North America. No class coefficient, cooldown, skill-level effect or measured DPS result is announced.",
@@ -7280,7 +7280,10 @@
       {
         "classId": "chanter",
         "type": "fix",
-        "subject": {"en": "Spinning Strike · effect display", "ko": "회전격 · 효과 표시"},
+        "subject": {
+          "en": "Spinning Strike · effect display",
+          "ko": "회전격 · 효과 표시"
+        },
         "description": {
           "en": "Fixes skill effects not displaying correctly. NC does not state that damage, cooldown or duration values change.",
           "ko": "스킬 효과가 올바르게 표시되지 않던 문제를 수정합니다. 피해·쿨타임·지속시간 수치 변경은 공지되지 않았습니다."
@@ -7293,7 +7296,10 @@
       {
         "classId": "sorcerer",
         "type": "fix",
-        "subject": {"en": "Cold Storm · stacked Frostbite bonus", "ko": "냉기 폭풍 · 동상 중첩"},
+        "subject": {
+          "en": "Cold Storm · stacked Frostbite bonus",
+          "ko": "냉기 폭풍 · 동상 중첩"
+        },
         "description": {
           "en": "Restores extra damage that failed to trigger when attacking a target with stacked Frostbite.",
           "ko": "동상이 중첩된 대상을 공격할 때 추가 피해가 발생하지 않던 문제를 수정합니다."
@@ -7306,7 +7312,10 @@
       {
         "classId": "sorcerer",
         "type": "fix",
-        "subject": {"en": "Cold Storm · Frostbite level matching", "ko": "냉기 폭풍 · 동상 레벨 일치"},
+        "subject": {
+          "en": "Cold Storm · Frostbite level matching",
+          "ko": "냉기 폭풍 · 동상 레벨 일치"
+        },
         "description": {
           "en": "Fixes the Frostbite effect not matching Cold Storm's skill level.",
           "ko": "동상 효과가 냉기 폭풍의 스킬 레벨과 일치하지 않던 문제를 수정합니다."
@@ -7319,7 +7328,10 @@
       {
         "classId": "sorcerer",
         "type": "fix",
-        "subject": {"en": "Cold Storm · Specialty 1 reapplication", "ko": "냉기 폭풍 · 1번 특화 재부여"},
+        "subject": {
+          "en": "Cold Storm · Specialty 1 reapplication",
+          "ko": "냉기 폭풍 · 1번 특화 재부여"
+        },
         "description": {
           "en": "Removes an additional Frostbite application that occurred inside the Cold Storm area after the effect ended when Specialty 1 was selected.",
           "ko": "1번 특화 사용 시 효과 종료 후 냉기 폭풍 범위 안의 대상에게 동상이 한 번 더 부여되던 문제를 수정합니다."
@@ -7332,7 +7344,10 @@
       {
         "classId": "sorcerer",
         "type": "fix",
-        "subject": {"en": "Fire Wall · targets without Embers", "ko": "불의 장벽 · 잔불 없는 대상"},
+        "subject": {
+          "en": "Fire Wall · targets without Embers",
+          "ko": "불의 장벽 · 잔불 없는 대상"
+        },
         "description": {
           "en": "Removes extra damage that was incorrectly dealt to targets not affected by Embers.",
           "ko": "잔불 효과가 없는 대상에게 추가 피해가 잘못 적용되던 문제를 수정합니다."
@@ -7347,7 +7362,10 @@
       "coverage": "highlights",
       "sections": [
         {
-          "title": {"en": "Region, announcement and effective window", "ko": "지역·발표일·시행 구간"},
+          "title": {
+            "en": "Region, announcement and effective window",
+            "ko": "지역·발표일·시행 구간"
+          },
           "sourceSection": "Patch scope",
           "notes": [
             {
@@ -7362,7 +7380,10 @@
           "tables": []
         },
         {
-          "title": {"en": "Krao Cave and Draupnir Hard mode", "ko": "크라오 동굴·드라웁니르 어려움"},
+          "title": {
+            "en": "Krao Cave and Draupnir Hard mode",
+            "ko": "크라오 동굴·드라웁니르 어려움"
+          },
           "sourceSection": "Content & Systems · Expedition",
           "notes": [
             {
@@ -7377,7 +7398,10 @@
           "tables": []
         },
         {
-          "title": {"en": "Hard-mode rewards and Ariel board", "ko": "어려움 보상·아리엘 보드"},
+          "title": {
+            "en": "Hard-mode rewards and Ariel board",
+            "ko": "어려움 보상·아리엘 보드"
+          },
           "sourceSection": "Content & Systems · Rewards / Ariel Daevanion Board",
           "notes": [
             {
@@ -7396,7 +7420,10 @@
           "tables": []
         },
         {
-          "title": {"en": "Abyss and system adjustments", "ko": "어비스·시스템 조정"},
+          "title": {
+            "en": "Abyss and system adjustments",
+            "ko": "어비스·시스템 조정"
+          },
           "sourceSection": "Other Improvements and Bug Fixes",
           "notes": [
             {
@@ -7411,7 +7438,10 @@
           "tables": []
         },
         {
-          "title": {"en": "Map, settings and review limits", "ko": "지도·설정·검토 한계"},
+          "title": {
+            "en": "Map, settings and review limits",
+            "ko": "지도·설정·검토 한계"
+          },
           "sourceSection": "Fixes / review scope",
           "notes": [
             {
@@ -7587,6 +7617,527 @@
             {
               "en": "Exact source-bound data paths are data/patch-reviews.json and data/news.json; the direct-verification gap is tracked in data/coverage-audit.json. data/skills.json, data/skill-snapshot.json and historical DPS/ranking observations remain unchanged because no numeric skill change or measured combat result is supplied.",
               "ko": "정확한 해시 연결 데이터 경로는 data/patch-reviews.json과 data/news.json이며 직접 검증할 자료 부족은 data/coverage-audit.json에 기록합니다. 수치형 스킬 변경이나 실측 전투 결과가 없어 data/skills.json·data/skill-snapshot.json과 과거 DPS·순위 관측값은 유지합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
+  },
+  "6ae19668577e8c01355e0210": {
+    "contentHash": "d9c652647a7b76997da54a193ae5e0c38c1d67842437fb17be46651ea2a8f794",
+    "reviewedAt": "2026-10-28T08:49:42Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210",
+    "title": {
+      "en": "October 27 PDT / 28 CET · North America",
+      "ko": "10월 27일 PDT / 28일 CET · 북미 패치"
+    },
+    "summary": {
+      "en": "NA reduces Expedition/Transcendence boss pressure, adds Urugugu and Vakron Hard mode, raises level-45 base HP for all eight classes, and buffs Assassin survivability and Illusive Clone cooldown. Daily, gathering and crafted-gear progression also change. This is a highlights review; event and product tables remain on the official notice.",
+      "ko": "북미는 원정·초월 보스 부담을 낮추고 우루구구·바크론 어려움을 추가하며 8직업의 45레벨 기본 생명력을 올립니다. 살성의 생존 효과와 환영 분신 쿨타임도 상향되고 일일·채집·제작 장비 성장 규칙이 바뀝니다. highlights 검토이며 이벤트·상품 표 전체는 공식 원문에서 확인해야 합니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Expedition and Transcendence · boss balance",
+          "ko": "원정·초월 · 보스 밸런스"
+        },
+        "description": {
+          "en": "Normal Expedition and Transcendence Stage 1 boss Attack is reduced by 15%. Hard Expedition and Transcendence Stages 2–4 boss Attack and Damage Boost are each reduced by 10%. Transcendence Stages 1–2 boss HP is reduced by 6.5%.",
+          "ko": "일반 원정·초월 1단계 보스 공격력이 15% 감소합니다. 어려움 원정·초월 2~4단계 보스 공격력과 피해 증폭은 각각 10% 감소하고, 초월 1~2단계 보스 HP는 6.5% 감소합니다."
+        },
+        "after": {
+          "en": "Attack −15% in Normal/Stage 1; Attack and Damage Boost −10% in Hard/Stages 2–4; HP −6.5% in Transcendence Stages 1–2",
+          "ko": "일반·1단계 공격력 −15% · 어려움·2~4단계 공격력/피해 증폭 −10% · 초월 1~2단계 HP −6.5%"
+        },
+        "impact": {
+          "en": "P1 analysis: one-shot and time-limit pressure should fall, but the notice does not identify every boss or pattern. Recheck actual difficulty, damage events, Frenzy timing and clear times in each NA mode.",
+          "ko": "P1 해석: 즉사·시간 제한 부담이 줄 수 있지만 대상 보스·패턴 전체는 공개되지 않았습니다. 북미 각 난도에서 실제 피해 사건·광폭화 발동·클리어 시간을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Urugugu Canyon and Vakron Sky Island · Hard mode",
+          "ko": "우루구구 협곡·바크론 공중섬 · 어려움"
+        },
+        "description": {
+          "en": "Hard mode is added at item level 2700, with a four-minute Frenzy timer and three revives per player. It adds dungeon-specific Ariel Fragments, Unique materials, achievement skins, more Kina and Philosopher's Stone: Revelation rewards.",
+          "ko": "아이템 레벨 2700, 광폭화 4분, 플레이어당 부활 3회 조건의 어려움 난도가 추가됩니다. 던전별 아리엘 조각·유일 재료·업적 외형·더 많은 키나·계시의 현자의 돌 보상이 포함됩니다."
+        },
+        "after": {
+          "en": "Item level 2700; Frenzy at 4 minutes; 3 revives per player",
+          "ko": "아이템 레벨 2700 · 광폭화 4분 · 개인별 부활 3회"
+        },
+        "impact": {
+          "en": "P1 analysis: current PLAYER’S CODEX pages document Normal-mode evidence and cannot be relabeled as Hard. Boss patterns, revive reset behavior and reward eligibility need direct NA verification.",
+          "ko": "P1 해석: 현재 PLAYER’S CODEX 페이지는 일반 난도 근거이므로 어려움으로 이름만 바꿀 수 없습니다. 보스 패턴·부활 초기화·보상 자격은 북미에서 직접 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "buff",
+        "subject": {
+          "en": "Gladiator · base HP at level 45",
+          "ko": "검성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,500.",
+          "ko": "45레벨 기본 생명력이 1,500 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "6,202 HP",
+          "ko": "생명력 6,202"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "buff",
+        "subject": {
+          "en": "Templar · base HP at level 45",
+          "ko": "수호성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,500.",
+          "ko": "45레벨 기본 생명력이 1,500 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "6,202 HP",
+          "ko": "생명력 6,202"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "Assassin · base HP at level 45",
+          "ko": "살성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "en": "Ranger · base HP at level 45",
+          "ko": "궁성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "buff",
+        "subject": {
+          "en": "Sorcerer · base HP at level 45",
+          "ko": "마도성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "buff",
+        "subject": {
+          "en": "Spiritmaster · base HP at level 45",
+          "ko": "정령성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "buff",
+        "subject": {
+          "en": "Chanter · base HP at level 45",
+          "ko": "호법성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "buff",
+        "subject": {
+          "en": "Cleric · base HP at level 45",
+          "ko": "치유성 · 45레벨 기본 HP"
+        },
+        "description": {
+          "en": "Base HP at level 45 increases by 1,000.",
+          "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+        },
+        "before": {
+          "en": "4,702 HP",
+          "ko": "생명력 4,702"
+        },
+        "after": {
+          "en": "5,702 HP",
+          "ko": "생명력 5,702"
+        },
+        "impact": {
+          "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+          "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "Heightened Sixth Sense · HP effect",
+          "ko": "육감 극대화 · 생명력 효과"
+        },
+        "description": {
+          "en": "The HP effect is increased; the official notice prints the resulting values at skill levels 5, 10 and 20.",
+          "ko": "생명력 효과가 증가하며 공식 공지는 스킬 5·10·20레벨 결과 수치를 공개합니다."
+        },
+        "after": {
+          "en": "Skill Lv. 5 / 10 / 20: 1,000 / 2,000 / 4,000 HP",
+          "ko": "스킬 5 / 10 / 20레벨: 생명력 1,000 / 2,000 / 4,000"
+        },
+        "impact": {
+          "en": "P1 analysis: the exact NA level values are stored as an official override. The before-values, interaction with the percentage Max HP effect and live character sheet remain verification items; no DPS percentage is assigned.",
+          "ko": "P1 해석: 정확한 북미 레벨 수치를 공식 override로 기록합니다. 변경 전 수치·최대 생명력 비율 효과와의 중첩·실제 능력치 창은 확인 대기이며 DPS 변화율을 부여하지 않습니다."
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "Illusive Clone · base cooldown",
+          "ko": "환영 분신 · 기본 쿨타임"
+        },
+        "description": {
+          "en": "The base cooldown is reduced by 30 seconds.",
+          "ko": "기본 재사용 시간이 30초 감소합니다."
+        },
+        "before": {
+          "en": "90 seconds",
+          "ko": "90초"
+        },
+        "after": {
+          "en": "60 seconds",
+          "ko": "60초"
+        },
+        "impact": {
+          "en": "P1 analysis: the Global/NA skill input is updated to 60 seconds. The public active-skill comparison does not model this Stigma buff window, so historical records and class DPS are not retrospectively recalculated; rotation use and uptime require reproduction.",
+          "ko": "P1 해석: 글로벌/북미 스킬 입력을 60초로 갱신합니다. 공개 액티브 스킬 비교는 이 스티그마 버프 창을 모델링하지 않으므로 과거 기록·직업 DPS를 소급 재계산하지 않으며 로테이션 사용·가동률 재현이 필요합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Odylium Repository · Daily Dungeon",
+          "ko": "오디움 저장소 · 일일 던전"
+        },
+        "description": {
+          "en": "Odylium Repository is added as a Daily Dungeon that awards a fixed amount of Soul Crystals based on clear points and shares entries with Daeva Bio-Research Base.",
+          "ko": "클리어 점수에 따라 정해진 영혼 결정 수량을 지급하는 일일 던전 오디움 저장소가 추가되며 데바 생체 연구기지와 입장 횟수를 공유합니다."
+        },
+        "impact": {
+          "en": "P1 analysis: this changes the daily choice for pet/Soul Crystal progression. Exact point thresholds, reward amounts, unlock prerequisites and shared-entry consumption need client verification.",
+          "ko": "P1 해석: 펫·영혼 결정 성장의 일일 선택지가 달라집니다. 점수 구간·보상 수량·해금 선행조건·공유 입장 차감은 클라이언트 확인이 필요합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Crafted and Expedition gear progression",
+          "ko": "제작·원정 장비 성장"
+        },
+        "description": {
+          "en": "Crafted Gear Amplify caps rise and transfer from Tier 3 Expedition to Tier 2 Crafted, and Tier 2 Expedition to Tier 1 Crafted, becomes possible.",
+          "ko": "제작 장비 돌파 상한이 오르고 3티어 원정→2티어 제작, 2티어 원정→1티어 제작 전승이 가능해집니다."
+        },
+        "before": {
+          "en": "True/Star Dragon 1; Splendent True/Star Dragon 1; White/Dark Dragon 3; Splendent White/Dark Dragon 3",
+          "ko": "진룡/성룡 1 · 찬란한 진룡/성룡 1 · 백룡/흑룡 3 · 찬란한 백룡/흑룡 3"
+        },
+        "after": {
+          "en": "True/Star Dragon 3; Splendent True/Star Dragon 3; White/Dark Dragon 5; Splendent White/Dark Dragon 5",
+          "ko": "진룡/성룡 3 · 찬란한 진룡/성룡 3 · 백룡/흑룡 5 · 찬란한 백룡/흑룡 5"
+        },
+        "impact": {
+          "en": "P1 analysis: equipment investment and transfer stopping points change. Verify the exact NA transfer preview, material/Kina cost, eligible slots and preserved enhancement before editing evergreen budgets.",
+          "ko": "P1 해석: 장비 투자·전승 중단 지점이 바뀝니다. 상시 예산 공략을 고치기 전 북미 전승 미리보기·재료/키나·대상 부위·강화 보존을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Gathering · daily cap and level gate",
+          "ko": "채집 · 일일 제한·레벨 조건"
+        },
+        "description": {
+          "en": "The daily gathering cap becomes 1,000 attempts per server and resets at 00:00 PDT / 08:00 CET. The minimum gathering level increases from character level 10 to 45.",
+          "ko": "일일 채집 제한은 서버당 1,000회이며 00:00 PDT / 08:00 CET에 초기화됩니다. 채집 최소 캐릭터 레벨은 10에서 45로 오릅니다."
+        },
+        "before": {
+          "en": "Minimum character level 10; no published cap in this NA notice",
+          "ko": "최소 캐릭터 레벨 10 · 이 북미 공지 기준 기존 제한 수치 미기재"
+        },
+        "after": {
+          "en": "1,000 attempts per server per day; minimum character level 45",
+          "ko": "서버당 하루 1,000회 · 최소 캐릭터 레벨 45"
+        },
+        "impact": {
+          "en": "P1 analysis: new players and farming routes are directly affected. Verify whether success, failure and cancellation all count in NA, account/character sharing, the HUD counter and reset behavior before changing route priorities.",
+          "ko": "P1 해석: 초보자와 파밍 동선에 직접 영향이 있습니다. 북미에서 성공·실패·취소 집계, 계정/캐릭터 공유, HUD 카운터와 초기화를 확인한 뒤 동선 우선순위를 바꿔야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Hidden Cubes and Lower Abyss access",
+          "ko": "히든 큐브·하층 어비스 진입"
+        },
+        "description": {
+          "en": "Hidden Cubes spawn more frequently, Abyss entry capacity increases, Lower Abyss Dimensional Core HP increases, and a Dissipation of Power debuff weakens the Core after Artifact Battles last at least 10 minutes.",
+          "ko": "히든 큐브 출현 빈도가 늘고 어비스 진입 인원이 확대되며 하층 차원의 핵 HP가 증가합니다. 아티팩트 전투가 10분 이상 지속되면 힘의 소진 디버프로 차원의 핵이 약해집니다."
+        },
+        "after": {
+          "en": "Dissipation of Power after 10+ minutes; other numeric values not announced",
+          "ko": "10분 이상 시 힘의 소진 · 그 외 수치 미공개"
+        },
+        "impact": {
+          "en": "P1 analysis: availability and long-fight handling change, but no coordinate, spawn interval, entry cap or Core HP value is published. Keep current map positions until live spawn and acquisition conditions are checked.",
+          "ko": "P1 해석: 이용 가능성과 장기전 대응이 바뀌지만 좌표·출현 간격·진입 정원·차원의 핵 HP 수치는 공개되지 않았습니다. 실제 스폰·획득 조건 확인 전 현재 지도 위치를 유지합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Expedition Hard · revive-count reset",
+          "ko": "원정 어려움 · 부활 횟수 초기화"
+        },
+        "description": {
+          "en": "Fixes the revive count occasionally failing to reset when retrying an Expedition Dungeon on Hard.",
+          "ko": "원정 던전 어려움 재도전 시 부활 횟수가 간헐적으로 초기화되지 않던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 analysis: restores the intended retry allowance. Reproduce wipe/retry, individual versus party counts and re-entry before updating encounter instructions.",
+          "ko": "P1 해석: 의도된 재도전 부활 횟수를 복구합니다. 공략 수정 전 전멸·재도전, 개인/파티 집계와 재입장을 재현해야 합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, publication and effective window",
+            "ko": "지역·발표일·시행 구간"
+          },
+          "sourceSection": "Patch scope",
+          "notes": [
+            {
+              "en": "Published October 28 at 06:30 UTC and revised at 07:25:01 UTC. The title identifies October 27 PDT / October 28 CET and the body schedules features and events around the October 28 maintenance. This review is bound to source hash d9c65264…; collection time is not used as the review date.",
+              "ko": "10월 28일 06:30 UTC에 게시되고 07:25:01 UTC에 수정됐습니다. 제목은 10월 27일 PDT / 28일 CET를 명시하고 본문은 10월 28일 점검 전후 적용을 안내합니다. 이번 검토는 원문 해시 d9c65264…에 연결하며 수집 시각을 검토일로 대신하지 않습니다."
+            },
+            {
+              "en": "NA/Global only: the boss, class, gathering and progression values are not applied to Korea. No measured class ranking or historical DPS record is rewritten from this notice.",
+              "ko": "북미/글로벌 전용입니다. 보스·직업·채집·성장 수치를 한국에 적용하지 않습니다. 이 공지만으로 실측 직업 순위나 과거 DPS 기록을 다시 쓰지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Boss balance and new Hard modes",
+            "ko": "보스 밸런스·새 어려움 난도"
+          },
+          "sourceSection": "Content & Systems · Expedition",
+          "notes": [
+            {
+              "en": "Official fact: Normal/Stage 1 boss Attack −15%; Hard/Stages 2–4 Attack and Damage Boost −10%; Transcendence Stages 1–2 HP −6.5%. These are boss-stat adjustments, not player DPS multipliers.",
+              "ko": "공식 확인: 일반·1단계 보스 공격력 −15%, 어려움·2~4단계 공격력과 피해 증폭 −10%, 초월 1~2단계 HP −6.5%입니다. 보스 능력치 조정이며 플레이어 DPS 배율이 아닙니다."
+            },
+            {
+              "en": "Urugugu Canyon and Vakron Sky Island Hard mode require item level 2700, use a four-minute Frenzy timer and allow three revives per player. Direct checks remain for actual difficulty, region, boss patterns, mechanic triggers, Frenzy start, revive reset and reward conditions.",
+              "ko": "우루구구 협곡·바크론 공중섬 어려움은 아이템 레벨 2700, 광폭화 4분, 개인별 부활 3회 조건입니다. 실제 난도·지역·보스 패턴·기믹 발동·광폭화 시작·부활 초기화·보상 조건은 직접 확인 대기입니다."
+            },
+            {
+              "en": "P1 public targets after verification: /dungeons/urugugu-canyon/ and /dungeons/vakron-island/ plus Korean counterparts. Source targets are progression.py, urugugu.py, vakron.py and encounters.py. The current Normal evidence and animations are preserved.",
+              "ko": "P1 검증 후 공개 경로: /dungeons/urugugu-canyon/·/dungeons/vakron-island/와 한국어 대응 페이지입니다. 소스 경로는 progression.py·urugugu.py·vakron.py·encounters.py이며 현재 일반 난도 근거와 애니메이션은 보존합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Class HP and Assassin skills",
+            "ko": "직업 생명력·살성 스킬"
+          },
+          "sourceSection": "Content & Systems · Class Changes",
+          "notes": [
+            {
+              "en": "All eight Global launch classes receive explicit level-45 base-HP values: Gladiator/Templar 4,702→6,202; the other six classes 4,702→5,702. Confirm live stats with matched gear/passives before treating the difference as effective HP.",
+              "ko": "글로벌 출시 8직업의 45레벨 기본 생명력이 명시됐습니다. 검성·수호성 4,702→6,202, 나머지 6직업은 4,702→5,702입니다. 같은 장비·패시브 조건으로 실제 능력치를 확인한 뒤 유효 생명력으로 해석해야 합니다."
+            },
+            {
+              "en": "Assassin Heightened Sixth Sense prints 1,000 / 2,000 / 4,000 HP at skill levels 5 / 10 / 20. Illusive Clone base cooldown changes 90→60 seconds. The exact cooldown and level values are stored in data/skills.json and data/skill-snapshot.json with this official source and date.",
+              "ko": "살성 육감 극대화는 스킬 5 / 10 / 20레벨 생명력 1,000 / 2,000 / 4,000, 환영 분신 기본 쿨타임은 90→60초입니다. 정확한 쿨타임·레벨 수치를 공식 출처·기준일과 함께 data/skills.json·data/skill-snapshot.json에 기록합니다."
+            },
+            {
+              "en": "P1 public targets: /classes/assassin/, /skills/heightened-sixth-sense/ and /skills/illusive-clone/ plus Korean counterparts. Reproduce tooltip levels, percentage-Max-HP interaction, buff timing and rotation usage. The active-skill simulator excludes these passive/Stigma effects, so no class eDPS or final tier is inferred.",
+              "ko": "P1 공개 경로: /classes/assassin/·/skills/heightened-sixth-sense/·/skills/illusive-clone/와 한국어 대응 페이지입니다. 툴팁 레벨·최대 생명력 비율 중첩·버프 타이밍·로테이션 사용을 재현해야 합니다. 액티브 스킬 계산기는 패시브·스티그마 효과를 제외하므로 직업 eDPS나 최종 티어를 추정하지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Daily, equipment and newcomer progression",
+            "ko": "일일·장비·초보 성장"
+          },
+          "sourceSection": "Content & Systems · Daily Dungeon / Shop / Gear Progression",
+          "notes": [
+            {
+              "en": "Odylium Repository is a new Daily Dungeon sharing entries with Daeva Bio-Research Base. Odyle Energy limits and instant-clear ticket availability change, and Weekly Season Missions replace some Abyss Points with Lower Abyss Rift Stones.",
+              "ko": "오디움 저장소는 데바 생체 연구기지와 입장을 공유하는 새 일일 던전입니다. 오딜 에너지 한도·즉시 완료권 판매가 바뀌고 주간 시즌 미션 일부는 어비스 포인트 대신 하층 어비스 시간석을 지급합니다."
+            },
+            {
+              "en": "Crafted Gear Amplify caps become 3 for True/Star Dragon tiers and 5 for White/Dark Dragon tiers, including their Splendent versions. Tier 3 Expedition→Tier 2 Crafted and Tier 2 Expedition→Tier 1 Crafted transfers are enabled.",
+              "ko": "제작 장비 돌파 상한은 진룡/성룡 계열 3, 백룡/흑룡 계열 5로 바뀌며 찬란한 장비도 같습니다. 3티어 원정→2티어 제작, 2티어 원정→1티어 제작 전승이 열립니다."
+            },
+            {
+              "en": "P1 targets after verification: /endgame/, /guides/dungeon-rewards/ and /guides/endgame-crafts/ plus Korean counterparts; source files progression.py and advancedguides.py. Verify unlocks, entry sharing, point/reward amounts, costs, weekly resets, transfer preview and prerequisites before changing investment priorities.",
+              "ko": "P1 검증 후 경로: /endgame/·/guides/dungeon-rewards/·/guides/endgame-crafts/와 한국어 대응 페이지, 소스는 progression.py·advancedguides.py입니다. 투자 우선순위 변경 전 해금·입장 공유·점수/보상 수량·비용·주간 초기화·전승 미리보기·선행조건을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Gathering, maps and Abyss systems",
+            "ko": "채집·지도·어비스 시스템"
+          },
+          "sourceSection": "Other Improvements and Bug Fixes · Improvements",
+          "notes": [
+            {
+              "en": "Official fact: NA gathering is capped at 1,000 attempts per server per day, resets at 00:00 PDT / 08:00 CET and requires character level 45 instead of 10. The notice does not say whether failed or cancelled attempts count, so the KR wording is not copied into NA.",
+              "ko": "공식 확인: 북미 채집은 서버당 하루 1,000회, 00:00 PDT / 08:00 CET 초기화이며 요구 캐릭터 레벨이 10에서 45로 오릅니다. 실패·취소 집계는 공지되지 않아 한국 문구를 북미에 복사하지 않습니다."
+            },
+            {
+              "en": "Hidden Cubes spawn more frequently, but no coordinate, exact interval, simultaneous spawn count or acquisition-condition change is published. P1 targets after live verification: /maps/, /ko/maps/, data/maps.json, resourcemap.py and worldmap.py. Current coordinates remain intact.",
+              "ko": "히든 큐브 출현 빈도는 늘지만 좌표·정확한 간격·동시 출현 수·획득 조건 변경은 공개되지 않았습니다. P1 직접 검증 후 경로는 /maps/·/ko/maps/, data/maps.json·resourcemap.py·worldmap.py이며 현재 좌표는 유지합니다."
+            },
+            {
+              "en": "Abyss capacity and Dimensional Core durability change; after an Artifact Battle lasts 10 minutes, Dissipation of Power weakens the Core. Verify entry capacity, exact HP, debuff trigger, duration and response before changing PvP instructions.",
+              "ko": "어비스 수용 인원과 차원의 핵 내구도가 바뀌며 아티팩트 전투 10분 후 힘의 소진이 차원의 핵을 약화합니다. PvP 공략 수정 전 진입 정원·정확한 HP·디버프 발동·지속·대응을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Fixes and review limits",
+            "ko": "오류 수정·검토 한계"
+          },
+          "sourceSection": "Other Improvements and Bug Fixes · Fixes / review scope",
+          "notes": [
+            {
+              "en": "Hard Expedition revive counts now reset on retry. The patch also fixes invisible PvP characters, blocked Season Mission progress and misplaced Ariel/Azphel Daevanion entries. No damage percentage is invented for these fixes.",
+              "ko": "원정 어려움 재도전 부활 횟수 초기화, PvP 캐릭터 비표시, 시즌 미션 진행 불가, 아리엘·아스펠 데바니온 위치 표시 오류를 수정합니다. 수치 없는 오류 수정에 피해 변화율을 만들지 않습니다."
+            },
+            {
+              "en": "This is a highlights review of class, combat and progression changes, not a complete republication of attendance rewards, pass missions or paid product tables. No in-game validation or final class tier is claimed. Historical DPS observations and rankings retain their original dates and values.",
+              "ko": "직업·전투·성장 변경의 highlights 검토이며 출석 보상·패스 미션·유료 상품 표 전체 재게시가 아닙니다. 인게임 검증이나 최종 직업 티어를 주장하지 않으며 과거 DPS 관측·순위의 날짜와 값은 보존합니다."
             }
           ],
           "tables": []

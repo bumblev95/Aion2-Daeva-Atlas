@@ -1,6 +1,29 @@
 {
-  "reviewedAt": "2026-10-07",
+  "reviewedAt": "2026-10-28",
   "region": "Global",
-  "scope": "Base-1 tooltips; not a final build snapshot",
-  "source": "https://metabot.gg/en/aion-2/skills"
+  "scope": "Global base-1 tooltips plus source-bound NA official overrides; not a final build snapshot",
+  "source": "https://metabot.gg/en/aion-2/skills",
+  "baseReviewedAt": "2026-10-07",
+  "officialOverrides": [
+    {
+      "region": "NA",
+      "effectiveAt": "2026-10-28",
+      "reviewedAt": "2026-10-28T08:49:42Z",
+      "source": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210",
+      "sourceHash": "d9c652647a7b76997da54a193ae5e0c38c1d67842437fb17be46651ea2a8f794",
+      "skills": {
+        "heightened-sixth-sense": {
+          "hpBySkillLevel": {
+            "5": 1000,
+            "10": 2000,
+            "20": 4000
+          }
+        },
+        "illusive-clone": {
+          "beforeCooldownSeconds": 90,
+          "cooldownSeconds": 60
+        }
+      }
+    }
+  ]
 }

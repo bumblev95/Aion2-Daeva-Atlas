@@ -1,17 +1,17 @@
 {
-  "reviewedAt": "2026-10-27",
+  "reviewedAt": "2026-10-28",
   "items": [
     {
       "id": "kr-20261028-outland-gathering-ludra",
       "region": "KR",
-      "reviewedAt": "2026-10-27T20:48:00Z",
+      "reviewedAt": "2026-10-28T08:49:42Z",
       "title": {
         "en": "October 28 KR systems · Abyss schedule, Outland and gathering limit",
         "ko": "10월 28일 한국 시스템 · 어비스 일정·아웃랜드·채집 제한"
       },
       "finding": {
-        "en": "P1 combat/growth: verify Argo's 09:00/21:00 KR server spawns and first post-maintenance appearance; Abyss Outland queues, player count, match/ranking rules, Traveler's Coin amounts, weekly cap/shop and Wednesday 05:00 reset; and the gathering cap, character/account/server scope, HUD counter, failed/cancelled attempts and 05:00 reset. Reproduce Ludra's wrong-party-position teleport, mobile required-floor handling and Arcana compensation eligibility/delivery before changing evergreen guides. Exact public and source targets are recorded in the source-hash-bound highlights. No NA application, map-coordinate change, skill/eDPS input change, historical ranking rewrite or final tier is supported.",
-        "ko": "P1 전투·성장: 한국 서버 아그로 09:00·21:00 출현과 점검 후 첫 등장, 어비스 아웃랜드의 매칭·인원·경기/순위 규칙·방랑자의 주화 수량·주간 한도/상점·수요일 05:00 초기화, 채집 제한 수치·캐릭터/계정/서버 범위·HUD 카운터·실패/취소 집계·05:00 초기화를 직접 확인해야 합니다. 상시 공략 변경 전 루드라의 잘못된 파티 위치 텔레포트, 모바일 필수 장판 처리, 아르카나 보상 대상·지급도 재현해야 합니다. 정확한 공개·소스 경로는 원문 해시 highlights에 기록했습니다. 북미 적용, 지도 좌표 변경, 스킬/eDPS 입력 변경, 과거 순위 재작성이나 최종 티어의 근거는 없습니다."
+        "en": "P1 combat/growth: NC revised the October 28 source at 01:57:43 UTC. Re-reading the latest body found no new semantic delta in the already recorded Argo, Outland, gathering, Ludra, mobile-support or recovery facts; the hash-bound review was updated and the current source includes the official Abyss guidebook link. In-game checks remain for schedules, queues, caps, trigger behavior and compensation. No NA application, skill/eDPS input or historical ranking change is supported.",
+        "ko": "P1 전투·성장: NC가 10월 28일 원문을 01:57:43 UTC에 수정했습니다. 최신 본문을 다시 읽었으나 이미 기록한 아그로·아웃랜드·채집·루드라·모바일 지원·복구 사실의 새 의미 차이는 없었고 해시 결속 검토만 갱신했습니다. 현재 원문에는 공식 어비스 가이드북 링크가 있습니다. 일정·매칭·한도·발동·보상은 계속 직접 확인 대기입니다. 북미 적용, 스킬/eDPS 입력, 과거 순위 변경 근거는 없습니다."
       },
       "status": "needs-evidence",
       "sources": [
@@ -73,15 +73,24 @@
       "id": "kr-20261021-conditions-and-positions",
       "region": "KR",
       "reviewedAt": "2026-10-21T02:52:51Z",
-      "title": {"en": "October 21 KR changes: in-game checks pending", "ko": "10월 21일 한국 변경 · 직접 검증 대기"},
+      "title": {
+        "en": "October 21 KR changes: in-game checks pending",
+        "ko": "10월 21일 한국 변경 · 직접 검증 대기"
+      },
       "finding": {
         "en": "P1: verify Assault action timing and rotations, healing-reduction tooltip levels/specializations, Absolution Lv25 refresh and Cold Storm/Fire Wall conditional damage. Check KR trial Fire Temple expiry/kill results, relocated Verteron Empyrean Traces, Arcana 500-item cap and extraction outputs, and season/support deadlines. NC now confirms that Noble Crystal Arcana extraction fails; reproduce the named item/message, test other Arcana types separately and confirm the later fix. Exact guide/data targets and separate factual/interpretive notes are in the hash-bound patch highlights. No in-game validation, new coordinates, NA input changes or final tiers are claimed.",
         "ko": "P1: 강습 동작 시간·로테이션, 치유 감소 툴팁 레벨·특화, 면죄 25레벨 갱신, 냉기 폭풍·불의 장벽 조건부 피해를 직접 검증해야 합니다. 한국 시련 불의 신전 만료·처치 판정, 베르테론 주신의 흔적 이동 좌표·고도·획득조건, 아르카나 500개 한도·추출 결과, 시즌·서포트 해금·보상·선행조건·마감도 대기 중입니다. NC가 고결한 결정 아르카나 추출 실패를 확인했으므로 해당 아이템·메시지 재현, 다른 아르카나의 정상 여부, 후속 수정 결과를 각각 확인해야 합니다. 정확한 공략·자료 경로와 사실/해석 구분은 해시에 묶인 패치 요약에 기록했습니다. 인게임 검증·새 좌표·북미 입력 변경·최종 티어를 주장하지 않습니다."
       },
       "status": "needs-evidence",
       "sources": [
-        {"title": "NC · October 21 Korea update", "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c"},
-        {"title": "NC · October third-week known issues", "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad8207a577e8c01355e00c1"}
+        {
+          "title": "NC · October 21 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ad7c138577e8c01355e006c"
+        },
+        {
+          "title": "NC · October third-week known issues",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad8207a577e8c01355e00c1"
+        }
       ]
     },
     {
@@ -166,6 +175,66 @@
         {
           "title": "AbyssLogs · eDPS / fight analysis",
           "url": "https://github.com/karim-mo/aion2-abysslogs-dps-meter"
+        }
+      ]
+    },
+    {
+      "id": "na-20261028-expedition-class-balance",
+      "region": "NA / Global",
+      "reviewedAt": "2026-10-28T08:49:42Z",
+      "title": {
+        "en": "October 28 NA · Expedition balance and class survivability",
+        "ko": "10월 28일 북미 · 원정 밸런스·직업 생존력"
+      },
+      "finding": {
+        "en": "P1 combat: verify Normal/Hard/Transcendence boss Attack, Damage Boost and HP reductions per stage; Urugugu/Vakron Hard entry, region, patterns, Frenzy at four minutes, three personal revives and rewards; and all eight level-45 base-HP values under matched gear. For Assassin, reproduce Heightened Sixth Sense levels 5/10/20 and Illusive Clone 90→60s cooldown with rotation uptime. Exact public targets: /dungeons/urugugu-canyon/, /dungeons/vakron-island/, /classes/assassin/, /skills/heightened-sixth-sense/, /skills/illusive-clone/ and Korean counterparts; source targets progression.py, urugugu.py, vakron.py, encounters.py, data/skills.json and data/skill-snapshot.json. No final tier or historical DPS rewrite.",
+        "ko": "P1 전투: 일반/어려움/초월 단계별 보스 공격력·피해 증폭·HP 감소, 우루구구/바크론 어려움의 입장·지역·패턴·광폭화 4분·개인 부활 3회·보상, 같은 장비 조건의 8직업 45레벨 기본 생명력을 확인해야 합니다. 살성은 육감 극대화 5/10/20레벨과 환영 분신 90→60초 쿨타임·로테이션 가동률을 재현합니다. 정확한 공개 경로는 /dungeons/urugugu-canyon/·/dungeons/vakron-island/·/classes/assassin/·/skills/heightened-sixth-sense/·/skills/illusive-clone/와 한국어 대응 페이지, 소스는 progression.py·urugugu.py·vakron.py·encounters.py·data/skills.json·data/skill-snapshot.json입니다. 최종 티어·과거 DPS는 다시 쓰지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 27 PDT / 28 CET patch notes",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210"
+        }
+      ]
+    },
+    {
+      "id": "na-20261028-daily-gear-progression",
+      "region": "NA / Global",
+      "reviewedAt": "2026-10-28T08:49:42Z",
+      "title": {
+        "en": "October 28 NA · Daily and crafted-gear progression",
+        "ko": "10월 28일 북미 · 일일·제작 장비 성장"
+      },
+      "finding": {
+        "en": "P1 growth: verify Odylium Repository unlock, clear-point reward amounts and shared Daily Dungeon entry; Odyle/ticket limits and weekly reset; Crafted Gear Amplify caps, transfer preview, costs, eligible slots and preserved enhancement. Exact public targets: /endgame/, /guides/dungeon-rewards/, /guides/endgame-crafts/ and Korean counterparts; source targets progression.py and advancedguides.py. Do not copy the values to KR or infer unannounced costs.",
+        "ko": "P1 성장: 오디움 저장소 해금·클리어 점수별 보상·일일 던전 입장 공유, 오딜/완료권 한도·주간 초기화, 제작 장비 돌파 상한·전승 미리보기·비용·대상 부위·강화 보존을 확인해야 합니다. 정확한 공개 경로는 /endgame/·/guides/dungeon-rewards/·/guides/endgame-crafts/와 한국어 대응 페이지, 소스는 progression.py·advancedguides.py입니다. 수치를 한국에 복사하거나 미공개 비용을 추정하지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 27 PDT / 28 CET patch notes",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210"
+        }
+      ]
+    },
+    {
+      "id": "na-20261028-gathering-cubes-abyss",
+      "region": "NA / Global",
+      "reviewedAt": "2026-10-28T08:49:42Z",
+      "title": {
+        "en": "October 28 NA · Gathering, Hidden Cubes and Abyss systems",
+        "ko": "10월 28일 북미 · 채집·히든 큐브·어비스 시스템"
+      },
+      "finding": {
+        "en": "P1 map/routine: verify the 1,000-per-server gathering cap, level-45 gate, 00:00 PDT / 08:00 CET reset, account/character sharing, HUD and failed/cancelled attempts. For Hidden Cubes, check live coordinates, altitude, spawn frequency/count, acquisition condition and reset; for the Lower Abyss, check entry capacity, Core HP and Dissipation of Power trigger/response after 10 minutes. Exact public targets: /maps/, /ko/maps/, /routines/ and /ko/routines/; source targets data/maps.json, resourcemap.py, worldmap.py and routines.py. Current coordinates remain unchanged pending in-game evidence.",
+        "ko": "P1 지도·일과: 서버당 채집 1,000회·45레벨 조건·00:00 PDT / 08:00 CET 초기화, 계정/캐릭터 공유, HUD와 실패/취소 집계를 확인해야 합니다. 히든 큐브는 실제 좌표·고도·출현 빈도/수·획득 조건·초기화, 하층 어비스는 진입 정원·차원의 핵 HP·10분 후 힘의 소진 발동/대응을 확인합니다. 정확한 공개 경로는 /maps/·/ko/maps/·/routines/·/ko/routines/, 소스는 data/maps.json·resourcemap.py·worldmap.py·routines.py입니다. 인게임 근거 전 현재 좌표를 유지합니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 27 PDT / 28 CET patch notes",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210"
         }
       ]
     }
