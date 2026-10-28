@@ -100,7 +100,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if ads['enabled']:adhead+=f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={E(ads["publisher_id"])}" crossorigin="anonymous"></script>'
     adhead+=measurement.head(CONFIG,BASE)
     guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=growth-guides-1">' if sub in ('','start/','endgame/','gear/','routines/','tools/planner/','guides/') or sub.startswith('dungeons/') else ''
-    if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
+    if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES} | {'dungeons/urugugu-canyon/', 'dungeons/vakron-island/'}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
     if 'party-guide' in content or 'party-shortcuts' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/party-guide.css?v=1">'

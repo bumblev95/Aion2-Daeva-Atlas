@@ -19,7 +19,7 @@ const server=http.createServer((req,res)=>{
  page.on('pageerror',e=>errors.push(e.message));await page.route('https://**/*',r=>r.abort());
  await page.goto(`http://127.0.0.1:${server.address().port}/Aion2-Daeva-Atlas/${lang==='ko'?'ko/':''}dungeons/${slug}/`);
  const section=page.locator('[data-dungeon-modes]');assert.equal(await section.count(),1);
- assert.equal(await section.getAttribute('data-region'),'NA');assert.equal(await section.locator('tbody tr').count(),8);
+ assert.equal(await section.getAttribute('data-region'),'NA');assert.equal(await section.evaluate(n=>getComputedStyle(n).borderTopStyle),'solid');assert.equal(await section.locator('tbody tr').count(),8);
  assert.ok((await section.textContent()).includes('2,700'));
  assert.ok((await section.textContent()).includes(slug==='vakron-island'?'Ariel Fragment: Vakron':'Ariel Fragment: Urugugu'));
  await section.locator('.mode-pending summary').click();assert.ok(await section.locator('.mode-pending p').isVisible());
