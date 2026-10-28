@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-28T08:22:43Z",
+  "checkedAt": "2026-10-28T08:53:21Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-28T08:22:43Z",
-      "lastSuccessAt": "2026-10-28T08:22:43Z",
+      "checkedAt": "2026-10-28T08:53:21Z",
+      "lastSuccessAt": "2026-10-28T08:53:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -24,13 +24,254 @@
           "sourceUpdatedAt": "2026-10-28T01:57:43.622Z",
           "contentHash": "26961edb8f3ed3c937bfa9f63582c2f6c36d0d7aee0fe217546f82a28f42501a",
           "bodyState": "ready",
-          "reviewState": "revised",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "KR October 28: Argo moves to fixed twice-daily spawn times, Abyss Outland opens as a scheduled solo PvP survival mode, and all gathering attempts begin counting toward a daily server-based limit. The latest source revision was re-read and does not add a new class coefficient, cooldown, skill-level effect or other semantic change to the reviewed highlights.",
+            "ko": "한국 10월 28일: 아그로 출현이 하루 두 번의 고정 시각으로 바뀌고, 개인 PvP 생존 콘텐츠 어비스 아웃랜드가 정해진 시간에 열리며, 모든 채집 시도가 서버 단위 일일 제한에 집계됩니다. 최신 수정 원문을 다시 읽었으며 기존 highlights에 새 직업 계수·쿨타임·스킬 레벨 효과나 다른 의미 변경은 확인되지 않았습니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "adjustment",
+              "subject": {
+                "en": "Spirit King Argo · spawn schedule",
+                "ko": "정령왕 아그로 · 출현 시각"
+              },
+              "description": {
+                "en": "Argo in the chaotic Lower Abyss changes from a server-open-based 12-hour cycle to fixed daily spawns. It does not appear immediately after scheduled maintenance.",
+                "ko": "혼돈의 에레슈란타 하층 아그로가 서버 오픈 기준 12시간 주기에서 매일 고정 시각 출현으로 변경됩니다. 정기점검 직후에는 등장하지 않습니다."
+              },
+              "before": {
+                "en": "After server opening, then every 12 hours",
+                "ko": "서버 오픈 시 등장 후 12시간마다"
+              },
+              "after": {
+                "en": "Daily at 09:00 and 21:00 on the KR server schedule",
+                "ko": "한국 서버 일정 기준 매일 09:00·21:00"
+              },
+              "impact": {
+                "en": "P1 analysis: fixed times change boss planning, but NC announces no pattern, difficulty, HP or reward change. Confirm the actual KR server clock and post-maintenance first spawn in game.",
+                "ko": "P1 해석: 고정 시각에 맞춰 보스 참여 계획이 달라집니다. 패턴·난도·HP·보상 변경은 공지되지 않았으며 실제 한국 서버 시계와 점검 후 첫 출현은 직접 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Abyss Outland · solo PvP survival mode",
+                "ko": "어비스 아웃랜드 · 개인 PvP 생존전"
+              },
+              "description": {
+                "en": "A scheduled battle-royale-style personal PvP mode opens through the Abyss UI for about 100 players. Placement follows survival order and awards Traveler's Coins, which have a weekly earning cap reset Wednesday at 05:00.",
+                "ko": "어비스 UI에서 약 100명이 참여해 최후의 1인을 가리는 배틀 로얄 형태의 개인 PvP 콘텐츠가 정해진 시간에 열립니다. 생존 순서로 순위를 정하고 방랑자의 주화를 지급하며, 주간 획득 한도는 수요일 05:00에 초기화됩니다."
+              },
+              "after": {
+                "en": "Character Lv45+ · item level 3000+ · matches every 30 minutes during 11:00–13:30 and 20:00–23:30 daily",
+                "ko": "캐릭터 45레벨 이상 · 아이템 레벨 3000 이상 · 매일 11:00~13:30·20:00~23:30에 30분 단위 경기"
+              },
+              "impact": {
+                "en": "P1 analysis: this adds a new KR PvP and weekly-currency route. Queue behavior, exact player count, match duration, ranking ties, coin amounts, cap and shop costs require direct verification.",
+                "ko": "P1 해석: 한국 PvP와 주간 재화 획득 경로가 추가됩니다. 매칭 방식·실제 인원·경기 시간·동순위 판정·주화 수량·획득 한도·상점 비용은 직접 검증해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Gathering · daily attempt limit",
+                "ko": "채집 · 일일 시도 제한"
+              },
+              "description": {
+                "en": "A daily gathering limit is introduced. Successful, failed and cancelled attempts all count at server scope, the counter resets daily at 05:00, and the current count appears at the upper-left HUD. NC does not publish the numeric cap.",
+                "ko": "일일 채집 제한이 도입됩니다. 성공·실패·취소를 포함한 모든 시도가 서버 단위로 집계되고 매일 05:00에 초기화되며 현재 횟수는 HUD 좌측 상단에 표시됩니다. NC는 정확한 제한 횟수를 공개하지 않았습니다."
+              },
+              "after": {
+                "en": "All gathering attempts count; daily reset at 05:00; numeric cap not announced",
+                "ko": "모든 채집 시도 집계 · 매일 05:00 초기화 · 제한 수치는 미공개"
+              },
+              "impact": {
+                "en": "P1 analysis: farming routes need attempt-budget guidance after the cap and scope are verified. Existing map coordinates and spawn claims do not change from this notice.",
+                "ko": "P1 해석: 제한 수치와 적용 범위를 확인한 뒤 파밍 동선에 시도 횟수 관리가 필요합니다. 이 공지만으로 기존 지도 좌표나 출현 정보가 바뀌지는 않습니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Ludra · mid-boss party position",
+                "ko": "심연의 재련: 루드라 · 중간 보스 파티 위치"
+              },
+              "description": {
+                "en": "During a mid-boss fight, a character who is not at the position assigned to their party is now teleported to the dungeon entrance.",
+                "ko": "중간 보스 전투 중 캐릭터가 소속 파티에 맞는 위치에 있지 않으면 던전 입구로 이동하도록 수정됩니다."
+              },
+              "impact": {
+                "en": "P1 analysis: this can prevent participation from an incorrect party instance or position. The trigger, party reassignment behavior and re-entry flow remain in-game verification items; no boss pattern or damage change is stated.",
+                "ko": "P1 해석: 잘못된 파티 인스턴스·위치에서 전투에 참여하는 상황을 막을 수 있습니다. 발동 조건·파티 재배정·재입장 흐름은 직접 확인해야 하며 보스 패턴·피해 변경은 공지되지 않았습니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Mobile dodge support · required floor mechanics",
+                "ko": "모바일 회피 서포트 · 필수 장판"
+              },
+              "description": {
+                "en": "Mobile dodge support is adjusted so it no longer avoids floor areas that the player must step on.",
+                "ko": "모바일 회피 서포트가 플레이어가 밟아야 하는 장판까지 피하던 현상을 개선합니다."
+              },
+              "impact": {
+                "en": "P2 analysis: mobile mechanic handling should become more reliable, but the notice does not identify every encounter or trigger. Reproduce required-floor behavior before changing encounter instructions.",
+                "ko": "P2 해석: 모바일 기믹 수행 안정성이 좋아질 수 있지만 대상 전투·발동 조건은 공개되지 않았습니다. 공략 문구를 바꾸기 전 필수 장판 동작을 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Out-of-combat damage-over-time · sprint and mount",
+                "ko": "비전투 지속 피해 · 질주·탑승"
+              },
+              "description": {
+                "en": "Damage-over-time effects no longer cancel sprinting or mounting while the character is out of combat.",
+                "ko": "비전투 상태에서 지속 피해 효과 때문에 질주·탑승이 해제되던 현상을 수정합니다."
+              },
+              "impact": {
+                "en": "P2 analysis: travel continuity improves after combat; this is not a damage coefficient or survival-stat change.",
+                "ko": "P2 해석: 전투 후 이동이 끊기는 현상이 줄어듭니다. 피해 계수나 생존 능력치 변경은 아닙니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Arcana extraction-progress recovery",
+                "ko": "아르카나 추출 진행도 복구"
+              },
+              "description": {
+                "en": "Characters whose accumulated extraction progress was deleted by the October 21 Arcana extraction-list change receive one Mysterious Crystal (Engraved).",
+                "ko": "10월 21일 아르카나 추출 항목 변경으로 누적 추출 진행도가 삭제된 캐릭터에게 신비로운 결정(각인) 1개가 일괄 지급됩니다."
+              },
+              "after": {
+                "en": "1 Mysterious Crystal (Engraved) for each affected character",
+                "ko": "대상 캐릭터당 신비로운 결정(각인) 1개"
+              },
+              "impact": {
+                "en": "P1 analysis: this is a fixed recovery grant for affected KR characters, not a new extraction rate. Eligibility, delivery method and receipt need client verification.",
+                "ko": "P1 해석: 한국 대상 캐릭터의 고정 복구 지급이며 새 추출 환산율이 아닙니다. 대상 판정·지급 방식·수령 여부는 직접 확인해야 합니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-10-28T08:49:42Z",
+          "displayTitle": {
+            "en": "October 28 · Korea",
+            "ko": "10월 28일 한국 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, announcement and effective date",
+                  "ko": "지역·발표일·시행일"
+                },
+                "sourceSection": "적용 범위",
+                "notes": [
+                  {
+                    "en": "Published October 27 at 19:30 UTC (October 28 04:30 KST) and revised October 28 at 01:57:43 UTC. The latest body was re-read and this review is now bound to source hash 26961edb…. Its readable gameplay facts match the previous extraction; the current source includes an official Abyss guidebook link. The earlier full markup was not retained, so an exhaustive presentation-only diff is not claimed.",
+                    "ko": "10월 27일 19:30 UTC(한국 10월 28일 04:30)에 게시되고 10월 28일 01:57:43 UTC에 수정됐습니다. 최신 본문을 다시 읽고 이번 검토를 원문 해시 26961edb…에 다시 연결했습니다. 읽을 수 있는 게임 변경 사실은 이전 추출 내용과 같고 현재 원문에는 공식 어비스 가이드북 링크가 있습니다. 이전 전체 마크업은 보관하지 않아 표시 요소만의 완전한 전후 비교는 주장하지 않습니다."
+                  },
+                  {
+                    "en": "KR-only: do not apply the Argo schedule, Outland rules, gathering limit, Ludra fix or compensation to North America. No class coefficient, cooldown, skill-level effect or measured DPS result is announced.",
+                    "ko": "한국 전용입니다. 아그로 일정·아웃랜드 규칙·채집 제한·루드라 수정·복구 지급을 북미에 적용하지 않습니다. 직업 계수·쿨타임·스킬 레벨 효과·실측 DPS 결과는 공지되지 않았습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Abyss boss schedule and Outland",
+                  "ko": "어비스 보스 일정·아웃랜드"
+                },
+                "sourceSection": "콘텐츠 및 시스템 · 어비스 보스 / 어비스 아웃랜드",
+                "notes": [
+                  {
+                    "en": "Official fact: Argo moves from a server-open 12-hour cycle to 09:00 and 21:00 daily and does not appear immediately after maintenance. The source gives no pattern, HP, collision, difficulty or reward change.",
+                    "ko": "공식 확인: 아그로는 서버 오픈 기준 12시간 주기에서 매일 09:00·21:00 출현으로 바뀌며 점검 직후에는 등장하지 않습니다. 패턴·HP·충돌 판정·난도·보상 변경은 공지되지 않았습니다."
+                  },
+                  {
+                    "en": "Official fact: Abyss Outland is a scheduled personal PvP survival mode for about 100 players, gated at character level 45 and item level 3000. Matches open every 30 minutes during the two printed daily windows; survival placement awards weekly-capped Traveler's Coins.",
+                    "ko": "공식 확인: 어비스 아웃랜드는 약 100명이 참여하는 시간제 개인 PvP 생존 콘텐츠이며 캐릭터 45레벨·아이템 레벨 3000이 필요합니다. 공지된 두 일일 시간대에 30분 단위로 열리고 생존 순위에 따라 주간 한도가 있는 방랑자의 주화를 지급합니다."
+                  },
+                  {
+                    "en": "P1 guide targets after verification: /guides/pvp-context/ and /routines/ in both languages, with source files content.py and routines.py. Current main has no Abyss boss-timer or Outland strategy page, so no route, combat tactic or animation is invented. Verify server-clock timezone, first post-maintenance spawn, queues, match rules, ranking, coin amounts/cap, shop inventory and reset behavior.",
+                    "ko": "P1 검증 후 보강 경로: 양 언어의 /guides/pvp-context/·/routines/, 소스는 content.py·routines.py입니다. 현재 main에는 어비스 보스 타이머·아웃랜드 전용 공략이 없어 경로·전투법·애니메이션을 추정해 만들지 않습니다. 서버 시계·점검 후 첫 출현, 매칭·경기 규칙·순위·주화 수량/한도·상점 품목·초기화를 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Gathering limit and map impact",
+                  "ko": "채집 제한·지도 영향"
+                },
+                "sourceSection": "콘텐츠 및 시스템 · 채집",
+                "notes": [
+                  {
+                    "en": "Official fact: every success, failure and cancellation counts toward a daily server-scope gathering limit, reset at 05:00 and shown in the upper-left HUD. The patch does not state the cap or clarify whether 'server scope' is per character or account, so neither value is inferred.",
+                    "ko": "공식 확인: 성공·실패·취소를 포함한 모든 채집 시도가 서버 단위 일일 제한에 집계되고 05:00에 초기화되며 HUD 좌측 상단에 표시됩니다. 제한 수치와 '서버 단위'가 캐릭터·계정 중 어느 범위인지 명시하지 않아 추정하지 않습니다."
+                  },
+                  {
+                    "en": "P1 guide targets after verification: /maps/ and /ko/maps/, data/maps.json, resourcemap.py and worldmap.py. Coordinates, spawn locations, acquisition conditions and material uses remain unchanged because the notice only changes attempt accounting. Verify the numeric cap, character/account/server scope, HUD counter, failed/cancelled counting and 05:00 reset before adding farming-priority guidance.",
+                    "ko": "P1 검증 후 보강 경로: /maps/·/ko/maps/, data/maps.json, resourcemap.py, worldmap.py입니다. 공지는 시도 집계만 바꾸므로 좌표·스폰 위치·획득 조건·재료 사용처는 유지합니다. 파밍 우선순위 안내 전 제한 수치, 캐릭터/계정/서버 범위, HUD 카운터, 실패·취소 집계, 05:00 초기화를 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Ludra, mobile support and recovery",
+                  "ko": "루드라·모바일 지원·복구"
+                },
+                "sourceSection": "기타 개선사항 및 오류 수정",
+                "notes": [
+                  {
+                    "en": "The Ludra mid-boss fix teleports a character at the wrong party position to the entrance. Current main has no dedicated KR Ludra route; keep the fact on /updates/kr-6ae0fbb828c7452635072d36/ and its /ko/ counterpart until the exact encounter, trigger, party reassignment and re-entry flow are reproduced.",
+                    "ko": "루드라 중간 보스 수정은 소속 파티에 맞는 위치가 아닌 캐릭터를 입구로 이동시킵니다. 현재 main에는 한국 루드라 전용 경로가 없어 정확한 전투·발동 조건·파티 재배정·재입장 흐름을 재현할 때까지 /updates/kr-6ae0fbb828c7452635072d36/와 /ko/ 대응 페이지에 사실을 유지합니다."
+                  },
+                  {
+                    "en": "Mobile dodge support should stop avoiding required floor areas. P2 target after reproduction: /start/?view=settings and /ko/start/?view=settings. The affected encounters and floor triggers are not listed, so no boss animation or universal mechanic rule is changed.",
+                    "ko": "모바일 회피 서포트는 필수 장판을 피하지 않도록 개선됩니다. 재현 후 P2 경로는 /start/?view=settings·/ko/start/?view=settings입니다. 대상 전투와 장판 발동 조건은 공개되지 않아 보스 애니메이션이나 공통 기믹 규칙은 바꾸지 않습니다."
+                  },
+                  {
+                    "en": "Affected characters receive one Mysterious Crystal (Engraved) for extraction progress deleted by the October 21 list change. P1 verification targets are /endgame/, /guides/endgame-crafts/ and advancedguides.py: confirm eligibility, delivery, receipt and whether this closes the earlier extraction-progress issue. It is not a conversion-rate input.",
+                    "ko": "10월 21일 추출 항목 변경으로 진행도가 삭제된 대상 캐릭터에는 신비로운 결정(각인) 1개가 지급됩니다. P1 검증 경로는 /endgame/·/guides/endgame-crafts/와 advancedguides.py이며 대상 판정·지급·수령과 기존 진행도 문제의 해소 여부를 확인해야 합니다. 추출 환산율 입력값은 아닙니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Other fixes and review limits",
+                  "ko": "기타 수정·검토 범위"
+                },
+                "sourceSection": "개선사항 / 수정사항 / 검토 범위",
+                "notes": [
+                  {
+                    "en": "The character-change effect shifts from a bright to dark color treatment; PowerVR mobile display errors are fixed; out-of-combat damage-over-time no longer cancels sprinting or mounting. These are visual, compatibility and travel-behavior changes without announced combat coefficients.",
+                    "ko": "캐릭터 변경 연출은 밝은 색감에서 어두운 색감으로 바뀌고 PowerVR 모바일 화면 오류가 수정되며 비전투 지속 피해가 질주·탑승을 해제하던 현상이 사라집니다. 전투 계수가 공지된 변경은 아닙니다."
+                  },
+                  {
+                    "en": "This is a highlights review of progression-relevant content and major fixes, not a complete product/event republication. No in-game validation or final class tier is claimed. Exact source-bound data paths are data/patch-reviews.json and data/news.json; pending checks are recorded in data/coverage-audit.json. data/skills.json, data/skill-snapshot.json and historical DPS/rankings remain unchanged.",
+                    "ko": "성장 관련 콘텐츠와 주요 수정의 highlights 검토이며 상품·이벤트 전체 재게시가 아닙니다. 인게임 검증이나 최종 직업 티어를 주장하지 않습니다. 정확한 원문 해시 데이터 경로는 data/patch-reviews.json·data/news.json, 검증 대기는 data/coverage-audit.json에 기록합니다. data/skills.json·data/skill-snapshot.json과 과거 DPS·순위는 유지합니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -6650,8 +6891,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-28T08:22:43Z",
-      "lastSuccessAt": "2026-10-28T08:22:43Z",
+      "checkedAt": "2026-10-28T08:53:21Z",
+      "lastSuccessAt": "2026-10-28T08:53:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7280,8 +7521,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-10-28T08:22:43Z",
-      "lastSuccessAt": "2026-10-28T08:22:43Z",
+      "checkedAt": "2026-10-28T08:53:21Z",
+      "lastSuccessAt": "2026-10-28T08:53:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7296,13 +7537,524 @@
           "sourceUpdatedAt": "2026-10-28T07:25:01.701Z",
           "contentHash": "d9c652647a7b76997da54a193ae5e0c38c1d67842437fb17be46651ea2a8f794",
           "bodyState": "ready",
-          "reviewState": "pending",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "NA reduces Expedition/Transcendence boss pressure, adds Urugugu and Vakron Hard mode, raises level-45 base HP for all eight classes, and buffs Assassin survivability and Illusive Clone cooldown. Daily, gathering and crafted-gear progression also change. This is a highlights review; event and product tables remain on the official notice.",
+            "ko": "북미는 원정·초월 보스 부담을 낮추고 우루구구·바크론 어려움을 추가하며 8직업의 45레벨 기본 생명력을 올립니다. 살성의 생존 효과와 환영 분신 쿨타임도 상향되고 일일·채집·제작 장비 성장 규칙이 바뀝니다. highlights 검토이며 이벤트·상품 표 전체는 공식 원문에서 확인해야 합니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "adjustment",
+              "subject": {
+                "en": "Expedition and Transcendence · boss balance",
+                "ko": "원정·초월 · 보스 밸런스"
+              },
+              "description": {
+                "en": "Normal Expedition and Transcendence Stage 1 boss Attack is reduced by 15%. Hard Expedition and Transcendence Stages 2–4 boss Attack and Damage Boost are each reduced by 10%. Transcendence Stages 1–2 boss HP is reduced by 6.5%.",
+                "ko": "일반 원정·초월 1단계 보스 공격력이 15% 감소합니다. 어려움 원정·초월 2~4단계 보스 공격력과 피해 증폭은 각각 10% 감소하고, 초월 1~2단계 보스 HP는 6.5% 감소합니다."
+              },
+              "after": {
+                "en": "Attack −15% in Normal/Stage 1; Attack and Damage Boost −10% in Hard/Stages 2–4; HP −6.5% in Transcendence Stages 1–2",
+                "ko": "일반·1단계 공격력 −15% · 어려움·2~4단계 공격력/피해 증폭 −10% · 초월 1~2단계 HP −6.5%"
+              },
+              "impact": {
+                "en": "P1 analysis: one-shot and time-limit pressure should fall, but the notice does not identify every boss or pattern. Recheck actual difficulty, damage events, Frenzy timing and clear times in each NA mode.",
+                "ko": "P1 해석: 즉사·시간 제한 부담이 줄 수 있지만 대상 보스·패턴 전체는 공개되지 않았습니다. 북미 각 난도에서 실제 피해 사건·광폭화 발동·클리어 시간을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Urugugu Canyon and Vakron Sky Island · Hard mode",
+                "ko": "우루구구 협곡·바크론 공중섬 · 어려움"
+              },
+              "description": {
+                "en": "Hard mode is added at item level 2700, with a four-minute Frenzy timer and three revives per player. It adds dungeon-specific Ariel Fragments, Unique materials, achievement skins, more Kina and Philosopher's Stone: Revelation rewards.",
+                "ko": "아이템 레벨 2700, 광폭화 4분, 플레이어당 부활 3회 조건의 어려움 난도가 추가됩니다. 던전별 아리엘 조각·유일 재료·업적 외형·더 많은 키나·계시의 현자의 돌 보상이 포함됩니다."
+              },
+              "after": {
+                "en": "Item level 2700; Frenzy at 4 minutes; 3 revives per player",
+                "ko": "아이템 레벨 2700 · 광폭화 4분 · 개인별 부활 3회"
+              },
+              "impact": {
+                "en": "P1 analysis: current PLAYER’S CODEX pages document Normal-mode evidence and cannot be relabeled as Hard. Boss patterns, revive reset behavior and reward eligibility need direct NA verification.",
+                "ko": "P1 해석: 현재 PLAYER’S CODEX 페이지는 일반 난도 근거이므로 어려움으로 이름만 바꿀 수 없습니다. 보스 패턴·부활 초기화·보상 자격은 북미에서 직접 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "gladiator",
+              "type": "buff",
+              "subject": {
+                "en": "Gladiator · base HP at level 45",
+                "ko": "검성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,500.",
+                "ko": "45레벨 기본 생명력이 1,500 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "6,202 HP",
+                "ko": "생명력 6,202"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "templar",
+              "type": "buff",
+              "subject": {
+                "en": "Templar · base HP at level 45",
+                "ko": "수호성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,500.",
+                "ko": "45레벨 기본 생명력이 1,500 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "6,202 HP",
+                "ko": "생명력 6,202"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "buff",
+              "subject": {
+                "en": "Assassin · base HP at level 45",
+                "ko": "살성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "ranger",
+              "type": "buff",
+              "subject": {
+                "en": "Ranger · base HP at level 45",
+                "ko": "궁성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "buff",
+              "subject": {
+                "en": "Sorcerer · base HP at level 45",
+                "ko": "마도성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "spiritmaster",
+              "type": "buff",
+              "subject": {
+                "en": "Spiritmaster · base HP at level 45",
+                "ko": "정령성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "chanter",
+              "type": "buff",
+              "subject": {
+                "en": "Chanter · base HP at level 45",
+                "ko": "호법성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "cleric",
+              "type": "buff",
+              "subject": {
+                "en": "Cleric · base HP at level 45",
+                "ko": "치유성 · 45레벨 기본 HP"
+              },
+              "description": {
+                "en": "Base HP at level 45 increases by 1,000.",
+                "ko": "45레벨 기본 생명력이 1,000 증가합니다."
+              },
+              "before": {
+                "en": "4,702 HP",
+                "ko": "생명력 4,702"
+              },
+              "after": {
+                "en": "5,702 HP",
+                "ko": "생명력 5,702"
+              },
+              "impact": {
+                "en": "P1 analysis: this is an NA survivability increase, not a damage coefficient or measured DPS result. Confirm the live level-45 stat under matched gear and passive conditions.",
+                "ko": "P1 해석: 북미 생존력 상향이며 피해 계수·실측 DPS 결과가 아닙니다. 같은 장비·패시브 조건의 45레벨 실제 능력치를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "buff",
+              "subject": {
+                "en": "Heightened Sixth Sense · HP effect",
+                "ko": "육감 극대화 · 생명력 효과"
+              },
+              "description": {
+                "en": "The HP effect is increased; the official notice prints the resulting values at skill levels 5, 10 and 20.",
+                "ko": "생명력 효과가 증가하며 공식 공지는 스킬 5·10·20레벨 결과 수치를 공개합니다."
+              },
+              "after": {
+                "en": "Skill Lv. 5 / 10 / 20: 1,000 / 2,000 / 4,000 HP",
+                "ko": "스킬 5 / 10 / 20레벨: 생명력 1,000 / 2,000 / 4,000"
+              },
+              "impact": {
+                "en": "P1 analysis: the exact NA level values are stored as an official override. The before-values, interaction with the percentage Max HP effect and live character sheet remain verification items; no DPS percentage is assigned.",
+                "ko": "P1 해석: 정확한 북미 레벨 수치를 공식 override로 기록합니다. 변경 전 수치·최대 생명력 비율 효과와의 중첩·실제 능력치 창은 확인 대기이며 DPS 변화율을 부여하지 않습니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "buff",
+              "subject": {
+                "en": "Illusive Clone · base cooldown",
+                "ko": "환영 분신 · 기본 쿨타임"
+              },
+              "description": {
+                "en": "The base cooldown is reduced by 30 seconds.",
+                "ko": "기본 재사용 시간이 30초 감소합니다."
+              },
+              "before": {
+                "en": "90 seconds",
+                "ko": "90초"
+              },
+              "after": {
+                "en": "60 seconds",
+                "ko": "60초"
+              },
+              "impact": {
+                "en": "P1 analysis: the Global/NA skill input is updated to 60 seconds. The public active-skill comparison does not model this Stigma buff window, so historical records and class DPS are not retrospectively recalculated; rotation use and uptime require reproduction.",
+                "ko": "P1 해석: 글로벌/북미 스킬 입력을 60초로 갱신합니다. 공개 액티브 스킬 비교는 이 스티그마 버프 창을 모델링하지 않으므로 과거 기록·직업 DPS를 소급 재계산하지 않으며 로테이션 사용·가동률 재현이 필요합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Odylium Repository · Daily Dungeon",
+                "ko": "오디움 저장소 · 일일 던전"
+              },
+              "description": {
+                "en": "Odylium Repository is added as a Daily Dungeon that awards a fixed amount of Soul Crystals based on clear points and shares entries with Daeva Bio-Research Base.",
+                "ko": "클리어 점수에 따라 정해진 영혼 결정 수량을 지급하는 일일 던전 오디움 저장소가 추가되며 데바 생체 연구기지와 입장 횟수를 공유합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: this changes the daily choice for pet/Soul Crystal progression. Exact point thresholds, reward amounts, unlock prerequisites and shared-entry consumption need client verification.",
+                "ko": "P1 해석: 펫·영혼 결정 성장의 일일 선택지가 달라집니다. 점수 구간·보상 수량·해금 선행조건·공유 입장 차감은 클라이언트 확인이 필요합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "adjustment",
+              "subject": {
+                "en": "Crafted and Expedition gear progression",
+                "ko": "제작·원정 장비 성장"
+              },
+              "description": {
+                "en": "Crafted Gear Amplify caps rise and transfer from Tier 3 Expedition to Tier 2 Crafted, and Tier 2 Expedition to Tier 1 Crafted, becomes possible.",
+                "ko": "제작 장비 돌파 상한이 오르고 3티어 원정→2티어 제작, 2티어 원정→1티어 제작 전승이 가능해집니다."
+              },
+              "before": {
+                "en": "True/Star Dragon 1; Splendent True/Star Dragon 1; White/Dark Dragon 3; Splendent White/Dark Dragon 3",
+                "ko": "진룡/성룡 1 · 찬란한 진룡/성룡 1 · 백룡/흑룡 3 · 찬란한 백룡/흑룡 3"
+              },
+              "after": {
+                "en": "True/Star Dragon 3; Splendent True/Star Dragon 3; White/Dark Dragon 5; Splendent White/Dark Dragon 5",
+                "ko": "진룡/성룡 3 · 찬란한 진룡/성룡 3 · 백룡/흑룡 5 · 찬란한 백룡/흑룡 5"
+              },
+              "impact": {
+                "en": "P1 analysis: equipment investment and transfer stopping points change. Verify the exact NA transfer preview, material/Kina cost, eligible slots and preserved enhancement before editing evergreen budgets.",
+                "ko": "P1 해석: 장비 투자·전승 중단 지점이 바뀝니다. 상시 예산 공략을 고치기 전 북미 전승 미리보기·재료/키나·대상 부위·강화 보존을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Gathering · daily cap and level gate",
+                "ko": "채집 · 일일 제한·레벨 조건"
+              },
+              "description": {
+                "en": "The daily gathering cap becomes 1,000 attempts per server and resets at 00:00 PDT / 08:00 CET. The minimum gathering level increases from character level 10 to 45.",
+                "ko": "일일 채집 제한은 서버당 1,000회이며 00:00 PDT / 08:00 CET에 초기화됩니다. 채집 최소 캐릭터 레벨은 10에서 45로 오릅니다."
+              },
+              "before": {
+                "en": "Minimum character level 10; no published cap in this NA notice",
+                "ko": "최소 캐릭터 레벨 10 · 이 북미 공지 기준 기존 제한 수치 미기재"
+              },
+              "after": {
+                "en": "1,000 attempts per server per day; minimum character level 45",
+                "ko": "서버당 하루 1,000회 · 최소 캐릭터 레벨 45"
+              },
+              "impact": {
+                "en": "P1 analysis: new players and farming routes are directly affected. Verify whether success, failure and cancellation all count in NA, account/character sharing, the HUD counter and reset behavior before changing route priorities.",
+                "ko": "P1 해석: 초보자와 파밍 동선에 직접 영향이 있습니다. 북미에서 성공·실패·취소 집계, 계정/캐릭터 공유, HUD 카운터와 초기화를 확인한 뒤 동선 우선순위를 바꿔야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "adjustment",
+              "subject": {
+                "en": "Hidden Cubes and Lower Abyss access",
+                "ko": "히든 큐브·하층 어비스 진입"
+              },
+              "description": {
+                "en": "Hidden Cubes spawn more frequently, Abyss entry capacity increases, Lower Abyss Dimensional Core HP increases, and a Dissipation of Power debuff weakens the Core after Artifact Battles last at least 10 minutes.",
+                "ko": "히든 큐브 출현 빈도가 늘고 어비스 진입 인원이 확대되며 하층 차원의 핵 HP가 증가합니다. 아티팩트 전투가 10분 이상 지속되면 힘의 소진 디버프로 차원의 핵이 약해집니다."
+              },
+              "after": {
+                "en": "Dissipation of Power after 10+ minutes; other numeric values not announced",
+                "ko": "10분 이상 시 힘의 소진 · 그 외 수치 미공개"
+              },
+              "impact": {
+                "en": "P1 analysis: availability and long-fight handling change, but no coordinate, spawn interval, entry cap or Core HP value is published. Keep current map positions until live spawn and acquisition conditions are checked.",
+                "ko": "P1 해석: 이용 가능성과 장기전 대응이 바뀌지만 좌표·출현 간격·진입 정원·차원의 핵 HP 수치는 공개되지 않았습니다. 실제 스폰·획득 조건 확인 전 현재 지도 위치를 유지합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Expedition Hard · revive-count reset",
+                "ko": "원정 어려움 · 부활 횟수 초기화"
+              },
+              "description": {
+                "en": "Fixes the revive count occasionally failing to reset when retrying an Expedition Dungeon on Hard.",
+                "ko": "원정 던전 어려움 재도전 시 부활 횟수가 간헐적으로 초기화되지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: restores the intended retry allowance. Reproduce wipe/retry, individual versus party counts and re-entry before updating encounter instructions.",
+                "ko": "P1 해석: 의도된 재도전 부활 횟수를 복구합니다. 공략 수정 전 전멸·재도전, 개인/파티 집계와 재입장을 재현해야 합니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-10-28T08:49:42Z",
+          "displayTitle": {
+            "en": "October 27 PDT / 28 CET · North America",
+            "ko": "10월 27일 PDT / 28일 CET · 북미 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, publication and effective window",
+                  "ko": "지역·발표일·시행 구간"
+                },
+                "sourceSection": "Patch scope",
+                "notes": [
+                  {
+                    "en": "Published October 28 at 06:30 UTC and revised at 07:25:01 UTC. The title identifies October 27 PDT / October 28 CET and the body schedules features and events around the October 28 maintenance. This review is bound to source hash d9c65264…; collection time is not used as the review date.",
+                    "ko": "10월 28일 06:30 UTC에 게시되고 07:25:01 UTC에 수정됐습니다. 제목은 10월 27일 PDT / 28일 CET를 명시하고 본문은 10월 28일 점검 전후 적용을 안내합니다. 이번 검토는 원문 해시 d9c65264…에 연결하며 수집 시각을 검토일로 대신하지 않습니다."
+                  },
+                  {
+                    "en": "NA/Global only: the boss, class, gathering and progression values are not applied to Korea. No measured class ranking or historical DPS record is rewritten from this notice.",
+                    "ko": "북미/글로벌 전용입니다. 보스·직업·채집·성장 수치를 한국에 적용하지 않습니다. 이 공지만으로 실측 직업 순위나 과거 DPS 기록을 다시 쓰지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Boss balance and new Hard modes",
+                  "ko": "보스 밸런스·새 어려움 난도"
+                },
+                "sourceSection": "Content & Systems · Expedition",
+                "notes": [
+                  {
+                    "en": "Official fact: Normal/Stage 1 boss Attack −15%; Hard/Stages 2–4 Attack and Damage Boost −10%; Transcendence Stages 1–2 HP −6.5%. These are boss-stat adjustments, not player DPS multipliers.",
+                    "ko": "공식 확인: 일반·1단계 보스 공격력 −15%, 어려움·2~4단계 공격력과 피해 증폭 −10%, 초월 1~2단계 HP −6.5%입니다. 보스 능력치 조정이며 플레이어 DPS 배율이 아닙니다."
+                  },
+                  {
+                    "en": "Urugugu Canyon and Vakron Sky Island Hard mode require item level 2700, use a four-minute Frenzy timer and allow three revives per player. Direct checks remain for actual difficulty, region, boss patterns, mechanic triggers, Frenzy start, revive reset and reward conditions.",
+                    "ko": "우루구구 협곡·바크론 공중섬 어려움은 아이템 레벨 2700, 광폭화 4분, 개인별 부활 3회 조건입니다. 실제 난도·지역·보스 패턴·기믹 발동·광폭화 시작·부활 초기화·보상 조건은 직접 확인 대기입니다."
+                  },
+                  {
+                    "en": "P1 public targets after verification: /dungeons/urugugu-canyon/ and /dungeons/vakron-island/ plus Korean counterparts. Source targets are progression.py, urugugu.py, vakron.py and encounters.py. The current Normal evidence and animations are preserved.",
+                    "ko": "P1 검증 후 공개 경로: /dungeons/urugugu-canyon/·/dungeons/vakron-island/와 한국어 대응 페이지입니다. 소스 경로는 progression.py·urugugu.py·vakron.py·encounters.py이며 현재 일반 난도 근거와 애니메이션은 보존합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Class HP and Assassin skills",
+                  "ko": "직업 생명력·살성 스킬"
+                },
+                "sourceSection": "Content & Systems · Class Changes",
+                "notes": [
+                  {
+                    "en": "All eight Global launch classes receive explicit level-45 base-HP values: Gladiator/Templar 4,702→6,202; the other six classes 4,702→5,702. Confirm live stats with matched gear/passives before treating the difference as effective HP.",
+                    "ko": "글로벌 출시 8직업의 45레벨 기본 생명력이 명시됐습니다. 검성·수호성 4,702→6,202, 나머지 6직업은 4,702→5,702입니다. 같은 장비·패시브 조건으로 실제 능력치를 확인한 뒤 유효 생명력으로 해석해야 합니다."
+                  },
+                  {
+                    "en": "Assassin Heightened Sixth Sense prints 1,000 / 2,000 / 4,000 HP at skill levels 5 / 10 / 20. Illusive Clone base cooldown changes 90→60 seconds. The exact cooldown and level values are stored in data/skills.json and data/skill-snapshot.json with this official source and date.",
+                    "ko": "살성 육감 극대화는 스킬 5 / 10 / 20레벨 생명력 1,000 / 2,000 / 4,000, 환영 분신 기본 쿨타임은 90→60초입니다. 정확한 쿨타임·레벨 수치를 공식 출처·기준일과 함께 data/skills.json·data/skill-snapshot.json에 기록합니다."
+                  },
+                  {
+                    "en": "P1 public targets: /classes/assassin/, /skills/heightened-sixth-sense/ and /skills/illusive-clone/ plus Korean counterparts. Reproduce tooltip levels, percentage-Max-HP interaction, buff timing and rotation usage. The active-skill simulator excludes these passive/Stigma effects, so no class eDPS or final tier is inferred.",
+                    "ko": "P1 공개 경로: /classes/assassin/·/skills/heightened-sixth-sense/·/skills/illusive-clone/와 한국어 대응 페이지입니다. 툴팁 레벨·최대 생명력 비율 중첩·버프 타이밍·로테이션 사용을 재현해야 합니다. 액티브 스킬 계산기는 패시브·스티그마 효과를 제외하므로 직업 eDPS나 최종 티어를 추정하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Daily, equipment and newcomer progression",
+                  "ko": "일일·장비·초보 성장"
+                },
+                "sourceSection": "Content & Systems · Daily Dungeon / Shop / Gear Progression",
+                "notes": [
+                  {
+                    "en": "Odylium Repository is a new Daily Dungeon sharing entries with Daeva Bio-Research Base. Odyle Energy limits and instant-clear ticket availability change, and Weekly Season Missions replace some Abyss Points with Lower Abyss Rift Stones.",
+                    "ko": "오디움 저장소는 데바 생체 연구기지와 입장을 공유하는 새 일일 던전입니다. 오딜 에너지 한도·즉시 완료권 판매가 바뀌고 주간 시즌 미션 일부는 어비스 포인트 대신 하층 어비스 시간석을 지급합니다."
+                  },
+                  {
+                    "en": "Crafted Gear Amplify caps become 3 for True/Star Dragon tiers and 5 for White/Dark Dragon tiers, including their Splendent versions. Tier 3 Expedition→Tier 2 Crafted and Tier 2 Expedition→Tier 1 Crafted transfers are enabled.",
+                    "ko": "제작 장비 돌파 상한은 진룡/성룡 계열 3, 백룡/흑룡 계열 5로 바뀌며 찬란한 장비도 같습니다. 3티어 원정→2티어 제작, 2티어 원정→1티어 제작 전승이 열립니다."
+                  },
+                  {
+                    "en": "P1 targets after verification: /endgame/, /guides/dungeon-rewards/ and /guides/endgame-crafts/ plus Korean counterparts; source files progression.py and advancedguides.py. Verify unlocks, entry sharing, point/reward amounts, costs, weekly resets, transfer preview and prerequisites before changing investment priorities.",
+                    "ko": "P1 검증 후 경로: /endgame/·/guides/dungeon-rewards/·/guides/endgame-crafts/와 한국어 대응 페이지, 소스는 progression.py·advancedguides.py입니다. 투자 우선순위 변경 전 해금·입장 공유·점수/보상 수량·비용·주간 초기화·전승 미리보기·선행조건을 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Gathering, maps and Abyss systems",
+                  "ko": "채집·지도·어비스 시스템"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes · Improvements",
+                "notes": [
+                  {
+                    "en": "Official fact: NA gathering is capped at 1,000 attempts per server per day, resets at 00:00 PDT / 08:00 CET and requires character level 45 instead of 10. The notice does not say whether failed or cancelled attempts count, so the KR wording is not copied into NA.",
+                    "ko": "공식 확인: 북미 채집은 서버당 하루 1,000회, 00:00 PDT / 08:00 CET 초기화이며 요구 캐릭터 레벨이 10에서 45로 오릅니다. 실패·취소 집계는 공지되지 않아 한국 문구를 북미에 복사하지 않습니다."
+                  },
+                  {
+                    "en": "Hidden Cubes spawn more frequently, but no coordinate, exact interval, simultaneous spawn count or acquisition-condition change is published. P1 targets after live verification: /maps/, /ko/maps/, data/maps.json, resourcemap.py and worldmap.py. Current coordinates remain intact.",
+                    "ko": "히든 큐브 출현 빈도는 늘지만 좌표·정확한 간격·동시 출현 수·획득 조건 변경은 공개되지 않았습니다. P1 직접 검증 후 경로는 /maps/·/ko/maps/, data/maps.json·resourcemap.py·worldmap.py이며 현재 좌표는 유지합니다."
+                  },
+                  {
+                    "en": "Abyss capacity and Dimensional Core durability change; after an Artifact Battle lasts 10 minutes, Dissipation of Power weakens the Core. Verify entry capacity, exact HP, debuff trigger, duration and response before changing PvP instructions.",
+                    "ko": "어비스 수용 인원과 차원의 핵 내구도가 바뀌며 아티팩트 전투 10분 후 힘의 소진이 차원의 핵을 약화합니다. PvP 공략 수정 전 진입 정원·정확한 HP·디버프 발동·지속·대응을 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Fixes and review limits",
+                  "ko": "오류 수정·검토 한계"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes · Fixes / review scope",
+                "notes": [
+                  {
+                    "en": "Hard Expedition revive counts now reset on retry. The patch also fixes invisible PvP characters, blocked Season Mission progress and misplaced Ariel/Azphel Daevanion entries. No damage percentage is invented for these fixes.",
+                    "ko": "원정 어려움 재도전 부활 횟수 초기화, PvP 캐릭터 비표시, 시즌 미션 진행 불가, 아리엘·아스펠 데바니온 위치 표시 오류를 수정합니다. 수치 없는 오류 수정에 피해 변화율을 만들지 않습니다."
+                  },
+                  {
+                    "en": "This is a highlights review of class, combat and progression changes, not a complete republication of attendance rewards, pass missions or paid product tables. No in-game validation or final class tier is claimed. Historical DPS observations and rankings retain their original dates and values.",
+                    "ko": "직업·전투·성장 변경의 highlights 검토이며 출석 보상·패스 미션·유료 상품 표 전체 재게시가 아닙니다. 인게임 검증이나 최종 직업 티어를 주장하지 않으며 과거 DPS 관측·순위의 날짜와 값은 보존합니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -7876,8 +8628,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-10-28T08:22:43Z",
-      "lastSuccessAt": "2026-10-28T08:22:43Z",
+      "checkedAt": "2026-10-28T08:53:21Z",
+      "lastSuccessAt": "2026-10-28T08:53:21Z",
       "error": null,
       "fromCache": false,
       "items": [

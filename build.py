@@ -151,7 +151,9 @@ def learning():
         title=sk['ko' if L else 'en']
         desc=pair(sk['effect'])
         body=f'<div class="wrap">{pagehead(title,desc)}<a class="text-link" href="{href("skills/")}?class={sk["cls"]}">← {t("Skill dictionary","스킬 문서 목록")}</a><article class="skill-page">{skillbook.details(sk,LANG,BASE)}</article></div>'
-        write(sub,title,desc,body,'skills',True)
+        official_review=(sk.get('officialUpdates') or [{}])[-1].get('effectiveAt')
+        write(sub,title,desc,body,'skills',True,reviewed=official_review)
+        if official_review:page_dates[SITE+'/'+path(sub)]=official_review
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Skill dictionary','스킬 문서'),'keywords':' '.join([sk['en'],sk['ko'],*sk['aliases']])})
 
 def dungeons():

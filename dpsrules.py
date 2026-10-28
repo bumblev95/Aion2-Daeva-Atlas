@@ -2,6 +2,8 @@
 
 Global base-1 client tooltips via MetaBot, reviewed 2026-10-08. This is
 not combat validation or a KR ruleset. Unknown triggers require timed inputs.
+The hash was rechecked on 2026-10-28 after official NA overrides changed only
+passive/Stigma metadata; active damage and activation rules were unchanged.
 """
 import re
 
@@ -20,7 +22,7 @@ STATES = [
     ('precision', 'Precision', '정밀 조준'),
     ('block', 'Confirmed Block effect trigger', '막기 효과 발동 확인'),
 ]
-REVIEWED_SKILL_HASH = '8cff9ef8aa9374122e9df305fdfcea69317eed0327a245bb19d0952459ad1a6e'
+REVIEWED_SKILL_HASH = '3cb5987b5ed9504d0b4ce8962b2dab1ffe793af133df6ab4a00ca49ea83fcb09'
 CONTROL = {'slow', 'root', 'knockdown', 'stun', 'frost', 'stagger'}
 
 GATES = {

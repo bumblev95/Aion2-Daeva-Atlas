@@ -4787,7 +4787,17 @@
    "effect": "자신의 회피가 200, 생명력이 150만큼 증가합니다. 추가로 최대 생명력이 6%만큼 증가하고 회피 성공 시 생명력을 85 (+100% 공격력)~102만큼 회복합니다. 재발동 제한 시간: 3s",
    "specs": [],
    "reach": "—"
-  }
+  },
+  "officialUpdates": [
+   {
+    "region": "NA",
+    "effectiveAt": "2026-10-28",
+    "reviewedAt": "2026-10-28T08:49:42Z",
+    "source": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210",
+    "en": "Official NA patch: HP effect at skill Lv. 5 / 10 / 20 is 1,000 / 2,000 / 4,000.",
+    "ko": "북미 공식 패치: 스킬 5 / 10 / 20레벨 생명력 효과 1,000 / 2,000 / 4,000."
+   }
+  ]
  },
  {
   "id": "exploit-weakness",
@@ -5762,7 +5772,7 @@
   "cls": "assassin",
   "kind": "stigma",
   "unlock": 22,
-  "cooldown": "90s",
+  "cooldown": "60s",
   "max": 40,
   "icon": "https://metabot.gg/web/aion2/skills/13310000.webp",
   "url": "https://metabot.gg/en/aion-2/skills/illusive-clone",
@@ -5817,7 +5827,17 @@
     }
    ],
    "reach": "—"
-  }
+  },
+  "officialUpdates": [
+   {
+    "region": "NA",
+    "effectiveAt": "2026-10-28",
+    "reviewedAt": "2026-10-28T08:49:42Z",
+    "source": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ae19668577e8c01355e0210",
+    "en": "Official NA patch: base cooldown reduced from 90s to 60s.",
+    "ko": "북미 공식 패치: 기본 재사용 시간이 90초에서 60초로 감소."
+   }
+  ]
  },
  {
   "id": "snipe",
