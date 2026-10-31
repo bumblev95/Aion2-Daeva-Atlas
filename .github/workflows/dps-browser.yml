@@ -53,6 +53,8 @@ on:
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
+      - 'dungeonmodes.py'
+      - 'tests/dungeon-modes-ui.test.js'
       - 'bossmedia.py'
       - 'battlelab.py'
       - 'encounters.py'
@@ -118,6 +120,8 @@ on:
       - 'visuals.py'
       - 'build.py'
       - 'vakron.py'
+      - 'dungeonmodes.py'
+      - 'tests/dungeon-modes-ui.test.js'
       - 'bossmedia.py'
       - 'battlelab.py'
       - 'encounters.py'
@@ -203,6 +207,8 @@ jobs:
         env:
           VAKRON_QA_ARTIFACTS: ${{ runner.temp }}/dps-qa-artifacts
         run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/vakron-ui.test.js
+      - name: Verify NA dungeon difficulty comparison on mobile and desktop
+        run: NODE_PATH="$RUNNER_TEMP/dps-qa/node_modules" node tests/dungeon-modes-ui.test.js
       - if: ${{ !cancelled() }}
         name: Verify Global transfer preparation, deep links and mobile layout
         env:

@@ -21,6 +21,7 @@ import liveops
 from bossmedia import validate_evidence
 import patchbook
 import vakron
+import dungeonmodes
 import partyguide
 import outland
 
@@ -100,7 +101,7 @@ def write(sub,title,description,content,active='',article=False,index=True,revie
     if ads['enabled']:adhead+=f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={E(ads["publisher_id"])}" crossorigin="anonymous"></script>'
     adhead+=measurement.head(CONFIG,BASE)
     guidecss=f'<link rel="stylesheet" href="{BASE}assets/practical-guide.css?v=growth-guides-1">' if sub in ('','start/','endgame/','gear/','routines/','tools/planner/','guides/') or sub.startswith('dungeons/') else ''
-    if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
+    if sub in {progression.ROOT+slug+'/' for slug,_,_ in progression.GUIDES} | {'dungeons/urugugu-canyon/', 'dungeons/vakron-island/'}:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/progression.css?v=1">'
     if sub == 'routines/':guidecss+=f'<link rel="stylesheet" href="{BASE}assets/routines.css?v=1">'
     if sub == servertransfer.ROOT or 'transfer-gateway' in content:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/server-transfer.css?v=1">'
     if sub == outland.ROOT:guidecss+=f'<link rel="stylesheet" href="{BASE}assets/outland.css?v=1">'
@@ -170,8 +171,10 @@ def dungeons():
         if supplement:
             title=t('AION 2 ','아이온 2 ')+pair(b['dungeon'])+t(' — full run guide',' — 전체 진행 공략')
             desc=t('Six stages: debuffs, first boss, glide route, Thamon, elements and final escape. Original animations with attributed Global-source notes.','여섯 구간: 디버프, 첫 보스, 활강, Thamon, 원소와 최종 탈출. 글로벌 출처를 연결한 자체 학습 애니메이션.')
-        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{supplement}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True,reviewed=vakron.REVIEW_DATE if supplement else None)
-        if supplement:page_dates[SITE+'/'+path(sub)]=vakron.REVIEW_DATE
+        modes=dungeonmodes.render(LANG,BASE,b['id'])
+        write(sub,title,desc,f'<div class="wrap">{pagehead(title,desc,crumb=pair(b["dungeon"]))}{modes}{supplement}{progression.dungeon_brief(LANG,BASE,b["id"])}{boss_lab(LANG,BASE,b["id"])}</div>','dungeon',True,reviewed=dungeonmodes.REVIEWED if modes else vakron.REVIEW_DATE if supplement else None)
+        if modes:page_dates[SITE+'/'+path(sub)]=dungeonmodes.REVIEWED
+        elif supplement:page_dates[SITE+'/'+path(sub)]=vakron.REVIEW_DATE
         search_index.append({'lang':LANG,'path':path(sub),'title':title,'description':desc,'category':t('Boss mechanics','보스 기믹'),'keywords':' '.join(b['name']+b['dungeon'])+' '+' '.join(' '.join(m['title']+m['cue']+m['action']) for m in b['mechanics'])+(' Thamon Fog Spirit Stones flower glide 안개 정령석 꽃 활강 석화' if supplement else '')})
 
 def community():

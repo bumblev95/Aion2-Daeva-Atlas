@@ -238,7 +238,8 @@ def gear_guide(v):
 def dungeon_brief(lang, base, boss_id):
     v=View(lang,base);t=v.t
     d=next(d for d in DUNGEONS if d['boss']==boss_id)
-    return f'<aside class="dungeon-reward-brief"><span>{t("GLOBAL · CONQUEST TARGET", "글로벌 · 정복 보상 목표")}</span><h2>{v.p(d["loot"])}</h2><p>{t("Lv 45 · entry total", "45레벨 · 입장 종합 수치")} {d["gate"]:,} · {t("reward item level", "보상 장비 레벨")} {d["tier"]}</p><p>{v.p(d["use"])}</p>{v.a(ROOT+"dungeon-rewards/#dungeon-"+d["encounter"]["slug"],t("Reward details and sources", "보상 상세·출처"))}<small>{t("Reviewed 2026-10-12. Boss lessons below use the separately labelled KR source guides.", "2026.10.12 검토. 아래 보스 패턴은 별도로 표시한 한국 공략 기준입니다.")}</small></aside>'
+    scope=t('GLOBAL · LEGACY NORMAL REFERENCE', '글로벌 · 기존 일반 참고자료') if boss_id in ('auldor','vakron') else t('GLOBAL · CONQUEST TARGET', '글로벌 · 정복 보상 목표')
+    return f'<aside class="dungeon-reward-brief"><span>{scope}</span><h2>{v.p(d["loot"])}</h2><p>{t("Lv 45 · entry total", "45레벨 · 입장 종합 수치")} {d["gate"]:,} · {t("reward item level", "보상 장비 레벨")} {d["tier"]}</p><p>{v.p(d["use"])}</p>{v.a(ROOT+"dungeon-rewards/#dungeon-"+d["encounter"]["slug"],t("Reward details and sources", "보상 상세·출처"))}<small>{t("Reviewed 2026-10-12. Boss lessons below use the separately labelled KR source guides.", "2026.10.12 검토. 아래 보스 패턴은 별도로 표시한 한국 공략 기준입니다.")}</small></aside>'
 
 
 def dungeon_guide(v):
