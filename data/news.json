@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-01T08:50:59Z",
+  "checkedAt": "2026-11-01T13:13:37Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-01T08:50:59Z",
-      "lastSuccessAt": "2026-11-01T08:50:59Z",
+      "checkedAt": "2026-11-01T13:13:37Z",
+      "lastSuccessAt": "2026-11-01T13:13:37Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -6891,8 +6891,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-01T08:50:59Z",
-      "lastSuccessAt": "2026-11-01T08:50:59Z",
+      "checkedAt": "2026-11-01T13:13:37Z",
+      "lastSuccessAt": "2026-11-01T13:13:37Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7521,8 +7521,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-01T08:50:59Z",
-      "lastSuccessAt": "2026-11-01T08:50:59Z",
+      "checkedAt": "2026-11-01T13:13:37Z",
+      "lastSuccessAt": "2026-11-01T13:13:37Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8628,20 +8628,20 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-01T08:50:59Z",
-      "lastSuccessAt": "2026-11-01T08:50:59Z",
+      "checkedAt": "2026-11-01T13:13:37Z",
+      "lastSuccessAt": "2026-11-01T13:13:37Z",
       "error": null,
       "fromCache": false,
       "items": [
         {
           "id": "6ae61e90577e8c01355e0248",
-          "title": "[Notice] Temporary Maintenance (NAW) | Nov 1 ",
+          "title": "[Notice] Temporary Maintenance (NAW) | Nov 1 (Completed)",
           "region": "NA",
           "kind": "news",
           "source": "na-notice",
           "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ae61e90577e8c01355e0248",
           "publishedAt": "2026-10-31T00:55:00.001Z",
-          "sourceUpdatedAt": "2026-10-31T00:55:11.679Z",
+          "sourceUpdatedAt": "2026-11-01T11:01:33.551Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
