@@ -63,6 +63,14 @@ def reviewed(item, reviews):
     item['followups'] = review.get('followups', []) if valid else []
     return item
 
+def retain_reviewed_history(items, limit=24):
+    """Cap routine headlines without dropping hash-bound reviewed patches."""
+    kept = items[:limit]
+    kept_ids = {item['id'] for item in kept}
+    kept += [item for item in items[limit:]
+             if item.get('reviewState') == 'reviewed' and item['id'] not in kept_ids]
+    return kept
+
 def collect_source(source, previous, reviews, now, fetcher=fetch):
     prior = previous.get(source['id'], {})
     try:
@@ -101,7 +109,8 @@ def collect_source(source, previous, reviews, now, fetcher=fetch):
         incoming = {x['id'] for x in items}
         items += [reviewed(dict(x),reviews) for x in prior.get('items',[]) if x['id'] not in incoming]
         return dict(id=source['id'], region=source['region'], kind=source['kind'], status='ready',
-                    checkedAt=now, lastSuccessAt=now, error=None, fromCache=False, items=items[:24])
+                    checkedAt=now, lastSuccessAt=now, error=None, fromCache=False,
+                    items=retain_reviewed_history(items))
     except (HTTPError, OSError, ValueError, KeyError, TypeError) as exc:
         return dict(id=source['id'], region=source['region'], kind=source['kind'], status='unavailable',
                     checkedAt=now, lastSuccessAt=prior.get('lastSuccessAt'), error=type(exc).__name__,
