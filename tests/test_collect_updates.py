@@ -1,6 +1,7 @@
 import unittest
 from urllib.error import HTTPError
-from scripts.collect_updates import SOURCES, collect_source, reviewed, fingerprint, text
+from scripts.collect_updates import (SOURCES, collect_source, reviewed, fingerprint,
+                                     retain_reviewed_history, text)
 
 class CollectorTests(unittest.TestCase):
     def setUp(self):
@@ -80,5 +81,15 @@ class CollectorTests(unittest.TestCase):
         other=collect_source(source,{},self.reviews,self.now,self.response)['items'][0]
         self.assertEqual(other['kind'],'news')
         self.assertEqual(other['reviewState'],'official')
+
+    def test_reviewed_patch_survives_headline_limit(self):
+        items=[{'id':f'news-{i}','reviewState':'official'} for i in range(25)]
+        reviewed_patch={'id':'reviewed-hotfix','reviewState':'reviewed'}
+        pending_patch={'id':'pending-patch','reviewState':'pending'}
+        kept=retain_reviewed_history(items+[reviewed_patch,pending_patch])
+        self.assertEqual(len(kept),25)
+        self.assertEqual(kept[:24],items[:24])
+        self.assertIn(reviewed_patch,kept)
+        self.assertNotIn(pending_patch,kept)
 
 if __name__=='__main__':unittest.main()
