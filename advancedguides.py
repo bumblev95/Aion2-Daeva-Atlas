@@ -11,7 +11,7 @@ GUIDES = [
     dict(slug='stigma-growth', group='gear', region='GLOBAL / KR', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate Global purchases from dated KR stock and level costs.', '글로벌 구매 참고와 한국 상점 한도·레벨별 소모량을 구분합니다.')),
     dict(slug='endgame-crafts', group='gear', region='GLOBAL / NA', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Global crafting references and NA Ludra launch preparation.', '글로벌 제작 참고와 북미 루드라 출시 준비를 구분합니다.')),
     dict(slug='kr-pendant', group='gear', region='KR', title=('KR Draconic Pendant enhancement', '한국 펜던트 강화·실패 보정'), description=('Read the next attempt and understand increasing failure compensation.', '유일 펜던트의 다음 시도 확률과 실패 보정을 이해합니다.')),
-    dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14 change.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일 변경 사항.')),
+    dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14/November 4 changes.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일/11월 4일 변경 사항.')),
 ]
 SOURCES = {
     'gear': ('https://mobalytics.gg/gamebase/guides/aion-2-endgame-gear', 'Mobalytics · Ulfhednar / Oli · 2026-10-12', 'Global play guide'),
@@ -24,6 +24,7 @@ SOURCES = {
     'orbs': ('https://www.inven.co.kr/board/aion2/6444/2340', 'Inven · 모뮤 · 2026-10-09', 'KR proposed raid strategy'),
     'movement': ('https://www.inven.co.kr/board/aion2/6444/2338', 'Inven · 깔개수호 · 2026-10-08', 'KR raid strategy'),
     'patch': ('https://aion2.plaync.com/ko-kr/board/update/view?articleId=6ace86b86cfe4756db5b8d81', 'NC · KR · 2026-10-14 (07:02 revision)', 'Official regional patch'),
+    'patch-nov4': ('https://aion2.plaync.com/ko-kr/board/update/view?articleId=6aea36386cfe4756db5b9115', 'NC · KR · 2026-11-04', 'Official regional patch'),
     'ludra-na': (LUDRA_NOTICE, 'NC · NA · Ludra Awakens on November 4th · 2026-10-23', 'Official NA announcement; rechecked 2026-10-25. Entry and events, not a crafting or loot table.'),
 }
 # Base probability and compensation agree across both KR tables. Costs do not.
@@ -209,11 +210,12 @@ def bitan(v):
     ])
     patch=v.cards([
         ('boss',('October 14 · KR','10월 14일 · 한국'),('NC reduces Deltras’s Ice Wedge HP by 50%. Recheck who can break it; the Oct 8 strategy predates this adjustment.', 'NC는 델트라스 얼음 쐐기 체력을 50% 낮춥니다. 쐐기 담당을 재검토하세요. 10월 8일 이동 공략은 이 조정 이전 자료입니다.')),
+        ('shield',('November 4 · KR','11월 4일 · 한국'),('A target caught by Deltras’s Frozen Bind can no longer use Shock Release under the published unintended condition to move or use skills. Do not plan Shock Release as a guaranteed escape; verify immunity and party-rescue interactions in game.', '델트라스의 빙결 포박 대상이 공지된 비정상 조건에서 충격 해제로 이동·스킬을 쓰던 문제가 수정됩니다. 충격 해제를 확정 탈출 수단으로 계획하지 말고 면역·파티 구조 상호작용을 게임에서 확인하세요.')),
         ('check',('Before joining','입장 전 파티 합의'),('Agree assignments, the selected movement order and assistance skills. These KR raid lessons do not establish Global availability.', '담당 구역·선택한 이동 순서·보조 스킬을 합의합니다. 이 한국 레이드 공략이 글로벌 콘텐츠 적용을 뜻하지는 않습니다.')),
     ])
     return [(('orbs',('Orb assignments','구슬 역할')),v.section('bitan-orbs',('Keep assignments and rings separate','담당 구역·고리 간격 유지'),orb)),
             (('movement',('Below 50%','체력 50% 이하')),v.section('bitan-movement',('Bring the boss back safely','보스를 안전하게 중앙으로 유도'),movement)),
-            (('patch',('Patch & party','패치·파티 준비')),v.section('bitan-patch',('Use the current raid rules','현재 레이드 규칙으로 준비하기'),patch))],['orbs','movement','patch']
+            (('patch',('Patch & party','패치·파티 준비')),v.section('bitan-patch',('Use the current raid rules','현재 레이드 규칙으로 준비하기'),patch))],['orbs','movement','patch','patch-nov4']
 
 
 RENDERERS={'gear-options':gear,'shugo-festival':festival,'stigma-growth':stigma,'endgame-crafts':crafts,'kr-pendant':pendant,'kr-bitan':bitan}
@@ -231,6 +233,8 @@ def render(slug, lang, base):
     reviewed=v.t('Reviewed','검토')+' '+REVIEWED
     if slug=='endgame-crafts':
         reviewed=v.t('Global references: 2026-10-13 · Ludra sections rechecked: 2026-10-25', '글로벌 참고: 2026-10-13 · 루드라 항목 재확인: 2026-10-25')
+    if slug=='kr-bitan':
+        reviewed=v.t('KR patch review: 2026-11-04', '한국 패치 검토: 2026-11-04')
     lead=f'<div class="ag-scope"><span class="ag-region">{g["region"]}</span><span>{reviewed}</span><p>{scope}</p></div>'
     return '<div class="advanced-guide" data-practical-page="'+slug+'">'+reader(lang,slug,source,panels,tail=['ag-sources'],lead=lead)+'</div>'
 

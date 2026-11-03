@@ -7264,8 +7264,8 @@
     }
   },
   "6ad85be86cfe4756db5b8e92": {
-    "contentHash": "f372a5da417e6ec8c484dd8a966a9495e7b7329cfc1bc92716aee9e1591253ff",
-    "reviewedAt": "2026-10-21T07:05:56Z",
+    "contentHash": "43f0521b7fa9a426e380bd14b4c4bf9884991d25e10bcf0fdf333612594d123a",
+    "reviewedAt": "2026-11-03T20:16:13Z",
     "classScopeReviewed": true,
     "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ad85be86cfe4756db5b8e92",
     "title": {
@@ -7273,8 +7273,8 @@
       "ko": "10월 20일 PDT / 21일 CEST · 북미 패치"
     },
     "summary": {
-      "en": "NA adds Krao Cave and Draupnir Hard mode, the Ariel Daevanion Board, Sorcerer conditional-damage fixes, and Abyss capacity/boss durability changes. No new skill coefficients or cooldown values are published.",
-      "ko": "북미에 크라오 동굴·드라웁니르 어려움, 아리엘 데바니온 보드, 마도성 조건부 피해 수정, 어비스 수용 인원·보스 내구도 조정이 적용됩니다. 새 스킬 계수·쿨타임 수치는 공지되지 않았습니다."
+      "en": "NA adds Krao Cave and Draupnir Hard mode, the Ariel Daevanion Board, Sorcerer conditional-damage fixes, and Abyss capacity/boss durability changes. The November 3 source revision was re-read and adds no new gameplay value to the reviewed highlights; no skill coefficient or cooldown is published.",
+      "ko": "북미에 크라오 동굴·드라웁니르 어려움, 아리엘 데바니온 보드, 마도성 조건부 피해 수정, 어비스 수용 인원·보스 내구도 조정이 적용됩니다. 11월 3일 수정 원문을 다시 읽었으며 기존 highlights에 새 게임 수치가 추가되지 않았고 스킬 계수·쿨타임도 공지되지 않았습니다."
     },
     "changes": [
       {
@@ -7369,8 +7369,8 @@
           "sourceSection": "Patch scope",
           "notes": [
             {
-              "en": "Published October 21 at 06:30 UTC and revised at 06:30:11 UTC for the North American service. The title identifies October 20 PDT / October 21 CEST, and the event begins October 21; the separate maintenance notice had not yet been marked complete when reviewed.",
-              "ko": "북미 서비스 공지는 10월 21일 06:30 UTC에 게시되고 06:30:11 UTC에 수정됐습니다. 제목은 10월 20일 PDT / 21일 CEST를 명시하고 이벤트는 10월 21일 시작합니다. 검토 시점에는 별도 점검 공지가 완료로 갱신되지 않았습니다."
+              "en": "Published October 21 at 06:30 UTC for North America and revised November 3 at 02:41:11 UTC. The current body was re-read and this review is rebound to source hash 43f0521b…. Its readable gameplay facts match the existing highlights. The prior full markup was not retained, so an exhaustive presentation-only diff is not claimed.",
+              "ko": "북미 서비스 원문은 10월 21일 06:30 UTC에 게시되고 11월 3일 02:41:11 UTC에 수정됐습니다. 현재 본문을 다시 읽고 검토를 원문 해시 43f0521b…에 재연결했습니다. 읽을 수 있는 게임 변경 사실은 기존 highlights와 같습니다. 이전 전체 마크업은 보관하지 않아 표시 요소만의 완전한 전후 비교는 주장하지 않습니다."
             },
             {
               "en": "NA-only: these fixes and systems now have their own regional source. KR values, dates and the KR-only Arcana issue are not copied into NA inputs.",
@@ -8138,6 +8138,253 @@
             {
               "en": "This is a highlights review of class, combat and progression changes, not a complete republication of attendance rewards, pass missions or paid product tables. No in-game validation or final class tier is claimed. Historical DPS observations and rankings retain their original dates and values.",
               "ko": "직업·전투·성장 변경의 highlights 검토이며 출석 보상·패스 미션·유료 상품 표 전체 재게시가 아닙니다. 인게임 검증이나 최종 직업 티어를 주장하지 않으며 과거 DPS 관측·순위의 날짜와 값은 보존합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
+  },
+  "6aea36386cfe4756db5b9115": {
+    "contentHash": "cebda46d11d4269ba4580d86b21ddbe4df8c2aef30733f559a5ad6b4a3dbed2e",
+    "reviewedAt": "2026-11-03T20:16:13Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6aea36386cfe4756db5b9115",
+    "title": {
+      "en": "November 4 · Korea",
+      "ko": "11월 4일 한국 패치"
+    },
+    "summary": {
+      "en": "KR moves every Abyss Outland entry window 10 minutes later and adjusts its opening, poison, wind-route and consumable rules. It also adds standard color codes, Soulstone chain use and an autumn pass, while fixing Deltras Shock Release and Outland Flame Bomb damage behavior.",
+      "ko": "한국 어비스 아웃랜드의 모든 입장 시각이 10분 늦춰지고 시작 연출·독기·바람길·소모품 규칙이 조정됩니다. 표준 색상 코드, 봉혼석 연결 사용, 가을 패스가 추가되며 델트라스 충격 해제와 아웃랜드 화염 폭탄 피해 오류도 수정됩니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Abyss Outland · entry windows",
+          "ko": "어비스 아웃랜드 · 입장 시간"
+        },
+        "description": {
+          "en": "Every announced daily entry window moves 10 minutes later while keeping the 30-minute opening interval.",
+          "ko": "공지된 일일 입장 시간대가 모두 10분씩 늦춰지며 30분 간격 개설은 유지됩니다."
+        },
+        "before": {
+          "en": "11:00–13:30 and 20:00–23:30",
+          "ko": "11:00~13:30·20:00~23:30"
+        },
+        "after": {
+          "en": "11:10–13:40 and 20:10–23:40",
+          "ko": "11:10~13:40·20:10~23:40"
+        },
+        "impact": {
+          "en": "P0 analysis: the existing public first-entry guide would send players to obsolete slots, so its schedule must change immediately. Registration cutoffs and the final eligible slot still need client verification.",
+          "ko": "P0 해석: 기존 공개 초보 공략의 시간대로는 이미 사라진 회차를 기다릴 수 있어 즉시 수정해야 합니다. 신청 마감과 마지막 참가 가능 회차는 클라이언트 확인이 필요합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Abyss Outland · opening and poison phases",
+          "ko": "어비스 아웃랜드 · 시작·독기 페이즈"
+        },
+        "description": {
+          "en": "The airship now disappears when the barrier drops after the match begins, upper-floor poison appears 30 seconds later, the middle-floor wind route moves, and stage-3 poison on every floor is normalized to the same damage.",
+          "ko": "경기 시작 뒤 장막 해제와 동시에 비공정이 사라지고, 상층 독기는 30초 늦게 등장하며, 중층 바람길 위치가 조정되고, 모든 층의 3단계 독기가 같은 피해량을 주도록 바뀝니다."
+        },
+        "impact": {
+          "en": "P1 analysis: opening positioning, upper-floor timing, middle-floor routing and late-poison survival plans may change. Exact coordinates, trigger times, damage and counterplay remain direct-verification items.",
+          "ko": "P1 해석: 시작 위치 선정, 상층 타이밍, 중층 이동 경로와 후반 독기 생존 계획이 달라질 수 있습니다. 정확한 좌표·발동 시각·피해량·대응은 직접 검증해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Abyss Outland · stealth and invincibility potions",
+          "ko": "어비스 아웃랜드 · 은신·무적 물약"
+        },
+        "description": {
+          "en": "Using an attack skill while hidden by a stealth potion now breaks stealth. Invincibility-potion duration is reduced, but movement and skill use become possible while invincible.",
+          "ko": "은신 물약으로 숨은 상태에서 공격 스킬을 쓰면 은신이 해제됩니다. 무적 물약의 무적 지속시간은 줄지만 무적 중 이동과 스킬 사용이 가능해집니다."
+        },
+        "impact": {
+          "en": "P1 analysis: stealth openers and invincibility routing need re-testing. NC publishes no old/new invincibility duration, so no uptime or damage percentage is invented.",
+          "ko": "P1 해석: 은신 선공과 무적 이동 동선을 다시 시험해야 합니다. 무적 지속시간 전후 수치는 없어 가동률·피해 변화율을 임의로 만들지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Standard color-code input",
+          "ko": "표준 색상 코드 입력"
+        },
+        "description": {
+          "en": "A standard color-code field is added to customization, Wardrobe and Settings > Chat Text Color. The prior code format remains available in a legacy field.",
+          "ko": "커스터마이징·옷장·환경설정 > 채팅 글자 색상에 표준 색상 코드 입력란이 추가되며 기존 형식은 기존 색상 코드 입력란에서 계속 사용할 수 있습니다."
+        },
+        "impact": {
+          "en": "P2 analysis: this is a UI/convenience change. Confirm accepted formats, validation behavior and saved presets before publishing exact input examples.",
+          "ko": "P2 해석: UI·편의 변경입니다. 정확한 입력 예시를 게시하기 전 허용 형식·유효성 검사·프리셋 저장 동작을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Autumn login reward and event pass",
+          "ko": "가을 출석·이벤트 패스"
+        },
+        "description": {
+          "en": "From November 4 maintenance to November 11 maintenance, KR adds a seven-day login reward. A level-10+ event pass is also sold once per server for 100,000 Kinah per track, runs to November 11 at 05:00, has 30 levels and up to 10 repeat rewards.",
+          "ko": "11월 4일 점검 후부터 11월 11일 점검 전까지 7일 출석 보상이 추가됩니다. 10레벨 이상 캐릭터는 서버당 1회, 라인별 10만 키나의 이벤트 패스를 이용할 수 있으며 11월 11일 05:00까지 30레벨과 최대 10회 반복 보상이 제공됩니다."
+        },
+        "impact": {
+          "en": "P1 analysis: this creates a temporary daily/growth route. Mission credit, server purchase scope, premium activation, reward claims and deletion of event currency need client verification; the full event table is outside this highlights review.",
+          "ko": "P1 해석: 임시 일일·성장 경로가 생깁니다. 미션 집계, 서버 구매 범위, 프리미엄 활성화, 보상 수령과 이벤트 재화 삭제를 확인해야 하며 전체 이벤트 표는 이번 highlights 검토 범위 밖입니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Consecutive Soulstone use",
+          "ko": "봉혼석 연결 사용"
+        },
+        "description": {
+          "en": "An auto-use setting can continue through Soulstones of the same grade, consuming untradeable items before tradeable ones. It does not switch grades automatically.",
+          "ko": "같은 등급 봉혼석을 연속 사용하는 자동 사용 기능이 추가되며 거래 불가, 거래 가능 순으로 소비합니다. 다른 등급으로는 자동 전환되지 않습니다."
+        },
+        "after": {
+          "en": "Settings > Combat > Auto Use > Items > Consecutive Soulstone Use",
+          "ko": "환경설정 > 전투 > 자동 사용 > 아이템 > 봉혼석 연결 사용"
+        },
+        "impact": {
+          "en": "P2 analysis: beginner settings guidance can point to the official menu, but inventory order, toggle persistence and interruption behavior remain direct-verification items.",
+          "ko": "P2 해석: 초보 설정 안내에 공식 메뉴 경로를 추가할 수 있지만 인벤토리 소비 순서·설정 유지·중단 동작은 직접 검증해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Deltras · Frozen Bind and Shock Release",
+          "ko": "델트라스 · 빙결 포박·충격 해제"
+        },
+        "description": {
+          "en": "Fixes a condition where a target caught by Frozen Bind during Deltras could use Shock Release and then move or use skills.",
+          "ko": "델트라스 전투에서 빙결 포박 대상이 특정 조건에서 충격 해제를 사용해 이동·스킬 사용이 가능하던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 analysis: the KR Snowfield guide must no longer imply Shock Release is a reliable escape. The exact condition, immunity interactions and party rescue response require live reproduction.",
+          "ko": "P1 해석: 한국 비탄의 설원 공략에서 충격 해제를 확정 탈출 수단으로 볼 수 없습니다. 정확한 조건·면역 상호작용·파티 구조 대응은 실전 재현이 필요합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Abyss Outland · Flame Bomb damage",
+          "ko": "어비스 아웃랜드 · 화염 폭탄 피해"
+        },
+        "description": {
+          "en": "Fixes Flame Bomb damage being applied incorrectly in Abyss Outland.",
+          "ko": "어비스 아웃랜드에서 화염 폭탄 피해량이 잘못 적용되던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 analysis: this is a damage-behavior fix without a published value. Do not assign a buff or nerf percentage until before/after damage is reproduced under the same conditions.",
+          "ko": "P1 해석: 수치가 공개되지 않은 피해 동작 수정입니다. 같은 조건의 전후 피해를 재현하기 전 버프·너프 비율을 부여하지 않습니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, announcement and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "11월 4일 업데이트 노트 · 적용 범위",
+          "notes": [
+            {
+              "en": "Published November 3 at 19:30 UTC for the Korean service and scheduled to apply with November 4 maintenance. This review is bound to official source hash cebda46d….",
+              "ko": "한국 서비스 기준 11월 3일 19:30 UTC에 게시됐고 11월 4일 정기점검으로 적용됩니다. 이번 검토는 공식 원문 해시 cebda46d…에 연결했습니다."
+            },
+            {
+              "en": "KR-only: none of the Outland timings, boss fixes, event costs or settings are copied to North America. No class coefficient, cooldown, skill-level effect or measured DPS result is announced.",
+              "ko": "한국 전용입니다. 아웃랜드 시간·보스 수정·이벤트 비용·설정을 북미에 복사하지 않습니다. 직업 계수·쿨타임·스킬 레벨 효과·실측 DPS 결과는 공지되지 않았습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Outland schedule and combat rules",
+            "ko": "아웃랜드 일정·전투 규칙"
+          },
+          "sourceSection": "콘텐츠 및 시스템 · 어비스 아웃랜드",
+          "notes": [
+            {
+              "en": "Official fact: both entry windows move exactly 10 minutes later to 11:10–13:40 and 20:10–23:40, every 30 minutes. P0 public target: /guides/abyss-outland/ and /ko/guides/abyss-outland/; source target: outland.py.",
+              "ko": "공식 확인: 두 입장 시간대가 정확히 10분씩 늦춰져 11:10~13:40·20:10~23:40에 30분 간격으로 열립니다. P0 공개 경로는 /guides/abyss-outland/·/ko/guides/abyss-outland/, 소스는 outland.py입니다."
+            },
+            {
+              "en": "Official fact: barrier/airship timing, upper poison delay, middle wind-route position, stage-3 poison damage, stealth break and invincibility behavior change. P1: update the dated preparation guide with announced facts, while leaving exact coordinates, values and tactics marked unverified.",
+              "ko": "공식 확인: 장막·비공정 타이밍, 상층 독기 지연, 중층 바람길 위치, 3단계 독기 피해, 은신 해제와 무적 동작이 바뀝니다. P1: 날짜가 있는 준비 공략에는 발표 사실을 반영하되 정확한 좌표·수치·전술은 미검증으로 유지합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Boss and damage fixes",
+            "ko": "보스·피해 수정"
+          },
+          "sourceSection": "기타 개선사항 및 오류 수정 · 수정사항",
+          "notes": [
+            {
+              "en": "Deltras no longer allows the published Frozen Bind/Shock Release bypass. P1 public target: /guides/kr-bitan/ and /ko/guides/kr-bitan/; source target: advancedguides.py. Confirm the trigger, CC immunity, skill availability and party rescue flow in game.",
+              "ko": "델트라스의 공지된 빙결 포박·충격 해제 우회가 제거됩니다. P1 공개 경로는 /guides/kr-bitan/·/ko/guides/kr-bitan/, 소스는 advancedguides.py입니다. 발동 조건·상태이상 면역·스킬 사용 가능 여부·파티 구조 흐름을 게임에서 확인해야 합니다."
+            },
+            {
+              "en": "Flame Bomb damage is corrected without before/after numbers. Keep data/skills.json, data/skill-snapshot.json, eDPS inputs and historical rankings unchanged.",
+              "ko": "화염 폭탄 피해는 전후 수치 없이 수정됩니다. data/skills.json·data/skill-snapshot.json·eDPS 입력·과거 순위는 유지합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Growth, settings and temporary events",
+            "ko": "성장·설정·기간 이벤트"
+          },
+          "sourceSection": "이벤트 / 개선사항",
+          "notes": [
+            {
+              "en": "The login reward and autumn pass are temporary KR growth routes. P1 targets after verification: /routines/, /endgame/ and Korean counterparts; source targets routines.py and progression.py. Verify unlock, mission credit, costs, server scope, claims and expiry before adding evergreen priorities.",
+              "ko": "출석과 가을 패스는 한국의 기간제 성장 경로입니다. 검증 후 P1 경로는 /routines/·/endgame/과 한국어 대응 페이지, 소스는 routines.py·progression.py입니다. 상시 우선순위에 넣기 전 해금·미션 집계·비용·서버 범위·수령·만료를 확인해야 합니다."
+            },
+            {
+              "en": "Standard color codes and Consecutive Soulstone Use are P2 settings targets for /start/?view=settings and /ko/start/?view=settings, with source onboarding.py. The current patch review records the exact menu and behavior; UI persistence and input validation remain unverified.",
+              "ko": "표준 색상 코드와 봉혼석 연결 사용은 /start/?view=settings·/ko/start/?view=settings 및 onboarding.py의 P2 설정 보강 대상입니다. 이번 패치 검토에는 정확한 메뉴·동작을 기록하며 UI 설정 유지와 입력 검증은 미확인입니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Review limits",
+            "ko": "검토 범위"
+          },
+          "sourceSection": "highlights 검토",
+          "notes": [
+            {
+              "en": "This highlights review covers Outland, the boss fix and progression-relevant systems. It does not claim complete republication of every event reward row or product table, in-game validation or a final class tier.",
+              "ko": "아웃랜드·보스 수정·성장 관련 시스템을 다룬 highlights 검토입니다. 이벤트 보상·상품 표 전체 재정리, 인게임 검증 완료나 최종 직업 티어를 주장하지 않습니다."
             }
           ],
           "tables": []

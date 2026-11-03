@@ -1,6 +1,46 @@
 {
-  "reviewedAt": "2026-10-28",
+  "reviewedAt": "2026-11-03",
   "items": [
+    {
+      "id": "kr-20261104-outland-bitan-growth",
+      "region": "KR",
+      "reviewedAt": "2026-11-03T20:16:13Z",
+      "title": {
+        "en": "November 4 KR · Outland, Deltras and temporary growth routes",
+        "ko": "11월 4일 한국 · 아웃랜드·델트라스·기간 성장 경로"
+      },
+      "finding": {
+        "en": "P0 schedule: update the public Outland guide from 11:00–13:30 / 20:00–23:30 to 11:10–13:40 / 20:10–23:40. P1 combat: record the barrier/airship, poison, wind-route, stealth, invincibility, Deltras and Flame Bomb changes while leaving exact values and tactics unverified. P1 growth and P2 settings: track the login/pass unlock, costs, rewards, expiry, standard color codes and Consecutive Soulstone Use. Exact source/public targets are in the hash-bound highlights. KR only; no skill/eDPS or historical ranking update.",
+        "ko": "P0 일정: 공개 아웃랜드 공략의 11:00~13:30·20:00~23:30을 11:10~13:40·20:10~23:40으로 수정합니다. P1 전투: 장막/비공정·독기·바람길·은신·무적·델트라스·화염 폭탄 변경을 기록하되 정확한 수치·전술은 미검증으로 둡니다. P1 성장·P2 설정: 출석/패스 해금·비용·보상·만료, 표준 색상 코드와 봉혼석 연결 사용을 추적합니다. 정확한 소스·공개 경로는 해시에 묶인 highlights에 기록했습니다. 한국 전용이며 스킬/eDPS·과거 순위는 바꾸지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 4 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6aea36386cfe4756db5b9115"
+        }
+      ]
+    },
+    {
+      "id": "na-20261103-oct20-source-revision",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-03T20:16:13Z",
+      "title": {
+        "en": "November 3 NA source revision · October 20 patch",
+        "ko": "11월 3일 북미 원문 수정 · 10월 20일 패치"
+      },
+      "finding": {
+        "en": "The revised official body was re-read and rebound to hash 43f0521b…. The readable Krao/Draupnir Hard, Ariel Board, Chanter/Sorcerer fixes, Abyss durability and map facts match the existing highlights. The prior full markup was not retained, so no exhaustive presentation-only diff is claimed. No new coefficient, cooldown, guide input, KR application or historical DPS change is supported.",
+        "ko": "수정된 공식 본문을 다시 읽고 원문 해시 43f0521b…에 재연결했습니다. 읽을 수 있는 크라오/드라웁니르 어려움·아리엘 보드·호법성/마도성 수정·어비스 내구도·지도 사실은 기존 highlights와 같습니다. 이전 전체 마크업은 보관하지 않아 표시 요소만의 완전한 차이는 주장하지 않습니다. 새 계수·쿨타임·공략 입력·한국 적용·과거 DPS 변경 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · October 20 PDT / 21 CEST North America patch · revised November 3",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6ad85be86cfe4756db5b8e92"
+        }
+      ]
+    },
     {
       "id": "kr-20261028-outland-gathering-ludra",
       "region": "KR",
