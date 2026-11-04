@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-04T14:24:12Z",
+  "checkedAt": "2026-11-04T20:32:17Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-04T14:24:12Z",
-      "lastSuccessAt": "2026-11-04T14:24:12Z",
+      "checkedAt": "2026-11-04T20:32:17Z",
+      "lastSuccessAt": "2026-11-04T20:32:17Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7148,8 +7148,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-04T14:24:12Z",
-      "lastSuccessAt": "2026-11-04T14:24:12Z",
+      "checkedAt": "2026-11-04T20:32:17Z",
+      "lastSuccessAt": "2026-11-04T20:32:17Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7877,8 +7877,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-04T14:24:12Z",
-      "lastSuccessAt": "2026-11-04T14:24:12Z",
+      "checkedAt": "2026-11-04T20:32:17Z",
+      "lastSuccessAt": "2026-11-04T20:32:17Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7893,13 +7893,96 @@
           "sourceUpdatedAt": "2026-11-04T12:38:32.011Z",
           "contentHash": "44e5f9c2de134673e0ac46301d15d35ae56dff90ed27cbbf306e9a70345e3e64",
           "bodyState": "ready",
-          "reviewState": "pending",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "NA removes Hard difficulty options that were unintentionally displayed for the Fire Temple and Ferocious Horn Den Expeditions. NC announces no new difficulty, boss-mechanic, reward or class-value change; restart after updating through Steam or PURPLE.",
+            "ko": "북미 불의 신전·사나운 뿔 소굴 원정에 잘못 표시되던 어려움 난도 선택지를 제거합니다. 신규 난도·보스 패턴·보상·직업 수치 변경은 발표되지 않았으며 Steam 또는 PURPLE 업데이트 후 재시작해야 합니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Fire Temple and Ferocious Horn Den · difficulty display",
+                "ko": "불의 신전·사나운 뿔 소굴 · 난도 표시"
+              },
+              "description": {
+                "en": "Fixes Hard difficulty being unintentionally shown as an option for the Fire Temple and Ferocious Horn Den Expeditions.",
+                "ko": "불의 신전과 사나운 뿔 소굴 원정에서 어려움 난도가 선택지로 잘못 표시되던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: do not plan entry, rewards or progression around the removed option. This is an availability/UI correction, not evidence of changed Normal-mode mechanics or damage.",
+                "ko": "P1 해석: 제거된 선택지를 기준으로 입장·보상·성장 계획을 세우면 안 됩니다. 이용 가능 난도·UI 수정이며 일반 난도의 패턴이나 피해가 바뀌었다는 근거는 아닙니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Client update required",
+                "ko": "클라이언트 업데이트 필요"
+              },
+              "description": {
+                "en": "Exit AION 2, update through the Steam or PURPLE launcher, and restart the game to apply the hotfix.",
+                "ko": "핫픽스 적용을 위해 AION 2를 종료하고 Steam 또는 PURPLE 런처에서 업데이트한 뒤 게임을 다시 시작해야 합니다."
+              },
+              "impact": {
+                "en": "P2 analysis: an already-running client can retain the stale option until it is updated and restarted.",
+                "ko": "P2 해석: 실행 중이던 클라이언트에는 업데이트·재시작 전까지 오래된 선택지가 남을 수 있습니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-11-04T20:31:00Z",
+          "displayTitle": {
+            "en": "November 4 hotfix · North America",
+            "ko": "11월 4일 핫픽스 · 북미"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, dates and confirmed fix",
+                  "ko": "지역·날짜·확인된 수정"
+                },
+                "sourceSection": "Hotfix Nov 4",
+                "notes": [
+                  {
+                    "en": "Published November 4 at 12:00 UTC and revised at 12:38:32 UTC for North America. The hotfix is bound to official source hash 44e5f9c2… and requires a Steam or PURPLE launcher update plus a game restart.",
+                    "ko": "북미 공지는 11월 4일 12:00 UTC 게시, 12:38:32 UTC 수정됐습니다. 핫픽스 검토는 공식 원문 해시 44e5f9c2…에 연결하며 Steam 또는 PURPLE 런처 업데이트와 게임 재시작이 필요합니다."
+                  },
+                  {
+                    "en": "NA-only: this does not change Korea. NC states only that the Hard options were unintended; it publishes no entry item level, reward, boss trigger, counter, enrage, revive, coefficient, cooldown or skill-level value.",
+                    "ko": "북미 전용이며 한국에는 적용하지 않습니다. NC는 어려움 선택지가 의도하지 않은 표시였다고만 밝혔고 입장 아이템 레벨·보상·보스 발동조건·대응·광폭화·부활·계수·쿨타임·스킬 레벨 수치는 발표하지 않았습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Guide impact and direct verification",
+                  "ko": "공략 영향·직접 검증"
+                },
+                "sourceSection": "Difficulty option correction",
+                "notes": [
+                  {
+                    "en": "P1 public targets are /updates/na-6aeb1f716276ae76f3e4a6e4/ and /ko/updates/na-6aeb1f716276ae76f3e4a6e4/ from data/patch-reviews.json. Existing /dungeons/fire-temple/ and /dungeons/fierce-horn/ pages remain explicitly scoped to older KR Conquest evidence and are not rewritten as NA Hard guides.",
+                    "ko": "P1 공개 경로는 data/patch-reviews.json에서 생성되는 /updates/na-6aeb1f716276ae76f3e4a6e4/·/ko/updates/na-6aeb1f716276ae76f3e4a6e4/입니다. 기존 /dungeons/fire-temple/·/dungeons/fierce-horn/은 과거 한국 정복 근거로 범위를 명시하고 있어 북미 어려움 공략으로 바꾸지 않습니다."
+                  },
+                  {
+                    "en": "Direct verification: after launcher update and restart, confirm the NA region, entry screen and absence of the Hard option for both Expeditions. Record selected difficulty, prerequisites, energy or entry consumption and reward screen. No boss-pattern animation or DPS change is inferred.",
+                    "ko": "직접 검증: 런처 업데이트·재시작 후 북미 지역, 두 원정 입장 화면과 어려움 선택지 제거를 확인합니다. 선택 난도·선행조건·오드/입장 차감·보상 화면을 기록해야 합니다. 보스 패턴 애니메이션이나 DPS 변화는 추정하지 않습니다."
+                  },
+                  {
+                    "en": "No skill input, eDPS model, historical record or class tier changes are supported.",
+                    "ko": "스킬 입력·eDPS 모델·과거 기록·직업 티어 변경 근거는 없습니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -9247,8 +9330,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-04T14:24:12Z",
-      "lastSuccessAt": "2026-11-04T14:24:12Z",
+      "checkedAt": "2026-11-04T20:32:17Z",
+      "lastSuccessAt": "2026-11-04T20:32:17Z",
       "error": null,
       "fromCache": false,
       "items": [
