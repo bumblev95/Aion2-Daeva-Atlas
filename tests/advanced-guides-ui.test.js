@@ -86,13 +86,13 @@ async function panel(page,key) {
       await screenshot(page,{path:path.join(artifacts,'stigma-shop-'+lang+'-390.png'),fullPage:true});
       await page.goto(local+'guides/endgame-crafts/');
       assert.equal(await page.locator('[data-ludra-scope]').isVisible(),true);
-      assert.match(await page.locator('#craft-bracelet').textContent(),/3 Ludra Gear Vouchers|3개/);
-      assert.match(await page.locator('#craft-bracelet').textContent(),/5,000,000/);
-      assert.match(await page.locator('#craft-bracelet').textContent(),/NA applicability remains unverified|북미 적용은 미확인/);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/6 Normal vouchers or 3 Hard vouchers|일반 교환권 6개 또는 어려움 교환권 3개/);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/level 5|5단계/);
+      assert.match(await page.locator('#craft-bracelet').textContent(),/drop rate|드롭 확률/);
       await page.locator('[data-ludra-scope] a[href="#craft-na-ludra"]').click();
       assert.equal(await page.locator('[data-reader-panel="na-ludra"]').isVisible(),true);
       const preparation=await page.locator('#craft-na-ludra').textContent();
-      for(const token of ['2,800','3,000','102','PST']) assert(preparation.includes(token));
+      for(const token of ['2,800','3,000','PST']) assert(preparation.includes(token));
       assert.match(preparation,/not published|공개하지 않았/);
       await screenshot(page,{path:path.join(artifacts,'na-ludra-preparation-'+lang+'-390.png'),fullPage:true});
       await page.locator('.navtools a.lang').click();

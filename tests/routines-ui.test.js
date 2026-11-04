@@ -64,7 +64,7 @@ async function contained(page, label) {
       await page.locator('#routine-conquest a[href="#routine-source-global"]').click();
       await page.waitForURL('**/#routine-source-global');
       assert.equal(await page.locator('#routine-source-global').isVisible(), true);
-      assert.equal(await page.locator('#routine-sources li').count(), 14);
+      assert.equal(await page.locator('#routine-sources li').count(), 15);
       await page.locator('.reader-tabs a[href="#reward-uses"]').click();
       await page.waitForURL('**/#reward-uses');
       assert.equal(await page.locator('#reward-ap').isVisible(), true);
