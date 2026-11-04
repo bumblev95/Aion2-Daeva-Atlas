@@ -7,7 +7,7 @@ from html import escape as e
 from fieldnotes import BOSSES, KR_SOURCES
 import growthvisuals
 import guidebrowse
-from advancedguides import LUDRA_NOTICE, LUDRA_PREVIEW
+from advancedguides import LUDRA_PATCH, LUDRA_PATCH_REVIEW
 
 REVIEWED = '2026-10-12'
 ROOT = 'guides/'
@@ -220,8 +220,8 @@ def gear_guide(v):
         (('Wrong weapon or missing accessory', '다른 직업 무기·부족한 장신구'),
          ('The weapon-side dungeons have accessory-chest recipes and weapon-selection conversions. A weapon swap also needs the matching dungeon weapon; a voucher alone is not a free weapon.', '무기 쪽 던전에는 장신구 상자와 무기 선택 변환이 있습니다. 무기 교환에는 해당 던전 무기도 필요하므로 교환권만으로 무기를 받는 것으로 생각하면 안 됩니다.')),
         (('Planning past this ladder', '다음 단계까지 준비할 때'),
-         ('MetaBot’s Global reference lists Ludra weapons/guard and Splendent Wise or Ebony Dragon Lord crafts at individual equipment level 102. Rechecked October 25: this is not the NA character entry total of 2,800 / 3,000, and NA loot levels and recipes remain unverified.', '10월 25일 재확인한 MetaBot 글로벌 참고는 루드라 무기·수호패와 Splendent Wise / Ebony Dragon Lord 제작의 개별 장비 레벨을 102로 안내합니다. 북미 캐릭터 입장 종합 수치 2,800·3,000과 다르며 북미 보상 레벨·제작식은 미확인입니다.')),
-    ])+v.cite('gear')+v.a(LUDRA_PREVIEW,t('NA Ludra official-news summary', '북미 루드라 공식 소식 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('NA preparation and crafting checks', '북미 준비·제작 확인 항목'),'progress-action')
+         ('The November 4 NA patch confirms Ludra weapons, guard and bracelets plus voucher conversions. It does not publish reward item levels or drop rates. The 2,800 / 3,000 values are character entry totals, not one item’s level.', '11월 4일 북미 패치는 루드라 무기·수호패·팔찌와 교환권 변환을 확인합니다. 보상 장비 레벨과 드롭률은 공개하지 않았습니다. 2,800·3,000은 개별 장비 레벨이 아니라 캐릭터 입장 종합 수치입니다.')),
+    ])+v.cite('gear')+v.a(LUDRA_PATCH_REVIEW,t('NA November 4 patch summary', '북미 11월 4일 패치 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('NA rewards and verification checks', '북미 보상·검증 항목'),'progress-action')
     return (
         '<div class="progress-callout"><strong>'+t('Entry total ≠ one item’s level', '입장 종합 수치 ≠ 장비 한 개의 레벨')+'</strong><p>'+t('700 / 1,400 / 2,100 are character entry gates for the Conquest pairs below. 54 / 70 / 86 are the target items’ own levels. The ladder is a Global reference, not a current KR best-in-slot list.', '아래 700·1,400·2,100은 정복 입장에 필요한 캐릭터 종합 수치, 54·70·86은 보상 장비 자체의 레벨입니다. 글로벌 성장 참고이며 현재 한국 서버의 최종 장비표가 아닙니다.')+'</p></div>'+
         '<div id="gear-ladder">'+ladder+'</div>'+
@@ -306,7 +306,7 @@ def kinah_guide(v):
 
 def ludra_entry(v):
     t=v.t
-    return '<aside class="progress-callout" data-ludra-entry><strong>'+t('NA Ludra · November 4, 2026', '북미 루드라 · 2026년 11월 4일')+'</strong><p>'+t('NC’s October 23 announcement, rechecked October 25: character entry item level 2,800 (Normal) / 3,000 (Hard). Global equipment level 102 describes one item, not that entry total. The older Global bracelet recipe and loot levels are not confirmed for this NA release.', 'NC 10월 23일 발표·10월 25일 재확인: 캐릭터 입장 아이템 레벨은 일반 2,800·어려움 3,000입니다. 글로벌 장비 레벨 102는 개별 장비 수치이며 입장 종합 수치와 다릅니다. 기존 글로벌 팔찌 제작식·보상 레벨의 이번 북미 적용은 미확인입니다.')+'</p>'+v.a(LUDRA_PREVIEW,t('NA official-news summary', '북미 공식 소식 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('Before launch / verify in game', '출시 전 준비 / 인게임 확인'),'progress-action')+'<a href="'+LUDRA_NOTICE+'" target="_blank" rel="noopener noreferrer">'+t('NC · official NA source', 'NC · 북미 공식 원문')+' ↗</a></aside>'
+    return '<aside class="progress-callout" data-ludra-entry><strong>'+t('NA Ludra · November 4, 2026', '북미 루드라 · 2026년 11월 4일')+'</strong><p>'+t('Normal and Hard require character item levels 2,800 and 3,000 and each has a one-hour limit. NC confirms Ludra weapons, guard and bracelets plus voucher conversions; reward item levels, drop rates and encounter mechanics remain unverified.', '일반·어려움은 캐릭터 아이템 레벨 2,800·3,000이 필요하고 제한 시간은 각각 1시간입니다. NC는 루드라 무기·수호패·팔찌와 교환권 변환을 확인했지만 보상 장비 레벨·드롭률·전투 기믹은 직접 검증 대기입니다.')+'</p>'+v.a(LUDRA_PATCH_REVIEW,t('NA November 4 patch summary', '북미 11월 4일 패치 요약'),'progress-action')+v.a(ROOT+'endgame-crafts/#craft-na-ludra',t('Rewards / verify in game', '보상 / 인게임 확인'),'progress-action')+'<a href="'+LUDRA_PATCH+'" target="_blank" rel="noopener noreferrer">'+t('NC · official NA patch', 'NC · 북미 공식 패치')+' ↗</a></aside>'
 
 
 def render(slug, lang, base):

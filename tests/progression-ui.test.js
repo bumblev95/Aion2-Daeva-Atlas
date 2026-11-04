@@ -92,16 +92,16 @@ async function contained(page, label) {
         if(['gear-targets','dungeon-rewards'].includes(slug)) {
           const note=page.locator('[data-ludra-entry]');
           assert.equal(await note.isVisible(),true);
-          for(const token of ['2,800','3,000','102']) assert((await note.textContent()).includes(token));
+          for(const token of ['2,800','3,000']) assert((await note.textContent()).includes(token));
           await note.locator('a[href$="endgame-crafts/#craft-na-ludra"]').click();
           await page.waitForURL('**/guides/endgame-crafts/#craft-na-ludra');
           assert.equal(await page.locator('#craft-na-ludra').isVisible(),true);
-          await page.locator('#craft-na-ludra a[href$="updates/na-6adbaeb06cfe4756db5b8efb/"]').click();
-          await page.waitForURL('**/updates/na-6adbaeb06cfe4756db5b8efb/');
-          assert.match(await page.locator('h1').textContent(),/Ludra|루드라/);
+          await page.locator('#craft-na-ludra a[href$="updates/na-6aead0e86cfe4756db5b913f/"]').click();
+          await page.waitForURL('**/updates/na-6aead0e86cfe4756db5b913f/');
+          assert.match(await page.locator('h1').textContent(),/November 3 PST|11월 3일 PST/);
           assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang==='ko');
           await page.locator('.navtools a.lang').click();
-          await page.waitForURL('**/updates/na-6adbaeb06cfe4756db5b8efb/');
+          await page.waitForURL('**/updates/na-6aead0e86cfe4756db5b913f/');
           assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
           await page.goto(local+'guides/'+slug+'/');
         }
