@@ -7,7 +7,7 @@ const http = require('node:http');
 const {chromium} = require('playwright');
 const root = path.resolve(__dirname, '../docs'), prefix = '/Aion2-Daeva-Atlas/';
 const artifacts = process.env.ADVANCED_GUIDE_QA_ARTIFACTS || path.resolve(__dirname, '../../advanced-guide-qa');
-const slugs = ['gear-options', 'shugo-festival', 'stigma-growth', 'endgame-crafts', 'kr-pendant', 'kr-bitan'];
+const slugs = ['na-ludra', 'gear-options', 'shugo-festival', 'stigma-growth', 'endgame-crafts', 'kr-pendant', 'kr-bitan'];
 fs.mkdirSync(artifacts, {recursive:true});
 const server = http.createServer((req,res) => {
   const route=decodeURIComponent(new URL(req.url,'http://local').pathname);
@@ -55,6 +55,26 @@ async function panel(page,key) {
       const page=await context.newPage(),errors=[];
       page.on('pageerror',error=>errors.push(error.message));
       const local=base+(lang==='ko'?'ko/':'');
+      await page.goto(local+'dungeons/');
+      await page.locator('[data-practical-guide="na-ludra"]').click();
+      await page.waitForURL('**/guides/na-ludra/');
+      assert.match(await page.locator('#ludra-entry').textContent(),/2,800/);
+      assert.match(await page.locator('#ludra-entry').textContent(),/3,000/);
+      await panel(page,'combat');
+      assert.match(await page.locator('#ludra-combat').textContent(),/not yet verified|아직 검증되지 않음/);
+      await panel(page,'materials');
+      assert.match(await page.locator('#ludra-materials').textContent(),/×6/);
+      assert.match(await page.locator('#ludra-materials').textContent(),/100%/);
+      await page.locator('.navtools a.lang').click();
+      await page.waitForURL('**/guides/na-ludra/#ludra-materials');
+      assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
+      assert.equal(await page.locator('#ludra-materials').isVisible(),true);
+      await page.locator('#ludra-materials a[href$="guides/endgame-crafts/"]').click();
+      await page.locator('#craft-bracelet a[href$="guides/na-ludra/"]').click();
+      await page.waitForURL('**/guides/na-ludra/');
+      await page.goto(local+'search/?q='+encodeURIComponent(lang==='ko'?'루드라':'Ludra'));
+      await page.locator('[data-search-results] a[href$="guides/na-ludra/"]').click();
+      await page.waitForURL('**/guides/na-ludra/');
       await page.goto(local+'gear/');
       await page.locator('[data-practical-guide="gear-options"]').click();
       await page.waitForURL('**/guides/gear-options/');
@@ -135,9 +155,9 @@ async function panel(page,key) {
             await page.locator('[data-reader-tab]').nth(i).click();
             await contained(page,slug+' panel '+i+'/'+lang+'/'+width);
           }
-          if(width===1440) {
+          if(width===1440 || (slug==='na-ludra' && [320,390].includes(width))) {
             await page.locator('[data-reader-tab]').first().click();
-            await screenshot(page,{path:path.join(artifacts,slug+'-'+lang+'-1440.png'),fullPage:true});
+            await screenshot(page,{path:path.join(artifacts,slug+'-'+lang+'-'+width+'.png'),fullPage:true});
           }
         }
       }
@@ -178,6 +198,6 @@ async function panel(page,key) {
     await page.waitForTimeout(3300);
     assert.equal(await raid.getAttribute('data-phase'),phase);
     await motion.close();
-    console.log('Advanced guides: bilingual navigation, six routes, 9 games, cost/probability boundaries, autoplay/pause, no-script and 320–1440px verified.');
+    console.log('Advanced guides: bilingual navigation, seven routes, 9 games, cost/probability boundaries, autoplay/pause, no-script and 320–1440px verified.');
   } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);process.exitCode=1;server.close();});

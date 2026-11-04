@@ -207,8 +207,9 @@ def guides():
     search_index.extend(progression.search_entries(LANG,BASE))
     for g in advancedguides.GUIDES:
         sub='guides/'+g['slug']+'/'
-        write(sub,pair(g['title']),pair(g['description']),f'<div class="wrap">{pagehead(pair(g["title"]),pair(g["description"]))}{advancedguides.render(g["slug"],LANG,BASE)}</div>','guides',True,reviewed=advancedguides.REVIEWED)
-        page_dates[SITE+'/'+path(sub)]=advancedguides.REVIEWED
+        reviewed=g.get('reviewed',advancedguides.REVIEWED)
+        write(sub,pair(g['title']),pair(g['description']),f'<div class="wrap">{pagehead(pair(g["title"]),pair(g["description"]))}{advancedguides.render(g["slug"],LANG,BASE)}</div>','guides',True,reviewed=reviewed)
+        page_dates[SITE+'/'+path(sub)]=reviewed
     search_index.extend(advancedguides.search_entries(LANG,BASE))
     for g in GUIDES:
         sub='guides/'+g['slug']+'/'

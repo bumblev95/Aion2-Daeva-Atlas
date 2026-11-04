@@ -1,0 +1,74 @@
+{
+  "reviewedOn": "2026-11-04",
+  "baseCommit": "9817ee91",
+  "scope": "NA launch beginner preparation and reward decisions; no gameplay verification",
+  "official": {
+    "articleId": "6aead0e86cfe4756db5b913f",
+    "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f",
+    "retrieval": "Public NC API: https://api-global-community.plaync.com/aion2_global/board/update_en/article/6aead0e86cfe4756db5b913f",
+    "contentHash": "13ac8cfab9ce63fd6fbb7823bebeb6d6ec434b4594ea98e94abdfdf2b096e536",
+    "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)",
+    "matchesExistingReview": true
+  },
+  "additionalOfficial": {
+    "url": "https://lounge.plaync.com/feed/85150?country=US&locale=en-US",
+    "title": "Ludra Awakens on November 4th (Updated 10/30)",
+    "scope": "New mechanics, current event names and NA East/West title eligibility"
+  },
+  "confirmed": {
+    "entryLevels": {
+      "normal": 2800,
+      "hard": 3000
+    },
+    "runLimitMinutes": 60,
+    "rewardTypes": "Same types, differing unpublished drop rates",
+    "braceletConversions": {
+      "normalVouchers": 6,
+      "hardVouchers": 3,
+      "normalVouchersToOneHard": 2
+    },
+    "amplificationCaps": {
+      "abyssal": 3,
+      "ludra": 5
+    },
+    "dragonRecipes": "New True Dragon / Star Dragon recipes: 100% success, no COMBO, Bound output; Bound or Unbound Artisan-to-Epic material gear eligible; existing recipes unchanged."
+  },
+  "naCombatVerified": false,
+  "excludedCombatReferences": [
+    {
+      "url": "https://aion2maps.com/guides/ludra/",
+      "reason": "Identifies its combat as Early Access, not the November 4 NA revision."
+    },
+    {
+      "url": "https://aion2tierlist.com/guides/aion-2-ludra-raid-guide",
+      "reason": "October 30 article explicitly uses September Early Access footage; no new NA verification."
+    },
+    {
+      "url": "https://www.aion2guidance.com/en/dungeons/ludra/",
+      "reason": "Marks mechanics as KR / Early Access before the rework."
+    }
+  ],
+  "pending": [
+    "NA attack cues, counters, HP triggers, damage, enrage and revival/re-entry rules",
+    "Entry/unlock/party requirements, costs and weekly limits",
+    "Voucher award quantity/cadence, exact drop rates and weapon-chest costs",
+    "Full crafting quantities and Kina costs; live-client binding/transfer previews"
+  ],
+  "editorialAdvice": [
+    "Normal practice group first",
+    "Useful equipment and skill setup before inflating entry total",
+    "Keep eligible spare gear and compare full recipe/transfer costs",
+    "Record current cues and outcomes instead of copying old safe positions"
+  ],
+  "integration": [
+    "Bilingual /guides/na-ludra/",
+    "Endgame, dungeon hub, gear targets and dungeon reward gateways",
+    "Reciprocal endgame-crafts links",
+    "Search entries, language-preserving anchors, review metadata and sitemap"
+  ],
+  "preserved": [
+    "October 25 historical review",
+    "Official news snapshots and patch reviews",
+    "KR boss lessons and production DPS data"
+  ]
+}

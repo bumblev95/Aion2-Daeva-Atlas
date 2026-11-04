@@ -1,6 +1,7 @@
 """Dated practical guides: original diagrams, with regional evidence kept explicit."""
 from html import escape as e
 import json
+import ludra
 
 REVIEWED = '2026-10-13'
 LUDRA_PREVIEW = 'updates/na-6adbaeb06cfe4756db5b8efb/'
@@ -8,6 +9,7 @@ LUDRA_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId=6adba
 LUDRA_PATCH_REVIEW = 'updates/na-6aead0e86cfe4756db5b913f/'
 LUDRA_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f'
 GUIDES = [
+    dict(slug='na-ludra', group='boss', region='NA', reviewed=ludra.REVIEWED, title=('NA Ludra: beginner preparation & rewards', '북미 루드라: 초보자 준비·보상 공략'), description=('Choose a difficulty, prepare your gear and spend the right vouchers. NA combat verification remains open.', '난이도 선택부터 장비 준비·교환권 사용까지. 북미 전투 패턴은 검증 범위를 명확히 구분합니다.')),
     dict(slug='gear-options', group='gear', region='GLOBAL', title=('Gear options & transfers', '장비 옵션·영혼 부여·계승'), description=('Choose between Sync, Bind, Reset and a transfer.', '옵션 변경·수치 상승·전체 재설정·계승을 상황에 맞게 선택합니다.')),
     dict(slug='shugo-festival', group='routines', region='GLOBAL', title=('Shugo Festival: play, keys & purchases', '페스타 종목·열쇠·상점 공략'), description=('Choose an activity, a reward claim and your next purchase.', '종목을 고르고, 보상 열쇠를 쓰고, 성장 재료로 교환하는 순서.')),
     dict(slug='stigma-growth', group='gear', region='GLOBAL / KR', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate Global purchases from dated KR stock and level costs.', '글로벌 구매 참고와 한국 상점 한도·레벨별 소모량을 구분합니다.')),
@@ -16,6 +18,7 @@ GUIDES = [
     dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14/November 4 changes.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일/11월 4일 변경 사항.')),
 ]
 SOURCES = {
+    'ludra-na-current': ('https://lounge.plaync.com/feed/85150?country=US&locale=en-US', 'NC · Ludra Awakens · Updated 10/30 · checked 2026-11-04', 'Official NA notice: new mechanics and current event titles; no attack-by-attack guide.'),
     'gear': ('https://mobalytics.gg/gamebase/guides/aion-2-endgame-gear', 'Mobalytics · Ulfhednar / Oli · 2026-10-12', 'Global play guide'),
     'festival': ('https://mobalytics.gg/gamebase/guides/aion-2-shugo-festival', 'Mobalytics · Ulvier · 2026-10-13', 'Global play guide'),
     'arcana': ('https://metabot.gg/en/aion-2/arcana', 'MetaBot · Global Arcana client table', 'Global client reference'),
@@ -70,7 +73,7 @@ class View:
 
 def gateway(lang, base, group):
     v=View(lang,base)
-    slugs={'gear':['gear-options','stigma-growth','endgame-crafts'], 'endgame':['stigma-growth','endgame-crafts'], 'routines':['shugo-festival','stigma-growth'], 'boss':['kr-bitan'], 'gear-targets':['gear-options','endgame-crafts','kr-pendant'], 'dungeon-rewards':['endgame-crafts','kr-bitan']}
+    slugs={'gear':['gear-options','stigma-growth','endgame-crafts'], 'endgame':['na-ludra','stigma-growth','endgame-crafts'], 'routines':['shugo-festival','stigma-growth'], 'boss':['na-ludra','kr-bitan'], 'gear-targets':['na-ludra','gear-options','endgame-crafts','kr-pendant'], 'dungeon-rewards':['na-ludra','endgame-crafts','kr-bitan']}
     entries=[g for slug in slugs.get(group,[]) for g in GUIDES if g['slug']==slug]
     if not entries:return ''
     return '<nav class="ag-related" aria-label="'+v.t('More practical guides','다음 성장 상세 공략')+'">'+''.join(f'<a href="{v.root}guides/{g["slug"]}/" data-practical-guide="{g["slug"]}"><small>{g["region"]}</small><strong>{e(v.p(g["title"]))}</strong><span aria-hidden="true">→</span></a>' for g in entries)+'</nav>'
@@ -148,6 +151,7 @@ def stigma(v):
 
 
 def crafts(v):
+    ludra_link=v.link('guides/na-ludra/',v.t('NA Ludra beginner guide: entry, preparation and rewards', '북미 루드라 초보 공략: 입장·준비·보상'))
     scope='<div class="ag-note" data-ludra-scope><strong>'+v.t('NA · November 4, 2026: current official patch', '북미 · 2026년 11월 4일: 현재 공식 패치')+'</strong><p>'+v.t('Normal requires character item level 2,800 and Hard requires 3,000. Both have a one-hour limit. The official patch now confirms the launch rewards and bracelet-voucher conversions below.', '일반은 캐릭터 아이템 레벨 2,800, 어려움은 3,000이 필요하며 제한 시간은 모두 1시간입니다. 공식 패치에서 아래 출시 보상과 팔찌 교환권 변환을 확인했습니다.')+'</p>'+v.link(LUDRA_PATCH_REVIEW,v.t('NA November 4 patch summary', '북미 11월 4일 패치 요약'))+' · <a href="#craft-na-ludra">'+v.t('Current facts / verify in game', '현재 확인 사실 / 인게임 검증')+' →</a></div>'
     bracelet=v.cards([
         ('shield',('Abyssal Bracelet · NA official','심연의 팔찌 · 북미 공식'),('Abyssal Bracelet (Bound) can drop from Normal or Hard and can be Amplified to level 3. The patch does not publish its drop rate.', '심연의 팔찌(각인)는 일반·어려움에서 획득할 수 있고 3단계까지 돌파할 수 있습니다. 공지는 드롭 확률을 공개하지 않았습니다.')),
@@ -173,7 +177,7 @@ def crafts(v):
         (('Reserve useful cards','쓸 카드는 먼저 남기기'),('Crystals have season reward and Arcana extraction routes; do not extract a card you still need.', '결정은 시즌 보상·아르카나 추출 경로를 확인합니다. 쓸 카드를 먼저 남기세요.')),
         (('Review the full recipe','총 제작 비용 확인'),('Base crafting and optional picks are different budgets. Keep enough Kinah for the next useful upgrade.', '기본 제작과 추가 선택 비용을 구분하고 다음 성장에 쓸 키나도 남깁니다.')),
     ])
-    return [(('bracelet',('Bracelet','팔찌')),v.section('craft-bracelet',('A raid reward with a purpose','목표를 정하고 레이드 보상 모으기'),scope+bracelet)),
+    return [(('bracelet',('Bracelet','팔찌')),v.section('craft-bracelet',('A raid reward with a purpose','목표를 정하고 레이드 보상 모으기'),ludra_link+scope+bracelet)),
             (('na-ludra',('NA · November 4','북미 · 11월 4일')),v.section('craft-na-ludra',('Prepare from confirmed NA information','확인된 북미 정보로 준비하기'),na)),
             (('arcana',('Arcana','아르카나')),v.section('craft-arcana',('Craft for a skill you use','자주 쓰는 스킬을 위한 제작'),arcana)),
             (('materials',('Material route','재료 모으기')),v.section('craft-materials',('Keep, collect, then craft','남길 것·모을 것·만들 것'),route+v.link('routines/#routine-transcendence',v.t('Arcana reward route','아르카나 보상 경로'))+v.link('guides/kinah-farming/',v.t('Plan your Kinah','키나 예산 준비'))))],['ludra-na-patch','ludra-na','gear','arcana','arcana-guide']
@@ -224,7 +228,7 @@ def bitan(v):
             (('patch',('Patch & party','패치·파티 준비')),v.section('bitan-patch',('Use the current raid rules','현재 레이드 규칙으로 준비하기'),patch))],['orbs','movement','patch','patch-nov4','patch-nov4-hotfix']
 
 
-RENDERERS={'gear-options':gear,'shugo-festival':festival,'stigma-growth':stigma,'endgame-crafts':crafts,'kr-pendant':pendant,'kr-bitan':bitan}
+RENDERERS={'na-ludra':ludra.render,'gear-options':gear,'shugo-festival':festival,'stigma-growth':stigma,'endgame-crafts':crafts,'kr-pendant':pendant,'kr-bitan':bitan}
 
 
 def render(slug, lang, base):
@@ -236,7 +240,9 @@ def render(slug, lang, base):
     from guidebrowse import Fragments
     panels=[(key,title,[next(iter(Fragments(body).ids))]) for (key,title),body in entries]
     scope=v.t('Dated source guidance; confirm the material and reward preview for your region.', '출처 날짜가 있는 공략입니다. 재료·보상은 자신의 서버 미리보기와 맞춰 확인하세요.')
-    reviewed=v.t('Reviewed','검토')+' '+REVIEWED
+    reviewed=v.t('Reviewed','검토')+' '+g.get('reviewed',REVIEWED)
+    if slug=='na-ludra':
+        scope=v.t('NA launch guide · official facts and preparation advice are separated. Current combat patterns are not yet verified.', '북미 출시 공략 · 공식 사실과 준비 권장 사항을 구분합니다. 현재 전투 패턴은 아직 검증되지 않았습니다.')
     if slug=='endgame-crafts':
         reviewed=v.t('Global references: 2026-10-13 · NA Ludra patch: 2026-11-04', '글로벌 참고: 2026-10-13 · 북미 루드라 패치: 2026-11-04')
     if slug=='kr-bitan':
@@ -248,4 +254,5 @@ def render(slug, lang, base):
 def search_entries(lang, base):
     v=View(lang,base)
     aliases={'gear-options':'Sync Bind Reset Soul Binding Transfer 동기화 초기화 영혼 부여 계승 불꽃', 'shugo-festival':'Shugo Festival Centuryroot Tokens Reward Keys 페스타 열쇠 보상 종목', 'stigma-growth':'Stigma Shards 샤드 스티그마 어비스 악몽 상점 누적 한도', 'endgame-crafts':'Ludra Abyssal Bracelet Arcana Chalice of Vigor 팔찌 아르카나 제작', 'kr-pendant':'Draconic Pendant KR 펜던트 실패 보정 확률 유일', 'kr-bitan':'Snowfield Grief Deltras KR 비탄 델트라스 구슬 쐐기 50%'}
+    aliases['na-ludra']='Ludra Abyssal Forge Normal Hard NA beginner bracelet voucher 루드라 북미 일반 어려움 초보 팔찌 교환권 제작'
     return [dict(lang=lang,path=('ko/' if v.k else '')+'guides/'+g['slug']+'/',title=v.p(g['title']),description=v.p(g['description']),category=g['region']+' · '+v.t('Practical guide','성장 상세 공략'),keywords=aliases[g['slug']]) for g in GUIDES]
