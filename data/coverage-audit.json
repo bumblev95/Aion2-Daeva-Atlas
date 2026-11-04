@@ -1,6 +1,46 @@
 {
-  "reviewedAt": "2026-11-03",
+  "reviewedAt": "2026-11-04",
   "items": [
+    {
+      "id": "na-20261104-ludra-outer-reshanta-schedules",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-04T08:30:00Z",
+      "title": {
+        "en": "November 4 NA · Ludra, Outer Reshanta and schedules",
+        "ko": "11월 4일 북미 · 루드라·외곽 레시온·일정"
+      },
+      "finding": {
+        "en": "P1: Ludra rewards and bracelet conversions, Chaotic Outer Reshanta, Artifact/field-boss schedules, Exploration rewards and 100% Dragon recipes change current endgame and routine guidance. Exact public/source targets are in the hash-bound highlights. Verify encounter triggers, server-clock timezone, queues, standardized rules, reward/drop behavior, exact Exploration counter and recipe materials. No skill/eDPS or historical ranking update is supported.",
+        "ko": "P1: 루드라 보상·팔찌 변환, 혼돈의 외곽 레시온, 아티팩트/필드 보스 일정, 탐험 보상, 용제 100% 제작식이 현재 엔드게임·루틴 공략을 바꿉니다. 정확한 공개·소스 경로는 해시에 묶인 highlights에 기록했습니다. 전투 발동조건·서버 시계·매칭·표준화 규칙·보상/드롭·정확한 탐험 횟수·제작 재료를 확인해야 합니다. 스킬/eDPS·과거 순위 갱신 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 3 PST / 4 CET North America patch",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f"
+        }
+      ]
+    },
+    {
+      "id": "kr-20261104-deltras-damage-hotfix",
+      "region": "KR",
+      "reviewedAt": "2026-11-04T08:25:00Z",
+      "title": {
+        "en": "November 4 KR · Deltras damage hotfix",
+        "ko": "11월 4일 한국 · 델트라스 피해 오류 수정"
+      },
+      "finding": {
+        "en": "P1: KR fixed intermittent abnormal damage to a Frozen Bind target during Deltras. No value or trigger is published; reproduce the Bind sequence, damage log, immunity and party-rescue behavior. The temporary compensation is recorded but not made evergreen. No NA application, DPS percentage or historical ranking change is supported.",
+        "ko": "P1: 한국 델트라스 전투 중 빙결 포박 대상에게 간헐적으로 적용되던 비정상 피해를 수정했습니다. 수치·발동조건이 없어 포박 구간·피해 로그·면역·파티 구조를 재현해야 합니다. 기간 보상은 기록하되 상시 공략으로 만들지 않았습니다. 북미 적용·DPS 비율·과거 순위 변경 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 4 Korea temporary maintenance",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6aea9be081a1f241964f2d12"
+        }
+      ]
+    },
     {
       "id": "kr-20261104-outland-bitan-growth",
       "region": "KR",

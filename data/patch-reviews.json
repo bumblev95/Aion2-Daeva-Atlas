@@ -8391,5 +8391,329 @@
         }
       ]
     }
+  },
+  "6aead0e86cfe4756db5b913f": {
+    "contentHash": "13ac8cfab9ce63fd6fbb7823bebeb6d6ec434b4594ea98e94abdfdf2b096e536",
+    "reviewedAt": "2026-11-04T08:30:00Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f",
+    "title": {
+      "en": "November 3 PST / 4 CET · North America",
+      "ko": "11월 3일 PST / 4일 CET · 북미 패치"
+    },
+    "summary": {
+      "en": "NA launches Ludra and Chaotic Outer Reshanta, changes Abyss and field-boss schedules, raises Exploration rewards, adds bracelet conversions and 100% Dragon gear recipes, and corrects the temporary Odyle support to four per account daily. No class coefficient, cooldown or skill-level value is published.",
+      "ko": "북미에 루드라와 혼돈의 외곽 레시온이 열리고 어비스·필드 보스 일정, 탐험 보상, 팔찌 교환권, 용제 장비 100% 제작식이 바뀝니다. 기간 오딜 지원은 계정당 매일 4개로 확정됐습니다. 직업 계수·쿨타임·스킬 레벨 수치는 공지되지 않았습니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Ludra · Normal and Hard",
+          "ko": "루드라 · 일반·어려움"
+        },
+        "description": {
+          "en": "Abyssal Forge opens with Ludra on Normal and Hard, each with a one-hour limit. Entry item levels are 2800 and 3000; both modes list Ludra weapons, guard, bracelets, wings and artwork, with different drop rates.",
+          "ko": "어비스 용광로에 루드라 일반·어려움이 열리며 두 난도 모두 제한 시간은 1시간입니다. 입장 아이템 레벨은 2800·3000이고 루드라 무기·수호패·팔찌·날개·명화를 보상으로 안내하되 드롭률은 다릅니다."
+        },
+        "after": {
+          "en": "Normal 2800 · Hard 3000 · 1 hour each",
+          "ko": "일반 2800 · 어려움 3000 · 각 1시간"
+        },
+        "impact": {
+          "en": "P1 analysis: current endgame targets and reward planning change. Boss triggers, counters, revive rules, reward item levels and drop rates still require live verification.",
+          "ko": "P1 해석: 현재 엔드게임 목표와 보상 계획이 바뀝니다. 보스 발동조건·대응·부활 규칙·보상 장비 레벨·드롭률은 직접 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Bracelets and vouchers",
+          "ko": "팔찌·교환권"
+        },
+        "description": {
+          "en": "Abyssal Bracelet can drop in both modes and amplifies to level 3; Ludra Bracelet amplifies to level 5. Six Normal or three Hard specific vouchers convert to Ludra Bracelet, and two Normal vouchers convert to one Hard voucher.",
+          "ko": "어비스 팔찌는 두 난도에서 획득 가능하고 돌파 3단계, 루드라 팔찌는 돌파 5단계까지 가능합니다. 일반 전용 교환권 6개 또는 어려움 전용 3개로 루드라 팔찌를 만들고 일반 2개를 어려움 1개로 바꿀 수 있습니다."
+        },
+        "after": {
+          "en": "6 Normal vouchers or 3 Hard vouchers → Ludra Bracelet; 2 Normal → 1 Hard",
+          "ko": "일반 6개 또는 어려움 3개 → 루드라 팔찌, 일반 2개 → 어려움 1개"
+        },
+        "impact": {
+          "en": "P1 analysis: bracelet investment and duplicate-voucher value change. Drop rates, morph menu cost and bound-item behavior need client verification.",
+          "ko": "P1 해석: 팔찌 투자와 중복 교환권 가치가 달라집니다. 드롭률·변환 메뉴 비용·귀속 동작은 게임 확인이 필요합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Chaotic Outer Reshanta",
+          "ko": "혼돈의 외곽 레시온"
+        },
+        "description": {
+          "en": "Adds a level-45 NA mode with standardized stats, skill and Stigma levels, three base hours per week and extension through Outer Entry Stones. PvP AP earned inside is reduced by 50%.",
+          "ko": "북미에 45레벨 혼돈의 외곽 레시온이 추가됩니다. 능력치·스킬·스티그마 레벨이 표준화되고 기본 주 3시간, 외곽 입장석으로 연장하며 내부 PvP 획득 AP는 50% 감소합니다."
+        },
+        "after": {
+          "en": "Level 45 · 3 hours/week · PvP AP -50%",
+          "ko": "45레벨 · 주 3시간 · PvP AP 50% 감소"
+        },
+        "impact": {
+          "en": "P1 analysis: this is a separate PvP routine and cannot inherit KR Outland rules. Match flow, reset, stone extension, rewards and specializations need reproduction.",
+          "ko": "P1 해석: 별도 PvP 루틴이며 한국 아웃랜드 규칙을 적용할 수 없습니다. 매칭·초기화·입장석 연장·보상·특화 적용을 재현해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Artifact Siege and Abyss Corridor",
+          "ko": "아티팩트 공성·어비스 회랑"
+        },
+        "description": {
+          "en": "Artifact Siege changes from three times to twice weekly, Thursday and Saturday at 21:00; Kaira, Argo and Tamasa appear at 21:30. Abyss Corridor AP per run rises 50%.",
+          "ko": "아티팩트 공성은 주 3회에서 목·토 21:00 주 2회로 바뀌며 카이라·아르고·타마사는 21:30에 등장합니다. 어비스 회랑 1회 획득 AP는 50% 증가합니다."
+        },
+        "before": {
+          "en": "Artifact Siege 3 times/week",
+          "ko": "아티팩트 공성 주 3회"
+        },
+        "after": {
+          "en": "Thu/Sat 21:00; bosses 21:30; Corridor AP +50%",
+          "ko": "목·토 21:00, 보스 21:30, 회랑 AP 50% 증가"
+        },
+        "impact": {
+          "en": "P1 analysis: weekly PvP scheduling changes; server-clock timezone and first post-maintenance occurrence remain unverified.",
+          "ko": "P1 해석: 주간 PvP 일정이 바뀝니다. 서버 시계 시간대와 점검 뒤 첫 진행은 미검증입니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "adjustment",
+        "subject": {
+          "en": "Field-boss timers",
+          "ko": "필드 보스 시간"
+        },
+        "description": {
+          "en": "Gartua and Lagta respawn changes from 12 hours to 11 hours. Abyss Argo appears daily at 10:30 and 22:30 in NA.",
+          "ko": "가르투아·라그타 출현 주기가 12시간에서 11시간으로 바뀌고 북미 어비스 아르고는 매일 10:30·22:30에 등장합니다."
+        },
+        "before": {
+          "en": "Gartua/Lagta 12-hour cycle",
+          "ko": "가르투아/라그타 12시간 주기"
+        },
+        "after": {
+          "en": "Gartua/Lagta 11 hours; Argo 10:30/22:30",
+          "ko": "가르투아/라그타 11시간, 아르고 10:30·22:30"
+        },
+        "impact": {
+          "en": "P1 analysis: use NA timers only; do not replace the KR 09:00/21:00 schedule. First spawn, location and reward eligibility require verification.",
+          "ko": "P1 해석: 북미 타이머만 사용하며 한국 09:00·21:00 일정을 바꾸지 않습니다. 첫 출현·위치·보상 자격은 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "buff",
+        "subject": {
+          "en": "Exploration rewards and Kinah scaling",
+          "ko": "탐험 보상·키나 감소 구간"
+        },
+        "description": {
+          "en": "Draupnir, Vakron and Ferocious Horn Exploration rewards rise to Normal-mode types as bound items. Kinah, stones, Silentium and Soul Codex increase; Unique Amplify fragments are added. Kinah remains 100% through 40 cumulative runs, then 80/60/40/20% after 40/50/60/70.",
+          "ko": "드라웁니르·바크론·사나운 뿔 탐험 보상이 귀속 상태의 일반 난도 보상 종류로 상향됩니다. 키나·강화석·실렌티움·소울 코덱스가 늘고 유일 돌파석 조각이 추가됩니다. 누적 40회까지 키나 100%, 이후 40/50/60/70회 경계에서 80/60/40/20%입니다."
+        },
+        "impact": {
+          "en": "P1 analysis: early growth routing improves, but NC does not print the new exact run count; use the live counter.",
+          "ko": "P1 해석: 초반 성장 동선이 좋아지지만 새 정확한 보상 횟수는 공지되지 않아 게임 내 횟수를 따라야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Color codes, crafting and event support",
+          "ko": "색상 코드·제작·이벤트 지원"
+        },
+        "description": {
+          "en": "Standard color-code fields are added. New 100% True Dragon and Star Dragon recipes accept bound or unbound Artisan-to-Epic gear and produce bound items. The temporary support delivers four Odyle Energy per account daily; Ludra Hunt titles run through November 24 maintenance PST.",
+          "ko": "표준 색상 코드 입력란이 추가됩니다. 신규 100% 진룡·성룡 제작식은 귀속/비귀속 달인~영웅 장비를 재료로 받고 귀속 결과물을 만듭니다. 기간 지원은 계정당 매일 오딜 에너지 4개이며 루드라 사냥 칭호 이벤트는 PST 11월 24일 점검 전까지입니다."
+        },
+        "impact": {
+          "en": "P1/P2 analysis: crafting and temporary resource planning change; exact recipe materials, UI validation, mail reset and eligibility need verification.",
+          "ko": "P1/P2 해석: 제작과 기간 자원 계획이 바뀝니다. 정확한 재료·UI 유효성 검사·우편 초기화·자격은 확인해야 합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, dates and research boundary",
+            "ko": "지역·날짜·연구 경계"
+          },
+          "sourceSection": "Patch Notes | Nov. 3 (PST) / Nov. 4 (CET)",
+          "notes": [
+            {
+              "en": "Published November 4 at 06:30 UTC and revised at 08:25:14 UTC for North America. The revised body was re-read; the reviewed gameplay facts are unchanged and this review is bound to hash 13ac8cfa…. The patch is effective with the November 3 PST / November 4 CET maintenance.",
+              "ko": "북미 공지는 11월 4일 06:30 UTC 게시, 08:25:14 UTC 수정됐습니다. 수정 본문을 다시 읽었고 검토한 게임 변경 사실은 같으며 이번 검토는 원문 해시 13ac8cfa…에 연결했습니다. 11월 3일 PST / 11월 4일 CET 점검으로 적용됩니다."
+            },
+            {
+              "en": "NA-only: do not apply these times, rewards or rules to Korea. No class coefficient, cooldown, skill-level effect or measured DPS result is announced, so data/skills.json, data/skill-snapshot.json and historical rankings remain unchanged.",
+              "ko": "북미 전용이며 시간·보상·규칙을 한국에 적용하지 않습니다. 직업 계수·쿨타임·스킬 레벨 효과·실측 DPS가 없어 data/skills.json·data/skill-snapshot.json·과거 순위를 유지합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Ludra and bracelet guide impact",
+            "ko": "루드라·팔찌 공략 영향"
+          },
+          "sourceSection": "Content & Systems · Ludra / Bracelets",
+          "notes": [
+            {
+              "en": "P1 public targets updated: /guides/endgame-crafts/, /guides/gear-targets/ and /guides/dungeon-rewards/ plus Korean counterparts; source files advancedguides.py and progression.py. Published values are limited to gates, one-hour limits, named rewards and voucher conversions.",
+              "ko": "P1 공개 경로 /guides/endgame-crafts/·/guides/gear-targets/·/guides/dungeon-rewards/와 한국어 대응 페이지, 소스 advancedguides.py·progression.py를 갱신합니다. 공지 수치는 입장 조건·1시간 제한·보상명·교환권 변환으로 제한합니다."
+            },
+            {
+              "en": "Direct verification: arena/region, party size, every trigger/counter, enrage and revive rules, reward item levels, drop rates, voucher menu cost and amplification behavior. No boss-pattern animation is invented.",
+              "ko": "직접 검증: 전투 지역·파티 규모·모든 발동조건/대응·광폭화·부활 규칙·보상 장비 레벨·드롭률·교환 메뉴 비용·돌파 동작입니다. 보스 패턴 애니메이션은 추정하지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "PvP, boss timers and routines",
+            "ko": "PvP·보스 시간·루틴"
+          },
+          "sourceSection": "Chaotic Outer Reshanta / Abyss / Field Bosses",
+          "notes": [
+            {
+              "en": "P1 targets updated: /routines/ and /ko/routines/; source routines.py. /guides/pvp-context/ and content.py remain verification targets for strategy. The guide records only announced levels, time budgets, schedule and AP values.",
+              "ko": "P1 갱신 경로는 /routines/·/ko/routines/, 소스 routines.py입니다. /guides/pvp-context/와 content.py는 전술 검증 대상입니다. 공지는 레벨·시간·일정·AP 수치만 반영합니다."
+            },
+            {
+              "en": "Verify server-clock timezone, first post-maintenance occurrence, queues, standardized stats/skills/Stigma and specialization behavior, Entry Stone extension, match rules, boss locations, reward eligibility and resets.",
+              "ko": "서버 시계·점검 뒤 첫 진행·매칭·표준화 능력치/스킬/스티그마·특화 동작·입장석 연장·경기 규칙·보스 위치·보상 자격·초기화를 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Growth, crafting, UI and review limits",
+            "ko": "성장·제작·UI·검토 한계"
+          },
+          "sourceSection": "Exploration / Improvements / Events",
+          "notes": [
+            {
+              "en": "P1/P2 targets: /routines/, /guides/endgame-crafts/ and /start/?view=settings plus Korean counterparts; source routines.py, advancedguides.py and fieldtips.py. The stale two-per-character Odyle wording is corrected to four per account daily.",
+              "ko": "P1/P2 경로는 /routines/·/guides/endgame-crafts/·/start/?view=settings와 한국어 대응 페이지, 소스 routines.py·advancedguides.py·fieldtips.py입니다. 오딜 지원의 오래된 캐릭터당 2개 문구를 계정당 매일 4개로 고칩니다."
+            },
+            {
+              "en": "This is a highlights review, not a complete reorganization of every login/event/product row. Exact new Exploration run count, recipe materials, event claims, UI persistence and gameplay behavior remain direct-verification items; no final class tier is published.",
+              "ko": "highlights 검토이며 모든 출석·이벤트·상품 표를 완전히 재정리한 것이 아닙니다. 새 탐험 횟수·제작 재료·이벤트 수령·UI 유지·게임 동작은 직접 검증 대기이며 최종 직업 티어를 발표하지 않습니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
+  },
+  "6aea9be081a1f241964f2d12": {
+    "kind": "patch",
+    "source": "kr-notice",
+    "contentHash": "fd3a50882d1636cae0abfbcdfdac46f8e2797d9af21a31d0dc4ee78de688c52a",
+    "reviewedAt": "2026-11-04T08:25:00Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6aea9be081a1f241964f2d12",
+    "title": {
+      "en": "November 4 temporary maintenance · Korea",
+      "ko": "11월 4일 임시점검 · 한국"
+    },
+    "summary": {
+      "en": "KR temporary maintenance fixed intermittent abnormal damage to a target caught by Deltras’s Frozen Bind. NC published no damage value or trigger condition. A bound maintenance supply chest was claimable for 24 hours.",
+      "ko": "한국 임시점검으로 델트라스의 빙결 포박 대상에게 간헐적으로 비정상 피해가 적용되던 오류를 수정했습니다. 피해 수치와 발동 조건은 공개되지 않았습니다. 점검 보상 귀속 상자는 24시간 수령 가능했습니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Deltras · abnormal Frozen Bind damage",
+          "ko": "델트라스 · 빙결 포박 비정상 피해"
+        },
+        "description": {
+          "en": "Fixes an intermittent condition that applied abnormal damage to a target caught by Frozen Bind during Deltras.",
+          "ko": "델트라스 전투 중 빙결 포박 대상에게 간헐적으로 비정상 피해가 적용되던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 analysis: this is a damage-behavior recovery without a published value. Reproduce the same Bind sequence before considering the encounter stable; no buff, nerf or DPS percentage is assigned.",
+          "ko": "P1 해석: 수치가 없는 피해 동작 복구입니다. 같은 포박 구간을 재현해 안정성을 확인해야 하며 버프·너프·DPS 비율을 부여하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Maintenance compensation",
+          "ko": "임시점검 보상"
+        },
+        "description": {
+          "en": "A bound Special Supply Chest was claimable November 4 15:30–November 5 15:30 KST and contained 3 Life Crystals, 2 Revival Spirit Stones, 3 Combat Enhancement Scrolls and 2 Small Odyle Energy. The chest expires November 11 at 05:00.",
+          "ko": "귀속 특별 보급 상자를 11월 4일 15:30~11월 5일 15:30 KST에 수령할 수 있었고 생명의 결정 3개·부활의 정령석 2개·전투 강화 주문서 3개·오드 에너지(소) 2개가 들어 있습니다. 상자는 11월 11일 05:00 삭제됩니다."
+        },
+        "impact": {
+          "en": "P2 analysis: this is a temporary KR recovery item, not a permanent growth route or NA reward.",
+          "ko": "P2 해석: 한국 기간 복구 아이템이며 상시 성장 경로나 북미 보상이 아닙니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, timing and fix",
+            "ko": "지역·시간·수정"
+          },
+          "sourceSection": "11/4 AION2 temporary maintenance",
+          "notes": [
+            {
+              "en": "KR-only maintenance ran November 4 13:30–15:00 KST. The notice was published at 03:33 UTC, revised at 06:00:36 UTC and is bound to hash fd3a5088….",
+              "ko": "한국 전용 임시점검은 11월 4일 13:30~15:00 KST에 진행됐습니다. 공지는 03:33 UTC 게시, 06:00:36 UTC 수정됐고 해시 fd3a5088…에 연결했습니다."
+            },
+            {
+              "en": "P1 public target updated: /guides/kr-bitan/ and /ko/guides/kr-bitan/; source advancedguides.py. Verify Frozen Bind trigger, damage log, party position, immunity and rescue behavior in game.",
+              "ko": "P1 공개 경로 /guides/kr-bitan/·/ko/guides/kr-bitan/, 소스 advancedguides.py를 갱신합니다. 빙결 포박 발동·피해 로그·파티 위치·면역·구조 동작을 게임에서 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Compensation and limits",
+            "ko": "보상·검토 한계"
+          },
+          "sourceSection": "Maintenance compensation",
+          "notes": [
+            {
+              "en": "The claim window and contents are exact official values. The chest is temporary and bound; this highlights review does not treat it as a recurring beginner priority.",
+              "ko": "수령 기간과 구성품은 공식 수치입니다. 상자는 기간제 귀속이며 highlights 검토에서 반복 초보 우선순위로 다루지 않습니다."
+            },
+            {
+              "en": "No coefficient, cooldown, skill-level effect, before/after damage, measured DPS or NA application is supported. Skill inputs and historical rankings remain unchanged.",
+              "ko": "계수·쿨타임·스킬 레벨 효과·전후 피해·실측 DPS·북미 적용 근거가 없어 스킬 입력과 과거 순위를 유지합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    }
   }
 }
