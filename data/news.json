@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-06T00:09:51Z",
+  "checkedAt": "2026-11-06T06:34:22Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-06T00:09:51Z",
-      "lastSuccessAt": "2026-11-06T00:09:51Z",
+      "checkedAt": "2026-11-06T06:34:22Z",
+      "lastSuccessAt": "2026-11-06T06:34:22Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7148,11 +7148,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-06T00:09:51Z",
-      "lastSuccessAt": "2026-11-06T00:09:51Z",
+      "checkedAt": "2026-11-06T06:34:22Z",
+      "lastSuccessAt": "2026-11-06T06:34:22Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "677a6f18066b033317c02ae8",
+          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [345차]",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=677a6f18066b033317c02ae8",
+          "publishedAt": "2026-11-06T05:30:00.001Z",
+          "sourceUpdatedAt": "2026-11-06T05:30:48.008Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6aeb0b80577e8c01355e0382",
           "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [344차]",
@@ -7756,26 +7776,6 @@
           "followups": []
         },
         {
-          "id": "6ad81937263e537d356d128d",
-          "title": "[안내] AION2 1주년 기념 축제 참여 신청 안내",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ad81937263e537d356d128d",
-          "publishedAt": "2026-10-21T01:50:00.001Z",
-          "sourceUpdatedAt": "2026-10-21T02:13:23.409Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
           "id": "6acf3680263e537d356d1155",
           "title": "[안내] 10/14(수) AION2 임시점검 안내 (완료)",
           "region": "KR",
@@ -7877,8 +7877,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-06T00:09:51Z",
-      "lastSuccessAt": "2026-11-06T00:09:51Z",
+      "checkedAt": "2026-11-06T06:34:22Z",
+      "lastSuccessAt": "2026-11-06T06:34:22Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9330,8 +9330,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-06T00:09:51Z",
-      "lastSuccessAt": "2026-11-06T00:09:51Z",
+      "checkedAt": "2026-11-06T06:34:22Z",
+      "lastSuccessAt": "2026-11-06T06:34:22Z",
       "error": null,
       "fromCache": false,
       "items": [
