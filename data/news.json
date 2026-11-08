@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-08T02:23:36Z",
+  "checkedAt": "2026-11-08T10:11:48Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-08T02:23:36Z",
-      "lastSuccessAt": "2026-11-08T02:23:36Z",
+      "checkedAt": "2026-11-08T10:11:48Z",
+      "lastSuccessAt": "2026-11-08T10:11:48Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7148,11 +7148,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-08T02:23:36Z",
-      "lastSuccessAt": "2026-11-08T02:23:36Z",
+      "checkedAt": "2026-11-08T10:11:48Z",
+      "lastSuccessAt": "2026-11-08T10:11:48Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6af370b8066b033317c02adf",
+          "title": "[안내] AION2 1주년 기념 축제 쿠폰 안내",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af370b8066b033317c02adf",
+          "publishedAt": "2026-11-08T09:40:00.001Z",
+          "sourceUpdatedAt": "2026-11-08T09:40:33.456Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6aefc990263e537d356d1549",
           "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [346차]",
@@ -7693,26 +7713,6 @@
           "followups": []
         },
         {
-          "id": "6adafee8066b033317c028ba",
-          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [335차]",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6adafee8066b033317c028ba",
-          "publishedAt": "2026-10-23T06:30:00.070Z",
-          "sourceUpdatedAt": "2026-10-23T06:30:11.675Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
           "id": "6ad8207a577e8c01355e00c1",
           "title": "[안내] 10월 3주차 알려진 이슈 및 조치 안내",
           "region": "KR",
@@ -7897,8 +7897,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-08T02:23:36Z",
-      "lastSuccessAt": "2026-11-08T02:23:36Z",
+      "checkedAt": "2026-11-08T10:11:48Z",
+      "lastSuccessAt": "2026-11-08T10:11:48Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9350,8 +9350,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-08T02:23:36Z",
-      "lastSuccessAt": "2026-11-08T02:23:36Z",
+      "checkedAt": "2026-11-08T10:11:48Z",
+      "lastSuccessAt": "2026-11-08T10:11:48Z",
       "error": null,
       "fromCache": false,
       "items": [
