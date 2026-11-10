@@ -1,6 +1,26 @@
 {
-  "reviewedAt": "2026-11-04",
+  "reviewedAt": "2026-11-10",
   "items": [
+    {
+      "id": "kr-20261111-chapter1-class-dungeons-abyss",
+      "region": "KR",
+      "reviewedAt": "2026-11-10T20:18:18Z",
+      "title": {
+        "en": "November 11 KR · level 55, all-class balance and route rebuild",
+        "ko": "11월 11일 한국 · 55레벨·전 직업 밸런스·동선 개편"
+      },
+      "finding": {
+        "en": "P0/P1: KR changes all nine classes, Combat-Power dungeon gates, solo scaling, Awakening Battle attempts, Abyss schedules/equalization and level-55 field progression. Exact public/source targets and official-versus-interpretive notes are in the hash-bound highlights. Verify boss triggers/responses, skill tooltips/coefficients/cooldowns/conditions/rotations, map coordinates/spawns/acquisition/resets and beginner unlocks/costs/rewards/prerequisites. Official KR cooldown overrides are recorded separately; the incompatible Global base and historical rankings are preserved. No in-game validation or final tier is claimed.",
+        "ko": "P0/P1: 한국 9직업, 전투력 기반 던전 입장, 1인 스케일링, 각성전 횟수, 어비스 일정·동등화, 55레벨 필드 성장이 바뀝니다. 정확한 공개·소스 경로와 공식 사실·해석 구분은 해시에 묶인 highlights에 기록했습니다. 보스 발동/대응, 스킬 툴팁·계수·쿨타임·조건·로테이션, 지도 좌표·스폰·획득·초기화, 초보 해금·비용·보상·선행조건을 확인해야 합니다. 공식 한국 쿨다운 오버라이드는 별도 기록하고 호환되지 않는 글로벌 기준·과거 순위는 보존합니다. 인게임 검증이나 최종 티어를 주장하지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 11 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b"
+        }
+      ]
+    },
     {
       "id": "na-20261104-ludra-outer-reshanta-schedules",
       "region": "NA / Global",

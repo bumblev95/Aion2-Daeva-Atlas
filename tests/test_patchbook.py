@@ -140,6 +140,26 @@ class PatchbookTests(unittest.TestCase):
         notice['kind']='patch'
         self.assertEqual(patchbook.review_label(notice,'ko'),'요약 미등록')
 
+    def test_november_11_kr_review_keeps_all_classes_and_regions_separate(self):
+        item=self.reviewed_item('6af370b8577e8c01355e047b')
+        self.assertEqual(item['region'],'KR')
+        self.assertEqual(item['detail']['coverage'],'highlights')
+        self.assertTrue(item['classScopeReviewed'])
+        self.assertEqual({r['classId'] for r in item['changes']},
+            {'all','gladiator','templar','assassin','brawler','chanter','ranger','sorcerer','spiritmaster','cleric'})
+        self.assertTrue(any(r['type']=='fix' and r['classId']=='sorcerer' for r in item['changes']))
+        self.assertTrue(any(r['type']=='system' and '55' in r['subject']['ko'] for r in item['changes']))
+        self.assertNotIn('북미에 적용',item['summary']['ko'])
+        self.assertNotEqual(item['reviewedAt'],item['publishedAt'])
+        page=patchbook.render_detail(item,'ko','/')
+        self.assertIn('data/skill-snapshot.json',page)
+        self.assertIn('인게임 검증 완료',page)
+        self.assertIn('최종 직업 티어를 주장하지 않습니다',page)
+        item['contentHash']='changed-after-review'
+        revised=reviewed(item,self.reviews)
+        self.assertEqual(revised['reviewState'],'revised')
+        self.assertEqual(revised['changes'],[])
+
     def test_same_day_hotfix_supersedes_without_rewriting_regular_patch(self):
         regular=self.reviewed_item('6ace86b86cfe4756db5b8d81')
         hotfix=self.reviewed_item('6acf3680263e537d356d1155')
