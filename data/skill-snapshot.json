@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-28",
   "region": "Global",
-  "scope": "Global base-1 tooltips plus source-bound NA official overrides; not a final build snapshot",
+  "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
   "baseReviewedAt": "2026-10-07",
   "officialOverrides": [
@@ -24,6 +24,100 @@
           "cooldownSeconds": 60
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "reviewedAt": "2026-11-10T20:18:18Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
+      "sourceHash": "2e8be44523c09df3ea77190f5abf4ae1daed4e897464a15b44d22d275c8deaea",
+      "calculationState": "region-scoped inputs recorded; not applied to the incompatible Global base or historical rankings",
+      "skills": {
+        "zikels-blessing": {
+          "beforeCooldownSeconds": 120,
+          "cooldownSeconds": 60
+        },
+        "shield-smite": {
+          "beforeCooldownSeconds": 10,
+          "cooldownSeconds": 7
+        },
+        "judgment": {
+          "beforeCooldownSeconds": 5,
+          "cooldownSeconds": 3,
+          "maxConsecutiveUses": 3,
+          "pveDamageChangePercent": -10
+        },
+        "warding-strike": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 45
+        },
+        "doom-shield": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 45
+        },
+        "insignia-explosion": {
+          "beforeCooldownSeconds": 10,
+          "cooldownSeconds": 5,
+          "beforeMpCost": 200,
+          "mpCost": 100,
+          "pveDamageByStacksPercent": {
+            "1": 110,
+            "2": 140,
+            "3": 190,
+            "4": 260,
+            "5": 500
+          }
+        },
+        "evasion-stance": {
+          "beforeCooldownSeconds": 20,
+          "cooldownSeconds": 10,
+          "beforeDurationSeconds": 2,
+          "durationSeconds": 1
+        },
+        "drill-dart": {
+          "beforeCooldownSeconds": 5,
+          "cooldownSeconds": 4
+        },
+        "bow-of-blessing": {
+          "beforeCooldownSeconds": 120,
+          "cooldownSeconds": 60
+        },
+        "winters-shackles": {
+          "pveDamageChangePercent": 250,
+          "pvpDamageChangePercent": 5
+        },
+        "cold-storm": {
+          "beforeCooldownSeconds": 60,
+          "cooldownSeconds": 45
+        },
+        "fire-wall": {
+          "beforeCooldownSeconds": 60,
+          "cooldownSeconds": 45,
+          "summonAttackCooldownChangePercent": -50
+        },
+        "summon-fire-spirit": {
+          "beforeCooldownSeconds": 15,
+          "cooldownSeconds": 30
+        },
+        "summon-water-spirit": {
+          "beforeCooldownSeconds": 15,
+          "cooldownSeconds": 30
+        },
+        "summon-earth-spirit": {
+          "beforeCooldownSeconds": 15,
+          "cooldownSeconds": 30
+        },
+        "summon-wind-spirit": {
+          "beforeCooldownSeconds": 15,
+          "cooldownSeconds": 30
+        },
+        "elemental-fusion": {
+          "pveDamageChangePercent": -35,
+          "spiritDescentPveDamageChangePercent": 100,
+          "spiritDescentPvpDamageChangePercent": 50
+        }
+      }
     }
-  ]
+  ],
+  "lastOfficialOverrideReviewedAt": "2026-11-10"
 }
