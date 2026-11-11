@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-11T09:17:16Z",
+  "checkedAt": "2026-11-11T09:28:21Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-11T09:17:16Z",
-      "lastSuccessAt": "2026-11-11T09:17:16Z",
+      "checkedAt": "2026-11-11T09:28:21Z",
+      "lastSuccessAt": "2026-11-11T09:28:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -21,8 +21,8 @@
           "source": "kr-update",
           "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
           "publishedAt": "2026-11-10T19:30:00.540Z",
-          "sourceUpdatedAt": "2026-11-11T04:11:23.328Z",
-          "contentHash": "4d5f58baf153aef3b5bce5cf476d84fb9c6c553db963fd2f386732853dfd1f89",
+          "sourceUpdatedAt": "2026-11-11T09:22:42.421Z",
+          "contentHash": "1b7301dd5aa15cad7b5dd6ae13ad88d5e2d774873228c2ec080fe0d1d1b50d85",
           "bodyState": "ready",
           "reviewState": "reviewed",
           "summary": {
@@ -320,7 +320,7 @@
             }
           ],
           "classScopeReviewed": true,
-          "reviewedAt": "2026-11-11T08:55:01Z",
+          "reviewedAt": "2026-11-11T09:27:38Z",
           "displayTitle": {
             "en": "November 11 · Korea",
             "ko": "11월 11일 한국 패치"
@@ -336,8 +336,8 @@
                 "sourceSection": "11월 11일 업데이트 노트 · 적용 범위",
                 "notes": [
                   {
-                    "en": "Published November 10 at 19:30 UTC for KR, revised November 11 at 04:11:23 UTC and effective with the November 11 maintenance. This review was re-read and rebound to official source hash 4d5f58ba… at the editorial review time shown above.",
-                    "ko": "한국 서비스 기준 11월 10일 19:30 UTC 게시, 11월 11일 04:11:23 UTC 수정됐으며 11월 11일 정기점검 적용입니다. 위 편집 검토 시각에 최신 본문을 다시 읽고 공식 원문 해시 4d5f58ba…에 재연결했습니다."
+                    "en": "Published November 10 at 19:30 UTC for KR, revised November 11 at 04:11:23 UTC and again at 09:22:42 UTC, and effective with the November 11 maintenance. The latest silent edit normalizes hidden separators and paid-territory furniture labels; the class and guide-impacting facts are unchanged. This review was re-read and rebound to official source hash 1b7301dd… at the editorial review time shown above.",
+                    "ko": "한국 서비스 기준 11월 10일 19:30 UTC 게시, 11월 11일 04:11:23 UTC 및 09:22:42 UTC에 수정됐으며 11월 11일 정기점검 적용입니다. 마지막 무표시 편집은 숨은 구분자와 유료 영지 가구 표기를 정리했으며 직업·공략 영향 사실은 바뀌지 않았습니다. 위 편집 검토 시각에 최신 본문을 다시 읽고 공식 원문 해시 1b7301dd…에 재연결했습니다."
                   },
                   {
                     "en": "KR only: none of these class, dungeon, Abyss, map or growth rules are applied to the NA feed. Historical combat records and Global DPS inputs retain their original periods and conditions.",
@@ -438,8 +438,8 @@
                     "ko": "공식 정정: 원정·초월에서 얻는 재료와 기존 돌파석을 사용해 상급 돌파 재료를 물질변환할 수 있습니다. P1 직접 검증 후 공개 경로는 /endgame/·/guides/endgame-crafts/와 한국어 대응 페이지입니다. 정확한 재료명·수량·귀속·키나 비용·대상 장비 단계를 확인해야 합니다."
                   },
                   {
-                    "en": "Official addition: territory editing is PC-only. P2 target after live verification: /start/?view=settings and its Korean counterpart; confirm the mobile menu state, PC controls, visitor/edit permissions and prerequisites. Corrected paid-item prices are outside this highlights review, so complete product-table coverage is not claimed.",
-                    "ko": "공식 추가: 영지 편집은 PC에서만 제공됩니다. P2 직접 검증 후 공개 경로는 /start/?view=settings와 한국어 대응 페이지입니다. 모바일 메뉴 상태·PC 조작·방문/편집 권한·선행조건을 확인해야 합니다. 정정된 유료 상품 가격 표는 이번 highlights 범위 밖이므로 상품 표 전체 검토를 주장하지 않습니다."
+                    "en": "Official addition: territory editing is PC-only. P2 target after live verification: /start/?view=settings and its Korean counterpart; confirm the mobile menu state, PC controls, visitor/edit permissions and prerequisites. The 09:22:42 UTC source edit only changes paid-furniture labels and markup. Paid product tables remain outside this highlights review, so complete product-table coverage is not claimed.",
+                    "ko": "공식 추가: 영지 편집은 PC에서만 제공됩니다. P2 직접 검증 후 공개 경로는 /start/?view=settings와 한국어 대응 페이지입니다. 모바일 메뉴 상태·PC 조작·방문/편집 권한·선행조건을 확인해야 합니다. 09:22:42 UTC 원문 편집은 유료 가구 표기와 마크업만 바꿨습니다. 유료 상품 표는 이번 highlights 범위 밖이므로 상품 표 전체 검토를 주장하지 않습니다."
                   }
                 ],
                 "tables": []
@@ -7597,8 +7597,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-11T09:17:16Z",
-      "lastSuccessAt": "2026-11-11T09:17:16Z",
+      "checkedAt": "2026-11-11T09:28:21Z",
+      "lastSuccessAt": "2026-11-11T09:28:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8346,8 +8346,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-11T09:17:16Z",
-      "lastSuccessAt": "2026-11-11T09:17:16Z",
+      "checkedAt": "2026-11-11T09:28:21Z",
+      "lastSuccessAt": "2026-11-11T09:28:21Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10076,8 +10076,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-11T09:17:16Z",
-      "lastSuccessAt": "2026-11-11T09:17:16Z",
+      "checkedAt": "2026-11-11T09:28:21Z",
+      "lastSuccessAt": "2026-11-11T09:28:21Z",
       "error": null,
       "fromCache": false,
       "items": [
