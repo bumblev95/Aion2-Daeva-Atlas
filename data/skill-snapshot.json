@@ -28,9 +28,9 @@
     {
       "region": "KR",
       "effectiveAt": "2026-11-11",
-      "reviewedAt": "2026-11-10T20:18:18Z",
+      "reviewedAt": "2026-11-11T08:55:01Z",
       "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
-      "sourceHash": "2e8be44523c09df3ea77190f5abf4ae1daed4e897464a15b44d22d275c8deaea",
+      "sourceHash": "4d5f58baf153aef3b5bce5cf476d84fb9c6c553db963fd2f386732853dfd1f89",
       "calculationState": "region-scoped inputs recorded; not applied to the incompatible Global base or historical rankings",
       "skills": {
         "zikels-blessing": {
@@ -119,5 +119,5 @@
       }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-10"
+  "lastOfficialOverrideReviewedAt": "2026-11-11"
 }
