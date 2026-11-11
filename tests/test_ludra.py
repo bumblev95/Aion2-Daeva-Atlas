@@ -13,12 +13,12 @@ BASE = '/Aion2-Daeva-Atlas/'
 
 class LudraGuideTest(unittest.TestCase):
     def test_review_matches_current_official_snapshot(self):
-        evidence = json.loads((ROOT / 'research/ludra-guide-review-2026-11-04.json').read_text())
+        evidence = json.loads((ROOT / 'research/ludra-guide-review-2026-11-11.json').read_text())
         review = json.loads((ROOT / 'data/patch-reviews.json').read_text())[evidence['official']['articleId']]
         self.assertEqual(evidence['official']['contentHash'], review['contentHash'])
         self.assertFalse(evidence['naCombatVerified'])
         self.assertEqual(ludra.ENTRY_LEVELS, {'normal': 2800, 'hard': 3000})
-        self.assertEqual(ludra.TIME_LIMIT_MINUTES, 60)
+        self.assertEqual(ludra.TIME_LIMIT_MINUTES, 120)
         self.assertEqual(ludra.VOUCHERS, {'normal_to_bracelet': 6, 'hard_to_bracelet': 3, 'normal_to_hard': 2})
 
     def test_bilingual_scope_cost_and_combat_boundaries(self):
@@ -28,8 +28,9 @@ class LudraGuideTest(unittest.TestCase):
                 self.assertIn('id="ludra-'+key+'"', html)
             for token in ('2,800', '3,000', '100%', 'COMBO', '×6', '×3', '×2'):
                 self.assertIn(token, html)
-            self.assertIn('6aead0e86cfe4756db5b913f', html)
-            self.assertIn('2026-11-04', html)
+            self.assertIn('6af42a1affaccc00c265785f', html)
+            self.assertIn('2026-11-11', html)
+            self.assertIn('100%', html)
             self.assertNotIn('data-animation=', html)
             self.assertNotIn('data-raid-lesson=', html)
             self.assertNotIn('<iframe', html)
@@ -39,6 +40,7 @@ class LudraGuideTest(unittest.TestCase):
                           'not a verified boss-enrage timer', 'no COMBO (Great Success)',
                           'not a Ludra drop recipe', 'resurrection/re-entry rules'):
             self.assertIn(qualifier, en)
+        self.assertIn('30% to 100%', en)
         ko = advancedguides.render('na-ludra', 'ko', BASE)
         for qualifier in ('아직 검증되지 않음', '6회 클리어를 뜻하지 않습니다',
                           '역방향 변환은 확인되지 않았습니다', '결과물 귀속'):
