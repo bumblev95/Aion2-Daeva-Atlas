@@ -19,13 +19,16 @@ class November11UpdateRegressionTest(unittest.TestCase):
         patch = self.reviews['6af42a1affaccc00c265785f']
         self.assertEqual(
             patch['contentHash'],
-            '690c4181690c1b17dfd69334143b898a3b65a66f15a851748895684fc7831372',
+            '269fabc0325bf5904bd3c315225984162abce57d0111e2487a6aca9309626d42',
         )
         self.assertEqual(patch['detail']['coverage'], 'highlights')
         self.assertTrue(patch['classScopeReviewed'])
         self.assertTrue(any(c['type'] == 'fix' and 'Zikel' in c['subject']['en']
                             for c in patch['changes']))
         self.assertFalse(any(c['classId'] != 'all' for c in patch['changes']))
+        scope_note = patch['detail']['sections'][0]['notes'][0]['en']
+        self.assertIn('revised at 09:52:19 UTC', scope_note)
+        self.assertIn('269fabc0', scope_note)
 
     def test_ludra_current_public_guides_use_two_hour_limit(self):
         self.assertEqual(ludra.TIME_LIMIT_MINUTES, 120)
