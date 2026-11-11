@@ -1,9 +1,9 @@
 """NA launch preparation, not a reconstruction of the KR/early-access fight."""
 from html import escape
 
-REVIEWED = '2026-11-04'
+REVIEWED = '2026-11-11'
 ENTRY_LEVELS = {'normal': 2800, 'hard': 3000}
-TIME_LIMIT_MINUTES = 60
+TIME_LIMIT_MINUTES = 120
 VOUCHERS = {'normal_to_bracelet': 6, 'hard_to_bracelet': 3, 'normal_to_hard': 2}
 
 
@@ -30,7 +30,7 @@ def render(v):
         (('Normal', '일반'), (f"Character item level {ENTRY_LEVELS['normal']:,} · {TIME_LIMIT_MINUTES} minutes", f"캐릭터 아이템 레벨 {ENTRY_LEVELS['normal']:,} · {TIME_LIMIT_MINUTES}분"), ('Gear Change Voucher: Ludra (Bound)', '루드라 일반 전용 교환권(귀속)')),
         (('Hard', '어려움'), (f"Character item level {ENTRY_LEVELS['hard']:,} · {TIME_LIMIT_MINUTES} minutes", f"캐릭터 아이템 레벨 {ENTRY_LEVELS['hard']:,} · {TIME_LIMIT_MINUTES}분"), ('Gear Change Voucher: Ludra (Hard) (Bound)', '루드라 어려움 전용 교환권(귀속)')),
     ])
-    entry += '<p>'+v.t('Official NA patch · Sanctuary / Bracelet. The one-hour limit is the run limit, not a verified boss-enrage timer. The gates use your character total, not an individual weapon level.', '북미 공식 패치 · Sanctuary / Bracelet 기준입니다. 1시간은 공략 제한 시간이며 보스 광폭화 시각으로 확인된 값이 아닙니다. 입장 조건은 무기 한 부위의 레벨이 아닌 캐릭터 총 아이템 레벨입니다.')+'</p>'
+    entry += '<p>'+v.t('Official NA patch · Sanctuary / Bracelet. The November 11 patch changes the run limit from one hour to two hours. This is not a verified boss-enrage timer. The gates use your character total, not an individual weapon level.', '북미 공식 패치 · Sanctuary / Bracelet 기준입니다. 11월 11일 패치로 공략 제한 시간이 1시간에서 2시간으로 바뀌었습니다. 이는 보스 광폭화 시각으로 확인된 값이 아닙니다. 입장 조건은 무기 한 부위의 레벨이 아닌 캐릭터 총 아이템 레벨입니다.')+'</p>'
     entry += '<p>'+v.t('Below 2,800: improve gear first. At 2,800–2,999: Normal is available by item level. At 3,000+: both gates are met; choose Hard after your group is comfortable with the current fight. Confirm unlocks and remaining entries in the NA client.', '2,800 미만이면 먼저 장비를 보강하세요. 2,800~2,999는 일반 아이템 레벨 조건을, 3,000 이상은 두 난도의 아이템 레벨 조건을 충족합니다. 어려움 도전은 파티의 현재 전투 숙련도를 기준으로 결정하세요. 선행 해금과 남은 입장 횟수는 북미 클라이언트에서 확인해야 합니다.')+'</p>'
 
     prepare = note(v, ('Preparation advice · no verified stat minimums', '준비 권장 사항 · 세부 스탯 하한은 미확인'), (
@@ -40,15 +40,15 @@ def render(v):
         (('Improve the gear you will actually use', '계속 사용할 장비부터 보강'), ('Check your weakest slots, useful options and available enhancement budget. Keep a usable combat build while raising the entry total; compare transfer previews before replacing equipment.', '부족한 부위·유효 옵션·강화 예산을 확인하세요. 입장 수치를 올리면서 실제 전투용 구성을 유지하고, 장비를 바꾸기 전 전승 미리보기를 비교합니다.')),
         (('Prepare skills and supplies', '스킬과 소모품 준비'), ('Review your main skills, Stigma and Arcana bonuses. Put recovery items and defensive skills on accessible keys, and check food/scroll durations in your client. These are preparation suggestions, not confirmed Ludra consumable requirements.', '주력 스킬·스티그마·아르카나 보너스를 점검하세요. 회복 아이템과 방어 스킬을 누르기 편한 위치에 놓고 음식·주문서 지속 시간을 확인합니다. 이는 준비 제안이며 루드라의 필수 소모품 조건은 아닙니다.')),
         (('If you need more materials', '재료가 부족하다면'), ('The November 4 patch raises Exploration rewards in Draupnir, Vakron Sky Island and Ferocious Horn Den. Refining stones and crafting materials match Normal quantities but are Bound. Check the selected dungeon reward screen before spending entries.', '11월 4일 패치는 드라웁니르·바크론 공중섬·흉포한 뿔의 소굴 탐험 보상을 올렸습니다. 연마석·제작 재료는 일반과 같은 수량이지만 귀속입니다. 입장 횟수를 쓰기 전 선택한 던전의 보상 화면을 확인하세요.')),
-        (('Agree on a practice plan', '연습 파티의 진행 방식 합의'), ('Choose a caller, clarify tank/healing responsibilities and allow time for retries within the hour. Before entry, check party requirements, reward eligibility and the displayed re-entry/resurrection rules together.', '진행 콜 담당과 탱킹·회복 역할을 정하고 1시간 안에 재도전할 시간을 남기세요. 입장 전 파티 조건·보상 자격·표시된 재입장/부활 규칙을 함께 확인합니다.')),
+        (('Agree on a practice plan', '연습 파티의 진행 방식 합의'), ('Choose a caller, clarify tank/healing responsibilities and allow time for retries within the two-hour run limit. Before entry, check party requirements, reward eligibility and the displayed re-entry/resurrection rules together.', '진행 콜 담당과 탱킹·회복 역할을 정하고 2시간 제한 안에 재도전할 시간을 남기세요. 입장 전 파티 조건·보상 자격·표시된 재입장/부활 규칙을 함께 확인합니다.')),
     ])
     prepare += v.link('guides/gear-targets/', v.t('Choose your next gear upgrade', '다음 장비 성장 선택'))
     prepare += v.link('guides/gear-options/', v.t('Options and transfers', '옵션·계승 준비'))
     prepare += v.link('guides/endgame-crafts/#craft-arcana', v.t('Arcana crafting plan', '아르카나 제작 계획'))
 
     combat = note(v, ('NA combat patterns: not yet verified', '북미 전투 패턴: 아직 검증되지 않음'), (
-        'The official return notice promises new mechanics. The November 4 patch confirms entry, rewards and crafting, but does not document attack cues or counters. This review found KR/Early Access guides, not a verifiable post-update NA combat reference. No boss pattern, damage value, HP trigger, enrage time or revival allowance is asserted here.',
-        '공식 재출시 안내는 새 기믹을 예고합니다. 11월 4일 패치는 입장·보상·제작을 확인해 주지만 공격 전조나 대응법은 설명하지 않습니다. 이번 조사에서 한국/얼리 액세스 공략은 찾았지만 업데이트 후 북미 전투를 검증할 자료는 확보하지 못했습니다. 공격 패턴·피해량·체력 발동 구간·광폭화 시각·부활 허용 횟수를 확정하지 않습니다.'))
+        'The official return notice promises new mechanics. The November 11 patch reduces Central Abyss Fusion Reactor HP and fixes Ludra’s Trial reset after a wipe, but does not publish the phase trigger, attack cues or counters. This review found KR/Early Access guides, not a verifiable post-update NA combat reference. No boss pattern, damage value, HP trigger, enrage time or revival allowance is asserted here.',
+        '공식 재출시 안내는 새 기믹을 예고합니다. 11월 11일 패치는 중앙 심연 융합 반응로 HP를 낮추고 전멸 뒤 루드라의 시련 초기화를 수정하지만 단계 발동조건·공격 전조·대응법은 공개하지 않습니다. 이번 조사에서 한국/얼리 액세스 공략은 찾았지만 업데이트 후 북미 전투를 검증할 자료는 확보하지 못했습니다. 공격 패턴·피해량·체력 발동 구간·광폭화 시각·부활 허용 횟수를 확정하지 않습니다.'))
     combat += v.steps([
         (('Before the first pull', '첫 전투 전'), ('Confirm the region, difficulty and recording date of any video your group uses. Treat older guides as background only; do not assign orb colours, safe tiles or resurrection tactics from them as NA rules.', '파티가 참고하는 영상의 지역·난도·촬영 날짜를 확인하세요. 과거 공략은 배경 참고로만 보고, 구슬 색·안전 칸·부활 전술을 북미 확정 규칙으로 배정하지 마세요.')),
         (('During practice', '연습 중'), ('Use the current on-screen warnings and your caller. If the group fails, record the warning, boss HP, player positions and outcome before changing one response at a time. This is a learning method, not a proven counter.', '현재 화면의 경고와 파티 콜을 기준으로 움직이세요. 실패했다면 경고 문구·보스 체력·파티 위치·결과를 기록하고 대응을 하나씩 바꿔봅니다. 이는 학습 방법이며 검증된 패턴 대응법은 아닙니다.')),
@@ -64,6 +64,9 @@ def render(v):
     rewards += note(v, ('Choose a reward for your next upgrade', '다음 성장 목표에 맞춰 보상 선택'), (
         'Both modes offer a Gear Change Voucher as a guaranteed-reward choice, including the mode-specific Ludra voucher. For a bracelet goal, check that exact name before selecting. The patch gives no per-run voucher count or reward cadence, so 6 vouchers does not mean 6 clears. Different drop rates do not establish which mode is more efficient for your group.',
         '두 난도 모두 확정 보상에서 장비 교환권을 선택할 수 있으며 난도별 루드라 전용 교환권도 안내돼 있습니다. 팔찌가 목표라면 선택 전에 정확한 이름을 확인하세요. 공지는 회당 수량·확정 보상 주기를 제시하지 않으므로 교환권 6개가 6회 클리어를 뜻하지 않습니다. 드롭률이 다르다는 사실만으로 파티별 효율을 계산할 수는 없습니다.'))
+    rewards += note(v, ('November 11 · Reward Group 5', '11월 11일 · 보상군 5'), (
+        'The official drop rate for Reward Group 5 rises from 30% to 100%, and Wrathful Mind, Wrathful Will and Wrathful Ego (Bound) are added. The patch does not publish the quantity per clear or say that every item in the group drops together.',
+        '보상군 5의 공식 드롭률은 30%에서 100%로 오르고 격노의 마음·의지·자아(귀속)가 추가됩니다. 공지는 회당 수량이나 보상군의 모든 아이템이 함께 지급되는지 공개하지 않았습니다.'))
     rewards += '<p>'+v.t('Optional event goal: a Normal or Hard clear during November 4 after maintenance–November 24 before maintenance (PST) qualifies for Ludra Hunt recognition. The universal title is Ludra’s Nemesis; ranked titles are for the first 20 Hard-clear Forces per listed region, including NA East and NA West separately. Do not choose Hard solely for the universal title.', '기간 한정 목표: PST 기준 11월 4일 점검 후~11월 24일 점검 전 일반 또는 어려움 클리어는 루드라 사냥 이벤트 대상입니다. 공통 칭호는 Ludra’s Nemesis이며, 순위 칭호는 NA East·NA West를 각각 포함한 대상 지역별 어려움 선착순 20개 공격대 대상입니다. 공통 칭호만을 위해 어려움을 고를 필요는 없습니다.')+'</p>'
 
     materials = table(v, [('Input (Bound)', '재료 (귀속)'), ('Result (Bound)', '결과 (귀속)')], [
@@ -90,4 +93,4 @@ def render(v):
         ('rewards', ('Choose rewards', '보상 선택'), ('Turn a clear into your next upgrade', '클리어 보상을 다음 성장으로'), rewards),
         ('materials', ('Vouchers & crafts', '교환권·제작'), ('Keep the right materials', '필요한 재료를 남기고 변환하기'), materials),
     ]
-    return [((key, label), v.section('ludra-'+key, title, body)) for key, label, title, body in sections], ['ludra-na-patch', 'ludra-na-current']
+    return [((key, label), v.section('ludra-'+key, title, body)) for key, label, title, body in sections], ['ludra-na-patch', 'ludra-na-previous-patch', 'ludra-na-current']
