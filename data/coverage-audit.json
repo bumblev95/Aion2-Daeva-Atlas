@@ -1,17 +1,37 @@
 {
-  "reviewedAt": "2026-11-10",
+  "reviewedAt": "2026-11-11",
   "items": [
+    {
+      "id": "na-20261111-ludra-hard-weekly",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-11T08:55:01Z",
+      "title": {
+        "en": "November 11 NA · Ludra, Hard modes and weekly progression",
+        "ko": "11월 11일 북미 · 루드라·어려움·주간 성장"
+      },
+      "finding": {
+        "en": "P0/P1: correct the NA Ludra guide’s run limit from 60 to 120 minutes and record the reactor/reward-group adjustment. Fire Temple and Ferocious Horn gain real Hard modes after the earlier incorrect choices were removed; current KR Conquest lessons are not treated as NA mechanics. Weekly Sync Stone/AP routes and 10-minute persistent consumables need client checks. Verify boss triggers/responses, Frenzy/revives, reward quantities/morphs, mission unlocks/resets, consumable grades/persistence and all three bug-fix reproductions. No class input, measured DPS or final tier is supported.",
+        "ko": "P0/P1: 북미 루드라 공략의 제한 시간을 60분에서 120분으로 바로잡고 반응로·보상군 조정을 기록합니다. 앞서 잘못 표시된 선택지가 제거된 뒤 불의 신전·사나운 뿔에 실제 어려움 난도가 추가되며 기존 한국 정복 공략을 북미 기믹으로 취급하지 않습니다. 주간 동기화석/AP 동선과 사망 후 유지되는 10분 소모품은 클라이언트 확인이 필요합니다. 보스 발동/대응·광폭화/부활·보상 수량/변환·미션 해금/초기화·소모품 등급/유지·오류 수정 3건을 재현해야 합니다. 직업 입력·실측 DPS·최종 티어 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 11 North America patch",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f"
+        }
+      ]
+    },
     {
       "id": "kr-20261111-chapter1-class-dungeons-abyss",
       "region": "KR",
-      "reviewedAt": "2026-11-10T20:18:18Z",
+      "reviewedAt": "2026-11-11T08:55:01Z",
       "title": {
         "en": "November 11 KR · level 55, all-class balance and route rebuild",
         "ko": "11월 11일 한국 · 55레벨·전 직업 밸런스·동선 개편"
       },
       "finding": {
-        "en": "P0/P1: KR changes all nine classes, Combat-Power dungeon gates, solo scaling, Awakening Battle attempts, Abyss schedules/equalization and level-55 field progression. Exact public/source targets and official-versus-interpretive notes are in the hash-bound highlights. Verify boss triggers/responses, skill tooltips/coefficients/cooldowns/conditions/rotations, map coordinates/spawns/acquisition/resets and beginner unlocks/costs/rewards/prerequisites. Official KR cooldown overrides are recorded separately; the incompatible Global base and historical rankings are preserved. No in-game validation or final tier is claimed.",
-        "ko": "P0/P1: 한국 9직업, 전투력 기반 던전 입장, 1인 스케일링, 각성전 횟수, 어비스 일정·동등화, 55레벨 필드 성장이 바뀝니다. 정확한 공개·소스 경로와 공식 사실·해석 구분은 해시에 묶인 highlights에 기록했습니다. 보스 발동/대응, 스킬 툴팁·계수·쿨타임·조건·로테이션, 지도 좌표·스폰·획득·초기화, 초보 해금·비용·보상·선행조건을 확인해야 합니다. 공식 한국 쿨다운 오버라이드는 별도 기록하고 호환되지 않는 글로벌 기준·과거 순위는 보존합니다. 인게임 검증이나 최종 티어를 주장하지 않습니다."
+        "en": "P0/P1: the November 11 KR source was revised through 04:11:23 UTC and rebound to hash 4d5f58ba…. The class facts remain intact. Corrections limit bound monster-drop Kina to Lower Reshanta, add Expedition alongside Transcendence as the source for Advanced Breakthrough Material morph inputs, and make territory editing PC-only. Verify matched Lower/Middle drops, morph names/quantities/costs and PC/mobile territory controls. Existing boss, skill, map and growth evidence gaps remain; no NA application, measured tier or historical ranking change is supported.",
+        "ko": "P0/P1: 11월 11일 한국 원문이 04:11:23 UTC까지 수정되어 해시 4d5f58ba…에 재연결됐습니다. 직업 변경 사실은 유지됩니다. 정정 내용은 몬스터 처치 각인 키나를 에레슈란타 하층으로 한정하고, 상급 돌파 재료 변환 재료 획득처에 원정을 초월과 함께 포함하며, 영지 편집을 PC 전용으로 명시한 것입니다. 같은 조건의 하층/중층 획득 재화, 변환 재료명·수량·비용, PC/모바일 영지 조작을 확인해야 합니다. 기존 보스·스킬·지도·성장 자료 부족은 유지되며 북미 적용·실측 티어·과거 순위 변경 근거는 없습니다."
       },
       "status": "needs-evidence",
       "sources": [
