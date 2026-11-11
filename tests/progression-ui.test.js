@@ -96,12 +96,12 @@ async function contained(page, label) {
           await note.locator('a[href$="endgame-crafts/#craft-na-ludra"]').click();
           await page.waitForURL('**/guides/endgame-crafts/#craft-na-ludra');
           assert.equal(await page.locator('#craft-na-ludra').isVisible(),true);
-          await page.locator('#craft-na-ludra a[href$="updates/na-6aead0e86cfe4756db5b913f/"]').click();
-          await page.waitForURL('**/updates/na-6aead0e86cfe4756db5b913f/');
+          await page.locator('#craft-na-ludra a[href$="updates/na-6af42a1affaccc00c265785f/"]').click();
+          await page.waitForURL('**/updates/na-6af42a1affaccc00c265785f/');
           assert.match(await page.locator('h1').textContent(),/November 3 PST|11월 3일 PST/);
           assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang==='ko');
           await page.locator('.navtools a.lang').click();
-          await page.waitForURL('**/updates/na-6aead0e86cfe4756db5b913f/');
+          await page.waitForURL('**/updates/na-6af42a1affaccc00c265785f/');
           assert.equal(new URL(page.url()).pathname.includes('/ko/'),lang!=='ko');
           await page.goto(local+'guides/'+slug+'/');
         }
