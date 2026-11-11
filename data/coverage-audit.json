@@ -24,14 +24,14 @@
     {
       "id": "kr-20261111-chapter1-class-dungeons-abyss",
       "region": "KR",
-      "reviewedAt": "2026-11-11T08:55:01Z",
+      "reviewedAt": "2026-11-11T09:27:38Z",
       "title": {
         "en": "November 11 KR · level 55, all-class balance and route rebuild",
         "ko": "11월 11일 한국 · 55레벨·전 직업 밸런스·동선 개편"
       },
       "finding": {
-        "en": "P0/P1: the November 11 KR source was revised through 04:11:23 UTC and rebound to hash 4d5f58ba…. The class facts remain intact. Corrections limit bound monster-drop Kina to Lower Reshanta, add Expedition alongside Transcendence as the source for Advanced Breakthrough Material morph inputs, and make territory editing PC-only. Verify matched Lower/Middle drops, morph names/quantities/costs and PC/mobile territory controls. Existing boss, skill, map and growth evidence gaps remain; no NA application, measured tier or historical ranking change is supported.",
-        "ko": "P0/P1: 11월 11일 한국 원문이 04:11:23 UTC까지 수정되어 해시 4d5f58ba…에 재연결됐습니다. 직업 변경 사실은 유지됩니다. 정정 내용은 몬스터 처치 각인 키나를 에레슈란타 하층으로 한정하고, 상급 돌파 재료 변환 재료 획득처에 원정을 초월과 함께 포함하며, 영지 편집을 PC 전용으로 명시한 것입니다. 같은 조건의 하층/중층 획득 재화, 변환 재료명·수량·비용, PC/모바일 영지 조작을 확인해야 합니다. 기존 보스·스킬·지도·성장 자료 부족은 유지되며 북미 적용·실측 티어·과거 순위 변경 근거는 없습니다."
+        "en": "P0/P1: the November 11 KR source was revised through 09:22:42 UTC and rebound to hash 1b7301dd…. Exact old/new comparison shows the latest silent edit only normalizes hidden separators and paid-territory furniture labels; class and guide-impacting facts remain intact. Earlier corrections still limit bound monster-drop Kina to Lower Reshanta, add Expedition alongside Transcendence as the source for Advanced Breakthrough Material morph inputs, and make territory editing PC-only. Verify matched Lower/Middle drops, morph names/quantities/costs and PC/mobile territory controls. Existing boss, skill, map and growth evidence gaps remain; no NA application, measured tier or historical ranking change is supported.",
+        "ko": "P0/P1: 11월 11일 한국 원문이 09:22:42 UTC까지 수정되어 해시 1b7301dd…에 재연결됐습니다. 이전·현재 본문을 정확히 대조한 결과 마지막 무표시 편집은 숨은 구분자와 유료 영지 가구 표기만 정리했으며 직업·공략 영향 사실은 유지됩니다. 앞선 정정은 몬스터 처치 각인 키나를 에레슈란타 하층으로 한정하고, 상급 돌파 재료 변환 재료 획득처에 원정을 초월과 함께 포함하며, 영지 편집을 PC 전용으로 명시합니다. 같은 조건의 하층/중층 획득 재화, 변환 재료명·수량·비용, PC/모바일 영지 조작을 확인해야 합니다. 기존 보스·스킬·지도·성장 자료 부족은 유지되며 북미 적용·실측 티어·과거 순위 변경 근거는 없습니다."
       },
       "status": "needs-evidence",
       "sources": [

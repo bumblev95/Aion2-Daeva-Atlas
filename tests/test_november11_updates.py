@@ -38,7 +38,7 @@ class November11UpdateRegressionTest(unittest.TestCase):
         self.assertIn('30% to 100%', advancedguides.render('na-ludra', 'en', BASE))
 
     def test_kr_revision_rebinds_review_and_official_inputs(self):
-        expected = '4d5f58baf153aef3b5bce5cf476d84fb9c6c553db963fd2f386732853dfd1f89'
+        expected = '1b7301dd5aa15cad7b5dd6ae13ad88d5e2d774873228c2ec080fe0d1d1b50d85'
         patch = self.reviews['6af370b8577e8c01355e047b']
         self.assertEqual(patch['contentHash'], expected)
         correction = next(c for c in patch['changes'] if c['subject']['en'] == 'November 11 source corrections')
