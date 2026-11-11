@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-10T23:13:59Z",
+  "checkedAt": "2026-11-11T06:03:56Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,412 +8,29 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-10T23:13:59Z",
-      "lastSuccessAt": "2026-11-10T23:13:59Z",
+      "checkedAt": "2026-11-11T06:03:56Z",
+      "lastSuccessAt": "2026-11-11T06:03:56Z",
       "error": null,
       "fromCache": false,
       "items": [
         {
           "id": "6af370b8577e8c01355e047b",
-          "title": "[안내] 11/11(수) 업데이트 노트",
+          "title": "[안내] 11/11(수) 업데이트 노트 (수정 11/11 13:11)",
           "region": "KR",
           "kind": "patch",
           "source": "kr-update",
           "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
           "publishedAt": "2026-11-10T19:30:00.540Z",
-          "sourceUpdatedAt": "2026-11-10T20:09:12.369Z",
-          "contentHash": "2e8be44523c09df3ea77190f5abf4ae1daed4e897464a15b44d22d275c8deaea",
+          "sourceUpdatedAt": "2026-11-11T04:11:23.328Z",
+          "contentHash": "4d5f58baf153aef3b5bce5cf476d84fb9c6c553db963fd2f386732853dfd1f89",
           "bodyState": "ready",
-          "reviewState": "reviewed",
-          "summary": {
-            "en": "KR raises the cap to 55, restructures dungeons, Abyss schedules and weekly routes, and reworks every class around new buffs, cooldowns and conditional chains. These rules apply with the November 11 maintenance and are not copied to North America.",
-            "ko": "한국은 최대 레벨 55, 던전·어비스 일정·주간 동선을 개편하고 모든 직업의 버프·쿨타임·조건기 연계를 조정합니다. 11월 11일 점검 적용이며 북미에는 복사하지 않습니다."
-          },
-          "changes": [
-            {
-              "classId": "all",
-              "type": "adjustment",
-              "subject": {
-                "en": "Groggy finisher specialization",
-                "ko": "그로기 전용 스킬 특화"
-              },
-              "description": {
-                "en": "Specialization 5 now reduces Mastery-skill cooldowns by 0.5s instead of reducing every skill cooldown by 1s.",
-                "ko": "5번 특화가 모든 스킬 재시전 1초 감소에서 마스터리 스킬 재시전 0.5초 감소로 바뀝니다."
-              },
-              "impact": {
-                "en": "P1 analysis: cooldown routing narrows to Mastery skills; reproduce the affected skill list and rotation timing in the KR client.",
-                "ko": "P1 해석: 쿨다운 단축 대상이 마스터리 스킬로 좁아집니다. 한국 클라이언트에서 적용 스킬 목록과 로테이션 시간을 재현해야 합니다."
-              },
-              "before": {
-                "en": "All skill cooldowns −1s",
-                "ko": "모든 스킬 재시전 −1초"
-              },
-              "after": {
-                "en": "Mastery skill cooldowns −0.5s",
-                "ko": "마스터리 스킬 재시전 −0.5초"
-              }
-            },
-            {
-              "classId": "gladiator",
-              "type": "adjustment",
-              "subject": {
-                "en": "Frenzy and core attacks",
-                "ko": "광분·주요 공격"
-              },
-              "description": {
-                "en": "Several PvE attacks gain 20–100% damage, Ruinous Blow gains 50% base damage and grants Frenzy, while Downward/Upward Strike lose about 50% base damage and become Frenzy-gated. Zikel’s Blessing changes from 120s to 60s.",
-                "ko": "여러 PvE 공격이 20~100% 상향되고 파멸의 맹타는 기본 피해 50%와 광분을 얻습니다. 내려찍기·올려치기는 기본 피해가 약 50% 낮아지고 광분 조건기가 되며 지켈의 축복은 120초에서 60초로 바뀝니다."
-              },
-              "impact": {
-                "en": "P1 analysis: burst setup and finisher timing change materially, but the patch does not establish total rotation DPS or a final tier.",
-                "ko": "P1 해석: 폭딜 준비와 마무리 타이밍이 크게 달라집니다. 공지만으로 총 로테이션 DPS나 최종 티어를 확정하지 않습니다."
-              }
-            },
-            {
-              "classId": "templar",
-              "type": "adjustment",
-              "subject": {
-                "en": "Judgment rotation and defenses",
-                "ko": "심판 로테이션·방어기"
-              },
-              "description": {
-                "en": "Judgment PvE damage falls 10%, cooldown changes 5s→3s and it gains up to three uses plus consecutive-use bonuses. Shield Smite changes 10s→7s, while Warding Strike and Doom Shield change 30s→45s; Punishment and Retributive Strike also lose PvE damage.",
-                "ko": "심판은 PvE 피해가 10% 낮아지고 재시전 5초→3초, 최대 3회 사용과 연속 사용 보너스를 얻습니다. 방패 강타는 10초→7초, 비호의 일격·파멸의 방패는 30초→45초가 되며 징벌·응징의 일격 PvE 피해도 낮아집니다."
-              },
-              "impact": {
-                "en": "P1 analysis: frequent Judgment chains trade against lower individual damage and longer defensive cooldowns; reproduce charges, reset order and threat.",
-                "ko": "P1 해석: 심판 연속 사용 빈도와 개별 피해·방어기 쿨다운이 맞교환됩니다. 충전·초기화 순서·적대치를 재현해야 합니다."
-              }
-            },
-            {
-              "classId": "assassin",
-              "type": "adjustment",
-              "subject": {
-                "en": "Insignia resource and burst",
-                "ko": "문양 자원·폭딜"
-              },
-              "description": {
-                "en": "Insignia becomes a self buff lasting 15s. Insignia Explosion changes 10s→5s, costs 100 MP and scales from 110% at one stack to 500% at five; Evasion Stance changes 20s→10s but lasts 1s and heals 5% on specialization 4.",
-                "ko": "문양이 15초 유지되는 자기 버프로 바뀝니다. 문양 폭발은 10초→5초, 정신력 100이 되며 1문양 110%부터 5문양 500%까지 조정됩니다. 회피 자세는 20초→10초지만 1초 유지, 4번 특화 회복은 5%가 됩니다."
-              },
-              "impact": {
-                "en": "P1 analysis: stack generation and five-stack burst become the main reproduction target; exact animation timings and sustained DPS remain unmeasured.",
-                "ko": "P1 해석: 문양 생성과 5문양 폭딜이 핵심 재현 대상입니다. 정확한 애니메이션 시간과 지속 DPS는 실측 대기입니다."
-              }
-            },
-            {
-              "classId": "brawler",
-              "type": "adjustment",
-              "subject": {
-                "en": "Fighting Spirit windows",
-                "ko": "투기 조건기"
-              },
-              "description": {
-                "en": "Ground Slam and Iron Mountain grant Fighting Spirit for 2s, increasing Ascending Strike and Explosive Fist PvE damage by 150% and PvP damage by 50%. Ascending Strike changes 30s→10s with −36% PvE base damage; All-out changes 90s→60s and Focused Block 20s→10s.",
-                "ko": "지면강타·철산고가 2초 투기를 부여해 승천타·폭렬권 PvE 피해 150%, PvP 피해 50%를 높입니다. 승천타는 30초→10초와 PvE 기본 피해 36% 하향, 전력은 90초→60초, 집중 막기는 20초→10초가 됩니다."
-              },
-              "impact": {
-                "en": "P1 analysis: short Fighting Spirit windows determine the new sequence. Brawler is KR-only in this catalog and lacks a compatible Global base snapshot, so no cross-region eDPS is computed.",
-                "ko": "P1 해석: 짧은 투기 창이 새 연계 순서를 결정합니다. 권성은 현재 카탈로그에서 한국 전용이고 호환되는 글로벌 기준 스냅샷이 없어 지역 혼합 eDPS를 계산하지 않습니다."
-              }
-            },
-            {
-              "classId": "brawler",
-              "type": "fix",
-              "subject": {
-                "en": "Gale Strike resistance reduction",
-                "ko": "질풍격 저항 감소"
-              },
-              "description": {
-                "en": "Fixes specialization-2 status-resistance reduction not being removable by a healing potion.",
-                "ko": "질풍격 2번 특화의 상태이상 저항 감소가 치유 물약으로 해제되지 않던 문제를 수정합니다."
-              },
-              "impact": {
-                "en": "P1 analysis: this is a cleanse-behavior fix without a damage value; verify the debuff icon, potion removal and reapplication.",
-                "ko": "P1 해석: 피해 수치가 없는 해제 동작 수정입니다. 디버프 아이콘·물약 해제·재부여를 확인해야 합니다."
-              }
-            },
-            {
-              "classId": "chanter",
-              "type": "adjustment",
-              "subject": {
-                "en": "Chants and new Storm Order",
-                "ko": "진언·신규 폭풍의 주문"
-              },
-              "description": {
-                "en": "Undefeated Mantra level-1 PvE/PvP amplification and resistance change 10.5%/5.25%→5.5%/2.75%. Sprinting Mantra is replaced by Storm Order: 10s of 5% boss damage amplification at level 1, +0.5% per level, while healing amplification becomes 0%.",
-                "ko": "불패의 진언 1레벨 PvE/PvP 증폭·내성이 10.5%/5.25%→5.5%/2.75%로 바뀝니다. 질주의 진언 대신 폭풍의 주문이 추가되어 10초간 1레벨 보스 피해 증폭 5%, 레벨당 0.5%를 얻고 치유 증폭은 0%가 됩니다."
-              },
-              "impact": {
-                "en": "P1 analysis: support and personal damage choices change, with a published healing trade-off. Party contribution and level scaling need matched tests.",
-                "ko": "P1 해석: 치유 맞교환이 명시된 개인 공격·지원 선택이 달라집니다. 파티 기여와 레벨별 증가는 같은 조건의 실측이 필요합니다."
-              }
-            },
-            {
-              "classId": "ranger",
-              "type": "adjustment",
-              "subject": {
-                "en": "Precision and Resonance loop",
-                "ko": "정밀·감응 연계"
-              },
-              "description": {
-                "en": "Rapid Fire and Aimed Arrow lose 25% and 10% PvE damage. Rupture Arrow gains 10%, creates Resonance under Precision and deals 150% extra damage; Explosive Arrow gains 80% PvE damage and its follow-ups move to Resonance. Drill Dart changes 5s→4s and Bow of Blessing 120s→60s.",
-                "ko": "속사·조준 화살 PvE 피해가 25%·10% 낮아집니다. 파열 화살은 10% 상향되고 정밀 중 감응과 150% 추가 피해를 만들며, 폭발 화살은 PvE 80% 상향과 감응 연계로 바뀝니다. 송곳 화살은 5초→4초, 축복의 활은 120초→60초입니다."
-              },
-              "impact": {
-                "en": "P1 analysis: Precision→Resonance sequencing is now central. Reproduce buff acquisition, reset chance and Arrow Barrage activation before changing a build guide.",
-                "ko": "P1 해석: 정밀→감응 순서가 핵심이 됩니다. 공략 빌드를 바꾸기 전 버프 획득·초기화 확률·화살 난사 활성화를 재현해야 합니다."
-              }
-            },
-            {
-              "classId": "sorcerer",
-              "type": "adjustment",
-              "subject": {
-                "en": "Cold/Fire summons and Winter burst",
-                "ko": "냉기·화염 소환·겨울 폭딜"
-              },
-              "description": {
-                "en": "Winter’s Shackles gains 250% PvE and 5% PvP damage with revised Winter Shard stacks. Cold Storm and Fire Wall change 60s→45s, ignore combat-speed/cooldown-reduction effects on summon attacks and become mobile; Fire Wall summon-skill cooldown is halved.",
-                "ko": "겨울의 속박은 PvE 250%, PvP 5% 상향과 개편된 겨울의 파편 중첩을 얻습니다. 냉기 폭풍·불의 장벽은 60초→45초, 소환 공격의 전투 속도·재사용 감소 비적용, 이동 시전으로 바뀌며 불의 장벽 소환 공격 쿨다운은 50% 줄어듭니다."
-              },
-              "impact": {
-                "en": "P1 analysis: published gains coexist with timing-rule changes. Summon tick timing, stack order and mobile-cast behavior must be reproduced before an eDPS claim.",
-                "ko": "P1 해석: 상향 수치와 시간 규칙 변경이 함께 있습니다. eDPS를 주장하기 전 소환 타격 간격·중첩 순서·이동 시전을 재현해야 합니다."
-              }
-            },
-            {
-              "classId": "sorcerer",
-              "type": "fix",
-              "subject": {
-                "en": "Other Sorcerers’ enhanced debuffs",
-                "ko": "다른 마도성의 강화 디버프"
-              },
-              "description": {
-                "en": "Fixes Cold Storm and Fire Wall dealing extra damage to targets carrying another Sorcerer’s Enhanced Frostbite or Enhanced Embers.",
-                "ko": "다른 마도성이 부여한 동상:강화·잔불:강화 대상에게 냉기 폭풍·불의 장벽 추가 피해가 발생하던 문제를 수정합니다."
-              },
-              "impact": {
-                "en": "P1 analysis: unintended cross-player damage is removed. No arbitrary nerf percentage is assigned; test one- and two-Sorcerer parties under matched conditions.",
-                "ko": "P1 해석: 의도하지 않은 타인 디버프 추가 피해가 제거됩니다. 임의 너프율을 넣지 않고 1·2마도성 파티를 같은 조건에서 비교해야 합니다."
-              }
-            },
-            {
-              "classId": "spiritmaster",
-              "type": "adjustment",
-              "subject": {
-                "en": "Spirit Descent and Elemental Fusion",
-                "ko": "정령 강림·원소 융합"
-              },
-              "description": {
-                "en": "Normal-spirit cooldowns change 15s→30s. Elemental Fusion loses 35% PvE damage but gains 100% PvE/50% PvP during Spirit Descent. Spirit Descent becomes all-element amplification (5.3% at level 1, +0.3% per level) and lasts 6s for every summon.",
-                "ko": "일반 정령 재시전이 15초→30초로 바뀝니다. 원소 융합은 PvE 35% 하향이지만 정령 강림 중 PvE 100%·PvP 50%를 얻습니다. 정령 강림은 모든 속성 피해 증폭(1레벨 5.3%, 레벨당 0.3%)이 되고 모든 소환에서 6초 유지됩니다."
-              },
-              "impact": {
-                "en": "P1 analysis: the class shifts toward short Spirit Descent windows. Pet attack cadence and delayed-damage application remain required inputs, so total eDPS is not inferred.",
-                "ko": "P1 해석: 짧은 정령 강림 창 중심으로 바뀝니다. 정령 공격 주기와 지연 피해 적용은 여전히 필수 입력이라 총 eDPS를 추정하지 않습니다."
-              }
-            },
-            {
-              "classId": "cleric",
-              "type": "adjustment",
-              "subject": {
-                "en": "Damage skills and Condemnation gate",
-                "ko": "공격 스킬·단죄 조건"
-              },
-              "description": {
-                "en": "Multiple PvE attacks gain 15–40%. Condemnation gains 15% PvE, loses 15% PvP and activates for 2s after Debilitating Mark or 3s after Chain of Torment instead of requiring the target’s Chain-of-Torment state. Light of Protection level-1 PvE/PvP values change 10.5%/5.25%→5.5%/2.75%.",
-                "ko": "여러 PvE 공격이 15~40% 상향됩니다. 단죄는 PvE 15% 상향·PvP 15% 하향이며 고통의 연쇄 대상 조건 대신 약화의 낙인 후 2초·고통의 연쇄 후 3초 활성화로 바뀝니다. 보호의 빛 1레벨 PvE/PvP 수치는 10.5%/5.25%→5.5%/2.75%입니다."
-              },
-              "impact": {
-                "en": "P1 analysis: the damage chain is easier to schedule but defensive amplification is lower. Reproduce activation windows, specializations and healing trade-offs.",
-                "ko": "P1 해석: 공격 연계 예약은 쉬워지지만 방어 증폭은 낮아집니다. 활성화 창·특화·치유 맞교환을 재현해야 합니다."
-              }
-            },
-            {
-              "classId": "all",
-              "type": "system",
-              "subject": {
-                "en": "Level 55 and new regions",
-                "ko": "55레벨·신규 지역"
-              },
-              "description": {
-                "en": "The KR cap rises to 55 and Eltnen/Morheim part 2 opens. Large Hidden Cubes in four regions consume 10 keys for 10× rewards.",
-                "ko": "한국 최대 레벨이 55로 확장되고 엘테넨·모르헤임 2부가 열립니다. 4개 지역의 대형 히든 큐브는 열쇠 10개로 10배 보상을 받습니다."
-              },
-              "impact": {
-                "en": "P1 analysis: map and beginner routes need new-zone prerequisites and verified cube coordinates, spawn/acquisition conditions and reset behavior.",
-                "ko": "P1 해석: 지도·초보 경로에 신규 지역 선행조건과 큐브 좌표·스폰/획득 조건·초기화의 직접 확인이 필요합니다."
-              }
-            },
-            {
-              "classId": "all",
-              "type": "system",
-              "subject": {
-                "en": "Expedition and Transcendence restructure",
-                "ko": "원정·초월 개편"
-              },
-              "description": {
-                "en": "KR adds level-55 Urugugu Expedition (800K/1.000M CP) and Eracus Transcendence (800K/1.000M/1.200M CP), removes several older modes and changes entry gates from item level to Combat Power. Many modes support solo scaling; Eracus final-boss kills are capped at five per week.",
-                "ko": "한국에 55레벨 우루구구 원정(80만/100만 전투력)과 에라쿠스 초월(80만/100만/120만 전투력)이 추가되고 여러 기존 모드가 종료됩니다. 입장 기준은 아이템 레벨에서 전투력으로 바뀌며 다수 모드가 1인 난도를 지원합니다. 에라쿠스 최종 보스는 주 5회 제한입니다."
-              },
-              "impact": {
-                "en": "P0/P1 analysis: old KR dungeon gates and routes can block or misdirect players. Verify unlocks, party scaling, boss mechanics, reward eligibility, pity sharing and Wednesday 05:00 reset.",
-                "ko": "P0/P1 해석: 기존 한국 던전 입장 기준·동선은 진행을 막거나 잘못 안내할 수 있습니다. 해금·인원 스케일링·보스 기믹·보상 자격·천장 공유·수요일 05:00 초기화를 확인해야 합니다."
-              }
-            },
-            {
-              "classId": "all",
-              "type": "system",
-              "subject": {
-                "en": "Abyss schedule and rules",
-                "ko": "어비스 일정·규칙"
-              },
-              "description": {
-                "en": "Season 5 splits into two halves. Surface entry keeps level 45 and item level 1000 while removing upper limits, applies equalized stats/skills, cuts weekly time 7h→3h (subscription 14h→6h), and reduces AP by 30%. Artifact groups move to 22:00/22:30/23:00.",
-                "ko": "시즌 5가 전·후반으로 나뉩니다. 표층 입장은 45레벨·아이템 레벨 1000을 유지하면서 상한을 없애고 능력치·스킬을 동등 적용하며 주간 이용 7시간→3시간(구독 14시간→6시간), AP 30% 감소가 적용됩니다. 아티팩트 그룹은 22:00/22:30/23:00으로 바뀝니다."
-              },
-              "impact": {
-                "en": "P0 analysis: current schedule and entry guidance must use the new KR rules. Verify server matching, equalization, consumable restrictions, AP cap overflow and boss spawns in game.",
-                "ko": "P0 해석: 현재 한국 일정·입장 안내는 새 규칙을 사용해야 합니다. 서버 매칭·동등화·소모품 제한·AP 한도 초과분·보스 출현을 게임에서 확인해야 합니다."
-              }
-            },
-            {
-              "classId": "all",
-              "type": "system",
-              "subject": {
-                "en": "Awakening Battle and growth route",
-                "ko": "각성전·성장 경로"
-              },
-              "description": {
-                "en": "Awakening Battle becomes regular Growth Dungeon content, changes weekly attempts from 3 to 9 per server and adds instant completion after one clear with a ticket. A new four-difficulty Sunken Throne uses 50K/100K/300K/500K Combat Power.",
-                "ko": "각성전이 일반 성장 던전으로 편입되고 주간 횟수가 캐릭터 3회에서 서버 9회로 바뀌며 1회 클리어 뒤 도전권 즉시 완료가 추가됩니다. 신규 수몰된 왕좌 4난도는 전투력 5만/10만/30만/50만입니다."
-              },
-              "impact": {
-                "en": "P1 analysis: weekly and beginner priorities change. Verify unlock, server sharing, ticket cost, completion credit, rewards and prerequisites before prescribing a route.",
-                "ko": "P1 해석: 주간·초보 우선순위가 달라집니다. 동선을 권하기 전 해금·서버 공유·도전권 비용·완료 판정·보상·선행조건을 확인해야 합니다."
-              }
-            }
-          ],
-          "classScopeReviewed": true,
-          "reviewedAt": "2026-11-10T20:18:18Z",
-          "displayTitle": {
-            "en": "November 11 · Korea",
-            "ko": "11월 11일 한국 패치"
-          },
-          "detail": {
-            "coverage": "highlights",
-            "sections": [
-              {
-                "title": {
-                  "en": "Region, announcement and effective date",
-                  "ko": "지역·발표일·시행일"
-                },
-                "sourceSection": "11월 11일 업데이트 노트 · 적용 범위",
-                "notes": [
-                  {
-                    "en": "Published November 10 at 19:30 UTC for KR, revised at 20:09 UTC and scheduled for the November 11 maintenance. This review is bound to official source hash 2e8be445….",
-                    "ko": "한국 서비스 기준 11월 10일 19:30 UTC 게시, 20:09 UTC 수정됐으며 11월 11일 정기점검 적용입니다. 검토는 공식 원문 해시 2e8be445…에 묶었습니다."
-                  },
-                  {
-                    "en": "KR only: none of these class, dungeon, Abyss, map or growth rules are applied to the NA feed. Historical combat records and Global DPS inputs retain their original periods and conditions.",
-                    "ko": "한국 전용입니다. 직업·던전·어비스·지도·성장 규칙을 북미 피드에 적용하지 않습니다. 과거 전투 기록과 글로벌 DPS 입력은 기존 기간·조건을 유지합니다."
-                  }
-                ],
-                "tables": []
-              },
-              {
-                "title": {
-                  "en": "Class balance · all nine KR classes",
-                  "ko": "직업 밸런스 · 한국 9직업"
-                },
-                "sourceSection": "클래스 변경사항",
-                "notes": [
-                  {
-                    "en": "Official fact: all nine KR classes have announced damage, cooldown, specialization or condition changes; Brawler remains KR-only in this catalog. Exact published cooldown overrides are recorded in data/skill-snapshot.json with this source hash.",
-                    "ko": "공식 확인: 한국 9직업 모두 피해·쿨타임·특화·조건 변경이 있으며 권성은 현재 카탈로그에서 한국 전용입니다. 명시된 쿨타임 오버라이드는 같은 원문 해시와 함께 data/skill-snapshot.json에 기록했습니다."
-                  },
-                  {
-                    "en": "P1 targets: /classes/<class>/ and /skills/<skill>/ with Korean counterparts; source targets data/skills.json and data/skill-snapshot.json. Direct verification: tooltips, coefficients, cooldowns, condition gates, charges, animation times and reproducible rotations.",
-                    "ko": "P1 경로는 /classes/<class>/·/skills/<skill>/와 한국어 대응 페이지, 소스는 data/skills.json·data/skill-snapshot.json입니다. 툴팁·계수·쿨타임·조건기·충전·동작 시간·재현 가능한 로테이션을 직접 확인해야 합니다."
-                  },
-                  {
-                    "en": "Interpretation: the notes explain likely rotation effects, not measured total DPS. The incompatible Global base snapshot is not overwritten by KR values, and no current tier is published.",
-                    "ko": "해석: 실전 영향은 예상 로테이션 효과이며 실측 총 DPS가 아닙니다. 호환되지 않는 글로벌 기준 스냅샷을 한국 수치로 덮지 않고 현재 티어도 발표하지 않습니다."
-                  }
-                ],
-                "tables": []
-              },
-              {
-                "title": {
-                  "en": "Bosses, dungeon gates and weekly routes",
-                  "ko": "보스·던전 입장·주간 동선"
-                },
-                "sourceSection": "콘텐츠 및 시스템 · 원정·초월·각성전",
-                "notes": [
-                  {
-                    "en": "Official facts: level-55 Urugugu and Eracus use Combat Power gates; old modes are removed or consolidated; solo scaling, shared pity rules, Odyle Energy costs and Awakening Battle attempts change.",
-                    "ko": "공식 확인: 55레벨 우루구구·에라쿠스가 전투력 기준으로 추가되고 기존 모드 종료·통합, 1인 스케일링, 천장 공유, 오드 에너지 비용, 각성전 횟수가 바뀝니다."
-                  },
-                  {
-                    "en": "P0/P1 public targets: /dungeons/, /endgame/, /routines/ and Korean counterparts; source targets progression.py, dungeonmodes.py, routines.py and encounters.py. Verify actual difficulty/region, boss pattern triggers and responses, party scaling, unlocks, rewards, costs, prerequisites and reset behavior.",
-                    "ko": "P0/P1 공개 경로는 /dungeons/·/endgame/·/routines/과 한국어 대응 페이지, 소스는 progression.py·dungeonmodes.py·routines.py·encounters.py입니다. 실제 난도·지역·보스 패턴 발동/대응·인원 스케일링·해금·보상·비용·선행조건·초기화를 확인해야 합니다."
-                  }
-                ],
-                "tables": []
-              },
-              {
-                "title": {
-                  "en": "Abyss schedules and combat rules",
-                  "ko": "어비스 일정·전투 규칙"
-                },
-                "sourceSection": "콘텐츠 및 시스템 · 어비스",
-                "notes": [
-                  {
-                    "en": "Official facts: Surface upper gates are removed while level 45/item level 1000 minima remain; equalization, consumable limits, AP reduction, weekly time and Artifact/Watcher schedules change. Season 5 resets between its two announced halves.",
-                    "ko": "공식 확인: 표층 상한은 제거되지만 45레벨·아이템 레벨 1000 하한은 유지됩니다. 동등화·소모품 제한·AP 감소·주간 시간·아티팩트/감시자 일정이 바뀌며 시즌 5는 공지된 전·후반 사이에 초기화됩니다."
-                  },
-                  {
-                    "en": "P0 public targets: /routines/ and Abyss-related guide entries; source targets routines.py and advancedguides.py. Verify server clocks, matching, boss spawns, equalized stats/skills, contribution percentile rewards and reset state.",
-                    "ko": "P0 공개 경로는 /routines/ 및 어비스 관련 공략, 소스는 routines.py·advancedguides.py입니다. 서버 시각·매칭·보스 출현·동등화 능력치/스킬·기여도 백분율 보상·초기화 상태를 확인해야 합니다."
-                  }
-                ],
-                "tables": []
-              },
-              {
-                "title": {
-                  "en": "Map and beginner progression",
-                  "ko": "지도·초보 성장"
-                },
-                "sourceSection": "콘텐츠 및 시스템 · 필드·히든 큐브·성장",
-                "notes": [
-                  {
-                    "en": "Official facts: the cap is 55, Eltnen/Morheim part 2 opens, and Large Hidden Cubes consume 10 keys for 10× rewards. New gear, inheritance costs and growth-support systems are also announced.",
-                    "ko": "공식 확인: 최대 레벨 55, 엘테넨·모르헤임 2부, 열쇠 10개로 10배 보상을 받는 대형 히든 큐브가 추가됩니다. 신규 장비·계승 비용·성장 지원도 발표됐습니다."
-                  },
-                  {
-                    "en": "P1 public targets: /maps/, /start/, /endgame/ and Korean counterparts; source targets data/maps.json, mapdata.py, onboarding.py and progression.py. Verify coordinates, spawns, acquisition/reset conditions, unlocks, costs, rewards and prerequisites in game.",
-                    "ko": "P1 공개 경로는 /maps/·/start/·/endgame/과 한국어 대응 페이지, 소스는 data/maps.json·mapdata.py·onboarding.py·progression.py입니다. 좌표·스폰·획득/초기화 조건·해금·비용·보상·선행조건을 게임에서 확인해야 합니다."
-                  }
-                ],
-                "tables": []
-              },
-              {
-                "title": {
-                  "en": "Review limits",
-                  "ko": "검토 범위"
-                },
-                "sourceSection": "highlights 검토",
-                "notes": [
-                  {
-                    "en": "This highlights review covers every class section and the guide-impacting systems. It does not claim complete republication of every event/product row, in-game validation, a patch-derived DPS ranking or a final class tier.",
-                    "ko": "모든 직업 구간과 공략에 영향을 주는 주요 시스템을 다룬 highlights 검토입니다. 이벤트·상품 표 전체 재정리, 인게임 검증 완료, 패치 기반 DPS 순위나 최종 직업 티어를 주장하지 않습니다."
-                  }
-                ],
-                "tables": []
-              }
-            ]
-          },
+          "reviewState": "revised",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
           "followups": []
         },
         {
@@ -7551,11 +7168,71 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-10T23:13:59Z",
-      "lastSuccessAt": "2026-11-10T23:13:59Z",
+      "checkedAt": "2026-11-11T06:03:56Z",
+      "lastSuccessAt": "2026-11-11T06:03:56Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6af3ea98553a6c1fba041803",
+          "title": "[안내] 11/11(수) AION2 긴급 임시점검 안내 (수정)",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3ea98553a6c1fba041803",
+          "publishedAt": "2026-11-11T04:07:54.001Z",
+          "sourceUpdatedAt": "2026-11-11T05:30:58.790Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
+        {
+          "id": "6af3e4bc7d773f10fbeb07a3",
+          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [348차]",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3e4bc7d773f10fbeb07a3",
+          "publishedAt": "2026-11-11T03:45:00.963Z",
+          "sourceUpdatedAt": "2026-11-11T03:45:52.251Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
+        {
+          "id": "6af3d328066b033317c02bd3",
+          "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/11 14:13)",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3",
+          "publishedAt": "2026-11-11T03:10:00.001Z",
+          "sourceUpdatedAt": "2026-11-11T05:14:02.633Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6af370b8577e8c01355e0463",
           "title": "[안내] 11/11(수) 신규 상품 안내",
@@ -7578,13 +7255,13 @@
         },
         {
           "id": "6af370b8577e8c01355e0460",
-          "title": "[안내] 11/11(수) 신규 영지 상품 안내",
+          "title": "[안내] 11/11(수) 신규 영지 상품 안내 (수정 11/11 11:14)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af370b8577e8c01355e0460",
           "publishedAt": "2026-11-10T19:30:00.001Z",
-          "sourceUpdatedAt": "2026-11-10T19:30:55.093Z",
+          "sourceUpdatedAt": "2026-11-11T02:14:22.167Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -8056,66 +7733,6 @@
           "followups": []
         },
         {
-          "id": "6ae84300577e8c01355e028d",
-          "title": "[안내] AION2 정기점검 사전 안내",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ae84300577e8c01355e028d",
-          "publishedAt": "2026-11-02T08:00:00.882Z",
-          "sourceUpdatedAt": "2026-11-02T08:24:47.776Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
-          "id": "6ae82230577e8c01355e028b",
-          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [342차]",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ae82230577e8c01355e028b",
-          "publishedAt": "2026-11-02T05:40:00.996Z",
-          "sourceUpdatedAt": "2026-11-02T05:40:48.011Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
-          "id": "6ae68f106cfe4756db5b906b",
-          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [341차]",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6ae68f106cfe4756db5b906b",
-          "publishedAt": "2026-11-01T01:00:00.001Z",
-          "sourceUpdatedAt": "2026-11-01T01:00:48.017Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
           "id": "6ad8207a577e8c01355e00c1",
           "title": "[안내] 10월 3주차 알려진 이슈 및 조치 안내",
           "region": "KR",
@@ -8300,8 +7917,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-10T23:13:59Z",
-      "lastSuccessAt": "2026-11-10T23:13:59Z",
+      "checkedAt": "2026-11-11T06:03:56Z",
+      "lastSuccessAt": "2026-11-11T06:03:56Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9753,11 +9370,31 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-10T23:13:59Z",
-      "lastSuccessAt": "2026-11-10T23:13:59Z",
+      "checkedAt": "2026-11-11T06:03:56Z",
+      "lastSuccessAt": "2026-11-11T06:03:56Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6af3a9a36aa4a15b4b8aefd5",
+          "title": "[Notice] Aware of Potential Login Issue",
+          "region": "NA",
+          "kind": "news",
+          "source": "na-notice",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6af3a9a36aa4a15b4b8aefd5",
+          "publishedAt": "2026-11-10T23:32:51.395Z",
+          "sourceUpdatedAt": "2026-11-11T04:09:32.306Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6af35ba0577e8c01355e0408",
           "title": "[Notice] Maintenance | Nov. 10 (PST) / Nov. 11 (CET)",
@@ -10354,26 +9991,6 @@
           "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ad1af5028c7452635072be6",
           "publishedAt": "2026-10-16T05:00:00.001Z",
           "sourceUpdatedAt": "2026-10-17T00:30:49.419Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
-          "id": "6ad0182403fa4a097c8ca7b6",
-          "title": "[Notice] Steam Payment Issue Resolved",
-          "region": "NA",
-          "kind": "news",
-          "source": "na-notice",
-          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6ad0182403fa4a097c8ca7b6",
-          "publishedAt": "2026-10-15T00:02:44.343Z",
-          "sourceUpdatedAt": "2026-10-15T00:02:44.343Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
