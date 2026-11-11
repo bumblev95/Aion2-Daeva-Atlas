@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-11T08:59:41Z",
+  "checkedAt": "2026-11-11T09:17:16Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-11T08:59:41Z",
-      "lastSuccessAt": "2026-11-11T08:59:41Z",
+      "checkedAt": "2026-11-11T09:17:16Z",
+      "lastSuccessAt": "2026-11-11T09:17:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7597,8 +7597,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-11T08:59:41Z",
-      "lastSuccessAt": "2026-11-11T08:59:41Z",
+      "checkedAt": "2026-11-11T09:17:16Z",
+      "lastSuccessAt": "2026-11-11T09:17:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7644,13 +7644,13 @@
         },
         {
           "id": "6af3d328066b033317c02bd3",
-          "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/11 14:13)",
+          "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/11 18:02)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3",
           "publishedAt": "2026-11-11T03:10:00.001Z",
-          "sourceUpdatedAt": "2026-11-11T05:14:02.633Z",
+          "sourceUpdatedAt": "2026-11-11T09:02:29.977Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -8346,8 +8346,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-11T08:59:41Z",
-      "lastSuccessAt": "2026-11-11T08:59:41Z",
+      "checkedAt": "2026-11-11T09:17:16Z",
+      "lastSuccessAt": "2026-11-11T09:17:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10076,8 +10076,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-11T08:59:41Z",
-      "lastSuccessAt": "2026-11-11T08:59:41Z",
+      "checkedAt": "2026-11-11T09:17:16Z",
+      "lastSuccessAt": "2026-11-11T09:17:16Z",
       "error": null,
       "fromCache": false,
       "items": [
