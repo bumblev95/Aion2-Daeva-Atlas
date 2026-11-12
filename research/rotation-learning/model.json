@@ -57,7 +57,7 @@
     "dpsmath.py": "a49d82aa69e6bedad8f75acc0bc9be0ad95a03547f36bf1d6fc82d3ee5b7c566",
     "dpsrules.py": "f52bb3b4cb5871ad89ad210059eacc19ddb838d1bd58cddc64126802794c53e2",
     "data/dps-resources.json": "f65e7689e2976de5548737dea5700a7d591d38ab6ba880eb60223c7a51c16a41",
-    "data/skill-snapshot.json": "cdbce8e7486c9081da740e244271a7084b3de4be02ad7dbdfc0ad0d8306b7203"
+    "data/skill-snapshot.json": "63eb0f112468cae1eab8f34723bb6d90b90a54dd137cdc54506648b8e2fcfed1"
   },
   "settings": {
     "generations": 10,

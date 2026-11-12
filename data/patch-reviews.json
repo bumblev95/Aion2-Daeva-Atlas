@@ -9251,8 +9251,8 @@
     }
   },
   "6af42a1affaccc00c265785f": {
-    "contentHash": "690c4181690c1b17dfd69334143b898a3b65a66f15a851748895684fc7831372",
-    "reviewedAt": "2026-11-11T08:55:01Z",
+    "contentHash": "269fabc0325bf5904bd3c315225984162abce57d0111e2487a6aca9309626d42",
+    "reviewedAt": "2026-11-11T20:33:51Z",
     "classScopeReviewed": true,
     "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f",
     "title": {
@@ -9260,8 +9260,8 @@
       "ko": "11월 11일 북미 패치"
     },
     "summary": {
-      "en": "NA doubles Ludra’s run limit and improves its reactor and reward group, adds Fire Temple and Ferocious Horn Hard modes, extends consumables, increases weekly progression rewards and fixes three dungeon issues. No class coefficient or cooldown changes are announced.",
-      "ko": "북미는 루드라 제한 시간을 두 배로 늘리고 중앙 반응로·보상군을 조정하며, 불의 신전·사나운 뿔 어려움, 소모품 연장, 주간 성장 보상 확대와 던전 오류 3건 수정을 적용합니다. 직업 계수·쿨타임 변경은 없습니다."
+      "en": "NA doubles Ludra’s run limit and improves its reactor and reward group, adds Fire Temple and Ferocious Horn Hard modes, extends consumables, increases weekly progression rewards and fixes three dungeon issues. The latest revised source retains these guide-impacting facts and announces no class coefficient or cooldown change.",
+      "ko": "북미는 루드라 제한 시간을 두 배로 늘리고 중앙 반응로·보상군을 조정하며, 불의 신전·사나운 뿔 어려움, 소모품 연장, 주간 성장 보상 확대와 던전 오류 3건 수정을 적용합니다. 최신 수정 원문에서도 공략 영향 사실은 유지되며 직업 계수·쿨타임 변경은 없습니다."
     },
     "changes": [
       {
@@ -9432,8 +9432,8 @@
           "sourceSection": "Patch scope",
           "notes": [
             {
-              "en": "Published November 11 at 08:40:57 UTC for the NA/Global service, revised at 08:43:32 UTC and announced for the November 11 maintenance. This editorial review is bound to official source hash 690c4181…; collection time is not used as the review time.",
-              "ko": "북미/글로벌 서비스 기준 11월 11일 08:40:57 UTC 게시, 08:43:32 UTC 수정됐으며 11월 11일 점검 적용입니다. 편집 검토는 공식 원문 해시 690c4181…에 묶었고 수집 시각을 검토 시각으로 대신하지 않았습니다."
+              "en": "Published November 11 at 08:40:57 UTC for the NA/Global service, revised at 09:52:19 UTC and announced for the November 11 maintenance. The latest visible source was read again and this editorial review is bound to official source hash 269fabc0…; collection time is not used as the review time.",
+              "ko": "북미/글로벌 서비스 기준 11월 11일 08:40:57 UTC 게시, 09:52:19 UTC 수정됐으며 11월 11일 점검 적용입니다. 최신 공개 원문을 다시 읽고 편집 검토를 공식 원문 해시 269fabc0…에 묶었으며 수집 시각을 검토 시각으로 대신하지 않았습니다."
             },
             {
               "en": "NA only: none of these Ludra, Hard-mode, consumable, Abyss or weekly-reward rules are copied to Korea. No class coefficient, cooldown, skill-level effect, measured DPS or final tier is announced.",

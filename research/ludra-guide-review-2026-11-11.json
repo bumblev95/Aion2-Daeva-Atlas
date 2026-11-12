@@ -6,9 +6,12 @@
     "articleId": "6af42a1affaccc00c265785f",
     "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f",
     "retrieval": "Public NC API: https://api-global-community.plaync.com/aion2_global/board/update_en/article/6af42a1affaccc00c265785f",
-    "contentHash": "690c4181690c1b17dfd69334143b898a3b65a66f15a851748895684fc7831372",
+    "contentHash": "269fabc0325bf5904bd3c315225984162abce57d0111e2487a6aca9309626d42",
+    "sourceUpdatedAt": "2026-11-11T09:52:19.340Z",
+    "latestRevisionReviewedAt": "2026-11-11T20:33:51Z",
     "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)",
-    "matchesExistingReview": true
+    "matchesExistingReview": true,
+    "revisionNote": "The latest visible source retains the recorded guide-impacting facts. The previous full markup was not retained, so no exact display-only diff is claimed."
   },
   "additionalOfficial": {
     "url": "https://lounge.plaync.com/feed/85150?country=US&locale=en-US",

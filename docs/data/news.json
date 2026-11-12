@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-12T02:55:26Z",
+  "checkedAt": "2026-11-12T08:53:51Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-12T02:55:26Z",
-      "lastSuccessAt": "2026-11-12T02:55:26Z",
+      "checkedAt": "2026-11-12T08:53:51Z",
+      "lastSuccessAt": "2026-11-12T08:53:51Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -7597,8 +7597,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-12T02:55:26Z",
-      "lastSuccessAt": "2026-11-12T02:55:26Z",
+      "checkedAt": "2026-11-12T08:53:51Z",
+      "lastSuccessAt": "2026-11-12T08:53:51Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8346,8 +8346,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-12T02:55:26Z",
-      "lastSuccessAt": "2026-11-12T02:55:26Z",
+      "checkedAt": "2026-11-12T08:53:51Z",
+      "lastSuccessAt": "2026-11-12T08:53:51Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8362,13 +8362,270 @@
           "sourceUpdatedAt": "2026-11-11T09:52:19.340Z",
           "contentHash": "269fabc0325bf5904bd3c315225984162abce57d0111e2487a6aca9309626d42",
           "bodyState": "ready",
-          "reviewState": "revised",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "NA doubles Ludra’s run limit and improves its reactor and reward group, adds Fire Temple and Ferocious Horn Hard modes, extends consumables, increases weekly progression rewards and fixes three dungeon issues. The latest revised source retains these guide-impacting facts and announces no class coefficient or cooldown change.",
+            "ko": "북미는 루드라 제한 시간을 두 배로 늘리고 중앙 반응로·보상군을 조정하며, 불의 신전·사나운 뿔 어려움, 소모품 연장, 주간 성장 보상 확대와 던전 오류 3건 수정을 적용합니다. 최신 수정 원문에서도 공략 영향 사실은 유지되며 직업 계수·쿨타임 변경은 없습니다."
+          },
+          "changes": [
+            {
+              "classId": "all",
+              "type": "adjustment",
+              "subject": {
+                "en": "Abyssal Forge: Ludra · time, reactor and rewards",
+                "ko": "심연의 재련: 루드라 · 시간·반응로·보상"
+              },
+              "description": {
+                "en": "Normal and Hard run limits rise to two hours, Central Abyss Fusion Reactor HP is reduced, and Reward Group 5 is expanded with three Wrathful materials.",
+                "ko": "일반·어려움 제한 시간이 2시간으로 늘고 중앙 심연 융합 반응로 HP가 낮아지며, 보상군 5에 격노 재료 3종이 추가됩니다."
+              },
+              "before": {
+                "en": "Run limit 1 hour; Reward Group 5 drop rate 30%",
+                "ko": "제한 시간 1시간 · 보상군 5 드롭률 30%"
+              },
+              "after": {
+                "en": "Run limit 2 hours; Reward Group 5 drop rate 100%; Wrathful Mind/Will/Ego added",
+                "ko": "제한 시간 2시간 · 보상군 5 드롭률 100% · 격노의 마음/의지/자아 추가"
+              },
+              "impact": {
+                "en": "P1 analysis: the current NA guide’s one-hour limit was outdated and is updated. Lower reactor HP and a guaranteed reward-group roll do not establish boss mechanics, clear difficulty or a guaranteed quantity of every listed item.",
+                "ko": "P1 해석: 기존 북미 공략의 1시간 제한은 오래된 값이어서 수정합니다. 반응로 HP 하향과 보상군 판정 100%는 보스 기믹·클리어 난도나 목록의 모든 아이템 수량 보장을 뜻하지 않습니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Fire Temple and Ferocious Horn · Hard mode",
+                "ko": "불의 신전·사나운 뿔 · 어려움 난도"
+              },
+              "description": {
+                "en": "Hard mode is added with item level 2800, a four-minute Frenzy timer and three revives per player, plus new guaranteed, chance, material and achievement rewards.",
+                "ko": "아이템 레벨 2800, 광폭화 4분, 개인별 부활 3회의 어려움 난도가 추가되고 확정·확률·재료·업적 보상이 추가됩니다."
+              },
+              "after": {
+                "en": "Item level 2800; Frenzy 4 minutes; 3 revives per player",
+                "ko": "아이템 레벨 2800 · 광폭화 4분 · 개인별 부활 3회"
+              },
+              "impact": {
+                "en": "P1 analysis: the November 5 removal of incorrectly displayed Hard choices is superseded by this announced mode. Existing /dungeons/fire-temple/ and /dungeons/fierce-horn/ lessons retain older KR evidence until NA patterns and conditions are reproduced.",
+                "ko": "P1 해석: 11월 5일 잘못 표시된 어려움 선택지 제거 뒤 이번 공지로 실제 어려움 난도가 추가됩니다. 기존 /dungeons/fire-temple/·/dungeons/fierce-horn/은 북미 패턴·조건을 재현할 때까지 과거 한국 근거를 유지합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Consumables · duration and persistence",
+                "ko": "소모품 · 지속시간·사망 후 유지"
+              },
+              "description": {
+                "en": "Potions, food and scrolls whose effects lasted five minutes now last ten minutes and persist through death and resurrection.",
+                "ko": "효과가 5분이던 물약·요리·주문서는 10분 유지되며 사망·부활 뒤에도 효과가 남습니다."
+              },
+              "before": {
+                "en": "5-minute effect",
+                "ko": "효과 5분"
+              },
+              "after": {
+                "en": "10-minute effect; persists after death/resurrection",
+                "ko": "효과 10분 · 사망/부활 후 유지"
+              },
+              "impact": {
+                "en": "P1 analysis: supply timing and repeat-run preparation change. Verify which item grades are included, remaining-duration behavior, dispels and instance transitions before changing evergreen budgets.",
+                "ko": "P1 해석: 소모품 사용 주기와 재도전 준비가 달라집니다. 상시 예산 공략을 바꾸기 전 적용 등급·남은 시간·해제·인스턴스 이동 동작을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Weekly progression and Abyss rewards",
+                "ko": "주간 성장·어비스 보상"
+              },
+              "description": {
+                "en": "Transcendence Season Missions add up to three Unique Sync Stones per week, Shugo Festival gains an Abyss Point weekly mission, Duty AP rises, Lower Abyss monster Kina becomes bound and Chaotic Upper Reshanta AP increases.",
+                "ko": "초월 시즌 미션에 주 최대 3개의 유일 동기화석이 추가되고 슈고 페스타 AP 주간 미션·임무 AP 상향이 적용됩니다. 하층 몬스터 키나는 각인으로 바뀌고 혼돈의 상층 레시온 AP가 늘어납니다."
+              },
+              "before": {
+                "en": "Duty reward: 1,000 AP",
+                "ko": "임무 보상: AP 1,000"
+              },
+              "after": {
+                "en": "Duty reward: 2,500 AP; up to 3 Unique Sync Stones per week",
+                "ko": "임무 보상: AP 2,500 · 주 최대 유일 동기화석 3개"
+              },
+              "impact": {
+                "en": "P1 analysis: weekly priorities and non-PvP AP routes improve, but the notice does not publish the Upper Reshanta increase or Shugo mission amount. Verify mission unlocks, completion counters, reset and actual rewards.",
+                "ko": "P1 해석: 주간 우선순위와 비PvP AP 경로가 강화되지만 상층 레시온 증가량·슈고 미션 수량은 미공개입니다. 미션 해금·완료 집계·초기화·실제 보상을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Seal Dungeon · underwater gauge",
+                "ko": "봉인 던전 · 수중 게이지"
+              },
+              "description": {
+                "en": "Fixes the underwater gauge occasionally decreasing immediately after entering certain underwater Seal Dungeons.",
+                "ko": "일부 수중 봉인 던전 입장 직후 수중 게이지가 간헐적으로 감소하던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: this restores traversal time rather than adding damage. Verify the affected dungeon, initial gauge value and re-entry behavior.",
+                "ko": "P1 해석: 피해 증가가 아니라 이동 가능 시간 복구입니다. 대상 던전·초기 게이지·재입장 동작을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Zikel's Sanctum · quest progression",
+                "ko": "지켈의 성역 · 퀘스트 진행"
+              },
+              "description": {
+                "en": "Fixes an occasional progression block in the Asmodian Quest Dungeon, Zikel's Sanctum.",
+                "ko": "마족 퀘스트 던전 지켈의 성역에서 간헐적으로 진행할 수 없던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P0 analysis: an intermittent progression blocker is removed. Verify the exact step, prerequisite, trigger and recovery on an affected character.",
+                "ko": "P0 해석: 간헐적 진행 불가가 해소됩니다. 대상 캐릭터에서 정확한 단계·선행조건·발동·복구를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Ludra's Trial · wipe reset",
+                "ko": "루드라의 시련 · 전멸 초기화"
+              },
+              "description": {
+                "en": "Fixes Ludra's Trial failing to reset after a party wipe during a dungeon mechanic.",
+                "ko": "던전 기믹 중 파티 전멸 뒤 루드라의 시련 스킬이 초기화되지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: the intended retry state is restored without a published damage value. Verify the mechanic trigger, wipe, reset timing and re-entry state.",
+                "ko": "P1 해석: 피해 수치 없이 의도된 재도전 상태를 복구합니다. 기믹 발동·전멸·초기화 시점·재입장 상태를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "November 4 guaranteed-reward restoration",
+                "ko": "11월 4일 확정 보상 복구"
+              },
+              "description": {
+                "en": "Affected characters who missed guaranteed Expedition rewards after the November 4 requirement reduction receive the dungeon-specific bound Armor Selection Chest in their Cube during maintenance.",
+                "ko": "11월 4일 원정 확정 보상 요구량 감소 뒤 보상을 받지 못한 대상에게 던전별 방어구 선택 상자(귀속)를 점검 중 큐브로 지급합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: this is targeted restoration, not a permanent extra reward. Verify eligibility, chest name, delivery and expiration; do not add it to recurring route yields.",
+                "ko": "P1 해석: 대상자 복구 지급이며 상시 추가 보상이 아닙니다. 대상 조건·상자명·지급·만료를 확인하고 반복 동선 수익에 넣지 않습니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-11-11T20:33:51Z",
+          "displayTitle": {
+            "en": "November 11 · North America",
+            "ko": "11월 11일 북미 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, publication and effective date",
+                  "ko": "지역·발표일·시행일"
+                },
+                "sourceSection": "Patch scope",
+                "notes": [
+                  {
+                    "en": "Published November 11 at 08:40:57 UTC for the NA/Global service, revised at 09:52:19 UTC and announced for the November 11 maintenance. The latest visible source was read again and this editorial review is bound to official source hash 269fabc0…; collection time is not used as the review time.",
+                    "ko": "북미/글로벌 서비스 기준 11월 11일 08:40:57 UTC 게시, 09:52:19 UTC 수정됐으며 11월 11일 점검 적용입니다. 최신 공개 원문을 다시 읽고 편집 검토를 공식 원문 해시 269fabc0…에 묶었으며 수집 시각을 검토 시각으로 대신하지 않았습니다."
+                  },
+                  {
+                    "en": "NA only: none of these Ludra, Hard-mode, consumable, Abyss or weekly-reward rules are copied to Korea. No class coefficient, cooldown, skill-level effect, measured DPS or final tier is announced.",
+                    "ko": "북미 전용입니다. 루드라·어려움·소모품·어비스·주간 보상 규칙을 한국에 복사하지 않습니다. 직업 계수·쿨타임·스킬 레벨 효과·실측 DPS·최종 티어는 발표되지 않았습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Ludra · current guide correction",
+                  "ko": "루드라 · 현재 공략 정정"
+                },
+                "sourceSection": "Content & Systems · Sanctuary",
+                "notes": [
+                  {
+                    "en": "Official facts: both modes change from 60 to 120 minutes; reactor HP is reduced without a published value; Reward Group 5 rises from 30% to 100% and adds Wrathful Mind, Will and Ego. The run-limit correction is applied to /guides/na-ludra/ and /guides/endgame-crafts/ plus Korean counterparts; source targets ludra.py and advancedguides.py.",
+                    "ko": "공식 확인: 두 난도 제한은 60→120분, 반응로 HP는 수치 없이 하향, 보상군 5는 30%→100%이며 격노의 마음·의지·자아가 추가됩니다. 제한 시간 정정은 /guides/na-ludra/·/guides/endgame-crafts/와 한국어 대응 페이지, 소스 ludra.py·advancedguides.py에 반영합니다."
+                  },
+                  {
+                    "en": "Direct verification remains for actual boss difficulty, reactor phase trigger/response, attack patterns, Frenzy, resurrection/re-entry, reward-group quantities and each item’s binding. The official HP reduction is not converted into a player DPS multiplier.",
+                    "ko": "실제 보스 난도·반응로 단계 발동/대응·공격 패턴·광폭화·부활/재입장·보상군 수량·아이템별 귀속은 직접 확인 대기입니다. 공식 HP 하향을 플레이어 DPS 배율로 환산하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "New Hard modes · evidence boundary",
+                  "ko": "신규 어려움 · 근거 범위"
+                },
+                "sourceSection": "Content & Systems · Expedition",
+                "notes": [
+                  {
+                    "en": "Official facts: Fire Temple and Ferocious Horn Hard require item level 2800, use a four-minute Frenzy timer and allow three revives per player. Rewards include a chance and guaranteed choice for Philosopher’s Stone: Revelation, dungeon-specific Ariel Fragments, Unique materials, artwork, more Kina and achievement skins.",
+                    "ko": "공식 확인: 불의 신전·사나운 뿔 어려움은 아이템 레벨 2800, 광폭화 4분, 개인별 부활 3회입니다. 보상에는 현자의 돌: 계시 확률/확정 선택, 던전별 아리엘 조각, 유일 재료, 명화, 추가 키나와 업적 외형이 포함됩니다."
+                  },
+                  {
+                    "en": "P1 targets after direct verification: /dungeons/fire-temple/, /dungeons/fierce-horn/ and /guides/dungeon-rewards/ plus Korean counterparts; source targets fieldnotes.py, progression.py and encounters.py. Verify region/difficulty, prerequisites, pattern triggers/responses, Frenzy start, revive reset, reward quantities, morph limits and reset. Existing KR Conquest animations remain labelled and are not presented as NA Hard mechanics.",
+                    "ko": "P1 직접 검증 후 공개 경로는 /dungeons/fire-temple/·/dungeons/fierce-horn/·/guides/dungeon-rewards/와 한국어 대응 페이지, 소스는 fieldnotes.py·progression.py·encounters.py입니다. 지역/난도·선행조건·패턴 발동/대응·광폭화 시작·부활 초기화·보상 수량·변환 한도·초기화를 확인해야 합니다. 기존 한국 정복 애니메이션은 표시를 유지하며 북미 어려움 기믹으로 제시하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Weekly route, Abyss and consumables",
+                  "ko": "주간 동선·어비스·소모품"
+                },
+                "sourceSection": "Content & Systems · Abyss / Consumables / Weekly rewards",
+                "notes": [
+                  {
+                    "en": "P1 targets after verification: /routines/, /endgame/, /guides/shugo-festival/ and /guides/pvp-context/ plus Korean counterparts; source targets routines.py, progression.py and advancedguides.py. Verify mission unlocks and counters, Wednesday reset, Sync Stone grade, AP amounts, Lower-Abyss currency label and the unpublished Upper-Abyss increase.",
+                    "ko": "P1 직접 검증 후 공개 경로는 /routines/·/endgame/·/guides/shugo-festival/·/guides/pvp-context/와 한국어 대응 페이지, 소스는 routines.py·progression.py·advancedguides.py입니다. 미션 해금·집계·수요일 초기화·동기화석 등급·AP 수량·하층 재화 표기·미공개 상층 증가량을 확인해야 합니다."
+                  },
+                  {
+                    "en": "The 5→10 minute consumable change and death persistence can affect preparation guidance, but included item grades, remaining duration, dispels and zone changes need reproduction. No price, consumption-rate or DPS saving is inferred.",
+                    "ko": "소모품 5→10분과 사망 후 유지는 준비 공략에 영향이 있지만 적용 등급·남은 시간·해제·지역 이동을 재현해야 합니다. 가격·소비량·DPS 절감 수치를 추정하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Fixes, restoration and review limits",
+                  "ko": "오류 수정·복구·검토 한계"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes",
+                "notes": [
+                  {
+                    "en": "Official fixes cover an underwater-gauge loss, a Zikel’s Sanctum progression blocker and Ludra’s Trial wipe reset. Affected November 4 guaranteed-reward cases receive bound Armor Selection Chests. No arbitrary damage percentage is assigned.",
+                    "ko": "공식 수정은 수중 게이지 감소, 지켈의 성역 진행 불가, 루드라의 시련 전멸 초기화입니다. 11월 4일 확정 보상 미수령 대상에는 방어구 선택 상자(귀속)를 지급합니다. 임의 피해 변화율을 부여하지 않습니다."
+                  },
+                  {
+                    "en": "This is a highlights review of guide-impacting content. It does not claim complete republication of paid skin tables, in-game validation or a final class tier. Historical observations and rankings retain their original dates and conditions.",
+                    "ko": "공략에 영향을 주는 항목의 highlights 검토입니다. 유료 외형 표 전체 재게시·인게임 검증·최종 직업 티어를 주장하지 않으며 과거 관측·순위의 날짜와 조건을 유지합니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -9819,8 +10076,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-12T02:55:26Z",
-      "lastSuccessAt": "2026-11-12T02:55:26Z",
+      "checkedAt": "2026-11-12T08:53:51Z",
+      "lastSuccessAt": "2026-11-12T08:53:51Z",
       "error": null,
       "fromCache": false,
       "items": [
