@@ -117,7 +117,51 @@
           "spiritDescentPvpDamageChangePercent": 50
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "reviewedAt": "2026-11-12T08:50:53Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3ea98553a6c1fba041803",
+      "sourceUpdatedAt": "2026-11-12T02:26:40.110Z",
+      "sourceHash": "f47a6238d4d9fc089a947c2731106be9171992f7dbf6ac80b53000f06947b441",
+      "calculationState": "KR emergency-maintenance inputs recorded separately; not applied to the incompatible Global base or historical rankings",
+      "skills": {
+        "rending-blow": {
+          "beforeMpCost": 120,
+          "mpCost": 50,
+          "specializations": {
+            "5": {
+              "before": "Restore 50 MP on Critical Hit",
+              "afterCooldownReductionSkill": "ruinous-blow",
+              "cooldownReductionSeconds": 1
+            }
+          }
+        },
+        "keen-strike": {
+          "specializations": {
+            "4": {
+              "beforeCooldownReductionSkill": "ruinous-blow",
+              "afterCooldownReductionSkill": "aerial-snare",
+              "cooldownReductionSeconds": 1
+            }
+          }
+        },
+        "ruinous-blow": {
+          "beforeFrenzyDurationSeconds": 7,
+          "frenzyDurationSeconds": 9
+        }
+      },
+      "unmatchedSkillInputs": {
+        "weapon-block": {
+          "officialNameKo": "무기 막기",
+          "specialization": 3,
+          "beforeFrenzyDurationSeconds": 3,
+          "frenzyDurationSeconds": 5,
+          "reason": "The official label is not present in the current 280-skill Global base snapshot, so it is preserved without attaching it to a guessed skill ID."
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-11"
+  "lastOfficialOverrideReviewedAt": "2026-11-12"
 }

@@ -1,17 +1,45 @@
 {
-  "reviewedAt": "2026-11-11",
+  "reviewedAt": "2026-11-12",
   "items": [
+    {
+      "id": "kr-20261111-emergency-maintenance-and-known-issues",
+      "region": "KR",
+      "reviewedAt": "2026-11-12T08:50:53Z",
+      "title": {
+        "en": "November 11–12 KR · emergency fixes, Gladiator follow-up and known issues",
+        "ko": "11월 11~12일 한국 · 긴급 수정·검성 후속 조정·알려진 이슈"
+      },
+      "finding": {
+        "en": "P1 class adjustment, fixes and systems: the November 11 emergency maintenance changed Gladiator Rending Blow MP 120→50, moved its specialization-5 benefit to Ruinous Blow cooldown −1s, moved Keen Strike specialization 4 to Aerial Snare cooldown −1s, extended Ruinous Blow Frenzy 7→9s and Weapon Block specialization-3 Frenzy 3→5s. The explicit KR inputs are stored separately in data/skill-snapshot.json under source hash f47a6238… and are not applied to Global eDPS or historical rankings. The same maintenance fixed Large Hidden Cube rewards, Express Ticket conversion, season-item expiry, episode 9/10 early completion, excessive solo Griosa/Atiel damage and Origin Scroll enhancement cost; it also reduced contribution rewards for the faction that did not land the Abyss boss final hit. The updated known-issues notice records unresolved or planned items: Chanter Storm Order can remain active continuously; Laur can reflect Sorcerer placed-skill damage; Outland mastery/stigma text can be stale while the new effects apply; Ascension Battle may not count the membership-pass mission; and Nunu Clan Cave Base may require exit/re-entry. Exact public targets: /classes/gladiator/, /skills/rending-blow/, /skills/keen-strike/, /skills/ruinous-blow/, /dungeons/urugugu-canyon/, /guides/abyss-outland/, /routines/ and Korean counterparts; source targets data/skill-snapshot.json, fieldnotes.py, outland.py and routines.py. P0/P1 direct checks: all four Gladiator tooltips/specializations and rotation, Storm Order duration/refresh and party contribution, Laur reflection conditions, Griosa/Atiel solo damage, cube quantity/recovery, Nunu progression, Outland actual effect versus text, Ascension mission completion and the announced November 18 fixes. No unsupported DPS percentage or final tier is published. The Express Ticket follow-up confirms same-quantity ticket re-delivery, Quna recovery, release of temporary account protection, later recovery of remaining Quna from available balances and separate compensation for protected accounts; verify item delivery and recovery history rather than treating it as a recurring reward.",
+        "ko": "P1 직업 조정·오류 수정·시스템: 11월 11일 긴급점검으로 검성 절단의 맹타 정신력 120→50, 5번 특화는 치명타 정신력 50 회복에서 파멸의 맹타 재시전 −1초로 변경됐습니다. 예리한 일격 4번 특화는 파멸의 맹타 대신 공중 결박 재시전 −1초가 되고, 파멸의 맹타 광분은 7→9초, 무기 막기 3번 특화 광분은 3→5초가 됐습니다. 명시된 한국 입력은 원문 해시 f47a6238…와 함께 data/skill-snapshot.json에 별도 기록했으며 글로벌 eDPS·과거 순위에는 적용하지 않습니다. 같은 점검에서 대형 히든 큐브 보상, 익스프레스권 큐나 변환, 시즌 아이템 만료, 에피소드 9·10 조기 완료, 1인 그리오사·아티엘 과도 피해, 주신의 기원 양피지 강화 비용이 수정됐고, 어비스 보스 막타를 가하지 않은 종족의 기여도 보상은 하향됐습니다. 수정된 알려진 이슈에는 호법성 폭풍의 주문 버프 상시 적용, 라우르가 마도성 설치기 피해까지 반사, 실제 개편 효과는 적용되지만 아웃랜드 마스터리/스티그마 문구는 이전 상태, 각성전 완료가 멤버십 패스에 미반영, 누누족 동굴 기지에서 재입장이 필요할 수 있는 문제가 남아 있습니다. 정확한 공개 경로는 /classes/gladiator/·/skills/rending-blow/·/skills/keen-strike/·/skills/ruinous-blow/·/dungeons/urugugu-canyon/·/guides/abyss-outland/·/routines/ 및 한국어 대응 페이지, 소스는 data/skill-snapshot.json·fieldnotes.py·outland.py·routines.py입니다. P0/P1 직접 검증은 검성 4개 툴팁/특화와 로테이션, 폭풍의 주문 지속/갱신·파티 기여, 라우르 반사 조건, 그리오사·아티엘 1인 피해, 큐브 수량·회수 여부, 누누 진행, 아웃랜드 실제 효과와 문구, 각성전 미션 완료, 11월 18일 예정 수정입니다. 근거 없는 DPS 비율이나 최종 티어는 발표하지 않습니다. 익스프레스권 후속 공지는 사용 수량과 같은 수량의 이용권 재지급, 큐나 회수, 임시 보호 해제, 남은 큐나의 보유 재화 범위 내 순차 회수, 보호 대상 별도 보상을 확인했습니다. 반복 보상으로 계산하지 말고 아이템 지급·회수 이력을 직접 확인해야 합니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · 11/11 AION2 emergency maintenance (completed)",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3ea98553a6c1fba041803"
+        },
+        {
+          "title": "NC · November week 2 known issues (revised 11/12 11:19 KST)",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3"
+        },
+        {
+          "title": "NC · Growth Support Express Ticket follow-up",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af443dacd0c2d6575c812d6"
+        }
+      ]
+    },
     {
       "id": "na-20261111-server-matchmaking",
       "region": "NA / Global",
-      "reviewedAt": "2026-11-11T20:33:51Z",
+      "reviewedAt": "2026-11-12T08:50:53Z",
       "title": {
         "en": "November 11 NA/Global · Abyss and Rift server matchmaking",
         "ko": "11월 11일 북미/글로벌 · 어비스·시공 서버 매칭"
       },
       "finding": {
-        "en": "P1 system: the official notice, revised at 19:58:15 UTC, says Advanced Access and Launch servers may now be paired across every Global region and publishes separate Abyss and Spacetime Rift pairing tables. United States and Canada use the applicable NA East or NA West table; this does not apply KR rules. The current source is available from November 11, but it does not publish the exact client switch instant, and the previous full body was not retained, so a row-by-row revision diff is not claimed. The official title/link remains a general-news card on /updates/ and /ko/updates/ from data/news.json. P1 verification targets are /guides/pvp-context/ and /routines/ in both languages, with source files content.py and routines.py. Verify the selected server’s Abyss opponent, Rift faction opponent, Advanced/Launch mixing, same-faction Abyss match, activation time and later rotation before adding a persistent table or tactic. No class coefficient, eDPS input, historical ranking or tier changes.",
-        "ko": "P1 시스템: 19:58:15 UTC에 수정된 공식 공지는 모든 글로벌 지역에서 얼리 액세스 서버와 정식 출시 서버를 함께 매칭할 수 있다고 밝히고 어비스·시공의 균열 서버 표를 각각 공개합니다. 미국·캐나다는 해당 서버가 속한 북미 동부 또는 서부 표를 함께 사용하며 한국 규칙에는 적용하지 않습니다. 현재 원문은 11월 11일부터 이용 가능하다고 안내하지만 실제 클라이언트 전환 시각은 공개하지 않았습니다. 이전 전체 본문을 보관하지 않아 수정 전후 행 단위 차이도 주장하지 않습니다. 일반 뉴스이므로 data/news.json에서 /updates/·/ko/updates/의 공식 제목·원문 링크 카드로 유지합니다. P1 직접 검증 대상은 양 언어의 /guides/pvp-context/·/routines/, 소스 content.py·routines.py입니다. 고정 표나 전술을 추가하기 전 선택 서버의 어비스 상대·시공 진영 상대·얼리/정식 서버 혼합·동일 진영 어비스 매칭·적용 시각·후속 교체를 확인해야 합니다. 직업 계수·eDPS 입력·과거 순위·티어 변경은 없습니다."
+        "en": "P1 system: the official notice was re-read after its latest revision at 01:14:23 UTC on November 12 and bound in the evidence ledger to SHA-256 454585f8…. Its current high-level rules remain Advanced Access/Launch mixing, separate Abyss and Spacetime Rift tables, periodic rematching and possible same-faction Abyss pairs. United States and Canada use the applicable NA East or NA West table; no KR rule is applied. The previous full body was not retained, so an exact row-by-row revision diff is not claimed. The official title/link remains a general-news card on /updates/ and /ko/updates/ from data/news.json. P1 verification targets are /guides/pvp-context/ and /routines/ in both languages, with source files content.py and routines.py. Verify the selected server’s Abyss opponent, Rift faction opponent, Advanced/Launch mixing, same-faction Abyss match, activation time and later rotation before adding a persistent table or tactic. No class coefficient, eDPS input, historical ranking or tier changes.",
+        "ko": "P1 시스템: 11월 12일 01:14:23 UTC 최신 수정 뒤 공식 원문을 다시 읽고 증거 기록을 SHA-256 454585f8…에 연결했습니다. 현재 핵심 규칙은 얼리 액세스/정식 출시 서버 혼합, 어비스·시공의 균열 별도 표, 주기적 재매칭, 동일 진영 어비스 매칭 가능성으로 유지됩니다. 미국·캐나다는 해당 북미 동부 또는 서부 표를 함께 사용하며 한국 규칙에는 적용하지 않습니다. 이전 전체 본문을 보관하지 않아 수정 전후 행 단위 차이는 주장하지 않습니다. 일반 뉴스이므로 data/news.json에서 /updates/·/ko/updates/의 공식 제목·원문 링크 카드로 유지합니다. P1 직접 검증 대상은 양 언어의 /guides/pvp-context/·/routines/, 소스는 content.py·routines.py입니다. 고정 표나 전술을 추가하기 전 선택 서버의 어비스 상대·시공 진영 상대·얼리/정식 서버 혼합·동일 진영 어비스 매칭·적용 시각·후속 교체를 확인해야 합니다. 직업 계수·eDPS 입력·과거 순위·티어 변경은 없습니다."
       },
       "status": "needs-evidence",
       "sources": [

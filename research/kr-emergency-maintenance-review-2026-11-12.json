@@ -1,0 +1,349 @@
+{
+  "reviewedAt": "2026-11-12T08:50:53Z",
+  "scope": "KR emergency-maintenance changes and current known issues that affect PLAYER’S CODEX; official publication evidence only, without gameplay validation",
+  "sources": [
+    {
+      "id": "6af3ea98553a6c1fba041803",
+      "title": "[안내] 11/11(수) AION2 긴급 임시점검 안내 (완료)",
+      "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3ea98553a6c1fba041803",
+      "retrieval": "Public NC API: https://api-community.plaync.com/aion2/board/notice_ko/article/6af3ea98553a6c1fba041803",
+      "publishedAt": "2026-11-11T04:07:54.001Z",
+      "sourceUpdatedAt": "2026-11-12T02:26:40.110Z",
+      "contentHash": "f47a6238d4d9fc089a947c2731106be9171992f7dbf6ac80b53000f06947b441",
+      "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+    },
+    {
+      "id": "6af3d328066b033317c02bd3",
+      "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/12 11:19)",
+      "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3",
+      "retrieval": "Public NC API: https://api-community.plaync.com/aion2/board/notice_ko/article/6af3d328066b033317c02bd3",
+      "publishedAt": "2026-11-11T03:10:00.001Z",
+      "sourceUpdatedAt": "2026-11-12T02:19:55.675Z",
+      "contentHash": "173d954283a10617be07657dd9f8edde87964f980effe406648ae1a5f87f9797",
+      "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+    },
+    {
+      "id": "6af443dacd0c2d6575c812d6",
+      "title": "[안내] 성장 서포트 익스프레스권이 큐나로 물질변환되는 현상 후속 조치 안내 (수정 11/11 21:55)",
+      "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af443dacd0c2d6575c812d6",
+      "retrieval": "Public NC API: https://api-community.plaync.com/aion2/board/notice_ko/article/6af443dacd0c2d6575c812d6",
+      "publishedAt": "2026-11-11T10:30:50.685Z",
+      "sourceUpdatedAt": "2026-11-11T12:55:43.030Z",
+      "contentHash": "eef261d3809f8347a10d5a4f9ce92d52926b21de3bb48b3d8f377e073483d7fd",
+      "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+    },
+    {
+      "id": "6af32952bcc8631989223db1",
+      "title": "[Notice] Server Matchmaking | November 11",
+      "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6af32952bcc8631989223db1",
+      "retrieval": "Public NC API: https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6af32952bcc8631989223db1",
+      "publishedAt": "2026-11-11T08:00:00.001Z",
+      "sourceUpdatedAt": "2026-11-12T01:14:23.930Z",
+      "contentHash": "454585f8ae60311d4320a53495c65a7c1fba162a1180536aa5302e9489803ca4",
+      "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+    }
+  ],
+  "changes": [
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "classId": "gladiator",
+      "type": "adjustment",
+      "subject": {
+        "en": "Gladiator MP, specialization and Frenzy follow-up",
+        "ko": "검성 정신력·특화·광분 후속 조정"
+      },
+      "fact": {
+        "en": "Rending Blow MP changes 120→50; its specialization 5 changes from Critical-hit MP recovery to Ruinous Blow cooldown −1s. Keen Strike specialization 4 moves that −1s target from Ruinous Blow to Aerial Snare. Ruinous Blow Frenzy changes 7→9s, and Weapon Block specialization-3 Frenzy changes 3→5s.",
+        "ko": "절단의 맹타 정신력은 120→50, 5번 특화는 치명타 정신력 회복에서 파멸의 맹타 재시전 −1초로 변경됩니다. 예리한 일격 4번 특화는 같은 −1초 대상을 파멸의 맹타에서 공중 결박으로 바꿉니다. 파멸의 맹타 광분은 7→9초, 무기 막기 3번 특화 광분은 3→5초입니다."
+      },
+      "impactAnalysis": {
+        "en": "Resource use and cooldown routing change; longer Frenzy may change the KR sequence. Total rotation DPS is not measured.",
+        "ko": "자원 사용과 쿨다운 연계가 바뀌고 광분 연계 시간이 늘 수 있습니다. 총 로테이션 DPS는 실측하지 않았습니다."
+      },
+      "sourceIds": [
+        "6af3ea98553a6c1fba041803"
+      ],
+      "publicTargets": [
+        "/classes/gladiator/",
+        "/ko/classes/gladiator/",
+        "/skills/rending-blow/",
+        "/ko/skills/rending-blow/",
+        "/skills/keen-strike/",
+        "/ko/skills/keen-strike/",
+        "/skills/ruinous-blow/",
+        "/ko/skills/ruinous-blow/",
+        "data/skill-snapshot.json"
+      ],
+      "directVerification": [
+        "KR tooltips and specialization text",
+        "MP consumption",
+        "Frenzy duration",
+        "Ruinous Blow and Aerial Snare cooldown reduction",
+        "reproducible rotation"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "classId": "all",
+      "type": "fix",
+      "subject": {
+        "en": "Large Hidden Cube, growth and quest corrections",
+        "ko": "대형 히든 큐브·성장·퀘스트 오류 수정"
+      },
+      "fact": {
+        "en": "The emergency maintenance corrected unintended Large Hidden Cube rewards, Express Ticket Quna conversion, season-item expiry, episode 9/10 early completion and Origin Scroll enhancement cost.",
+        "ko": "긴급점검으로 대형 히든 큐브 보상, 익스프레스권 큐나 변환, 시즌 아이템 만료, 에피소드 9·10 조기 완료, 주신의 기원 양피지 강화 비용 오류를 수정했습니다."
+      },
+      "impactAnalysis": {
+        "en": "Do not infer a permanent reward increase or recurring recovery. The known-issues notice says the observed cube quantities were within the normal range and no separate recovery is planned.",
+        "ko": "영구 보상 증가나 반복 보상을 추정하지 않습니다. 알려진 이슈 공지는 확인된 큐브 지급량이 정상 범위라 별도 회수를 하지 않는다고 설명합니다."
+      },
+      "sourceIds": [
+        "6af3ea98553a6c1fba041803",
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/maps/",
+        "/ko/maps/",
+        "/start/",
+        "/ko/start/",
+        "/endgame/",
+        "/ko/endgame/",
+        "data/maps.json",
+        "worldmap.py",
+        "onboarding.py",
+        "progression.py"
+      ],
+      "directVerification": [
+        "cube reward quantity and key use",
+        "spawn and reset",
+        "replacement item delivery",
+        "quest completion state",
+        "enhancement cost"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "classId": "all",
+      "type": "fix",
+      "subject": {
+        "en": "Express Ticket and Quna restoration",
+        "ko": "익스프레스권·큐나 후속 조치"
+      },
+      "fact": {
+        "en": "Used Express Tickets were re-delivered in the same quantity. Quna obtained through the unintended conversion was recovered; temporary account protection was released, remaining Quna will be recovered from available balances, and protected accounts received separate compensation.",
+        "ko": "사용한 익스프레스권은 같은 수량으로 재지급됐습니다. 의도하지 않은 변환으로 획득한 큐나는 회수했고 임시 보호는 해제했으며, 미회수 큐나는 보유 재화 범위에서 순차 회수하고 보호 대상에는 별도 보상을 지급했습니다."
+      },
+      "impactAnalysis": {
+        "en": "This is targeted recovery and account remediation, not a recurring reward or growth-route yield.",
+        "ko": "대상자 복구·계정 조치이며 반복 보상이나 성장 동선 수익으로 계산하지 않습니다."
+      },
+      "sourceIds": [
+        "6af443dacd0c2d6575c812d6"
+      ],
+      "publicTargets": [
+        "/start/",
+        "/ko/start/",
+        "/endgame/",
+        "/ko/endgame/",
+        "onboarding.py",
+        "progression.py"
+      ],
+      "directVerification": [
+        "ticket name and quantity",
+        "delivery location and expiry",
+        "Quna recovery history",
+        "account-protection state",
+        "compensation eligibility"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "classId": "all",
+      "type": "fix",
+      "subject": {
+        "en": "Solo Griosa and Atiel damage",
+        "ko": "1인 그리오사·아티엘 피해"
+      },
+      "fact": {
+        "en": "Damage that was higher than intended in solo Griosa and Atiel encounters was corrected.",
+        "ko": "1인 플레이의 그리오사·아티엘 피해가 의도보다 높던 문제를 수정했습니다."
+      },
+      "impactAnalysis": {
+        "en": "This restores intended incoming damage; no player-damage multiplier is created.",
+        "ko": "의도된 받는 피해를 복구한 수정이며 플레이어 피해 증가율을 부여하지 않습니다."
+      },
+      "sourceIds": [
+        "6af3ea98553a6c1fba041803"
+      ],
+      "publicTargets": [
+        "/dungeons/",
+        "/ko/dungeons/",
+        "encounters.py",
+        "progression.py"
+      ],
+      "directVerification": [
+        "region and solo difficulty",
+        "attack pattern",
+        "incoming damage under matched defense",
+        "party scaling"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-11",
+      "classId": "all",
+      "type": "nerf",
+      "subject": {
+        "en": "Abyss boss contribution for the non-final-hit faction",
+        "ko": "어비스 보스 막타 미획득 종족 기여도 보상"
+      },
+      "fact": {
+        "en": "Contribution rewards for the faction that did not land the Abyss boss final hit were reduced; no amount was published.",
+        "ko": "어비스 보스 막타를 가하지 않은 종족의 기여도 보상량이 하향됐으며 수치는 공개되지 않았습니다."
+      },
+      "impactAnalysis": {
+        "en": "Reward routing changes, but no AP amount or player damage change can be calculated.",
+        "ko": "보상 동선 영향은 있으나 AP 수량이나 피해 변화는 계산할 수 없습니다."
+      },
+      "sourceIds": [
+        "6af3ea98553a6c1fba041803"
+      ],
+      "publicTargets": [
+        "/guides/pvp-context/",
+        "/ko/guides/pvp-context/",
+        "/routines/",
+        "/ko/routines/",
+        "advancedguides.py",
+        "routines.py"
+      ],
+      "directVerification": [
+        "boss and region",
+        "final-hit faction",
+        "contribution tier",
+        "actual reward",
+        "weekly cap"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": null,
+      "classId": "chanter",
+      "type": "fix",
+      "status": "announced-known-issue",
+      "subject": {
+        "en": "Storm Order buff remains active",
+        "ko": "폭풍의 주문 버프 상시 적용"
+      },
+      "fact": {
+        "en": "NC confirms that the Chanter Storm Order buff can remain active continuously; a correction date has not been announced.",
+        "ko": "호법성 폭풍의 주문 버프가 상시 적용되는 현상을 NC가 확인했으며 수정일은 아직 발표하지 않았습니다."
+      },
+      "impactAnalysis": {
+        "en": "Observed damage contribution may be inflated while the bug is present. No arbitrary DPS gain is assigned.",
+        "ko": "오류가 존재하는 동안 관찰된 피해 기여가 높게 나타날 수 있으나 임의 DPS 상승률은 부여하지 않습니다."
+      },
+      "sourceIds": [
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/classes/chanter/",
+        "/ko/classes/chanter/",
+        "data/dps-observations.json",
+        "data/coverage-audit.json"
+      ],
+      "directVerification": [
+        "buff trigger",
+        "duration and refresh",
+        "death and zone transition",
+        "party contribution",
+        "client build"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-18-planned",
+      "classId": "sorcerer",
+      "type": "fix",
+      "status": "planned",
+      "subject": {
+        "en": "Laur reflects Sorcerer placed-skill damage",
+        "ko": "라우르가 마도성 설치기 피해 반사"
+      },
+      "fact": {
+        "en": "Laur can reflect Sorcerer placed-skill damage during its reflect mechanic; NC plans a November 18 maintenance fix.",
+        "ko": "라우르의 피해 반사 중 마도성 설치형 스킬 피해까지 반사되는 현상이 있으며 NC는 11월 18일 점검 수정을 예고했습니다."
+      },
+      "impactAnalysis": {
+        "en": "Sorcerers need a current-client safety check before committing placed skills into reflect. No boss tactic beyond the confirmed bug is inferred.",
+        "ko": "수정 전에는 반사 중 설치기 사용 안전 여부를 현재 클라이언트에서 확인해야 합니다. 확인된 오류 밖의 보스 전술은 추정하지 않습니다."
+      },
+      "sourceIds": [
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/dungeons/urugugu-canyon/",
+        "/ko/dungeons/urugugu-canyon/",
+        "/classes/sorcerer/",
+        "/ko/classes/sorcerer/",
+        "fieldnotes.py"
+      ],
+      "directVerification": [
+        "difficulty and boss",
+        "reflect trigger",
+        "which placed skills",
+        "damage recipient",
+        "post-fix reproduction"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-18-planned",
+      "classId": "all",
+      "type": "fix",
+      "status": "planned",
+      "subject": {
+        "en": "Outland text, Ascension mission and Nunu progression",
+        "ko": "아웃랜드 문구·각성전 미션·누누 진행"
+      },
+      "fact": {
+        "en": "Outland mastery/stigma text can be stale although the reworked effects apply; Ascension Battle may not complete the membership-pass mission; Nunu Clan Cave Base can progress abnormally and currently uses exit/re-entry as a workaround. The Outland text and Nunu fixes are planned for November 18, while Ascension timing is unannounced.",
+        "ko": "아웃랜드 마스터리/스티그마 문구는 이전 상태일 수 있으나 실제 개편 효과는 적용됩니다. 각성전 완료가 멤버십 패스 미션에 반영되지 않을 수 있고, 누누족 동굴 기지는 비정상 진행 시 퇴장·재입장이 임시 대응입니다. 아웃랜드 문구와 누누 수정은 11월 18일 예정이며 각성전 일정은 미정입니다."
+      },
+      "impactAnalysis": {
+        "en": "Follow actual current effects rather than the stale text, avoid claiming pass credit, and use the official re-entry workaround only if the dungeon stalls.",
+        "ko": "오래된 문구보다 현재 실제 효과를 기준으로 보고, 패스 완료를 확정하지 않으며, 던전 진행이 막힌 경우에만 공식 재입장 임시 대응을 사용합니다."
+      },
+      "sourceIds": [
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/guides/abyss-outland/",
+        "/ko/guides/abyss-outland/",
+        "/routines/",
+        "/ko/routines/",
+        "/maps/",
+        "/ko/maps/",
+        "outland.py",
+        "routines.py",
+        "data/maps.json"
+      ],
+      "directVerification": [
+        "actual effect versus tooltip",
+        "Ascension mission completion",
+        "Nunu trigger and re-entry",
+        "November 18 fix"
+      ]
+    }
+  ],
+  "preserved": {
+    "generalNewsCards": "The two KR notices and NA matchmaking notice remain reviewState=official title/source-link cards in data/news.json.",
+    "regions": "KR changes are not applied to NA; US and Canada share the applicable NA matchmaking table.",
+    "rankings": "Historical DPS values, periods and conditions are unchanged; no final tier is published.",
+    "collectionTime": "The editorial reviewedAt timestamp is separate from collector checkedAt and source update timestamps."
+  }
+}
