@@ -75,6 +75,19 @@ class November11UpdateRegressionTest(unittest.TestCase):
             (ROOT / 'research/kr-emergency-maintenance-review-2026-11-12.json').read_text()
         )
         self.assertEqual(evidence['sources'][0]['contentHash'], hotfix['sourceHash'])
+        known_issues = next(
+            item for item in evidence['sources']
+            if item['id'] == '6af3d328066b033317c02bd3'
+        )
+        self.assertEqual(
+            known_issues['contentHash'],
+            '47f5777952e644c71617854b65c6b9333b2c98d345a0517f01bb4975d9947915',
+        )
+        self.assertTrue(any(
+            c['subject']['en'] == 'Atiel Earth Collapse stagger in parties'
+            and c['type'] == 'fix'
+            for c in evidence['changes']
+        ))
         self.assertTrue(any(c['type'] == 'fix' and c['classId'] == 'chanter'
                             for c in evidence['changes']))
         self.assertTrue(all(c['region'] == 'KR' for c in evidence['changes']))
@@ -89,9 +102,10 @@ class November11UpdateRegressionTest(unittest.TestCase):
                 '6af3d328066b033317c02bd3',
                 '6af443dacd0c2d6575c812d6',
                 '6af32952bcc8631989223db1',
+                '6af644f067841a056945a937',
             }
         }
-        self.assertEqual(len(notices), 4)
+        self.assertEqual(len(notices), 5)
         for item in notices.values():
             self.assertEqual(item['kind'], 'news')
             self.assertEqual(item['reviewState'], 'official')
@@ -100,6 +114,10 @@ class November11UpdateRegressionTest(unittest.TestCase):
         self.assertEqual(
             notices['6af32952bcc8631989223db1']['sourceUpdatedAt'],
             '2026-11-12T01:14:23.930Z',
+        )
+        self.assertEqual(
+            notices['6af3d328066b033317c02bd3']['sourceUpdatedAt'],
+            '2026-11-12T13:08:06.815Z',
         )
 
 

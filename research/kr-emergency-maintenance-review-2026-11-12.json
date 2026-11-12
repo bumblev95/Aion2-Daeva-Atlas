@@ -1,6 +1,6 @@
 {
-  "reviewedAt": "2026-11-12T08:50:53Z",
-  "scope": "KR emergency-maintenance changes and current known issues that affect PLAYER’S CODEX; official publication evidence only, without gameplay validation",
+  "reviewedAt": "2026-11-12T20:32:31Z",
+  "scope": "KR emergency-maintenance changes, the November 12 known-issues revision and the announced November 13 maintenance that affect PLAYER’S CODEX; official publication evidence only, without gameplay validation",
   "sources": [
     {
       "id": "6af3ea98553a6c1fba041803",
@@ -14,12 +14,12 @@
     },
     {
       "id": "6af3d328066b033317c02bd3",
-      "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/12 11:19)",
+      "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/12 22:06)",
       "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3",
       "retrieval": "Public NC API: https://api-community.plaync.com/aion2/board/notice_ko/article/6af3d328066b033317c02bd3",
       "publishedAt": "2026-11-11T03:10:00.001Z",
-      "sourceUpdatedAt": "2026-11-12T02:19:55.675Z",
-      "contentHash": "173d954283a10617be07657dd9f8edde87964f980effe406648ae1a5f87f9797",
+      "sourceUpdatedAt": "2026-11-12T13:08:06.815Z",
+      "contentHash": "47f5777952e644c71617854b65c6b9333b2c98d345a0517f01bb4975d9947915",
       "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
     },
     {
@@ -40,6 +40,16 @@
       "publishedAt": "2026-11-11T08:00:00.001Z",
       "sourceUpdatedAt": "2026-11-12T01:14:23.930Z",
       "contentHash": "454585f8ae60311d4320a53495c65a7c1fba162a1180536aa5302e9489803ca4",
+      "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+    },
+    {
+      "id": "6af644f067841a056945a937",
+      "title": "[안내] 11/13(금) AION2 임시점검 안내",
+      "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af644f067841a056945a937",
+      "retrieval": "Public NC API: https://api-community.plaync.com/aion2/board/notice_ko/article/6af644f067841a056945a937",
+      "publishedAt": "2026-11-12T12:15:00.001Z",
+      "sourceUpdatedAt": "2026-11-12T12:15:17.940Z",
+      "contentHash": "ef6c4b0d3de55952848797b669e9533cd6e2b4a4733925f9905c1ba0519551d6",
       "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
     }
   ],
@@ -337,6 +347,112 @@
         "Ascension mission completion",
         "Nunu trigger and re-entry",
         "November 18 fix"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": null,
+      "classId": "all",
+      "type": "fix",
+      "subject": {
+        "en": "Large Hidden Cube key-count lockout",
+        "ko": "대형 히든 큐브 열쇠 보유량 오류"
+      },
+      "fact": {
+        "en": "The revised known-issues notice confirms that a Large Hidden Cube cannot be opened while holding more than 100 Hidden Cube Keys. NC has not announced a correction date.",
+        "ko": "수정된 알려진 이슈 공지는 히든큐브 열쇠를 100개 넘게 보유하면 대형 히든 큐브를 열 수 없는 현상을 확인했습니다. 수정 일정은 발표되지 않았습니다."
+      },
+      "impactAnalysis": {
+        "en": "This can block a current collection/reward action. It does not change the published 10-key cost or justify changing map coordinates or reward quantities.",
+        "ko": "현재 수집·보상 진행을 막을 수 있습니다. 공지된 열쇠 10개 비용을 바꾸거나 지도 좌표·보상 수량을 변경할 근거는 아닙니다."
+      },
+      "sourceIds": [
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/maps/",
+        "/ko/maps/",
+        "/endgame/",
+        "/ko/endgame/",
+        "data/maps.json",
+        "worldmap.py",
+        "progression.py"
+      ],
+      "directVerification": [
+        "KR key inventory above 100",
+        "Large Hidden Cube interaction",
+        "actual key consumption",
+        "reward quantity",
+        "later correction and reset behavior"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-13",
+      "classId": "all",
+      "type": "fix",
+      "subject": {
+        "en": "Atiel Earth Collapse stagger in parties",
+        "ko": "파티 아티엘 대지 붕괴 그로기 오류"
+      },
+      "fact": {
+        "en": "Atiel’s Earth Collapse applies an excessively high stagger value when Deus Research Base is played with a party of two or more. NC plans to correct it during the November 13 temporary maintenance.",
+        "ko": "잠식된 데우스 연구기지에서 2인 이상 파티 플레이 시 아티엘의 대지 붕괴 그로기 수치가 과도하게 적용됩니다. NC는 11월 13일 임시점검 수정을 예고했습니다."
+      },
+      "impactAnalysis": {
+        "en": "Party stagger pressure may currently be higher than intended. No stagger value, damage coefficient or total DPS effect was published.",
+        "ko": "현재 파티의 그로기 대응 부담이 의도보다 높을 수 있습니다. 그로기 수치·피해 계수·총 DPS 영향은 공개되지 않았습니다."
+      },
+      "sourceIds": [
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/dungeons/",
+        "/ko/dungeons/",
+        "/guides/dungeon-rewards/",
+        "/ko/guides/dungeon-rewards/",
+        "fieldnotes.py",
+        "progression.py"
+      ],
+      "directVerification": [
+        "KR server and Deus Research Base stage/difficulty",
+        "one-player versus two-or-more party behavior",
+        "Earth Collapse trigger and response",
+        "stagger gauge before and after November 13 maintenance",
+        "damage log separated from stagger"
+      ]
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-13T09:00:00+09:00",
+      "classId": "all",
+      "type": "system",
+      "subject": {
+        "en": "November 13 temporary maintenance window",
+        "ko": "11월 13일 임시점검 일정"
+      },
+      "fact": {
+        "en": "KR service is scheduled to be unavailable from 09:00 to 11:00 KST on November 13. NC says detailed changes will be published in a separate update note.",
+        "ko": "한국 서비스는 11월 13일 09:00~11:00 KST에 이용할 수 없습니다. 상세 변경은 별도 업데이트 노트로 안내될 예정입니다."
+      },
+      "impactAnalysis": {
+        "en": "Only the downtime and the announced Atiel fix are confirmed. Do not infer other fixes, rewards or balance changes before the separate note is published.",
+        "ko": "현재는 점검 시간과 알려진 이슈에 기재된 아티엘 수정 예정만 확인됩니다. 별도 노트 전에는 다른 수정·보상·밸런스를 추정하지 않습니다."
+      },
+      "sourceIds": [
+        "6af644f067841a056945a937",
+        "6af3d328066b033317c02bd3"
+      ],
+      "publicTargets": [
+        "/updates/",
+        "/ko/updates/",
+        "data/news.json"
+      ],
+      "directVerification": [
+        "maintenance start and completion time",
+        "separate update note",
+        "Atiel correction after reopening",
+        "any revised compensation or extension"
       ]
     }
   ],
