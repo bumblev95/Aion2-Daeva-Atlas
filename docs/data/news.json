@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-13T07:52:29Z",
+  "checkedAt": "2026-11-13T08:42:44Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-13T07:52:29Z",
-      "lastSuccessAt": "2026-11-13T07:52:29Z",
+      "checkedAt": "2026-11-13T08:42:44Z",
+      "lastSuccessAt": "2026-11-13T08:42:44Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -24,13 +24,296 @@
           "sourceUpdatedAt": "2026-11-13T00:01:00.261Z",
           "contentHash": "c64838c40eb37629e56b435267a81778b9864ae9acafec8b1dc9652fd97d2402",
           "bodyState": "ready",
-          "reviewState": "pending",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "KR adjusts Gladiator, Templar, Assassin, Brawler, Ranger, Sorcerer and Spiritmaster rotations with explicit cooldown, MP, duration, specialization and condition changes. It also fixes Laur reflection, Atiel party stagger, several boss attacks and progression blockers. These November 13 rules stay KR-only and do not establish a measured DPS ranking or final tier.",
+            "ko": "한국은 검성·수호성·살성·권성·궁성·마도성·정령성의 쿨타임·정신력·지속시간·특화·조건기 연계를 조정합니다. 라우르 반사, 아티엘 파티 그로기, 여러 보스 공격과 진행 불가 오류도 수정합니다. 11월 13일 한국 전용이며 실측 DPS 순위나 최종 티어 근거는 아닙니다."
+          },
+          "changes": [
+            {
+              "classId": "gladiator",
+              "type": "adjustment",
+              "subject": {
+                "en": "Ruinous Blow cycle and MP flow",
+                "ko": "파멸의 맹타 주기·정신력"
+              },
+              "description": {
+                "en": "Ruinous Blow changes 40→60s, specialization-3 charge time 20→30s, Frenzy 9→10s and MP cost 250→100. Aerial Snare changes from 150 MP cost to 150 MP recovery, while Mocking Blade changes from 200 MP cost to 100 MP recovery.",
+                "ko": "파멸의 맹타는 40→60초, 3번 특화 충전 20→30초, 광분 9→10초, 정신력 250→100으로 바뀝니다. 공중 결박은 정신력 150 소모에서 150 회복, 유린의 검은 200 소모에서 100 회복으로 바뀝니다."
+              },
+              "before": {
+                "en": "Ruinous Blow 40s / charge 20s / Frenzy 9s / MP 250; Aerial Snare MP −150; Mocking Blade MP −200",
+                "ko": "파멸의 맹타 40초·충전 20초·광분 9초·정신력 250, 공중 결박 −150, 유린의 검 −200"
+              },
+              "after": {
+                "en": "Ruinous Blow 60s / charge 30s / Frenzy 10s / MP 100; Aerial Snare MP +150; Mocking Blade MP +100",
+                "ko": "파멸의 맹타 60초·충전 30초·광분 10초·정신력 100, 공중 결박 +150, 유린의 검 +100"
+              },
+              "impact": {
+                "en": "P1 analysis: burst frequency falls while resource stability improves. Reproduce charges, Frenzy stacks, animation time and a full KR rotation before estimating eDPS.",
+                "ko": "P1 해석: 폭딜 빈도는 낮아지고 자원 안정성은 높아집니다. eDPS 추정 전 충전·광분 중첩·동작 시간·한국 로테이션을 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "gladiator",
+              "type": "fix",
+              "subject": {
+                "en": "Frenzy multi-target stacking",
+                "ko": "광분 다중 대상 중첩"
+              },
+              "description": {
+                "en": "Fixes Frenzy gaining two stacks at once when one skill hits multiple targets.",
+                "ko": "한 스킬로 여러 대상을 적중할 때 광분이 한 번에 2중첩되던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: removes unintended resource gain without a published total-DPS percentage.",
+                "ko": "P1 해석: 의도하지 않은 자원 획득을 제거하며 총 DPS 변화율은 발표되지 않았습니다."
+              }
+            },
+            {
+              "classId": "templar",
+              "type": "buff",
+              "subject": {
+                "en": "Judgment chain reliability",
+                "ko": "심판 연계 안정성"
+              },
+              "description": {
+                "en": "Shield Smite and Doom Shield activate Judgment for 5s instead of 3s. Judgment specialization-3/5 input time changes 1→1.5s; specialization 3 changes its sequence bonuses from 20/50/100/200% to 50/100/150/200%, and specialization 5 requires three uses instead of five. Shield of Protection specialization 3 now resets and activates Judgment for 5s after a block.",
+                "ko": "방패 강타·파멸의 방패의 심판 활성화가 3→5초, 심판 3·5번 특화 연속 판정이 1→1.5초로 바뀝니다. 3번 특화 연속 피해는 20/50/100/200%→50/100/150/200%, 5번 특화 심판의 권능 조건은 5→3회입니다. 보호의 방패 3번 특화는 막기 성공 시 심판 초기화·5초 활성화로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: the chain is easier to complete and early repeated hits are stronger. Verify reset order, threat and block-trigger behavior.",
+                "ko": "P1 해석: 연계를 완성하기 쉬워지고 초반 연속 피해가 높아집니다. 초기화 순서·적대치·막기 발동을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "buff",
+              "subject": {
+                "en": "Guaranteed insignia generation",
+                "ko": "확정 문양 생성"
+              },
+              "description": {
+                "en": "Savage Roar MP changes 120→50 and its PvE/PvP damage rises 40%/30%. The obsolete follow-up is removed; Savage Kick gains one guaranteed insignia, Insignia Explosion changes 5→3s, and Savage Fang grants five insignias instead of three.",
+                "ko": "맹수의 포효 정신력은 120→50, PvE/PvP 피해는 40%/30% 상향됩니다. 불필요한 연속기는 제거되고 맹수의 뒷발차기에 문양 1개 확정 획득, 문양 폭발 5→3초, 맹수의 송곳니 문양 3→5개가 적용됩니다."
+              },
+              "impact": {
+                "en": "P1 analysis: random setup is reduced and five-stack access is faster. Verify chain removal, PC-specific specialization behavior and a full burst loop.",
+                "ko": "P1 해석: 무작위 예열이 줄고 5문양 접근이 빨라집니다. 연속기 제거·PC 대상 특화·전체 폭딜 루프를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "brawler",
+              "type": "adjustment",
+              "subject": {
+                "en": "Fighting Spirit windows and clone duration",
+                "ko": "투기 창·분신 지속시간"
+              },
+              "description": {
+                "en": "Fighting Spirit moves from Iron Mountain to Spinning Kick, Berserk and Ground Slam change 2→3s, Ground Slam specialization 2 changes from 10% life steal to 30% skill speed, Gale Strike specialization 1 changes to 15% life steal, All-out no longer forcibly ends Berserk, and Clone lasts 10.5s at level 1 plus 0.5s per level.",
+                "ko": "투기 획득은 철산고에서 회전각으로 이동하고 폭주·지면 강타는 2→3초가 됩니다. 지면 강타 2번 특화는 생명력 흡수 10%에서 스킬 속도 30%, 질풍격 1번 특화는 생명력 흡수 15%로 바뀝니다. 전력이 폭주를 강제 종료하지 않으며 분신은 1레벨 10.5초, 레벨당 0.5초 증가합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: KR-only Brawler timing changes, but the Global base has no compatible skill IDs; inputs are retained as unmatched rather than guessed.",
+                "ko": "P1 해석: 한국 전용 권성의 연계 시간이 바뀝니다. 글로벌 기준에 호환 스킬 ID가 없어 추측 연결하지 않고 미대응 입력으로 보존합니다."
+              }
+            },
+            {
+              "classId": "ranger",
+              "type": "adjustment",
+              "subject": {
+                "en": "Rupture Arrow Resonance trigger",
+                "ko": "파열 화살 감응 발동"
+              },
+              "description": {
+                "en": "Rupture Arrow now grants Resonance on use while in Precision instead of on hit. Specialization 5 replaces a 35% cooldown-reset chance with +2s Resonance duration.",
+                "ko": "파열 화살은 정밀 상태에서 적중할 때가 아니라 사용할 때 감응을 얻습니다. 5번 특화는 재시전 초기화 35%에서 감응 지속시간 +2초로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: activation becomes reliable but the probabilistic reset is removed. Reproduce misses, range and Explosive Arrow follow-ups.",
+                "ko": "P1 해석: 활성화는 안정되지만 확률 초기화는 제거됩니다. 빗나감·거리·폭발 화살 연계를 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "buff",
+              "subject": {
+                "en": "Bittercold Wind delivery and Element Enhancement",
+                "ko": "혹한의 바람·원소 강화"
+              },
+              "description": {
+                "en": "Bittercold Wind keeps its hit count and damage while cast duration is halved; specializations 1/5 reduce cooldown by 20s on cast. Element Enhancement changes 60→45s.",
+                "ko": "혹한의 바람은 타격 수·피해를 유지하면서 유지 시간이 50% 줄고 1·5번 특화는 시전 시 재시전 20초 감소로 바뀝니다. 원소 강화는 60→45초입니다."
+              },
+              "impact": {
+                "en": "P1 analysis: damage is delivered faster with more reliable cooldown reduction. Tick timing, movement and rotation uptime still need KR-client reproduction.",
+                "ko": "P1 해석: 같은 피해가 더 짧게 들어가고 쿨다운 감소가 안정됩니다. 타격 간격·이동·로테이션 가동률은 한국 클라이언트 재현이 필요합니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "fix",
+              "subject": {
+                "en": "Winter Shard multi-target stacking and Laur reflection",
+                "ko": "겨울의 파편 중첩·라우르 반사"
+              },
+              "description": {
+                "en": "Fixes Winter’s Shackles stacking Winter Shard multiple times from one multi-target hit, and stops Laur from reflecting Bittercold Wind, Fire Wall and Cold Storm damage.",
+                "ko": "겨울의 속박이 여러 대상 적중 시 겨울의 파편을 한 번에 중첩하던 문제와 라우르가 혹한의 바람·불의 장벽·냉기 폭풍 피해를 반사하던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: removes unintended stacking and restores intended placed-skill safety; no arbitrary damage multiplier is assigned.",
+                "ko": "P1 해석: 의도하지 않은 중첩을 제거하고 설치기 안전성을 복구합니다. 임의 피해 배율은 넣지 않습니다."
+              }
+            },
+            {
+              "classId": "spiritmaster",
+              "type": "buff",
+              "subject": {
+                "en": "Spirit uptime and combat speed",
+                "ko": "정령 가동률·전투 속도"
+              },
+              "description": {
+                "en": "Dimensional Control becomes 30s, no longer requires a summoned spirit and grants the summoned spirit 100% combat speed for 7s. Normal spirit summons change 30→10s. Spirit Descent changes 6→10s; Ancient Spirit specialization 2 replaces 1.5× Descent for 6s with −30s cooldown.",
+                "ko": "공간 지배는 30초, 정령 소환 조건 제거, 소환 정령 7초간 전투 속도 100% 증가를 얻습니다. 일반 정령 소환은 30→10초, 정령 강림은 6→10초입니다. 고대의 정령 2번 특화는 6초간 1.5배 효과에서 재시전 −30초로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: summon recovery and burst windows expand. Pet attack cadence, resummon loss and Descent refresh order must be measured before eDPS use.",
+                "ko": "P1 해석: 재소환 복구와 폭딜 창이 늘어납니다. eDPS 반영 전 정령 공격 주기·재소환 손실·강림 갱신 순서를 실측해야 합니다."
+              }
+            },
+            {
+              "classId": "spiritmaster",
+              "type": "fix",
+              "subject": {
+                "en": "Ancient Spirit Descent refresh",
+                "ko": "고대의 정령 강림 갱신"
+              },
+              "description": {
+                "en": "Fixes Ancient Spirit failing to refresh Spirit Descent.",
+                "ko": "고대의 정령으로 정령 강림 효과가 갱신되지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: restores intended buff refresh without a published total-DPS value.",
+                "ko": "P1 해석: 의도된 버프 갱신을 복구하며 총 DPS 수치는 발표되지 않았습니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Boss combat corrections",
+                "ko": "보스 전투 오류 수정"
+              },
+              "description": {
+                "en": "Fixes Atiel Earth Collapse excessive stagger in parties of two or more, excessive damage from a Stof skill, and Ulmar follow-up explosion timing plus effect/hit-area mismatch.",
+                "ko": "2인 이상 파티의 아티엘 대지 붕괴 과도한 그로기, 스토프 특정 스킬의 과도한 피해, 울마르 후속 폭발 시간과 이펙트·실제 범위 불일치를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: these are restored mechanics without published damage/stagger values. Verify difficulty, trigger, telegraph, response and hit area in game.",
+                "ko": "P1 해석: 피해·그로기 수치가 없는 기믹 복구입니다. 인게임에서 난도·발동·전조·대응·피격 범위를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "fix",
+              "subject": {
+                "en": "Dungeon and pass progression blockers",
+                "ko": "던전·패스 진행 불가"
+              },
+              "description": {
+                "en": "Fixes intermittent progression blocks in Nunu Clan Cave Base and at the final camp chest after a disconnect, plus Awakening Battle clears not counting for the Membership Pass mission.",
+                "ko": "누누족 동굴 기지 간헐적 진행 불가, 주둔지 마지막 상자 중 접속 해제 후 진행 불가, 각성전 클리어의 멤버십 패스 미집계를 수정합니다."
+              },
+              "impact": {
+                "en": "P0/P1 analysis: removes progress and reward-credit blockers. Verify the exact step, reconnect state, prerequisite and mission credit.",
+                "ko": "P0/P1 해석: 진행·보상 집계 차단을 제거합니다. 정확한 단계·재접속 상태·선행조건·미션 반영을 확인해야 합니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-11-13T08:40:09Z",
+          "displayTitle": {
+            "en": "November 13 · Korea",
+            "ko": "11월 13일 한국 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, publication and effective date",
+                  "ko": "지역·발표일·시행일"
+                },
+                "sourceSection": "Patch scope",
+                "notes": [
+                  {
+                    "en": "Published November 13 at 00:00:00 UTC, source-updated at 00:01:00 UTC and effective with the November 13 KR maintenance. This editorial review was completed separately at 08:40:09 UTC and is bound to official source hash c64838c4…; collection time is not used as review time.",
+                    "ko": "11월 13일 00:00:00 UTC 게시, 00:01:00 UTC 원문 수정, 한국 11월 13일 임시점검 적용입니다. 편집 검토는 별도 시각인 08:40:09 UTC에 완료했고 공식 원문 해시 c64838c4…에 연결했습니다. 수집 시각을 검토 시각으로 사용하지 않았습니다."
+                  },
+                  {
+                    "en": "KR only. The official maintenance notice now says service reopened and lists time-limited compensation, but compensation is not a recurring route reward. No change is copied to North America.",
+                    "ko": "한국 전용입니다. 점검 공지는 서비스 재개와 기간 한정 보상을 추가했지만 반복 동선 보상으로 계산하지 않습니다. 북미에는 복사하지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Class inputs and guide targets",
+                  "ko": "직업 입력·공략 경로"
+                },
+                "sourceSection": "Content and Systems · Class Changes",
+                "notes": [
+                  {
+                    "en": "Official facts: seven KR classes receive explicit cooldown, MP, duration, damage, specialization or condition changes. Published numeric inputs are stored in data/skill-snapshot.json under this hash. Existing Global data/skills.json and historical DPS/rankings remain unchanged.",
+                    "ko": "공식 확인: 한국 7직업의 쿨타임·정신력·지속시간·피해·특화·조건기가 바뀝니다. 발표된 수치 입력은 같은 해시로 data/skill-snapshot.json에 기록합니다. 기존 글로벌 data/skills.json과 과거 DPS·순위는 유지합니다."
+                  },
+                  {
+                    "en": "P1 public targets are /classes/gladiator/, /classes/templar/, /classes/assassin/, /classes/ranger/, /classes/sorcerer/, /classes/spiritmaster/ and their Korean counterparts, plus the corresponding /skills/<skill>/ routes. Brawler has no compatible Global class/skill route and remains in the KR patch record. Verify tooltips, coefficients, cooldowns, level scaling, condition gates, charges, animation time and reproducible rotations before changing evergreen builds.",
+                    "ko": "P1 공개 경로는 /classes/gladiator/·templar·assassin·ranger·sorcerer·spiritmaster 및 한국어 대응 페이지와 관련 /skills/<skill>/ 경로입니다. 권성은 호환되는 글로벌 직업·스킬 경로가 없어 한국 패치 기록에만 둡니다. 상시 빌드 수정 전 툴팁·계수·쿨타임·레벨 증가·조건기·충전·동작 시간·재현 가능한 로테이션을 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Boss mechanics and dungeon fixes",
+                  "ko": "보스 기믹·던전 수정"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes · 1–6",
+                "notes": [
+                  {
+                    "en": "Official fixes cover Laur reflection, Atiel party stagger, Stof damage, Ulmar explosion telegraph/hit area, Nunu progression and a camp disconnect blocker. Exact public targets after direct verification are /dungeons/ and /guides/dungeon-rewards/ plus Korean counterparts; source targets fieldnotes.py, progression.py and encounters.py. No dedicated Atiel, Stof or Ulmar detail route currently exists.",
+                    "ko": "공식 수정은 라우르 반사·아티엘 파티 그로기·스토프 피해·울마르 폭발 전조/범위·누누 진행·주둔지 접속 해제 진행 불가입니다. 직접 검증 뒤 정확한 공개 대상은 /dungeons/·/guides/dungeon-rewards/ 및 한국어 대응 페이지, 소스는 fieldnotes.py·progression.py·encounters.py입니다. 현재 아티엘·스토프·울마르 전용 상세 경로는 없습니다."
+                  },
+                  {
+                    "en": "Direct verification: actual region/difficulty, pattern trigger and response, one-player versus two-or-more-player stagger, damage logs, effect/hitbox alignment, disconnect recovery and re-entry. These fixes do not supply a damage coefficient or justify a DPS percentage.",
+                    "ko": "직접 검증: 실제 지역·난도, 패턴 발동·대응, 1인과 2인 이상 그로기, 피해 로그, 이펙트·피격 범위, 접속 해제 복구·재입장입니다. 피해 계수를 제공하지 않으므로 DPS 비율을 만들지 않습니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Growth route and review limits",
+                  "ko": "성장 동선·검토 한계"
+                },
+                "sourceSection": "Other Improvements and Bug Fixes · 7",
+                "notes": [
+                  {
+                    "en": "Awakening Battle now counts for the Membership Pass mission. P1 targets after reproduction are /routines/ and /endgame/ plus Korean counterparts; source targets routines.py and progression.py. Verify mission unlock, clear counter, reward, prerequisite and reset.",
+                    "ko": "각성전 클리어가 멤버십 패스 미션에 반영되도록 수정됩니다. 재현 뒤 P1 대상은 /routines/·/endgame/ 및 한국어 대응 페이지, 소스는 routines.py·progression.py입니다. 미션 해금·완료 집계·보상·선행조건·초기화를 확인해야 합니다."
+                  },
+                  {
+                    "en": "This is a highlights review of every announced class group and guide-impacting fixes. It does not claim in-game validation, a measured rotation result or a final class tier. Historical observations retain their original dates and conditions.",
+                    "ko": "발표된 직업군과 공략 영향 수정의 highlights 검토입니다. 인게임 검증·실측 로테이션 결과·최종 직업 티어를 주장하지 않으며 과거 관측의 날짜와 조건을 유지합니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -7617,11 +7900,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-13T07:52:29Z",
-      "lastSuccessAt": "2026-11-13T07:52:29Z",
+      "checkedAt": "2026-11-13T08:42:44Z",
+      "lastSuccessAt": "2026-11-13T08:42:44Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6af6c5d8cd0c2d6575c81301",
+          "title": "[안내] 11/14(토) AION2 임시점검 안내",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af6c5d8cd0c2d6575c81301",
+          "publishedAt": "2026-11-13T08:02:00.001Z",
+          "sourceUpdatedAt": "2026-11-13T08:02:47.801Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6af644f067841a056945a937",
           "title": "[안내] 11/13(금) AION2 임시점검 안내 (완료)",
@@ -8162,26 +8465,6 @@
           "followups": []
         },
         {
-          "id": "6aea6d186cfe4756db5b9139",
-          "title": "[안내] 11월 1주차 알려진 이슈 및 조치 안내",
-          "region": "KR",
-          "kind": "news",
-          "source": "kr-notice",
-          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6aea6d186cfe4756db5b9139",
-          "publishedAt": "2026-11-04T00:18:00.001Z",
-          "sourceUpdatedAt": "2026-11-04T00:18:00.871Z",
-          "contentHash": null,
-          "bodyState": "not-required",
-          "reviewState": "official",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
-          "followups": []
-        },
-        {
           "id": "6ad8207a577e8c01355e00c1",
           "title": "[안내] 10월 3주차 알려진 이슈 및 조치 안내",
           "region": "KR",
@@ -8366,8 +8649,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-13T07:52:29Z",
-      "lastSuccessAt": "2026-11-13T07:52:29Z",
+      "checkedAt": "2026-11-13T08:42:44Z",
+      "lastSuccessAt": "2026-11-13T08:42:44Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10096,8 +10379,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-13T07:52:29Z",
-      "lastSuccessAt": "2026-11-13T07:52:29Z",
+      "checkedAt": "2026-11-13T08:42:44Z",
+      "lastSuccessAt": "2026-11-13T08:42:44Z",
       "error": null,
       "fromCache": false,
       "items": [

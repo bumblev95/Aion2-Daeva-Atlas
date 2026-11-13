@@ -161,7 +161,147 @@
           "reason": "The official label is not present in the current 280-skill Global base snapshot, so it is preserved without attaching it to a guessed skill ID."
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-13",
+      "reviewedAt": "2026-11-13T08:40:09Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af65300b0586e28ebc4aaa6",
+      "sourceUpdatedAt": "2026-11-13T00:01:00.261Z",
+      "sourceHash": "c64838c40eb37629e56b435267a81778b9864ae9acafec8b1dc9652fd97d2402",
+      "calculationState": "KR November 13 inputs recorded separately; not applied to the incompatible Global base or historical rankings",
+      "skills": {
+        "ruinous-blow": {
+          "beforeCooldownSeconds": 40,
+          "cooldownSeconds": 60,
+          "specialization3BeforeChargeSeconds": 20,
+          "specialization3ChargeSeconds": 30,
+          "beforeFrenzyDurationSeconds": 9,
+          "frenzyDurationSeconds": 10,
+          "beforeMpCost": 250,
+          "mpCost": 100
+        },
+        "aerial-snare": {
+          "beforeMpCost": 150,
+          "mpRestore": 150
+        },
+        "mocking-blade": {
+          "beforeMpCost": 200,
+          "mpRestore": 100
+        },
+        "shield-smite": {
+          "beforeJudgmentActivationSeconds": 3,
+          "judgmentActivationSeconds": 5
+        },
+        "doom-shield": {
+          "beforeJudgmentActivationSeconds": 3,
+          "judgmentActivationSeconds": 5
+        },
+        "judgment": {
+          "specialization3And5BeforeInputSeconds": 1,
+          "specialization3And5InputSeconds": 1.5,
+          "specialization3BeforeConsecutiveDamagePercent": [
+            20,
+            50,
+            100,
+            200
+          ],
+          "specialization3ConsecutiveDamagePercent": [
+            50,
+            100,
+            150,
+            200
+          ],
+          "specialization5BeforePowerTriggerUses": 5,
+          "specialization5PowerTriggerUses": 3
+        },
+        "shield-of-protection": {
+          "specialization3Before": "Attack power increase on successful block",
+          "specialization3After": "Reset Judgment cooldown and activate Judgment for 5s on successful block"
+        },
+        "savage-roar": {
+          "beforeMpCost": 120,
+          "mpCost": 50,
+          "pveDamageChangePercent": 40,
+          "pvpDamageChangePercent": 30
+        },
+        "insignia-explosion": {
+          "beforeCooldownSeconds": 5,
+          "cooldownSeconds": 3
+        },
+        "savage-fang": {
+          "beforeInsigniaGain": 3,
+          "insigniaGain": 5
+        },
+        "burst-arrow": {
+          "specialization5BeforeCooldownResetChancePercent": 35,
+          "specialization5ResonanceDurationIncreaseSeconds": 2,
+          "resonanceTrigger": "on use while in Precision"
+        },
+        "bittercold-wind": {
+          "castDurationChangePercent": -50,
+          "hitCountAndDamage": "unchanged",
+          "specialization1And5CooldownReductionOnCastSeconds": 20
+        },
+        "element-enhancement": {
+          "beforeCooldownSeconds": 60,
+          "cooldownSeconds": 45
+        },
+        "cold-shock": {
+          "specialization4Before": "Earth Tremor hit grants 5% Attack, stacking twice",
+          "specialization4After": "Earth Tremor hit grants 10% Attack"
+        },
+        "dimensional-control": {
+          "cooldownSeconds": 30,
+          "summonedSpiritRequired": false,
+          "spiritCombatSpeedIncreasePercent": 100,
+          "spiritCombatSpeedDurationSeconds": 7
+        },
+        "summon-fire-spirit": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 10
+        },
+        "summon-water-spirit": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 10
+        },
+        "summon-earth-spirit": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 10
+        },
+        "summon-wind-spirit": {
+          "beforeCooldownSeconds": 30,
+          "cooldownSeconds": 10
+        },
+        "summon-ancient-spirit": {
+          "specialization2Before": "Spirit Descent ×1.5 for 6s",
+          "specialization2CooldownReductionSeconds": 30,
+          "beforeSpiritDescentDurationSeconds": 6,
+          "spiritDescentDurationSeconds": 10
+        }
+      },
+      "unmatchedSkillInputs": {
+        "assassin-savage-chain": {
+          "officialNamesKo": [
+            "맹수의 후려치기",
+            "맹수의 뒷발차기"
+          ],
+          "reason": "Chain children are not independent IDs in the current Global base snapshot; the official changes are preserved in the hash-bound patch review."
+        },
+        "brawler": {
+          "officialNamesKo": [
+            "회전각",
+            "철산고",
+            "폭주",
+            "지면 강타",
+            "질풍격",
+            "전력",
+            "분신"
+          ],
+          "reason": "Brawler is KR-only in the current catalog, so numeric and specialization inputs are preserved without guessed Global IDs."
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-12"
+  "lastOfficialOverrideReviewedAt": "2026-11-13"
 }

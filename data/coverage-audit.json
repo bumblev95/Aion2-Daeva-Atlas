@@ -1,6 +1,34 @@
 {
-  "reviewedAt": "2026-11-12",
+  "reviewedAt": "2026-11-13",
   "items": [
+    {
+      "id": "kr-20261113-class-rotation-and-dungeon-fixes",
+      "region": "KR",
+      "reviewedAt": "2026-11-13T08:40:09Z",
+      "title": {
+        "en": "November 13 KR · seven-class rotation adjustment and dungeon fixes",
+        "ko": "11월 13일 한국 · 7직업 연계 조정·던전 오류 수정"
+      },
+      "finding": {
+        "en": "P1 class/combat and P0/P1 progression: the November 13 KR patch adjusts Gladiator, Templar, Assassin, Brawler, Ranger, Sorcerer and Spiritmaster cooldowns, MP flow, durations, specializations and condition gates. Exact published inputs are stored as a KR-only override in data/skill-snapshot.json under source hash c64838c4…; Global data/skills.json, NA eDPS, historical observations and tiers are unchanged. P1 class targets are the existing class and matching skill pages for Gladiator, Templar, Assassin, Ranger, Sorcerer and Spiritmaster; Brawler remains in the KR patch record because no compatible Global route exists. P1 boss targets after reproduction are /dungeons/ and /guides/dungeon-rewards/ plus Korean counterparts, with source files fieldnotes.py, progression.py and encounters.py. Verify Laur reflection; Atiel Earth Collapse trigger, response and stagger at one versus two-or-more players; Stof damage; Ulmar telegraph/hitbox; Nunu and camp reconnect recovery. P0/P1 growth targets are /routines/ and /endgame/ plus Korean counterparts, with routines.py and progression.py; verify Awakening Battle mission credit, unlocks, rewards and reset. The source supplies no boss damage/stagger values and no measured rotations, so no arbitrary DPS percentage or final tier is published. The November 13 maintenance is officially completed; its time-limited compensation is not treated as a recurring reward. A new November 14 06:00–08:00 KST maintenance notice is kept as an official title/link card, with detailed changes still pending a separate update note.",
+        "ko": "P1 직업/전투·P0/P1 진행: 11월 13일 한국 패치는 검성·수호성·살성·권성·궁성·마도성·정령성의 쿨타임·정신력·지속시간·특화·조건기를 조정합니다. 발표 수치는 원문 해시 c64838c4…와 함께 data/skill-snapshot.json의 한국 전용 오버라이드로 기록했으며 글로벌 data/skills.json·북미 eDPS·과거 관측·티어는 유지합니다. P1 직업 대상은 검성·수호성·살성·궁성·마도성·정령성의 기존 직업·관련 스킬 페이지이며 권성은 호환 글로벌 경로가 없어 한국 패치 기록에 둡니다. P1 보스 대상은 직접 검증·재현 뒤 /dungeons/·/guides/dungeon-rewards/와 한국어 대응 페이지, 소스 fieldnotes.py·progression.py·encounters.py입니다. 라우르 반사, 아티엘 대지 붕괴의 발동·대응과 1인/2인 이상 그로기, 스토프 피해, 울마르 전조·피격 범위, 누누·주둔지 재접속 복구를 확인해야 합니다. P0/P1 성장 대상은 /routines/·/endgame/와 한국어 대응 페이지, routines.py·progression.py이며 각성전 미션 집계·해금·보상·초기화를 확인해야 합니다. 보스 피해·그로기 수치와 실측 로테이션이 없어 임의 DPS 비율이나 최종 티어를 발표하지 않습니다. 11월 13일 점검은 완료됐고 기간 한정 보상은 반복 보상으로 취급하지 않습니다. 새 11월 14일 06:00~08:00 KST 점검은 상세 변경이 별도 업데이트 노트 대기라 공식 제목·원문 링크 카드로 유지합니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 13 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af65300b0586e28ebc4aaa6"
+        },
+        {
+          "title": "NC · November 13 temporary maintenance (completed)",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af644f067841a056945a937"
+        },
+        {
+          "title": "NC · November 14 temporary maintenance notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af6c5d8cd0c2d6575c81301"
+        }
+      ]
+    },
     {
       "id": "kr-20261111-emergency-maintenance-and-known-issues",
       "region": "KR",
