@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-12T20:38:25Z",
+  "checkedAt": "2026-11-13T00:15:18Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,11 +8,31 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-12T20:38:25Z",
-      "lastSuccessAt": "2026-11-12T20:38:25Z",
+      "checkedAt": "2026-11-13T00:15:18Z",
+      "lastSuccessAt": "2026-11-13T00:15:18Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6af65300b0586e28ebc4aaa6",
+          "title": "[안내] 11/13(금) 업데이트 노트",
+          "region": "KR",
+          "kind": "patch",
+          "source": "kr-update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af65300b0586e28ebc4aaa6",
+          "publishedAt": "2026-11-13T00:00:00.648Z",
+          "sourceUpdatedAt": "2026-11-13T00:01:00.261Z",
+          "contentHash": "c64838c40eb37629e56b435267a81778b9864ae9acafec8b1dc9652fd97d2402",
+          "bodyState": "ready",
+          "reviewState": "pending",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6af370b8577e8c01355e047b",
           "title": "[안내] 11/11(수) 업데이트 노트 (수정 11/11 13:11)",
@@ -7597,8 +7617,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-12T20:38:25Z",
-      "lastSuccessAt": "2026-11-12T20:38:25Z",
+      "checkedAt": "2026-11-13T00:15:18Z",
+      "lastSuccessAt": "2026-11-13T00:15:18Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8346,8 +8366,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-12T20:38:25Z",
-      "lastSuccessAt": "2026-11-12T20:38:25Z",
+      "checkedAt": "2026-11-13T00:15:18Z",
+      "lastSuccessAt": "2026-11-13T00:15:18Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10076,8 +10096,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-12T20:38:25Z",
-      "lastSuccessAt": "2026-11-12T20:38:25Z",
+      "checkedAt": "2026-11-13T00:15:18Z",
+      "lastSuccessAt": "2026-11-13T00:15:18Z",
       "error": null,
       "fromCache": false,
       "items": [
