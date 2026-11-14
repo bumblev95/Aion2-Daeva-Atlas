@@ -42,11 +42,12 @@ class November11UpdateRegressionTest(unittest.TestCase):
         self.assertIn('30% to 100%', advancedguides.render('na-ludra', 'en', BASE))
 
     def test_kr_revision_rebinds_review_and_official_inputs(self):
-        expected = '1b7301dd5aa15cad7b5dd6ae13ad88d5e2d774873228c2ec080fe0d1d1b50d85'
+        expected = 'a8d3b7503679b6c0f9b921c0ab6b2d1d1e2d95fc2468c07c3a933ce49f011d7a'
         patch = self.reviews['6af370b8577e8c01355e047b']
         self.assertEqual(patch['contentHash'], expected)
         correction = next(c for c in patch['changes'] if c['subject']['en'] == 'November 11 source corrections')
-        self.assertIn('Lower only', correction['after']['en'])
+        self.assertIn('Liberated White Night Ring', correction['before']['en'])
+        self.assertIn('deletes Liberated White Night Ring', correction['description']['en'])
         snapshot = json.loads((ROOT / 'data/skill-snapshot.json').read_text())
         kr = next(item for item in snapshot['officialOverrides'] if item['region'] == 'KR')
         self.assertEqual(kr['sourceHash'], expected)
@@ -117,7 +118,7 @@ class November11UpdateRegressionTest(unittest.TestCase):
         )
         self.assertEqual(
             notices['6af3d328066b033317c02bd3']['sourceUpdatedAt'],
-            '2026-11-12T13:08:06.815Z',
+            '2026-11-14T00:42:08.322Z',
         )
 
 
