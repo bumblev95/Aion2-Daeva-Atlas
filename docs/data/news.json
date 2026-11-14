@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-13T22:34:24Z",
+  "checkedAt": "2026-11-14T08:45:47Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-13T22:34:24Z",
-      "lastSuccessAt": "2026-11-13T22:34:24Z",
+      "checkedAt": "2026-11-14T08:45:47Z",
+      "lastSuccessAt": "2026-11-14T08:45:47Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -24,13 +24,356 @@
           "sourceUpdatedAt": "2026-11-13T21:01:00.244Z",
           "contentHash": "ff91677012c8b856d45261aaea7217b092ce2b66f993122061c1251ebb061ccf",
           "bodyState": "ready",
-          "reviewState": "pending",
-          "summary": {},
-          "changes": [],
-          "classScopeReviewed": false,
-          "reviewedAt": null,
-          "displayTitle": {},
-          "detail": {},
+          "reviewState": "reviewed",
+          "summary": {
+            "en": "KR adjusts all nine classes with cooldown, PvE/PvP damage, resource, specialization and condition changes; fixes a Spiritmaster combat-speed application issue; lowers two Sanctuary bosses’ HP by 10%; and increases Arena/Abyss healing reduction from 20% to 50%. These November 14 rules stay KR-only and do not establish measured DPS rankings or final tiers.",
+            "ko": "한국은 9직업의 쿨타임·PvE/PvP 피해·자원·특화·조건기를 조정하고 정령성 전투 속도 적용 오류를 수정합니다. 성역 2곳의 보스 HP는 10% 낮아지고 투기장·어비스의 받는 치유 감소는 20%에서 50%가 됩니다. 11월 14일 한국 전용이며 실측 DPS 순위나 최종 티어 근거는 아닙니다."
+          },
+          "changes": [
+            {
+              "classId": "gladiator",
+              "type": "buff",
+              "subject": {
+                "en": "Wave Armor cooldown",
+                "ko": "파동의 갑주 쿨타임"
+              },
+              "description": {
+                "en": "Wave Armor cooldown changes from 60s to 30s.",
+                "ko": "파동의 갑주 재시전 시간이 60초에서 30초로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: the passive-enhancement window becomes available more often. Verify the tooltip, cooldown-reduction interaction and full KR rotation uptime.",
+                "ko": "P1 해석: 패시브 강화 창을 더 자주 사용할 수 있습니다. 한국 클라이언트에서 툴팁·쿨다운 감소 상호작용·전체 로테이션 가동률을 확인해야 합니다."
+              },
+              "before": {
+                "en": "60s",
+                "ko": "60초"
+              },
+              "after": {
+                "en": "30s",
+                "ko": "30초"
+              }
+            },
+            {
+              "classId": "templar",
+              "type": "buff",
+              "subject": {
+                "en": "Instant Punishment",
+                "ko": "징벌 즉시 시전"
+              },
+              "description": {
+                "en": "Punishment changes from a charging skill to an instant-cast skill.",
+                "ko": "징벌이 차징 스킬에서 즉시 시전 스킬로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: input delay and exposure fall, but no coefficient or total-DPS increase is announced. Reproduce animation lock, Executor application and threat.",
+                "ko": "P1 해석: 입력 지연과 노출 시간이 줄지만 계수나 총 DPS 상승률은 발표되지 않았습니다. 동작 경직·집행자 적용·적대치를 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "adjustment",
+              "subject": {
+                "en": "Killing Intent and Heart Gore loop",
+                "ko": "살의·심장 찌르기 연계"
+              },
+              "description": {
+                "en": "Ambush changes 10→15s, grants 3s of Killing Intent with +5% Crushing Blow, and deals 10 instead of 7 stagger. Heart Gore gains three consecutive uses and its Killing Intent bonus changes 70%→150%; specialization-2 rear damage changes 20%→30%.",
+                "ko": "기습은 10→15초가 되고 강타 5%를 높이는 3초 살의를 부여하며 그로기 피해가 7→10이 됩니다. 심장 찌르기는 3회 연속 시전, 살의 피해 70%→150%, 2번 특화 후방 피해 20%→30%로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: the burst sequence moves toward Ambush→three Heart Gore uses. Verify rear-position checks, Killing Intent consumption, animation time and a repeatable full loop before eDPS use.",
+                "ko": "P1 해석: 폭딜 순서가 기습→심장 찌르기 3회 중심으로 이동합니다. eDPS 반영 전 후방 판정·살의 소모·동작 시간·반복 가능한 전체 루프를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "adjustment",
+              "subject": {
+                "en": "Insignia setup and Savage Fang",
+                "ko": "문양 예열·맹수의 송곳니"
+              },
+              "description": {
+                "en": "Insignia Explosion changes 3→7s, removes Killing Intent, resets Heart Gore after five insignias and leaves two insignias with specialization 3. Savage Fang gains 20% PvE damage and grants Killing Intent for 5s with specialization 1; Exploit Weakness clones now add an insignia.",
+                "ko": "문양 폭발은 3→7초, 살의 제거, 5문양 소모 시 심장 찌르기 초기화, 3번 특화 문양 2개 유지로 바뀝니다. 맹수의 송곳니 PvE 피해는 20% 오르고 1번 특화가 5초 살의를 부여하며 빈틈 노리기 분신은 문양을 추가합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: five-stack resets and deterministic insignia generation can offset the longer Explosion cooldown. Verify stack timing, reset order, specialization 5’s −2s Ambush effect and the complete burst cycle.",
+                "ko": "P1 해석: 5문양 초기화와 확정 문양 생성이 문양 폭발의 긴 쿨타임을 일부 상쇄할 수 있습니다. 중첩 시간·초기화 순서·5번 특화 기습 −2초·전체 폭딜 주기를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "assassin",
+              "type": "fix",
+              "subject": {
+                "en": "Savage chain use frequency",
+                "ko": "맹수 연속기 사용 빈도"
+              },
+              "description": {
+                "en": "Fixes Savage Roar and Savage Kick reducing the use frequency of other skills.",
+                "ko": "맹수의 포효·맹수의 뒷발차기 사용 시 다른 스킬의 사용 빈도가 낮아지던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: restores intended rotation selection without a published damage value. No arbitrary DPS percentage is assigned; reproduce auto-use priority and manual chains.",
+                "ko": "P1 해석: 피해 수치 없이 의도된 로테이션 선택을 복구합니다. 임의 DPS 비율을 넣지 않고 자동 사용 우선순위와 수동 연계를 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "brawler",
+              "type": "buff",
+              "subject": {
+                "en": "Rage duration",
+                "ko": "격노 지속시간"
+              },
+              "description": {
+                "en": "Rage duration changes from 15s to 20s.",
+                "ko": "격노 지속시간이 15초에서 20초로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: KR-only Brawler gains a longer buff window. No compatible Global class/skill ID exists, so verify the tooltip and rotation in KR without cross-region calculation.",
+                "ko": "P1 해석: 한국 전용 권성의 강화 창이 길어집니다. 호환되는 글로벌 직업·스킬 ID가 없어 지역 혼합 계산 없이 한국에서 툴팁과 로테이션을 확인해야 합니다."
+              },
+              "before": {
+                "en": "15s",
+                "ko": "15초"
+              },
+              "after": {
+                "en": "20s",
+                "ko": "20초"
+              }
+            },
+            {
+              "classId": "chanter",
+              "type": "buff",
+              "subject": {
+                "en": "PvE chains and Storm Order",
+                "ko": "PvE 연속기·폭풍의 주문"
+              },
+              "description": {
+                "en": "Dark Strike Chain and Piercing Chain gain 7% PvE damage. Storm Order changes from boss-damage amplification to weapon-damage amplification at 10.5% on level 1, +0.5% per level; specialization bonuses change Perfect 4→10%, Attack 3→7% and Crushing Blow 2→5%.",
+                "ko": "암격쇄·관통쇄 PvE 피해가 7% 오릅니다. 폭풍의 주문은 보스 피해 증폭에서 무기 피해 증폭으로 바뀌며 1레벨 10.5%, 레벨당 0.5%입니다. 특화 보너스는 완벽 4→10%, 공격력 3→7%, 강타 2→5%로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: personal and party contribution likely rise, but weapon amplification and level scaling need matched party tests before any eDPS or tier claim.",
+                "ko": "P1 해석: 개인·파티 기여가 높아질 가능성이 있지만 무기 피해 증폭과 레벨 증가는 같은 조건의 파티 실측 뒤에만 eDPS나 티어에 반영할 수 있습니다."
+              }
+            },
+            {
+              "classId": "ranger",
+              "type": "adjustment",
+              "subject": {
+                "en": "Shackle conditions and resource flow",
+                "ko": "굴레 조건기·자원 운용"
+              },
+              "description": {
+                "en": "Snare Shot applies 3s Shackle with −30% status resistance instead of Slow; Rupture Arrow and Rooting Eye use Shackle conditions. Tempest Shot MP changes 120→70, Marking Shot loses +20% status accuracy in Precision, and Explosion Trap specialization 3 replaces delayed damage with shield removal.",
+                "ko": "올가미 화살은 둔화 대신 상태이상 저항 −30%의 3초 굴레를 부여하고 파열 화살·속박의 눈은 굴레 조건을 사용합니다. 속사 정신력은 120→70, 표적 화살의 정밀 상태 이상 적중 +20%는 제거되며 폭발의 덫 3번 특화는 지연 피해 대신 보호막 제거가 됩니다."
+              },
+              "impact": {
+                "en": "P1 analysis: control chains become more consistent while one accuracy bonus and delayed-damage option disappear. Verify Shackle icon, resistance effect, condition gates, MP and shield removal.",
+                "ko": "P1 해석: 제어 연계는 안정되지만 상태이상 적중 보너스와 지연 피해 선택 하나가 사라집니다. 굴레 아이콘·저항 효과·조건기·정신력·보호막 제거를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "ranger",
+              "type": "nerf",
+              "subject": {
+                "en": "Arrow Scattershot PvP and life steal",
+                "ko": "화살 난사 PvP·생명력 흡수"
+              },
+              "description": {
+                "en": "Arrow Scattershot PvP damage falls 30%, and specialization-1 life steal changes 5%→1.5%.",
+                "ko": "화살 난사 PvP 피해가 30% 낮아지고 1번 특화 생명력 흡수가 5%→1.5%로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: this reduces KR PvP pressure and sustain. It is not applied to NA PvE DPS; verify the PvP tooltip and healing result.",
+                "ko": "P1 해석: 한국 PvP 압박과 유지력이 낮아집니다. 북미 PvE DPS에는 적용하지 않고 PvP 툴팁과 회복 결과를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "adjustment",
+              "subject": {
+                "en": "Fire Energy and cooldown routing",
+                "ko": "화기·쿨다운 연계"
+              },
+              "description": {
+                "en": "Hellfire grants Fire Energy for 5s and deals +150% damage on hit while active. Wish of Concentration specialization 5 becomes −10s to all skill cooldowns. Bittercold Wind specializations are rearranged, including up to +20% damage with fewer targets and −20s Freezing cooldown.",
+                "ko": "지옥의 화염은 5초 화기를 부여하고 화기 중 적중 피해를 150% 높입니다. 집중의 기원 5번 특화는 모든 스킬 쿨타임 −10초가 됩니다. 혹한의 바람 특화는 적은 대상일수록 최대 피해 +20%, 빙결 쿨타임 −20초 등으로 재배치됩니다."
+              },
+              "impact": {
+                "en": "P1 analysis: cast order and single-target burst change materially. Verify Fire Energy consumption, hit timing, target-count scaling and exact cooldown application before eDPS use.",
+                "ko": "P1 해석: 시전 순서와 단일 대상 폭딜이 크게 바뀝니다. eDPS 반영 전 화기 소모·적중 시점·대상 수 증가·정확한 쿨다운 적용을 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "sorcerer",
+              "type": "adjustment",
+              "subject": {
+                "en": "Winter and elemental cooldowns",
+                "ko": "겨울·원소 쿨타임"
+              },
+              "description": {
+                "en": "Winter’s Shackles changes 40→45s and its specializations are reworked. Element Enhancement, Fire Wall and Cold Storm each change 45→60s.",
+                "ko": "겨울의 속박은 40→45초가 되고 특화가 재조정됩니다. 원소 강화·불의 장벽·냉기 폭풍은 각각 45→60초로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: several setup skills become less frequent while new specialization reductions may offset parts of the loss. Reproduce summon ticks, stacks and a full rotation; do not revise historical DPS.",
+                "ko": "P1 해석: 여러 예열 스킬의 빈도가 낮아지지만 새 특화 쿨다운 감소가 일부를 상쇄할 수 있습니다. 소환 타격·중첩·전체 로테이션을 재현하고 과거 DPS는 수정하지 않습니다."
+              }
+            },
+            {
+              "classId": "cleric",
+              "type": "buff",
+              "subject": {
+                "en": "PvE attacks and Noble Aura",
+                "ko": "PvE 공격·고결한 기운"
+              },
+              "description": {
+                "en": "Condemnation gains 15% PvE damage, Bolt gains 10%, and Noble Aura specialization 5 increases its bonus against incapacitation-immune targets from 30% to 50%.",
+                "ko": "단죄 PvE 피해는 15%, 벽력은 10% 오르고 고결한 기운 5번 특화의 행동불가 면역 대상 추가 피해는 30%→50%가 됩니다."
+              },
+              "impact": {
+                "en": "P1 analysis: solo damage and boss-target Aura damage rise, but the notice does not establish total Cleric eDPS or healing trade-offs. Verify tooltip level, specialization slot and summon cadence.",
+                "ko": "P1 해석: 솔로 공격과 보스 대상 기운 피해가 높아지지만 총 치유성 eDPS나 치유 맞교환을 확정하지 않습니다. 툴팁 레벨·특화 슬롯·소환 공격 주기를 확인해야 합니다."
+              }
+            },
+            {
+              "classId": "spiritmaster",
+              "type": "fix",
+              "subject": {
+                "en": "Dimensional Control combat speed",
+                "ko": "공간 지배 전투 속도"
+              },
+              "description": {
+                "en": "Fixes the summoned spirit failing to receive the combat-speed increase when Dimensional Control is used immediately after summoning.",
+                "ko": "정령 소환 직후 공간 지배를 사용하면 정령에게 전투 속도 증가가 적용되지 않던 문제를 수정합니다."
+              },
+              "impact": {
+                "en": "P1 analysis: restores an intended buff application without a published damage value. Do not invent a DPS increase; reproduce summon timing, buff icon and pet attack cadence.",
+                "ko": "P1 해석: 피해 수치 없이 의도된 버프 적용을 복구합니다. DPS 상승률을 만들지 않고 소환 시점·버프 아이콘·정령 공격 주기를 재현해야 합니다."
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Arena and Abyss healing reduction",
+                "ko": "투기장·어비스 받는 치유 감소"
+              },
+              "description": {
+                "en": "Received-healing reduction in KR Arena and Abyss changes from 20% to 50%.",
+                "ko": "한국 투기장·어비스의 받는 치유량 감소가 20%에서 50%로 바뀝니다."
+              },
+              "impact": {
+                "en": "P1 analysis: PvP sustain and fight length fall. This KR PvP rule is not applied to NA PvE; verify mode, tooltip, self/party healing and shield interactions.",
+                "ko": "P1 해석: PvP 유지력과 전투 시간이 낮아집니다. 한국 PvP 규칙을 북미 PvE에 적용하지 않고 모드·툴팁·자기/파티 치유·보호막 상호작용을 확인해야 합니다."
+              },
+              "before": {
+                "en": "20%",
+                "ko": "20%"
+              },
+              "after": {
+                "en": "50%",
+                "ko": "50%"
+              }
+            },
+            {
+              "classId": "all",
+              "type": "system",
+              "subject": {
+                "en": "Sanctuary boss HP",
+                "ko": "성역 보스 HP"
+              },
+              "description": {
+                "en": "Boss HP in Muspel’s Chalice and Snowfield of Grief falls 10%.",
+                "ko": "무스펠의 성배와 비탄의 설원 보스 HP가 10% 낮아집니다."
+              },
+              "impact": {
+                "en": "P1 analysis: kill-time and phase timing can shorten, but pattern triggers and responses are unchanged unless separately observed. Verify difficulty, region, HP, phase thresholds and enrage timing in game.",
+                "ko": "P1 해석: 처치 시간과 페이즈 시점이 짧아질 수 있지만 별도 관측 없이는 패턴 발동·대응 변경을 주장하지 않습니다. 인게임에서 난도·지역·HP·페이즈 문턱·광폭화 시간을 확인해야 합니다."
+              }
+            }
+          ],
+          "classScopeReviewed": true,
+          "reviewedAt": "2026-11-14T08:38:50Z",
+          "displayTitle": {
+            "en": "November 14 · Korea",
+            "ko": "11월 14일 한국 패치"
+          },
+          "detail": {
+            "coverage": "highlights",
+            "sections": [
+              {
+                "title": {
+                  "en": "Region, publication and effective date",
+                  "ko": "지역·발표일·시행일"
+                },
+                "sourceSection": "Patch scope",
+                "notes": [
+                  {
+                    "en": "Published November 13 at 21:00:00 UTC, source-updated at 21:01:00 UTC and effective with the November 14 KR maintenance. This editorial review was completed separately at 08:38:50 UTC and is bound to official source hash ff916770…; collection time is not used as review time.",
+                    "ko": "11월 13일 21:00:00 UTC 게시, 21:01:00 UTC 원문 수정, 한국 11월 14일 점검 적용입니다. 편집 검토는 별도 시각인 08:38:50 UTC에 완료했고 공식 원문 해시 ff916770…에 연결했습니다. 수집 시각을 검토 시각으로 사용하지 않았습니다."
+                  },
+                  {
+                    "en": "KR only. No class, PvP or Sanctuary rule is copied to the North America feed. Historical combat observations keep their original dates, builds and conditions.",
+                    "ko": "한국 전용입니다. 직업·PvP·성역 규칙을 북미 피드에 복사하지 않습니다. 과거 전투 관측은 기존 날짜·빌드·조건을 유지합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Class inputs and exact public targets",
+                  "ko": "직업 입력·정확한 공개 경로"
+                },
+                "sourceSection": "Content and Systems · Class Changes",
+                "notes": [
+                  {
+                    "en": "Official facts: all nine KR classes receive a cooldown, damage, resource, specialization, condition or bug-fix change. Explicit numeric inputs are stored in data/skill-snapshot.json under this hash. Global data/skills.json remains the base snapshot and is not overwritten.",
+                    "ko": "공식 확인: 한국 9직업에 쿨타임·피해·자원·특화·조건·오류 수정이 있습니다. 명시 수치 입력은 같은 해시로 data/skill-snapshot.json에 저장하고 글로벌 data/skills.json 기준 스냅샷은 덮어쓰지 않습니다."
+                  },
+                  {
+                    "en": "P1 public targets are /classes/gladiator/, /classes/templar/, /classes/assassin/, /classes/chanter/, /classes/ranger/, /classes/sorcerer/, /classes/cleric/, /classes/spiritmaster/ and Korean counterparts, plus the matching /skills/<skill>/ routes. Brawler remains KR-only without a compatible public class route. Verify tooltips, coefficients, cooldowns, skill-level scaling, condition gates, animation time and reproducible rotations.",
+                    "ko": "P1 공개 경로는 /classes/gladiator/·templar·assassin·chanter·ranger·sorcerer·cleric·spiritmaster와 한국어 대응 페이지 및 일치하는 /skills/<skill>/ 경로입니다. 권성은 호환되는 공개 직업 경로가 없는 한국 전용으로 유지합니다. 툴팁·계수·쿨타임·스킬 레벨 증가·조건기·동작 시간·재현 가능한 로테이션을 확인해야 합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "PvP and Sanctuary impact",
+                  "ko": "PvP·성역 영향"
+                },
+                "sourceSection": "Content and Systems · Common / Sanctuary",
+                "notes": [
+                  {
+                    "en": "Official facts: KR Arena/Abyss healing reduction is 50%, and Muspel’s Chalice/Snowfield of Grief boss HP is 10% lower. P1 public targets after direct verification are /guides/pvp-context/, /dungeons/, /guides/dungeon-rewards/ and /guides/kr-bitan/ with Korean counterparts; source targets advancedguides.py, progression.py and encounters.py.",
+                    "ko": "공식 확인: 한국 투기장·어비스의 받는 치유 감소는 50%, 무스펠의 성배·비탄의 설원 보스 HP는 10% 낮아집니다. 직접 검증 뒤 P1 공개 대상은 /guides/pvp-context/·/dungeons/·/guides/dungeon-rewards/·/guides/kr-bitan/와 한국어 대응 페이지이며 소스는 advancedguides.py·progression.py·encounters.py입니다."
+                  },
+                  {
+                    "en": "Direct verification: actual mode/difficulty/region, healing and shield interactions, displayed boss HP, phase triggers/responses, enrage and reward eligibility. The notice does not publish new coordinates, spawn rules, rewards, resets or beginner unlock/cost changes, so map and growth data stay unchanged.",
+                    "ko": "직접 검증: 실제 모드·난도·지역, 치유·보호막 상호작용, 표시 보스 HP, 페이즈 발동/대응, 광폭화, 보상 자격입니다. 새 좌표·스폰 규칙·보상·초기화·초보 해금/비용은 발표하지 않아 지도·성장 데이터는 유지합니다."
+                  }
+                ],
+                "tables": []
+              },
+              {
+                "title": {
+                  "en": "Review limits",
+                  "ko": "검토 범위"
+                },
+                "sourceSection": "highlights review",
+                "notes": [
+                  {
+                    "en": "This highlights review covers every announced class group and the two guide-impacting systems. It does not claim in-game validation, complete event/product-table republication, measured rotation results, patch-derived DPS rankings or final class tiers.",
+                    "ko": "발표된 모든 직업군과 공략 영향 시스템 2개를 다룬 highlights 검토입니다. 인게임 검증, 이벤트·상품 표 전체 재정리, 실측 로테이션 결과, 패치 기반 DPS 순위나 최종 직업 티어를 주장하지 않습니다."
+                  }
+                ],
+                "tables": []
+              }
+            ]
+          },
           "followups": []
         },
         {
@@ -338,14 +681,14 @@
         },
         {
           "id": "6af370b8577e8c01355e047b",
-          "title": "[안내] 11/11(수) 업데이트 노트 (수정 11/11 13:11)",
+          "title": "[안내] 11/11(수) 업데이트 노트 (수정 11/14 09:16)",
           "region": "KR",
           "kind": "patch",
           "source": "kr-update",
           "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
           "publishedAt": "2026-11-10T19:30:00.540Z",
-          "sourceUpdatedAt": "2026-11-11T09:22:42.421Z",
-          "contentHash": "1b7301dd5aa15cad7b5dd6ae13ad88d5e2d774873228c2ec080fe0d1d1b50d85",
+          "sourceUpdatedAt": "2026-11-14T00:19:14.815Z",
+          "contentHash": "a8d3b7503679b6c0f9b921c0ab6b2d1d1e2d95fc2468c07c3a933ce49f011d7a",
           "bodyState": "ready",
           "reviewState": "reviewed",
           "summary": {
@@ -625,25 +968,25 @@
                 "ko": "11월 11일 원문 정정"
               },
               "description": {
-                "en": "The revised KR source limits the bound-Kina monster-drop change to Lower Reshanta, expands the source of materials for Advanced Breakthrough Material morphing from Transcendence to Expedition/Transcendence, and states that territory editing is available only on PC.",
-                "ko": "수정된 한국 원문은 몬스터 처치 각인 키나 변경 범위를 에레슈란타 하층으로 한정하고, 상급 돌파 재료 물질변환 재료 획득처를 초월에서 원정/초월로 확대하며, 영지 편집은 PC에서만 제공한다고 명시합니다."
+                "en": "The revised KR source limits bound-Kina monster drops to Lower Reshanta, expands Advanced Breakthrough Material inputs to Expedition/Transcendence, makes territory editing PC-only, and deletes Liberated White Night Ring from the announced new dungeon/crafted equipment list.",
+                "ko": "수정된 한국 원문은 몬스터 처치 각인 키나를 에레슈란타 하층으로 한정하고 상급 돌파 재료의 재료 획득처를 원정/초월로 확대하며 영지 편집을 PC 전용으로 명시합니다. 또한 신규 던전·제작 장비 목록에서 해방된 백야 반지를 삭제합니다."
               },
               "before": {
-                "en": "Bound-Kina notice: Lower/Middle; material source: Transcendence; territory-edit condition not stated",
-                "ko": "각인 키나 안내: 하층/중층 · 재료 획득처: 초월 · 영지 편집 조건 미기재"
+                "en": "New equipment list included Liberated White Night Ring; earlier Lower/Middle, Transcendence-only and unspecified territory-edit wording",
+                "ko": "신규 장비 목록에 해방된 백야 반지 포함 · 앞선 하층/중층·초월 전용·영지 편집 조건 미기재"
               },
               "after": {
-                "en": "Bound-Kina notice: Lower only; material source: Expedition/Transcendence; territory editing: PC only",
-                "ko": "각인 키나 안내: 하층만 · 재료 획득처: 원정/초월 · 영지 편집: PC 전용"
+                "en": "Liberated White Night Ring deleted; Lower only; Expedition/Transcendence; territory editing PC-only",
+                "ko": "해방된 백야 반지 삭제 · 하층만 · 원정/초월 · 영지 편집 PC 전용"
               },
               "impact": {
-                "en": "P1/P2 analysis: do not tell Middle Reshanta farmers that monster Kina is bound, include both dungeon families when checking morph inputs, and keep territory-edit instructions off mobile. Verify the live loot labels, morph ingredient list and PC-only control state.",
-                "ko": "P1/P2 해석: 중층 몬스터 키나를 각인으로 안내하지 않고, 물질변환 재료 확인에는 원정·초월을 모두 포함하며, 모바일에는 영지 편집 조작을 안내하지 않아야 합니다. 실제 획득 재화 표기·변환 재료 목록·PC 전용 조작 상태를 확인해야 합니다."
+                "en": "P1/P2 analysis: do not route players toward the deleted ring entry; retain the corrected Abyss, morph and territory guidance. The current evergreen site does not claim this ring, so only the hash-bound patch pages and evidence records need correction. Verify the live dungeon/crafting catalog, acquisition source, recipe and conversion before adding any gear route.",
+                "ko": "P1/P2 해석: 삭제된 반지 항목을 성장 동선으로 안내하지 않고 정정된 어비스·물질변환·영지 안내를 유지합니다. 현재 상시 공략은 이 반지를 안내하지 않으므로 해시 연결 패치 페이지와 근거 기록만 바로잡습니다. 장비 동선 추가 전 실제 던전/제작 목록·획득처·제작식·변환을 확인해야 합니다."
               }
             }
           ],
           "classScopeReviewed": true,
-          "reviewedAt": "2026-11-11T09:27:38Z",
+          "reviewedAt": "2026-11-14T08:38:50Z",
           "displayTitle": {
             "en": "November 11 · Korea",
             "ko": "11월 11일 한국 패치"
@@ -659,8 +1002,8 @@
                 "sourceSection": "11월 11일 업데이트 노트 · 적용 범위",
                 "notes": [
                   {
-                    "en": "Published November 10 at 19:30 UTC for KR, revised November 11 at 04:11:23 UTC and again at 09:22:42 UTC, and effective with the November 11 maintenance. The latest silent edit normalizes hidden separators and paid-territory furniture labels; the class and guide-impacting facts are unchanged. This review was re-read and rebound to official source hash 1b7301dd… at the editorial review time shown above.",
-                    "ko": "한국 서비스 기준 11월 10일 19:30 UTC 게시, 11월 11일 04:11:23 UTC 및 09:22:42 UTC에 수정됐으며 11월 11일 정기점검 적용입니다. 마지막 무표시 편집은 숨은 구분자와 유료 영지 가구 표기를 정리했으며 직업·공략 영향 사실은 바뀌지 않았습니다. 위 편집 검토 시각에 최신 본문을 다시 읽고 공식 원문 해시 1b7301dd…에 재연결했습니다."
+                    "en": "Published November 10 at 19:30 UTC for KR and revised again November 14 at 00:19:14 UTC. The latest explicit correction deletes Liberated White Night Ring from the new dungeon/crafted equipment list. This review was re-read and rebound to official source hash a8d3b750… at the separate editorial review time shown above.",
+                    "ko": "한국 서비스 기준 11월 10일 19:30 UTC 게시 후 11월 14일 00:19:14 UTC에 다시 수정됐습니다. 최신 명시 정정은 신규 던전·제작 장비 목록에서 해방된 백야 반지를 삭제합니다. 위 별도 편집 검토 시각에 원문을 다시 읽고 공식 원문 해시 a8d3b750…에 재연결했습니다."
                   },
                   {
                     "en": "KR only: none of these class, dungeon, Abyss, map or growth rules are applied to the NA feed. Historical combat records and Global DPS inputs retain their original periods and conditions.",
@@ -763,6 +1106,10 @@
                   {
                     "en": "Official addition: territory editing is PC-only. P2 target after live verification: /start/?view=settings and its Korean counterpart; confirm the mobile menu state, PC controls, visitor/edit permissions and prerequisites. The 09:22:42 UTC source edit only changes paid-furniture labels and markup. Paid product tables remain outside this highlights review, so complete product-table coverage is not claimed.",
                     "ko": "공식 추가: 영지 편집은 PC에서만 제공됩니다. P2 직접 검증 후 공개 경로는 /start/?view=settings와 한국어 대응 페이지입니다. 모바일 메뉴 상태·PC 조작·방문/편집 권한·선행조건을 확인해야 합니다. 09:22:42 UTC 원문 편집은 유료 가구 표기와 마크업만 바꿨습니다. 유료 상품 표는 이번 highlights 범위 밖이므로 상품 표 전체 검토를 주장하지 않습니다."
+                  },
+                  {
+                    "en": "Official November 14 correction: Liberated White Night Ring was deleted from the announced new dungeon/crafted equipment list. Exact current public targets are /updates/kr-6af370b8577e8c01355e047b/ and /ko/updates/kr-6af370b8577e8c01355e047b/; source/data targets are data/patch-reviews.json and data/news.json. No evergreen gear guide currently claims the deleted ring. Verify the live equipment list, drop/crafting source, recipe, costs and prerequisites before adding it to /gear/, /endgame/ or /guides/endgame-crafts/.",
+                    "ko": "11월 14일 공식 정정: 신규 던전·제작 장비 목록에서 해방된 백야 반지가 삭제됐습니다. 현재 정확한 공개 대상은 /updates/kr-6af370b8577e8c01355e047b/·/ko/updates/kr-6af370b8577e8c01355e047b/, 소스·데이터 대상은 data/patch-reviews.json·data/news.json입니다. 현재 상시 장비 공략에는 삭제된 반지 안내가 없습니다. /gear/·/endgame/·/guides/endgame-crafts/에 추가하기 전 실제 장비 목록·드롭/제작 획득처·제작식·비용·선행조건을 확인해야 합니다."
                   }
                 ],
                 "tables": []
@@ -7920,20 +8267,20 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-13T22:34:24Z",
-      "lastSuccessAt": "2026-11-13T22:34:24Z",
+      "checkedAt": "2026-11-14T08:45:47Z",
+      "lastSuccessAt": "2026-11-14T08:45:47Z",
       "error": null,
       "fromCache": false,
       "items": [
         {
           "id": "6af6c5d8cd0c2d6575c81301",
-          "title": "[안내] 11/14(토) AION2 임시점검 안내",
+          "title": "[안내] 11/14(토) AION2 임시점검 안내 (완료)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af6c5d8cd0c2d6575c81301",
           "publishedAt": "2026-11-13T08:02:00.001Z",
-          "sourceUpdatedAt": "2026-11-13T08:02:47.801Z",
+          "sourceUpdatedAt": "2026-11-13T23:01:01.491Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -8027,13 +8374,13 @@
         },
         {
           "id": "6af3d328066b033317c02bd3",
-          "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/12 22:06)",
+          "title": "[안내] 11월 2주차 알려진 이슈 및 조치 안내 (수정 11/14 09:40)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6af3d328066b033317c02bd3",
           "publishedAt": "2026-11-11T03:10:00.001Z",
-          "sourceUpdatedAt": "2026-11-12T13:08:06.815Z",
+          "sourceUpdatedAt": "2026-11-14T00:42:08.322Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -8669,8 +9016,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-13T22:34:24Z",
-      "lastSuccessAt": "2026-11-13T22:34:24Z",
+      "checkedAt": "2026-11-14T08:45:47Z",
+      "lastSuccessAt": "2026-11-14T08:45:47Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10399,8 +10746,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-13T22:34:24Z",
-      "lastSuccessAt": "2026-11-13T22:34:24Z",
+      "checkedAt": "2026-11-14T08:45:47Z",
+      "lastSuccessAt": "2026-11-14T08:45:47Z",
       "error": null,
       "fromCache": false,
       "items": [

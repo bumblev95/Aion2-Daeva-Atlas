@@ -28,9 +28,9 @@
     {
       "region": "KR",
       "effectiveAt": "2026-11-11",
-      "reviewedAt": "2026-11-11T09:27:38Z",
+      "reviewedAt": "2026-11-14T08:38:50Z",
       "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
-      "sourceHash": "1b7301dd5aa15cad7b5dd6ae13ad88d5e2d774873228c2ec080fe0d1d1b50d85",
+      "sourceHash": "a8d3b7503679b6c0f9b921c0ab6b2d1d1e2d95fc2468c07c3a933ce49f011d7a",
       "calculationState": "region-scoped inputs recorded; not applied to the incompatible Global base or historical rankings",
       "skills": {
         "zikels-blessing": {
@@ -116,7 +116,8 @@
           "spiritDescentPveDamageChangePercent": 100,
           "spiritDescentPvpDamageChangePercent": 50
         }
-      }
+      },
+      "sourceUpdatedAt": "2026-11-14T00:19:14.815Z"
     },
     {
       "region": "KR",
@@ -301,7 +302,167 @@
           "reason": "Brawler is KR-only in the current catalog, so numeric and specialization inputs are preserved without guessed Global IDs."
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-14",
+      "reviewedAt": "2026-11-14T08:38:50Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af77a507d773f10fbeb07f9",
+      "sourceUpdatedAt": "2026-11-13T21:01:00.244Z",
+      "sourceHash": "ff91677012c8b856d45261aaea7217b092ce2b66f993122061c1251ebb061ccf",
+      "calculationState": "KR November 14 inputs recorded separately; not applied to the incompatible Global base, NA PvE, historical observations or rankings",
+      "skills": {
+        "wave-armor": {
+          "beforeCooldownSeconds": 60,
+          "cooldownSeconds": 30
+        },
+        "punishment": {
+          "beforeCastType": "charging",
+          "castType": "instant"
+        },
+        "ambush": {
+          "beforeCooldownSeconds": 10,
+          "cooldownSeconds": 15,
+          "killingIntentDurationSeconds": 3,
+          "killingIntentCrushingBlowPercent": 5,
+          "beforeStaggerPoints": 7,
+          "staggerPoints": 10,
+          "specialization1RearDamagePercent": 20
+        },
+        "heart-gore": {
+          "beforeConsecutiveUses": 1,
+          "consecutiveUses": 3,
+          "beforeKillingIntentDamagePercent": 70,
+          "killingIntentDamagePercent": 150,
+          "specialization2BeforeRearDamagePercent": 20,
+          "specialization2RearDamagePercent": 30
+        },
+        "insignia-explosion": {
+          "beforeCooldownSeconds": 3,
+          "cooldownSeconds": 7,
+          "fiveInsigniaHeartGoreReset": true,
+          "specialization3InsigniasRetained": 2,
+          "specialization5AmbushCooldownReductionSeconds": 2
+        },
+        "savage-fang": {
+          "pveDamageChangePercent": 20,
+          "specialization1KillingIntentDurationSeconds": 5
+        },
+        "exploit-weakness": {
+          "cloneInsigniaGain": 1
+        },
+        "tempest-shot": {
+          "beforeMpCost": 120,
+          "mpCost": 70
+        },
+        "marking-shot": {
+          "precisionBeforeStatusAccuracyPercent": 20,
+          "precisionStatusAccuracyPercent": 0
+        },
+        "snare-shot": {
+          "shackleDurationSeconds": 3,
+          "shackleStatusResistancePercent": -30,
+          "specialization1MpCostRemoved": true,
+          "specialization1MpRestore": 200
+        },
+        "explosion-trap": {
+          "specialization3Before": "Delayed extra damage after 3s",
+          "specialization3After": "Remove protective shield"
+        },
+        "arrow-scattershot": {
+          "pvpDamageChangePercent": -30,
+          "specialization1BeforeLifeStealPercent": 5,
+          "specialization1LifeStealPercent": 1.5
+        },
+        "hellfire": {
+          "fireEnergyDurationSeconds": 5,
+          "fireEnergyDamageChangePercent": 150
+        },
+        "wish-of-concentration": {
+          "specialization5AllSkillCooldownReductionSeconds": 10
+        },
+        "bittercold-wind": {
+          "specialization1MaxDamageChangePercent": 20,
+          "specialization5FreezingCooldownReductionSeconds": 20
+        },
+        "winters-shackles": {
+          "beforeCooldownSeconds": 40,
+          "cooldownSeconds": 45,
+          "specialization3BeforeWinterShardStacks": 2,
+          "specialization3WinterShardStacks": 1,
+          "specialization5CooldownReductionSeconds": 15
+        },
+        "element-enhancement": {
+          "beforeCooldownSeconds": 45,
+          "cooldownSeconds": 60
+        },
+        "fire-wall": {
+          "beforeCooldownSeconds": 45,
+          "cooldownSeconds": 60
+        },
+        "cold-storm": {
+          "beforeCooldownSeconds": 45,
+          "cooldownSeconds": 60
+        },
+        "condemnation": {
+          "pveDamageChangePercent": 15
+        },
+        "bolt": {
+          "pveDamageChangePercent": 10
+        },
+        "noble-aura": {
+          "specialization5BeforeIncapacitationImmuneDamagePercent": 30,
+          "specialization5IncapacitationImmuneDamagePercent": 50
+        },
+        "dark-crush": {
+          "pveDamageChangePercent": 7
+        },
+        "burst-arrow": {
+          "beforeActivationCondition": [
+            "Slow",
+            "Root"
+          ],
+          "activationCondition": [
+            "Shackle"
+          ]
+        },
+        "rooting-eye": {
+          "beforeTriggerCondition": [
+            "Slow",
+            "Root"
+          ],
+          "triggerCondition": [
+            "Shackle"
+          ]
+        }
+      },
+      "unmatchedSkillInputs": {
+        "brawler-rage": {
+          "officialNameKo": "격노",
+          "beforeDurationSeconds": 15,
+          "durationSeconds": 20,
+          "reason": "Brawler is KR-only in the current catalog, so the official duration is preserved without a guessed Global ID."
+        },
+        "chanter-piercing-chain": {
+          "officialNameKo": "관통쇄",
+          "pveDamageChangePercent": 7,
+          "reason": "Piercing Chain has no independent compatible ID in the current Global base snapshot; the paired Dark Strike Chain input is recorded under dark-crush."
+        },
+        "storm-order": {
+          "officialNameKo": "폭풍의 주문",
+          "amplificationType": "weapon damage",
+          "level1AmplificationPercent": 10.5,
+          "perLevelAmplificationPercent": 0.5,
+          "specialization2BeforePerfectPercent": 4,
+          "specialization2PerfectPercent": 10,
+          "specialization4BeforeAttackPercent": 3,
+          "specialization4AttackPercent": 7,
+          "specialization5BeforeCrushingBlowPercent": 2,
+          "specialization5CrushingBlowPercent": 5,
+          "reason": "Storm Order is a newer KR skill with no compatible ID in the current Global base snapshot."
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-13"
+  "lastOfficialOverrideReviewedAt": "2026-11-14"
 }

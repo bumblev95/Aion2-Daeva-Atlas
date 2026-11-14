@@ -1,6 +1,26 @@
 {
-  "reviewedAt": "2026-11-13",
+  "reviewedAt": "2026-11-14T08:38:50Z",
   "items": [
+    {
+      "id": "kr-20261114-class-pvp-sanctuary",
+      "region": "KR",
+      "reviewedAt": "2026-11-14T08:38:50Z",
+      "title": {
+        "en": "November 14 KR · all-class, PvP and Sanctuary adjustments",
+        "ko": "11월 14일 한국 · 전 직업·PvP·성역 조정"
+      },
+      "finding": {
+        "en": "P1: all nine KR classes receive explicit cooldown, damage, resource, specialization, condition or bug-fix changes. Exact public targets are the eight compatible /classes/<class>/ routes and matching /skills/<skill>/ routes in both languages; source/data target data/skill-snapshot.json. Brawler remains KR-only and unmatched. Verify tooltips, coefficients, cooldowns, skill-level scaling, condition gates, charges, animation time and reproducible rotations before eDPS use. P1 PvP/boss targets after reproduction are /guides/pvp-context/, /dungeons/, /guides/dungeon-rewards/ and /guides/kr-bitan/ with Korean counterparts; source targets advancedguides.py, progression.py and encounters.py. Verify Arena/Abyss healing and shield interactions, and Muspel/Snowfield difficulty, displayed HP, phase triggers/responses and enrage. No new coordinate, spawn, reward, reset or beginner-route fact is announced. KR-only; no NA PvE application, arbitrary bug-fix DPS, historical ranking rewrite or final tier.",
+        "ko": "P1: 한국 9직업에 쿨타임·피해·자원·특화·조건·오류 수정이 명시됐습니다. 정확한 공개 대상은 호환되는 8직업의 양 언어 /classes/<class>/·관련 /skills/<skill>/ 경로, 소스·데이터는 data/skill-snapshot.json입니다. 권성은 한국 전용 미대응으로 유지합니다. eDPS 반영 전 툴팁·계수·쿨타임·스킬 레벨 증가·조건기·충전·동작 시간·재현 가능한 로테이션을 확인해야 합니다. P1 PvP·보스의 재현 뒤 대상은 /guides/pvp-context/·/dungeons/·/guides/dungeon-rewards/·/guides/kr-bitan/와 한국어 대응 페이지, 소스는 advancedguides.py·progression.py·encounters.py입니다. 투기장/어비스 치유·보호막 상호작용과 무스펠/비탄의 난도·표시 HP·페이즈 발동/대응·광폭화를 확인해야 합니다. 새 좌표·스폰·보상·초기화·초보 동선 사실은 발표되지 않았습니다. 한국 전용이며 북미 PvE 적용·오류 수정 임의 DPS·과거 순위 재작성·최종 티어 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 14 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af77a507d773f10fbeb07f9"
+        }
+      ]
+    },
     {
       "id": "kr-20261113-class-rotation-and-dungeon-fixes",
       "region": "KR",
@@ -104,14 +124,14 @@
     {
       "id": "kr-20261111-chapter1-class-dungeons-abyss",
       "region": "KR",
-      "reviewedAt": "2026-11-11T09:27:38Z",
+      "reviewedAt": "2026-11-14T08:38:50Z",
       "title": {
         "en": "November 11 KR · level 55, all-class balance and route rebuild",
         "ko": "11월 11일 한국 · 55레벨·전 직업 밸런스·동선 개편"
       },
       "finding": {
-        "en": "P0/P1: the November 11 KR source was revised through 09:22:42 UTC and rebound to hash 1b7301dd…. Exact old/new comparison shows the latest silent edit only normalizes hidden separators and paid-territory furniture labels; class and guide-impacting facts remain intact. Earlier corrections still limit bound monster-drop Kina to Lower Reshanta, add Expedition alongside Transcendence as the source for Advanced Breakthrough Material morph inputs, and make territory editing PC-only. Verify matched Lower/Middle drops, morph names/quantities/costs and PC/mobile territory controls. Existing boss, skill, map and growth evidence gaps remain; no NA application, measured tier or historical ranking change is supported.",
-        "ko": "P0/P1: 11월 11일 한국 원문이 09:22:42 UTC까지 수정되어 해시 1b7301dd…에 재연결됐습니다. 이전·현재 본문을 정확히 대조한 결과 마지막 무표시 편집은 숨은 구분자와 유료 영지 가구 표기만 정리했으며 직업·공략 영향 사실은 유지됩니다. 앞선 정정은 몬스터 처치 각인 키나를 에레슈란타 하층으로 한정하고, 상급 돌파 재료 변환 재료 획득처에 원정을 초월과 함께 포함하며, 영지 편집을 PC 전용으로 명시합니다. 같은 조건의 하층/중층 획득 재화, 변환 재료명·수량·비용, PC/모바일 영지 조작을 확인해야 합니다. 기존 보스·스킬·지도·성장 자료 부족은 유지되며 북미 적용·실측 티어·과거 순위 변경 근거는 없습니다."
+        "en": "P1 source correction: the November 11 KR source was revised November 14 at 00:19:14 UTC and rebound to hash a8d3b750…. NC explicitly deletes Liberated White Night Ring from the new dungeon/crafted equipment list. The current evergreen site does not claim the ring; exact public correction targets are the two language versions of /updates/kr-6af370b8577e8c01355e047b/, backed by data/patch-reviews.json and data/news.json. Verify the live dungeon/crafting catalog, acquisition source, recipe, cost and prerequisites before adding any /gear/, /endgame/ or /guides/endgame-crafts/ route. Earlier Abyss, morph and PC-only territory corrections and all boss/skill/map/growth evidence gaps remain. No NA application, measured tier or historical ranking change is supported.",
+        "ko": "P1 원문 정정: 11월 11일 한국 원문이 11월 14일 00:19:14 UTC에 다시 수정되어 해시 a8d3b750…에 재연결됐습니다. NC는 신규 던전·제작 장비 목록에서 해방된 백야 반지를 명시적으로 삭제했습니다. 현재 상시 공략은 이 반지를 안내하지 않으며 정확한 공개 수정 대상은 두 언어의 /updates/kr-6af370b8577e8c01355e047b/, 데이터는 data/patch-reviews.json·data/news.json입니다. /gear/·/endgame/·/guides/endgame-crafts/ 동선에 추가하기 전 실제 던전/제작 목록·획득처·제작식·비용·선행조건을 확인해야 합니다. 앞선 어비스·물질변환·PC 전용 영지 정정과 보스·스킬·지도·성장 자료 부족은 유지됩니다. 북미 적용·실측 티어·과거 순위 변경 근거는 없습니다."
       },
       "status": "needs-evidence",
       "sources": [
