@@ -1,6 +1,30 @@
 {
-  "reviewedAt": "2026-11-17T08:12:27Z",
+  "reviewedAt": "2026-11-17T20:13:14Z",
   "items": [
+    {
+      "id": "kr-20261118-classes-bosses-trust-transfer",
+      "region": "KR",
+      "reviewedAt": "2026-11-17T20:13:14Z",
+      "title": {
+        "en": "November 18 KR · seven classes, bosses, Trust and transfer",
+        "ko": "11월 18일 한국 · 7직업·보스·신뢰도·서버 이전"
+      },
+      "finding": {
+        "en": "P1 class/combat/growth: the November 18 KR patch is reviewed as highlights and bound to e085599c…. Seven classes receive explicit cooldown, damage, resource, specialization, condition or buff changes; those numeric inputs are stored as a KR-only override in data/skill-snapshot.json and are not applied to Global data/skills.json, NA PvE, historical rankings or tiers. P1 client checks cover all changed tooltips and rotations; Lifika targeting; Auldor preview path; Auldor/Beltiras solo-to-party pattern state; Muspel Easy; Hidden Cube coordinates; gathering counters; Trust settlement/purchase limits and 05:00 reset; PvP weapon stat scope, old-item migration and new Transcendence/Nightmare thresholds; KR transfer eligibility/capacity/merge outcomes; and November 25 conversion recipes. Exact public targets after verification are the six compatible class pages and related skill pages, /dungeons/urugugu-canyon/, /dungeons/, /guides/dungeon-rewards/, /maps/, /routines/, /endgame/, /gear/ and /guides/pvp-context/ with Korean counterparts. The Global /guides/server-transfer/ is not reopened from this KR notice. No PC-café prize-table completeness, gameplay verification, total DPS multiplier or final tier is claimed.",
+        "ko": "P1 직업·전투·성장: 11월 18일 한국 패치를 highlights로 검토해 해시 e085599c…에 묶었습니다. 7직업의 명시 쿨타임·피해·자원·특화·조건·버프 입력은 data/skill-snapshot.json의 한국 전용 오버라이드로 기록하고 글로벌 data/skills.json·북미 PvE·과거 순위·티어에는 적용하지 않습니다. P1 클라이언트 검증은 변경 툴팁·로테이션 전체, 리피카 대상 선정, 아울도르 예고 경로, 아울도르/벨티라스 1인→파티 패턴, 무스펠 쉬움, 히든 큐브 좌표, 채집 횟수, 신뢰도 정산/구매 한도와 05시 초기화, PvP 무기 스탯 범위·기존 아이템 전환·초월/악몽 새 기준점, 한국 이전 자격/정원/병합 결과, 11월 25일 변환 도안입니다. 검증 후 정확한 공개 대상은 호환되는 6직업·관련 스킬 페이지, /dungeons/urugugu-canyon/·/dungeons/·/guides/dungeon-rewards/·/maps/·/routines/·/endgame/·/gear/·/guides/pvp-context/ 및 한국어 대응 경로입니다. 글로벌 /guides/server-transfer/는 한국 공지로 재개하지 않습니다. PC방 경품 표 전체성·인게임 검증·직업 전체 DPS 배율·최종 티어를 주장하지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · 11/18 AION2 Korea update",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6afcab38ebccad0e4b5bad5f"
+        },
+        {
+          "title": "NC · 11/18 Korea maintenance",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6afc33b0df6d838d56bfd13d"
+        }
+      ]
+    },
     {
       "id": "kr-20261114-class-pvp-sanctuary",
       "region": "KR",

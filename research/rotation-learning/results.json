@@ -2506,15 +2506,15 @@
         "order": [
           "insignia-explosion",
           "ambush",
-          "shadow-fall",
           "whirlwind-slice",
-          "heart-gore",
           "flash-slice",
+          "heart-gore",
+          "shadow-fall",
           "shadowstrike",
-          "storm-rampage",
           "savage-roar",
           "infiltrate",
-          "quick-slice"
+          "quick-slice",
+          "storm-rampage"
         ],
         "holdSeconds": 0
       },
@@ -2524,7 +2524,7 @@
         "reason": "policy space exceeds the research limit"
       },
       "trainingGapToRestrictedOracle": null,
-      "uniqueTrainingEvaluations": 2763,
+      "uniqueTrainingEvaluations": 2784,
       "training": [
         {
           "scenario": "train-open-90",
@@ -3685,28 +3685,7 @@
       "validationMeanChangePercent": 18.779911775192303,
       "testMeanChangePercent": 20.30706746603559,
       "greedyTrainingScore": 1.2147671904459543,
-      "projectedHints": [
-        {
-          "ruleId": "assassin-mark-priority",
-          "policy": {
-            "order": [
-              "insignia-explosion",
-              "heart-gore",
-              "shadowstrike",
-              "ambush",
-              "whirlwind-slice",
-              "flash-slice",
-              "infiltrate",
-              "shadow-fall",
-              "storm-rampage",
-              "quick-slice",
-              "savage-roar"
-            ],
-            "holdSeconds": 0
-          },
-          "trainingScore": 0.9946701046326067
-        }
-      ],
+      "projectedHints": [],
       "unsupportedFeatures": [
         "animation-cancel",
         "back-position",
@@ -3725,7 +3704,7 @@
         },
         {
           "seed": 19,
-          "changePercent": 20.242868947440595
+          "changePercent": 20.30706746603559
         },
         {
           "seed": 41,
@@ -4825,8 +4804,8 @@
           "blaze",
           "firestorm",
           "flame-scattershot",
-          "frost",
           "winters-shackles",
+          "frost",
           "frost-burst",
           "ice-chain",
           "flame-arrow"
@@ -4839,7 +4818,7 @@
         "reason": "policy space exceeds the research limit"
       },
       "trainingGapToRestrictedOracle": null,
-      "uniqueTrainingEvaluations": 2035,
+      "uniqueTrainingEvaluations": 1981,
       "training": [
         {
           "scenario": "train-open-90",
@@ -5219,8 +5198,8 @@
         {
           "scenario": "validation-short-73",
           "baselineEdps": 1255.9777397260275,
-          "policyEdps": 1371.375,
-          "changePercent": 9.187842795617108,
+          "policyEdps": 1369.6181506849316,
+          "changePercent": 9.047963778696676,
           "baselineCasts": {
             "firestorm": 13,
             "blaze": 13,
@@ -5234,12 +5213,12 @@
           "casts": {
             "firestorm": 13,
             "blaze": 13,
-            "frost": 3,
+            "frost": 2,
             "winters-shackles": 2,
             "frost-burst": 2,
             "flame-scattershot": 0,
             "flame-arrow": 0,
-            "ice-chain": 24
+            "ice-chain": 25
           },
           "baselineDamage": {
             "firestorm": {
@@ -5295,7 +5274,7 @@
               "ticks": 0
             },
             "frost": {
-              "direct": 3773.25,
+              "direct": 2515.5,
               "periodic": 0,
               "ticks": 0
             },
@@ -5320,7 +5299,7 @@
               "ticks": 0
             },
             "ice-chain": {
-              "direct": 27108,
+              "direct": 28237.5,
               "periodic": 0,
               "ticks": 0
             }
@@ -5343,8 +5322,8 @@
         {
           "scenario": "validation-immune-95",
           "baselineEdps": 1343.036842105263,
-          "policyEdps": 1505.6052631578948,
-          "changePercent": 12.104539202200826,
+          "policyEdps": 1512.7934210526316,
+          "changePercent": 12.639755934116327,
           "baselineCasts": {
             "firestorm": 18,
             "blaze": 18,
@@ -5358,8 +5337,8 @@
           "casts": {
             "firestorm": 18,
             "blaze": 18,
-            "frost": 4,
-            "winters-shackles": 2,
+            "frost": 3,
+            "winters-shackles": 3,
             "frost-burst": 0,
             "flame-scattershot": 0,
             "flame-arrow": 0,
@@ -5419,12 +5398,12 @@
               "ticks": 0
             },
             "frost": {
-              "direct": 5031,
+              "direct": 3773.25,
               "periodic": 0,
               "ticks": 0
             },
             "winters-shackles": {
-              "direct": 3881.25,
+              "direct": 5821.875,
               "periodic": 0,
               "ticks": 0
             },
@@ -5717,28 +5696,10 @@
           ]
         }
       ],
-      "validationMeanChangePercent": 10.646190998908967,
+      "validationMeanChangePercent": 10.843859856406501,
       "testMeanChangePercent": 11.912358798317168,
       "greedyTrainingScore": 1.1164680049010993,
-      "projectedHints": [
-        {
-          "ruleId": "sorcerer-firestorm-priority",
-          "policy": {
-            "order": [
-              "firestorm",
-              "flame-arrow",
-              "blaze",
-              "frost",
-              "winters-shackles",
-              "frost-burst",
-              "flame-scattershot",
-              "ice-chain"
-            ],
-            "holdSeconds": 0
-          },
-          "trainingScore": 0.7248027619632564
-        }
-      ],
+      "projectedHints": [],
       "unsupportedFeatures": [
         "buff-windows",
         "charge-stages",
@@ -7431,38 +7392,7 @@
       "validationMeanChangePercent": 14.073547273156773,
       "testMeanChangePercent": 14.873336328595466,
       "greedyTrainingScore": 1.1287519116279763,
-      "projectedHints": [
-        {
-          "ruleId": "cleric-priority",
-          "policy": {
-            "order": [
-              "chain-of-torment",
-              "condemnation",
-              "debilitating-mark",
-              "judgment-thunder",
-              "lightning-strike-scattershot",
-              "earths-retribution"
-            ],
-            "holdSeconds": 0
-          },
-          "trainingScore": 1.133446646354691
-        },
-        {
-          "ruleId": "cleric-condemnation-priority",
-          "policy": {
-            "order": [
-              "condemnation",
-              "earths-retribution",
-              "judgment-thunder",
-              "debilitating-mark",
-              "chain-of-torment",
-              "lightning-strike-scattershot"
-            ],
-            "holdSeconds": 0
-          },
-          "trainingScore": 0.24027112563123124
-        }
-      ],
+      "projectedHints": [],
       "unsupportedFeatures": [
         "animation-cancel",
         "buff-windows",
@@ -7537,15 +7467,15 @@
       "policy": {
         "order": [
           "spinning-strike",
-          "impactful-crush",
           "gust-rampage",
           "wave-blow",
+          "impactful-crush",
           "incandescent-blow",
-          "heat-wave-blow",
           "onslaught",
-          "dark-crush",
           "rushing-smash",
-          "tremor-crush"
+          "tremor-crush",
+          "dark-crush",
+          "heat-wave-blow"
         ],
         "holdSeconds": 0
       },
@@ -7555,7 +7485,7 @@
         "reason": "policy space exceeds the research limit"
       },
       "trainingGapToRestrictedOracle": null,
-      "uniqueTrainingEvaluations": 2736,
+      "uniqueTrainingEvaluations": 2753,
       "training": [
         {
           "scenario": "train-open-90",
@@ -8625,27 +8555,7 @@
       "validationMeanChangePercent": 62.26707684609966,
       "testMeanChangePercent": 58.07881882198275,
       "greedyTrainingScore": 1.5504762926463205,
-      "projectedHints": [
-        {
-          "ruleId": "chanter-followup-priority",
-          "policy": {
-            "order": [
-              "dark-crush",
-              "impactful-crush",
-              "incandescent-blow",
-              "rushing-smash",
-              "heat-wave-blow",
-              "tremor-crush",
-              "wave-blow",
-              "spinning-strike",
-              "gust-rampage",
-              "onslaught"
-            ],
-            "holdSeconds": 0
-          },
-          "trainingScore": 1.3898337944134849
-        }
-      ],
+      "projectedHints": [],
       "unsupportedFeatures": [
         "animation-cancel",
         "buff-windows",
@@ -8663,7 +8573,7 @@
         },
         {
           "seed": 19,
-          "changePercent": 58.03906874481278
+          "changePercent": 58.07881882198275
         },
         {
           "seed": 41,
@@ -8712,5 +8622,5 @@
       "learningStatus": "partial-model-policy-search"
     }
   ],
-  "modelSha256": "5f69d32f4ac8864a05f585a0602ee098bdc76df8bdc03c0a3f5bc43c767a6a72"
+  "modelSha256": "effaa45bcec1dcceb00551aa9ffd8e8efe6199dca78ba1908f299be1a2f23505"
 }
