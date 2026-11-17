@@ -1,4 +1,366 @@
 {
+  "6afcab38ebccad0e4b5bad5f": {
+    "contentHash": "e085599c9e7b9b3a76c9125f6f743c04df579af032a5b7bc0ee6b32b7f17b8a1",
+    "reviewedAt": "2026-11-17T20:13:14Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6afcab38ebccad0e4b5bad5f",
+    "title": {
+      "en": "November 18 · Korea",
+      "ko": "11월 18일 한국 패치"
+    },
+    "summary": {
+      "en": "KR adjusts Gladiator, Templar, Assassin, Brawler, Chanter, Ranger and Cleric; adds Muspel Easy, Trust limits, free KR server transfer and PvP weapon stats; and fixes Hidden Cube, gathering and several boss-pattern issues. These November 18 rules stay KR-only and do not recalculate NA PvE, historical DPS or final tiers.",
+      "ko": "한국은 검성·수호성·살성·권성·호법성·궁성·치유성을 조정하고 무스펠 쉬움·신뢰도 한도·한국 무료 서버 이전·PvP 무기 스탯을 추가하며 히든 큐브·채집·여러 보스 패턴 오류를 수정합니다. 11월 18일 한국 전용이며 북미 PvE·과거 DPS·최종 티어를 재계산하지 않습니다."
+    },
+    "changes": [
+      {
+        "classId": "gladiator",
+        "type": "buff",
+        "subject": {
+          "en": "Ruinous Blow and Frenzy access",
+          "ko": "파멸의 맹타·광분 운용"
+        },
+        "description": {
+          "en": "Ruinous Blow cooldown changes 60→40s; specialization-3 charge timing changes 60/30→40/40s. Focused Block specialization 3 grants Frenzy for 10s instead of 5s, and Downward/Upward Strike threat increases 50%.",
+          "ko": "파멸의 맹타 재시전은 60→40초, 3번 특화 충전은 60/30→40/40초로 바뀝니다. 집중 막기 3번 특화 광분은 5→10초가 되고 내려 찍기·올려 치기 적대치는 50% 증가합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the core attack and Frenzy windows become more available, but total KR rotation DPS is not measured. Verify charge behavior, cooldown reduction, block trigger, threat and full rotation.",
+          "ko": "P1 해석: 핵심 공격과 광분 창을 더 자주 활용할 수 있지만 한국 전체 로테이션 DPS는 실측하지 않았습니다. 충전·쿨다운 감소·막기 발동·적대치·전체 로테이션을 확인해야 합니다."
+        },
+        "before": {
+          "en": "60s cooldown; 60/30s charges; 5s Frenzy",
+          "ko": "재시전 60초·충전 60/30초·광분 5초"
+        },
+        "after": {
+          "en": "40s cooldown; 40/40s charges; 10s Frenzy",
+          "ko": "재시전 40초·충전 40/40초·광분 10초"
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "adjustment",
+        "subject": {
+          "en": "Judgment damage, cadence and setup",
+          "ko": "심판 피해·주기·연계"
+        },
+        "description": {
+          "en": "Shield Smite now resets Judgment cooldown. Judgment cooldown changes 3→7s and base damage rises 50%, while specialization-3 consecutive bonuses change 50/100/150/200%→25/50/75/100%. Punishment loses its extra-damage condition tied to Judgment’s Authority.",
+          "ko": "방패 강타에 심판 재시전 초기화가 추가됩니다. 심판은 3→7초, 기본 피해 +50%가 되고 3번 특화 연속 피해는 50/100/150/200%→25/50/75/100%로 바뀝니다. 징벌의 심판의 권능 조건 추가 피해는 제거됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: baseline hits rise while the natural cadence and repeat scaling fall; Shield Smite routing becomes central. Reproduce reset order, Authority state, threat and a repeatable rotation before eDPS use.",
+          "ko": "P1 해석: 기본 피해는 오르지만 자연 재사용 주기와 연속 보너스는 낮아지고 방패 강타 연계가 중요해집니다. eDPS 반영 전 초기화 순서·권능 상태·적대치·반복 가능한 로테이션을 재현해야 합니다."
+        },
+        "before": {
+          "en": "3s cooldown; 50/100/150/200% consecutive bonus",
+          "ko": "재시전 3초·연속 보너스 50/100/150/200%"
+        },
+        "after": {
+          "en": "7s cooldown; +50% base damage; 25/50/75/100% consecutive bonus",
+          "ko": "재시전 7초·기본 피해 +50%·연속 보너스 25/50/75/100%"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "Quick Slice chain PvE damage",
+          "ko": "빠른 베기 연속기 PvE 피해"
+        },
+        "description": {
+          "en": "Quick Slice, Severing Slice and Swift Slice gain 10% PvE damage.",
+          "ko": "빠른 베기·절혼 베기·쾌속 베기의 PvE 피해가 10% 증가합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the basic chain is stronger in KR PvE. This official skill-relative change is recorded without converting it into total class DPS.",
+          "ko": "P1 해석: 한국 PvE 기본 연속기가 강해집니다. 공식 스킬 상대 변화만 기록하며 직업 전체 DPS로 환산하지 않습니다."
+        },
+        "before": {
+          "en": "Current PvE skill damage",
+          "ko": "기존 PvE 스킬 피해"
+        },
+        "after": {
+          "en": "+10% relative PvE damage",
+          "ko": "PvE 상대 피해 +10%"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "nerf",
+        "subject": {
+          "en": "Savage chain, Killing Intent and burst scaling",
+          "ko": "맹수 연속기·살의·폭딜 배율"
+        },
+        "description": {
+          "en": "Savage Roar/Kick PvE and PvP damage fall 20%. Killing Intent changes from a 3s +5% Crushing Blow effect to a 5s, three-stack +3% effect per stack; Heart Gore’s Killing Intent bonus changes 150→80%. Insignia Explosion cooldown improves 7→5s, but its per-insignia bonuses change 10/40/90/160/400%→10/30/60/100/250%.",
+          "ko": "맹수의 포효·뒷발차기 PvE/PvP 피해는 20% 낮아집니다. 살의는 3초 강타 +5%에서 5초·최대 3중첩·중첩당 +3%로 바뀌고 심장 찌르기 살의 보너스는 150→80%입니다. 문양 폭발은 7→5초가 되지만 문양별 보너스는 10/40/90/160/400%→10/30/60/100/250%로 낮아집니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: sustained Killing Intent is easier to maintain and Explosion is faster, but peak Heart Gore, five-insignia and Savage-chain burst fall. Verify stacking refresh, Ambush multi-input fix, stack consumption and a complete KR burst loop.",
+          "ko": "P1 해석: 살의 유지와 문양 폭발 주기는 좋아지지만 심장 찌르기·5문양·맹수 연속기의 최대 폭딜은 낮아집니다. 중첩 갱신·기습 연속 입력 수정·중첩 소모·한국 전체 폭딜 루프를 확인해야 합니다."
+        },
+        "before": {
+          "en": "3s +5% Killing Intent; 150%; 7s; up to 400%",
+          "ko": "살의 3초·강타 +5%, 150%, 7초, 최대 400%"
+        },
+        "after": {
+          "en": "5s, max 3 stacks at +3% each; 80%; 5s; up to 250%",
+          "ko": "살의 5초·최대 3중첩·중첩당 +3%, 80%, 5초, 최대 250%"
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "buff",
+        "subject": {
+          "en": "Rage resource, sustain and cooldown flow",
+          "ko": "폭주 자원·생존·쿨다운 연계"
+        },
+        "description": {
+          "en": "Basic attacks restore Fury during Rage. Gale Strike specialization 1 changes from 15% life steal to 100 Fury; Chain Fist gains 0.5% life steal and specialization 1 adds 1%. Spinning Kick reset becomes 10% on block or 100% through Focused Block, and Typhoon Combo reduces Ascending Strike and Explosive Fist cooldowns by 1s on hit.",
+          "ko": "폭주 중 기본 공격도 분노를 회복합니다. 질풍격 1번 특화는 생명력 15% 흡수에서 분노 100 회복으로 바뀌고 연환권은 기본 0.5%·1번 특화 추가 1% 흡수를 얻습니다. 회전각 초기화는 일반 막기 10% 또는 집중 막기 성공 100%, 태풍 연타 적중은 승천타·폭렬권 쿨다운을 1초 줄입니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: KR-only Brawler can trade sustain for resource and gain more frequent attacks. No compatible Global catalog exists; verify tooltips, Fury, block source, healing and rotation in KR.",
+          "ko": "P1 해석: 한국 전용 권성은 생존과 자원 선택이 달라지고 공격 주기가 빨라질 수 있습니다. 호환 글로벌 카탈로그가 없어 한국에서 툴팁·분노·막기 종류·회복·로테이션을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "adjustment",
+        "subject": {
+          "en": "Storm Order scaling and Spinning Strike",
+          "ko": "폭풍의 주문·회전격"
+        },
+        "description": {
+          "en": "Storm Order changes from weapon-damage amplification to Attack, gains +0.5s duration per skill level, changes specialization 3 from +2s duration to +10% weapon damage and specialization 4 from +7% to +10% Attack. Spinning Strike gains 10% PvE damage.",
+          "ko": "폭풍의 주문은 무기 피해 증폭에서 공격력 증가로 바뀌고 스킬 레벨당 지속시간이 0.5초 증가합니다. 3번 특화는 지속 +2초에서 무기 피해 +10%, 4번 특화는 공격력 +7→+10%가 됩니다. 회전격 PvE 피해는 10% 증가합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: buff duration and build choice change, while the personal attack skill rises. Verify level-by-level duration, party/personal scope, refresh, specialization combination and rotation; no party eDPS is inferred.",
+          "ko": "P1 해석: 버프 지속시간과 특화 선택이 바뀌고 개인 공격기는 강해집니다. 레벨별 지속시간·개인/파티 범위·갱신·특화 조합·로테이션을 확인하며 파티 eDPS는 추정하지 않습니다."
+        },
+        "before": {
+          "en": "Weapon amplification; +2s spec 3; +7% Attack spec 4",
+          "ko": "무기 피해 증폭·3번 특화 +2초·4번 특화 공격력 +7%"
+        },
+        "after": {
+          "en": "Attack; +0.5s/level; +10% weapon damage spec 3; +10% Attack spec 4",
+          "ko": "공격력·레벨당 +0.5초·3번 특화 무기 피해 +10%·4번 특화 공격력 +10%"
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "en": "Precision routing and major PvE attacks",
+          "ko": "정밀 연계·주요 PvE 공격"
+        },
+        "description": {
+          "en": "Deadshot gains 15% PvE damage. Marking Shot grants Precision on use and Precision adds +5% all-element damage. Burst Arrow activates from Precision, gains 100% PvE and 30% PvP damage, and Resonance is granted on use; Arrow Scattershot likewise activates on use during Resonance. Snare Shot and Rooting Eye return to Slow/Root-oriented conditions.",
+          "ko": "조준 화살 PvE 피해는 15% 증가합니다. 표적 화살은 사용 시 정밀을 얻고 정밀에 모든 속성 피해 +5%가 추가됩니다. 파열 화살은 정밀로 활성화되고 PvE +100%·PvP +30%, 사용 시 감응을 얻으며 화살 난사도 감응 중 사용 시 활성화됩니다. 올가미 화살·속박의 눈은 둔화/속박 중심 조건으로 복원됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the main burst becomes less dependent on hit timing and crowd-control state. Verify exact restored conditions, Precision/Resonance grant timing, removed conditional bonus, tooltips and rotation before KR eDPS use.",
+          "ko": "P1 해석: 핵심 폭딜이 적중 시점과 상태이상 조건에 덜 의존합니다. 한국 eDPS 반영 전 복원 조건·정밀/감응 부여 시점·삭제된 조건 피해·툴팁·로테이션을 확인해야 합니다."
+        },
+        "before": {
+          "en": "Hit/CC-gated Precision and Burst Arrow",
+          "ko": "적중·상태이상 조건의 정밀·파열 화살"
+        },
+        "after": {
+          "en": "Use-gated Precision/Resonance; +15% Deadshot; +100%/+30% Burst Arrow",
+          "ko": "사용 조건 정밀·감응, 조준 +15%, 파열 PvE +100%·PvP +30%"
+        }
+      },
+      {
+        "classId": "cleric",
+        "type": "buff",
+        "subject": {
+          "en": "Broad PvE attack increase",
+          "ko": "주요 PvE 공격 상향"
+        },
+        "description": {
+          "en": "Earth’s Retribution, Bolt and Discharge gain 20% PvE damage; Judgment Thunder and Divine Punishment gain 5%; Divine Aura gains 10%; Condemnation gains 15%.",
+          "ko": "대지의 응보·뇌전·방전 PvE 피해는 20%, 심판의 번개·천벌은 5%, 신성한 기운은 10%, 단죄는 15% 증가합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: solo and damage-build output rises across several skills, but healing trade-offs, animation cadence and total class eDPS are not established. Verify each tooltip and a matched build rotation.",
+          "ko": "P1 해석: 솔로·공격 빌드의 여러 스킬이 강해지지만 치유 맞교환·동작 주기·직업 전체 eDPS는 확정되지 않았습니다. 각 툴팁과 동일 빌드 로테이션을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "KR Trust limits and 05:00 reset",
+          "ko": "한국 신뢰도 한도·05시 초기화"
+        },
+        "description": {
+          "en": "A new account-level Trust system can apply daily integrated server/world-market settlement limits and exchange purchase limits. The available amount depends on account trust and resets daily at 05:00.",
+          "ko": "계정 단위 신뢰도에 따라 서버/월드 거래소 정산과 교환소 구매에 통합 일일 한도가 적용될 수 있으며 매일 05:00 초기화됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: trading and growth routes may be delayed for affected accounts. Verify account state, displayed limit, reset, settlement/purchase accounting and unlock conditions before adding fixed amounts.",
+          "ko": "P1 해석: 해당 계정의 거래·성장 동선이 지연될 수 있습니다. 고정 수치를 안내하기 전 계정 상태·표시 한도·초기화·정산/구매 집계·해제 조건을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "KR free server transfer and merge rules",
+          "ko": "한국 무료 서버 이전·병합 규칙"
+        },
+        "description": {
+          "en": "KR server transfer opens free, while locked destination slots keep their existing unlock cost. Attendance, remaining cube rewards, Outland weekly rewards, Estate objects and Genus Insight follow published selection/merge rules.",
+          "ko": "한국 서버 이전은 무료로 열리지만 도착 서버 잠긴 슬롯 비용은 유지됩니다. 출석·남은 큐브 보상·아웃랜드 주간 보상·영지 오브젝트·주신의 기원은 공지된 선택·병합 규칙을 따릅니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: this affects KR migration planning only. Do not reopen or rewrite the existing Global transfer guide; verify eligibility, capacity, slot price, reward counters, Estate overflow deletion and Genus Insight selection in the KR client.",
+          "ko": "P1 해석: 한국 이전 계획에만 영향을 줍니다. 기존 글로벌 서버 이전 공략을 재개·수정하지 않고 한국 클라이언트에서 자격·정원·슬롯 비용·보상 횟수·영지 상한 초과 삭제·주신의 기원 선택을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "KR PvP weapon stats and ranking-point thresholds",
+          "ko": "한국 PvP 무기 스탯·랭킹 기준점"
+        },
+        "description": {
+          "en": "KR adds PvP Weapon Damage Amplification and PvP Weapon Damage Resistance. The Battleground Amulet’s PvP Damage Amplification is replaced by PvP Weapon Damage Amplification while breakthrough stats remain; baseline ranking points for Transcendence and Nightmare are reduced.",
+          "ko": "한국에 PvP 무기 피해 증폭·PvP 무기 피해 내성이 추가됩니다. 격전의 아뮬렛 PvP 피해 증폭은 PvP 무기 피해 증폭으로 교체되고 돌파 스탯은 유지되며, 초월·악몽의 기준 랭킹 포인트는 하향됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: KR PvP gearing comparisons and score targets may change, but no conversion formula or threshold values were published. Verify stat scope, stacking, old-item migration, tooltip values and the new Transcendence/Nightmare score thresholds before revising /gear/, /guides/pvp-context/ or /routines/.",
+          "ko": "P1 해석: 한국 PvP 장비 비교와 점수 목표가 달라질 수 있지만 변환식·기준점 수치는 공지되지 않았습니다. /gear/·/guides/pvp-context/·/routines/ 수정 전 스탯 적용 범위·중첩·기존 아이템 전환·툴팁 수치·초월/악몽 새 기준점을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Muspel Easy, reward conversions and dungeon close",
+          "ko": "무스펠 쉬움·보상 변환·던전 종료"
+        },
+        "description": {
+          "en": "Muspel’s Chalice Easy is added. Selected guaranteed equipment-change tickets can be converted to a top-grade material choice box; additional pity-point conversion recipes are announced for November 25. After dungeon close, rewards cannot be obtained and automatic exit occurs after 10s.",
+          "ko": "무스펠의 성배 쉬움이 추가됩니다. 일부 확정 장비 변경권은 최상급 재료 선택 상자로 변환할 수 있고 추가 천장 포인트 변환 도안은 11월 25일 예정입니다. 던전 마감 뒤 보상을 받을 수 없고 10초 후 자동 퇴장합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: difficulty/reward and post-clear timing guidance may change. Verify entry gate, boss patterns, rewards, conversion costs/eligibility, November 25 rollout, close trigger and the 10s exit.",
+          "ko": "P1 해석: 난도·보상·클리어 후 시간 안내가 달라질 수 있습니다. 입장 조건·보스 패턴·보상·변환 비용/대상·11월 25일 적용·마감 발동·10초 퇴장을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Abyss Hidden Cube and gathering rules",
+          "ko": "어비스 히든 큐브·채집 규칙"
+        },
+        "description": {
+          "en": "Fixes some Chaos Ereshuranta Middle hidden cubes spawning in hard-to-reach positions. Dungeon gathering no longer counts toward the server cap and remains available at the cap; repeated Abyss gathering cancellation now accumulates toward a temporary restriction.",
+          "ko": "혼돈의 에레슈란타 중층 일부 히든 큐브의 도달 어려운 생성 위치를 수정합니다. 던전 채집은 서버 한도에 집계되지 않고 한도 도달 후에도 가능하며, 어비스 채집 취소 반복은 임시 제한 횟수에 누적됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: map and routine guidance needs client coordinates and counter tests. Preserve existing coordinates until spawn, altitude, acquisition condition, reset and cancellation counting are reproduced.",
+          "ko": "P1 해석: 지도·일과 안내에는 클라이언트 좌표와 횟수 검증이 필요합니다. 스폰·고도·획득 조건·초기화·취소 집계를 재현할 때까지 기존 좌표를 유지합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Boss targeting, telegraphs and solo-pattern state",
+          "ko": "보스 타깃·예고·1인 패턴 상태"
+        },
+        "description": {
+          "en": "Fixes Eracus Lifika not targeting the nearest player with Sandstorm, revived Auldor’s Whirling Calamity tornado moving outside its preview, Auldor/Beltiras not using solo patterns in solo play, and solo patterns persisting after another player joins.",
+          "ko": "에라쿠스 리피카 모래 폭풍의 최근접 대상 미지정, 부활한 아울도르 휘몰아치는 재앙 회오리의 예고 범위 이탈, 신성한 아울도르·벨티라스의 1인 패턴 미사용과 난입 후 1인 패턴 유지 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: current cue/response guidance can be wrong for these encounters. Verify difficulty, region, trigger, target selection, preview path, solo/party transition and correct response before revising animations or tactics.",
+          "ko": "P1 해석: 해당 전투의 현재 예고·대응 안내가 달라질 수 있습니다. 애니메이션·전술 수정 전 난도·지역·발동·대상 선정·예고 경로·1인/파티 전환·대응을 확인해야 합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, publication and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "Patch scope",
+          "notes": [
+            {
+              "en": "Published November 17 at 19:30:00 UTC, source-updated at 19:30:05 UTC and scheduled for the November 18 KR maintenance (04:30–08:00 KST). This review was completed separately at 20:13:14 UTC and is bound to source hash e085599c…; actual reopening remains a client check.",
+              "ko": "11월 17일 19:30:00 UTC 게시, 19:30:05 UTC 원문 수정, 한국 11월 18일 04:30~08:00 점검 적용 예정입니다. 편집 검토는 별도 시각 20:13:14 UTC에 완료해 원문 해시 e085599c…에 묶었으며 실제 오픈은 클라이언트 확인 대상입니다."
+            },
+            {
+              "en": "KR only. None of these class, Trust, transfer, PvP, dungeon or gathering rules is copied to North America. Historical observations retain their original dates and conditions.",
+              "ko": "한국 전용입니다. 직업·신뢰도·서버 이전·PvP·던전·채집 규칙을 북미에 복사하지 않으며 과거 관측의 날짜와 조건을 유지합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Class changes and exact targets",
+            "ko": "직업 변경·정확한 대상"
+          },
+          "sourceSection": "클래스 변경사항",
+          "notes": [
+            {
+              "en": "Official facts: seven KR classes receive explicit cooldown, damage, resource, specialization, condition or buff changes. Numeric inputs are stored under this hash in data/skill-snapshot.json; Global data/skills.json remains unchanged.",
+              "ko": "공식 확인: 한국 7직업에 명시적인 쿨타임·피해·자원·특화·조건·버프 변경이 있습니다. 수치 입력은 같은 해시로 data/skill-snapshot.json에 저장하며 글로벌 data/skills.json은 유지합니다."
+            },
+            {
+              "en": "P1 public targets are the existing class pages for Gladiator, Templar, Assassin, Chanter, Ranger and Cleric plus matching /skills/<id>/ routes and Korean counterparts. Brawler has no compatible public Global route. Verify tooltips, coefficients, cooldowns, level scaling, conditions, animation time and reproducible rotations.",
+              "ko": "P1 공개 대상은 검성·수호성·살성·호법성·궁성·치유성의 기존 직업 페이지와 관련 /skills/<id>/ 및 한국어 대응 경로입니다. 권성은 호환 글로벌 공개 경로가 없습니다. 툴팁·계수·쿨타임·레벨 증가·조건·동작 시간·재현 로테이션을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Bosses, maps and progression",
+            "ko": "보스·지도·성장"
+          },
+          "sourceSection": "콘텐츠 및 시스템 / 수정사항",
+          "notes": [
+            {
+              "en": "P1 exact public targets after client verification: /dungeons/urugugu-canyon/, /dungeons/, /guides/dungeon-rewards/, /maps/, /routines/, /endgame/, /gear/ and /guides/pvp-context/ and Korean counterparts. Source targets are fieldnotes.py, progression.py, encounters.py, data/maps.json, worldmap.py and routines.py. Current animations and coordinates remain until reproduced.",
+              "ko": "P1 클라이언트 검증 후 정확한 공개 대상은 /dungeons/urugugu-canyon/·/dungeons/·/guides/dungeon-rewards/·/maps/·/routines/·/endgame/·/gear/·/guides/pvp-context/ 및 한국어 대응 경로입니다. 소스는 fieldnotes.py·progression.py·encounters.py·data/maps.json·worldmap.py·routines.py이며 재현 전 현재 애니메이션·좌표를 유지합니다."
+            },
+            {
+              "en": "The KR free-transfer facts remain on this patch detail and coverage backlog. /guides/server-transfer/ is a Global guide and is not reopened or rewritten from the KR announcement.",
+              "ko": "한국 무료 이전 사실은 이 패치 상세와 보강 목록에만 둡니다. /guides/server-transfer/는 글로벌 공략이므로 한국 공지로 재개·수정하지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Review limits",
+            "ko": "검토 범위"
+          },
+          "sourceSection": "highlights review",
+          "notes": [
+            {
+              "en": "This highlights review covers every class section and guide-impacting systems/fixes. It does not claim complete republication of PC-café event/prize tables, gameplay validation, patch-derived DPS rankings or final class tiers.",
+              "ko": "모든 직업 구간과 공략 영향 시스템·수정을 다룬 highlights 검토입니다. PC방 이벤트·경품 표 전체 재정리, 인게임 검증 완료, 패치 기반 DPS 순위나 최종 직업 티어를 주장하지 않습니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    },
+    "followups": []
+  },
   "6af77a507d773f10fbeb07f9": {
     "contentHash": "ff91677012c8b856d45261aaea7217b092ce2b66f993122061c1251ebb061ccf",
     "reviewedAt": "2026-11-14T08:38:50Z",

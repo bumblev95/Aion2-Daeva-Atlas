@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-28",
+  "reviewedAt": "2026-11-17T20:13:14Z",
   "region": "Global",
   "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
@@ -462,7 +462,189 @@
           "reason": "Storm Order is a newer KR skill with no compatible ID in the current Global base snapshot."
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-18",
+      "reviewedAt": "2026-11-17T20:13:14Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6afcab38ebccad0e4b5bad5f",
+      "sourceUpdatedAt": "2026-11-17T19:30:05.208Z",
+      "sourceHash": "e085599c9e7b9b3a76c9125f6f743c04df579af032a5b7bc0ee6b32b7f17b8a1",
+      "calculationState": "KR November 18 inputs recorded separately; not applied to the incompatible Global base, NA PvE, historical observations or rankings",
+      "skills": {
+        "ruinous-blow": {
+          "beforeCooldownSeconds": 60,
+          "cooldownSeconds": 40,
+          "specialization3BeforeChargeSeconds": [
+            60,
+            30
+          ],
+          "specialization3ChargeSeconds": [
+            40,
+            40
+          ]
+        },
+        "focused-block": {
+          "specialization3BeforeFrenzyDurationSeconds": 5,
+          "specialization3FrenzyDurationSeconds": 10
+        },
+        "shield-smite": {
+          "judgmentCooldownReset": true
+        },
+        "judgment": {
+          "beforeCooldownSeconds": 3,
+          "cooldownSeconds": 7,
+          "baseDamageChangePercent": 50,
+          "specialization3BeforeConsecutiveDamagePercent": [
+            50,
+            100,
+            150,
+            200
+          ],
+          "specialization3ConsecutiveDamagePercent": [
+            25,
+            50,
+            75,
+            100
+          ]
+        },
+        "punishment": {
+          "beforeConditionalBonus": "Extra damage while Judgment’s Authority is active",
+          "conditionalBonusRemoved": true
+        },
+        "quick-slice": {
+          "pveDamageChangePercent": 10
+        },
+        "savage-roar": {
+          "pveDamageChangePercent": -20,
+          "pvpDamageChangePercent": -20
+        },
+        "ambush": {
+          "beforeKillingIntentDurationSeconds": 3,
+          "killingIntentDurationSeconds": 5,
+          "killingIntentMaxStacks": 3,
+          "beforeCrushingBlowPercent": 5,
+          "crushingBlowPercentPerStack": 3,
+          "rapidRepeatIssueMitigated": true
+        },
+        "heart-gore": {
+          "beforeKillingIntentDamagePercent": 150,
+          "killingIntentDamagePercent": 80
+        },
+        "insignia-explosion": {
+          "beforeCooldownSeconds": 7,
+          "cooldownSeconds": 5,
+          "beforeDamageByInsigniasPercent": [
+            10,
+            40,
+            90,
+            160,
+            400
+          ],
+          "damageByInsigniasPercent": [
+            10,
+            30,
+            60,
+            100,
+            250
+          ]
+        },
+        "spinning-strike": {
+          "pveDamageChangePercent": 10
+        },
+        "deadshot": {
+          "pveDamageChangePercent": 15
+        },
+        "snare-shot": {
+          "effectRestoredToSlow": true,
+          "specialization1Before": "Remove MP cost and restore 200 MP on hit",
+          "specialization1MoveSpeedReductionIncreasePercent": 20
+        },
+        "marking-shot": {
+          "precisionTrigger": "on use",
+          "precisionCriticalHit": 300,
+          "precisionAllElementDamageAmplificationPercent": 5
+        },
+        "burst-arrow": {
+          "activationCondition": [
+            "Precision"
+          ],
+          "pveDamageChangePercent": 100,
+          "pvpDamageChangePercent": 30,
+          "precisionConditionalDamageRemoved": true,
+          "resonanceTrigger": "on use"
+        },
+        "explosive-arrow": {
+          "arrowScattershotActivationTrigger": "on use while Resonance is active"
+        },
+        "rooting-eye": {
+          "triggerCondition": [
+            "Slow",
+            "Root"
+          ]
+        },
+        "earths-retribution": {
+          "pveDamageChangePercent": 20
+        },
+        "judgment-thunder": {
+          "pveDamageChangePercent": 5
+        },
+        "divine-aura": {
+          "pveDamageChangePercent": 10
+        },
+        "condemnation": {
+          "pveDamageChangePercent": 15
+        }
+      },
+      "unmatchedSkillInputs": {
+        "assassin-chain-children": {
+          "officialNamesKo": [
+            "절혼 베기",
+            "쾌속 베기",
+            "맹수의 뒷발차기"
+          ],
+          "quickSliceChainPveDamageChangePercent": 10,
+          "savageChainPveDamageChangePercent": -20,
+          "savageChainPvpDamageChangePercent": -20,
+          "reason": "Chain children are not independent compatible IDs in the current Global base snapshot."
+        },
+        "brawler": {
+          "officialNamesKo": [
+            "연격",
+            "중격",
+            "강격",
+            "질풍격",
+            "연환권",
+            "회전각",
+            "태풍 연타",
+            "승천타",
+            "폭렬권"
+          ],
+          "reason": "Brawler is KR-only in the current catalog; numeric resource, life-steal, reset and cooldown-reduction inputs remain hash-bound without guessed Global IDs."
+        },
+        "storm-order": {
+          "officialNameKo": "폭풍의 주문",
+          "beforeAmplificationType": "weapon damage",
+          "amplificationType": "attack",
+          "durationIncreaseSecondsPerSkillLevel": 0.5,
+          "specialization3BeforeDurationIncreaseSeconds": 2,
+          "specialization3WeaponDamageIncreasePercent": 10,
+          "specialization4BeforeAttackIncreasePercent": 7,
+          "specialization4AttackIncreasePercent": 10,
+          "reason": "Storm Order has no compatible ID in the current Global base snapshot."
+        },
+        "cleric-chain-children": {
+          "officialNamesKo": [
+            "뇌전",
+            "방전",
+            "천벌"
+          ],
+          "earthRetributionChainPveDamageChangePercent": 20,
+          "judgmentThunderChainPveDamageChangePercent": 5,
+          "reason": "Chain children are not independent compatible IDs in the current Global base snapshot."
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-14"
+  "lastOfficialOverrideReviewedAt": "2026-11-17T20:13:14Z"
 }
