@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-14T08:38:50Z",
+  "reviewedAt": "2026-11-17T08:12:27Z",
   "items": [
     {
       "id": "kr-20261114-class-pvp-sanctuary",
@@ -84,14 +84,14 @@
     {
       "id": "na-20261111-server-matchmaking",
       "region": "NA / Global",
-      "reviewedAt": "2026-11-12T08:50:53Z",
+      "reviewedAt": "2026-11-17T08:12:27Z",
       "title": {
         "en": "November 11 NA/Global · Abyss and Rift server matchmaking",
         "ko": "11월 11일 북미/글로벌 · 어비스·시공 서버 매칭"
       },
       "finding": {
-        "en": "P1 system: the official notice was re-read after its latest revision at 01:14:23 UTC on November 12 and bound in the evidence ledger to SHA-256 454585f8…. Its current high-level rules remain Advanced Access/Launch mixing, separate Abyss and Spacetime Rift tables, periodic rematching and possible same-faction Abyss pairs. United States and Canada use the applicable NA East or NA West table; no KR rule is applied. The previous full body was not retained, so an exact row-by-row revision diff is not claimed. The official title/link remains a general-news card on /updates/ and /ko/updates/ from data/news.json. P1 verification targets are /guides/pvp-context/ and /routines/ in both languages, with source files content.py and routines.py. Verify the selected server’s Abyss opponent, Rift faction opponent, Advanced/Launch mixing, same-faction Abyss match, activation time and later rotation before adding a persistent table or tactic. No class coefficient, eDPS input, historical ranking or tier changes.",
-        "ko": "P1 시스템: 11월 12일 01:14:23 UTC 최신 수정 뒤 공식 원문을 다시 읽고 증거 기록을 SHA-256 454585f8…에 연결했습니다. 현재 핵심 규칙은 얼리 액세스/정식 출시 서버 혼합, 어비스·시공의 균열 별도 표, 주기적 재매칭, 동일 진영 어비스 매칭 가능성으로 유지됩니다. 미국·캐나다는 해당 북미 동부 또는 서부 표를 함께 사용하며 한국 규칙에는 적용하지 않습니다. 이전 전체 본문을 보관하지 않아 수정 전후 행 단위 차이는 주장하지 않습니다. 일반 뉴스이므로 data/news.json에서 /updates/·/ko/updates/의 공식 제목·원문 링크 카드로 유지합니다. P1 직접 검증 대상은 양 언어의 /guides/pvp-context/·/routines/, 소스는 content.py·routines.py입니다. 고정 표나 전술을 추가하기 전 선택 서버의 어비스 상대·시공 진영 상대·얼리/정식 서버 혼합·동일 진영 어비스 매칭·적용 시각·후속 교체를 확인해야 합니다. 직업 계수·eDPS 입력·과거 순위·티어 변경은 없습니다."
+        "en": "P1 system. Official fact: NC revised the November 11 Server Matchmaking notice at 21:05:12 UTC on November 16; the current title and normalized body are bound to SHA-256 942cc6c5…. The current notice still permits Advanced Access/Launch mixing, publishes separate Abyss and Spacetime Rift tables, says pairings are periodically reevaluated and allows same-faction Abyss matches. It lists current NA East and NA West tables for the United States and Canada; no KR rule is applied. The previous full body was not retained, so the exact changed table row is not claimed. Guide-impact interpretation: a changed opponent table can invalidate a persistent PvP matchup instruction, so the official title/link remains a general-news card on /updates/ and /ko/updates/ rather than a copied fixed table. Exact review targets are /guides/pvp-context/ and /routines/ in both languages, with source files content.py and routines.py. Direct verification pending: the selected server’s Abyss opponent, Rift faction opponent, Advanced/Launch mixing, same-faction Abyss match, activation time and later rotation. No class coefficient, eDPS input, historical ranking or tier changes.",
+        "ko": "P1 시스템. 공식 확인: NC는 11월 11일 서버 매칭 공지를 11월 16일 21:05:12 UTC에 수정했으며, 현재 제목과 정규화 본문을 SHA-256 942cc6c5…에 다시 묶었습니다. 현재 공지는 얼리 액세스/정식 출시 서버 혼합, 어비스·시공의 균열 별도 표, 주기적 재평가, 동일 진영 어비스 매칭 가능성을 유지하며 미국·캐나다가 함께 사용하는 북미 동부·서부 현재 표를 게시합니다. 한국 규칙에는 적용하지 않습니다. 이전 전체 본문을 보관하지 않아 정확히 어느 표 행이 바뀌었는지는 주장하지 않습니다. 공략 영향 해석: 상대 표가 바뀌면 고정 PvP 매칭 안내가 틀릴 수 있어 /updates/·/ko/updates/에서는 복제한 고정 표 대신 일반 뉴스의 공식 제목·원문 링크 카드를 유지합니다. 정확한 검토 대상은 양 언어의 /guides/pvp-context/·/routines/, 소스는 content.py·routines.py입니다. 직접 검증 대기는 선택 서버의 어비스 상대·시공 진영 상대·얼리/정식 서버 혼합·동일 진영 어비스 매칭·적용 시각·후속 교체입니다. 직업 계수·eDPS 입력·과거 순위·티어 변경은 없습니다."
       },
       "status": "needs-evidence",
       "sources": [
