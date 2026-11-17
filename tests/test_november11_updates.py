@@ -114,12 +114,25 @@ class November11UpdateRegressionTest(unittest.TestCase):
             self.assertIsNone(item['contentHash'])
         self.assertEqual(
             notices['6af32952bcc8631989223db1']['sourceUpdatedAt'],
-            '2026-11-12T01:14:23.930Z',
+            '2026-11-16T21:05:12.865Z',
         )
         self.assertEqual(
             notices['6af3d328066b033317c02bd3']['sourceUpdatedAt'],
             '2026-11-14T00:42:08.322Z',
         )
+        evidence = json.loads(
+            (ROOT / 'research/na-server-matchmaking-review-2026-11-17.json').read_text()
+        )
+        self.assertEqual(evidence['article']['id'], '6af32952bcc8631989223db1')
+        self.assertEqual(
+            evidence['article']['contentHash'],
+            '942cc6c59558e0d488618a2b82a6df598066b06b7de573ce66ad3c06c43f77f6',
+        )
+        self.assertEqual(evidence['classification'], 'system')
+        self.assertEqual(evidence['guideImpact']['priority'], 'P1')
+        self.assertIn('/guides/pvp-context/', evidence['guideImpact']['publicPaths'])
+        self.assertFalse(evidence['numericInputsChanged'])
+        self.assertFalse(evidence['tierPublished'])
 
 
 if __name__ == '__main__':

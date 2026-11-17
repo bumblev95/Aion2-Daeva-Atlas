@@ -1,0 +1,56 @@
+{
+  "reviewedAt": "2026-11-17T08:12:27Z",
+  "scope": "Current NA/Global Server Matchmaking notice revision that affects PLAYER’S CODEX PvP context; official publication evidence only, without gameplay validation",
+  "article": {
+    "id": "6af32952bcc8631989223db1",
+    "title": "[Notice] Server Matchmaking | November 11",
+    "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6af32952bcc8631989223db1",
+    "retrieval": "Public NC API: https://api-global-community.plaync.com/aion2_global/board/notice_en/article/6af32952bcc8631989223db1",
+    "publishedAt": "2026-11-11T08:00:00.001Z",
+    "sourceUpdatedAt": "2026-11-16T21:05:12.865Z",
+    "contentHash": "942cc6c59558e0d488618a2b82a6df598066b06b7de573ce66ad3c06c43f77f6",
+    "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)",
+    "previousReviewedRevision": {
+      "reviewedAt": "2026-11-12T20:32:31Z",
+      "sourceUpdatedAt": "2026-11-12T01:14:23.930Z",
+      "contentHash": "454585f8ae60311d4320a53495c65a7c1fba162a1180536aa5302e9489803ca4"
+    },
+    "comparisonLimit": "The previous full notice body was not retained, so an exact row-by-row pairing-table diff is not claimed."
+  },
+  "region": "NA / Global; United States and Canada use the applicable NA East or NA West table. No KR rule is applied.",
+  "classification": "system",
+  "officialFact": {
+    "en": "The current official revision still permits Advanced Access and Launch servers to be paired, publishes separate Abyss and Spacetime Rift pairings, says pairings are periodically reevaluated, and allows same-faction Abyss matches. It lists current NA East and NA West tables.",
+    "ko": "현재 공식 수정본은 얼리 액세스와 정식 출시 서버의 혼합 매칭, 어비스와 시공의 균열 별도 매칭표, 주기적 재평가, 동일 진영 어비스 매칭 가능성을 유지하며 북미 동부·서부의 현재 표를 게시합니다."
+  },
+  "guideImpact": {
+    "priority": "P1",
+    "reason": {
+      "en": "Interpretation: a changed opponent table can invalidate persistent PvP matchup instructions. PLAYER’S CODEX therefore keeps the official notice as a link card and does not copy a fixed table into a guide.",
+      "ko": "해석: 상대 서버 표가 바뀌면 고정 PvP 매칭 안내가 틀릴 수 있습니다. 따라서 PLAYER’S CODEX는 공식 링크 카드만 유지하고 고정 표를 공략에 복사하지 않습니다."
+    },
+    "publicPaths": [
+      "/updates/",
+      "/ko/updates/",
+      "/guides/pvp-context/",
+      "/ko/guides/pvp-context/",
+      "/routines/",
+      "/ko/routines/"
+    ],
+    "sourcePaths": [
+      "data/news.json",
+      "data/coverage-audit.json",
+      "content.py",
+      "routines.py"
+    ]
+  },
+  "directVerificationPending": [
+    "Selected server’s current Abyss opponent in NA East or NA West",
+    "Selected server’s current Spacetime Rift faction opponent",
+    "Advanced Access/Launch mixing and same-faction Abyss matching in game",
+    "Activation time and the next pairing rotation"
+  ],
+  "numericInputsChanged": false,
+  "historicalDpsPreserved": true,
+  "tierPublished": false
+}
