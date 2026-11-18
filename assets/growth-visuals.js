@@ -117,7 +117,7 @@
       all(root, '[data-wallet-value]').forEach(n => { n.textContent = num(values[n.dataset.walletValue]); });
       const allCost = mode === 'all';
       root.querySelector('.viz-bound').classList.toggle('is-unavailable', !allCost);
-      root.querySelector('[data-wallet-label="bound"]').textContent = allCost ? t('Use first for combined costs', '합산 비용에 먼저 사용') : t('Unavailable for Market purchases', '거래소 결제에 사용 불가');
+      root.querySelector('[data-wallet-label="bound"]').textContent = allCost ? t('Assumed first in this example', '이 예시에서는 먼저 사용 가정') : t('Unavailable for Market purchases', '거래소 결제에 사용 불가');
       root.querySelector('[data-wallet-label="unbound"]').textContent = allCost ? t('Covers the remaining combined cost', '합산 비용의 부족분 사용') : t('Pays the Market cost', '거래소 비용 결제');
       result.textContent = shortfall ? t('Not enough for this cost', '비용이 부족해요') : t('Cost covered', '비용 충당 가능');
       status.textContent = shortfall
