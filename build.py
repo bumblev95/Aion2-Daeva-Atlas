@@ -201,9 +201,10 @@ def guides():
     write('guides/',t('AION 2 guides: growth, gear, dungeons & party help','아이온 2 공략 모음: 내실·장비·던전·파티'),t('Find AION 2 progression routes, equipment upgrades, boss mechanics, daily rewards and answers to party questions.','아이온 2 내실·성장 순서, 장비 강화, 보스 패턴, 일일 보상과 파티 약어·칭찬 방법을 목적별로 찾아보세요.'),f'<div class="wrap">{pagehead(t("Find your guide","전체 공략"),t("Choose a topic to narrow the list.","원하는 주제로 좁혀서 찾아보세요."))}{guidebrowse.directory(LANG,BASE)}</div>','guides')
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
+        reviewed=progression.KINAH_NA_REVIEWED if slug=='kinah-farming' else progression.REVIEWED
         transfer_anchor={'pet-growth':'pets','kinah-farming':'storage','dungeon-rewards':'rewards','gear-targets':'checklist'}[slug]
-        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}</div>','guides',True,reviewed=progression.REVIEWED)
-        page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}</div>','guides',True,reviewed=reviewed)
+        page_dates[SITE+'/'+path(sub)]=reviewed
     search_index.extend(progression.search_entries(LANG,BASE))
     for g in advancedguides.GUIDES:
         sub='guides/'+g['slug']+'/'

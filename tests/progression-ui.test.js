@@ -65,6 +65,21 @@ async function contained(page, label) {
       for (const slug of routes) {
         await page.goto(local + 'guides/' + slug + '/');
         await auditGuideLinks(page);
+        if (slug === 'kinah-farming') {
+          const notice = page.locator('#kinah-na-patch');
+          assert.equal(await notice.isVisible(), true);
+          assert((await notice.textContent()).includes('1,000,000'));
+          assert.equal(await notice.locator('a[href*="6afd5b00ebccad0e4b5bad8b"]').count(),1);
+          for (const anchor of ['kinah-plan','kinah-types','kinah-market']) {
+            await page.locator(`.reader-tabs a[href="#${anchor}"]`).click();
+            assert.equal(await notice.isVisible(),true);
+          }
+          await page.goto(local+'guides/kinah-farming/#kinah-types');
+          assert.equal(await notice.isVisible(),true);
+          // Restore the default route before the existing layout/language
+          // checks; language switching correctly preserves a deep-link hash.
+          await page.goto(local+'guides/kinah-farming/');
+        }
         assert.equal(await page.locator('.progress-series [aria-current="page"]').getAttribute('href'),prefix+(lang==='ko'?'ko/':'')+'guides/'+slug+'/');
         // Expand native fallback panels before measuring their tables. Closed
         // details have no visible cell width; this is not a layout failure.

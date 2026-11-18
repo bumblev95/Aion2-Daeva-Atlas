@@ -10,6 +10,9 @@ import guidebrowse
 from advancedguides import LUDRA_PATCH, LUDRA_PATCH_REVIEW
 
 REVIEWED = '2026-10-12'
+KINAH_NA_REVIEWED = '2026-11-18'
+KINAH_NA_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b'
+KINAH_NA_PATCH_REVIEW = 'updates/na-6afd5b00ebccad0e4b5bad8b/'
 ROOT = 'guides/'
 GUIDES = [
     ('pet-growth', ('Pet growth & farming', '펫 내실·영혼 파밍'),
@@ -51,6 +54,9 @@ SOURCES = {
     'kinah': ('https://metabot.gg/en/aion-2/guides/kinah-farming-guide',
         ('MetaBot · Kinah sources and currency types', 'MetaBot · 키나 획득처·화폐 구분'),
         ('Global reference; updated 2026-10-10. Fixed rewards and tradable materials; no live Market prices.', '글로벌 참고 · 2026.10.10 수정. 정해진 보상·판매 가능한 재료, 실시간 거래소 시세 아님.')),
+    'kinah-na-nov18': (KINAH_NA_PATCH,
+        ('NC · NA · November 18 Kinah change', 'NC · 북미 · 11월 18일 키나 변경'),
+        ('Official NA patch: all field-monster Kina rewards become bound; the daily 1,000,000 acquisition limit also changes to Bound Kina. No direct gameplay verification.', '북미 공식 패치: 모든 필드 몬스터 키나 보상과 일일 1,000,000 획득 한도를 귀속 키나로 변경. 직접 플레이 검증 전.')),
     'depository': ('https://metabot.gg/en/aion-2/dungeons/crobakhis-secret-depository',
         ("MetaBot · Crobakhi’s Secret Depository", 'MetaBot · 크로파킨 비밀 보관소'),
         ('Global score table: 300,000 bound Kinah at 10,000 score; lower scores pay less.', '글로벌 점수별 보상표. 1만 점에 귀속 키나 30만, 낮은 점수는 보상 감소.')),
@@ -123,7 +129,7 @@ SECTION_NAV = {
     'pet-growth': [('pet-visual', ('Soul routes', '영혼 사용 그림')), ('pet-families', ('Which pet?', '어떤 펫?')), ('pet-farming', ('Farming locations', '사냥터')), ('pet-spending', ('Spend materials', '재료 사용'))],
     'gear-targets': [('gear-ladder', ('Target gear', '목표 장비')), ('gear-investment', ('Enhancement order', '강화 순서')), ('gear-materials', ('Materials', '재료 획득처')), ('gear-fallbacks', ('Vouchers & crafting', '교환·제작'))],
     'dungeon-rewards': [('dungeon-visual', ('Choose a run', '갈 던전 고르기')), ('dungeon-plans', ('Dungeon plans', '던전별 공략')), ('dungeon-after', ('Use the rewards', '보상 사용'))],
-    'kinah-farming': [('kinah-types', ('Currency types', '키나 종류')), ('kinah-fixed', ('Fixed rewards', '보상 수입')), ('kinah-market', ('Market sales', '판매 재료')), ('kinah-plan', ('Today’s plan', '오늘 할 일'))],
+    'kinah-farming': [('kinah-na-patch', ('NA · November 18', '북미 · 11월 18일')), ('kinah-types', ('Currency types', '키나 종류')), ('kinah-fixed', ('Fixed rewards', '보상 수입')), ('kinah-market', ('Market sales', '판매 재료')), ('kinah-plan', ('Today’s plan', '오늘 할 일'))],
 }
 
 
@@ -272,6 +278,17 @@ def dungeon_guide(v):
 
 def kinah_guide(v):
     t=v.t
+    na=v.cards([
+        (('Official · field-monster rewards', '공식 · 필드 몬스터 보상'),
+         ('In NA, Kina rewards from all field monsters become Bound Kina. The daily 1,000,000 Kina acquisition limit also changes to Bound Kina. This is an acquisition cap, not a promised payout.', '북미에서는 모든 필드 몬스터의 키나 보상이 귀속 키나로 바뀝니다. 일일 1,000,000 키나 획득 한도에도 귀속 키나 규칙이 적용됩니다. 획득 상한이며 보장 지급액이 아닙니다.')),
+        (('Planning · enhancement versus the Market', '계획 · 강화 비용과 거래소 자금'),
+         ('Direct field-monster Kina is no longer a route to unbound Market funds. The older currency reference says Kina (All) costs use bound funds first and Market purchases require unbound funds. Check the live enhancement cost label and debit order; the patch does not redefine those spending rules.', '필드 몬스터가 직접 지급하는 키나는 이제 거래소용 거래 가능 자금의 획득 경로가 아닙니다. 기존 화폐 자료에서는 Kina (All) 비용에 귀속분을 먼저 쓰고 거래소 구매에는 거래 가능분이 필요합니다. 실제 강화 비용의 화폐 표시·차감 순서는 인게임에서 확인해야 하며, 이번 패치가 이 사용 규칙을 새로 정한 것은 아닙니다.')),
+        (('Keep · eligible material sales', '유지 · 거래 가능한 재료 판매'),
+         ('This currency change does not establish that all crafting-material sales are invalid. Keep dungeon, gathering and processing routes as dated references; check the actual item binding, listing eligibility, fees and settlement currency before counting a completed sale as Market funds.', '이번 화폐 변경이 모든 제작 재료 판매를 무효화했다는 뜻은 아닙니다. 던전·채집·가공 판매 경로는 날짜가 있는 참고로 유지하고, 실제 아이템 귀속·등록 가능 여부·수수료·정산 화폐를 확인한 뒤 판매 완료분을 거래소 자금으로 계산하세요.')),
+        (('Verify in the NA client · cap details', '북미 인게임 확인 · 한도 세부 사항'),
+         ('Per-character or per-account scope, reset time, which other rewards share the counter, and behavior after reaching the cap remain unverified. Do not treat this as a cap on all income or assume Market sales are included or exempt. Do not add 1,000,000 to the older 550,000 example as guaranteed daily income. No KR rule or measured Kinah-per-hour is changed here.', '캐릭터·계정 단위, 초기화 시각, 다른 보상과의 카운터 공유 여부, 한도 도달 후 동작은 미검증입니다. 모든 수입의 상한으로 확대하거나 거래소 판매가 포함·제외된다고 단정하지 마세요. 기존 550,000 예시에 1,000,000을 더해 일일 보장 수입으로 안내하지 않습니다. 한국 서버 규칙·시간당 실측 수익은 변경하지 않습니다.')),
+    ])+v.cite('kinah-na-nov18','kinah')+v.a(KINAH_NA_PATCH_REVIEW,t('NA November 18 patch summary', '북미 11월 18일 패치 요약'),'progress-action')
+    na=v.section('kinah-na-patch', ('NA · November 18, 2026: bound field income', '북미 · 2026년 11월 18일: 필드 수입 귀속 전환'), ('Official patch facts, planning advice and open client checks are separated below. October Global references retain their original date and scope.', '공식 패치 사실·계획 권고·인게임 확인 대기를 구분합니다. 10월 글로벌 참고는 원래 날짜와 범위를 유지합니다.'),na)
     money=growthvisuals.wallet(v)+v.cite('kinah')
     rows=[
         (('Duty Missions', '사명'), ('50,000 bound each · 5 completed = 250,000', '1회 귀속 5만 · 5회 완료 시 25만'), ('Daily allowance', '일일 횟수'), 'routines/#routine-duties'),
@@ -280,7 +297,7 @@ def kinah_guide(v):
         (('Unfinished story / District quests', '남은 스토리·지역 퀘스트'), ('Bound Kinah plus the quest’s growth rewards', '귀속 키나와 해당 퀘스트의 성장 보상'), ('One-time progression', '캐릭터별 일회성 성장'), 'endgame/#after-story'),
     ]
     table=''.join(f'<tr><th scope="row">{v.p(name)}</th><td data-label="{t("Payout", "보상")}">{v.p(reward)}</td><td data-label="{t("Repeat / route", "주기·동선")}">{v.p(cadence)}<br>{v.a(url,t("Open route", "공략으로 이동"))}</td></tr>' for name,reward,cadence,url in rows)
-    fixed=f'<div class="progress-table"><table><thead><tr><th>{t("Activity", "할 일")}</th><th>{t("Bound Kinah", "귀속 키나 보상")}</th><th>{t("Repeat and route", "반복 여부·동선")}</th></tr></thead><tbody>{table}</tbody></table></div><p class="progress-note">'+t('Planning example: five 50,000-Kinah duties plus one 10,000-score depository clear = 550,000 bound Kinah, before any costs. This assumes all five duties and an available shared entry; it is not an hourly income or a guaranteed Daily Dungeon result.', '계획 예시: 5만 키나 사명 5회 + 보관소 1만 점 1회 = 비용 차감 전 귀속 키나 55만. 사명 5회 완료·공통 입장 횟수·1만 점을 전제로 한 계산이며 시간당 수입이나 무조건 받는 보상이 아닙니다.')+'</p>'+v.cite('kinah','duties','depository')
+    fixed=f'<div class="progress-table"><table><thead><tr><th>{t("Activity", "할 일")}</th><th>{t("Bound Kinah", "귀속 키나 보상")}</th><th>{t("Repeat and route", "반복 여부·동선")}</th></tr></thead><tbody>{table}</tbody></table></div><p class="progress-note">'+t('Planning example: five 50,000-Kinah duties plus one 10,000-score depository clear = 550,000 bound Kinah, before any costs. This assumes all five duties and an available shared entry; it is not an hourly income or a guaranteed Daily Dungeon result.', '계획 예시: 5만 키나 사명 5회 + 보관소 1만 점 1회 = 비용 차감 전 귀속 키나 55만. 사명 5회 완료·공통 입장 횟수·1만 점을 전제로 한 계산이며 시간당 수입이나 무조건 받는 보상이 아닙니다.')+'</p><p class="progress-note">'+t('These October amounts have not been reverified in the November 18 NA client. Their interaction with the field acquisition counter remains open; the wallet illustration does not calculate that counter.', '이 10월 보상 수치는 11월 18일 북미 클라이언트에서 재검증하지 않았습니다. 필드 획득 카운터와의 관계는 확인 대기이며, 지갑 예시는 해당 카운터를 계산하지 않습니다.')+'</p>'+v.cite('kinah','duties','depository')
     market=v.cards([
         (('Dungeon crafting materials', '정복 던전 제작 재료'),
          ('Wrathful Mind: the six classic dungeons. Wrathful Will: Urugugu/Vakron and the higher pair. Wrathful Ego: Fire Temple/Ferocious Horn. These feed Dragon Lord crafting; sell only tradable surplus.', 'Wrathful Mind는 기본 6종, Wrathful Will은 우루구구·바크론 이상, Wrathful Ego는 불의 신전·사나운 뿔에서 노립니다. 용제 제작용 재료이며 남는 거래 가능분을 판매합니다.')),
@@ -293,15 +310,16 @@ def kinah_guide(v):
         (('Need stones and Kinah', '강화석과 키나가 함께 부족'),
          ('Finish duties for Kinah; choose Bio-Research Base for stones. Put both into the equipment goal you already selected.', '사명으로 키나를 모으고 데바 생체연구기지에서 강화석을 받습니다. 정해둔 목표 장비에 두 재료를 함께 투자하세요.')),
         (('Have stones; lack enhancement money', '강화석은 있는데 키나가 부족'),
-         ('Use an available Daily Dungeon entry on the depository. Add unfinished field rewards before paying to redraw more tasks.', '일일 던전의 남은 횟수를 비밀 보관소에 사용합니다. 미완료 필드 보상도 챙긴 뒤 추가 비용이 드는 선택을 판단하세요.')),
+         ('Use an available Daily Dungeon entry on the depository, subject to the dated reward reference below. Distinguish unfinished quest rewards from direct monster Kina; in NA the latter is bound and subject to the November 18 acquisition-cap rule.', '아래 날짜가 표시된 보상 참고를 보고 일일 던전의 남은 횟수를 비밀 보관소에 사용합니다. 미완료 퀘스트 보상과 몬스터가 직접 주는 키나를 구분하세요. 북미의 직접 지급분은 귀속이며 11월 18일 획득 한도 규칙을 따릅니다.')),
         (('Saving for a Market purchase', '거래소 장비를 사고 싶은 경우'),
          ('Set the target purchase price, farm its tradable funding route, and reserve your bound balance for enhancement. Skip analysis rerolls that delay that purchase.', '목표 구매가를 정하고 거래 가능한 재료를 모아 자금을 만듭니다. 귀속분은 강화 비용으로 쓰고, 구매 시점을 늦추는 펫 재분석은 뒤로 미루세요.')),
     ])+v.a(ROOT+'gear-targets/#gear-investment',t('Choose an enhancement stopping point', '장비 강화 투자선 정하기'),'progress-action')+v.a(ROOT+'pet-growth/#pet-spending',t('Plan pet analysis spending', '펫 분석 비용 계획'),'progress-action')
     return (
+        na+
         '<div id="kinah-types">'+money+'</div>'+
-        v.section('kinah-fixed', ('Reliable reward routes', '정해진 보상부터 모으기'), ('Global reward references reviewed 2026-10-12; score and completion conditions still apply.', '2026.10.12 검토한 글로벌 보상 참고입니다. 점수·완료·입장 조건을 함께 봅니다.'),fixed)+
+        v.section('kinah-fixed', ('Dated reward references', '기존 보상 참고·조건 확인'), ('Global reward references reviewed 2026-10-12; score and completion conditions still apply.', '2026.10.12 검토한 글로벌 보상 참고입니다. 점수·완료·입장 조건을 함께 봅니다.'),fixed)+
         v.section('kinah-market', ('What can become Market money?', '무엇을 팔아 거래소 자금을 만들까?'), ('The drop matters only if that particular item can be traded and someone buys it.', '해당 아이템이 거래 가능하고 실제 구매자가 있어야 판매 수입이 됩니다.'),market)+
-        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah','duties','depository']))
+        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah-na-nov18','kinah','duties','depository']))
 
 
 def ludra_entry(v):

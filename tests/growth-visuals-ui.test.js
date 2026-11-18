@@ -96,6 +96,17 @@ async function contained(page, label) {
         assert((await page.locator('[data-wallet-status]').textContent()).includes('400,000'));
         assert.equal(await value('leftUnbound'),'200,000'); // A rejected cost does not spend funds.
         assert.equal(await value('usedBound'),'0');
+        // The NA field acquisition cap is not a Market spending balance.
+        // Even a million bound Kina cannot fund a one-Kina Market purchase.
+        await page.locator('#wallet-bound').fill('1000000');
+        await page.locator('#wallet-unbound').fill('0');
+        await page.locator('#wallet-cost').fill('1');
+        assert.equal(await value('usedBound'),'0');
+        assert.equal(await value('leftBound'),'1,000,000');
+        assert.equal(await value('usedUnbound'),'0');
+        assert.equal(await value('leftUnbound'),'0');
+        await page.locator('#wallet-bound').fill('550000');
+        await page.locator('#wallet-unbound').fill('200000');
         await page.locator('#wallet-cost').fill('150000');
         assert.equal(await value('leftUnbound'),'50,000');
         assert.equal(await value('leftBound'),'550,000');
