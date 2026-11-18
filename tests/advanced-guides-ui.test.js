@@ -113,7 +113,8 @@ async function panel(page,key) {
       assert.equal(await page.locator('[data-reader-panel="na-ludra"]').isVisible(),true);
       const preparation=await page.locator('#craft-na-ludra').textContent();
       for(const token of ['2,800','3,000','PST']) assert(preparation.includes(token));
-      assert.match(preparation,/not published|공개하지 않았/);
+      for(const token of ['15%','5,000,000']) assert(preparation.includes(token));
+      assert.match(preparation,/names no pattern|패턴 이름/);
       await screenshot(page,{path:path.join(artifacts,'na-ludra-preparation-'+lang+'-390.png'),fullPage:true});
       await page.locator('.navtools a.lang').click();
       await page.waitForURL('**/guides/endgame-crafts/#craft-na-ludra');
