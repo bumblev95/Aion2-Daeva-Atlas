@@ -76,6 +76,9 @@ async function contained(page, label) {
           }
           await page.goto(local+'guides/kinah-farming/#kinah-types');
           assert.equal(await notice.isVisible(),true);
+          // Restore the default route before the existing layout/language
+          // checks; language switching correctly preserves a deep-link hash.
+          await page.goto(local+'guides/kinah-farming/');
         }
         assert.equal(await page.locator('.progress-series [aria-current="page"]').getAttribute('href'),prefix+(lang==='ko'?'ko/':'')+'guides/'+slug+'/');
         // Expand native fallback panels before measuring their tables. Closed
