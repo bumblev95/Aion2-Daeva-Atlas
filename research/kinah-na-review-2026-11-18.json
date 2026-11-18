@@ -1,0 +1,11 @@
+{
+  "retrievedAt": "2026-11-18T12:13:54Z",
+  "contentHash": "f4f6e5541d26a74131f6b84001379bcd5e366270558dce78b22a2657341f0d8e",
+  "matchesReviewedSnapshot": true,
+  "articleId": "6afd5b00ebccad0e4b5bad8b",
+  "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b",
+  "retrievalUrl": "https://api-global-community.plaync.com/aion2_global/board/update_en/article/6afd5b00ebccad0e4b5bad8b",
+  "hashMethod": "SHA-256 of official title + newline + scripts.collect_updates.text(body)",
+  "baseCommit": "067635237a045c9519081b4a515aa3bc7d1881e2",
+  "directGameplayVerified": false
+}
