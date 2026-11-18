@@ -158,4 +158,5 @@ def growth_reader(slug, source, lang):
         from fieldnotes import BOSSES
         for b in BOSSES:
             source=fold(source,'dungeon-'+b['slug'],b['dungeon'][k],b['name'][k])
-    return reader(lang,slug,source,plans[slug],tail=['growth-sources'])
+    lead=Fragments(source).get('kinah-na-update') if slug=='kinah-farming' else ''
+    return reader(lang,slug,source,plans[slug],tail=['growth-sources'],lead=lead)

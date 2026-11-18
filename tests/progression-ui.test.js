@@ -123,6 +123,20 @@ async function contained(page, label) {
 
       await page.locator('.reader-series > summary').click();
       await page.locator('.progress-series a[href$="kinah-farming/"]').click();
+      // The NA correction must remain visible above every reader tab, even without JS.
+      const currencyNotice=page.locator('[data-kinah-na-update]');
+      assert.equal(await currencyNotice.isVisible(),true);
+      assert.match(await currencyNotice.textContent(),/1,000,000/);
+      assert.match(await currencyNotice.textContent(),lang==='ko'?/북미 전용/:/NA only/);
+      if (javascript) {
+        await page.locator('[data-reader-tab="market"]').click();
+        assert.equal(await currencyNotice.isVisible(),true);
+        await page.locator('[data-reader-tab="plan"]').click();
+      }
+      await page.setViewportSize({width:320,height:900});
+      assert.equal(await currencyNotice.isVisible(),true);
+      await contained(page,'NA currency notice '+lang);
+      await page.setViewportSize({width:1440,height:1000});
       await page.locator('#kinah-fixed a[href$="routines/#routine-duties"]').click();
       await page.waitForURL('**/routines/#routine-duties');
       assert.equal(await page.locator('#routine-duties').isVisible(),true);

@@ -202,8 +202,8 @@ def guides():
     for slug,title,desc in progression.GUIDES:
         sub=progression.ROOT+slug+'/'
         transfer_anchor={'pet-growth':'pets','kinah-farming':'storage','dungeon-rewards':'rewards','gear-targets':'checklist'}[slug]
-        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}</div>','guides',True,reviewed=progression.REVIEWED)
-        page_dates[SITE+'/'+path(sub)]=progression.REVIEWED
+        write(sub,pair(title),pair(desc),f'<div class="wrap">{pagehead(pair(title),pair(desc))}{progression.render(slug,LANG,BASE)}{advancedguides.gateway(LANG,BASE,slug)}{servertransfer.gateway(LANG,BASE,transfer_anchor)}</div>','guides',True,reviewed=progression.reviewed_on(slug))
+        page_dates[SITE+'/'+path(sub)]=progression.reviewed_on(slug)
     search_index.extend(progression.search_entries(LANG,BASE))
     for g in advancedguides.GUIDES:
         sub='guides/'+g['slug']+'/'
