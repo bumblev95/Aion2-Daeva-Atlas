@@ -80,7 +80,9 @@ Per-character or per-account scope, reset time, which other rewards share the co
 - 모든 JavaScript 구문·공백 오류 검사 통과. 재빌드한 전체 docs 바이트 동일성 확인. data·한국 규칙·DPS·기존 보상 및 지갑 계산 코드 변경 없음 확인.
 - Node: DPS·수학·순위·순위 재현성·rotation-learning·학습 산출물 재현성·patchbook·analytics·battle 검사 통과.
 - 브라우저 테스트 두 개(`progression-ui.test.js`, `growth-visuals-ui.test.js`)를 확장했다. 탭/직접 링크/스크립트 미사용에서 새 안내를 확인하고, 귀속 1,000,000·거래 가능 0으로 거래소 비용 1을 결제할 수 없는 경우를 검사하도록 했다.
-- 이 환경에서 브라우저 테스트 두 개는 Chromium 실행 단계의 `socket() failed: Operation not permitted`로 차단되어 화면 검사 결과를 얻지 못했다. 위 두 브라우저 검사를 통과했다고 간주하지 않는다. PR CI 또는 Chromium 실행 가능 환경에서 확인해야 한다.
+- 로컬 Chromium 실행은 `socket() failed: Operation not permitted`로 차단되었다. 이후 GitHub CI의 Chromium에서 확장한 두 브라우저 검사와 전체 브라우저 워크플로가 통과했다. 첫 실행의 테스트 상태 복구 누락을 수정한 뒤, 한영·JS/no-JS·320/390/768/1440px·탭·앵커·언어 전환·지갑 사례를 검증했다. 실제 게임 플레이 검증과는 별개다.
+- [일반 CI 통과](https://github.com/bumblev95/Aion2-Daeva-Atlas/actions/runs/44303601542) / [전체 브라우저 CI 통과](https://github.com/bumblev95/Aion2-Daeva-Atlas/actions/runs/44303601571). 검증한 코드 커밋: `195513ce7ad4d02e1fc17ffd8922d399af75b8fe`.
+- 검토용 [Draft PR #92](https://github.com/bumblev95/Aion2-Daeva-Atlas/pull/92). 병합·공개 배포는 사용자 승인 대기.
 
 ## 북미 인게임 검증 절차 — 아직 실행하지 않음
 

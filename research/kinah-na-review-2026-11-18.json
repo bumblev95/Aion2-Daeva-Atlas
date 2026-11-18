@@ -7,5 +7,20 @@
   "retrievalUrl": "https://api-global-community.plaync.com/aion2_global/board/update_en/article/6afd5b00ebccad0e4b5bad8b",
   "hashMethod": "SHA-256 of official title + newline + scripts.collect_updates.text(body)",
   "baseCommit": "067635237a045c9519081b4a515aa3bc7d1881e2",
-  "directGameplayVerified": false
+  "directGameplayVerified": false,
+  "validation": {
+    "codeCommit": "195513ce7ad4d02e1fc17ffd8922d399af75b8fe",
+    "generalCI": {
+      "url": "https://github.com/bumblev95/Aion2-Daeva-Atlas/actions/runs/44303601542",
+      "conclusion": "success"
+    },
+    "browserCI": {
+      "url": "https://github.com/bumblev95/Aion2-Daeva-Atlas/actions/runs/44303601571",
+      "conclusion": "success"
+    },
+    "pythonTestsPassed": 98,
+    "newPythonRegressionTests": 4,
+    "localChromium": "blocked by socket permissions; browser validation completed in GitHub CI",
+    "directGameplayVerified": false
+  }
 }
