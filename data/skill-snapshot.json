@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-17T20:13:14Z",
+  "reviewedAt": "2026-11-18T08:31:23Z",
   "region": "Global",
   "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
@@ -466,10 +466,10 @@
     {
       "region": "KR",
       "effectiveAt": "2026-11-18",
-      "reviewedAt": "2026-11-17T20:13:14Z",
+      "reviewedAt": "2026-11-18T08:31:23Z",
       "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6afcab38ebccad0e4b5bad5f",
-      "sourceUpdatedAt": "2026-11-17T19:30:05.208Z",
-      "sourceHash": "e085599c9e7b9b3a76c9125f6f743c04df579af032a5b7bc0ee6b32b7f17b8a1",
+      "sourceUpdatedAt": "2026-11-17T20:57:10.970Z",
+      "sourceHash": "62da07d60d2127cccc89dc7a6904aeebab661e7e25a8f8e217b454950adf2ac5",
       "calculationState": "KR November 18 inputs recorded separately; not applied to the incompatible Global base, NA PvE, historical observations or rankings",
       "skills": {
         "ruinous-blow": {
@@ -646,5 +646,5 @@
       }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-17T20:13:14Z"
+  "lastOfficialOverrideReviewedAt": "2026-11-18T08:31:23Z"
 }

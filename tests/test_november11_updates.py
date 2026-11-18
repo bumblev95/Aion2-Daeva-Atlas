@@ -31,13 +31,14 @@ class November11UpdateRegressionTest(unittest.TestCase):
         self.assertIn('revised at 09:52:19 UTC', scope_note)
         self.assertIn('269fabc0', scope_note)
 
-    def test_ludra_current_public_guides_use_two_hour_limit(self):
+    def test_ludra_november11_facts_remain_in_current_public_guide(self):
         self.assertEqual(ludra.TIME_LIMIT_MINUTES, 120)
         for lang in ('en', 'ko'):
             guide = advancedguides.render('na-ludra', lang, BASE)
             growth = progression.ludra_entry(progression.View(lang, BASE))
             self.assertIn('6af42a1affaccc00c265785f', guide)
-            self.assertIn('6af42a1affaccc00c265785f', growth)
+            self.assertIn('6afd5b00ebccad0e4b5bad8b', guide)
+            self.assertIn('6afd5b00ebccad0e4b5bad8b', growth)
             self.assertIn('120', guide)
         self.assertIn('30% to 100%', advancedguides.render('na-ludra', 'en', BASE))
 

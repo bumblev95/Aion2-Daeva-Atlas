@@ -1,0 +1,58 @@
+{
+  "reviewedOn": "2026-11-18",
+  "scope": "NA Ludra Easy, gear rates and weapon-chest morphs from the November 18 official patch; no gameplay verification",
+  "official": {
+    "articleId": "6afd5b00ebccad0e4b5bad8b",
+    "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b",
+    "retrieval": "Public NC API: https://api-global-community.plaync.com/aion2_global/board/update_en/article/6afd5b00ebccad0e4b5bad8b",
+    "contentHash": "f4f6e5541d26a74131f6b84001379bcd5e366270558dce78b22a2657341f0d8e",
+    "publishedAt": "2026-11-18T08:00:00.001Z",
+    "sourceUpdatedAt": "2026-11-18T08:00:46.223Z",
+    "reviewedAt": "2026-11-18T08:31:23Z",
+    "hashMethod": "SHA-256 of snapshot title + newline + scripts.collect_updates.text(body)"
+  },
+  "confirmed": {
+    "entryLevels": {
+      "easy": 2800,
+      "normal": 2800,
+      "hard": 3000
+    },
+    "easy": {
+      "runLimitMinutes": 120,
+      "personalRevives": "Unlimited",
+      "hp": "Same as Normal",
+      "mechanics": "Easier than Normal; exact changes not listed",
+      "criticalHits": "Stats adjusted so critical hits land more easily"
+    },
+    "ludraGearCombinedDropPercent": 15,
+    "normalHardBeforeCombinedDropPercent": 5,
+    "weaponChestMorph": {
+      "kina": 5000000,
+      "beforeKina": 10000000,
+      "easyVouchers": 4,
+      "normalVouchers": 2,
+      "hardVouchers": 1
+    },
+    "retroactive": "One Hard voucher for players who previously used a Hard voucher for the weapon chest",
+    "patternFix": "Some Ludra attack patterns fixed; no names, triggers or responses published"
+  },
+  "naCombatVerified": false,
+  "pending": [
+    "Easy unlock, entry consumption and reward cadence",
+    "Exact retained and removed Easy mechanics, critical-hit behavior and wipe/re-entry flow",
+    "Names, difficulties, triggers, telegraphs and counters for corrected Ludra patterns",
+    "Combined-rate category contents and per-item distribution",
+    "Live morph binding, chest contents and retroactive Cube delivery"
+  ],
+  "integration": [
+    "Bilingual /guides/na-ludra/",
+    "Bilingual /guides/endgame-crafts/ and /guides/dungeon-rewards/ gateways",
+    "Hash-bound English/Korean patch detail pages",
+    "Coverage backlog with direct-verification items"
+  ],
+  "preserved": [
+    "November 4 and November 11 dated facts",
+    "KR-only patch rules",
+    "Historical DPS observations and class rankings"
+  ]
+}

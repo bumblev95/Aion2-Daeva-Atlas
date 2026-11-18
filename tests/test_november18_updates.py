@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = '6afcab38ebccad0e4b5bad5f'
-HASH = 'e085599c9e7b9b3a76c9125f6f743c04df579af032a5b7bc0ee6b32b7f17b8a1'
+HASH = '62da07d60d2127cccc89dc7a6904aeebab661e7e25a8f8e217b454950adf2ac5'
 
 
 def load(path):
@@ -27,6 +27,8 @@ class November18UpdateRegressionTest(unittest.TestCase):
                             for c in review['changes']))
         self.assertTrue(any(c['type'] == 'system' and c['subject']['en'].startswith('KR PvP weapon')
                             for c in review['changes']))
+        self.assertTrue(any(c['type'] == 'system' and c['subject']['en'].startswith('KR retroactive')
+                            for c in review['changes']))
         self.assertIn('KR only', review['detail']['sections'][0]['notes'][1]['en'])
 
     def test_news_publishes_review_without_source_outage_or_na_copy(self):
@@ -36,7 +38,7 @@ class November18UpdateRegressionTest(unittest.TestCase):
         self.assertEqual(item['region'], 'KR')
         self.assertEqual(item['reviewState'], 'reviewed')
         self.assertEqual(item['contentHash'], HASH)
-        self.assertEqual(item['reviewedAt'], '2026-11-17T20:13:14Z')
+        self.assertEqual(item['reviewedAt'], '2026-11-18T08:31:23Z')
         self.assertFalse(any(x['id'] == ID for s in news['sources'] if s['region'] == 'NA'
                              for x in s['items']))
 
