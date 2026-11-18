@@ -1,7 +1,7 @@
 {
   "6afcab38ebccad0e4b5bad5f": {
-    "contentHash": "e085599c9e7b9b3a76c9125f6f743c04df579af032a5b7bc0ee6b32b7f17b8a1",
-    "reviewedAt": "2026-11-17T20:13:14Z",
+    "contentHash": "62da07d60d2127cccc89dc7a6904aeebab661e7e25a8f8e217b454950adf2ac5",
+    "reviewedAt": "2026-11-18T08:31:23Z",
     "classScopeReviewed": true,
     "sourceUrl": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6afcab38ebccad0e4b5bad5f",
     "title": {
@@ -9,8 +9,8 @@
       "ko": "11월 18일 한국 패치"
     },
     "summary": {
-      "en": "KR adjusts Gladiator, Templar, Assassin, Brawler, Chanter, Ranger and Cleric; adds Muspel Easy, Trust limits, free KR server transfer and PvP weapon stats; and fixes Hidden Cube, gathering and several boss-pattern issues. These November 18 rules stay KR-only and do not recalculate NA PvE, historical DPS or final tiers.",
-      "ko": "한국은 검성·수호성·살성·권성·호법성·궁성·치유성을 조정하고 무스펠 쉬움·신뢰도 한도·한국 무료 서버 이전·PvP 무기 스탯을 추가하며 히든 큐브·채집·여러 보스 패턴 오류를 수정합니다. 11월 18일 한국 전용이며 북미 PvE·과거 DPS·최종 티어를 재계산하지 않습니다."
+      "en": "KR adjusts Gladiator, Templar, Assassin, Brawler, Chanter, Ranger and Cleric; adds Muspel Easy, Trust limits, free KR server transfer and PvP weapon stats; and fixes Hidden Cube, gathering and boss-pattern issues. The revised source adds retroactive Kina and item recovery. These November 18 rules stay KR-only and do not recalculate NA PvE, historical DPS or final tiers.",
+      "ko": "한국은 검성·수호성·살성·권성·호법성·궁성·치유성을 조정하고 무스펠 쉬움·신뢰도 한도·한국 무료 서버 이전·PvP 무기 스탯을 추가하며 히든 큐브·채집·보스 패턴 오류를 수정합니다. 수정 원문에는 키나·아이템 소급 복구가 추가됐습니다. 11월 18일 한국 전용이며 북미 PvE·과거 DPS·최종 티어를 재계산하지 않습니다."
     },
     "changes": [
       {
@@ -284,6 +284,22 @@
           "en": "P1 interpretation: current cue/response guidance can be wrong for these encounters. Verify difficulty, region, trigger, target selection, preview path, solo/party transition and correct response before revising animations or tactics.",
           "ko": "P1 해석: 해당 전투의 현재 예고·대응 안내가 달라질 수 있습니다. 애니메이션·전술 수정 전 난도·지역·발동·대상 선정·예고 경로·1인/파티 전환·대응을 확인해야 합니다."
         }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "KR retroactive Kina and item recovery",
+          "ko": "한국 키나·아이템 소급 복구"
+        },
+        "description": {
+          "en": "The 05:55 source revision adds recovery grants: the advanced inheritance-cost difference since July 1 is returned in the matching bound/unbound Kina type; items that expired immediately because their deadline was set to November 11 are reissued with corrected expiry; and missed October 14/21 recovery items after server transfer are delivered to the Cube where possible.",
+          "ko": "05:55 원문 수정으로 복구 지급이 추가됐습니다. 7월 1일 이후 상급 계승 비용 차액은 각인·비각인 키나를 구분해 돌려주고, 삭제 기한이 11월 11일로 잘못 설정돼 즉시 사라진 시즌 미션 아이템은 수정된 기한으로 재지급합니다. 서버 이전 뒤 접속하지 않아 누락된 10월 14일·21일 복구 아이템도 가능한 캐릭터의 큐브로 지급합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: affected KR characters should check Cube delivery and currency binding before spending or filing a missing-grant report. Eligibility, exact amount, corrected expiry and unresolved characters require client/account verification; this is not a damage or eDPS input.",
+          "ko": "P1 해석: 한국 대상 캐릭터는 소비하거나 미지급 문의를 하기 전 큐브 수령과 키나 귀속 종류를 확인해야 합니다. 대상 여부·정확한 금액·수정 기한·미지급 캐릭터는 클라이언트/계정 확인이 필요하며 피해·eDPS 입력이 아닙니다."
+        }
       }
     ],
     "detail": {
@@ -297,8 +313,8 @@
           "sourceSection": "Patch scope",
           "notes": [
             {
-              "en": "Published November 17 at 19:30:00 UTC, source-updated at 19:30:05 UTC and scheduled for the November 18 KR maintenance (04:30–08:00 KST). This review was completed separately at 20:13:14 UTC and is bound to source hash e085599c…; actual reopening remains a client check.",
-              "ko": "11월 17일 19:30:00 UTC 게시, 19:30:05 UTC 원문 수정, 한국 11월 18일 04:30~08:00 점검 적용 예정입니다. 편집 검토는 별도 시각 20:13:14 UTC에 완료해 원문 해시 e085599c…에 묶었으며 실제 오픈은 클라이언트 확인 대상입니다."
+              "en": "Published November 17 at 19:30:00 UTC, revised at 20:57:10 UTC with a source banner dated November 18 05:55 KST, and applied with the November 18 KR maintenance (04:30–08:00 KST). The revised body was re-read on November 18 and this review is bound to source hash 62da07d6….",
+              "ko": "11월 17일 19:30:00 UTC 게시, 20:57:10 UTC 수정됐고 원문에는 한국 11월 18일 05:55 수정 배너가 있습니다. 한국 11월 18일 04:30~08:00 점검과 함께 적용됐습니다. 11월 18일 수정 본문을 다시 읽고 검토를 원문 해시 62da07d6…에 묶었습니다."
             },
             {
               "en": "KR only. None of these class, Trust, transfer, PvP, dungeon or gathering rules is copied to North America. Historical observations retain their original dates and conditions.",
@@ -339,6 +355,10 @@
             {
               "en": "The KR free-transfer facts remain on this patch detail and coverage backlog. /guides/server-transfer/ is a Global guide and is not reopened or rewritten from the KR announcement.",
               "ko": "한국 무료 이전 사실은 이 패치 상세와 보강 목록에만 둡니다. /guides/server-transfer/는 글로벌 공략이므로 한국 공지로 재개·수정하지 않습니다."
+            },
+            {
+              "en": "Official source revision: recovery grants now cover the advanced inheritance-cost difference, immediately expired season-mission items and selected transfer-blocked October recovery items. P1 direct checks are account eligibility, bound/unbound Kina amounts, Cube delivery, corrected expiry and the remaining characters NC says will be paid later. No class coefficient, cooldown or rotation fact changed in this revision.",
+              "ko": "공식 원문 수정: 상급 계승 비용 차액, 즉시 삭제된 시즌 미션 아이템, 서버 이전으로 누락된 일부 10월 복구 아이템의 지급이 추가됐습니다. P1 직접 확인 항목은 계정 대상 여부, 각인/비각인 키나 금액, 큐브 수령, 수정된 기한, NC가 추후 지급한다고 밝힌 남은 캐릭터입니다. 이번 수정에서 직업 계수·쿨타임·로테이션 사실은 바뀌지 않았습니다."
             }
           ],
           "tables": []
@@ -10524,6 +10544,240 @@
             {
               "en": "This is a highlights review of every announced class group and guide-impacting fixes. It does not claim in-game validation, a measured rotation result or a final class tier. Historical observations retain their original dates and conditions.",
               "ko": "발표된 직업군과 공략 영향 수정의 highlights 검토입니다. 인게임 검증·실측 로테이션 결과·최종 직업 티어를 주장하지 않으며 과거 관측의 날짜와 조건을 유지합니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    },
+    "followups": []
+  },
+  "6afd5b00ebccad0e4b5bad8b": {
+    "contentHash": "f4f6e5541d26a74131f6b84001379bcd5e366270558dce78b22a2657341f0d8e",
+    "reviewedAt": "2026-11-18T08:31:23Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b",
+    "title": {
+      "en": "November 18 · North America",
+      "ko": "11월 18일 북미 패치"
+    },
+    "summary": {
+      "en": "NA adds Ludra Easy at item level 2,800 with unlimited personal revives, raises the combined Ludra weapon/guard rate to 15% on all three difficulties, halves the weapon-chest morph fee to 5,000,000 Kina, fixes unspecified Ludra patterns and makes field-monster Kina bound. No class coefficient, cooldown or skill-level effect is announced.",
+      "ko": "북미는 아이템 레벨 2,800·개인 부활 무제한의 루드라 쉬움을 추가하고, 세 난도의 루드라 무기/가더 합산 확률을 15%로 올리며, 무기 선택 상자 변환 비용을 5,000,000 키나로 낮춥니다. 일부 루드라 패턴을 수정하고 필드 몬스터 키나를 귀속화합니다. 직업 계수·쿨타임·스킬 레벨 효과는 발표되지 않았습니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Ludra Easy entry and revival rules",
+          "ko": "루드라 쉬움 입장·부활 규칙"
+        },
+        "description": {
+          "en": "Abyssal Forge: Ludra Easy is added with a two-hour limit, minimum item level 2,800 and unlimited personal revives. It has Normal-mode HP, easier mechanics and stats adjusted so critical hits land more easily.",
+          "ko": "심연의 재련: 루드라 쉬움이 추가됩니다. 제한 2시간, 최소 아이템 레벨 2,800, 개인 부활 무제한이며 일반과 같은 HP에 더 쉬운 기믹과 치명타가 더 잘 적중하는 능력치 조정을 적용합니다."
+        },
+        "after": {
+          "en": "Easy: item level 2,800 · 2 hours · unlimited personal revives",
+          "ko": "쉬움: 아이템 레벨 2,800 · 2시간 · 개인 부활 무제한"
+        },
+        "impact": {
+          "en": "P1 interpretation: Easy becomes the lowest-risk NA learning route, but the notice does not publish attack-by-attack counters. Verify unlocks, entry consumption, the exact mechanics retained or removed, critical-hit behavior, wipe/re-entry and reward cadence.",
+          "ko": "P1 해석: 쉬움은 북미의 가장 낮은 위험도 학습 경로가 되지만 공격별 대응법은 공개되지 않았습니다. 해금·입장 차감·유지/제거 기믹·치명타 판정·전멸/재입장·보상 주기를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "buff",
+        "subject": {
+          "en": "Ludra gear combined drop rate",
+          "ko": "루드라 장비 합산 드롭률"
+        },
+        "description": {
+          "en": "The combined Ludra gear rate on Normal and Hard increases from 5% to 15%; Easy also uses a 15% combined rate. The Easy reward list names Ludra Weapon and Guard (Bound).",
+          "ko": "일반·어려움의 루드라 장비 합산 확률은 5%에서 15%로 오르고 쉬움도 합산 15%를 적용합니다. 쉬움 보상에는 루드라 무기·가더(귀속)가 명시됩니다."
+        },
+        "before": {
+          "en": "Normal/Hard combined rate: 5%",
+          "ko": "일반/어려움 합산 확률 5%"
+        },
+        "after": {
+          "en": "Easy/Normal/Hard combined rate: 15%",
+          "ko": "쉬움/일반/어려움 합산 확률 15%"
+        },
+        "impact": {
+          "en": "P1 interpretation: weapon/guard farming improves, but 15% is a combined category rate and does not promise either item per clear. Verify category contents, per-item distribution, reward eligibility and weekly limits.",
+          "ko": "P1 해석: 무기·가더 파밍 기대는 좋아지지만 15%는 합산 분류 확률이며 매 클리어 특정 아이템을 보장하지 않습니다. 분류 구성·아이템별 분포·보상 자격·주간 한도를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Ludra weapon-chest morph costs",
+          "ko": "루드라 무기 상자 변환 비용"
+        },
+        "description": {
+          "en": "The weapon-selection chest fee changes from 10,000,000 to 5,000,000 Kina. One Hard, two Normal or four Easy Gear Change Vouchers produce one chest; prior Hard-voucher users receive one Hard voucher retroactively.",
+          "ko": "무기 선택 상자 비용은 10,000,000→5,000,000 키나가 됩니다. 어려움 1개·일반 2개·쉬움 4개 장비 변경권 중 하나로 상자 1개를 만들며, 조정 전 어려움 교환권을 쓴 이용자는 어려움 교환권 1개를 소급 지급받습니다."
+        },
+        "before": {
+          "en": "10,000,000 Kina",
+          "ko": "10,000,000 키나"
+        },
+        "after": {
+          "en": "5,000,000 Kina; Hard ×1 / Normal ×2 / Easy ×4",
+          "ko": "5,000,000 키나·어려움 ×1 / 일반 ×2 / 쉬움 ×4"
+        },
+        "impact": {
+          "en": "P1 interpretation: the upgrade path costs less Kina and now supports Easy vouchers. Verify the live morph preview, binding, chest contents, eligibility and retroactive Cube delivery before consuming vouchers.",
+          "ko": "P1 해석: 성장 경로의 키나 비용이 낮아지고 쉬움 교환권을 쓸 수 있습니다. 교환권 소비 전 실제 변환 미리보기·귀속·상자 구성·대상 조건·소급 큐브 지급을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Abyss Points boost event",
+          "ko": "어비스 포인트 획득량 이벤트"
+        },
+        "description": {
+          "en": "From November 17 maintenance through December 16 maintenance PST, specified Outer Abyss monster drops and Battlefield victory participation/mission rewards grant triple Abyss Points. Acquisition caps and Outer Abyss PvP AP are unchanged.",
+          "ko": "PST 11월 17일 점검 후부터 12월 16일 점검 전까지 외곽 어비스 몬스터 드롭과 격전지 승리 참여·임무 보상의 어비스 포인트가 3배입니다. 획득 한도와 외곽 어비스 PvP 획득량은 유지됩니다."
+        },
+        "after": {
+          "en": "Selected AP sources ×3; caps unchanged",
+          "ko": "지정 AP 획득처 3배·한도 유지"
+        },
+        "impact": {
+          "en": "P1 interpretation: NA routine priorities temporarily change for the listed sources only. Verify server-local start/end, eligible reward rows and cap accounting; do not triple PvP AP or the cap.",
+          "ko": "P1 해석: 기간 중 북미 일과 우선순위가 지정 획득처에 한해 바뀝니다. 서버별 시작/종료·대상 보상·한도 집계를 확인하며 PvP AP나 한도를 3배로 계산하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Ludra attack patterns",
+          "ko": "루드라 공격 패턴"
+        },
+        "description": {
+          "en": "Fixes some Ludra attack patterns not functioning as intended.",
+          "ko": "일부 루드라 공격 패턴이 의도대로 작동하지 않던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: older NA recordings may show invalid behavior. The source names no pattern, trigger or counter, so reproduce each difficulty and record telegraph, boss HP, target state and outcome before changing a boss guide or animation.",
+          "ko": "P1 해석: 기존 북미 영상에 잘못된 동작이 포함될 수 있습니다. 공지는 패턴명·발동 조건·대응을 밝히지 않으므로 보스 공략·애니메이션 수정 전 난도별로 전조·보스 HP·대상 상태·결과를 기록해 재현해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Field-monster Kina becomes bound",
+          "ko": "필드 몬스터 키나 귀속화"
+        },
+        "description": {
+          "en": "Kina from all field monsters changes to Bound Kina, and the daily 1,000,000 Kina acquisition limit is likewise tracked as Bound Kina.",
+          "ko": "모든 필드 몬스터의 키나 보상이 귀속 키나로 바뀌고 일일 1,000,000 키나 획득 한도도 귀속 키나 기준으로 변경됩니다."
+        },
+        "before": {
+          "en": "Field-monster Kina; daily limit 1,000,000 Kina",
+          "ko": "필드 몬스터 키나·일일 1,000,000 키나 한도"
+        },
+        "after": {
+          "en": "Field-monster Bound Kina; daily limit 1,000,000 Bound Kina",
+          "ko": "필드 몬스터 귀속 키나·일일 1,000,000 귀속 키나 한도"
+        },
+        "impact": {
+          "en": "P1 interpretation: field farming no longer supplies freely transferable Kina through this reward. Verify which costs accept Bound Kina, account/character scope, HUD counter and reset before rewriting beginner or farming budgets.",
+          "ko": "P1 해석: 필드 파밍 보상이 자유롭게 이전 가능한 키나를 공급하지 않게 됩니다. 초보·파밍 예산을 수정하기 전 귀속 키나 사용처·계정/캐릭터 범위·HUD 카운터·초기화를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Auto-translation and chat scroll",
+          "ko": "자동 번역·채팅 스크롤"
+        },
+        "description": {
+          "en": "Fixes untranslated text with Auto-Translation and chat jumping to the newest message while reading history.",
+          "ko": "자동 번역 사용 중 일부 문구가 번역되지 않던 문제와 이전 채팅을 읽는 중 새 메시지 때문에 맨 아래로 이동하던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P2 interpretation: communication and chat review should be more reliable. Verify language pairs, channels, history position and mobile/desktop behavior.",
+          "ko": "P2 해석: 의사소통과 채팅 기록 확인이 안정될 수 있습니다. 언어 조합·채널·기록 위치·모바일/PC 동작을 확인해야 합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, publication and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "Patch scope",
+          "notes": [
+            {
+              "en": "Published November 18 at 08:00:00 UTC and source-updated at 08:00:46 UTC for the North American service. The gameplay changes apply after the November 17 scheduled maintenance PST / November 18 CET; the AP event ends before December 16 maintenance PST / December 17 CET.",
+              "ko": "북미 서비스 기준 11월 18일 08:00:00 UTC 게시, 08:00:46 UTC 원문 갱신입니다. 게임 변경은 PST 11월 17일/CET 11월 18일 정기점검 후 적용되고 AP 이벤트는 PST 12월 16일/CET 12월 17일 점검 전에 종료됩니다."
+            },
+            {
+              "en": "NA only, shared by the United States and Canada. None of these Ludra, AP or Bound-Kina rules is copied to Korea. No class coefficient, cooldown, skill-level effect, measured DPS or final tier is announced.",
+              "ko": "미국·캐나다가 함께 사용하는 북미 전용입니다. 루드라·AP·귀속 키나 규칙을 한국에 복사하지 않습니다. 직업 계수·쿨타임·스킬 레벨 효과·실측 DPS·최종 티어는 발표되지 않았습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Ludra Easy, rewards and morphs",
+            "ko": "루드라 쉬움·보상·변환"
+          },
+          "sourceSection": "Content & Systems · Sanctuary / New Substance Morphs Added",
+          "notes": [
+            {
+              "en": "Official facts: Easy uses item level 2,800, two hours and unlimited personal revives; it has Normal HP with easier mechanics and easier critical-hit conditions. Easy/Normal/Hard share a 15% combined Ludra gear rate, while the weapon-chest recipe costs 5,000,000 Kina and uses Easy ×4, Normal ×2 or Hard ×1 voucher.",
+              "ko": "공식 확인: 쉬움은 아이템 레벨 2,800·2시간·개인 부활 무제한이며 일반과 같은 HP에 더 쉬운 기믹·치명타 조건을 적용합니다. 쉬움/일반/어려움의 루드라 장비 합산 확률은 15%이고 무기 상자는 5,000,000 키나와 쉬움 ×4·일반 ×2·어려움 ×1 교환권 중 하나로 변환합니다."
+            },
+            {
+              "en": "P1 exact public targets updated from the official values are /guides/na-ludra/, /guides/endgame-crafts/, /guides/dungeon-rewards/ and their Korean counterparts; source targets are ludra.py, advancedguides.py and progression.py. Direct checks remain for unlocks, entry/reward consumption, retained/removed mechanics, critical-hit behavior, wipe/re-entry, combined-rate composition, morph preview and retroactive delivery.",
+              "ko": "공식 수치로 수정하는 P1 공개 경로는 /guides/na-ludra/·/guides/endgame-crafts/·/guides/dungeon-rewards/와 한국어 대응 페이지이고 소스는 ludra.py·advancedguides.py·progression.py입니다. 해금·입장/보상 차감·유지/제거 기믹·치명타·전멸/재입장·합산 확률 구성·변환 미리보기·소급 지급은 직접 확인 대기입니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Pattern fix, AP event and Bound Kina",
+            "ko": "패턴 수정·AP 이벤트·귀속 키나"
+          },
+          "sourceSection": "Event / Other Improvements and Bug Fixes",
+          "notes": [
+            {
+              "en": "Official facts: some unnamed Ludra patterns are fixed; selected Outer Abyss monster and Battlefield victory rewards grant triple AP without changing caps; all field-monster Kina and its 1,000,000 daily limit become Bound Kina. The patch also fixes Auto-Translation and chat-history scrolling.",
+              "ko": "공식 확인: 명칭이 공개되지 않은 일부 루드라 패턴을 수정하고 지정 외곽 어비스 몬스터·격전지 승리 보상 AP를 한도 변경 없이 3배로 늘리며, 모든 필드 몬스터 키나와 일일 1,000,000 한도를 귀속 키나로 바꿉니다. 자동 번역·채팅 기록 스크롤도 수정합니다."
+            },
+            {
+              "en": "P1 targets after direct verification are /guides/na-ludra/, /routines/, /guides/kinah-farming/, /start/ and /endgame/ plus Korean counterparts; source targets include ludra.py, routines.py, progression.py and fieldnotes.py. No boss animation is changed until the affected pattern, difficulty, trigger and response are reproduced.",
+              "ko": "직접 검증 후 P1 대상은 /guides/na-ludra/·/routines/·/guides/kinah-farming/·/start/·/endgame/와 한국어 대응 페이지이며 소스는 ludra.py·routines.py·progression.py·fieldnotes.py입니다. 영향 패턴·난도·발동·대응을 재현하기 전 보스 애니메이션은 바꾸지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Highlights review limits",
+            "ko": "highlights 검토 범위"
+          },
+          "sourceSection": "Review scope",
+          "notes": [
+            {
+              "en": "This highlights review covers the guide-impacting systems, event rule and fixes. It does not claim live gameplay validation, complete event presentation, patch-derived DPS rankings or final class tiers. data/skills.json, data/skill-snapshot.json and historical DPS observations remain unchanged.",
+              "ko": "공략에 영향을 주는 시스템·이벤트 규칙·수정을 다룬 highlights 검토입니다. 인게임 검증 완료·이벤트 전체 재정리·패치 기반 DPS 순위·최종 직업 티어를 주장하지 않습니다. data/skills.json·data/skill-snapshot.json·과거 DPS 관측값은 유지합니다."
             }
           ],
           "tables": []

@@ -1,17 +1,17 @@
 {
-  "reviewedAt": "2026-11-17T20:13:14Z",
+  "reviewedAt": "2026-11-18T08:31:23Z",
   "items": [
     {
       "id": "kr-20261118-classes-bosses-trust-transfer",
       "region": "KR",
-      "reviewedAt": "2026-11-17T20:13:14Z",
+      "reviewedAt": "2026-11-18T08:31:23Z",
       "title": {
         "en": "November 18 KR · seven classes, bosses, Trust and transfer",
         "ko": "11월 18일 한국 · 7직업·보스·신뢰도·서버 이전"
       },
       "finding": {
-        "en": "P1 class/combat/growth: the November 18 KR patch is reviewed as highlights and bound to e085599c…. Seven classes receive explicit cooldown, damage, resource, specialization, condition or buff changes; those numeric inputs are stored as a KR-only override in data/skill-snapshot.json and are not applied to Global data/skills.json, NA PvE, historical rankings or tiers. P1 client checks cover all changed tooltips and rotations; Lifika targeting; Auldor preview path; Auldor/Beltiras solo-to-party pattern state; Muspel Easy; Hidden Cube coordinates; gathering counters; Trust settlement/purchase limits and 05:00 reset; PvP weapon stat scope, old-item migration and new Transcendence/Nightmare thresholds; KR transfer eligibility/capacity/merge outcomes; and November 25 conversion recipes. Exact public targets after verification are the six compatible class pages and related skill pages, /dungeons/urugugu-canyon/, /dungeons/, /guides/dungeon-rewards/, /maps/, /routines/, /endgame/, /gear/ and /guides/pvp-context/ with Korean counterparts. The Global /guides/server-transfer/ is not reopened from this KR notice. No PC-café prize-table completeness, gameplay verification, total DPS multiplier or final tier is claimed.",
-        "ko": "P1 직업·전투·성장: 11월 18일 한국 패치를 highlights로 검토해 해시 e085599c…에 묶었습니다. 7직업의 명시 쿨타임·피해·자원·특화·조건·버프 입력은 data/skill-snapshot.json의 한국 전용 오버라이드로 기록하고 글로벌 data/skills.json·북미 PvE·과거 순위·티어에는 적용하지 않습니다. P1 클라이언트 검증은 변경 툴팁·로테이션 전체, 리피카 대상 선정, 아울도르 예고 경로, 아울도르/벨티라스 1인→파티 패턴, 무스펠 쉬움, 히든 큐브 좌표, 채집 횟수, 신뢰도 정산/구매 한도와 05시 초기화, PvP 무기 스탯 범위·기존 아이템 전환·초월/악몽 새 기준점, 한국 이전 자격/정원/병합 결과, 11월 25일 변환 도안입니다. 검증 후 정확한 공개 대상은 호환되는 6직업·관련 스킬 페이지, /dungeons/urugugu-canyon/·/dungeons/·/guides/dungeon-rewards/·/maps/·/routines/·/endgame/·/gear/·/guides/pvp-context/ 및 한국어 대응 경로입니다. 글로벌 /guides/server-transfer/는 한국 공지로 재개하지 않습니다. PC방 경품 표 전체성·인게임 검증·직업 전체 DPS 배율·최종 티어를 주장하지 않습니다."
+        "en": "P1 class/combat/growth: NC revised the November 18 KR source at 20:57:10 UTC and explicitly added recovery grants for inheritance-cost Kina, immediately expired season-mission items and selected transfer-blocked October recovery items. The seven class facts remain unchanged and their explicit inputs are rebound to 62da07d6… as a KR-only override in data/skill-snapshot.json; they are not applied to Global data/skills.json, NA PvE, historical rankings or tiers. Existing P1 client checks remain for all changed tooltips/rotations, boss state, Muspel Easy, Hidden Cubes, gathering, Trust, PvP weapon stats and KR transfer outcomes; new recovery checks are eligibility, bound/unbound Kina amount, Cube delivery, corrected expiry and unresolved characters. Exact compatible public targets remain the six class and skill routes, /dungeons/, /guides/dungeon-rewards/, /maps/, /routines/, /endgame/, /gear/ and /guides/pvp-context/ plus Korean counterparts. The Global /guides/server-transfer/ is not reopened from this KR notice.",
+        "ko": "P1 직업·전투·성장: NC가 11월 18일 한국 원문을 20:57:10 UTC에 수정하고 계승 비용 키나 차액, 즉시 삭제된 시즌 미션 아이템, 서버 이전으로 누락된 일부 10월 복구 아이템의 지급을 추가했습니다. 기존 7직업 사실은 유지되며 명시 입력을 해시 62da07d6…에 한국 전용 오버라이드로 다시 묶었습니다. 글로벌 data/skills.json·북미 PvE·과거 순위·티어에는 적용하지 않습니다. 변경 툴팁/로테이션·보스 상태·무스펠 쉬움·히든 큐브·채집·신뢰도·PvP 무기 스탯·한국 이전 결과의 P1 확인은 유지하고, 복구는 대상 여부·각인/비각인 키나 금액·큐브 수령·수정 기한·남은 미지급 캐릭터를 확인합니다. 정확한 호환 공개 대상은 6직업·스킬 경로, /dungeons/·/guides/dungeon-rewards/·/maps/·/routines/·/endgame/·/gear/·/guides/pvp-context/와 한국어 대응 페이지입니다. 글로벌 /guides/server-transfer/는 한국 공지로 재개하지 않습니다."
       },
       "status": "needs-evidence",
       "sources": [
@@ -22,6 +22,26 @@
         {
           "title": "NC · 11/18 Korea maintenance",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6afc33b0df6d838d56bfd13d"
+        }
+      ]
+    },
+    {
+      "id": "na-20261118-ludra-easy-rewards-bound-kina",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-18T08:31:23Z",
+      "title": {
+        "en": "November 18 NA · Ludra Easy, rewards and Bound Kina",
+        "ko": "11월 18일 북미 · 루드라 쉬움·보상·귀속 키나"
+      },
+      "finding": {
+        "en": "P1 combat/growth: NA adds Ludra Easy at item level 2,800 with a two-hour limit and unlimited personal revives, sets the combined Ludra gear rate to 15% on Easy/Normal/Hard, and changes the weapon-chest morph to 5,000,000 Kina plus Easy ×4, Normal ×2 or Hard ×1 voucher. Some unnamed Ludra patterns are fixed, selected AP sources are tripled without raising caps, and all field-monster Kina plus the 1,000,000 daily cap become Bound Kina. Official values update /guides/na-ludra/, /guides/endgame-crafts/ and /guides/dungeon-rewards/ plus Korean counterparts through ludra.py, advancedguides.py and progression.py. Direct checks remain for unlock/entries, exact Easy mechanics and critical-hit behavior, each fixed pattern/trigger/response, combined-rate contents, morph preview/retroactive delivery, AP eligibility/caps and Bound-Kina uses/scope/reset. No class input, eDPS, historical ranking or final tier changes.",
+        "ko": "P1 전투·성장: 북미에 아이템 레벨 2,800·2시간·개인 부활 무제한의 루드라 쉬움이 추가되고 쉬움/일반/어려움 루드라 장비 합산 확률이 15%가 됩니다. 무기 상자 변환은 5,000,000 키나와 쉬움 ×4·일반 ×2·어려움 ×1 교환권 중 하나로 바뀝니다. 명칭 미공개 루드라 패턴 일부를 수정하고 지정 AP 획득처를 한도 증가 없이 3배로 늘리며 모든 필드 몬스터 키나와 일일 1,000,000 한도를 귀속 키나로 바꿉니다. 공식 수치는 ludra.py·advancedguides.py·progression.py를 통해 /guides/na-ludra/·/guides/endgame-crafts/·/guides/dungeon-rewards/와 한국어 대응 페이지에 반영합니다. 해금/입장, 쉬움 세부 기믹·치명타, 수정 패턴/발동/대응, 합산 확률 구성, 변환 미리보기/소급 지급, AP 대상/한도, 귀속 키나 사용처/범위/초기화는 직접 확인 대기입니다. 직업 입력·eDPS·과거 순위·최종 티어는 바꾸지 않습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · November 18 North America patch",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b"
         }
       ]
     },

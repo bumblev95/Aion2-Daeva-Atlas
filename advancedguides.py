@@ -6,15 +6,16 @@ import ludra
 REVIEWED = '2026-10-13'
 LUDRA_PREVIEW = 'updates/na-6adbaeb06cfe4756db5b8efb/'
 LUDRA_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb'
-LUDRA_PATCH_REVIEW = 'updates/na-6af42a1affaccc00c265785f/'
-LUDRA_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f'
+LUDRA_PATCH_REVIEW = 'updates/na-6afd5b00ebccad0e4b5bad8b/'
+LUDRA_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b'
+LUDRA_NOV11_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f'
 LUDRA_PREVIOUS_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f'
 GUIDES = [
     dict(slug='na-ludra', group='boss', region='NA', reviewed=ludra.REVIEWED, title=('NA Ludra: beginner preparation & rewards', '북미 루드라: 초보자 준비·보상 공략'), description=('Choose a difficulty, prepare your gear and spend the right vouchers. NA combat verification remains open.', '난이도 선택부터 장비 준비·교환권 사용까지. 북미 전투 패턴은 검증 범위를 명확히 구분합니다.')),
     dict(slug='gear-options', group='gear', region='GLOBAL', title=('Gear options & transfers', '장비 옵션·영혼 부여·계승'), description=('Choose between Sync, Bind, Reset and a transfer.', '옵션 변경·수치 상승·전체 재설정·계승을 상황에 맞게 선택합니다.')),
     dict(slug='shugo-festival', group='routines', region='GLOBAL', title=('Shugo Festival: play, keys & purchases', '페스타 종목·열쇠·상점 공략'), description=('Choose an activity, a reward claim and your next purchase.', '종목을 고르고, 보상 열쇠를 쓰고, 성장 재료로 교환하는 순서.')),
     dict(slug='stigma-growth', group='gear', region='GLOBAL / KR', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate Global purchases from dated KR stock and level costs.', '글로벌 구매 참고와 한국 상점 한도·레벨별 소모량을 구분합니다.')),
-    dict(slug='endgame-crafts', group='gear', region='GLOBAL / NA', reviewed='2026-11-11', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Global crafting references and NA Ludra launch preparation.', '글로벌 제작 참고와 북미 루드라 출시 준비를 구분합니다.')),
+    dict(slug='endgame-crafts', group='gear', region='GLOBAL / NA', reviewed='2026-11-18', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Global crafting references and NA Ludra launch preparation.', '글로벌 제작 참고와 북미 루드라 출시 준비를 구분합니다.')),
     dict(slug='kr-pendant', group='gear', region='KR', title=('KR Draconic Pendant enhancement', '한국 펜던트 강화·실패 보정'), description=('Read the next attempt and understand increasing failure compensation.', '유일 펜던트의 다음 시도 확률과 실패 보정을 이해합니다.')),
     dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14/November 4 changes.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일/11월 4일 변경 사항.')),
 ]
@@ -33,7 +34,8 @@ SOURCES = {
     'patch-nov4': ('https://aion2.plaync.com/ko-kr/board/update/view?articleId=6aea36386cfe4756db5b9115', 'NC · KR · 2026-11-04', 'Official regional patch'),
     'patch-nov4-hotfix': ('https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6aea9be081a1f241964f2d12', 'NC · KR · 2026-11-04 hotfix', 'Official regional maintenance fix; completed 2026-11-04.'),
     'ludra-na': (LUDRA_NOTICE, 'NC · NA · Ludra Awakens on November 4th · 2026-10-23', 'Official NA announcement; rechecked 2026-10-25. Entry and events, not a crafting or loot table.'),
-    'ludra-na-patch': (LUDRA_PATCH, 'NC · NA · November 11 patch', 'Official regional patch; published 2026-11-11. Current two-hour limit, reactor HP adjustment, Reward Group 5 and wipe-reset fix.'),
+    'ludra-na-patch': (LUDRA_PATCH, 'NC · NA · November 18 patch', 'Official regional patch; published 2026-11-18. Easy difficulty, 15% combined Ludra gear rate, weapon-chest recipes and pattern fixes.'),
+    'ludra-na-nov11-patch': (LUDRA_NOV11_PATCH, 'NC · NA · November 11 patch', 'Official regional patch; two-hour limit, reactor HP adjustment, Reward Group 5 and wipe-reset fix.'),
     'ludra-na-previous-patch': (LUDRA_PREVIOUS_PATCH, 'NC · NA · November 4 patch', 'Official regional patch; entry levels, launch rewards, bracelet conversions and event terms.'),
 }
 # Base probability and compensation agree across both KR tables. Costs do not.
@@ -154,22 +156,22 @@ def stigma(v):
 
 def crafts(v):
     ludra_link=v.link('guides/na-ludra/',v.t('NA Ludra beginner guide: entry, preparation and rewards', '북미 루드라 초보 공략: 입장·준비·보상'))
-    scope='<div class="ag-note" data-ludra-scope><strong>'+v.t('NA · November 11, 2026: current official patch', '북미 · 2026년 11월 11일: 현재 공식 패치')+'</strong><p>'+v.t('Normal requires character item level 2,800 and Hard requires 3,000. The November 11 patch changes both run limits from one hour to two hours and improves Reward Group 5. November 4 entry, launch reward and bracelet-voucher facts remain separately sourced below.', '일반은 캐릭터 아이템 레벨 2,800, 어려움은 3,000이 필요합니다. 11월 11일 패치는 두 난도의 제한 시간을 1시간에서 2시간으로 바꾸고 보상군 5를 개선합니다. 11월 4일 입장·출시 보상·팔찌 교환권 사실은 아래에서 별도 출처로 유지합니다.')+'</p>'+v.link(LUDRA_PATCH_REVIEW,v.t('NA November 11 patch summary', '북미 11월 11일 패치 요약'))+' · <a href="#craft-na-ludra">'+v.t('Current facts / verify in game', '현재 확인 사실 / 인게임 검증')+' →</a></div>'
+    scope='<div class="ag-note" data-ludra-scope><strong>'+v.t('NA · November 18, 2026: current official patch', '북미 · 2026년 11월 18일: 현재 공식 패치')+'</strong><p>'+v.t('Easy and Normal require character item level 2,800; Hard requires 3,000. Easy has a two-hour limit and unlimited personal revives. All three modes use a 15% combined Ludra gear rate. November 11 time, reactor and Reward Group 5 facts remain separately sourced below.', '쉬움·일반은 캐릭터 아이템 레벨 2,800, 어려움은 3,000입니다. 쉬움은 2시간·개인 부활 무제한이며 세 난도의 루드라 장비 합산 확률은 15%입니다. 11월 11일 제한 시간·반응로·보상군 5 사실은 아래에서 별도 출처로 유지합니다.')+'</p>'+v.link(LUDRA_PATCH_REVIEW,v.t('NA November 18 patch summary', '북미 11월 18일 패치 요약'))+' · <a href="#craft-na-ludra">'+v.t('Current facts / verify in game', '현재 확인 사실 / 인게임 검증')+' →</a></div>'
     bracelet=v.cards([
         ('shield',('Abyssal Bracelet · NA official','심연의 팔찌 · 북미 공식'),('Abyssal Bracelet (Bound) can drop from Normal or Hard and can be Amplified to level 3. The patch does not publish its drop rate.', '심연의 팔찌(각인)는 일반·어려움에서 획득할 수 있고 3단계까지 돌파할 수 있습니다. 공지는 드롭 확률을 공개하지 않았습니다.')),
         ('boss',("Ludra's Bracelet · voucher conversions",'루드라의 팔찌 · 교환권 변환'),("6 Normal vouchers or 3 Hard vouchers → Ludra's Bracelet (Bound), which can be Amplified to level 5. Two Normal vouchers can be converted into one Hard voucher.", '일반 교환권 6개 또는 어려움 교환권 3개로 루드라의 팔찌(각인)를 만들 수 있고 5단계까지 돌파할 수 있습니다. 일반 교환권 2개는 어려움 교환권 1개로 변환할 수 있습니다.')),
-        ('check',('Check the live morph preview','실제 물질 변환 미리보기 확인'),('Both difficulties offer guaranteed voucher choices, but reward counts, drop rates and any displayed currency cost still need client verification before spending.', '두 난도 모두 확정 보상에서 교환권을 선택할 수 있지만 보상 횟수·드롭 확률·표시된 재화 비용은 소비 전에 클라이언트에서 확인해야 합니다.')),
+        ('check',('Weapon-chest recipe · November 18','무기 상자 도안 · 11월 18일'),('The official recipe costs 5,000,000 Kina plus 4 Easy, 2 Normal or 1 Hard voucher. Check binding, chest contents and the live preview before spending.', '공식 도안은 5,000,000 키나와 쉬움 4개·일반 2개·어려움 1개 중 난도별 교환권을 사용합니다. 소비 전 귀속·상자 구성·실제 미리보기를 확인하세요.')),
     ])
     prep=v.steps([
-        (('After launch · compare your entry total', '출시 후 · 캐릭터 입장 수치 비교'),('Use the official NA gates: Normal 2,800 / Hard 3,000. Entry level is only a gate and does not guarantee a clear. The patch does not publish boss triggers, counters, enrage or revive rules.', '북미 공식 입장 기준인 일반 2,800·어려움 3,000과 현재 수치를 비교하세요. 입장 수치는 입장 조건일 뿐 클리어를 보장하지 않습니다. 공지는 보스 발동 조건·대응·광폭화·부활 규칙을 공개하지 않았습니다.')),
+        (('Choose Easy, Normal or Hard', '쉬움·일반·어려움 선택'),('Use the official NA gates: Easy 2,800 / Normal 2,800 / Hard 3,000. Easy has Normal HP, easier mechanics and unlimited personal revives. Entry level alone does not guarantee a clear.', '북미 공식 입장 기준은 쉬움 2,800·일반 2,800·어려움 3,000입니다. 쉬움은 일반과 같은 HP·더 쉬운 기믹·개인 부활 무제한입니다. 입장 수치만으로 클리어가 보장되지는 않습니다.')),
         (('Plan temporary energy by account', '계정 단위 임시 에너지 지원 계획'),('The corrected current term is 4 Odyle Energy per account per day by mail, October 28 after maintenance–November 10 before maintenance (PST). Mail expires 7 days after receipt.', '현재 정정된 조건은 PST 기준 10월 28일 점검 후~11월 10일 점검 전 계정당 매일 오딜 에너지 4개 우편 지급입니다. 우편은 받은 뒤 7일 후 만료됩니다.')),
         (('Read Ludra Hunt eligibility', '루드라 사냥 이벤트 자격 읽기'),('The first 20 Hard-clear parties per listed region receive ranked titles; other event-period Normal/Hard clears receive a universal clear title. The window is November 4 after maintenance–November 24 before maintenance (PST).', '대상 지역별 어려움 선착순 20개 파티에는 순위별 칭호, 그 밖의 이벤트 기간 일반·어려움 클리어에는 공통 클리어 칭호가 지급됩니다. PST 기준 기간은 11월 4일 점검 후~11월 24일 점검 전입니다.')),
     ])
     pending=v.cards([
-        ('check',('Verify in the NA client · entry & events', '북미 인게임 확인 · 입장·이벤트'),('After launch: difficulty labels, displayed entry gate, party size, unlock requirements, entry/reward limits, clear recognition and title delivery. When support starts: mail reset time, claim conditions and expiry. No direct gameplay verification is claimed.', '출시 후: 난도·표시 입장 조건·파티 인원·선행조건·입장/보상 제한·클리어 판정·칭호 지급. 지원 시작 후: 우편 초기화 시각·수령 조건·만료 시간. 직접 플레이 검증은 아직 하지 않았습니다.')),
-        ('boss',('Verify in the NA client · rewards & combat', '북미 인게임 확인 · 보상·전투'),('Check reward item levels, the live voucher-morph menu and amplification behavior. Attack triggers, counters, enrage/revive rules and drop probabilities are not published; no NA pattern or drop-rate guide can be derived from the patch.', '보상 장비 레벨·실제 교환권 변환 메뉴·돌파 동작을 확인해야 합니다. 공격 발동조건·대응법·광폭화/부활 규칙·드롭 확률은 공개되지 않아 북미 패턴·확률 공략을 만들 수 없습니다.')),
+        ('check',('Verify in the NA client · entry & rewards', '북미 인게임 확인 · 입장·보상'),('Check difficulty labels, unlocks, entry/reward limits, Easy resurrection/re-entry behavior, 15% category contents and the 5,000,000-Kina morph preview. No direct gameplay verification is claimed.', '난도·해금·입장/보상 제한, 쉬움 부활/재입장, 15% 합산 분류 구성, 5,000,000 키나 변환 미리보기를 확인해야 합니다. 직접 플레이 검증은 아직 하지 않았습니다.')),
+        ('boss',('Verify in the NA client · corrected patterns', '북미 인게임 확인 · 수정 패턴'),('NC says some Ludra patterns were fixed but names no pattern, trigger or response. Record the difficulty, telegraph, boss HP, target state and outcome before changing strategy or animation guidance.', 'NC는 일부 루드라 패턴 수정만 밝혔고 패턴명·발동·대응은 공개하지 않았습니다. 공략·애니메이션 수정 전 난도·전조·보스 HP·대상 상태·결과를 기록해야 합니다.')),
     ])
-    na=('<p class="ag-small">'+v.t('Current NA patch: November 11, 2026. November 4 launch facts and older Global references retain their original dates and scope.', '현재 북미 패치: 2026년 11월 11일. 11월 4일 출시 사실과 기존 글로벌 참고 자료는 원래 날짜와 범위를 유지합니다.')+'</p>'+prep+pending+v.link(LUDRA_PATCH_REVIEW,v.t('Read the NA November 11 patch summary', '북미 11월 11일 패치 요약 읽기'))+' · <a href="'+LUDRA_PATCH+'" target="_blank" rel="noopener noreferrer">'+v.t('NC · official NA patch', 'NC · 북미 공식 패치')+' ↗</a>')
+    na=('<p class="ag-small">'+v.t('Current NA patch: November 18, 2026. November 11 and November 4 facts retain their original dates and scope.', '현재 북미 패치: 2026년 11월 18일. 11월 11일·11월 4일 사실은 원래 날짜와 범위를 유지합니다.')+'</p>'+prep+pending+v.link(LUDRA_PATCH_REVIEW,v.t('Read the NA November 18 patch summary', '북미 11월 18일 패치 요약 읽기'))+' · <a href="'+LUDRA_PATCH+'" target="_blank" rel="noopener noreferrer">'+v.t('NC · official NA patch', 'NC · 북미 공식 패치')+' ↗</a>')
     arcana=v.cards([
         ('book',('Base Unique Arcana','기본 유일 아르카나 제작'),('Global table: 5 Mysterious Crystals + 2,000,000 Kina. Extra selected options add costs.', '글로벌 표의 기본 제작은 Mysterious Crystal 5개 + 키나 2,000,000. 추가 선택 옵션에는 비용이 더 듭니다.')),
         ('spark',('Choose the right card','필요한 카드부터 선택'),('Chalice, Parchment, Compass, Bell and Mirror occupy different slots. Compare the skill/passive bonus before crafting.', '성배·양피지·나침반·종·거울은 슬롯이 다릅니다. 제작 전에 필요한 스킬·패시브 보너스를 비교하세요.')),
@@ -180,9 +182,9 @@ def crafts(v):
         (('Review the full recipe','총 제작 비용 확인'),('Base crafting and optional picks are different budgets. Keep enough Kinah for the next useful upgrade.', '기본 제작과 추가 선택 비용을 구분하고 다음 성장에 쓸 키나도 남깁니다.')),
     ])
     return [(('bracelet',('Bracelet','팔찌')),v.section('craft-bracelet',('A raid reward with a purpose','목표를 정하고 레이드 보상 모으기'),ludra_link+scope+bracelet)),
-            (('na-ludra',('NA · November 4','북미 · 11월 4일')),v.section('craft-na-ludra',('Prepare from confirmed NA information','확인된 북미 정보로 준비하기'),na)),
+            (('na-ludra',('NA · November 18','북미 · 11월 18일')),v.section('craft-na-ludra',('Prepare from confirmed NA information','확인된 북미 정보로 준비하기'),na)),
             (('arcana',('Arcana','아르카나')),v.section('craft-arcana',('Craft for a skill you use','자주 쓰는 스킬을 위한 제작'),arcana)),
-            (('materials',('Material route','재료 모으기')),v.section('craft-materials',('Keep, collect, then craft','남길 것·모을 것·만들 것'),route+v.link('routines/#routine-transcendence',v.t('Arcana reward route','아르카나 보상 경로'))+v.link('guides/kinah-farming/',v.t('Plan your Kinah','키나 예산 준비'))))],['ludra-na-patch','ludra-na','gear','arcana','arcana-guide']
+            (('materials',('Material route','재료 모으기')),v.section('craft-materials',('Keep, collect, then craft','남길 것·모을 것·만들 것'),route+v.link('routines/#routine-transcendence',v.t('Arcana reward route','아르카나 보상 경로'))+v.link('guides/kinah-farming/',v.t('Plan your Kinah','키나 예산 준비'))))],['ludra-na-patch','ludra-na-nov11-patch','ludra-na','gear','arcana','arcana-guide']
 
 
 def pendant(v):
@@ -246,7 +248,7 @@ def render(slug, lang, base):
     if slug=='na-ludra':
         scope=v.t('NA launch guide · official facts and preparation advice are separated. Current combat patterns are not yet verified.', '북미 출시 공략 · 공식 사실과 준비 권장 사항을 구분합니다. 현재 전투 패턴은 아직 검증되지 않았습니다.')
     if slug=='endgame-crafts':
-        reviewed=v.t('Global references: 2026-10-13 · NA Ludra patch: 2026-11-11', '글로벌 참고: 2026-10-13 · 북미 루드라 패치: 2026-11-11')
+        reviewed=v.t('Global references: 2026-10-13 · NA Ludra patch: 2026-11-18', '글로벌 참고: 2026-10-13 · 북미 루드라 패치: 2026-11-18')
     if slug=='kr-bitan':
         reviewed=v.t('KR patch review: 2026-11-04', '한국 패치 검토: 2026-11-04')
     lead=f'<div class="ag-scope"><span class="ag-region">{g["region"]}</span><span>{reviewed}</span><p>{scope}</p></div>'
