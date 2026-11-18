@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-18T12:32:42Z",
+  "checkedAt": "2026-11-18T13:53:16Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-18T12:32:42Z",
-      "lastSuccessAt": "2026-11-18T12:32:42Z",
+      "checkedAt": "2026-11-18T13:53:16Z",
+      "lastSuccessAt": "2026-11-18T13:53:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8658,8 +8658,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-18T12:32:42Z",
-      "lastSuccessAt": "2026-11-18T12:32:42Z",
+      "checkedAt": "2026-11-18T13:53:16Z",
+      "lastSuccessAt": "2026-11-18T13:53:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8745,13 +8745,13 @@
         },
         {
           "id": "6afcf37adf6d838d56bfd1d6",
-          "title": "[안내] 11월 3주차 알려진 이슈 및 조치 안내",
+          "title": "[안내] 11월 3주차 알려진 이슈 및 조치 안내 (수정 11/18 22:15)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6afcf37adf6d838d56bfd1d6",
           "publishedAt": "2026-11-18T00:38:18.368Z",
-          "sourceUpdatedAt": "2026-11-18T00:41:11.767Z",
+          "sourceUpdatedAt": "2026-11-18T13:15:33.210Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -8765,13 +8765,13 @@
         },
         {
           "id": "6afc33b0add8ebf0b13a7281",
-          "title": "[안내] 서버 이전 Q&A 안내 (수정 11/18 21:31)",
+          "title": "[안내] 서버 이전 Q&A 안내 (수정 11/18 21:54)",
           "region": "KR",
           "kind": "news",
           "source": "kr-notice",
           "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6afc33b0add8ebf0b13a7281",
           "publishedAt": "2026-11-17T13:30:00.001Z",
-          "sourceUpdatedAt": "2026-11-18T12:31:59.942Z",
+          "sourceUpdatedAt": "2026-11-18T12:54:49.549Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
@@ -9427,8 +9427,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-18T12:32:42Z",
-      "lastSuccessAt": "2026-11-18T12:32:42Z",
+      "checkedAt": "2026-11-18T13:53:16Z",
+      "lastSuccessAt": "2026-11-18T13:53:16Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -11400,8 +11400,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-18T12:32:42Z",
-      "lastSuccessAt": "2026-11-18T12:32:42Z",
+      "checkedAt": "2026-11-18T13:53:16Z",
+      "lastSuccessAt": "2026-11-18T13:53:16Z",
       "error": null,
       "fromCache": false,
       "items": [
