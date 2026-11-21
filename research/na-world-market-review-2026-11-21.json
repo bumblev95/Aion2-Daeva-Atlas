@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-21T08:32:05Z",
+  "article": {
+    "id": "6b047f20d65afc4bb5d63c4e",
+    "title": "[Notice] Upcoming World Market and World Exchange (November 25)",
+    "region": "NA",
+    "kind": "news",
+    "publishedAt": "2026-11-21T07:00:00.001Z",
+    "sourceUpdatedAt": "2026-11-21T07:04:29.649Z",
+    "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6b047f20d65afc4bb5d63c4e",
+    "contentHash": "1c0376ae86f8d23f6f3cc09d6f1df41ebae540c0a21ca14ed0b98ec9dd0580fb",
+    "reviewState": "official"
+  },
+  "classification": "system",
+  "classIds": [],
+  "effectiveAt": "2026-11-25 after NA maintenance",
+  "summary": {
+    "en": "NA adds Membership-only World Market and World Exchange trading across servers in the same faction and region after November 25 maintenance. Existing Server venues remain. World sales use a 20% tax, with separate daily sale-listing limits of 10 for the World Market and 10 for the World Exchange (Quna).",
+    "ko": "북미는 11월 25일 점검 후 멤버십 전용 월드 마켓·월드 거래소를 열어 같은 진영·지역의 서버 간 거래를 지원합니다. 기존 서버 거래소는 유지됩니다. 월드 판매 세금은 20%이며 일일 판매 등록은 월드 마켓 10회·월드 거래소(큐나) 10회로 각각 제한됩니다."
+  },
+  "announcedFacts": [
+    {
+      "en": "World trading is limited to users on other servers within the same faction and region.",
+      "ko": "월드 거래 대상은 같은 진영·지역의 다른 서버 이용자입니다."
+    },
+    {
+      "en": "The existing Server Market and Server Exchange remain available.",
+      "ko": "기존 서버 마켓과 서버 거래소는 계속 이용할 수 있습니다."
+    },
+    {
+      "en": "A 20% sales tax applies to World Market and World Exchange sales.",
+      "ko": "월드 마켓·월드 거래소 판매에는 20% 판매 세금이 적용됩니다."
+    },
+    {
+      "en": "The two World venues each allow 10 sale listings per day and require Membership.",
+      "ko": "두 월드 거래 수단은 각각 일일 판매 등록 10회이며 멤버십이 필요합니다."
+    }
+  ],
+  "impact": {
+    "priority": "P1",
+    "reason": {
+      "en": "The new tax, access gate and listing caps directly change the NA Market-money route and net-sale budgeting in the Kinah guide.",
+      "ko": "새 세금·이용 조건·등록 한도는 북미 키나 공략의 거래소 자금 경로와 판매 순수입 계산에 직접 영향을 줍니다."
+    },
+    "interpretation": {
+      "en": "Players can compare retained server listings with a broader World venue, but a wider buyer pool does not guarantee a sale or better net proceeds.",
+      "ko": "기존 서버 시세와 더 넓은 월드 거래를 비교할 수 있지만 구매자 범위 확대가 판매 성사나 더 높은 순수입을 보장하지는 않습니다."
+    },
+    "publicTargets": [
+      "/guides/kinah-farming/",
+      "/ko/guides/kinah-farming/",
+      "/updates/",
+      "/ko/updates/"
+    ],
+    "sourceTargets": [
+      "progression.py",
+      "data/news.json",
+      "data/coverage-audit.json",
+      "research/na-world-market-review-2026-11-21.json"
+    ]
+  },
+  "directVerification": [
+    "World Market and World Exchange menu visibility after November 25 NA maintenance",
+    "Membership access gate and same-faction/region server scope",
+    "whether each 10-listing limit is per account or character and its reset time",
+    "how cancelled and expired listings count toward each limit",
+    "displayed 20% tax and final settlement amount",
+    "continued availability and separate fees/rules of Server Market and Server Exchange"
+  ],
+  "notSupported": [
+    "Applying this NA announcement to Korea",
+    "Applying the 20% World sales tax to Server Market or Server Exchange",
+    "Any class, skill coefficient, cooldown, eDPS or historical ranking change",
+    "Any guaranteed sale, price improvement or measured Kinah-per-hour"
+  ]
+}

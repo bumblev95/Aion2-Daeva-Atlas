@@ -10,10 +10,12 @@ import guidebrowse
 from advancedguides import LUDRA_PATCH, LUDRA_PATCH_REVIEW
 
 REVIEWED = '2026-10-12'
-KINAH_REVIEWED = '2026-11-18'
+KINAH_REVIEWED = '2026-11-21'
 KINAH_PATCH_ID = '6afd5b00ebccad0e4b5bad8b'
 KINAH_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId='+KINAH_PATCH_ID
 KINAH_PATCH_REVIEW = 'updates/na-'+KINAH_PATCH_ID+'/'
+KINAH_MARKET_NOTICE_ID = '6b047f20d65afc4bb5d63c4e'
+KINAH_MARKET_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId='+KINAH_MARKET_NOTICE_ID
 ROOT = 'guides/'
 
 
@@ -37,6 +39,9 @@ SOURCES = {
     'kinah-na-patch': (KINAH_PATCH,
         ('NC · November 18 NA currency update', 'NC · 북미 11월 18일 키나 변경'),
         ('NA only; reviewed 2026-11-18. All field-monster Kina becomes bound; the daily 1,000,000 acquisition limit changes to Bound Kina. No live gameplay verification.', '북미 전용 · 2026.11.18 검토. 모든 필드 몬스터 키나와 일일 1,000,000 획득 한도가 귀속 키나로 변경. 인게임 직접 검증 아님.')),
+    'kinah-na-world-market': (KINAH_MARKET_NOTICE,
+        ('NC · November 25 NA World Market notice', 'NC · 북미 11월 25일 월드 마켓 안내'),
+        ('NA only; source reviewed 2026-11-21. World trading starts after November 25 maintenance for Membership users. The publisher states a 20% World sale tax and separate daily limits of 10 World Market and 10 World Exchange (Quna) sale listings. No live gameplay verification.', '북미 전용 · 2026.11.21 원문 검토. 11월 25일 점검 후 멤버십 이용자에게 월드 거래가 열립니다. 공지는 월드 판매 세금 20%, 월드 마켓과 월드 거래소(큐나) 각각 일일 판매 등록 10회를 명시합니다. 인게임 직접 검증 아님.')),
     'mobalytics-beginner': ('https://mobalytics.gg/gamebase/guides/aion-2-beginner-guide',
         ('Mobalytics · beginner upgrades', 'Mobalytics · 초보자 성장 점검'),
         ('Global guide; updated 2026-10-11. Titles, Power Shard material costs and equipment extraction.', '글로벌 공략 · 2026.10.11 수정. 칭호·Power Shard 재료 비용·장비 추출.')),
@@ -290,7 +295,11 @@ def kinah_guide(v):
          ('All field-monster Kina rewards become Bound Kina. The daily 1,000,000 Kina acquisition limit likewise changes to Bound Kina; this is an acquisition ceiling, not a guaranteed payout. Do not count direct field-monster currency as Market purchasing funds. This NA notice does not establish KR rules.', '모든 필드 몬스터의 키나 보상이 귀속 키나로 바뀝니다. 일일 1,000,000 키나 획득 한도도 귀속 키나로 변경됩니다. 이는 획득 상한이며 보장 수입이 아닙니다. 필드 몬스터가 직접 지급하는 키나는 거래소 구매 자금으로 계산하지 마세요. 이 북미 공지를 한국 서버 규칙으로 적용하지 않습니다.')),
         (('Still requires in-game checks', '인게임 확인이 필요한 내용'),
          ('The notice does not specify account versus character scope, reset time, HUD counter behavior, whether duties/dungeons/quests share this cap, or what happens to other loot at the cap. It does not enumerate enhancement costs accepting Bound Kina or the debit priority. Check the NA reward counter and payment preview before budgeting; no live test is claimed here.', '공지는 계정·캐릭터별 적용 범위, 초기화 시각, HUD 계수 방식, 사명·던전·퀘스트와의 한도 합산 여부, 한도 도달 후 다른 전리품 처리를 명시하지 않습니다. 귀속 키나를 받는 강화 비용 목록과 차감 우선순위도 제시하지 않습니다. 북미 보상 카운터와 결제 미리보기로 확인한 뒤 예산을 정하세요. 여기서는 직접 플레이 검증을 주장하지 않습니다.')),
-    ])+v.cite('kinah-na-patch')+v.a(KINAH_PATCH_REVIEW,t('Read the NA patch summary', '북미 패치 요약 보기'),'progress-action')
+        (('Official system · NA only · November 25, 2026', '공식 시스템 · 북미 전용 · 2026년 11월 25일'),
+         ('After maintenance, Membership users can use a World Market and World Exchange to trade across servers within the same faction and region. The existing Server Market and Server Exchange stay available. World sales have a 20% tax, with separate daily sale-listing limits of 10 for the World Market and 10 for the World Exchange (Quna).', '점검 후 멤버십 이용자는 같은 진영·지역의 다른 서버 이용자와 월드 마켓·월드 거래소에서 거래할 수 있습니다. 기존 서버 마켓·서버 거래소는 유지됩니다. 월드 판매에는 20% 세금이 적용되고 일일 판매 등록은 월드 마켓 10회·월드 거래소(큐나) 10회로 각각 제한됩니다.')),
+        (('World trading · direct checks pending', '월드 거래 · 직접 확인 대기'),
+         ('The announcement does not state whether each listing limit is per account or character, when it resets, or how cancelled/expired listings count. Verify the post-maintenance menu, Membership gate, same-faction/region scope, displayed tax and settlement, and both counters before changing a farming budget. The 20% figure is for World sales; do not apply it to the retained Server markets without separate evidence.', '공지는 판매 등록 한도가 계정·캐릭터 중 어느 범위인지, 초기화 시각, 취소·만료 등록의 집계 방식을 밝히지 않았습니다. 점검 후 메뉴, 멤버십 조건, 같은 진영·지역 범위, 표시 세금·정산액, 두 카운터를 확인한 뒤 파밍 예산을 바꾸세요. 20%는 월드 판매 수치이므로 별도 근거 없이 유지되는 서버 마켓에 적용하지 않습니다.')),
+    ])+v.cite('kinah-na-patch','kinah-na-world-market')+v.a(KINAH_PATCH_REVIEW,t('Read the NA patch summary', '북미 패치 요약 보기'),'progress-action')
     money=growthvisuals.wallet(v)+v.cite('kinah')
     rows=[
         (('Duty Missions', '사명'), ('50,000 bound each · 5 completed = 250,000', '1회 귀속 5만 · 5회 완료 시 25만'), ('Daily allowance', '일일 횟수'), 'routines/#routine-duties'),
@@ -300,14 +309,14 @@ def kinah_guide(v):
     ]
     table=''.join(f'<tr><th scope="row">{v.p(name)}</th><td data-label="{t("Payout", "보상")}">{v.p(reward)}</td><td data-label="{t("Repeat / route", "주기·동선")}">{v.p(cadence)}<br>{v.a(url,t("Open route", "공략으로 이동"))}</td></tr>' for name,reward,cadence,url in rows)
     fixed=f'<div class="progress-table"><table><thead><tr><th>{t("Activity", "할 일")}</th><th>{t("Bound Kinah", "귀속 키나 보상")}</th><th>{t("Repeat and route", "반복 여부·동선")}</th></tr></thead><tbody>{table}</tbody></table></div><p class="progress-note">'+t('Planning example: five 50,000-Kinah duties plus one 10,000-score depository clear = 550,000 bound Kinah, before any costs. This assumes all five duties and an available shared entry; it is not an hourly income or a guaranteed Daily Dungeon result.', '계획 예시: 5만 키나 사명 5회 + 보관소 1만 점 1회 = 비용 차감 전 귀속 키나 55만. 사명 5회 완료·공통 입장 횟수·1만 점을 전제로 한 계산이며 시간당 수입이나 무조건 받는 보상이 아닙니다.')+' '+t('These October reward references were not revalidated in game on November 18. Do not add 1,000,000 field Kinah to this example as a guaranteed daily total; overlap with other reward counters remains unverified.', '이 10월 보상 자료는 11월 18일 인게임에서 재검증하지 않았습니다. 필드 키나 100만을 더해 하루 보장 총액으로 안내하지 마세요. 다른 보상 카운터와의 중복 여부는 검증 대기입니다.')+'</p>'+v.cite('kinah','duties','depository')
-    market='<p class="progress-note">'+t('The field-currency change does not announce that all material-sale routes are removed. Keep the routes below conditional on the exact item being tradable and the sale settling. Bound variants, including the bound Wrathful materials listed for Ludra, are not sale stock.', '이번 필드 화폐 변경은 재료 판매 경로 전체의 폐지를 공지한 것이 아닙니다. 아래 경로는 해당 아이템의 거래 가능 여부와 실제 판매 정산을 조건으로 유지합니다. 루드라에 명시된 귀속 격노 재료 등 귀속 변형은 판매용 재고에 넣지 마세요.')+'</p>'+v.cards([
+    market='<p class="progress-note">'+t('The field-currency change does not announce that all material-sale routes are removed. Keep the routes below conditional on the exact item being tradable and the sale settling. Bound variants, including the bound Wrathful materials listed for Ludra, are not sale stock.', '이번 필드 화폐 변경은 재료 판매 경로 전체의 폐지를 공지한 것이 아닙니다. 아래 경로는 해당 아이템의 거래 가능 여부와 실제 판매 정산을 조건으로 유지합니다. 루드라에 명시된 귀속 격노 재료 등 귀속 변형은 판매용 재고에 넣지 마세요.')+'</p><p class="progress-note">'+t('From November 25 after maintenance, eligible NA Membership users can compare the retained Server Market with the new World Market. For a World sale, budget from the official 20% sales tax and the displayed settlement amount. The daily World sale counters are limited separately to 10 Market listings and 10 Exchange (Quna) listings; these are listing limits, not promised sales.', '11월 25일 점검 후 북미 멤버십 이용자는 유지되는 서버 마켓과 새 월드 마켓을 비교할 수 있습니다. 월드 판매는 공식 20% 판매 세금과 화면에 표시되는 정산액을 기준으로 예산을 잡으세요. 월드 판매 카운터는 마켓 10회·거래소(큐나) 10회로 각각 제한되며, 판매 등록 한도이지 판매 성사를 보장하는 수치가 아닙니다.')+'</p>'+v.cards([
         (('Dungeon crafting materials', '정복 던전 제작 재료'),
          ('Wrathful Mind: the six classic dungeons. Wrathful Will: Urugugu/Vakron and the higher pair. Wrathful Ego: Fire Temple/Ferocious Horn. These feed Dragon Lord crafting; sell only tradable surplus.', 'Wrathful Mind는 기본 6종, Wrathful Will은 우루구구·바크론 이상, Wrathful Ego는 불의 신전·사나운 뿔에서 노립니다. 용제 제작용 재료이며 남는 거래 가능분을 판매합니다.')),
         (('Gather along a useful route', '기존 동선에서 채집'),
          ('Compare ore, wood and Odyle listings before taking a detour. A gathered material kept for your own recipe saves a purchase; only a completed sale creates income.', '이동 동선의 광석·목재·오드 시세를 비교합니다. 직접 제작에 쓴 채집물은 구매 비용을 아끼는 것이고, 실제 판매가 성사된 것만 수입입니다.')),
         (('Price a craft from its inputs', '제작은 재료값부터 계산'),
          ('For example, Ruby Powder and Yggdrasil Paper are processed tradable inputs. Compare selling the raw material with processing it; include purchased ingredients and displayed selling fees.', 'Ruby Powder·Yggdrasil Paper 같은 가공 재료는 원재료 그대로 판매할 때와 비교합니다. 구입 재료값과 화면에 표시되는 판매 수수료를 함께 계산하세요.')),
-    ])+'<div class="kinah-formula"><strong>'+t('Net proceeds = completed sale − materials bought − selling costs', '순수입 = 실제 판매대금 − 구매한 재료값 − 판매 비용')+'</strong><p>'+t('No live prices or measured Kinah-per-hour are available here. Test a small batch before spending your enhancement budget on stock.', '현재 서버 시세·시간당 수급량을 측정한 자료는 없습니다. 소량이 팔리는지 확인한 뒤 물량을 늘려 강화 예산까지 재고에 묶이지 않게 하세요.')+'</p></div>'+v.cite('kinah')
+    ])+'<div class="kinah-formula"><strong>'+t('Net proceeds = completed sale − materials bought − displayed selling costs', '순수입 = 실제 판매대금 − 구매한 재료값 − 화면에 표시된 판매 비용')+'</strong><p>'+t('World sales use the announced 20% tax. No live prices or measured Kinah-per-hour are available here. Test a small batch before spending your enhancement budget on stock.', '월드 판매는 공지된 20% 세금을 사용합니다. 현재 시세·시간당 수급량을 측정한 자료는 없습니다. 소량이 팔리는지 확인한 뒤 물량을 늘려 강화 예산까지 재고에 묶이지 않게 하세요.')+'</p></div>'+v.cite('kinah','kinah-na-world-market')
     choices=v.cards([
         (('Need stones and Kinah', '강화석과 키나가 함께 부족'),
          ('Finish duties for Kinah; choose Bio-Research Base for stones. For NA, direct field-monster currency is now bound: budget it for enhancement only where the payment preview accepts it, not for Market purchases.', '사명으로 키나를 모으고 데바 생체연구기지에서 강화석을 받습니다. 북미 필드 몬스터의 직접 키나 보상은 이제 귀속입니다. 결제 미리보기에서 허용하는 강화 비용에만 반영하고 거래소 구매 자금과 구분하세요.')),
@@ -321,7 +330,7 @@ def kinah_guide(v):
         '<div id="kinah-types">'+money+'</div>'+
         v.section('kinah-fixed', ('Reliable reward routes', '정해진 보상부터 모으기'), ('Global reward references reviewed 2026-10-12; score and completion conditions still apply.', '2026.10.12 검토한 글로벌 보상 참고입니다. 점수·완료·입장 조건을 함께 봅니다.'),fixed)+
         v.section('kinah-market', ('What can become Market money?', '무엇을 팔아 거래소 자금을 만들까?'), ('The drop matters only if that particular item can be traded and someone buys it.', '해당 아이템이 거래 가능하고 실제 구매자가 있어야 판매 수입이 됩니다.'),market)+
-        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah-na-patch','kinah','duties','depository'],KINAH_REVIEWED))
+        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah-na-patch','kinah-na-world-market','kinah','duties','depository'],KINAH_REVIEWED))
 
 
 def ludra_entry(v):
