@@ -74,8 +74,8 @@ class KinahGuideRegressionTest(unittest.TestCase):
             self.assertIn('id="kinah-na-update"', html)
             self.assertIn('id="growth-source-kinah-na-patch"', html)
             self.assertIn(progression.KINAH_PATCH, html)
-            self.assertIn('"dateModified": "2026-11-18"', html)
-            self.assertEqual(dates['https://bumblev95.github.io/Aion2-Daeva-Atlas/'+prefix+'guides/kinah-farming/'], '2026-11-18')
+            self.assertIn('"dateModified": "2026-11-21"', html)
+            self.assertEqual(dates['https://bumblev95.github.io/Aion2-Daeva-Atlas/'+prefix+'guides/kinah-farming/'], '2026-11-21')
         for slug in ('pet-growth', 'gear-targets', 'dungeon-rewards'):
             self.assertEqual(progression.reviewed_on(slug), '2026-10-12')
 

@@ -1,6 +1,27 @@
 {
-  "reviewedAt": "2026-11-18T08:31:23Z",
+  "reviewedAt": "2026-11-21T08:32:05Z",
   "items": [
+    {
+      "id": "na-20261125-world-market-exchange",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-21T08:32:05Z",
+      "title": {
+        "en": "November 25 NA World Market and World Exchange",
+        "ko": "11월 25일 북미 월드 마켓·월드 거래소"
+      },
+      "finding": {
+        "en": "P1 growth/system: after November 25 maintenance, Membership users can trade across servers in the same faction and region through the World Market and World Exchange while the existing Server venues remain. World sales carry a 20% tax and separate daily sale-listing limits of 10 per World venue. The Kinah guide now distinguishes these announced World rules from retained Server-market rules. Direct checks remain for the live menu, Membership gate, regional/faction scope, account/character scope, reset, cancellation/expiry counting, displayed tax and settlement. No KR application, skill/eDPS input or historical ranking change is supported.",
+        "ko": "P1 성장/시스템: 11월 25일 점검 후 멤버십 이용자는 같은 진영·지역의 서버 간 월드 마켓·월드 거래소를 이용할 수 있고 기존 서버 거래소는 유지됩니다. 월드 판매 세금은 20%이며 두 월드 거래 수단은 각각 일일 판매 등록 10회입니다. 키나 공략에서 이 월드 규칙을 유지되는 서버 거래 규칙과 구분했습니다. 실제 메뉴·멤버십 조건·진영/지역 범위·계정/캐릭터 범위·초기화·취소/만료 집계·표시 세금·정산액은 직접 확인 대기입니다. 한국 적용, 스킬/eDPS 입력, 과거 순위 변경 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · Upcoming World Market and World Exchange (November 25)",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6b047f20d65afc4bb5d63c4e",
+          "contentHash": "1c0376ae86f8d23f6f3cc09d6f1df41ebae540c0a21ca14ed0b98ec9dd0580fb"
+        }
+      ]
+    },
     {
       "id": "kr-20261118-classes-bosses-trust-transfer",
       "region": "KR",
