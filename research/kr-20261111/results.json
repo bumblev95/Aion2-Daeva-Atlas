@@ -1,0 +1,682 @@
+{
+  "schema": 1,
+  "purpose": "research-only",
+  "region": "KR",
+  "effectiveAt": "2026-11-11",
+  "baseCommit": "6bcf3bbee1514e9c026fb743f93fdafece5742c1",
+  "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6af370b8577e8c01355e047b",
+  "sourceHash": "2e8be44523c09df3ea77190f5abf4ae1daed4e897464a15b44d22d275c8deaea",
+  "provenance": {
+    "research/kr-20261111/inputs.json": "7c36dc153bead8c910f766734365fc469de8344b34b8109a5ccf976ce2d8f242",
+    "research/kr-20261111/audit.js": "0b0265142f81dbd557350ce18161ac1024ece2b5f722fcc3b11dfefd7763c7b1",
+    "data/skill-snapshot.json": "6f71c03d9976ae5ba656727c668ce49954d3b884176a6447ab1183e20e1bc445",
+    "data/skills.json": "3cb5987b5ed9504d0b4ce8962b2dab1ffe793af133df6ab4a00ca49ea83fcb09",
+    "data/dps-resources.json": "f65e7689e2976de5548737dea5700a7d591d38ab6ba880eb60223c7a51c16a41",
+    "data/dps-rankings.json": "61c5285b901348de2e89cb4d56cd1e5c945478ac0661eccbcaf1a58527ffbf70",
+    "data/dps-rankings.csv": "c1e3b86acbab86cdd5268567164a72a598f080a98d0c94986a85ba5a69bf1ac3",
+    "docs/data/dps.json": "d6b023a09428e943be9429b6e13d5f47bfd61a464c2cd07b9066ab286772f8d4",
+    "assets/dps-engine.js": "7da17bd25fed9476a1f5c54f6c8d00aed79daf5f7ed299b403630b03c7e4f8e3",
+    "dpsrules.py": "f52bb3b4cb5871ad89ad210059eacc19ddb838d1bd58cddc64126802794c53e2",
+    "dpsmath.py": "a49d82aa69e6bedad8f75acc0bc9be0ad95a03547f36bf1d6fc82d3ee5b7c566",
+    "liveops.py": "e70995312414f7b960b0e37170aa5c72dba9a9c4f8a90f6f7fe8ac0c5e6c8af2",
+    "research/rotation-learning/train.js": "cfc74f89117e1f7d8a07752c24fd2d62bbdefece27d42fce5f2de2512f30dc94",
+    "research/rotation-learning/model.json": "588c516df9f18fe661a788733bf7a4981b1a72d526bc2d4b317f0f954d0fd1e9",
+    "research/rotation-learning/results.json": "462e3cd04aae572520927ed004e96c659f3ce67f6b36962f9977e938a7cfb92b",
+    "research/rotation-learning/scenarios.json": "58c7426024313ac021b645b8f15f120dc97a3eeaf685892842bb8ae8384c2974"
+  },
+  "canPublishTiers": false,
+  "canSeedLiveCalculator": false,
+  "actualKrDps": null,
+  "globalResultsModified": false,
+  "coverage": {
+    "officialClasses": 9,
+    "catalogClasses": 8,
+    "missingClasses": [
+      "brawler"
+    ],
+    "directSkillsIncluded": 72,
+    "activeSkillsInExistingCatalog": 96,
+    "note": "72/96 describes the existing eight-class catalog, not all nine KR classes."
+  },
+  "classPriorities": [
+    {
+      "classId": "gladiator",
+      "nameKo": "검성",
+      "priority": "P0",
+      "skillIds": [
+        "overhead-slam",
+        "aerial-snare",
+        "ruinous-blow",
+        "mocking-blade",
+        "rush-strike"
+      ],
+      "unmappedMechanicsKo": [
+        "올려치기",
+        "광분"
+      ],
+      "officialSummaryKo": "광분 2중첩, 제공기 5~7초; 내려찍기·올려치기 기본 쿨 제거 및 약 50% 기본 피해 감소. 파멸의 맹타 기본 피해 +50%, 돌진 일격 PvE +100%.",
+      "currentAssumptionKo": "현재 내려찍기는 넘어짐/면역 발동 조건이며 광분 상태·중첩과 신규 연속 충전·캔슬 제한이 없다.",
+      "unverifiedKo": "광분 획득·만료·중첩, 올려치기 이름 대응, 기본 피해와 PvE 증폭 합성, 충전과 모션 실측 필요."
+    },
+    {
+      "classId": "templar",
+      "nameKo": "수호성",
+      "priority": "P0",
+      "skillIds": [
+        "shield-smite",
+        "judgment",
+        "warding-strike",
+        "shield-rush",
+        "punishment"
+      ],
+      "unmappedMechanicsKo": [
+        "파멸의 방패",
+        "심판의 권능"
+      ],
+      "officialSummaryKo": "방패 강타 10→7초; 심판 5→3초, 최대 3회, PvE -10%. 비호의 일격·방패 돌격의 심판 활성화 삭제. 파멸의 방패 심판 초기화 및 30→45초.",
+      "currentAssumptionKo": "현재 세 제공기가 2초 심판 창을 열며 심판은 한 번 사용 후 상태를 소비한다. 다회 사용·권능·초기화가 없다.",
+      "unverifiedKo": "최대 3회의 충전/연속 사용 의미, 충전 간격, 초기화 순서, 사용 시작/종료 시 활성화, 특화 5회 권능 별도 확인."
+    },
+    {
+      "classId": "assassin",
+      "nameKo": "살성",
+      "priority": "P0",
+      "skillIds": [
+        "savage-roar",
+        "ambush",
+        "heart-gore",
+        "insignia-explosion"
+      ],
+      "unmappedMechanicsKo": [
+        "맹수의 후려치기",
+        "살의"
+      ],
+      "officialSummaryKo": "문양은 대상 디버프에서 15초 자기 버프로 전환. 포효·뒷발차기 생성 삭제, 후려치기 75% 1개/25% 2개. 폭발 10→5초, MP 200→100, 1~5중첩 110/140/190/260/500%.",
+      "currentAssumptionKo": "현재 포효가 10초 문양을 만들고 폭발 소모·개별 만료는 연구 가정이다. 확률 획득·살의·대상 전환 자원 소유가 없다.",
+      "unverifiedKo": "중첩 유지/갱신/전체 소모, 기본 공격 3단 생성, 자원 소유, 후딜 실측. 피해표 %를 공격력 계수로 오독하지 말 것."
+    },
+    {
+      "classId": "brawler",
+      "nameKo": "권성",
+      "priority": "P0",
+      "skillIds": [],
+      "unmappedMechanicsKo": [
+        "지면강타",
+        "철산고",
+        "승천타",
+        "폭렬권",
+        "집중 막기",
+        "전력"
+      ],
+      "officialSummaryKo": "지면강타·철산고 적중 후 투기 2초. 승천타 30→10초·PvE -36%, 투기 중 승천타/폭렬권 PvE +150%. 전력 90→60초, 속도 +30%.",
+      "currentAssumptionKo": "스킬 원본·DPS 카탈로그·학습 정책에 권성 자체가 없다. 8직업 72/96개 커버리지를 9직업으로 확대 해석할 수 없다.",
+      "unverifiedKo": "권성 스킬 ID·기본 피해·분노·모션·상태 제공기 수집부터 필요. 다른 직업으로 대체하거나 0 DPS로 랭킹하지 않는다."
+    },
+    {
+      "classId": "ranger",
+      "nameKo": "궁성",
+      "priority": "P0",
+      "skillIds": [
+        "tempest-shot",
+        "deadshot",
+        "marking-shot",
+        "drill-dart",
+        "snare-shot",
+        "burst-arrow",
+        "arrow-scattershot"
+      ],
+      "unmappedMechanicsKo": [
+        "폭발 화살",
+        "감응"
+      ],
+      "officialSummaryKo": "정밀 중 파열 화살 적중으로 감응 5초·모든 속성 증폭 20% 및 추가 피해 150%. 폭발 화살 PvE +80%·감응 중 난사 3초 활성화. 송곳 5→4초, 올가미 둔화 5→3초.",
+      "currentAssumptionKo": "현재 파열은 둔화/속박 조건, 정밀은 표적 화살 10초, 난사는 그로기 조건이다. 감응·속성 증폭·폭발 화살 연계가 없다.",
+      "unverifiedKo": "폭발 화살과 파열 화살 ID 혼동 금지. 정밀/감응/난사 시간축·초기화 확률·DoT 갱신과 스킬 매핑 확인."
+    },
+    {
+      "classId": "sorcerer",
+      "nameKo": "마도성",
+      "priority": "P0",
+      "skillIds": [
+        "bittercold-wind",
+        "winters-shackles",
+        "firestorm",
+        "blaze",
+        "hellfire"
+      ],
+      "unmappedMechanicsKo": [
+        "냉기 폭풍",
+        "불의 장벽",
+        "겨울의 파편"
+      ],
+      "officialSummaryKo": "겨울의 속박 PvE +250%(3.5배), PvP +5%. 혹한의 바람 20타 고정·2회 연속. 냉기 폭풍·불의 장벽 60→45초; 소환 공격에 속도/재사용 감소 미적용, 불의 장벽 소환 공격 간격 -50%.",
+      "currentAssumptionKo": "현재 혹한의 바람은 입력 부족으로 학습 제외. 소환 틱·속도 별도 시계·겨울 파편 특화·연속 충전이 없다.",
+      "unverifiedKo": "소환 지속시간/타수/타격 간격, 자기/타인 디버프 소유, 이동 시전·특화 충전·버프 중첩 실측 필요."
+    },
+    {
+      "classId": "spiritmaster",
+      "nameKo": "정령성",
+      "priority": "P0",
+      "skillIds": [
+        "summon-fire-spirit",
+        "summon-water-spirit",
+        "summon-earth-spirit",
+        "summon-wind-spirit",
+        "elemental-fusion"
+      ],
+      "unmappedMechanicsKo": [
+        "정령 강림",
+        "원소 결집",
+        "정령 회생",
+        "소환: 고대의 정령"
+      ],
+      "officialSummaryKo": "일반 정령 15→30초. 원소 융합 기본 PvE -35%, 강림 중 PvE +100%·PvP +50% 및 지연 피해 포함. 강림은 모든 소환 6초·1레벨 속성 증폭 5.3%, 고대 정령 효과 갱신 제한.",
+      "currentAssumptionKo": "현재 융합은 원소 4개를 소비하고 외부 입력 이벤트로 원소를 받는다. 정령은 공격 빈도/확률 부족으로 제외, 강림/지연 피해 판정 시점이 없다.",
+      "unverifiedKo": "소환 재시전은 정령 공격 주기가 아니다. 원소 획득 시각·강림 스냅샷/동적 판정·고대 우선권·확률·지연 타격 측정. -35%와 +100%의 합성은 미검증."
+    },
+    {
+      "classId": "cleric",
+      "nameKo": "치유성",
+      "priority": "P0",
+      "skillIds": [
+        "condemnation",
+        "debilitating-mark",
+        "chain-of-torment",
+        "earths-retribution",
+        "judgment-thunder",
+        "divine-aura",
+        "bolt"
+      ],
+      "unmappedMechanicsKo": [
+        "보호의 빛"
+      ],
+      "officialSummaryKo": "단죄는 대상 고통의 연쇄 조건 대신 약화의 낙인 사용 후 2초/고통의 연쇄 후 3초 활성화. PvE +15%, PvP -15%. 약화의 낙인 애니메이션 30% 빨라짐. 주요 PvE 공격 +15~40%.",
+      "currentAssumptionKo": "현재 단죄는 고통의 연쇄 대상 상태에 의존하며 연구 시나리오에서 외부 창을 공급한다. 모든 동작은 1초 임시값이다.",
+      "unverifiedKo": "사용 시작/완료 시 창 생성·연속 사용·특화 5번 쿨 제거 실측. 애니메이션 30% 빠름을 자동으로 0.7초로 치환하지 않는다."
+    },
+    {
+      "classId": "chanter",
+      "nameKo": "호법성",
+      "priority": "P1",
+      "skillIds": [
+        "incandescent-blow",
+        "spinning-strike",
+        "dark-crush"
+      ],
+      "unmappedMechanicsKo": [
+        "불패의 진언",
+        "질주의 진언",
+        "폭풍의 주문",
+        "질풍의 권능"
+      ],
+      "officialSummaryKo": "불패의 진언 1레벨 PvE 증폭/내성 10.5→5.5%. 질주의 진언 삭제·폭풍의 주문 신설: 10초 자기 보스 증폭 5%, 레벨당 +0.5%, 치유 증폭 0%. 파티 속도 20→10%.",
+      "currentAssumptionKo": "현재 직접 피해 중심이며 버프 곱연산·보스 속성·파티 속도·치유 기회비용이 없다. 암격쇄 특화의 치명 수치와 확정 치명도 모델 밖이다.",
+      "unverifiedKo": "폭풍의 주문 기본 쿨·가동률·적용 범위(자기)·치유 복귀·증폭 합성과 레벨 55 스킬 예산 확인."
+    }
+  ],
+  "inputComparison": [
+    {
+      "id": "zikels-blessing",
+      "nameKo": "지켈의 축복",
+      "classId": "gladiator",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 120,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 120,
+        "cooldownSeconds": 60
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "shield-smite",
+      "nameKo": "방패 강타",
+      "classId": "templar",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 10,
+      "globalCalculatorCooldownSeconds": 10,
+      "globalMpCost": 100,
+      "includedInTraining": true,
+      "officialKr": {
+        "beforeCooldownSeconds": 10,
+        "cooldownSeconds": 7
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "judgment",
+      "nameKo": "심판",
+      "classId": "templar",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 5,
+      "globalCalculatorCooldownSeconds": 5,
+      "globalMpCost": null,
+      "includedInTraining": true,
+      "officialKr": {
+        "beforeCooldownSeconds": 5,
+        "cooldownSeconds": 3,
+        "maxConsecutiveUses": 3,
+        "pveDamageChangePercent": -10
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "warding-strike",
+      "nameKo": "비호의 일격",
+      "classId": "templar",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 30,
+      "globalCalculatorCooldownSeconds": 30,
+      "globalMpCost": 200,
+      "includedInTraining": true,
+      "officialKr": {
+        "beforeCooldownSeconds": 30,
+        "cooldownSeconds": 45
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "doom-shield",
+      "nameKo": "파멸의 방패",
+      "classId": "templar",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 30,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 30,
+        "cooldownSeconds": 45
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "insignia-explosion",
+      "nameKo": "문양 폭발",
+      "classId": "assassin",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 10,
+      "globalCalculatorCooldownSeconds": 10,
+      "globalMpCost": 200,
+      "includedInTraining": true,
+      "officialKr": {
+        "beforeCooldownSeconds": 10,
+        "cooldownSeconds": 5,
+        "beforeMpCost": 200,
+        "mpCost": 100,
+        "pveDamageByStacksPercent": {
+          "1": 110,
+          "2": 140,
+          "3": 190,
+          "4": 260,
+          "5": 500
+        }
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "evasion-stance",
+      "nameKo": "회피 자세",
+      "classId": "assassin",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 20,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 20,
+        "cooldownSeconds": 10,
+        "beforeDurationSeconds": 2,
+        "durationSeconds": 1
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "drill-dart",
+      "nameKo": "송곳 화살",
+      "classId": "ranger",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 5,
+      "globalCalculatorCooldownSeconds": 5,
+      "globalMpCost": null,
+      "includedInTraining": true,
+      "officialKr": {
+        "beforeCooldownSeconds": 5,
+        "cooldownSeconds": 4
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "bow-of-blessing",
+      "nameKo": "축복의 활",
+      "classId": "ranger",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 120,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 120,
+        "cooldownSeconds": 60
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "winters-shackles",
+      "nameKo": "겨울의 속박",
+      "classId": "sorcerer",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 45,
+      "globalCalculatorCooldownSeconds": 45,
+      "globalMpCost": 200,
+      "includedInTraining": true,
+      "officialKr": {
+        "pveDamageChangePercent": 250,
+        "pvpDamageChangePercent": 5
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": null,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "cold-storm",
+      "nameKo": "냉기 폭풍",
+      "classId": "sorcerer",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 60,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 60,
+        "cooldownSeconds": 45
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "fire-wall",
+      "nameKo": "불의 장벽",
+      "classId": "sorcerer",
+      "kind": "stigma",
+      "globalSourceCooldownSeconds": 60,
+      "globalCalculatorCooldownSeconds": null,
+      "globalMpCost": null,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 60,
+        "cooldownSeconds": 45,
+        "summonAttackCooldownChangePercent": -50
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "summon-fire-spirit",
+      "nameKo": "소환: 불의 정령",
+      "classId": "spiritmaster",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 15,
+      "globalCalculatorCooldownSeconds": 15,
+      "globalMpCost": 150,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 15,
+        "cooldownSeconds": 30
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "summon-water-spirit",
+      "nameKo": "소환: 물의 정령",
+      "classId": "spiritmaster",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 15,
+      "globalCalculatorCooldownSeconds": 15,
+      "globalMpCost": 150,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 15,
+        "cooldownSeconds": 30
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "summon-earth-spirit",
+      "nameKo": "소환: 땅의 정령",
+      "classId": "spiritmaster",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 15,
+      "globalCalculatorCooldownSeconds": 15,
+      "globalMpCost": 150,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 15,
+        "cooldownSeconds": 30
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "summon-wind-spirit",
+      "nameKo": "소환: 바람의 정령",
+      "classId": "spiritmaster",
+      "kind": "active",
+      "globalSourceCooldownSeconds": 15,
+      "globalCalculatorCooldownSeconds": 15,
+      "globalMpCost": 150,
+      "includedInTraining": false,
+      "officialKr": {
+        "beforeCooldownSeconds": 15,
+        "cooldownSeconds": 30
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": true,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    },
+    {
+      "id": "elemental-fusion",
+      "nameKo": "원소 융합",
+      "classId": "spiritmaster",
+      "kind": "active",
+      "globalSourceCooldownSeconds": null,
+      "globalCalculatorCooldownSeconds": 0,
+      "globalMpCost": null,
+      "includedInTraining": true,
+      "officialKr": {
+        "pveDamageChangePercent": -35,
+        "spiritDescentPveDamageChangePercent": 100,
+        "spiritDescentPvpDamageChangePercent": 50
+      },
+      "appliedToGlobal": false,
+      "cooldownBeforeMatchesGlobal": null,
+      "compatibility": "Numeric agreement does not verify KR damage, conditions, skill level or timing."
+    }
+  ],
+  "experiments": {
+    "kind": "normalized-input-micro-experiments",
+    "isCombatMeasurement": false,
+    "timing": [
+      {
+        "skillId": "shield-smite",
+        "durationSeconds": 60,
+        "assumedActionSeconds": 1,
+        "beforeCooldown": 10,
+        "afterCooldown": 7,
+        "beforeOpportunities": 6,
+        "afterOpportunities": 9,
+        "actualDamage": null,
+        "scope": "Cooldown-only opportunities; no conditions, resources, summons or damage prediction."
+      },
+      {
+        "skillId": "shield-smite",
+        "durationSeconds": 60,
+        "assumedActionSeconds": 1.5,
+        "beforeCooldown": 10,
+        "afterCooldown": 7,
+        "beforeOpportunities": 6,
+        "afterOpportunities": 9,
+        "actualDamage": null,
+        "scope": "Cooldown-only opportunities; no conditions, resources, summons or damage prediction."
+      },
+      {
+        "skillId": "drill-dart",
+        "durationSeconds": 60,
+        "assumedActionSeconds": 1,
+        "beforeCooldown": 5,
+        "afterCooldown": 4,
+        "beforeOpportunities": 12,
+        "afterOpportunities": 15,
+        "actualDamage": null,
+        "scope": "Cooldown-only opportunities; no conditions, resources, summons or damage prediction."
+      },
+      {
+        "skillId": "summon-fire-spirit",
+        "durationSeconds": 60,
+        "assumedActionSeconds": 1,
+        "beforeCooldown": 15,
+        "afterCooldown": 30,
+        "beforeOpportunities": 4,
+        "afterOpportunities": 2,
+        "actualDamage": null,
+        "scope": "Cooldown-only opportunities; no conditions, resources, summons or damage prediction."
+      }
+    ],
+    "pveHitArithmetic": [
+      {
+        "skillId": "elemental-fusion",
+        "normalizedBeforeHit": 100,
+        "normalizedAfterHit": 65,
+        "actualDamage": null,
+        "scope": "One artificial unbuffed PvE hit only. No Global coefficient is imported."
+      },
+      {
+        "skillId": "winters-shackles",
+        "normalizedBeforeHit": 100,
+        "normalizedAfterHit": 350,
+        "actualDamage": null,
+        "scope": "One artificial unbuffed PvE hit only. No Global coefficient is imported."
+      }
+    ],
+    "insigniaMpCeiling": {
+      "durationSeconds": 60,
+      "mpStart": 500,
+      "mpRegen": 0,
+      "budget": [
+        {
+          "phase": "before",
+          "actions": 2,
+          "remainingMp": 100
+        },
+        {
+          "phase": "after",
+          "actions": 5,
+          "remainingMp": 0
+        }
+      ],
+      "scope": "Budget ceiling without stack generation. Not a playable Insignia rotation."
+    },
+    "insigniaStackArithmetic": [
+      {
+        "stacks": 1,
+        "beforePercent": 112,
+        "afterPercent": 110,
+        "ratio": 0.9821428571428571,
+        "scope": "Published stack multiplier only; unchanged normalized baseline assumed, not an Attack coefficient."
+      },
+      {
+        "stacks": 2,
+        "beforePercent": 124,
+        "afterPercent": 140,
+        "ratio": 1.1290322580645162,
+        "scope": "Published stack multiplier only; unchanged normalized baseline assumed, not an Attack coefficient."
+      },
+      {
+        "stacks": 3,
+        "beforePercent": 136,
+        "afterPercent": 190,
+        "ratio": 1.3970588235294117,
+        "scope": "Published stack multiplier only; unchanged normalized baseline assumed, not an Attack coefficient."
+      },
+      {
+        "stacks": 4,
+        "beforePercent": 148,
+        "afterPercent": 260,
+        "ratio": 1.7567567567567568,
+        "scope": "Published stack multiplier only; unchanged normalized baseline assumed, not an Attack coefficient."
+      },
+      {
+        "stacks": 5,
+        "beforePercent": 160,
+        "afterPercent": 500,
+        "ratio": 3.125,
+        "scope": "Published stack multiplier only; unchanged normalized baseline assumed, not an Attack coefficient."
+      }
+    ],
+    "condemnationActivation": [
+      {
+        "opener": "debilitating-mark",
+        "windowSeconds": 2,
+        "assumedOpenerCompletion": 1,
+        "conditionalHitTimes": [
+          2
+        ],
+        "externalWindowHitTimes": [
+          2
+        ],
+        "scope": "Window wiring only. Assumes activation at cast completion, 1s actions and 3s follow-up cooldown; all timings unmeasured."
+      },
+      {
+        "opener": "chain-of-torment",
+        "windowSeconds": 3,
+        "assumedOpenerCompletion": 1,
+        "conditionalHitTimes": [
+          2
+        ],
+        "externalWindowHitTimes": [
+          2
+        ],
+        "scope": "Window wiring only. Assumes activation at cast completion, 1s actions and 3s follow-up cooldown; all timings unmeasured."
+      }
+    ],
+    "excludedFromFullRotation": [
+      "Judgment charges/resets and removed providers",
+      "Frenzy",
+      "Insignia ownership/RNG",
+      "Precision/Resonance",
+      "pet cadence and elements",
+      "Spirit Descent/delayed damage",
+      "Brawler catalog",
+      "party/self buffs",
+      "level-55 build",
+      "measured action times and MP"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+name: Audit November 11 KR research inputs
+on:
+  pull_request:
+    paths:
+      - 'research/kr-20261111/**'
+      - 'tests/kr-patch-inputs.test.js'
+      - 'tests/test_kr_patch_source.py'
+      - '.github/workflows/kr-patch-inputs.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/kr-patch-inputs.test.js
+      - run: node research/kr-20261111/audit.js --verify
+      - run: python -m unittest discover -s tests -p 'test_kr_patch_source.py'
