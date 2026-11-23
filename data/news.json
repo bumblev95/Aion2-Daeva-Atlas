@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-23T08:57:17Z",
+  "checkedAt": "2026-11-23T20:37:19Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-23T08:57:17Z",
-      "lastSuccessAt": "2026-11-23T08:57:17Z",
+      "checkedAt": "2026-11-23T20:37:19Z",
+      "lastSuccessAt": "2026-11-23T20:37:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -8658,8 +8658,8 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-23T08:57:17Z",
-      "lastSuccessAt": "2026-11-23T08:57:17Z",
+      "checkedAt": "2026-11-23T20:37:19Z",
+      "lastSuccessAt": "2026-11-23T20:37:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9427,8 +9427,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-23T08:57:17Z",
-      "lastSuccessAt": "2026-11-23T08:57:17Z",
+      "checkedAt": "2026-11-23T20:37:19Z",
+      "lastSuccessAt": "2026-11-23T20:37:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -11400,8 +11400,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-23T08:57:17Z",
-      "lastSuccessAt": "2026-11-23T08:57:17Z",
+      "checkedAt": "2026-11-23T20:37:19Z",
+      "lastSuccessAt": "2026-11-23T20:37:19Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -11493,7 +11493,7 @@
           "source": "na-notice",
           "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6aeda4456aa4a15b4b8aef51",
           "publishedAt": "2026-11-20T20:00:00.001Z",
-          "sourceUpdatedAt": "2026-11-20T20:00:23.422Z",
+          "sourceUpdatedAt": "2026-11-23T19:49:05.912Z",
           "contentHash": null,
           "bodyState": "not-required",
           "reviewState": "official",
