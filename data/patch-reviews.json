@@ -10785,5 +10785,417 @@
       ]
     },
     "followups": []
+  },
+  "6b05e5b8fc9aef09c918ece8": {
+    "contentHash": "efa4182eeb2cf234ba7c598bb0859f94a99dc9a581931981c590672aacf89401",
+    "reviewedAt": "2026-11-24T20:23:23Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6b05e5b8fc9aef09c918ece8",
+    "title": {
+      "en": "November 25 · Korea",
+      "ko": "11월 25일 한국 패치"
+    },
+    "summary": {
+      "en": "KR adds solo entry to selected Expedition, Conquest and Transcendence modes with a front/rear damage-conversion buff, rematches the Abyss, introduces negative Kina restrictions and expands base Cube slots from 40 to 50. Assassin Killing Intent changes from 5s to 7s while its Crushing Blow increase changes from 3% to 2%; several classes receive input-cancel, tooltip, stacking, NPC-effect and specialization fixes. These values remain KR-only and do not recalculate NA PvE, historical DPS or final tiers.",
+      "ko": "한국은 일부 원정·정복·초월에 1인 입장과 전후방 피해 증폭 보정을 추가하고 어비스 재매칭·마이너스 키나를 도입하며 기본 큐브를 40→50칸으로 늘립니다. 살성 살의는 5→7초, 강타 증가는 3%→2%로 바뀌고 여러 직업의 즉시 취소·툴팁·중복 적용·NPC 효과·특화 오류를 수정합니다. 한국 전용 수치이며 북미 PvE·과거 DPS·최종 티어를 재계산하지 않습니다."
+    },
+    "changes": [
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Solo-mode entry and positional-damage conversion",
+          "ko": "1인 모드 입장·방향 피해 보정"
+        },
+        "description": {
+          "en": "Selected Expedition, Conquest and Transcendence modes gain a solo entry button. In solo mode, 50% of the character’s Rear Damage Amplification stat is added to Front Damage Amplification without reducing the rear value.",
+          "ko": "일부 원정·정복·초월에 1인 입장 버튼이 추가됩니다. 1인 모드에서는 후방 피해 증폭 능력치의 50%를 전방 피해 증폭에 더하되 후방 수치는 줄지 않습니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: solo positioning becomes less punitive, but this is a conversion of the stat value rather than a flat 50% damage bonus. Verify each listed mode, party lock, retry behavior, displayed stats, rounding and front/rear hit tests before changing route or eDPS assumptions.",
+          "ko": "P1 해석: 1인 플레이의 방향 제약이 완화되지만 피해 50%를 직접 더하는 효과가 아니라 능력치 환산입니다. 동선·eDPS 가정 수정 전 대상 모드·파티 제한·재도전·표시 수치·반올림·전후방 타격을 확인해야 합니다."
+        },
+        "after": {
+          "en": "50% of Rear Damage Amplification is added to Front Damage Amplification in solo mode",
+          "ko": "1인 모드에서 후방 피해 증폭의 50%를 전방 피해 증폭에 합산"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "buff",
+        "subject": {
+          "en": "Killing Intent duration",
+          "ko": "살의 지속 시간"
+        },
+        "description": {
+          "en": "Killing Intent granted through Ambush and Savage Fang lasts 7 seconds instead of 5 seconds.",
+          "ko": "기습과 맹수의 송곳니로 얻는 살의 지속 시간이 5초에서 7초로 늘어납니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the KR burst window is easier to retain, but total rotation gain is not measured. Reproduce grant, refresh, stacking and consumption timing for both skills.",
+          "ko": "P1 해석: 한국 폭딜 창 유지가 쉬워질 수 있지만 전체 로테이션 이득은 실측하지 않았습니다. 두 스킬의 부여·갱신·중첩·소모 시점을 재현해야 합니다."
+        },
+        "before": {
+          "en": "5s",
+          "ko": "5초"
+        },
+        "after": {
+          "en": "7s",
+          "ko": "7초"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "nerf",
+        "subject": {
+          "en": "Killing Intent Crushing Blow increase",
+          "ko": "살의 강타 증가"
+        },
+        "description": {
+          "en": "The Crushing Blow increase from Killing Intent changes from 3% to 2% for Ambush and Savage Fang.",
+          "ko": "기습과 맹수의 송곳니의 살의 강타 증가가 3%에서 2%로 낮아집니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: each active Killing Intent stack or effect supplies less Crushing Blow. Verify the live tooltip, stacking model and full KR burst loop before using the value in eDPS research.",
+          "ko": "P1 해석: 살의의 활성 중첩 또는 효과마다 제공되는 강타가 줄어듭니다. eDPS 연구에 쓰기 전 실제 툴팁·중첩 방식·한국 전체 폭딜 루프를 확인해야 합니다."
+        },
+        "before": {
+          "en": "Crushing Blow +3%",
+          "ko": "강타 +3%"
+        },
+        "after": {
+          "en": "Crushing Blow +2%",
+          "ko": "강타 +2%"
+        }
+      },
+      {
+        "classId": "assassin",
+        "type": "adjustment",
+        "subject": {
+          "en": "Ambush input cancel",
+          "ko": "기습 입력 취소"
+        },
+        "description": {
+          "en": "Ambush now cancels the skill currently being used and activates immediately when its input is received.",
+          "ko": "기습은 입력 즉시 사용 중인 스킬을 취소하고 발동하도록 바뀝니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: emergency movement and burst routing may respond faster, but animation locks and cancelled damage must be reproduced before changing a rotation.",
+          "ko": "P1 해석: 긴급 이동과 폭딜 연계 반응이 빨라질 수 있지만 로테이션 수정 전 동작 잠금과 취소된 피해를 재현해야 합니다."
+        }
+      },
+      {
+        "classId": "gladiator",
+        "type": "adjustment",
+        "subject": {
+          "en": "Ruinous Blow input cancel",
+          "ko": "파멸의 맹타 입력 취소"
+        },
+        "description": {
+          "en": "Ruinous Blow now cancels the skill currently being used and activates immediately when its input is received; related Frenzy visual effects are also revised.",
+          "ko": "파멸의 맹타는 입력 즉시 사용 중인 스킬을 취소하고 발동하며 관련 광분 FX도 바뀝니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the skill may interrupt a longer action, but no coefficient or cooldown changed. Verify cancel timing, lost hits, resource use and a complete rotation.",
+          "ko": "P1 해석: 긴 동작을 끊고 발동할 수 있지만 계수·쿨타임 변경은 없습니다. 취소 시점·누락 타격·자원 소모·전체 로테이션을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "adjustment",
+        "subject": {
+          "en": "Ground Slam input cancel",
+          "ko": "지면 강타 입력 취소"
+        },
+        "description": {
+          "en": "Ground Slam now cancels the skill currently being used and activates immediately when its input is received.",
+          "ko": "지면 강타는 입력 즉시 사용 중인 스킬을 취소하고 발동합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: response and combo routing can change. Verify the KR-only tooltip, cancel timing, resource state and reproducible combo.",
+          "ko": "P1 해석: 반응성과 연계 순서가 달라질 수 있습니다. 한국 전용 툴팁·취소 시점·자원 상태·재현 가능한 콤보를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "brawler",
+        "type": "fix",
+        "subject": {
+          "en": "Ground Slam specialization 2",
+          "ko": "지면 강타 2번 특화"
+        },
+        "description": {
+          "en": "Fixes an issue that could prevent Ground Slam from being used with specialization 2 combinations.",
+          "ko": "지면 강타 2번 특화 조합에서 스킬을 사용할 수 없던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: a blocked action is restored. The notice publishes no damage value, so no damage percentage is invented; verify every specialization-2 combination and resource state.",
+          "ko": "P1 해석: 막혀 있던 행동이 복구됩니다. 공지에 피해 수치가 없어 피해 증가율을 만들지 않으며 2번 특화 조합과 자원 상태를 직접 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "fix",
+        "subject": {
+          "en": "Storm Order specialization-5 tooltip",
+          "ko": "폭풍의 주문 5번 특화 툴팁"
+        },
+        "description": {
+          "en": "Fixes a tooltip that incorrectly displayed Crushing Blow as 10% after learning specialization 5. The notice does not publish the corrected value.",
+          "ko": "5번 특화 습득 뒤 강타가 10%로 잘못 표시되던 툴팁을 수정합니다. 올바른 수치는 공지하지 않았습니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: this is a display correction, not evidence of a 10% combat change. Verify the corrected tooltip and measured party effect before recording a numeric input.",
+          "ko": "P1 해석: 표시 수정이며 전투 수치 10% 변경 근거가 아닙니다. 수치 입력 전 수정 툴팁과 파티 효과를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "fix",
+        "subject": {
+          "en": "Explosive Arrow specialization-5 stacking",
+          "ko": "폭발 화살 5번 특화 중복"
+        },
+        "description": {
+          "en": "Fixes Resonance cooldown reduction from Explosive Arrow specialization 5 stacking when applied to two or more targets.",
+          "ko": "폭발 화살 5번 특화의 감응 재사용 시간 감소가 2인 이상에게 중복 적용되던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: an unintended cooldown benefit is removed, but the notice gives no cooldown amount. Verify target count, proc order and rotation cadence without assigning an arbitrary DPS loss.",
+          "ko": "P1 해석: 의도하지 않은 쿨다운 이득이 제거되지만 감소량은 공개되지 않았습니다. 임의 DPS 감소율 없이 대상 수·발동 순서·로테이션 주기를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "fix",
+        "subject": {
+          "en": "Dimensional Control NPC slow",
+          "ko": "공간 지배 NPC 이동속도 감소"
+        },
+        "description": {
+          "en": "Fixes the movement-speed reduction from Dimensional Control not applying to NPCs when no specialization is equipped.",
+          "ko": "공간 지배에 특화를 적용하지 않았을 때 이동속도 감소가 NPC에게 적용되지 않던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: the missing PvE control effect is restored. Verify eligible NPCs, resistance, duration and boss immunity; no damage increase is inferred.",
+          "ko": "P1 해석: 누락된 PvE 제어 효과가 복구됩니다. 적용 NPC·저항·지속 시간·보스 면역을 확인하며 피해 증가로 추정하지 않습니다."
+        }
+      },
+      {
+        "classId": "templar",
+        "type": "adjustment",
+        "subject": {
+          "en": "Judgment combat feedback",
+          "ko": "심판 전투 피드백"
+        },
+        "description": {
+          "en": "Judgment gains revised Authority effects and clearer visual feedback for consecutive-attack stages.",
+          "ko": "심판의 권능 FX가 바뀌고 연속 공격 단계를 구분하는 FX가 추가됩니다."
+        },
+        "impact": {
+          "en": "P2 interpretation: stage recognition should improve. Verify each stage and accessibility in crowded combat; no coefficient or cooldown change is announced.",
+          "ko": "P2 해석: 단계 인지가 쉬워질 수 있습니다. 혼잡 전투에서 각 단계와 가시성을 확인하며 계수·쿨타임 변경 근거는 없습니다."
+        }
+      },
+      {
+        "classId": "sorcerer",
+        "type": "adjustment",
+        "subject": {
+          "en": "Inferno state feedback",
+          "ko": "지옥의 화염 상태 피드백"
+        },
+        "description": {
+          "en": "Inferno receives revised Fire Energy and hit visual effects.",
+          "ko": "지옥의 화염의 화기 상태와 피격 FX가 바뀝니다."
+        },
+        "impact": {
+          "en": "P2 interpretation: combat-state feedback changes only. Verify state visibility; no coefficient, cooldown or damage change is announced.",
+          "ko": "P2 해석: 전투 상태 표시 변경입니다. 상태 가시성을 확인하며 계수·쿨타임·피해 변경은 발표되지 않았습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Abyss rematch and reset",
+          "ko": "어비스 재매칭·초기화"
+        },
+        "description": {
+          "en": "KR Abyss servers are rematched; Artifact occupation states and Abyss Corridor progress reset with the new schedule.",
+          "ko": "한국 어비스 서버가 다시 매칭되고 아티팩트 점령 상태와 어비스 회랑 진행도가 새 일정에 맞춰 초기화됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: a fixed opponent or schedule can be stale. Verify the selected server group, activation time, Artifact state, Corridor reset and later rotations before updating a persistent PvP route.",
+          "ko": "P1 해석: 고정 상대·일정 안내가 틀릴 수 있습니다. 상시 PvP 동선 수정 전 선택 서버 그룹·적용 시각·아티팩트 상태·회랑 초기화·후속 교체를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Trust limits and negative Kina",
+          "ko": "신뢰도 한도·마이너스 키나"
+        },
+        "description": {
+          "en": "Marketplace settlement limits based on Trust resume after KR server transfer ends. Accounts flagged for abnormal transactions can receive a negative Kina balance that restricts Market, Exchange and server-transfer functions until unbound Kina earnings restore the balance to zero or above.",
+          "ko": "한국 서버 이전 종료 뒤 신뢰도에 따른 거래소 정산 한도가 다시 적용됩니다. 비정상 거래 대상 계정에는 마이너스 키나가 부여될 수 있고 비각인 키나 수급으로 잔액이 0 이상이 될 때까지 거래소·교환소·서버 이전 일부 기능이 제한됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: affected accounts have a different trading and transfer path. Verify the displayed balance, restricted actions, qualifying unbound-Kina sources, debit order and recovery threshold; do not copy this KR rule into the NA Kinah guide.",
+          "ko": "P1 해석: 대상 계정의 거래·이전 동선이 달라집니다. 표시 잔액·제한 기능·인정되는 비각인 키나·차감 순서·해제 기준을 확인하며 한국 규칙을 북미 키나 공략에 복사하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "buff",
+        "subject": {
+          "en": "Base Cube slots",
+          "ko": "기본 큐브 슬롯"
+        },
+        "description": {
+          "en": "Base Cube capacity increases by 10 slots, including characters that already expanded their Cube.",
+          "ko": "이미 큐브를 확장한 캐릭터를 포함해 기본 큐브가 10칸 늘어납니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: storage pressure falls, but verify total capacity, existing expansions, account/character scope and post-maintenance delivery before revising inventory advice.",
+          "ko": "P1 해석: 보관 부담이 줄지만 인벤토리 공략 수정 전 총 칸수·기존 확장·계정/캐릭터 범위·점검 후 적용을 확인해야 합니다."
+        },
+        "before": {
+          "en": "40 base slots",
+          "ko": "기본 40칸"
+        },
+        "after": {
+          "en": "50 base slots",
+          "ko": "기본 50칸"
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "Laur and Atiel encounter behavior",
+          "ko": "라우르·아티엘 전투 동작"
+        },
+        "description": {
+          "en": "Fixes Laur’s Final Execution effect activating after Laur dies in Fanatic Urugugu Canyon, and Atiel’s Stagger Gauge failing to recover normally after Earth Collapse in Infested Deus Research Base.",
+          "ko": "광신의 우루구구 협곡 라우르가 사망한 뒤 최후의 처형 효과가 발동하던 문제와 잠식된 데우스 연구기지 아티엘의 대지 붕괴 뒤 그로기 게이지가 정상 회복되지 않던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: older recordings may show invalid behavior. Reproduce difficulty, phase, trigger, telegraph, boss state, gauge recovery and response before changing boss text or animation.",
+          "ko": "P1 해석: 기존 영상에 잘못된 동작이 남아 있을 수 있습니다. 보스 문구·애니메이션 수정 전 난도·페이즈·발동·전조·보스 상태·게이지 회복·대응을 재현해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Poeta and Ishalgen warehouse managers",
+          "ko": "포에타·이스할겐 창고지기"
+        },
+        "description": {
+          "en": "Warehouse managers are added to Poeta and Ishalgen.",
+          "ko": "포에타와 이스할겐에 창고지기가 추가됩니다."
+        },
+        "impact": {
+          "en": "P2 interpretation: starter-zone inventory routing can change. Verify the in-game coordinates, map marker, interaction requirement and storage scope before adding map pins.",
+          "ko": "P2 해석: 시작 지역 인벤토리 동선이 달라질 수 있습니다. 지도 핀 추가 전 인게임 좌표·지도 표식·상호작용 조건·보관 범위를 확인해야 합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, publication and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "11/25(수) 업데이트 노트 · 적용 범위",
+          "notes": [
+            {
+              "en": "Published November 24 at 19:30:00 UTC and source-updated at 19:30:54 UTC for the Korean service. The changes take effect after the November 25 KR scheduled maintenance; the editorial review time above is separate from collection and publication timestamps.",
+              "ko": "한국 서비스 기준 11월 24일 19:30:00 UTC 게시, 19:30:54 UTC 원문 갱신이며 11월 25일 한국 정기점검 후 적용됩니다. 위 편집 검토 시각은 수집·게시 시각과 별도입니다."
+            },
+            {
+              "en": "KR only. No class, solo-mode, Abyss, negative-Kina, Cube or map rule here is applied to the United States/Canada feed. Historical combat records retain their original period and conditions.",
+              "ko": "한국 전용입니다. 직업·1인 모드·어비스·마이너스 키나·큐브·지도 규칙을 미국·캐나다 북미 피드에 적용하지 않습니다. 과거 전투 기록은 기존 기간·조건을 유지합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Class changes and research inputs",
+            "ko": "직업 변경·연구 입력"
+          },
+          "sourceSection": "클래스 변경사항",
+          "notes": [
+            {
+              "en": "Official fact: Assassin Killing Intent changes 5→7s and Crushing Blow +3%→+2% for Ambush and Savage Fang. Those explicit values are recorded as a new KR-only override in data/skill-snapshot.json. data/skills.json, the incompatible Global base, NA PvE and historical rankings remain unchanged.",
+              "ko": "공식 확인: 기습·맹수의 송곳니 살의는 5→7초, 강타 +3%→+2%입니다. 명시 수치는 data/skill-snapshot.json의 새 한국 전용 오버라이드로 기록하고 data/skills.json·호환되지 않는 글로벌 기준·북미 PvE·과거 순위는 유지합니다."
+            },
+            {
+              "en": "P1 exact public targets are /classes/assassin/, /skills/ambush/, /skills/savage-fang/ and the Korean counterparts; other class facts remain on /updates/kr-6b05e5b8fc9aef09c918ece8/ until client verification. Source targets are data/skills.json and data/skill-snapshot.json. Verify tooltips, duration, Crushing Blow stacking, input cancellation, conditions, animation time and reproducible rotations. Storm Order’s corrected value and Explosive Arrow’s cooldown amount are not published, so no numeric input is added.",
+              "ko": "P1 정확한 공개 대상은 /classes/assassin/·/skills/ambush/·/skills/savage-fang/ 및 한국어 대응 페이지이며 나머지 직업 사실은 클라이언트 검증 전 /updates/kr-6b05e5b8fc9aef09c918ece8/에 둡니다. 소스 대상은 data/skills.json·data/skill-snapshot.json입니다. 툴팁·지속 시간·강타 중첩·입력 취소·조건·동작 시간·재현 로테이션을 확인해야 합니다. 폭풍의 주문 정정 수치와 폭발 화살 쿨다운 감소량은 미공개라 수치 입력을 추가하지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Solo modes, bosses and Abyss",
+            "ko": "1인 모드·보스·어비스"
+          },
+          "sourceSection": "콘텐츠 및 시스템 / 기타 개선 및 수정사항",
+          "notes": [
+            {
+              "en": "Official solo-mode list: Draupnir, Urugugu Canyon, Fire Temple, Cradle of Nothingness, Blue Breath Island, Fallen Daeva Castle Normal/Hard, Infested Deus Research Base Normal/Hard, Fanatic Urugugu Canyon Normal/Hard, and Sunken Temple of Life stages 1–4. Solo entry blocks party invitation/recruitment and retry remains solo.",
+              "ko": "공식 1인 모드 대상은 드라웁니르·우루구구 협곡·불의 신전·공허의 요람·푸른 숨결의 섬·타락한 데바의 성채 일반/어려움·잠식된 데우스 연구기지 일반/어려움·광신의 우루구구 협곡 일반/어려움·생명의 침몰 신전 1~4단계입니다. 1인 입장 중 파티 초대·모집은 불가능하고 재도전도 1인 상태를 유지합니다."
+            },
+            {
+              "en": "P1 exact public targets after client verification are /dungeons/, /dungeons/urugugu-canyon/, /guides/dungeon-rewards/, /guides/abyss-outland/ and /routines/ plus Korean counterparts; source targets are progression.py, fieldnotes.py, encounters.py, outland.py and routines.py. Verify each mode’s difficulty and region, unlock, solo scaling, party restrictions, reward consumption and reset; reproduce Laur and Atiel triggers and responses before changing boss animations.",
+              "ko": "P1 클라이언트 검증 후 정확한 공개 대상은 /dungeons/·/dungeons/urugugu-canyon/·/guides/dungeon-rewards/·/guides/abyss-outland/·/routines/ 및 한국어 대응 페이지이며 소스는 progression.py·fieldnotes.py·encounters.py·outland.py·routines.py입니다. 모드별 난도·지역·해금·1인 스케일링·파티 제한·보상 차감·초기화를 확인하고 라우르·아티엘 발동과 대응을 재현한 뒤 보스 애니메이션을 수정해야 합니다."
+            },
+            {
+              "en": "The published 50% rule converts half of the Rear Damage Amplification stat into additional Front Damage Amplification in solo mode; it does not halve rear damage and is not a universal 50% damage buff. No measured eDPS or final tier is derived from it.",
+              "ko": "공개된 50% 규칙은 1인 모드에서 후방 피해 증폭 능력치 절반을 전방 피해 증폭에 더하는 것이며 후방 피해를 절반으로 줄이거나 최종 피해를 일괄 50% 올리는 효과가 아닙니다. 여기서 실측 eDPS나 최종 티어를 만들지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Growth, map and economy",
+            "ko": "성장·지도·경제"
+          },
+          "sourceSection": "신뢰도 시스템 / 기타 개선 및 수정사항",
+          "notes": [
+            {
+              "en": "P1/P2 targets after direct verification are /guides/kinah-farming/, /maps/, /start/ and /endgame/ plus Korean counterparts; source targets are progression.py, data/maps.json, worldmap.py and onboarding.py. Verify negative-balance restrictions and recovery, Cube capacity and existing expansions, and the warehouse manager coordinates, marker, prerequisites and storage scope.",
+              "ko": "직접 검증 후 P1/P2 대상은 /guides/kinah-farming/·/maps/·/start/·/endgame/ 및 한국어 대응 페이지이며 소스는 progression.py·data/maps.json·worldmap.py·onboarding.py입니다. 마이너스 잔액 제한·회복, 큐브 총량·기존 확장, 창고지기 좌표·표식·선행조건·보관 범위를 확인해야 합니다."
+            },
+            {
+              "en": "No map coordinate is invented, and the KR negative-Kina rule does not rewrite the NA World Market guidance. The promotion and product tables remain in the official source and are outside this evergreen highlights review.",
+              "ko": "지도 좌표를 임의로 만들지 않고 한국 마이너스 키나 규칙으로 북미 월드 마켓 공략을 수정하지 않습니다. 프로모션·상품 전체 표는 공식 원문에 남기며 이번 상시 공략 highlights 검토 범위에 포함하지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Highlights review limits",
+            "ko": "highlights 검토 범위"
+          },
+          "sourceSection": "Review scope",
+          "notes": [
+            {
+              "en": "This highlights review covers every class section and the guide-impacting combat, dungeon, boss, map, growth and economy changes. It does not claim complete republication of Black Friday event/product tables, live gameplay validation, patch-derived DPS rankings or final class tiers.",
+              "ko": "모든 직업 구간과 공략에 영향을 주는 전투·던전·보스·지도·성장·경제 변경을 다룬 highlights 검토입니다. 블랙 프라이데이 이벤트·상품 표 전체 재정리, 인게임 검증 완료, 패치 기반 DPS 순위나 최종 직업 티어를 주장하지 않습니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    },
+    "followups": []
   }
 }

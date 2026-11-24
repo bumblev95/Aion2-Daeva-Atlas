@@ -63,15 +63,16 @@ def reviewed(item, reviews):
     item['followups'] = review.get('followups', []) if valid else []
     return item
 
-def retain_reviewed_history(items, limit=24):
-    """Cap routine headlines without dropping hash-bound reviewed patches."""
+def retain_reviewed_history(items, limit=24, protected_ids=frozenset()):
+    """Cap routine headlines without dropping reviewed or cited source records."""
     kept = items[:limit]
     kept_ids = {item['id'] for item in kept}
     kept += [item for item in items[limit:]
-             if item.get('reviewState') == 'reviewed' and item['id'] not in kept_ids]
+             if (item.get('reviewState') == 'reviewed' or item['id'] in protected_ids)
+             and item['id'] not in kept_ids]
     return kept
 
-def collect_source(source, previous, reviews, now, fetcher=fetch):
+def collect_source(source, previous, reviews, now, fetcher=fetch, protected_ids=frozenset()):
     prior = previous.get(source['id'], {})
     try:
         response = fetcher(source['base']+'board/'+source['alias']+'/article?moreSize=6')
@@ -110,7 +111,7 @@ def collect_source(source, previous, reviews, now, fetcher=fetch):
         items += [reviewed(dict(x),reviews) for x in prior.get('items',[]) if x['id'] not in incoming]
         return dict(id=source['id'], region=source['region'], kind=source['kind'], status='ready',
                     checkedAt=now, lastSuccessAt=now, error=None, fromCache=False,
-                    items=retain_reviewed_history(items))
+                    items=retain_reviewed_history(items, protected_ids=protected_ids))
     except (HTTPError, OSError, ValueError, KeyError, TypeError) as exc:
         return dict(id=source['id'], region=source['region'], kind=source['kind'], status='unavailable',
                     checkedAt=now, lastSuccessAt=prior.get('lastSuccessAt'), error=type(exc).__name__,
@@ -120,10 +121,21 @@ def run():
     target = ROOT/'data/news.json'
     previous = json.loads(target.read_text()) if target.exists() else {'sources': []}
     reviews = json.loads((ROOT/'data/patch-reviews.json').read_text())
+    coverage_path = ROOT/'data/coverage-audit.json'
+    coverage = json.loads(coverage_path.read_text()) if coverage_path.exists() else {'items': []}
+    protected_ids = {
+        match.group(1)
+        for row in coverage.get('items', [])
+        for source in row.get('sources', [])
+        if (match := re.search(r'[?&]articleId=([a-zA-Z0-9_-]+)', source.get('url', '')))
+    }
     old = {x['id']:x for x in previous.get('sources',[])}
     now = stamp()
     with ThreadPoolExecutor(max_workers=4) as executor:
-        results = list(executor.map(lambda source: collect_source(source,old,reviews,now), SOURCES))
+        results = list(executor.map(
+            lambda source: collect_source(source, old, reviews, now, protected_ids=protected_ids),
+            SOURCES,
+        ))
     current = dict(schema=1, checkedAt=now, pollMinutes=60, sources=results)
     target.parent.mkdir(exist_ok=True)
     temporary = target.with_suffix('.tmp')

@@ -1,6 +1,27 @@
 {
-  "reviewedAt": "2026-11-24T08:17:00Z",
+  "reviewedAt": "2026-11-24T20:23:23Z",
   "items": [
+    {
+      "id": "kr-20261125-solo-assassin-abyss-economy",
+      "region": "KR",
+      "reviewedAt": "2026-11-24T20:23:23Z",
+      "title": {
+        "en": "November 25 KR · solo modes, Assassin, Abyss and economy",
+        "ko": "11월 25일 한국 · 1인 모드·살성·어비스·경제"
+      },
+      "finding": {
+        "en": "P1 combat/growth/system and P2 map/UI. Official facts: after the November 25 KR maintenance, selected Expedition, Conquest and Transcendence modes support solo entry and add 50% of Rear Damage Amplification to Front Damage Amplification without reducing the rear stat. Assassin Killing Intent changes 5→7s and Crushing Blow +3%→+2%; Ambush, Ruinous Blow and Ground Slam gain immediate input cancellation, while Brawler specialization use, Chanter tooltip, Ranger multi-target cooldown stacking and Spiritmaster NPC slow issues are fixed. KR Abyss matching resets, Trust settlement limits resume, negative Kina restrictions are introduced, base Cube slots rise 40→50, Laur and Atiel behaviors are fixed, and warehouse managers are added to Poeta/Ishalgen. Guide-impact interpretation: update only the hash-bound patch summary and KR-only skill snapshot now; keep evergreen routes, boss animations and map pins pending client verification. Exact public targets are /updates/kr-6b05e5b8fc9aef09c918ece8/, /classes/assassin/, /skills/ambush/, /skills/savage-fang/, /dungeons/, /dungeons/urugugu-canyon/, /guides/dungeon-rewards/, /guides/abyss-outland/, /guides/kinah-farming/, /maps/, /start/, /endgame/ and /routines/ plus Korean counterparts. Source targets are data/patch-reviews.json, data/skill-snapshot.json, progression.py, fieldnotes.py, encounters.py, outland.py, routines.py, data/maps.json, worldmap.py and onboarding.py. Direct verification pending: each solo mode’s difficulty/region, unlock, party lock, retry, rewards and reset; front/rear stat display, rounding and hit tests; every changed class tooltip, condition, cancellation, animation and reproducible rotation; Laur/Atiel difficulty, trigger, telegraph, gauge and response; Abyss opponent/schedule/reset; negative-balance scope, restricted actions and recovery; Cube expansion behavior; warehouse coordinates, spawn/marker, interaction and storage scope. No NA application, arbitrary bug-fix DPS, historical rewrite or final tier is supported.",
+        "ko": "P1 전투·성장·시스템 및 P2 지도/UI입니다. 공식 확인: 11월 25일 한국 점검 후 일부 원정·정복·초월에 1인 입장이 추가되고 후방 피해 증폭의 50%를 후방 수치 감소 없이 전방 피해 증폭에 더합니다. 살성 살의는 5→7초, 강타 +3%→+2%이며 기습·파멸의 맹타·지면 강타는 입력 즉시 기존 스킬을 취소합니다. 권성 특화 사용, 호법성 툴팁, 궁성 다중 대상 쿨다운 중복, 정령성 NPC 둔화 오류도 수정됩니다. 한국 어비스 매칭 초기화, 신뢰도 정산 한도 재개, 마이너스 키나 도입, 기본 큐브 40→50, 라우르·아티엘 수정, 포에타·이스할겐 창고지기 추가도 확인했습니다. 공략 영향 해석: 지금은 해시 연결 패치 요약과 한국 전용 스킬 스냅샷만 갱신하며 상시 동선·보스 애니메이션·지도 핀은 클라이언트 검증 대기로 유지합니다. 정확한 공개 대상은 /updates/kr-6b05e5b8fc9aef09c918ece8/·/classes/assassin/·/skills/ambush/·/skills/savage-fang/·/dungeons/·/dungeons/urugugu-canyon/·/guides/dungeon-rewards/·/guides/abyss-outland/·/guides/kinah-farming/·/maps/·/start/·/endgame/·/routines/ 및 한국어 대응 페이지입니다. 소스 대상은 data/patch-reviews.json·data/skill-snapshot.json·progression.py·fieldnotes.py·encounters.py·outland.py·routines.py·data/maps.json·worldmap.py·onboarding.py입니다. 직접 검증 대기: 1인 모드별 난도/지역·해금·파티 제한·재도전·보상·초기화, 전후방 표시 수치·반올림·타격, 변경 직업 툴팁·조건·입력 취소·동작·재현 로테이션, 라우르/아티엘 난도·발동·전조·게이지·대응, 어비스 상대·일정·초기화, 마이너스 잔액 범위·제한 기능·회복, 큐브 확장 동작, 창고지기 좌표·출현/표식·상호작용·보관 범위입니다. 북미 적용·임의 버그 수정 DPS·과거 기록 재작성·최종 티어 근거는 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · 11/25(수) 업데이트 노트",
+          "url": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6b05e5b8fc9aef09c918ece8",
+          "contentHash": "efa4182eeb2cf234ba7c598bb0859f94a99dc9a581931981c590672aacf89401"
+        }
+      ]
+    },
     {
       "id": "na-20261216-season2-brawler-202701-housing",
       "region": "NA / Global",

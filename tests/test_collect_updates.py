@@ -86,10 +86,15 @@ class CollectorTests(unittest.TestCase):
         items=[{'id':f'news-{i}','reviewState':'official'} for i in range(25)]
         reviewed_patch={'id':'reviewed-hotfix','reviewState':'reviewed'}
         pending_patch={'id':'pending-patch','reviewState':'pending'}
-        kept=retain_reviewed_history(items+[reviewed_patch,pending_patch])
-        self.assertEqual(len(kept),25)
+        cited_notice={'id':'cited-notice','reviewState':'official'}
+        kept=retain_reviewed_history(
+            items+[reviewed_patch,pending_patch,cited_notice],
+            protected_ids={'cited-notice'},
+        )
+        self.assertEqual(len(kept),26)
         self.assertEqual(kept[:24],items[:24])
         self.assertIn(reviewed_patch,kept)
+        self.assertIn(cited_notice,kept)
         self.assertNotIn(pending_patch,kept)
 
 if __name__=='__main__':unittest.main()
