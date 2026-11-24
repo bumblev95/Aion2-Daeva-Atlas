@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-18T08:31:23Z",
+  "reviewedAt": "2026-11-24T20:23:23Z",
   "region": "Global",
   "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
@@ -644,7 +644,54 @@
           "reason": "Chain children are not independent compatible IDs in the current Global base snapshot."
         }
       }
+    },
+    {
+      "region": "KR",
+      "effectiveAt": "2026-11-25",
+      "reviewedAt": "2026-11-24T20:23:23Z",
+      "source": "https://aion2.plaync.com/ko-kr/board/update/view?articleId=6b05e5b8fc9aef09c918ece8",
+      "sourceUpdatedAt": "2026-11-24T19:30:54.008Z",
+      "sourceHash": "efa4182eeb2cf234ba7c598bb0859f94a99dc9a581931981c590672aacf89401",
+      "calculationState": "KR November 25 inputs recorded separately; not applied to the incompatible Global base, NA PvE, historical observations or rankings",
+      "skills": {
+        "ambush": {
+          "beforeKillingIntentDurationSeconds": 5,
+          "killingIntentDurationSeconds": 7,
+          "beforeCrushingBlowPercentPerStack": 3,
+          "crushingBlowPercentPerStack": 2,
+          "cancelsCurrentSkillOnInput": true
+        },
+        "savage-fang": {
+          "specialization1BeforeKillingIntentDurationSeconds": 5,
+          "specialization1KillingIntentDurationSeconds": 7,
+          "specialization1BeforeCrushingBlowPercentPerStack": 3,
+          "specialization1CrushingBlowPercentPerStack": 2
+        },
+        "ruinous-blow": {
+          "cancelsCurrentSkillOnInput": true
+        },
+        "explosive-arrow": {
+          "specialization5MultiTargetCooldownReductionStackingFixed": true
+        },
+        "dimensional-control": {
+          "unspecializedNpcMoveSpeedReductionRestored": true
+        }
+      },
+      "unmatchedSkillInputs": {
+        "brawler-ground-slam": {
+          "officialNameKo": "지면 강타",
+          "cancelsCurrentSkillOnInput": true,
+          "specialization2UseIssueFixed": true,
+          "reason": "Brawler is KR-only in the current catalog; no compatible Global skill ID or unpublished numeric value is invented."
+        },
+        "storm-order": {
+          "officialNameKo": "폭풍의 주문",
+          "specialization5IncorrectDisplayedCrushingBlowPercent": 10,
+          "correctedValuePublished": false,
+          "reason": "The source confirms a tooltip error but does not publish the corrected value, so no numeric combat input is recorded."
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-18T08:31:23Z"
+  "lastOfficialOverrideReviewedAt": "2026-11-24T20:23:23Z"
 }
