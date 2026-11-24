@@ -1,6 +1,27 @@
 {
-  "reviewedAt": "2026-11-21T08:32:05Z",
+  "reviewedAt": "2026-11-24T08:17:00Z",
   "items": [
+    {
+      "id": "na-20261216-season2-brawler-202701-housing",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-24T08:17:00Z",
+      "title": {
+        "en": "Season 2 roadmap · Brawler and housing",
+        "ko": "시즌 2 로드맵 · 권성·하우징"
+      },
+      "finding": {
+        "en": "P1 class/system and P2 future system. Official fact: NC announces that Season 2 begins December 16, 2026 and introduces Brawler, a fast melee class using Gauntlets. Housing is planned for January 2027 with a private island and movable furniture and decorations. NC explicitly says Global release timing and order may change. Guide-impact interpretation: keep the current Brawler · KR labels and regional separation until a North America implementation patch is applied. Exact existing public targets to revisit at launch are /classes/, /skills/, /updates/ and their Korean counterparts; source targets are content.py, data/skills.json and data/skill-snapshot.json. Housing has no current public guide route, so no progression benefit or route is invented. Direct verification pending: effective maintenance time and region; Brawler name, weapon, unlock, starting gear, tooltips, coefficients, cooldowns, level scaling, specializations, conditions, animation times and reproducible rotations; housing unlock, prerequisites, costs, island access, furniture acquisition and placement, storage or stat benefits, account scope and resets. The roadmap publishes no skill values, so eDPS inputs, historical records, rankings and tiers stay unchanged.",
+        "ko": "P1 직업·시스템 및 P2 향후 시스템입니다. 공식 확인: NC는 시즌 2가 2026년 12월 16일 시작되며 건틀렛을 사용하는 빠른 근접 직업 권성(Brawler)이 추가된다고 발표했습니다. 하우징은 2027년 1월 예정이며 개인 섬에 가구와 장식을 배치하는 방식입니다. 글로벌판의 콘텐츠 출시 시점과 순서는 바뀔 수 있다고 명시했습니다. 공략 영향 해석: 북미 적용 패치 전까지 현재의 '권성 · 한국판' 표기와 지역 분리를 유지합니다. 출시 때 다시 확인할 실제 공개 경로는 /classes/·/skills/·/updates/와 한국어 대응 페이지이며 소스 대상은 content.py·data/skills.json·data/skill-snapshot.json입니다. 하우징은 현재 공개 공략 경로가 없으므로 성장 이득이나 동선을 임의로 만들지 않습니다. 직접 검증 대기: 실제 점검 적용 시각·지역, 권성 명칭·무기·해금·초기 장비·툴팁·계수·쿨타임·레벨 증가·특화·조건기·동작 시간·재현 가능한 로테이션, 하우징 해금·선행조건·비용·섬 입장·가구 획득/배치·보관/능력치 이득·계정 범위·초기화입니다. 로드맵에는 스킬 수치가 없어 eDPS 입력·과거 기록·순위·티어는 유지합니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · AION 2 Season 2 Roadmap",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6b04bc90d66fab562628226c",
+          "contentHash": "6752b20425352d91f587283903039efe4cb2912bd0080baa2e0e9ace9d8365fa"
+        }
+      ]
+    },
     {
       "id": "na-20261125-world-market-exchange",
       "region": "NA / Global",
