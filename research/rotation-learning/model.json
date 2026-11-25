@@ -47,7 +47,7 @@
   },
   "provenance": {
     "assets/dps-engine.js": "7da17bd25fed9476a1f5c54f6c8d00aed79daf5f7ed299b403630b03c7e4f8e3",
-    "docs/data/dps.json": "d6161ee70301417c51bb43aff1f016425a8639b626af68483056206175067e9b",
+    "docs/data/dps.json": "796f8f2d0718b946f67e12544a1074c9a65fa3bf1a72df553462a1362d2fc5a9",
     "data/skills.json": "3cb5987b5ed9504d0b4ce8962b2dab1ffe793af133df6ab4a00ca49ea83fcb09",
     "research/gameplay-evidence.json": "19a567e701a5599ea230255bbb761a4ae0e18f293013eff7bc144bd6eb841f94",
     "research/rotation-learning/claims.json": "4ae553693b2518e9c9f7dda0bbbee171efeb9db052377d7380010d7a7e2129a5",
@@ -57,7 +57,7 @@
     "dpsmath.py": "a49d82aa69e6bedad8f75acc0bc9be0ad95a03547f36bf1d6fc82d3ee5b7c566",
     "dpsrules.py": "f52bb3b4cb5871ad89ad210059eacc19ddb838d1bd58cddc64126802794c53e2",
     "data/dps-resources.json": "f65e7689e2976de5548737dea5700a7d591d38ab6ba880eb60223c7a51c16a41",
-    "data/skill-snapshot.json": "739f57b8b2a4ce867c46a73e212beb01e9ef425b8e8cf1215e6346262fea19e0"
+    "data/skill-snapshot.json": "21e995e4d0c4f915be853d6d1fee9b614229ca28638b9f5d04cfe8eaeee7bb94"
   },
   "settings": {
     "generations": 10,

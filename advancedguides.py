@@ -8,13 +8,15 @@ LUDRA_PREVIEW = 'updates/na-6adbaeb06cfe4756db5b8efb/'
 LUDRA_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb'
 LUDRA_PATCH_REVIEW = 'updates/na-6afd5b00ebccad0e4b5bad8b/'
 LUDRA_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6afd5b00ebccad0e4b5bad8b'
+NA_NOV25_PATCH_REVIEW = 'updates/na-6b0695806b68bef8bae9148e/'
+NA_NOV25_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6b0695806b68bef8bae9148e'
 LUDRA_NOV11_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6af42a1affaccc00c265785f'
 LUDRA_PREVIOUS_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId=6aead0e86cfe4756db5b913f'
 GUIDES = [
     dict(slug='na-ludra', group='boss', region='NA', reviewed=ludra.REVIEWED, title=('NA Ludra: beginner preparation & rewards', '북미 루드라: 초보자 준비·보상 공략'), description=('Choose a difficulty, prepare your gear and spend the right vouchers. NA combat verification remains open.', '난이도 선택부터 장비 준비·교환권 사용까지. 북미 전투 패턴은 검증 범위를 명확히 구분합니다.')),
     dict(slug='gear-options', group='gear', region='GLOBAL', title=('Gear options & transfers', '장비 옵션·영혼 부여·계승'), description=('Choose between Sync, Bind, Reset and a transfer.', '옵션 변경·수치 상승·전체 재설정·계승을 상황에 맞게 선택합니다.')),
     dict(slug='shugo-festival', group='routines', region='GLOBAL', title=('Shugo Festival: play, keys & purchases', '페스타 종목·열쇠·상점 공략'), description=('Choose an activity, a reward claim and your next purchase.', '종목을 고르고, 보상 열쇠를 쓰고, 성장 재료로 교환하는 순서.')),
-    dict(slug='stigma-growth', group='gear', region='GLOBAL / KR', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate Global purchases from dated KR stock and level costs.', '글로벌 구매 참고와 한국 상점 한도·레벨별 소모량을 구분합니다.')),
+    dict(slug='stigma-growth', group='gear', region='NA / KR', reviewed='2026-11-25', title=('Stigma Shards: sources & spending', '스티그마 샤드 획득·투자'), description=('Separate current NA slots and supply from dated KR stock and level costs.', '현재 북미 슬롯·수급과 날짜가 붙은 한국 상점 한도·레벨별 소모량을 구분합니다.')),
     dict(slug='endgame-crafts', group='gear', region='GLOBAL / NA', reviewed='2026-11-18', title=('Endgame crafting goals', '팔찌·아르카나 제작 목표'), description=('Global crafting references and NA Ludra launch preparation.', '글로벌 제작 참고와 북미 루드라 출시 준비를 구분합니다.')),
     dict(slug='kr-pendant', group='gear', region='KR', title=('KR Draconic Pendant enhancement', '한국 펜던트 강화·실패 보정'), description=('Read the next attempt and understand increasing failure compensation.', '유일 펜던트의 다음 시도 확률과 실패 보정을 이해합니다.')),
     dict(slug='kr-bitan', group='boss', region='KR', title=('KR Snowfield of Grief: raid movement', '한국 비탄의 설원·파티 이동 공략'), description=('Orb assignments, below-50% movement and the October 14/November 4 changes.', '구슬 역할 분담·체력 50% 이하 이동·10월 14일/11월 4일 변경 사항.')),
@@ -35,6 +37,7 @@ SOURCES = {
     'patch-nov4-hotfix': ('https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6aea9be081a1f241964f2d12', 'NC · KR · 2026-11-04 hotfix', 'Official regional maintenance fix; completed 2026-11-04.'),
     'ludra-na': (LUDRA_NOTICE, 'NC · NA · Ludra Awakens on November 4th · 2026-10-23', 'Official NA announcement; rechecked 2026-10-25. Entry and events, not a crafting or loot table.'),
     'ludra-na-patch': (LUDRA_PATCH, 'NC · NA · November 18 patch', 'Official regional patch; published 2026-11-18. Easy difficulty, 15% combined Ludra gear rate, weapon-chest recipes and pattern fixes.'),
+    'na-nov25-patch': (NA_NOV25_PATCH, 'NC · NA · November 25 patch', 'Official regional patch; five equipped Stigma skills and current NA shard purchase limits.'),
     'ludra-na-nov11-patch': (LUDRA_NOV11_PATCH, 'NC · NA · November 11 patch', 'Official regional patch; two-hour limit, reactor HP adjustment, Reward Group 5 and wipe-reset fix.'),
     'ludra-na-previous-patch': (LUDRA_PREVIOUS_PATCH, 'NC · NA · November 4 patch', 'Official regional patch; entry levels, launch rewards, bracelet conversions and event terms.'),
 }
@@ -133,10 +136,17 @@ def festival(v):
 
 
 def stigma(v):
-    global_card=v.cards([
-        ('spark',('Global Festival purchase','글로벌 페스타 구매 참고'),('The Oct 13 guide lists 35 lifetime Stigma Shards for 10,500 tokens.', '10월 13일 글로벌 공략은 샤드 35개·토큰 10,500개 누적 한도를 설명합니다.')),
-        ('check',('Read the item and reset','품목·초기화 확인'),('Check full Shards versus fragments, character/server scope and the next refresh.', '완성 샤드와 조각, 캐릭터·서버 한도, 초기화 여부를 확인하세요.')),
+    na_card=v.cards([
+        ('spark',('NA · up to five equipped','북미 · 최대 5개 장착'),('The November 25 official patch allows up to five equipped Stigma skills. Unlock conditions and the fifth choice still need a live-client check.', '11월 25일 공식 패치부터 스티그마 스킬을 최대 5개 장착합니다. 해금 조건과 다섯 번째 선택은 실제 클라이언트 확인이 필요합니다.')),
+        ('check',('NA · read the item and reset','북미 · 품목·초기화 확인'),('The patch names Stigma Shards and per-character limits. Confirm full Shards versus fragments, currency and reset in the current shop before buying.', '공지는 스티그마 샤드와 캐릭터별 한도를 명시합니다. 구매 전 현재 상점에서 완성 샤드/조각·재화·초기화를 확인하세요.')),
     ])
+    na_stock=[
+        (('Shugo Festival','슈고 페스타'), ('Festival currency','페스타 재화'), '50', ('Per character','캐릭터별')),
+        (('Nightmare','악몽'), ('Nightmare currency','악몽 재화'), '50', ('Per character','캐릭터별')),
+        (('Wind Breeze Merchants','산들바람 상인'), ('250,000 Kina each','개당 250,000 키나'), '20', ('5,000,000 Kina full stock','전량 5,000,000 키나')),
+    ]
+    na_table='<div class="ag-table"><table><thead><tr>'+''.join(f'<th>{label}</th>' for label in [v.t('NA source','북미 수급처'),v.t('Cost','비용'),v.t('Limit','한도'),v.t('Scope / total','범위 / 총액')])+'</tr></thead><tbody>'+''.join(f'<tr><th>{e(v.p(name))}</th><td data-label="{v.t("Cost","비용")}">{e(v.p(cost))}</td><td data-label="{v.t("Limit","한도")}">{limit}</td><td data-label="{v.t("Scope / total","범위 / 총액")}">{e(v.p(scope))}</td></tr>' for name,cost,limit,scope in na_stock)+'</tbody></table></div>'
+    na_note='<p class="ag-note">'+v.t('NA November 25 official values. These do not replace the dated KR snapshot below. Nightmare and Shugo prices are not restated in this patch, so read their live shop rows before spending.', '북미 11월 25일 공식 수치입니다. 아래 날짜가 붙은 한국 자료를 대체하지 않습니다. 이 패치는 악몽·슈고 가격을 다시 공개하지 않았으므로 소비 전 실제 상점 행을 확인하세요.')+'</p>'
     stock=[
         (('Shugo Festival','슈고 페스타'), '300', '35', '10,500', ('Festival currency','페스타 재화')),
         (('Nightmare','악몽'), '1,500', '35', '52,500', ('Nightmare currency','악몽 재화')),
@@ -149,9 +159,9 @@ def stigma(v):
     milestones='<div class="ag-milestones">'+''.join(f'<div><strong>0 → {level}</strong><span>{cost} {v.t("Shards","샤드")}</span></div>' for level,cost in STIGMA_COST.items() if level)+'</div>'
     select=lambda name,values,selected:'<select data-stigma-'+name+'>'+''.join(f'<option value="{n}"'+(' selected' if n==selected else '')+f'>{n}</option>' for n in values)+'</select>'
     calc=f'<div class="ag-calculator" data-stigma-planner data-costs="{e(json.dumps(STIGMA_COST))}" data-lang="{v.lang}"><div class="ag-controls" data-ag-controls hidden><label>{v.t("Current level","현재 레벨")}{select("from",STIGMA_COST,0)}</label><label>{v.t("Target level","목표 레벨")}{select("to",list(STIGMA_COST)[1:],15)}</label></div><p class="ag-calc-result" data-stigma-result aria-live="polite">{v.t("0 → 15 needs 35 Shards.","0 → 15레벨에 샤드 35개가 필요합니다.")}</p><p class="ag-small">{v.t("KR cost reference for one Stigma, through level 20. Equipment bonuses and higher-level materials are separate.","스티그마 하나의 20레벨 이하 한국 소모량입니다. 장비 보너스·상위 레벨 전용 재료는 별개입니다.")}</p></div>'
-    return [(('global',('Global route','글로벌 구매')),v.section('stigma-global',('A named purchase, not every weekly task','필요한 구매부터 정하기'),global_card+v.link('routines/#routine-nightmare',v.t('Nightmare reward route','악몽 보상 경로')))),
+    return [(('na-current',('NA current','북미 현재')),v.section('stigma-na-current',('Five slots and named NA supply','5개 슬롯과 북미 수급처'),na_card+na_note+na_table+v.link(NA_NOV25_PATCH_REVIEW,v.t('NA November 25 patch summary','북미 11월 25일 패치 요약'))+' · '+v.link('routines/#routine-nightmare',v.t('Nightmare reward route','악몽 보상 경로')))),
             (('kr-shop',('KR shop limits','한국 상점 한도')),v.section('stigma-kr-stock',('KR stock that does not reset','매주 다시 살 수 없는 한국 상품'),note+table)),
-            (('levels',('KR level budget','한국 레벨 예산')),v.section('stigma-levels',('Budget one skill at a time','스킬 하나씩 투자량 계산'),milestones+calc+v.link('skills/',v.t('Compare Stigma effects','스티그마 효과 비교'))))],['festival','shards']
+            (('levels',('KR level budget','한국 레벨 예산')),v.section('stigma-levels',('Budget one skill at a time','스킬 하나씩 투자량 계산'),milestones+calc+v.link('skills/',v.t('Compare Stigma effects','스티그마 효과 비교'))))],['na-nov25-patch','shards']
 
 
 def crafts(v):

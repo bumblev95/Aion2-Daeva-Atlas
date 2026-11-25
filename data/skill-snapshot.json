@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-24T20:23:23Z",
+  "reviewedAt": "2026-11-25T08:51:21Z",
   "region": "Global",
   "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
@@ -691,7 +691,56 @@
           "reason": "The source confirms a tooltip error but does not publish the corrected value, so no numeric combat input is recorded."
         }
       }
+    },
+    {
+      "region": "NA",
+      "effectiveAt": "2026-11-25",
+      "reviewedAt": "2026-11-25T08:51:21Z",
+      "source": "https://aion2.plaync.com/en-us/board/update/view?articleId=6b0695806b68bef8bae9148e",
+      "sourceUpdatedAt": "2026-11-25T08:07:02.937Z",
+      "sourceHash": "bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc",
+      "calculationState": "NA November 25 exact inputs recorded separately; approximate Templar PvP reductions remain descriptive and nothing is applied to KR, historical observations, rankings or final tiers",
+      "skills": {
+        "judgment": {
+          "approximatePvpDamageChangePercent": -5,
+          "specialization2ApproximateImpactTargetPvpBonusChangePercent": -10,
+          "specialization3ApproximateOnHitPvpBonusChangePercent": -10,
+          "exactCoefficientPendingClientVerification": true
+        },
+        "marking-shot": {
+          "specialization1BeforePerfectChancePercent": 5,
+          "specialization1PerfectChancePercent": 10
+        },
+        "bow-of-blessing": {
+          "beforeCooldownSeconds": 120,
+          "cooldownSeconds": 90
+        },
+        "incandescent-blow": {
+          "specialization5Before": "Ignores Block and Evasion and lands as Multi-Hit",
+          "specialization5": "Lands as Multi-Hit",
+          "blockAndEvasionBypassRemoved": true
+        },
+        "spinning-strike": {
+          "specialization5Before": "Ignores Block and Evasion and lands as Critical Hit",
+          "specialization5": "Lands as Critical Hit",
+          "blockAndEvasionBypassRemoved": true
+        },
+        "cold-shock": {
+          "specialization4EarthTremorBeforeAttackPercentPerStack": 2,
+          "specialization4EarthTremorBeforeMaxStacks": 5,
+          "specialization4EarthTremorAttackPercent": 10,
+          "specialization4EarthTremorMaxStacks": 1,
+          "specialization4GrantedAttackCannotBeRemovedByBuffRemoval": true
+        },
+        "element-unification": {
+          "beforeCriticalHitDamagePercentAtLevel1": 1.1,
+          "criticalHitDamagePercentAtLevel1": 5.5,
+          "beforeCriticalHitDamagePercentPerLevel": 0.1,
+          "criticalHitDamagePercentPerLevel": 0.5,
+          "stackable": false
+        }
+      }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-24T20:23:23Z"
+  "lastOfficialOverrideReviewedAt": "2026-11-25T08:51:21Z"
 }

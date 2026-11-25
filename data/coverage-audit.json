@@ -2,6 +2,27 @@
   "reviewedAt": "2026-11-24T20:23:23Z",
   "items": [
     {
+      "id": "na-20261125-classes-stigma-market-economy",
+      "region": "NA",
+      "reviewedAt": "2026-11-25T08:51:21Z",
+      "title": {
+        "en": "November 25 NA · classes, Stigma, Abyss and economy",
+        "ko": "11월 25일 북미 · 직업·스티그마·어비스·경제"
+      },
+      "finding": {
+        "en": "P1 combat/growth/system. Official facts: after the November 24 PST / November 25 CET maintenance, NA changes Templar PvP by approximate percentages; Ranger Marking Shot 5→10% and Bow of Blessing 120→90s; Chanter Specialty 5 Block/Evasion bypass; and Spiritmaster Earth Tremor 2%×5→10%×1 plus Element Unification 1.1→5.5% at level 1, +0.1→+0.5% per level and non-stacking. NA also allows five equipped Stigma skills, raises Nightmare/Shugo limits 35→50, adds 20 Wind Breeze Shards at 250,000 Kina each, raises weekly Sync Stones 3→12, adds a shared-entry Kina dungeon, applies −30% AP in a comeback corridor, adds 20%-tax World trading and negative-Kina restrictions, and opens an event facility. Guide-impact interpretation: publish the hash-bound highlights and exact NA inputs, and update the NA Stigma guide; preserve KR, historical DPS and rankings. Exact public targets are /updates/na-6b0695806b68bef8bae9148e/, /classes/templar/, /classes/ranger/, /classes/chanter/, /classes/spiritmaster/, named /skills/ pages, /guides/stigma-growth/, /guides/abyss-outland/, /guides/kinah-farming/, /guides/server-transfer/, /routines/, /start/ and /endgame/ plus Korean counterparts. Source targets are data/patch-reviews.json, data/skill-snapshot.json, advancedguides.py, skillbook.py, outland.py, progression.py, fieldnotes.py, routines.py and onboarding.py. Direct verification pending: every changed tooltip/value/condition, Chanter hit outcome, Spiritmaster grant/stack/removal and party ownership, full rotations; Stigma unlock/item/scope/reset; dungeon unlock/score/reward/shared entry; weekly mission conditions/reset; corridor siege trigger/spawn/destination/AP accounting; World versus server inventory/tax; negative balance sources/restrictions/recovery; event unlock/normalization/energy cost/coin removal and Bargott difficulty, region, trigger, telegraph and counter. No approximate PvP coefficient is promoted to exact, no bug-fix DPS is invented and no final tier is supported.",
+        "ko": "P1 전투·성장·시스템입니다. 공식 확인: PST 11월 24일/CET 11월 25일 점검 후 북미는 수호성 PvP를 근사 비율로 조정하고, 궁성 표식 화살 5→10%·축복의 활 120→90초, 호법성 특화 5의 방패방어/회피 무시 제거, 정령성 대지 진동 2%×5→10%×1 및 원소 융합 1레벨 1.1→5.5%·레벨당 +0.1→+0.5%·중첩 불가를 적용합니다. 북미는 스티그마 5개 장착, 악몽/슈고 한도 35→50, 산들바람 샤드 20개·개당 250,000 키나, 주간 동기화석 3→12, 입장 공유 키나 던전, 열세 회랑 AP −30%, 수수료 20% 월드 거래, 마이너스 키나 제한, 이벤트 시설도 추가합니다. 공략 영향 해석: 해시 연결 highlights와 정확한 북미 입력을 공개하고 북미 스티그마 공략을 갱신하되 한국·과거 DPS·순위는 보존합니다. 정확한 공개 대상은 /updates/na-6b0695806b68bef8bae9148e/·/classes/templar/·/classes/ranger/·/classes/chanter/·/classes/spiritmaster/·해당 /skills/·/guides/stigma-growth/·/guides/abyss-outland/·/guides/kinah-farming/·/guides/server-transfer/·/routines/·/start/·/endgame/ 및 한국어 대응 페이지입니다. 소스는 data/patch-reviews.json·data/skill-snapshot.json·advancedguides.py·skillbook.py·outland.py·progression.py·fieldnotes.py·routines.py·onboarding.py입니다. 직접 검증 대기: 변경 툴팁/수치/조건, 호법성 타격 판정, 정령성 부여/중첩/해제·파티 귀속과 전체 로테이션, 스티그마 해금/품목/범위/초기화, 던전 해금/점수/보상/입장 공유, 주간 임무 조건/초기화, 회랑 공방전 발동/출현/도착/AP 집계, 월드/서버 재고와 수수료, 음수 잔액 수급/제한/회복, 이벤트 해금/보정/에너지 비용/코인 제거 및 바르고트 난도·지역·발동·전조·대응입니다. 근사 PvP 계수를 정확값으로 승격하지 않고 오류 수정 DPS를 만들지 않으며 최종 티어 근거도 없습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · Patch Notes | Nov. 25",
+          "url": "https://aion2.plaync.com/en-us/board/update/view?articleId=6b0695806b68bef8bae9148e",
+          "contentHash": "bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc"
+        }
+      ]
+    },
+    {
       "id": "kr-20261125-solo-assassin-abyss-economy",
       "region": "KR",
       "reviewedAt": "2026-11-24T20:23:23Z",
