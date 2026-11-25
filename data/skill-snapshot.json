@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-25T08:51:21Z",
+  "reviewedAt": "2026-11-25T20:21:05Z",
   "region": "Global",
   "scope": "Global base-1 tooltips plus source-bound NA and KR official overrides; not a final build snapshot",
   "source": "https://metabot.gg/en/aion-2/skills",
@@ -695,10 +695,10 @@
     {
       "region": "NA",
       "effectiveAt": "2026-11-25",
-      "reviewedAt": "2026-11-25T08:51:21Z",
+      "reviewedAt": "2026-11-25T20:21:05Z",
       "source": "https://aion2.plaync.com/en-us/board/update/view?articleId=6b0695806b68bef8bae9148e",
-      "sourceUpdatedAt": "2026-11-25T08:07:02.937Z",
-      "sourceHash": "bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc",
+      "sourceUpdatedAt": "2026-11-25T15:16:04.958Z",
+      "sourceHash": "52b79b0084ca326cec94b2daed2ed0fe1871e64d3c347a289831400a81d09efb",
       "calculationState": "NA November 25 exact inputs recorded separately; approximate Templar PvP reductions remain descriptive and nothing is applied to KR, historical observations, rankings or final tiers",
       "skills": {
         "judgment": {
@@ -742,5 +742,5 @@
       }
     }
   ],
-  "lastOfficialOverrideReviewedAt": "2026-11-25T08:51:21Z"
+  "lastOfficialOverrideReviewedAt": "2026-11-25T20:21:05Z"
 }
