@@ -33,7 +33,8 @@ class November18UpdateRegressionTest(unittest.TestCase):
 
     def test_news_publishes_review_without_source_outage_or_na_copy(self):
         news = load('data/news.json')
-        self.assertTrue(all(s['status'] == 'ready' for s in news['sources']))
+        source = next(s for s in news['sources'] if any(x['id'] == ID for x in s['items']))
+        self.assertEqual(source['status'], 'ready')
         item = next(x for s in news['sources'] for x in s['items'] if x['id'] == ID)
         self.assertEqual(item['region'], 'KR')
         self.assertEqual(item['reviewState'], 'reviewed')

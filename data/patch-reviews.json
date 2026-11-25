@@ -11197,5 +11197,413 @@
       ]
     },
     "followups": []
+  },
+  "6b0695806b68bef8bae9148e": {
+    "contentHash": "bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc",
+    "reviewedAt": "2026-11-25T08:51:21Z",
+    "classScopeReviewed": true,
+    "sourceUrl": "https://aion2.plaync.com/en-us/board/update/view?articleId=6b0695806b68bef8bae9148e",
+    "title": {
+      "en": "November 25 · North America",
+      "ko": "11월 25일 북미 패치"
+    },
+    "summary": {
+      "en": "NA changes Templar PvP, buffs Ranger cooldown and specialization values, removes two Chanter block/evasion bypasses and restructures two Spiritmaster effects. It also expands Stigma access, weekly Sync Stones, Abyss comeback rules, World trading and negative-Kina restrictions, and adds two instanced activities. These rules apply to the United States and Canada only; they do not rewrite KR, historical DPS or final tiers.",
+      "ko": "북미는 수호성 PvP를 조정하고 궁성 쿨타임·특화 수치를 상향하며 호법성의 방패방어/회피 무시 2종을 제거하고 정령성 효과 2종의 구조를 바꿉니다. 스티그마 수급·주간 동기화석·어비스 열세 보정·월드 거래·마이너스 키나 제한도 확대하고 인스턴스 2종을 추가합니다. 미국·캐나다 북미 전용이며 한국·과거 DPS·최종 티어를 재작성하지 않습니다."
+    },
+    "changes": [
+      {
+        "classId": "templar",
+        "type": "nerf",
+        "subject": {
+          "en": "Judgment PvP damage",
+          "ko": "심판 PvP 피해"
+        },
+        "description": {
+          "en": "Judgment PvP damage is reduced by about 5%; Specialty 2 Impact-target bonus and Specialty 3 on-hit PvP bonus are each reduced by about 10%.",
+          "ko": "심판의 PvP 피해가 약 5% 감소하고 특화 2의 충격 계열 대상 추가 피해와 특화 3의 적중 PvP 추가 피해가 각각 약 10% 감소합니다."
+        },
+        "after": {
+          "en": "Base PvP ≈−5%; Specialty 2/3 PvP bonuses ≈−10%",
+          "ko": "기본 PvP 약 −5%·특화 2/3 PvP 보너스 약 −10%"
+        },
+        "impact": {
+          "en": "P1 interpretation: NA Templar PvP burst is lower. The notice says “approximately,” so record live tooltip values and controlled PvP hits before entering exact coefficients; NA PvE and historical records do not change.",
+          "ko": "P1 해석: 북미 수호성 PvP 순간 피해가 낮아집니다. 공지가 “약”으로 표기하므로 정확한 계수 입력 전 실제 툴팁과 통제된 PvP 타격을 확인하며 북미 PvE·과거 기록은 바꾸지 않습니다."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "en": "Marking Shot Specialty 1",
+          "ko": "표식 화살 특화 1"
+        },
+        "description": {
+          "en": "Perfect Chance granted while Marking Shot Specialty 1 is active increases from 5% to 10%.",
+          "ko": "표식 화살 특화 1 활성 중 부여하는 Perfect Chance가 5%에서 10%로 증가합니다."
+        },
+        "before": {
+          "en": "Perfect Chance +5%",
+          "ko": "Perfect Chance +5%"
+        },
+        "after": {
+          "en": "Perfect Chance +10%",
+          "ko": "Perfect Chance +10%"
+        },
+        "impact": {
+          "en": "P1 interpretation: the specialization grants a larger confirmed value, but rotation gain depends on uptime and downstream effects. Verify the tooltip, activation, refresh and proc behavior before eDPS use.",
+          "ko": "P1 해석: 특화의 확인 수치는 커지지만 로테이션 이득은 유지율과 후속 효과에 달려 있습니다. eDPS 적용 전 툴팁·발동·갱신·효과 동작을 재현해야 합니다."
+        }
+      },
+      {
+        "classId": "ranger",
+        "type": "buff",
+        "subject": {
+          "en": "Bow of Blessing cooldown",
+          "ko": "축복의 활 쿨타임"
+        },
+        "description": {
+          "en": "Bow of Blessing cooldown decreases from two minutes to one minute thirty seconds.",
+          "ko": "축복의 활 재사용 대기시간이 2분에서 1분 30초로 줄어듭니다."
+        },
+        "before": {
+          "en": "120 seconds",
+          "ko": "120초"
+        },
+        "after": {
+          "en": "90 seconds",
+          "ko": "90초"
+        },
+        "impact": {
+          "en": "P1 interpretation: NA Ranger can use the skill more often. Record the exact 120→90 second input regionally, then reproduce reset/reduction interactions and a full rotation before publishing modeled gain.",
+          "ko": "P1 해석: 북미 궁성이 더 자주 사용할 수 있습니다. 120→90초 입력은 지역별로 기록하고 초기화·쿨감 상호작용과 전체 로테이션을 재현한 뒤 모델 이득을 공개해야 합니다."
+        }
+      },
+      {
+        "classId": "chanter",
+        "type": "nerf",
+        "subject": {
+          "en": "Specialty 5 block/evasion bypass",
+          "ko": "특화 5 방패방어·회피 무시"
+        },
+        "description": {
+          "en": "Incandescent Blow/Bursting Blow Specialty 5 and Spinning Strike Specialty 5 keep their Multi-Hit or Critical Hit outcomes but no longer state that they ignore Block and Evasion.",
+          "ko": "작렬타/폭발타 특화 5와 회전타 특화 5는 연타 또는 치명타 판정은 유지하지만 방패방어와 회피 무시 문구가 제거됩니다."
+        },
+        "before": {
+          "en": "Ignores Block and Evasion; Multi-Hit/Critical Hit",
+          "ko": "방패방어·회피 무시·연타/치명타"
+        },
+        "after": {
+          "en": "Multi-Hit/Critical Hit only",
+          "ko": "연타/치명타만 유지"
+        },
+        "impact": {
+          "en": "P1 interpretation: defensive counters can matter again. No damage percentage is announced; verify both specialties against Block/Evasion targets and do not invent a DPS loss.",
+          "ko": "P1 해석: 방패방어·회피 대응이 다시 작동할 수 있습니다. 피해율은 발표되지 않았으므로 두 특화를 방패방어/회피 대상에게 재현하며 임의 DPS 감소를 넣지 않습니다."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "adjustment",
+        "subject": {
+          "en": "Earth Tremor Attack stack model",
+          "ko": "대지 진동 공격력 중첩 구조"
+        },
+        "description": {
+          "en": "Cold Shock/Vacuum Explosion/Earth Tremor Specialty 4 changes Earth Tremor from 2% Attack per stack, maximum five, to 10% Attack with maximum one; the granted effect can no longer be removed by buff-removal skills.",
+          "ko": "냉기 충격/진공 폭발/대지 진동 특화 4는 대지 진동의 공격력을 중첩당 2%·최대 5중첩에서 10%·최대 1중첩으로 바꾸고, 부여 효과가 버프 제거 스킬로 해제되지 않게 합니다."
+        },
+        "before": {
+          "en": "Attack +2% per stack, max 5",
+          "ko": "공격력 중첩당 +2%·최대 5"
+        },
+        "after": {
+          "en": "Attack +10%, max 1; cannot be removed by buff removal",
+          "ko": "공격력 +10%·최대 1·버프 제거 불가"
+        },
+        "impact": {
+          "en": "P1 interpretation: the maximum remains 10%, while ramp and removal behavior change. Verify grant timing, duration, refresh, dispel immunity and rotation uptime; do not label this as a flat 5× damage buff.",
+          "ko": "P1 해석: 최대치는 10%로 같고 누적·해제 방식이 바뀝니다. 부여 시점·지속·갱신·해제 면역·로테이션 유지율을 확인하며 피해 5배 상향으로 해석하지 않습니다."
+        }
+      },
+      {
+        "classId": "spiritmaster",
+        "type": "adjustment",
+        "subject": {
+          "en": "Element Unification level scaling",
+          "ko": "원소 융합 레벨 효과"
+        },
+        "description": {
+          "en": "Element Unification Critical Hit Damage changes from 1.1% to 5.5% at level 1 and from +0.1% to +0.5% per level, while the effect becomes non-stackable.",
+          "ko": "원소 융합의 치명타 피해가 1레벨 1.1%→5.5%, 레벨당 +0.1%→+0.5%로 바뀌고 효과는 중첩 불가가 됩니다."
+        },
+        "before": {
+          "en": "Level 1: 1.1%; +0.1% per level; stackable",
+          "ko": "1레벨 1.1%·레벨당 +0.1%·중첩 가능"
+        },
+        "after": {
+          "en": "Level 1: 5.5%; +0.5% per level; non-stackable",
+          "ko": "1레벨 5.5%·레벨당 +0.5%·중첩 불가"
+        },
+        "impact": {
+          "en": "P1 interpretation: one caster supplies a stronger level-scaled effect while duplicate stacking is removed. Verify level breakpoints, party ownership, overwrite/refresh and summon inheritance before modeling party eDPS.",
+          "ko": "P1 해석: 한 명이 더 큰 레벨 비례 효과를 주지만 중복 중첩은 사라집니다. 파티 eDPS 모델 전 레벨 구간·귀속 주체·덮어쓰기/갱신·소환수 적용을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Crobakhi daily dungeon",
+          "ko": "크로바키 일일 던전"
+        },
+        "description": {
+          "en": "Crobakhi’s Secret Depository is added as a score-based Bound-Kina daily dungeon and shares its entry count with Daeva Bio-Research Base and Odylium Repository.",
+          "ko": "점수에 따라 귀속 키나를 주는 일일 던전 크로바키의 비밀 창고가 추가되며 데바 생체 연구소·오딜리움 저장고와 입장 횟수를 공유합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: choosing it consumes the same daily pool. Verify unlock, score thresholds, reward amounts, entry/reward reset and binding in the NA client before rewriting a farming route.",
+          "ko": "P1 해석: 선택 시 같은 일일 입장 풀을 사용합니다. 파밍 동선 수정 전 북미 클라이언트에서 해금·점수 구간·보상량·입장/보상 초기화·귀속을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Stigma slots and shard supply",
+          "ko": "스티그마 슬롯·샤드 수급"
+        },
+        "description": {
+          "en": "Up to five Stigma skills can be equipped. The patch says a total of 50 new Bound Shards will be added through expanded and future sources; current named changes raise Nightmare and Shugo Festival character limits from 35 to 50 and add 20 at Wind Breeze Merchants for 250,000 Kina each.",
+          "ko": "스티그마 스킬을 최대 5개 장착할 수 있습니다. 패치는 확대·향후 수급처를 통해 귀속 샤드 총 50개를 새로 추가한다고 밝히며, 현재 명시된 변경은 악몽·슈고 페스타의 캐릭터별 한도 35→50개와 산들바람 상인 20개·개당 250,000 키나입니다."
+        },
+        "before": {
+          "en": "Nightmare/Shugo limits: 35 per character",
+          "ko": "악몽/슈고 한도: 캐릭터당 35개"
+        },
+        "after": {
+          "en": "Up to 5 equipped; Nightmare/Shugo 50; Wind Breeze 20 × 250,000 Kina",
+          "ko": "최대 5개 장착·악몽/슈고 50·산들바람 20개 × 250,000 키나"
+        },
+        "impact": {
+          "en": "P1 interpretation: NA build and growth priorities gain one equipped slot and more named supply. Verify unlock prerequisites, full-versus-fragment item, currency, reset and character/server scope; this does not modify the dated KR shop table.",
+          "ko": "P1 해석: 북미 빌드·성장 우선순위에 장착 1칸과 명시 수급처가 늘어납니다. 해금 선행·완성품/조각·재화·초기화·캐릭터/서버 범위를 확인하며 날짜가 붙은 한국 상점 표는 수정하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Weekly Sync Stones",
+          "ko": "주간 동기화석"
+        },
+        "description": {
+          "en": "The Transcendence season-mission weekly maximum rises from three to twelve; Way of the Transcended steps 1–3 each award four Unique Sync Stones (Bound).",
+          "ko": "초월 시즌 임무의 주간 최대 동기화석이 3→12개로 늘고 초월자의 길 1~3단계가 각각 유일 동기화석(귀속) 4개를 줍니다."
+        },
+        "before": {
+          "en": "3 per week",
+          "ko": "주 3개"
+        },
+        "after": {
+          "en": "12 per week; 4 at each of steps 1–3",
+          "ko": "주 12개·1~3단계 각 4개"
+        },
+        "impact": {
+          "en": "P1 interpretation: weekly gear-option work accelerates. Verify mission unlocks, completion conditions, character/account scope, binding and Wednesday reset before changing routine totals.",
+          "ko": "P1 해석: 주간 장비 옵션 성장이 빨라집니다. 일과 합계 수정 전 임무 해금·완료 조건·캐릭터/계정 범위·귀속·수요일 초기화를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Abyss Corridor comeback rule",
+          "ko": "어비스 회랑 열세 보정"
+        },
+        "description": {
+          "en": "When the opposing faction captures all artifacts during Artifact Siege, a corridor appears at the disadvantaged faction base; Abyss Points gained in it are reduced by 30%.",
+          "ko": "유물 공방전에서 상대 종족이 모든 유물을 점령하면 열세 종족 기지에 회랑이 나타나며 회랑 내 어비스 포인트 획득량은 30% 감소합니다."
+        },
+        "after": {
+          "en": "Corridor at disadvantaged base; AP gained there −30%",
+          "ko": "열세 기지 회랑·해당 구역 AP −30%"
+        },
+        "impact": {
+          "en": "P1 interpretation: the corridor is an access comeback with an AP penalty, not a full-value farming route. Verify siege state, spawn/despawn, destination, eligible AP sources and rounding.",
+          "ko": "P1 해석: 회랑은 AP 30% 불이익이 있는 접근 보정이며 정상 수익 파밍 동선이 아닙니다. 공방전 상태·출현/소멸·도착점·대상 AP·반올림을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "World Market and World Exchange",
+          "ko": "월드 거래소·월드 교환소"
+        },
+        "description": {
+          "en": "World Market and World Exchange are added with a 20% transaction tax.",
+          "ko": "월드 거래소와 월드 교환소가 추가되고 거래 수수료는 20%입니다."
+        },
+        "after": {
+          "en": "20% transaction tax",
+          "ko": "거래 수수료 20%"
+        },
+        "impact": {
+          "en": "P1 interpretation: NA gains a separate cross-world venue with a large sale deduction. Verify eligibility, listing/settlement limits, server-versus-world inventory and exact tax display before budget changes.",
+          "ko": "P1 해석: 북미에 별도 월드 거래 공간이 생기고 판매 정산 공제가 큽니다. 예산 수정 전 이용 조건·등록/정산 한도·서버/월드 재고 분리·실제 수수료 표시를 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Negative Kina restrictions",
+          "ko": "마이너스 키나 제한"
+        },
+        "description": {
+          "en": "Negative Kina is introduced. A negative balance blocks Market buying/listing/settlement, Exchange listing/settlement and server transfer; specified unbound-Kina sources recover the balance and restrictions lift at zero or above.",
+          "ko": "마이너스 키나가 도입됩니다. 잔액이 음수면 거래소 구매·등록·정산, 교환소 등록·정산, 서버 이전이 제한되고 지정 비귀속 키나 수급으로 잔액을 회복해 0 이상이 되면 제한이 해제됩니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: debt can stop core trading and transfer actions. Verify which balances and sources count, partial recovery, UI warnings and all blocked actions; do not infer unspecified spending restrictions.",
+          "ko": "P1 해석: 음수 잔액은 핵심 거래·이전 기능을 막습니다. 어떤 잔액·수급처가 반영되는지, 부분 회복·UI 경고·제한 기능을 확인하며 공지에 없는 소비 제한을 추정하지 않습니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "system",
+        "subject": {
+          "en": "Corroded Decontamination Facility",
+          "ko": "부식된 정화 시설"
+        },
+        "description": {
+          "en": "The limited Sanctuary Corroded Decontamination Facility uses normalized stats, item level 2,100, seven weekly entries and Bargott as boss; the reward cube gives 5,000 event coins removed each Wednesday.",
+          "ko": "기간 한정 성역 부식된 정화 시설은 능력치 보정·아이템 레벨 2,100·주 7회 입장·보스 바르고트를 적용하며 보상 큐브는 매주 수요일 제거되는 이벤트 코인 5,000개를 줍니다."
+        },
+        "after": {
+          "en": "IL 2,100; 7 entries/week; 5,000 coins per reward cube",
+          "ko": "아이템 레벨 2,100·주 7회·보상 큐브당 코인 5,000개"
+        },
+        "impact": {
+          "en": "P1 interpretation: it is a weekly event route, but the source does not publish Bargott patterns or the Odyle Energy cube cost. Verify unlock, region, normalization, entry/reward reset, energy cost, coin removal and every trigger/counter before adding boss guidance.",
+          "ko": "P1 해석: 주간 이벤트 동선이지만 바르고트 패턴과 오딜 에너지 상자 비용은 공개되지 않았습니다. 보스 공략 추가 전 해금·지역·보정·입장/보상 초기화·에너지 비용·코인 제거·발동/대응을 확인해야 합니다."
+        }
+      },
+      {
+        "classId": "all",
+        "type": "fix",
+        "subject": {
+          "en": "RvR opposing-faction targeting",
+          "ko": "RvR 상대 종족 타기팅"
+        },
+        "description": {
+          "en": "Fixes an issue where the opposing faction could not be targeted during RvR.",
+          "ko": "RvR 중 상대 종족을 대상으로 지정할 수 없던 문제를 수정합니다."
+        },
+        "impact": {
+          "en": "P1 interpretation: targeting should be restored, but no damage increase is announced. Reproduce tab/click/assist targeting by mode and faction before changing combat advice.",
+          "ko": "P1 해석: 타기팅이 복구되지만 피해 증가 수치는 발표되지 않았습니다. 전투 조언 수정 전 모드·종족별 탭/클릭/지원 타기팅을 재현합니다."
+        }
+      }
+    ],
+    "detail": {
+      "coverage": "highlights",
+      "sections": [
+        {
+          "title": {
+            "en": "Region, publication and effective date",
+            "ko": "지역·발표일·시행일"
+          },
+          "sourceSection": "Patch scope",
+          "notes": [
+            {
+              "en": "Published November 25 at 08:00:00 UTC and source-updated at 08:07:02 UTC. The gameplay rules apply to the North American service after the November 24 scheduled maintenance PST / November 25 CET.",
+              "ko": "11월 25일 08:00:00 UTC 게시, 08:07:02 UTC 원문 갱신입니다. 게임 규칙은 PST 11월 24일/CET 11월 25일 정기점검 후 북미 서비스에 적용됩니다."
+            },
+            {
+              "en": "NA only, shared by the United States and Canada. No value is copied to Korea. This review is bound to source hash bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc.",
+              "ko": "미국·캐나다가 함께 사용하는 북미 전용이며 한국에 값을 복사하지 않습니다. 이 검토는 원문 해시 bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc에 연결됩니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Classes and research inputs",
+            "ko": "직업 변경·연구 입력"
+          },
+          "sourceSection": "Class",
+          "notes": [
+            {
+              "en": "Official facts: Templar receives approximate PvP reductions; Ranger Marking Shot changes 5→10% and Bow of Blessing 120→90s; Chanter loses two Block/Evasion bypass clauses; Spiritmaster changes the Earth Tremor stack model and Element Unification level scaling/stackability.",
+              "ko": "공식 확인: 수호성은 근사치 PvP 감소, 궁성 표식 화살은 5→10%·축복의 활은 120→90초, 호법성은 방패방어/회피 무시 2종 제거, 정령성은 대지 진동 중첩과 원소 융합 레벨 효과/중첩 구조가 변경됩니다."
+            },
+            {
+              "en": "P1 targets are /updates/na-6b0695806b68bef8bae9148e/, /classes/templar/, /classes/ranger/, /classes/chanter/, /classes/spiritmaster/ and the named /skills/ pages plus Korean-language counterparts. Source targets are data/patch-reviews.json and data/skill-snapshot.json. Direct checks remain for tooltip values, conditions, animation, hit results, stacking/removal and reproducible rotations. Approximate PvP values are not converted into exact coefficients, PvE DPS, historical records or final tiers.",
+              "ko": "P1 대상은 /updates/na-6b0695806b68bef8bae9148e/·/classes/templar/·/classes/ranger/·/classes/chanter/·/classes/spiritmaster/·해당 /skills/ 페이지와 한국어 대응 페이지입니다. 소스는 data/patch-reviews.json·data/skill-snapshot.json입니다. 툴팁 수치·조건·동작·타격·중첩/해제·재현 로테이션은 직접 검증 대기이며 근사 PvP 값을 정확 계수·PvE DPS·과거 기록·최종 티어로 바꾸지 않습니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Stigma, growth and daily/weekly routes",
+            "ko": "스티그마·성장·일일/주간 동선"
+          },
+          "sourceSection": "Content & Systems · Stigma / Season missions / Daily Dungeon",
+          "notes": [
+            {
+              "en": "Official facts: NA allows up to five equipped Stigma skills; Nightmare and Shugo Festival limits change 35→50, Wind Breeze Merchants sell 20 at 250,000 Kina each, weekly Sync Stones change 3→12, and Crobakhi shares a daily-entry pool with two existing dungeons.",
+              "ko": "공식 확인: 북미는 스티그마 최대 5개 장착, 악몽·슈고 한도 35→50, 산들바람 상인 20개·개당 250,000 키나, 주간 동기화석 3→12, 크로바키와 기존 던전 2종의 일일 입장 공유를 적용합니다."
+            },
+            {
+              "en": "P1 public targets are /guides/stigma-growth/, /skills/, /routines/, /endgame/ and /guides/kinah-farming/ plus Korean counterparts; source targets are advancedguides.py, skillbook.py, routines.py, progression.py and onboarding.py. The dated KR shop table remains separate. Verify prerequisites, costs, item types, scope, shared entries, rewards and resets in game.",
+              "ko": "P1 공개 대상은 /guides/stigma-growth/·/skills/·/routines/·/endgame/·/guides/kinah-farming/와 한국어 대응 페이지이고 소스는 advancedguides.py·skillbook.py·routines.py·progression.py·onboarding.py입니다. 날짜가 붙은 한국 상점 표는 분리 유지합니다. 선행 조건·비용·품목·범위·입장 공유·보상·초기화를 인게임에서 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Abyss and economy systems",
+            "ko": "어비스·경제 시스템"
+          },
+          "sourceSection": "Abyss / Market and Exchange / Negative Kina",
+          "notes": [
+            {
+              "en": "Official facts: the disadvantaged-faction Abyss Corridor carries a 30% AP reduction, World Market/Exchange use a 20% transaction tax, and a negative Kina balance blocks the listed trading, settlement and server-transfer actions until recovery.",
+              "ko": "공식 확인: 열세 종족 어비스 회랑은 AP 30% 감소, 월드 거래소/교환소는 수수료 20%, 마이너스 키나는 회복 전 명시된 거래·정산·서버 이전 기능 제한을 적용합니다."
+            },
+            {
+              "en": "P1 targets are /guides/abyss-outland/, /guides/kinah-farming/, /guides/server-transfer/, /start/, /endgame/ and /routines/ plus Korean counterparts; source targets include outland.py, progression.py, fieldnotes.py, onboarding.py and routines.py. Verify corridor triggers/destination/AP accounting, world-versus-server inventory, tax preview, debt sources and unblock timing.",
+              "ko": "P1 대상은 /guides/abyss-outland/·/guides/kinah-farming/·/guides/server-transfer/·/start/·/endgame/·/routines/와 한국어 대응 페이지이며 소스는 outland.py·progression.py·fieldnotes.py·onboarding.py·routines.py 등입니다. 회랑 발동/도착/AP 집계·월드/서버 재고 분리·수수료 미리보기·부채 수급처·제한 해제 시점을 확인해야 합니다."
+            }
+          ],
+          "tables": []
+        },
+        {
+          "title": {
+            "en": "Event, fixes and review limits",
+            "ko": "이벤트·수정·검토 범위"
+          },
+          "sourceSection": "Event / Improvements and Bug Fixes / Review scope",
+          "notes": [
+            {
+              "en": "The event facility’s item level, weekly entries, reward coins and reset are published, but Bargott patterns, triggers/counters and the reward-cube Odyle Energy cost are not. RvR targeting is a qualitative fix with no damage percentage.",
+              "ko": "이벤트 시설의 아이템 레벨·주간 입장·보상 코인·초기화는 공개됐지만 바르고트 패턴·발동/대응과 보상 큐브 오딜 에너지 비용은 공개되지 않았습니다. RvR 타기팅은 피해율이 없는 정성적 오류 수정입니다."
+            },
+            {
+              "en": "This highlights review does not claim a complete reorganization of event/product tables or live gameplay validation. Exact boss guidance, map coordinates/spawns, unlock costs/rewards and rotations remain direct-verification work.",
+              "ko": "이 highlights 검토는 이벤트·상품 표 전체 재정리나 실제 플레이 검증 완료를 주장하지 않습니다. 정확한 보스 공략·지도 좌표/스폰·해금 비용/보상·로테이션은 직접 검증 대기입니다."
+            }
+          ],
+          "tables": []
+        }
+      ]
+    },
+    "followups": []
   }
 }
