@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-25T08:57:12Z",
+  "checkedAt": "2026-11-25T09:10:29Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-25T08:57:12Z",
-      "lastSuccessAt": "2026-11-25T08:57:12Z",
+      "checkedAt": "2026-11-25T09:10:29Z",
+      "lastSuccessAt": "2026-11-25T09:10:29Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9079,11 +9079,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-25T08:57:12Z",
-      "lastSuccessAt": "2026-11-25T08:57:12Z",
+      "checkedAt": "2026-11-25T09:10:29Z",
+      "lastSuccessAt": "2026-11-25T09:10:29Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6b06a4bc9b036f1605abc988",
+          "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [354차]",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6b06a4bc9b036f1605abc988",
+          "publishedAt": "2026-11-25T09:05:00.473Z",
+          "sourceUpdatedAt": "2026-11-25T09:05:16.398Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6b0649721f31b5a6951015a8",
           "title": "[안내] 11/25(수) AION2 임시점검 안내 (완료)",
@@ -9888,8 +9908,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-25T08:57:12Z",
-      "lastSuccessAt": "2026-11-25T08:57:12Z",
+      "checkedAt": "2026-11-25T09:10:29Z",
+      "lastSuccessAt": "2026-11-25T09:10:29Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -10074,12 +10094,12 @@
                 "ko": "스티그마 슬롯·샤드 수급"
               },
               "description": {
-                "en": "Up to five Stigma skills can be equipped. Nightmare and Shugo Festival character limits rise from 35 to 50 Shards, and Wind Breeze Merchants sell 20 per character at 250,000 Kina each.",
-                "ko": "스티그마 스킬을 최대 5개 장착할 수 있습니다. 악몽·슈고 페스타의 캐릭터별 샤드 한도는 35→50개로 늘고, 산들바람 상인은 캐릭터당 20개를 개당 250,000 키나에 판매합니다."
+                "en": "Up to five Stigma skills can be equipped. The patch says a total of 50 new Bound Shards will be added through expanded and future sources; current named changes raise Nightmare and Shugo Festival character limits from 35 to 50 and add 20 at Wind Breeze Merchants for 250,000 Kina each.",
+                "ko": "스티그마 스킬을 최대 5개 장착할 수 있습니다. 패치는 확대·향후 수급처를 통해 귀속 샤드 총 50개를 새로 추가한다고 밝히며, 현재 명시된 변경은 악몽·슈고 페스타의 캐릭터별 한도 35→50개와 산들바람 상인 20개·개당 250,000 키나입니다."
               },
               "before": {
-                "en": "Up to 4 equipped; Nightmare/Shugo limits 35",
-                "ko": "최대 4개 장착·악몽/슈고 한도 35"
+                "en": "Nightmare/Shugo limits: 35 per character",
+                "ko": "악몽/슈고 한도: 캐릭터당 35개"
               },
               "after": {
                 "en": "Up to 5 equipped; Nightmare/Shugo 50; Wind Breeze 20 × 250,000 Kina",
@@ -12278,8 +12298,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-25T08:57:12Z",
-      "lastSuccessAt": "2026-11-25T08:57:12Z",
+      "checkedAt": "2026-11-25T09:10:29Z",
+      "lastSuccessAt": "2026-11-25T09:10:29Z",
       "error": null,
       "fromCache": false,
       "items": [
