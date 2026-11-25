@@ -102,7 +102,7 @@ async function panel(page,key) {
       await page.locator('[data-stigma-to]').selectOption('10');
       assert.equal(await page.locator('[data-stigma-to]').getAttribute('aria-invalid'),'true');
       await panel(page,'kr-shop');
-      assert.equal(await page.locator('.ag-table tbody tr').count(),5);
+      assert.equal(await page.locator('#stigma-kr-stock .ag-table tbody tr').count(),5);
       await screenshot(page,{path:path.join(artifacts,'stigma-shop-'+lang+'-390.png'),fullPage:true});
       await page.goto(local+'guides/endgame-crafts/');
       assert.equal(await page.locator('[data-ludra-scope]').isVisible(),true);
