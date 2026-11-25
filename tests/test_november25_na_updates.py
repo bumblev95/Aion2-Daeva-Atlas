@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = '6b0695806b68bef8bae9148e'
-HASH = 'bba5bd32a7e29dcee97c56240978d8db47f1e0c091cefda2f39d652638b279fc'
+HASH = '52b79b0084ca326cec94b2daed2ed0fe1871e64d3c347a289831400a81d09efb'
 
 
 def load(path):
@@ -27,6 +27,10 @@ class November25NAUpdateRegressionTest(unittest.TestCase):
                             for row in review['changes']))
         self.assertIn('United States and Canada', review['summary']['en'])
         self.assertIn('does not claim a complete', review['detail']['sections'][-1]['notes'][-1]['en'])
+        facility = next(row for row in review['changes']
+                        if row['subject']['en'] == 'Corroded Decontamination Facility')
+        self.assertIn('consumes no Odyle Energy', facility['description']['en'])
+        self.assertIn('no cube-opening energy cost', facility['impact']['en'].lower())
 
     def test_news_publishes_na_review_and_preserves_notice_failure(self):
         news = load('data/news.json')
