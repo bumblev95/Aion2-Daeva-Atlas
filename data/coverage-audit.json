@@ -1,6 +1,26 @@
 {
-  "reviewedAt": "2026-11-25T20:21:05Z",
+  "reviewedAt": "2026-11-26T08:26:50Z",
   "items": [
+    {
+      "id": "na-20261126-ludra-event-extension",
+      "region": "NA / Global",
+      "reviewedAt": "2026-11-26T08:26:50Z",
+      "title": {
+        "en": "November 26 NA · Ludra Hunt extension and RMT review",
+        "ko": "11월 26일 북미 · 루드라 사냥 연장·RMT 검토"
+      },
+      "finding": {
+        "en": "P1 system/event. Official facts: NC removed Ludra Hall of Fame teams containing an RMT participant, confirmed the remaining teams as final victors, and removed RMT-linked Ludra Hunt ranking teams, leaving ranked-title places open. The Ludra Hunt event is extended through December 15, 2026 before maintenance (PST); a Normal or Hard clear earns the Ludra’s Nemesis title, and rankings are published after the event and RMT screening. Guide-impact interpretation: the previously published November 24 deadline is stale, so update the NA current-state guidance without applying it to KR, changing a patch-review hash, or recalculating skills, eDPS, historical rankings or tiers. Exact public targets are /guides/na-ludra/ and /guides/endgame-crafts/ plus their /ko/ counterparts; source targets are ludra.py and advancedguides.py. The announcement remains a reviewState=official title/source-link news card because it is a general notice. Direct verification pending: title delivery and wording in the client, eligible difficulty and clear timing, ranking region/party eligibility, open-place assignment, publication timing and final RMT-screening outcome. No boss pattern, skill coefficient, cooldown, map coordinate or growth-cost change is announced.",
+        "ko": "P1 시스템·이벤트입니다. 공식 확인: NC는 RMT 참여자가 포함된 루드라 명예의 전당 팀을 제외하고 남은 팀을 최종 우승 팀으로 확정했으며, 루드라 사냥 순위에서도 RMT 연관 팀을 제외해 순위 칭호 자리를 다시 열었습니다. 루드라 사냥 이벤트는 PST 기준 2026년 12월 15일 점검 전까지 연장되고, 일반 또는 어려움 클리어 시 Ludra’s Nemesis 칭호를 받으며 순위는 이벤트 종료와 RMT 심사 뒤 발표됩니다. 공략 영향 해석: 기존 공개 11월 24일 종료 안내가 오래됐으므로 한국에 적용하거나 패치 검토 해시를 바꾸거나 스킬·eDPS·과거 순위·티어를 재계산하지 않고 북미 현재 안내를 수정합니다. 정확한 공개 대상은 /guides/na-ludra/·/guides/endgame-crafts/ 및 /ko/ 대응 페이지이고 소스는 ludra.py·advancedguides.py입니다. 일반 공지이므로 reviewState=official 제목·원문 링크 뉴스 카드 상태를 유지합니다. 직접 검증 대기: 클라이언트 칭호 지급과 문구, 인정 난도와 클리어 시점, 순위 지역·파티 자격, 빈 자리 배정, 결과 발표 시점과 최종 RMT 심사 결과입니다. 보스 패턴·스킬 계수·쿨타임·지도 좌표·성장 비용 변경은 발표되지 않았습니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · Hall of Fame & Ludra Hunt Updates",
+          "url": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6b079e1563dd78f52230e0fe"
+        }
+      ]
+    },
     {
       "id": "na-20261125-classes-stigma-market-economy",
       "region": "NA",
