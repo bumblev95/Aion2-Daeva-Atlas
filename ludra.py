@@ -1,7 +1,7 @@
 """NA launch preparation, not a reconstruction of the KR/early-access fight."""
 from html import escape
 
-REVIEWED = '2026-11-18'
+REVIEWED = '2026-11-26'
 ENTRY_LEVELS = {'easy': 2800, 'normal': 2800, 'hard': 3000}
 TIME_LIMIT_MINUTES = 120
 VOUCHERS = {'normal_to_bracelet': 6, 'hard_to_bracelet': 3, 'normal_to_hard': 2}
@@ -70,7 +70,7 @@ def render(v):
     rewards += note(v, ('November 11 · Reward Group 5', '11월 11일 · 보상군 5'), (
         'The official drop rate for Reward Group 5 rises from 30% to 100%, and Wrathful Mind, Wrathful Will and Wrathful Ego (Bound) are added. The patch does not publish the quantity per clear or say that every item in the group drops together.',
         '보상군 5의 공식 드롭률은 30%에서 100%로 오르고 격노의 마음·의지·자아(귀속)가 추가됩니다. 공지는 회당 수량이나 보상군의 모든 아이템이 함께 지급되는지 공개하지 않았습니다.'))
-    rewards += '<p>'+v.t('Optional event goal: a Normal or Hard clear during November 4 after maintenance–November 24 before maintenance (PST) qualifies for Ludra Hunt recognition. The universal title is Ludra’s Nemesis; ranked titles are for the first 20 Hard-clear Forces per listed region, including NA East and NA West separately. Do not choose Hard solely for the universal title.', '기간 한정 목표: PST 기준 11월 4일 점검 후~11월 24일 점검 전 일반 또는 어려움 클리어는 루드라 사냥 이벤트 대상입니다. 공통 칭호는 Ludra’s Nemesis이며, 순위 칭호는 NA East·NA West를 각각 포함한 대상 지역별 어려움 선착순 20개 공격대 대상입니다. 공통 칭호만을 위해 어려움을 고를 필요는 없습니다.')+'</p>'
+    rewards += '<p>'+v.t('Updated event goal: the November 26 notice extends Normal/Hard clear eligibility for the Ludra’s Nemesis title through December 15 before maintenance (PST). Teams linked to RMT were removed from Ludra Hunt rankings, so ranked-title places are open again; final rankings are published after the event and RMT review. Hall of Fame review is separate: remaining teams are final victors after RMT-linked teams were removed. Do not choose Hard solely for the universal clear title.', '갱신된 기간 한정 목표: 11월 26일 공지는 일반·어려움 클리어의 Ludra’s Nemesis 칭호 기간을 PST 기준 12월 15일 점검 전까지 연장합니다. RMT 연관 팀을 루드라 사냥 순위에서 제외해 순위 칭호 자리가 다시 열렸고 최종 순위는 이벤트 종료와 RMT 검토 뒤 발표됩니다. 명예의 전당은 별도이며 RMT 연관 팀 제외 뒤 남은 팀이 최종 우승 팀입니다. 공통 클리어 칭호만을 위해 어려움을 고를 필요는 없습니다.')+'</p>'
 
     materials = table(v, [('Input (Bound)', '재료 (귀속)'), ('Result (Bound)', '결과 (귀속)')], [
         ((f"Gear Change Voucher: Ludra [Easy] ×{WEAPON_CHEST['easy_vouchers']} + {WEAPON_CHEST['kina']:,} Kina", f"루드라 쉬움 장비 변경권 ×{WEAPON_CHEST['easy_vouchers']} + {WEAPON_CHEST['kina']:,} 키나"), ('Abyssal Forge: Weapon Selection Chest ×1', '심연의 재련: 무기 선택 상자 ×1')),
@@ -99,4 +99,4 @@ def render(v):
         ('rewards', ('Choose rewards', '보상 선택'), ('Turn a clear into your next upgrade', '클리어 보상을 다음 성장으로'), rewards),
         ('materials', ('Vouchers & crafts', '교환권·제작'), ('Keep the right materials', '필요한 재료를 남기고 변환하기'), materials),
     ]
-    return [((key, label), v.section('ludra-'+key, title, body)) for key, label, title, body in sections], ['ludra-na-patch', 'ludra-na-nov11-patch', 'ludra-na-previous-patch', 'ludra-na-current']
+    return [((key, label), v.section('ludra-'+key, title, body)) for key, label, title, body in sections], ['ludra-na-patch', 'ludra-na-nov11-patch', 'ludra-na-previous-patch', 'ludra-na-current', 'ludra-na-event-update']
