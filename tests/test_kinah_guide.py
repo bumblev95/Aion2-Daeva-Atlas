@@ -13,6 +13,26 @@ BASE = '/Aion2-Daeva-Atlas/'
 
 
 class KinahGuideRegressionTest(unittest.TestCase):
+    def test_kr_recovery_notice_is_scoped_and_stays_headline_only(self):
+        news = json.loads((ROOT / 'data/news.json').read_text())
+        item = next(i for source in news['sources'] for i in source['items']
+                    if i['id'] == progression.KINAH_KR_RECOVERY_NOTICE_ID)
+        self.assertEqual(item['reviewState'], 'official')
+        self.assertIsNone(item['contentHash'])
+        self.assertEqual(item['summary'], {})
+        self.assertEqual(item['changes'], [])
+        cases = {
+            'en': ('KR only', '60 accounts', '11:00 KST', '15 days',
+                   'targeted enforcement action', 'Do not apply this KR notice to NA'),
+            'ko': ('한국 전용', '60개 계정', '11:00 KST', '15일 이내',
+                   '특정 위반 계정', '북미에 적용하지 않습니다'),
+        }
+        for lang, tokens in cases.items():
+            html = progression.render('kinah-farming', lang, BASE)
+            for token in tokens:
+                self.assertIn(token, html)
+            self.assertIn(progression.KINAH_KR_RECOVERY_NOTICE, html)
+
     def test_patch_claims_match_reviewed_na_source(self):
         review = json.loads((ROOT / 'data/patch-reviews.json').read_text())[progression.KINAH_PATCH_ID]
         change = next(c for c in review['changes'] if c['subject']['en'] == 'Field-monster Kina becomes bound')
@@ -74,8 +94,10 @@ class KinahGuideRegressionTest(unittest.TestCase):
             self.assertIn('id="kinah-na-update"', html)
             self.assertIn('id="growth-source-kinah-na-patch"', html)
             self.assertIn(progression.KINAH_PATCH, html)
-            self.assertIn('"dateModified": "2026-11-21"', html)
-            self.assertEqual(dates['https://bumblev95.github.io/Aion2-Daeva-Atlas/'+prefix+'guides/kinah-farming/'], '2026-11-21')
+            self.assertIn(progression.KINAH_KR_RECOVERY_NOTICE, html)
+            self.assertIn('id="growth-source-kinah-kr-recovery"', html)
+            self.assertIn('"dateModified": "2026-11-27"', html)
+            self.assertEqual(dates['https://bumblev95.github.io/Aion2-Daeva-Atlas/'+prefix+'guides/kinah-farming/'], '2026-11-27')
         for slug in ('pet-growth', 'gear-targets', 'dungeon-rewards'):
             self.assertEqual(progression.reviewed_on(slug), '2026-10-12')
 

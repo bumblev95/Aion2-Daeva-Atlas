@@ -10,12 +10,14 @@ import guidebrowse
 from advancedguides import LUDRA_PATCH, LUDRA_PATCH_REVIEW
 
 REVIEWED = '2026-10-12'
-KINAH_REVIEWED = '2026-11-21'
+KINAH_REVIEWED = '2026-11-27'
 KINAH_PATCH_ID = '6afd5b00ebccad0e4b5bad8b'
 KINAH_PATCH = 'https://aion2.plaync.com/en-us/board/update/view?articleId='+KINAH_PATCH_ID
 KINAH_PATCH_REVIEW = 'updates/na-'+KINAH_PATCH_ID+'/'
 KINAH_MARKET_NOTICE_ID = '6b047f20d65afc4bb5d63c4e'
 KINAH_MARKET_NOTICE = 'https://aion2.plaync.com/en-us/board/notice/view?articleId='+KINAH_MARKET_NOTICE_ID
+KINAH_KR_RECOVERY_NOTICE_ID = '6b0817f3396627a421ae85a7'
+KINAH_KR_RECOVERY_NOTICE = 'https://aion2.plaync.com/ko-kr/board/notice/view?articleId='+KINAH_KR_RECOVERY_NOTICE_ID
 ROOT = 'guides/'
 
 
@@ -42,6 +44,9 @@ SOURCES = {
     'kinah-na-world-market': (KINAH_MARKET_NOTICE,
         ('NC · November 25 NA World Market notice', 'NC · 북미 11월 25일 월드 마켓 안내'),
         ('NA only; source reviewed 2026-11-21. World trading starts after November 25 maintenance for Membership users. The publisher states a 20% World sale tax and separate daily limits of 10 World Market and 10 World Exchange (Quna) sale listings. No live gameplay verification.', '북미 전용 · 2026.11.21 원문 검토. 11월 25일 점검 후 멤버십 이용자에게 월드 거래가 열립니다. 공지는 월드 판매 세금 20%, 월드 마켓과 월드 거래소(큐나) 각각 일일 판매 등록 10회를 명시합니다. 인게임 직접 검증 아님.')),
+    'kinah-kr-recovery': (KINAH_KR_RECOVERY_NOTICE,
+        ('NC · November 27 KR Kina recovery notice', 'NC · 한국 11월 27일 키나 회수 안내'),
+        ('KR only; source reviewed 2026-11-27. NC says recovery starts after 11:00 KST for 60 accounts tied to prohibited real-money trading. A recovery larger than the held balance is displayed as negative Kina. No live account verification.', '한국 전용 · 2026.11.27 원문 검토. NC는 현금거래 관련 60개 계정의 키나 회수를 11:00 KST 이후 순차 시작하며, 회수액이 보유액보다 크면 차액을 마이너스 키나로 표시한다고 밝혔습니다. 실제 계정 직접 검증 아님.')),
     'mobalytics-beginner': ('https://mobalytics.gg/gamebase/guides/aion-2-beginner-guide',
         ('Mobalytics · beginner upgrades', 'Mobalytics · 초보자 성장 점검'),
         ('Global guide; updated 2026-10-11. Titles, Power Shard material costs and equipment extraction.', '글로벌 공략 · 2026.10.11 수정. 칭호·Power Shard 재료 비용·장비 추출.')),
@@ -291,6 +296,10 @@ def dungeon_guide(v):
 def kinah_guide(v):
     t=v.t
     update=v.cards([
+        (('Official enforcement · KR only · November 27, 2026', '공식 조치 · 한국 전용 · 2026년 11월 27일'),
+         ('NC began sequential Kina recovery after 11:00 KST for 60 accounts confirmed in prohibited real-money-trading activity, including unclear-origin currency trades. If the amount to recover is larger than the account’s held Kina, the difference is shown as a negative balance. Affected accounts receive an in-game mail, may be temporarily unable to play during the action, and can appeal within 15 days of notice.', 'NC는 출처 불명 재화 거래 등 현금거래 관련 행위가 확인된 60개 계정에 11월 27일 11:00 KST 이후 키나 회수를 순차 시작했습니다. 회수액이 보유 키나보다 크면 차액이 마이너스 잔액으로 표시됩니다. 대상 계정은 게임 내 우편을 받고 조치 중 일시적으로 접속이 제한될 수 있으며, 통지 후 15일 이내 이의 신청할 수 있습니다.')),
+        (('KR recovery · direct checks pending', '한국 회수 · 직접 확인 대기'),
+         ('This is a targeted enforcement action, not a new tax, ordinary earning cap or rule for every account. The notice does not publish each recovered amount, calculation period, bound/unbound debit order, negative-balance recovery sources, affected feature behavior or completion timing. Verify the individual mail, wallet display, restricted actions, eligible earnings and restoration to zero before changing a KR account plan. Do not apply this KR notice to NA.', '이는 특정 위반 계정 대상 조치이며 일반 세금·평상시 획득 한도·전체 계정 규칙이 아닙니다. 공지는 계정별 회수액·산정 기간·각인/비각인 차감 순서·마이너스 잔액 회복 수단·기능별 동작·완료 시점을 공개하지 않았습니다. 한국 계정 동선을 바꾸기 전 개별 우편·지갑 표시·제한 기능·인정 수입·0 이상 회복을 확인하세요. 이 한국 공지를 북미에 적용하지 않습니다.')),
         (('Official change · NA only · November 18, 2026', '공식 변경 · 북미 전용 · 2026년 11월 18일'),
          ('All field-monster Kina rewards become Bound Kina. The daily 1,000,000 Kina acquisition limit likewise changes to Bound Kina; this is an acquisition ceiling, not a guaranteed payout. Do not count direct field-monster currency as Market purchasing funds. This NA notice does not establish KR rules.', '모든 필드 몬스터의 키나 보상이 귀속 키나로 바뀝니다. 일일 1,000,000 키나 획득 한도도 귀속 키나로 변경됩니다. 이는 획득 상한이며 보장 수입이 아닙니다. 필드 몬스터가 직접 지급하는 키나는 거래소 구매 자금으로 계산하지 마세요. 이 북미 공지를 한국 서버 규칙으로 적용하지 않습니다.')),
         (('Still requires in-game checks', '인게임 확인이 필요한 내용'),
@@ -299,7 +308,7 @@ def kinah_guide(v):
          ('After maintenance, Membership users can use a World Market and World Exchange to trade across servers within the same faction and region. The existing Server Market and Server Exchange stay available. World sales have a 20% tax, with separate daily sale-listing limits of 10 for the World Market and 10 for the World Exchange (Quna).', '점검 후 멤버십 이용자는 같은 진영·지역의 다른 서버 이용자와 월드 마켓·월드 거래소에서 거래할 수 있습니다. 기존 서버 마켓·서버 거래소는 유지됩니다. 월드 판매에는 20% 세금이 적용되고 일일 판매 등록은 월드 마켓 10회·월드 거래소(큐나) 10회로 각각 제한됩니다.')),
         (('World trading · direct checks pending', '월드 거래 · 직접 확인 대기'),
          ('The announcement does not state whether each listing limit is per account or character, when it resets, or how cancelled/expired listings count. Verify the post-maintenance menu, Membership gate, same-faction/region scope, displayed tax and settlement, and both counters before changing a farming budget. The 20% figure is for World sales; do not apply it to the retained Server markets without separate evidence.', '공지는 판매 등록 한도가 계정·캐릭터 중 어느 범위인지, 초기화 시각, 취소·만료 등록의 집계 방식을 밝히지 않았습니다. 점검 후 메뉴, 멤버십 조건, 같은 진영·지역 범위, 표시 세금·정산액, 두 카운터를 확인한 뒤 파밍 예산을 바꾸세요. 20%는 월드 판매 수치이므로 별도 근거 없이 유지되는 서버 마켓에 적용하지 않습니다.')),
-    ])+v.cite('kinah-na-patch','kinah-na-world-market')+v.a(KINAH_PATCH_REVIEW,t('Read the NA patch summary', '북미 패치 요약 보기'),'progress-action')
+    ])+v.cite('kinah-kr-recovery','kinah-na-patch','kinah-na-world-market')+v.a(KINAH_PATCH_REVIEW,t('Read the NA patch summary', '북미 패치 요약 보기'),'progress-action')
     money=growthvisuals.wallet(v)+v.cite('kinah')
     rows=[
         (('Duty Missions', '사명'), ('50,000 bound each · 5 completed = 250,000', '1회 귀속 5만 · 5회 완료 시 25만'), ('Daily allowance', '일일 횟수'), 'routines/#routine-duties'),
@@ -330,7 +339,7 @@ def kinah_guide(v):
         '<div id="kinah-types">'+money+'</div>'+
         v.section('kinah-fixed', ('Reliable reward routes', '정해진 보상부터 모으기'), ('Global reward references reviewed 2026-10-12; score and completion conditions still apply.', '2026.10.12 검토한 글로벌 보상 참고입니다. 점수·완료·입장 조건을 함께 봅니다.'),fixed)+
         v.section('kinah-market', ('What can become Market money?', '무엇을 팔아 거래소 자금을 만들까?'), ('The drop matters only if that particular item can be traded and someone buys it.', '해당 아이템이 거래 가능하고 실제 구매자가 있어야 판매 수입이 됩니다.'),market)+
-        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah-na-patch','kinah-na-world-market','kinah','duties','depository'],KINAH_REVIEWED))
+        v.section('kinah-plan', ('Choose today’s money route', '오늘 할 일과 사용처 정하기'), ('A short route works best when it funds one named upgrade.', '다음 성장 목표 하나에 필요한 돈과 재료를 모으는 순서입니다.'),choices)+v.sources(['kinah-kr-recovery','kinah-na-patch','kinah-na-world-market','kinah','duties','depository'],KINAH_REVIEWED))
 
 
 def ludra_entry(v):

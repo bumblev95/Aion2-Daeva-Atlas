@@ -1,6 +1,27 @@
 {
-  "reviewedAt": "2026-11-26T08:26:50Z",
+  "reviewedAt": "2026-11-27T08:25:17Z",
   "items": [
+    {
+      "id": "kr-20261127-negative-kina-recovery-enforcement",
+      "region": "KR",
+      "reviewedAt": "2026-11-27T08:25:17Z",
+      "title": {
+        "en": "November 27 KR · targeted negative-Kina recovery action",
+        "ko": "11월 27일 한국 · 마이너스 키나 회수 조치 시행"
+      },
+      "finding": {
+        "en": "P1 growth/system. Official facts: after 11:00 KST on November 27, NC begins sequential Kina recovery for 60 KR accounts confirmed in prohibited real-money-trading activity, including trades in currency of unclear origin. If the recovery exceeds held Kina, the difference is displayed as a negative balance. Affected accounts receive an in-game mail, may be temporarily restricted during the action, and can appeal within 15 days of notice. Guide-impact interpretation: add a KR-only warning and source card to /guides/kinah-farming/ and /ko/guides/kinah-farming/ through progression.py while keeping the general notice as a reviewState=official title/source-link card in data/news.json. Do not apply it to NA, treat it as a universal tax or cap, or change skill/eDPS inputs, historical observations, rankings or tiers. Direct verification pending: individual recovery amount and calculation period, account/character scope, bound/unbound debit order, mail and wallet display, restricted features, eligible recovery earnings, restoration at zero, enforcement completion and appeal outcome.",
+        "ko": "P1 성장/시스템입니다. 공식 확인: NC는 11월 27일 11:00 KST 이후 출처 불명 재화 거래 등 금지된 현금거래 관련 행위가 확인된 한국 60개 계정의 키나를 순차 회수합니다. 회수액이 보유 키나보다 크면 차액을 마이너스 잔액으로 표시합니다. 대상 계정에는 게임 내 우편이 발송되고 조치 중 일시적인 이용 제한이 있을 수 있으며 통지 후 15일 이내 이의 신청할 수 있습니다. 공략 영향 해석: 일반 공지는 data/news.json에서 reviewState=official 제목·원문 링크 카드로 유지하고 progression.py를 통해 /guides/kinah-farming/·/ko/guides/kinah-farming/에 한국 전용 주의와 출처 카드를 추가합니다. 북미에 적용하거나 전체 계정 세금·한도로 해석하거나 스킬/eDPS 입력·과거 관측·순위·티어를 바꾸지 않습니다. 직접 검증 대기: 계정별 회수액과 산정 기간, 계정/캐릭터 범위, 각인/비각인 차감 순서, 우편·지갑 표시, 제한 기능, 인정되는 회복 수입, 0 도달 시 복구, 조치 완료 시점과 이의 신청 결과입니다."
+      },
+      "status": "needs-evidence",
+      "sources": [
+        {
+          "title": "NC · 키나 회수(마이너스 키나) 조치 시행 안내",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6b0817f3396627a421ae85a7",
+          "contentHash": "c73468b68796926fe20e456da73e55fa0bf9255f7a58b0e725ef97dca0c1a233"
+        }
+      ]
+    },
     {
       "id": "na-20261126-ludra-event-extension",
       "region": "NA / Global",
