@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-11-26T23:47:27Z",
+  "checkedAt": "2026-11-27T08:16:30Z",
   "pollMinutes": 60,
   "sources": [
     {
@@ -8,8 +8,8 @@
       "region": "KR",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-26T23:47:27Z",
-      "lastSuccessAt": "2026-11-26T23:47:27Z",
+      "checkedAt": "2026-11-27T08:16:30Z",
+      "lastSuccessAt": "2026-11-27T08:16:30Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -9079,11 +9079,31 @@
       "region": "KR",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-26T23:47:27Z",
-      "lastSuccessAt": "2026-11-26T23:47:27Z",
+      "checkedAt": "2026-11-27T08:16:30Z",
+      "lastSuccessAt": "2026-11-27T08:16:30Z",
       "error": null,
       "fromCache": false,
       "items": [
+        {
+          "id": "6b0817f3396627a421ae85a7",
+          "title": "[안내] 키나 회수(마이너스 키나) 조치 시행 안내",
+          "region": "KR",
+          "kind": "news",
+          "source": "kr-notice",
+          "url": "https://aion2.plaync.com/ko-kr/board/notice/view?articleId=6b0817f3396627a421ae85a7",
+          "publishedAt": "2026-11-27T01:03:00.001Z",
+          "sourceUpdatedAt": "2026-11-27T03:14:21.855Z",
+          "contentHash": null,
+          "bodyState": "not-required",
+          "reviewState": "official",
+          "summary": {},
+          "changes": [],
+          "classScopeReviewed": false,
+          "reviewedAt": null,
+          "displayTitle": {},
+          "detail": {},
+          "followups": []
+        },
         {
           "id": "6b07f5104d404d0c1542093b",
           "title": "[안내] 운영정책 위반 및 임시보호 계정들에 대한 게임 이용제한 안내 [355차]",
@@ -9928,8 +9948,8 @@
       "region": "NA",
       "kind": "patch",
       "status": "ready",
-      "checkedAt": "2026-11-26T23:47:27Z",
-      "lastSuccessAt": "2026-11-26T23:47:27Z",
+      "checkedAt": "2026-11-27T08:16:30Z",
+      "lastSuccessAt": "2026-11-27T08:16:30Z",
       "error": null,
       "fromCache": false,
       "items": [
@@ -12318,8 +12338,8 @@
       "region": "NA",
       "kind": "news",
       "status": "ready",
-      "checkedAt": "2026-11-26T23:47:27Z",
-      "lastSuccessAt": "2026-11-26T23:47:27Z",
+      "checkedAt": "2026-11-27T08:16:30Z",
+      "lastSuccessAt": "2026-11-27T08:16:30Z",
       "error": null,
       "fromCache": false,
       "items": [
